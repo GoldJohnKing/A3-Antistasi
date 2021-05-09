@@ -1262,11 +1262,11 @@
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_mapname_short_text">
         <Original>越南战争 Antistasi 游击模式 Cam Lao Nam</Original>
-        <English>Antistasi Cam Lao Nam</English>
+        <English>越南战争 Antistasi 游击模式 Cam Lao Nam</English>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_mapname_text">
         <Original>Antistasi 游击模式 - 解放柬埔寨, 老挝和越南</Original>
-        <English>Antistasi - Liberation of Cam Lao Nam</English>
+        <English>Antistasi 游击模式 - 解放柬埔寨, 老挝和越南</English>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_description_text">
         <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -1274,7 +1274,7 @@
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_blurb_text">
         <Original>[越战服]老金的便宜货 QQ群: 274455383</Original>
-        <English>Tree? Which tree?!?</English>
+        <English>[越战服]老金的便宜货 QQ群: 274455383</English>
       </Key>
       <Key ID="STR_antistasi_mission_info_2_mapname_short_text">
         <Original>Placeholder</Original>
