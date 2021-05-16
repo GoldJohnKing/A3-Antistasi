@@ -47,3 +47,6 @@ class CfgDebriefing {
         pictureColor[] = {0.5,0.0,0.0,1};
     };
 };
+
+// Edited: Disable unused channel
+disableChannels[] = {0, 2, 4, 5, 6};

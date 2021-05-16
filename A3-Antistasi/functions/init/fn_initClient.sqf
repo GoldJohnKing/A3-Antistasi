@@ -299,6 +299,7 @@ player addEventHandler ["GetInMan", {
 		};
 	};
 	if (!_exit) then {
+		4 enableChannel true; // Edited: Toggle vehicle radio channel on players getting in/out of a vehicle
 		if ((typeOf _veh) in undercoverVehicles) then {
 			if (!(_veh in reportedVehs)) then {
 				[] spawn A3A_fnc_goUndercover;
@@ -306,6 +307,8 @@ player addEventHandler ["GetInMan", {
 		};
 	};
 }];
+
+player addEventHandler ["GetOutMan", {4 enableChannel false;}]; // Edited: Toggle vehicle radio channel on players getting in/out of a vehicle
 
 call A3A_fnc_initUndercover;
 
