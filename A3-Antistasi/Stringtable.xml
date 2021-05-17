@@ -21,7 +21,7 @@
         <Russian>Опции Штаба: Только для Командира</Russian>
         <German>HQ Optionen: Nur Kommandant</German>
         <Czech>Možnosti velitelství: Pouze pro velitel</Czech>
-        <Chinesesimp>总部选项：仅指挥官</Chinesesimp>
+        <Chinesesimp>HQ选项：仅限指挥官</Chinesesimp>
         <Korean>HQ 옵션: 지휘관 전용</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_close_text">
@@ -51,7 +51,7 @@
         <Russian>Перевести 100$ из фонда сопротивления себе на счёт. Это вредит вашей репутации как командира</Russian>
         <German>Transferiere 100€ aus der Fraktionskasse zu deinem persönlichen Konto. Dies wird deiner Reputation bezüglich deiner Karriere innerhalb der Fraktion schaden.</German>
         <Czech>Převod 100€ ze společného fondu na váš účet.Poškodí vaši pozici mezi frakcí a též vaší kariéru velitele</Czech>
-        <Chinesesimp>从阵营的资金池中拿取100€并将其添加到您的个人帐户中。这会损害您指挥官生涯中的地位</Chinesesimp>
+        <Chinesesimp>从阵营的资金池中拿取100€并将其添加到您的个人帐户中。这会损害您在指挥官生涯中的地位</Chinesesimp>
         <Korean>팩션 자금 100€를 당신의 계좌에 가져가면 횡령이기때문에 팩션내 당신의 평판이 내려갈 것입니다.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_garrisons_text">
@@ -61,7 +61,7 @@
         <Russian>Управление гарнизоном</Russian>
         <German>Garnisonsverwaltung</German>
         <Czech>Spravovat posádku</Czech>
-        <Chinesesimp>管理</Chinesesimp>
+        <Chinesesimp>管理驻军</Chinesesimp>
         <Korean>주둔지 관리</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_garrisons_tooltip">
@@ -71,7 +71,7 @@
         <Russian>Добавление или удаление юнитов в гарнизон</Russian>
         <German>Einheiten der Garnison hinzufügen oder entfernen.</German>
         <Czech>Přidejte nebo odeberte jednotky z posádky</Czech>
-        <Chinesesimp>在部队中添加或删除单位</Chinesesimp>
+        <Chinesesimp>向驻军增派或删除单位</Chinesesimp>
         <Korean>주둔지에 병력을 추가하거나 줄입니다.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_move_headquarters_text">
@@ -81,7 +81,7 @@
         <Russian>Переместить Штаб</Russian>
         <German>HQ verlegen</German>
         <Czech>Přesuňte velitelství</Czech>
-        <Chinesesimp>转移HQ</Chinesesimp>
+        <Chinesesimp>转移HQ到其他区域</Chinesesimp>
         <Korean>HQ 이사하기</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_move_headquarters_tooltip">
@@ -91,7 +91,7 @@
         <Russian>Петрос присоединится к вашей группе. Чтобы построить Штаб, выберите на нём пункт "Построить Штаб". Арсенал должен быть пуст.</Russian>
         <German>Maru/Petros tritt deiner Gruppe bei. Munitionskiste muss leer sein. Zur Neuerrichtung die Bauaktion in der Nähe von Maru/Petros auswählen.</German>
         <Czech>Petros se připojí k vaší skupině. Chcete-li vytvořit velitelství, vyberte možnost u Petrose „Zřídit velitelství“. Arzenál musí být prázdný.</Czech>
-        <Chinesesimp>Maru将加入您的小队。弹药箱必须为空。 如果需要要重建，请选择Maru附近进行部署</Chinesesimp>
+        <Chinesesimp>Maru将会加入您的小队。弹药箱必须为空。在Maru附近选择"建造"选项来重建HQ</Chinesesimp>
         <Korean>페트로스가 당신의 그룹에 참가할 것입니다. 탄약상자는 비워져 있어야합니다. 재건축하려면 페트로스 근처에서 건축하기를 선택하시오.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_members_list_text">
@@ -101,7 +101,7 @@
         <Russian>Список Игроков</Russian>
         <German>Mitgliederliste</German>
         <Czech>Seznam členů</Czech>
-        <Chinesesimp>游戏内会员列表</Chinesesimp>
+        <Chinesesimp>在线会员列表</Chinesesimp>
         <Korean>인게임 멤버 목록</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_members_list_tooltip">
@@ -111,7 +111,7 @@
         <Russian>Показывает, кто из Игроков сейчас на сервере</Russian>
         <German>Zeigt, welche Servermitglieder momentan im Spiel sind.</German>
         <Czech>Zobrazuje, kteří členové serveru aktuálně hrají</Czech>
-        <Chinesesimp>显示哪些会员在服务器内</Chinesesimp>
+        <Chinesesimp>显示哪些服务器会员正在游玩</Chinesesimp>
         <Korean>현재 플레이중인 서버 맴버 표시</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_rebuild_assets_text">
@@ -121,7 +121,7 @@
         <Russian>Восстановление объектов</Russian>
         <German>Anlagen wiederherstellen</German>
         <Czech>Znovu vybudovat objekt</Czech>
-        <Chinesesimp>重建设施</Chinesesimp>
+        <Chinesesimp>重建资产</Chinesesimp>
         <Korean>재건축</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_rebuild_assets_tooltip">
@@ -131,7 +131,7 @@
         <Russian>Цена: 5000$</Russian>
         <German>Kosten: 5.000€</German>
         <Czech>Cena: 5000€</Czech>
-        <Chinesesimp>花费：5000€</Chinesesimp>
+        <Chinesesimp>花费: 5000€</Chinesesimp>
         <Korean>가격: 5000€</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
@@ -141,7 +141,7 @@
         <Russian>Тренировать Войска</Russian>
         <German>FIA Truppen ausbilden</German>
         <Czech>Vycvičit jednotky FIA</Czech>
-        <Chinesesimp>训练游击队员</Chinesesimp>
+        <Chinesesimp>训练FIA部队</Chinesesimp>
         <Korean>FIA 부대 훈련</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_train_ai_tooltip">
@@ -161,7 +161,7 @@
         <Russian>Гараж Сопротивления</Russian>
         <German>Fuhrparkzugriff</German>
         <Czech>Přístup do garáže</Czech>
-        <Chinesesimp>打开车库</Chinesesimp>
+        <Chinesesimp>车库存取</Chinesesimp>
         <Korean>차고 열기</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_garage_tooltip">
@@ -171,7 +171,7 @@
         <Russian>Проверить Гараж Сопротивления</Russian>
         <German>Fuhrpark der Fraktion einsehen.</German>
         <Czech>Zkontrolujte frakční garáž</Czech>
-        <Chinesesimp>打开阵营车库</Chinesesimp>
+        <Chinesesimp>检查阵营车库</Chinesesimp>
         <Korean>팩션 차고 확인</Korean>
       </Key>
     </Container>
@@ -183,7 +183,7 @@
         <Russian>Построение Обороны</Russian>
         <German>Bauen - Garnisonsoptionen</German>
         <Czech>Budování- Možnosti posádky</Czech>
-        <Chinesesimp>建筑-驻军选项</Chinesesimp>
+        <Chinesesimp>建造 - 驻军选项</Chinesesimp>
         <Korean>건축 - 주둔지 설정</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_build_button_no_text">
@@ -203,7 +203,7 @@
         <Russian>Минные поля</Russian>
         <German>Minenfeldoptionen</German>
         <Czech>Možnosti minového pole</Czech>
-        <Chinesesimp>雷区设置</Chinesesimp>
+        <Chinesesimp>雷区选项</Chinesesimp>
         <Korean>지뢰지대 설정</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_build_minefield_button_tooltip">
@@ -213,7 +213,7 @@
         <Russian>Инженеры установят или удалят мины на выбранной позиции, используя мины из арсенала</Russian>
         <German>Die KI wird Minen um die ausgewählten Ziele legen oder räumen. Sie nutzt dabei den aktuellen Minenvorrat.</German>
         <Czech>AI rozmístí nebo odstraní miny na požadovaných místech za použití současné zásoby arzenálu</Czech>
-        <Chinesesimp>AI将使用现有的军火库中地雷库存来部署或拆除地雷</Chinesesimp>
+        <Chinesesimp>AI将使用现有的军火库中地雷，在预期目标位置部署或拆除地雷</Chinesesimp>
         <Korean>AI는 현재 아스널의 지뢰 재고를 이용하여, 목표물에 지뢰를 심거나 제거합니다.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_build_outpost_button_text">
@@ -233,7 +233,7 @@
         <Russian>Установить Наблюдательный Пост или Блок Пост в зависимости от выбранного места.</Russian>
         <German>Errichte, abhängig vom gewählten Gelände, einen neuen Außenposten oder eine neue Straßensperre.</German>
         <Czech>Zřiďte Předsunutou hlídku nebo Zátaras v závislosti na vybraném místě.</Czech>
-        <Chinesesimp>根据您选择的地形类型建立新的路标或路障</Chinesesimp>
+        <Chinesesimp>根据您选择的地形，建立新的岗哨或路障。</Chinesesimp>
         <Korean>지정한 구역에 감시초소 또는 검문소를 설치합니다.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_build_recruit_units_button_text">
@@ -263,7 +263,7 @@
         <Russian>Удалить Гарнизон или Пост</Russian>
         <German>Einheiten/Posten auflösen</German>
         <Czech>Rozpustěte jednotky nebo hlídky</Czech>
-        <Chinesesimp>解散单位或哨所</Chinesesimp>
+        <Chinesesimp>解散单位或岗哨</Chinesesimp>
         <Korean>해당 병력 또는 초소 해산</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_build_disband_units_button_tooltip">
@@ -273,7 +273,7 @@
         <Russian>Распустить весь Гарнизон или Пост.</Russian>
         <German>Löse komplette Garnisonen oder Posten auf.</German>
         <Czech>Rozpustit celou posádku nebo hlídky.</Czech>
-        <Chinesesimp>拆除整个驻军或哨所。</Chinesesimp>
+        <Chinesesimp>删除整个驻军或岗哨。</Chinesesimp>
         <Korean>주둔지 또는 초소 전체 해산</Korean>
       </Key>
     </Container>
@@ -295,7 +295,7 @@
         <Russian>Стрелок</Russian>
         <German>Schütze rekrutieren</German>
         <Czech>Střelec</Czech>
-        <Chinesesimp>招募步枪兵</Chinesesimp>
+        <Chinesesimp>招募步枪手</Chinesesimp>
         <Korean>소총수 모집</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_garrison_spawn_autorifleman_text">
@@ -305,7 +305,7 @@
         <Russian>Пулемётчик</Russian>
         <German>Maschinengewehrschütze rekrutieren</German>
         <Czech>Kulometník</Czech>
-        <Chinesesimp>招募机枪兵</Chinesesimp>
+        <Chinesesimp>招募自动步枪手</Chinesesimp>
         <Korean>자동화기 사수 모집</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_garrison_spawn_medic_text">
@@ -325,7 +325,7 @@
         <Russian>Лидер отряда</Russian>
         <German>Gruppenführer rekrutieren</German>
         <Czech>Velitel jednotky</Czech>
-        <Chinesesimp>招募班长</Chinesesimp>
+        <Chinesesimp>招募小队长</Chinesesimp>
         <Korean>분대장 모집</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_garrison_spawn_mortar_text">
@@ -345,7 +345,7 @@
         <Russian>Стрелок с ГП</Russian>
         <German>Grenadier rekrutieren</German>
         <Czech>Granátometník</Czech>
-        <Chinesesimp>招募榴弹兵</Chinesesimp>
+        <Chinesesimp>招募掷弹手</Chinesesimp>
         <Korean>유탄수 모집</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_garrison_spawn_marksman_text">
@@ -365,7 +365,7 @@
         <Russian>Гранатомётчик</Russian>
         <German>Panzerabwehr rekrutieren</German>
         <Czech>Raketometník</Czech>
-        <Chinesesimp>招募反坦克兵</Chinesesimp>
+        <Chinesesimp>招募反坦克手</Chinesesimp>
         <Korean>대전차화기병 모집</Korean>
       </Key>
     </Container>
@@ -377,7 +377,7 @@
         <Russian>Минное Поле</Russian>
         <German>Minenfeld legen</German>
         <Czech>Zřídit minové pole</Czech>
-        <Chinesesimp>建立雷区</Chinesesimp>
+        <Chinesesimp>建造雷区</Chinesesimp>
         <Korean>지뢰지대 만들기</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_minefield_button_anti_personel_text">
@@ -387,7 +387,7 @@
         <Russian>ПП Мины</Russian>
         <German>APERS Minen</German>
         <Czech>Protipěchotní miny</Czech>
-        <Chinesesimp>APERS地雷</Chinesesimp>
+        <Chinesesimp>反人员(APRES)地雷</Chinesesimp>
         <Korean>APERS 지뢰</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_minefield_button_anti_personel_tooltip">
@@ -397,7 +397,7 @@
         <Russian>Создаёт Минное Поле с противопехотными минами на выбранной позиции</Russian>
         <German>Legt ein APERS-Minenfeld an der ausgewählten Position.</German>
         <Czech>Zvolit pozici pro minové pole</Czech>
-        <Chinesesimp>在指定位置布置APERS雷区</Chinesesimp>
+        <Chinesesimp>在指定地点布设反人员雷区</Chinesesimp>
         <Korean>지정된 위치에 APERS 지뢰지대를 만듭니다.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_minefield_button_remove_text">
@@ -417,7 +417,7 @@
         <Russian>Создаёт Инженера, который разминирует все мины вокруг себя</Russian>
         <German>Ein KI Sprengstoffspezialist wird alle Minen in der Umgebung räumen.</German>
         <Czech>Vytvoří inženýra, který vyčistí všechny miny kolem sebe</Czech>
-        <Chinesesimp>生成一个AI工程师来清除周围的地雷</Chinesesimp>
+        <Chinesesimp>生成一名AI工程师来清除周围的地雷</Chinesesimp>
         <Korean>주변 지뢰지대를 제거할 AI 공병을 소환합니다.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_minefield_button_anti_tank_text">
@@ -427,7 +427,7 @@
         <Russian>ПТ Мины</Russian>
         <German>Panzerabwehrminen</German>
         <Czech>Protitankové miny</Czech>
-        <Chinesesimp>反坦克地雷</Chinesesimp>
+        <Chinesesimp>反坦克(AT)地雷</Chinesesimp>
         <Korean>대전차 지뢰</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_minefield_button_anti_tank_tooltip">
@@ -437,7 +437,7 @@
         <Russian>Создаёт Минное Поле с противотанковыми минами на выбранной позиции</Russian>
         <German>Legt ein Panzerabwehrminenfeld an der ausgewählten Position.</German>
         <Czech>Umístí protitankové minové pole na určenou pozici</Czech>
-        <Chinesesimp>在指定位置建立反坦克雷区</Chinesesimp>
+        <Chinesesimp>在指定地点布设反坦克雷区</Chinesesimp>
         <Korean>지정된 위치에 대전차 지뢰지대를 만듭니다.</Korean>
       </Key>
     </Container>
@@ -469,7 +469,7 @@
         <Russian>Пулемётчик</Russian>
         <German>Maschinengewehrschütze rekrutieren</German>
         <Czech>Kulometník</Czech>
-        <Chinesesimp>招募机枪兵</Chinesesimp>
+        <Chinesesimp>招募自动步枪手</Chinesesimp>
         <Korean>자동화기 사수 모집</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_unit_recruit_medic_text">
@@ -509,7 +509,7 @@
         <Russian>Стрелок с ГП</Russian>
         <German>Grenadier rekrutieren</German>
         <Czech>Granátometník</Czech>
-        <Chinesesimp>招募榴弹兵</Chinesesimp>
+        <Chinesesimp>招募掷弹手</Chinesesimp>
         <Korean>유탄수 모집</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_unit_recruit_marksman_text">
@@ -529,7 +529,7 @@
         <Russian>Гранатомётчик</Russian>
         <German>Panzerabwehrsoldat rekrutieren</German>
         <Czech>Raketometník</Czech>
-        <Chinesesimp>招募反坦克兵</Chinesesimp>
+        <Chinesesimp>招募反坦克手</Chinesesimp>
         <Korean>대전차화기병 모집</Korean>
       </Key>
     </Container>
@@ -592,7 +592,7 @@
         <Russian>Сообщество Antistasi</Russian>
         <German>Die offizielle Antistasi Community und Barbolani</German>
         <Czech>Oficiální komunita Antistasi a Barbolani</Czech>
-        <Chinesesimp>Antistasi官方社区和Barbolani</Chinesesimp>
+        <Chinesesimp>Antistasi 官方社区 和 Barbolani</Chinesesimp>
         <Korean>공식 Antistasi 커뮤니티와 Barbolani</Korean>
       </Key>
       <Key ID="STR_antistasi_credits_generic_overview_text">
@@ -602,7 +602,7 @@
         <Russian>Создайте свою армию с нуля и заставьте силы AAF и CSAT отступить в Динамической Миссии на всей карте.</Russian>
         <German>Formiere eine FIA Armee und bezwinge die AAF und CSAT Kräfte in einer dynamischen Mission auf der gesamten Karte.</German>
         <Czech>Postavte armádu FIA od nuly a porazte síly AAF a CSAT v celé mapě dynamické misi.</Czech>
-        <Chinesesimp>白手起家建立FIA军队,在一个完整的地图动态任务中击败AAF和CSAT部队.</Chinesesimp>
+        <Chinesesimp>从头开始建立FIA军队，在整张地图上执行动态任务，击败AAF和CSAT部队。</Chinesesimp>
         <Korean>바닥부터 FIA 군을 일으켜 다이나믹 미션이 생성되는 맵 전체에서 AAF와 CSAT을 패퇴시키십시오.</Korean>
       </Key>
       <Key ID="STR_antistasi_credits_generic_missionname_text">
@@ -613,6 +613,7 @@
         <German>Antistasi Altis</German>
         <Czech>Antistasi Altis</Czech>
         <Korean>Antistasi Altis</Korean>
+        <Chinesesimp>Antistasi Altis</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_credits_generic_missiondesc_text">
         <Original>Be a Resistance leader, be a hero.</Original>
@@ -621,7 +622,7 @@
         <Russian>Быть Лидером Сопротивления значит быть героем. </Russian>
         <German>Sei ein Anführer des Widerstands, sei ein Held.</German>
         <Czech>Staňte se vůdcem odboje, buďte hrdinou.</Czech>
-        <Chinesesimp>成为抵抗运动的领袖,成为英雄.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖，成为英雄。</Chinesesimp>
         <Korean>저항세력의 지도자가 되고 영웅이 되십시오.</Korean>
       </Key>
       <Key ID="STR_antistasi_credits_generic_version_text">
@@ -666,7 +667,7 @@
         <Russian>Гражданская техника позволяет Вам передвигаться как гражданскому лицу, пока Вы движетесь по дорогам вдалеке от баз, опорных пунктов и блокпостов.</Russian>
         <German>Zivilfahrzeuge erlaube dir unentdeckt zu reisen, sofern du nahe der Straßen bleibst und in keine Basen, Außenposten oder Straßensperren einfährst.</German>
         <Czech>Civilní vozidla vám umožní cestovat v režimu "utajení", zatímco zůstanete v blízkosti silnic a ne v blízkosti základen a zátarasů.</Czech>
-        <Chinesesimp>民用载具允许您在卧底模式下行驶,同时您要保持在道路附近,不要靠近基地、前哨站和路障.</Chinesesimp>
+        <Chinesesimp>民用载具可以让您在伪装模式下旅行, 前提是您待在道路附近, 不要靠近基地、前哨站或路障.</Chinesesimp>
         <Korean>민간 차량은 군사기지, 전초기지, 검문소를 접근하지 않는다면 잠복모드가 가능합니다.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_vehicle_purchase_military_text">
@@ -686,7 +687,7 @@
         <Russian>Широкий выбор доступной техники вашей стороны</Russian>
         <German>Eine große Auswahl an verfügbaren Fraktionsfahrzeugen.</German>
         <Czech>Široký výběr dostupných frakčních vozidel</Czech>
-        <Chinesesimp>各种各样的派系载具</Chinesesimp>
+        <Chinesesimp>各种各样可供选择的阵营载具</Chinesesimp>
         <Korean>사용 가능한 다양한 종류의 팩션 차량들</Korean>
       </Key>
     </Container>
@@ -698,7 +699,7 @@
         <Russian>Квадроцикл</Russian>
         <German>Quad</German>
         <Czech>Čtyřkolka</Czech>
-        <Chinesesimp>四轮摩托车</Chinesesimp>
+        <Chinesesimp>全地形交通工具</Chinesesimp>
         <Korean>ATV</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_mg_text">
@@ -718,7 +719,7 @@
         <Russian>Купить станковый пулемёт</Russian>
         <German>Kaufe ein ein statisches Maschinengewehr.</German>
         <Czech>Koupit lafetovaný kulomet</Czech>
-        <Chinesesimp>购买放置固定重机枪</Chinesesimp>
+        <Chinesesimp>购买固定式机枪</Chinesesimp>
         <Korean>고정형 중기관총 구입</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_mortar_text">
@@ -738,7 +739,7 @@
         <Russian>Купить миномёт</Russian>
         <German>Kaufe ein statisches Mörsergeschütz.</German>
         <Czech>Koupit lafetovaný minomet</Czech>
-        <Chinesesimp>购买放置迫击炮</Chinesesimp>
+        <Chinesesimp>购买迫击炮</Chinesesimp>
         <Korean>고정형 박격포 구입</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_aa_text">
@@ -748,7 +749,7 @@
         <Russian>Установка ПВО</Russian>
         <German>Flugabwehr</German>
         <Czech>Protiletadlový kanón</Czech>
-        <Chinesesimp>固定防空筒</Chinesesimp>
+        <Chinesesimp>固定式防空</Chinesesimp>
         <Korean>고정형 대공화기</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_aa_tooltip">
@@ -758,7 +759,7 @@
         <Russian>Купить установку ПВО</Russian>
         <German>Kaufe ein statisches Flugabwehrgeschütz.</German>
         <Czech>Koupit protiletadlový kanón</Czech>
-        <Chinesesimp>购买放置固定防空筒</Chinesesimp>
+        <Chinesesimp>购买固定式防空</Chinesesimp>
         <Korean>고정형 대공화기 구입</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_at_text">
@@ -768,7 +769,7 @@
         <Russian>Станковый ПТРК</Russian>
         <German>Panzerabwehr</German>
         <Czech>Lafetovaný protitankový systém</Czech>
-        <Chinesesimp>固定反坦克筒</Chinesesimp>
+        <Chinesesimp>固定反坦克武器</Chinesesimp>
         <Korean>고정형 대전차화기</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_at_tooltip">
@@ -778,7 +779,7 @@
         <Russian>Купить установку ПТРК</Russian>
         <German>Kaufe ein statisches Panzerabwehrgeschütz.</German>
         <Czech>Koupit lafetovaný protitankový systém</Czech>
-        <Chinesesimp>购买放置固定反坦克筒</Chinesesimp>
+        <Chinesesimp>购买固定反坦克武器</Chinesesimp>
         <Korean>고정형 대전차화기 구입</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_truck_text">
@@ -788,7 +789,7 @@
         <Russian>Пикап</Russian>
         <German>Pickup</German>
         <Czech>Pickup</Czech>
-        <Chinesesimp>小型货车</Chinesesimp>
+        <Chinesesimp>皮卡</Chinesesimp>
         <Korean>픽업트럭</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_offroad_text">
@@ -798,7 +799,7 @@
         <Russian>Грузовик</Russian>
         <German>Geländewagen</German>
         <Czech>Terénní vozidlo</Czech>
-        <Chinesesimp>越野皮卡</Chinesesimp>
+        <Chinesesimp>越野车</Chinesesimp>
         <Korean>오프로드 트럭</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_a_offroad_text">
@@ -850,7 +851,7 @@
         <Russian>Лодка</Russian>
         <German>Boot</German>
         <Czech>Loď</Czech>
-        <Chinesesimp>汽艇</Chinesesimp>
+        <Chinesesimp>船</Chinesesimp>
         <Korean>보트</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_civ_heli_text">
@@ -869,13 +870,14 @@
         <Original>Antistasi Altis</Original>
         <English>Antistasi Altis</English>
         <Russian>Antistasi Алтис</Russian>
+        <Chinesesimp>Antistasi Altis</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_mapname_text">
         <Original>Antistasi - Liberation of Altis</Original>
         <English>Antistasi - Liberation of Altis</English>
         <French>Antistasi - Libération d'Altis</French>
         <Korean>Antistasi - Altis 해방</Korean>
-        <Chinesesimp>Antistasi - 解放Altis</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Altis</Chinesesimp>
         <Russian>Antistasi - Освобождение Алтиса</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_description_text">
@@ -886,7 +888,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vedoucím odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_blurb_text">
         <Original>Because nothing is more important than Freedom.</Original>
@@ -895,30 +897,31 @@
         <German>Weil nichts wichtiger ist als die Freiheit.</German>
         <Czech>Protože nic není důležitější než svoboda.</Czech>
         <Korean>자유보다 중요한건 없기에.</Korean>
-        <Chinesesimp>因为没有什么比自由更重要</Chinesesimp>
+        <Chinesesimp>因为没有什么比自由更重要。</Chinesesimp>
         <Russian>Потому что нет ничего важнее свободы.</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_altisB_mapname_short_text">
         <Original>Antistasi Altis (BLUFOR)</Original>
         <English>Antistasi Altis (BLUFOR)</English>
-        <Chinesesimp>Antistasi - 解放Altis（蓝军）</Chinesesimp>
+        <Chinesesimp>Antistasi Altis (蓝方)</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_altisB_mapname_text">
         <Original>Antistasi - Liberation of Altis (BLUFOR)</Original>
         <English>Antistasi - Liberation of Altis (BLUFOR)</English>
-        <Chinesesimp>Antistasi - 解放Altis（蓝军）</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Altis (蓝方)</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_stratis_mapname_short_text">
         <Original>Antistasi Stratis</Original>
         <English>Antistasi Stratis</English>
         <Russian>Antistasi Стратис</Russian>
+        <Chinesesimp>Antistasi Stratis</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_stratis_mapname_text">
         <Original>Antistasi - Liberation of Stratis</Original>
         <English>Antistasi - Liberation of Stratis</English>
         <French>Antistasi - Libération de Stratis</French>
         <Korean>Antistasi - Stratis 해방</Korean>
-        <Chinesesimp>Antistasi - 解放Stratis</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Stratis</Chinesesimp>
         <Russian>Antistasi - Освобождение Стратиса</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_stratis_description_text">
@@ -929,7 +932,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vedoucím odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_stratis_blurb_text">
         <Original>Because nothing is more important than Freedom.</Original>
@@ -938,7 +941,7 @@
         <German>Weil nichts wichtiger ist als die Freiheit.</German>
         <Czech>Protože nic není důležitější než svoboda.</Czech>
         <Korean>자유보다 중요한건 없기에.</Korean>
-        <Chinesesimp>因为没有什么比自由更重要</Chinesesimp>
+        <Chinesesimp>因为没有什么比自由更重要。</Chinesesimp>
         <Russian>Потому что нет ничего важнее свободы.</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_malden_mapname_short_text">
@@ -949,6 +952,7 @@
         <German>Antistasi Malden</German>
         <Czech>Antistasi Malden</Czech>
         <Korean>Antistasi Malden</Korean>
+        <Chinesesimp>Antistasi Malden</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_malden_mapname_text">
         <Original>Antistasi - Liberation of Malden</Original>
@@ -958,7 +962,7 @@
         <German>Antistasi - Liberation of Malden</German>
         <Czech>Antistasi - Osvobození Maldenu</Czech>
         <Korean>Antistasi - Malden 해방</Korean>
-        <Chinesesimp>Antistasi - 解放Malden</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Malden</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_malden_description_text">
         <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -968,7 +972,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_malden_blurb_text">
         <Original>The island is small but packed with enemies. Look out!</Original>
@@ -978,12 +982,13 @@
         <German>Diese Insel ist klein aber voller Feinde. Sei auf der Hut!</German>
         <Czech>Ostrov je malý, ale plný nepřátel. Pozor!</Czech>
         <Korean>섬은 작지만 적으로 가득합니다. 조심하십시오!</Korean>
-        <Chinesesimp>该岛很小，但到处都是敌人。 小心！</Chinesesimp>
+        <Chinesesimp>这座岛很小，但敌人众多。当心！</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_tanoa_mapname_short_text">
         <Original>Antistasi Tanoa</Original>
         <English>Antistasi Tanoa</English>
         <Russian>Antistasi Таноа</Russian>
+        <Chinesesimp>Antistasi Tanoa</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_tanoa_mapname_text">
         <Original>Antistasi - Warlords of the Pacific</Original>
@@ -1003,7 +1008,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_tanoa_blurb_text">
         <Original>Business and War...</Original>
@@ -1013,7 +1018,7 @@
         <German>Geschäft und Krieg...</German>
         <Czech>Obchod a válka ...</Czech>
         <Korean>사업과 전쟁</Korean>
-        <Chinesesimp>商业与战争...</Chinesesimp>
+        <Chinesesimp>生意与战争...</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_livonia_mapname_short_text">
         <Original>Antistasi Livonia</Original>
@@ -1022,6 +1027,7 @@
         <Czech>Antistasi Livonia</Czech>
         <Korean>Antistasi Livonia</Korean>
         <Russian>Antistasi Ливония</Russian>
+        <Chinesesimp>Antistasi Livonia</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_livonia_mapname_text">
         <Original>Antistasi - The Baltic Revolution</Original>
@@ -1041,7 +1047,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_livonia_blurb_text">
         <Original>Stuck between two fronts.</Original>
@@ -1051,19 +1057,20 @@
         <German>Gefangen zwischen zwei Fronten.</German>
         <Czech>Uvízl mezi dvěma frontami.</Czech>
         <Korean>두 전선 사이에 갇히다.</Korean>
-        <Chinesesimp>在两方势力的夹缝中.</Chinesesimp>
+        <Chinesesimp>夹在两条战线之间。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_virolahti_mapname_short_text">
         <Original>Antistasi Virolahti</Original>
         <English>Antistasi Virolahti</English>
         <Russian>Antistasi Виролахти</Russian>
+        <Chinesesimp>Antistasi Virolahti</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_virolahti_mapname_text">
         <Original>Antistasi - Liberation of Virolahti</Original>
         <English>Antistasi - Liberation of Virolahti</English>
         <French>Antistasi - Libération de Virolahti</French>
         <Korean>Antistasi - Virolahti 해방</Korean>
-        <Chinesesimp>Antistasi - 解放Virolahti</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Virolahti</Chinesesimp>
         <Russian>Antistasi - Освобождение Виролахти</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_virolahti_description_text">
@@ -1074,7 +1081,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vedoucím odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_virolahti_blurb_text">
         <Original>Hunting in the woods</Original>
@@ -1089,11 +1096,13 @@
         <Original>Antistasi Chernarus</Original>
         <English>Antistasi Chernarus</English>
         <Russian>Antistasi Чернорусь</Russian>
+        <Chinesesimp>Antistasi Chernarus</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_cherna_mapname_text">
         <Original>Antistasi - Kolkhoz in revolt</Original>
         <English>Antistasi - Kolkhoz in revolt</English>
         <Russian>Antistasi - Революция колхоза</Russian>
+        <Chinesesimp>Antistasi - Kolkhoz 起义</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_cherna_description_text">
         <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -1103,7 +1112,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_cherna_blurb_text">
         <Original>Between the anvil and a steamroller.</Original>
@@ -1113,17 +1122,19 @@
         <German>Zwischen einem Amboss und einer Dampfwalze.</German>
         <Czech>Mezi kovadlinou a parním válcem.</Czech>
         <Korean>모루와 강압기 사이</Korean>
-        <Chinesesimp>在砧和压路机之间。</Chinesesimp>
+        <Chinesesimp>在砧板和压辊之间。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_chernawinter_mapname_short_text">
         <Original>Antistasi Chernarus Winter</Original>
         <English>Antistasi Chernarus Winter</English>
         <Russian>Antistasi Чернорусь Зима</Russian>
+        <Chinesesimp>Antistasi Chernarus Winter</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_chernawinter_mapname_text">
         <Original>Antistasi - Chilled revolt</Original>
         <English>Antistasi - Chilled revolt</English>
         <Russian>Antistasi - Зимнее восстание</Russian>
+        <Chinesesimp>Antistasi - 冰冷的反抗</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_chernawinter_description_text">
         <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -1133,7 +1144,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_chernawinter_blurb_text">
         <Original>Beware: Santa Claus is hunting you!</Original>
@@ -1153,6 +1164,7 @@
         <German>Antistasi Kunduz</German>
         <Czech>Antistasi Kunduz</Czech>
         <Korean>Antistasi Kunduz</Korean>
+        <Chinesesimp>Antistasi Kunduz</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_kunduz_mapname_text">
         <Original>Antistasi - Battle of Kunduz</Original>
@@ -1162,7 +1174,7 @@
         <German>Antistasi - Battle of Kunduz</German>
         <Czech>Antistasi - Bitva o Kunduz</Czech>
         <Korean>Antistasi - Kunduz 전투</Korean>
-        <Chinesesimp>Antistasi - Kunduz之战</Chinesesimp>
+        <Chinesesimp>Antistasi - Kunduz 之战</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_kunduz_description_text">
         <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -1172,7 +1184,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_kunduz_blurb_text">
         <Original>Sand and blood</Original>
@@ -1192,6 +1204,7 @@
         <Czech>Antistasi Tembelan</Czech>
         <Korean>Antistasi Tembelan</Korean>
         <Russian>Antistasi Тембелан</Russian>
+        <Chinesesimp>Antistasi Tembelan</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_tembelan_mapname_text">
         <Original>Antistasi - Liberation of Tembelan Island</Original>
@@ -1200,7 +1213,7 @@
         <German>Antistasi - Liberation of Tembelan Island</German>
         <Czech>Antistasi - Osvobození Ostrova Tembelan</Czech>
         <Korean>Antistasi - Tembelan 섬 해방</Korean>
-        <Chinesesimp>Antistasi - 解放Tembelan</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Tembelan</Chinesesimp>
         <Russian>Antistasi - Освобождение острова Тембелан</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_tembelan_description_text">
@@ -1211,7 +1224,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_tembelan_blurb_text">
         <Original>Beauty and destruction</Original>
@@ -1220,7 +1233,7 @@
         <German>Schönheit und Zerstörung</German>
         <Czech>Krása a destrukce</Czech>
         <Korean>아름다움과 파괴</Korean>
-        <Chinesesimp>美丽与破坏</Chinesesimp>
+        <Chinesesimp>美丽与毁灭</Chinesesimp>
         <Russian>Красота и разрушение</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_anizay_mapname_short_text">
@@ -1231,6 +1244,7 @@
         <Czech>Antistasi Anizay</Czech>
         <Korean>Antistasi Anizay</Korean>
         <Russian>Antistasi Анизай</Russian>
+        <Chinesesimp>Antistasi Anizay</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_anizay_mapname_text">
         <Original>Antistasi - Liberation of Anizay</Original>
@@ -1238,7 +1252,7 @@
         <German>Antistasi - Liberation of Anizay</German>
         <Czech>Antistasi - Osvobození Anizay</Czech>
         <Korean>Antistasi - Anizay 해방</Korean>
-        <Chinesesimp>Antistasi - 解放Anizay</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Anizay</Chinesesimp>
         <Russian>Antistasi - Освобождение Анизая</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_anizay_description_text">
@@ -1249,7 +1263,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vůdcem odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_anizay_blurb_text">
         <Original>Fought on the camel's back</Original>
@@ -1266,13 +1280,14 @@
         <Chinesesimp>越南战争 Antistasi 游击模式 Cam Lao Nam</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_mapname_text">
-        <Original>Antistasi 游击模式 - 解放柬埔寨, 老挝和越南</Original>
-        <English>Antistasi 游击模式 - 解放柬埔寨, 老挝和越南</English>
-        <Chinesesimp>Antistasi 游击模式 - 解放柬埔寨, 老挝和越南</Chinesesimp>
+        <Original>Antistasi 游击模式 - 解放柬老南</Original>
+        <English>Antistasi 游击模式 - 解放柬老南</English>
+        <Chinesesimp>Antistasi 游击模式 - 解放柬老南</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_description_text">
         <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
         <English>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</English>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_blurb_text">
         <Original>[越战服]老金的便宜货 QQ群: 274455383</Original>
@@ -1313,10 +1328,12 @@
       <Key ID="STR_antistasi_mission_info_sahrani_mapname_short_text">
         <Original>Antistasi Sahrani</Original>
         <English>Antistasi Sahrani</English>
+        <Chinesesimp>Antistasi Sahrani</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_sahrani_mapname_text">
         <Original>Antistasi - Liberation of Sahrani</Original>
         <English>Antistasi - Liberation of Sahrani</English>
+        <Chinesesimp>Antistasi - 解放 Sahrani</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_sahrani_description_text">
 		  <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -1326,21 +1343,23 @@
           <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
           <Czech>Buďte vedoucím odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
           <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-          <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+          <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
         </Key>
       <Key ID="STR_antistasi_mission_info_sahrani_blurb_text">
         <Original>The reunification of Sahrani</Original>
         <English>The reunification of Sahrani</English>
+        <Chinesesimp>Sahrani 的统一</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_takistan_mapname_short_text">
         <Original>Antistasi Takistan</Original>
         <English>Antistasi Takistan</English>
         <Russian>Antistasi Такистан</Russian>
+        <Chinesesimp>Antistasi Takistan</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_takistan_mapname_text">
         <Original>Antistasi - Liberation of Takistan</Original>
         <English>Antistasi - Liberation of Takistan</English>
-        <Chinesesimp>Antistasi - 解放Takistan</Chinesesimp>
+        <Chinesesimp>Antistasi - 解放 Takistan</Chinesesimp>
         <Russian>Освобождение Такистана</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_takistan_description_text">
@@ -1351,11 +1370,12 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vedoucím odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 18 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-        <Chinesesimp>作为抵抗运动的领袖,与优势敌人使用游击战术灵活作战,有18个左右的支线任务.</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约18种支线任务，任何时间，任何地点，任何情况，运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_takistan_blurb_text">
         <Original>In the Heat of the Takistani Desert</Original>
         <English>In the Heat of the Takistani Desert</English>
+        <Chinesesimp>在 Takistan 沙漠的热浪中</Chinesesimp>
       </Key>
     </Container>
     <Container name="journal_entries">
@@ -1365,7 +1385,7 @@
         <French>Les débuts</French>
         <German>Der Anfang</German>
         <Czech>Začátek</Czech>
-        <Chinesesimp>早期开始</Chinesesimp>
+        <Chinesesimp>前期</Chinesesimp>
         <Korean>초기 시작</Korean>
         <Russian>В самом начале</Russian>
       </Key>
@@ -1375,7 +1395,7 @@
         <English>Don't expect to be able to conquer anything in the early stages. First you have to gather enough resources (HR and Money) in order to be able to conquer and hold your positions. This mission tries to simulate real life guerilla situations. If in doubt, ask yourself what would you do in real life. Don't expect to win every time. Hit and Run is the basic manoeuvre here. Earn every resource, weapon and ammunition to gather enough assets in order to be a real challenge for the enemy. In the meantime, disturb its operations and gain support from the population.</English>
         <German>Erwarte nicht, dass du in der Lage sein wirst alles bereits zu Beginn erobern zu können. Zuallererst musst du genügend Ressourcen (Mannstärke und Geld) auftreiben müssen, um in der Lage zu sein etwas zu erobern und auch halten zu können. Diese Mission versucht reale Guerilla Situationen und Vorgehen zu simulieren. Wenn du unschlüssig bist, dann frage dich selbst, was du im echten Leben tun würdest. Erwarte nicht, dass du jedes Mal gewinnst. "Hit and Run" ist hier das übliche Vorgehen. Erbeute Ressourcen, Waffen und Munition, um letztlich genug Ausrüstung zusammen zu haben, damit du zu einer echten Bedrohung für den Feind werden kannst. Währenddessen störe die Bestrebungen des Feindes und verdiene dir die Unterstützung der Zivilbevölkerung.</German>
         <Czech>Neočekávejte, že v časných stádiích dokážete něco dobýt. Nejprve musíte shromáždit dostatek zdrojů (HR a peníze), abyste mohli dobýt a udržet své pozice. Tato mise se pokouší simulovat partyzánské situace v reálném životě. Pokud máte pochybnosti, zeptejte se sami sebe, co byste udělali v reálném životě. Nečekejte, že vyhrajete pokaždé. Udeřit a Utéct je zde základní manévr. Získejte všechny zdroje, zbraně a střelivo, abyste shromáždili dostatek prostředků, aby pro nepřítele představovali skutečnou výzvu. Mezitím narušit její činnost a získat podporu od obyvatelstva.</Czech>
-        <Chinesesimp>不要指望在早期就能征服一切.首先你必须收集足够的资源 (人力资源和金钱) 为了能够征服并保持你的位置. 这个任务试图模拟现实生活中游击队的情况.如果有疑问,问问自己,在现实生活中你会做什么.别指望每次都赢.打和跑是这里的基本动作.获取所有资源、武器和弹药,以收集足够的资产,从而成为对敌人的真正挑战.同时,扰乱它的运作,获得民众的支持.</Chinesesimp>
+        <Chinesesimp>不要指望在前期就征服一切。首先，你必须获取足够的资源(人力和资金)，才能攻占并守住你的领地。本任务试图模拟真实世界中的游击态势。如果你有疑问，问问自己在现实生活中会怎么做。不要期待百战百胜。打完就跑是这里的基本策略。赚取各种资源、武器和弹药，来积攒真正足以对抗敌人的资产。与此同时，扰乱敌军的行动，并获得民众的支持。</Chinesesimp>
         <Korean>초기에 점령할 수 있을 거라고 기대하지 마시오. 충분한 자원(인력과 자금)을 모아야 당신의 힘이 유지됩니다. 이 미션은 게릴라 상황을 재현합니다. 의심이 들면, 당신이 실제라면 무엇을 할지 스스로 물어보시오. 모든 걸 이길 것 이라고 기대하지 마시오. 힛 앤 런이 기본 전술입니다. 적을 위협하기 위해 모든 자원, 무기, 탄약을 모으십시오. 그리고 적을 방해하고 현지에서 지지를 얻으십시오.</Korean>
         <Russian>Не ожидайте, что сможете что-либо победить на ранних стадиях. Сначала вам нужно собрать достаточно ресурсов (HR и Деньги), чтобы иметь возможность завоевать и удерживать свои позиции. Эта миссия пытается смоделировать реальные партизанские ситуации. Если сомневаетесь, спросите себя, что бы вы делали в реальной жизни. Не надейтесь на победу каждый раз. Hit and Run - основной маневр здесь. Зарабатывайте все ресурсы, оружие и боеприпасы, чтобы собрать достаточно активов, чтобы стать настоящим испытанием для врага. А пока помешайте его работе и заручитесь поддержкой населения.</Russian>
       </Key>
@@ -1385,7 +1405,7 @@
         <French>Agressivité IA</French>
         <German>Aggression</German>
         <Czech>Agresivita</Czech>
-        <Chinesesimp>声望效应</Chinesesimp>
+        <Chinesesimp>侵略性</Chinesesimp>
         <Korean>어그로 수치</Korean>
         <Russian>Агрессия</Russian>
       </Key>
@@ -1395,7 +1415,7 @@
         <French>Gardez un œil dessus. S'il est trop haut, vous devrez faire face à plus d'attaques avec de meilleures troupes.</French>
         <German>Behalte dies im Auge. Wenn sie zu hoch wird, wirst du dich deutlich mehr Angriffen und besseren Einheiten entgegenstellen müssen.</German>
         <Czech>Dávejte pozor na to. Pokud je příliš vysoká, budete muset čelit více útokům s lepšími jednotkami.</Czech>
-        <Chinesesimp>注意这些.如果它太高,你将不得不面对更多的攻击与更高级的部队.</Chinesesimp>
+        <Chinesesimp>密切关注侵略性。如果侵略性太高，你将不得不面对更多、更强的进攻部队。</Chinesesimp>
         <Korean>경계하십시오. 수치가 너무 높다면, 적군이 더 자주, 강하게 공격할것입니다.</Korean>
         <Russian>Следите за уровнем агрессии. Если он слишком высок, вам придется встретить больше атак с лучшими войсками.</Russian>
       </Key>
@@ -1405,7 +1425,7 @@
         <French>Stratégie</French>
         <German>Strategie</German>
         <Czech>Strategie</Czech>
-        <Chinesesimp>战争策略</Chinesesimp>
+        <Chinesesimp>战略</Chinesesimp>
         <Korean>전략</Korean>
         <Russian>Стратегия</Russian>
       </Key>
@@ -1415,7 +1435,7 @@
         <French>Une fois que vous avez une bonne quantité de ressources, concentrez-vous sur les communications ennemies. Si vous les perturbés suffisament, vous n'aurez pas à faire face à de grandes contre-attaques.</French>
         <German>Sobald du eine solide Menge and Ressourcen zusammen hast, konzentriere dich auf ihre Kommunikation. Störst du sie ausreichend, wirst du dich keinen größeren Gegenangriffen mehr stellen müssen.</German>
         <Czech>Jakmile budete mít pěkné množství zdrojů, zaměřte se na nepřátelskou komunikaci. Pokud je dostatečně vyrušíte, nebudete muset čelit velkým protiútokům.</Czech>
-        <Chinesesimp>一旦你有足够的资源,集中精力在敌人的通讯上.如果你足够打扰他们,你就不必面对大的反击.</Chinesesimp>
+        <Chinesesimp>一旦你有了大量的资源，就把重点放在敌军通讯上。如果你足以干扰他们，你就不必面对大规模反击。</Chinesesimp>
         <Korean>충분한 자원을 모았다면 적의 통신시설을 공략하십시오. 적의 대규모 반격을 늦출수 있습니다.</Korean>
         <Russian>Как только у вас будет достаточно ресурсов, сосредоточьтесь на коммуникациях с противником. Если вы их достаточно потревожите, вам не придется сталкиваться с большими контратаками.</Russian>
       </Key>
@@ -1425,7 +1445,7 @@
         <French>Conquérir et tenir</French>
         <German>Erobern und halten</German>
         <Czech>Dobyjte a udržte</Czech>
-        <Chinesesimp>占领控制</Chinesesimp>
+        <Chinesesimp>攻占和驻守</Chinesesimp>
         <Korean>점령과 유지</Korean>
         <Russian>Завоевать и удержать</Russian>
       </Key>
@@ -1435,7 +1455,7 @@
         <French>Ne vous attendez pas à une contre-attaque légère lorsque vous conquérez des zones stratégiques telles que des ressources ou des aéroports. L'ennemi enverra tout ce qu'il peut, s'il est disponible. Si vous conquérez une zone et vous attendez à une contre-attaque, la fuite est une bonne option.</French>
         <German>Erwarte keine einfachen Gegenangriffe, wenn du eine strategische Zone, wie Ressourcen oder Flugplätze, einnimmst. Der Feind wird dir alles was er zur Verfügung hat entgegenwerfen. Eroberst du eine Zone und erwartest einen Gegenangriff ist Rückzug immer eine gute Option.</German>
         <Czech>Neočekávejte lehký protiútok, když dobýváte strategické zóny, jako jsou zdroje nebo letiště. Nepřítel pošle vše, co může, pokud bude k dispozici. Pokud dobýváte zónu a očekáváte protiútok, prchání je dobrá volba.</Czech>
-        <Chinesesimp>当你攻克资源或机场等战略区域时,不要指望会有轻微的反击.敌人会尽其所能,如果有的话.如果你征服了一个区域并期待反击,逃跑是个不错的选择.</Chinesesimp>
+        <Chinesesimp>当你攻占了资源点或者机场等战略要地时，不要指望会只有轻微的反击。敌军会竭尽所能地派兵。如果你攻占了一个区域并遭到反击，逃走是一个不错的选择。</Chinesesimp>
         <Korean>전략 요충지 또는 공항을 점령할 때 적들이 쉽게 내줄 거라 기대하지 마시오. 적들은 가능한 선에서 보낼 수 있는 모든 것을 보낼 것입니다. 만약 점령 후 반격이 예상된다면, 도망가는 것도 좋은 선택입니다.</Korean>
         <Russian>Не ожидайте легкой контратаки при захвате стратегических зон, таких как ресурсы или аэропорты. Враг пошлет все, что сможет, если возможно. Если вы захватываете зону и ожидаете контратаки, бегство - хороший вариант.</Russian>
       </Key>
@@ -1455,7 +1475,7 @@
         <French>Avoir une bonne quantité de ressources pour des opérations plus importantes est obligatoire, en particulier pour les armes et les munitions. Dans les étapes initiales, votre principale source de ressources est l'accomplissement de missions secondaires.</French>
         <German>Ein solides Polster an Ressourcen ist unverzichtbar für größere Operationen. Vor allem Waffen und Munition. In der Anfangsphase ist deine Hauptquelle für Ressourcen das Abschließen von Sekundärmissionen.</German>
         <Czech>Je nutné mít dostatečné množství zdrojů pro větší operace, zejména zbraně a munici. V počátečních fázích je vaším hlavním zdrojem plnění vedlejších misí.</Czech>
-        <Chinesesimp>拥有大量的资源用于更大规模的行动,尤其是武器和弹药.在最初阶段,你的主要资源来源是完成支线任务.</Chinesesimp>
+        <Chinesesimp>为了更大规模的行动，拥有大量的资源是必要的，尤其是武器和弹药。在初始阶段，你的主要资源来源是完成支线任务。</Chinesesimp>
         <Korean>더 큰 작전을 하기위해선 자원, 특히 총과 탄약을 많이 모아야합니다. 초반에는 사이드 임무가 자원의 주요 공급원이 될 것입니다.</Korean>
         <Russian>Обязательно наличие большого количества ресурсов для крупных операций, особенно оружия и боеприпасов. На начальных этапах ваш основной источник ресурсов - выполнение побочных миссий.</Russian>
       </Key>
@@ -1475,7 +1495,7 @@
         <French>Trouvez un bon endroit pour commencer la mission. Votre expérience est très différente d'un point de départ à un autre. Étudiez bien les balises et les routes environnantes. Si vous commencez près d'une route entre des zones ennemies, une patrouille peut apparaître et tuer Petros.</French>
         <German>Wähle einen vielversprechenden Ort, um deine Mission zu beginnen. Die Spielerfahrung ist je nach Startpunkt sehr unterschiedlich. Betrachte genau die umgebenen Zonen und die dazwischenliegenden Straßenverbindungen. Startest du an einer Straße zwischen zwei feindlichen Zonen, könnte eine Patrouille auf das Lager stoßen und Maru/Petros töten.</German>
         <Czech>Najděte dobré místo pro zahájení mise. Vaše zkušenost je velmi odlišná od jednoho startovního bodu k druhému. Dobře si prostudujte okolní značky a silnice. Pokud začnete poblíž silnice mezi nepřátelskými zónami, může se objevit hlídka a zabijou Petrose.</Czech>
-        <Chinesesimp>找个好地方开始任务.你的经历从一个起点到另一个起点大不相同.仔细研究周围的标记和它们之间的道路.如果你在敌区之间的道路附近开始巡逻,巡逻队可能会出现并杀死指挥官.</Chinesesimp>
+        <Chinesesimp>找个好地方开始任务。起点不同，你的体验也会大不相同。仔细研究周围的标志物和它们之间的道路。如果你在敌占区之间的道路附近开始任务，敌军巡逻队很有可能出现并杀掉Pertos。</Chinesesimp>
         <Korean>임무 시작 전 좋은 장소를 찾으십시오. 시작 지역마다 매우 다른 경험을 할것입니다. 주변 마커 표시와 지형지물을 잘 살펴보십시오. 적진과 가까운 도로에서 시작한다면 순찰 병력이 페트로스를 죽일 것입니다.</Korean>
         <Russian>Найдите хорошее место для начала миссии. Ваш опыт сильно отличается от одной стартовой точки к другой. Хорошо изучите окружающие указатели и дороги между ними. Если вы начнете возле дороги между вражескими зонами, может появиться патруль и убить Петроса.</Russian>
       </Key>
@@ -1485,7 +1505,7 @@
         <French>Sous-couverture</French>
         <German>Verdecktes Vorgehen</German>
         <Czech>V Utajení</Czech>
-        <Chinesesimp>开启卧底</Chinesesimp>
+        <Chinesesimp>伪装</Chinesesimp>
         <Korean>잠복</Korean>
       </Key>
       <Key ID="STR_antistasi_journal_entry_text_tutorial_7">
@@ -1494,7 +1514,7 @@
         <French>Dans les premiers stades, en particulier lors de l'accomplissement de certaines missions, être sous-couverture peut être extrêmement utile. Tout comme pour les vrais combattants de la résistance, votre capacité à disparaître est quelque chose que l'ennemi ne peut pas contrer. Voir la section Fonctionnalités pour une explication approfondie du mode Sous-couverture.</French>
         <German>In der Anfangsphase, vor allem bei der Erfülling bestimmter Missionen, kann ein verdecktes Vorgehen sehr hilfreich sein. Genau wie für reale Widerstandskämpfer ist deine Fähigkeit zu verschwinden etwas, dem der Feind nahezu nichts entgegenbringen kann. Weitere Informationen zum verdeckten Vorgehen findest du in dem Features Bereich.</German>
         <Czech>V počáteční fázi, zejména při plnění některých misí, může být skrytý přístup velmi užitečný. Stejně jako skuteční bojovníci odporu, vaše schopnost zmizet je něco, s čím nepřítel nemůže dělat téměř nic. Další informace o skrytém postupu naleznete v části Funkce.</Czech>
-        <Chinesesimp>在早期阶段,特别是在完成某些任务时,卧底是非常有帮助的.就像真正的抵抗战士一样,你消失的能力是敌人无法抵抗的.有关卧底模式的详细说明,请参见功能部分.</Chinesesimp>
+        <Chinesesimp>在早期阶段，特别是执行某些特定任务时，伪装模式会带来极大帮助。就像真正的反抗军战士一样，你的消失是敌军无法预料的。有关伪装模式的详细说明，请参阅功能部分。</Chinesesimp>
         <Korean>초기에 특정 임무를 수행할때, 잠복하는것은 매우 도움이 됩니다. 진짜 게릴라답게 감추십시오. 그러면 적이 대응하지 못 할것입니다. 잠복모드에 대한 자세할 설명은 기능섹션을 참고하십시오.</Korean>
         <Russian>На ранних стадиях, особенно при выполнении определенных миссий, работа под прикрытием может быть чрезвычайно полезной. Как и в случае с настоящими бойцами сопротивления, ваша способность исчезнуть - это то, чему противник не может противостоять. См. Раздел «Возможности» для более подробного описания режима под прикрытием.</Russian>
       </Key>
@@ -1503,7 +1523,7 @@
         <French>Général</French>
         <German>Allgemein</German>
         <Czech>Generál</Czech>
-        <Chinesesimp>一般</Chinesesimp>
+        <Chinesesimp>指挥官</Chinesesimp>
         <Korean>장군</Korean>
         <Russian>Командующий</Russian>
       </Key>
@@ -1512,7 +1532,7 @@
         <French>Avoir un commandant est nécessaire car il est le commandant de la faction qui attaque les forces terrestres. De nombreuses options ne sont disponibles que pour le commandant et, selon vos paramètres, si vous jouez en MP, le joueur le plus expérimenté occupera généralement cette position.</French>
         <German>Einen Kommandanten zu haben ist unumgänglich, da er die Bodentruppen der Fraktion befehligt. Viele Optionen und Möglichkeiten stehen nur dem Kommandanten zur Verfügung. Je nach deinen gewählten Einstellungen, wenn du im Multiplayer spielst, wird der Spieler mit der meisten Erfahrung den Platz des Kommandanten einnehmen.</German>
         <Czech>Mít velitele je nezbytné, protože je velitelem frakce útočící na pozemní síly. Mnoho možností je k dispozici pouze pro velitele a v závislosti na vašich nastaveních, pokud hrajete MP, obvykle tuto pozici zaujme nejzkušenější hráč.</Czech>
-        <Chinesesimp>有一个指挥官是必要的,因为他是攻击地面部队的派别的指挥官.许多选项只对指挥官可用,根据你的设置,如果你玩MP,经验最丰富的玩家通常会占据这个位置.</Chinesesimp>
+        <Chinesesimp>指挥官的存在是必要的，因为他能够指挥本阵营的地面攻击部队。许多选项仅限指挥官使用，并且根据你的设置，如果你玩的是多人游戏，经验最丰富的玩家通常会占据这个位置。</Chinesesimp>
         <Korean>지휘관은 지상병력에게 명령을 내릴수 있기때문에 지휘관을 뽑는것은 중요합니다. 지휘관은 많은 설정이 가능하고, 보통 멀티플레이에선 보통 가장 경험이 많은 사람이 맡습니다.</Korean>
         <Russian>Наличие командира необходимо, потому что он является командующим Фракцией, атакующей наземные силы. Многие параметры доступны только командиру, и, в зависимости от ваших настроек, если вы играете в MP, наиболее опытный игрок обычно занимает эту позицию.</Russian>
       </Key>
@@ -1530,7 +1550,7 @@
         <French>Le commandant est responsable de l'affectation d'unités comme garnisons dans les zones conquises. Utilisez l'option de gestion de garnison au drapeau du QG afin d'ajouter ou de supprimer des troupes de garnison dans chaque zone. Consultez l'écran Info carte pour un aperçu rapide du nombre de soldats affectés à chaque zone.</French>
         <German>Der Kommandant ist verantwortlich den Garnisonen der eroberten Bereiche Einheiten zuzuweisen. Mit der Garnisonsverwaltung am Flaggenmast im HQ kannst du Einheiten einer Garnison hinzufügen oder entfernen. Über den Kartenbildschirm kannst du dir einen schnellen Überblick über die Größe der jeweiligen Garnisonen verschaffen.</German>
         <Czech>Velitel je zodpovědný za přidělování jednotek jako posádky v dobývaných oblastech. Chcete-li přidat nebo odebrat posádkové jednotky v každé zóně, použijte možnost Správa posádky v vlajce HQ. Na obrazovce Informace o mapě získáte rychlý přehled o tom, kolik vojáků je přiřazeno každé zóně.</Czech>
-        <Chinesesimp>司令官负责在被征服的地区派遣部队作为驻军.使用总部旗中的驻军管理选项,在每个区域添加或移除驻军.查看地图信息屏幕,快速查看每个区域分配了多少士兵.</Chinesesimp>
+        <Chinesesimp>指挥官负责向占领区派遣驻军单位。使用HQ旗帜中的驻军管理选项，开向各个区域增派或删除驻军。打开地图信息界面，即可快速了解每个区域分配的士兵数量。</Chinesesimp>
         <Korean>지휘관은 점령한 주둔지 안에서 병력을 결성할 수 있습니다. 주둔지 병력을 뽑거나 줄이려면 HQ 깃발의 주둔지 설정을 사용하십시오. 빠르게 각 구역의 병력들을 보려면 지도를 확인하십시오.</Korean>
         <Russian>Командующий отвечает за назначение подразделений в качестве гарнизонов на завоеванных территориях. Используйте опцию «Управление гарнизоном» на флаге штаба, чтобы добавлять или удалять войска гарнизона в каждой зоне. Проверьте экран «Информация о карте», чтобы получить быстрый обзор того, сколько солдат назначено на каждую зону.</Russian>
       </Key>
@@ -1548,7 +1568,7 @@
         <French>Pour un certain prix, vous pouvez améliorer la formation de la Faction afin que les futures recrues aient de meilleures compétences.</French>
         <German>Du kannst, für einen gewissen Preis, die Trainingsmethoden deiner Fraktion verbessern. Dadurch werden neue Rekruten bessere Fähigkeiten haben.</German>
         <Czech>Za cenu můžete vylepšit frakční školení tak, aby budoucí rekruti měli lepší dovednosti.</Czech>
-        <Chinesesimp>您可以支付一定的费用来升级阵营的培训，以便将来的新兵拥有更好的技能。</Chinesesimp>
+        <Chinesesimp>支付一定费用，你就可以提升阵营的受训程度，从而使以后招募的士兵具备更强的技能水平。</Chinesesimp>
         <Korean>자금으로 팩션을 훈련시켜서 나중에 더 좋은 병력을 모집할 수 있습니다.</Korean>
         <Russian>За определенную плату вы можете улучшить ИИ фракции, чтобы у будущих рекрутов были лучшие навыки.</Russian>
       </Key>
@@ -1566,7 +1586,7 @@
         <French>Demandez à Petros tout type de mission que vous souhaitez. La disponibilité de la mission dépend du positionnement du QG, des tâches actuellement attribuées et de la propriété des zones environnantes.</French>
         <German>Befrage Maru/Petros nach einer gewünschten Mission. Die Verfügbarkeit der Missionen ist abhängig von der Position des HQs, der momentan zugewiesenen Aufgaben und der Zugehörigkeit der umgebenen Bereiche.</German>
         <Czech>Zeptejte se Petrose na jakýkoli typ mise, kterou chcete. Dostupnost mise závisí na umístění velitelství, aktuálně přidělených úkolech a vlastnictví okolních oblastí.</Czech>
-        <Chinesesimp>向指挥官申请任何你想要的任务当前分配的任务和周边地区的任务取决于总部的位置</Chinesesimp>
+        <Chinesesimp>向Petros申请任何你想要的任务。任务的可用性取决于HQ位置、当前已分配的任务和周围地区的所有权。</Chinesesimp>
         <Korean>원하는 타입의 사이드 미션을 페트로에게 문의하십시오. HQ의 위치, 현재 할당된 임무, 주변지역의 소유에 따라 결정됩니다.</Korean>
         <Russian>Спрашивайте у Петроса любую миссию, какую захотите. Доступность миссии зависит от расположения штаб-квартиры, текущих назначенных задач и владения прилегающими территориями.</Russian>
       </Key>
@@ -1575,7 +1595,7 @@
         <French>Déplacer le QG</French>
         <German>HQ verlegen</German>
         <Czech>Přesuňte velitelství</Czech>
-        <Chinesesimp>移动指挥部</Chinesesimp>
+        <Chinesesimp>移动HQ</Chinesesimp>
         <Korean>HQ 이동하기</Korean>
         <Russian>Переместить штаб</Russian>
       </Key>
@@ -1584,7 +1604,7 @@
         <French>Le commandant peut sélectionner cette option sur le drapeau du QG afin de déplacer le QG à un autre endroit. Cela vous permettra de déplacer votre QG vers un endroit plus sûr ou de vous rapprocher des lignes de front. Plus votre QG est proche de l'ennemi, plus vous aurez de missions secondaires possibles. Attention! Gardez Petros en sécurité ou vous perdrez la partie!</French>
         <German>Der Kommandant kann über eine Option am Flaggenmast das HQ zu einem anderen Ort verlegen lassen. Dies gibt dir die Möglichkeit dein HQ zu einer sichereren Position oder näher an die Frontlinie zu verlegen. Umso näher dein HQ am feindlichen Gebiet ist, umso größer ist die Anzahl an möglichen Sekundärmissionen. Vorsicht! Beschütze Petros oder du verlierst das Spiel!</German>
         <Czech>Velitel může vybrat tuto možnost na velitelské vlajce, aby přesunul umístění velitelství na jiné místo. To vám umožní přesunout své velitelství na bezpečnější místo nebo se přiblížit ke frontě. Čím blíže je vaše velitelství k nepřátelům, tím větší je počet možných vedlejších misí, které budete mít k dispozici. Pamatujte si! Zachovejte Petrose v bezpečí, jinak hru prohrajete!</Czech>
-        <Chinesesimp>指挥官可在总部旗帜上选择此选项,以便将总部移动到另一地点.这将允许你移动你的总部到一个更安全的地点或更靠近前线.你的总部离敌人越近,你可以执行的边上任务就越多.记得！保护Petros的安全,否则你会输掉比赛的！</Chinesesimp>
+        <Chinesesimp>指挥官可在HQ旗帜上选择此选项，以便将HQ移动到其他地点。你可以将HQ移动到更安全或者更靠近前线的地方。你的HQ离敌人越近，你可以执行的支线任务就越多。记住！保护Petros的安全，否则游戏将会失败！</Chinesesimp>
         <Korean>지휘관은 HQ를 다른 장소로 이동하기위해 HQ 깃발에서 HQ 이동하기를 사용할 수 있습니다. HQ를 더 안전한 곳으로 혹은 최전방으로 이동시킬 수 있습니다. 만약 HQ가 적과 가깝다면 더 많은 서브미션이 가능합니다. 기억하십시오! 페트로스를 지키지 않으면 게임에서 패배합니다.</Korean>
         <Russian>Командующий может выбрать эту опцию у Петроса, чтобы переместить расположение штаба в другое место. Это позволит вам переместить свой штаб в более безопасное место или приблизиться к линии фронта. Чем ближе ваш штаб к противнику, тем большее количество возможных побочных миссий у вас будет. Помнить! Держите Петроса в безопасности, или вы проиграете игру</Russian>
       </Key>
@@ -1602,7 +1622,7 @@
         <French>Utilisez le menu d'action de votre feu de camp au QG pour vous reposer pendant 8 heures.</French>
         <German>Mit dieser Aktion kannst du dich am Lagerfeuer des HQs für 8 Stunden ausruhen.</German>
         <Czech>Použijte možnost na vašem táborovém ohni, abyste si mohli odpočnou na 8 hodin</Czech>
-        <Chinesesimp>使用总部营火上的行动菜单休息8小时.</Chinesesimp>
+        <Chinesesimp>使用HQ营火上的动作菜单来休息8小时。</Chinesesimp>
         <Korean>HQ 캠프 파이어를 사용하면 8시간을 스킵할 수 있습니다.</Korean>
         <Russian>Используйте меню действий у палатки, чтобы отдохнуть в течение 8 часов.</Russian>
       </Key>
@@ -1611,7 +1631,7 @@
         <French>Bombardement</French>
         <German>Bombardierung</German>
         <Czech>Bombardování</Czech>
-        <Chinesesimp>空中打击</Chinesesimp>
+        <Chinesesimp>轰炸</Chinesesimp>
         <Korean>폭격</Korean>
         <Russian>Авиаудар</Russian>
       </Key>
@@ -1620,7 +1640,7 @@
         <French>Utilisez vos points de frappe aérienne pour effectuer un bombardement du type spécifié.</French>
         <German>Benutze deine Luftschlagpunkte, um eine Bombardierung durchführen zu lassen.</German>
         <Czech>Použijte své body leteckého úderu k provedení bombardování.</Czech>
-        <Chinesesimp>使用空袭点执行指定类型的轰炸</Chinesesimp>
+        <Chinesesimp>消耗空袭点数来执行指定类型的轰炸。</Chinesesimp>
         <Korean>공습 포인트를 사용하면 지정된 유형의 폭격을 합니다.</Korean>
         <Russian>Используйте свои очки авиаудара, чтобы выполнить бомбардировку указанного типа.</Russian>
       </Key>
@@ -1629,7 +1649,7 @@
         <French>Artillerie</French>
         <German>Artillerie</German>
         <Czech>Dělostřelectvo</Czech>
-        <Chinesesimp>炮击支援</Chinesesimp>
+        <Chinesesimp>炮击</Chinesesimp>
         <Korean>포병</Korean>
         <Russian>Артиллерия</Russian>
       </Key>
@@ -1746,7 +1766,7 @@
         <French>Utilisez cette option pour récupérer de l'argent de la cagnotte de la Faction vers votre compte personnel. Veuillez noter que cela aura un impact sur votre score et vos chances de promotion futures. Les commandants corrompus peuvent perdre leur commandement.</French>
         <German>Benutze diese Option, um Gelder aus der Fraktionskasse zu entnehmen. Beachte dabei, dass dies Auswirkungen auf deine Reputation und zukünftige Beförderungschancen hat. Korrupte Kommandanten könnten plötzlich ihr Kommando verlieren.</German>
         <Czech>Tuto možnost použijte, chcete-li peníze z frakčního fondu vzít na svůj osobní účet. Upozorňujeme, že to bude mít vliv na vaše skóre a na budoucí šanci k povýšení. Zkorumpovaní velitelé se mohou ocitnout v té situaci, že ztratí velení.</Czech>
-        <Chinesesimp>使用此选项可以从阵营资金池中获取金钱到您的个人帐户.请注意,这将影响你的分数和未来的晋升机会.腐败的指挥官可能会发现自己失去了指挥权.</Chinesesimp>
+        <Chinesesimp>使用此选项可以从阵营资金池中获取资金到您的个人帐户.请注意,这将影响你的分数和未来的晋升机会.腐败的指挥官可能会发现自己失去了指挥权.</Chinesesimp>
         <Korean>팩션 자금 인출하기를 사용하면 개인 계좌로 들어갑니다. 인출하면 점수와 미래의 진급에 영향을 줍니다. 부패한 지휘관들은 끌려 내려올 것입니다.</Korean>
         <Russian>Используйте эту опцию, чтобы переводить деньги из фонда фракции на свой личный счет. Учтите, что это повлияет на ваш счет и шансы на повышение в будущем. Коррумпированные командиры могут потерять командование</Russian>
       </Key>
@@ -1899,7 +1919,7 @@
         <French>Sous-couverture</French>
         <German>Verdecktes Vorgehen</German>
         <Czech>V utajení</Czech>
-        <Chinesesimp>卧底</Chinesesimp>
+        <Chinesesimp>伪装</Chinesesimp>
         <Korean>잠복</Korean>
         <Russian>Скрытность</Russian>
       </Key>
@@ -1908,7 +1928,7 @@
         <French>Cliquez sur ce bouton pour aller sous-couverture. Si vous remplissez les conditions, l'ennemi ne vous attaquera pas à vue. À pied, pour aller sous-couverture, vous ne devez avoir ni armes ni équipement militaire visible.&lt;br/&gt;Vous perdrez le statut d'infiltration lorsque vous changerez de chargement, serez repéré par des chiens de garde ennemis, planterez des mines et certains civils pourront également signaler à l'ennemi. Si vous êtes découvert, vous ne pourrez plus vous infiltrer à pied pendant 30 minutes. Vous pouvez également vous infiltrer en montant dans n'importe quel véhicule civil. Vous perdrez le statut d'infiltration en tirant avec n'importe quelle arme ou en étant repéré loin d'une route. Si vous êtes découvert, vous ne pourrez plus vous infiltrer dans ce véhicule. Se rapprocher des bases aériennes, des avant-postes et des barrages routiers ennemis vous fera également perdre le statut d'infiltration.</French>
         <German>Drücke diese Schaltfläche, um verdeckt zu agieren. Wenn du die Anforderungen hierfür erfüllst, werden Feinde dich nicht mehr bei Kontakt angreifen. Während du zu Fuß unterwegs bist, darfst du keine Waffen oder andere militärische Ausrüstung sichtbar tragen.&lt;br/&gt;Du wirst aufgedeckt, wenn du deine Ausrüstung änderst, von feindlichen Wachhunden enteckt wirst, Minen platzierst oder ein Zivilist dich möglicherweise dem Feind meldet. Einmal aufgedeckt, kannst du für 30 Minuten nicht mehr verdeckt agieren. Eine weitere Möglichkeit diesen Modus zu aktivieren ist die Nutzung eines Zivilfahrzeugs. Hierbei wirst du aufgedeckt, sobald du eine Waffe abfeuerst oder dabei gesehen wirst, wenn du zu weit von einer Straße entfernt bist. Wirst du mit einem Zivilfahrzeug aufgedeckt, ist es dir nicht mehr möglich, dieses Fahrzeug für verdecktes Vorgehen zu nutzen. Näherst du dich einem feindlichen Flugplatz, Außenposten oder einer feindlichen Straßensperre, wirst du ebenso aufgedeckt.</German>
         <Czech>Kliknutím na toto tlačítko přejdete do utajení. Pokud splníte požadavky, nepřítel na vás nezaútočí na první pohled. Abyste mohli jít pěšky v utajení, nesmíte mít žádné zbraně nebo vojenské vybavení viditelné.&lt;br/&gt;Ztratíte tajný status, když změníte vybavení, dostanete spatřen nepřátelskými hlídacími psy, pokládáním min, též můžete být nahlášen místníma civilistama. Pokud vás objeví, nebudete moci jít v utajení znovu  po dobu 30 minut. Můžete také jít v utajení tím, že se dostane do jakéhokoli civilního vozidla. Ztratíte tajný status tím, že vystřelíte jakoukoliv zbraň nebo budete spatřeni daleko od silnice. Pokud vás odhalí, nebudete moci znovu v tom vozidle. Když se přiblížíte k nepřátelským leteckým základnám, základnám a zátarasům, ztratíte také status v utajení.</Czech>
-        <Chinesesimp>如果你达到了要求,进入卧底状态敌人就不会攻击你.步行时您必须没有可见的武器或军事装备。当您换装时,您将失去卧底身份,被敌人的警犬发现,埋设地雷,还可以由一些平民向敌人报告.如果你被发现,30分钟内你就不能再徒步卧底了.你也可以进入任何民用车辆卧底.你将失去卧底身份,如果你被发现,你就不能再在那辆车上卧底了.接近敌人的空军基地、前哨基地和路障也会使你失去卧底身份.</Chinesesimp>
+        <Chinesesimp>如果你达到了要求,进入伪装状态敌人就不会攻击你.步行时您必须没有可见的武器或军事装备。当您换装时,您将失去伪装身份,被敌人的警犬发现,埋设地雷,还可以由一些平民向敌人报告.如果你被发现,30分钟内你就不能再徒步伪装了.你也可以进入任何民用车辆伪装.你将失去伪装身份,如果你被发现,你就不能再在那辆车上伪装了.接近敌人的空军基地、前哨基地和路障也会使你失去伪装身份.</Chinesesimp>
         <Korean>조건에 맞춰 잠복 버튼을 누르면, 함부로 적에게 공격받지 않습니다. 맨몸으로 잠복하기 위해선 무기 또는 군사장비가 없어야합니다.&lt;br/&gt;장비를 바꾸거나, 경비견에게 들키거나, 지뢰를 심거나 시민이 적에게 신고하면 잠복은 들킵니다. 들킨다면 30분동안은 다시 잠복을 하지 못합니다. 또한 민수차량으로 잠복을 할 수 있습니다. 사격하거나 도로에서 벗어난다면 잠복은 풀립니다. 들키면 그 차량으로는 다시 잠복할 수 없습니다. 적군 공항, 전초기지, 검문소에 가까이 간다면 잠복은 풀립니다.</Korean>
         <Russian>Нажмите на эту кнопку, чтобы перейти под прикрытие. Если вы соответствуете требованиям, противник не нападет на вас сразу же. Пешком, чтобы идти под прикрытием, у вас не должно быть видимого оружия или военной техники. &lt;br/&gt; Вы теряете статус секретного прикрытия, когда меняете расстановку сил, вас заметят вражеские сторожевые собаки, устанавливают мины, а также о вас можно сообщить некоторые мирные жители врагу. Если вас обнаружат, вы не сможете снова ходить под прикрытием в течение 30 минут. Вы также можете под прикрытием сесть в любой гражданский автомобиль. Вы потеряете статус под прикрытием, если выстрелите из любого оружия или вас заметят далеко от дороги. Если вас обнаружат, вы больше не сможете ехать под прикрытием в этом транспортном средстве. Приближение к вражеским авиабазам, заставам и блокпостам также приведет к потере статуса секретного прикрытия.</Russian>
       </Key>
@@ -1944,7 +1964,7 @@
         <French>Ceci est une guerre civile. Les gens ne sont pas conquis si vous ne pouvez pas conquérir leur cœur. En mécanique de jeu, cela signifie que vous ne pouvez pas conquérir de villes. Les citoyens de chaque ville soutiennent l'ennemi ou la faction dans une certaine mesure.&lt;br/&gt;La faction dominante est celle qui possède la ville et bénéficie de leur soutien en termes d'argent et de ressources humaines (RH). Vos actions peuvent réduire le soutien ennemi ou augmenter le vôtre, ou les deux. Tuer des ennemis, accomplir des missions, conquérir des ressources et des centrales électriques affecte le niveau de soutien des citoyens.</French>
         <German>Dies ist ein Bürgerkrieg. Menschen können nicht erobert werden, wenn du nicht ihre Herzen erobern kannst. Bezogen auf die Spielmechanik bedeutet dies, dass du keine Städte erobern kannst. Die Bevölkerung jeder Stadt unterstützt die Fraktionen zu gewissen Graden.&lt;br/&gt;Die beliebteste Fraktion ist dann diejenige, welche die Stadt besitzt und von ihrer Unterstützung (Geld und Mannstärke) profitieren kann. Deine Unternehmungen können dazu führen, dass die Unterstützung für den Feind sinkt oder er für dich steigt. Das Ausschalten von feindlichen Einheiten, die Erledigung von Sekundärmissionen und das Erobern von Ressourcen und Kraftwerken beeinflusst die Unterstützung der Zivilbevölkerung.</German>
         <Czech>Toto je občanská válka. Lidé nejsou dobyti, pokud nemůžete dobýt jejich srdce. V herní mechanice to znamená, že nemůžete dobýt města. Občané každého města podporují nepřítele nebo frakce na určitou částku.&lt;br/&gt;Dominantní frakcí je ten, kdo vlastní město a těží z jejich podpory, pokud jde o peníze a lidské zdroje (HR). Vaše akce mohou snížit nepřátelské podporu nebo zvýšit vaše, nebo obojí. Zabíjení nepřátel, plnění misí, dobývání zdrojů a elektráren ovlivňuje množství podpory občanů.</Czech>
-        <Chinesesimp>这是一场内战.如果你不能征服人们的心,他们就不会被征服.在游戏机制中,这意味着你不能征服城市.每个城镇的公民都在一定程度上支持敌人或派系.&lt;br/&gt;主导派系是指拥有城市并从其支持中获得金钱和人力资源（HR）利益的人.你的行动可能降低敌人的支持或提高你的支持,或两者兼而有之.杀敌、完成任务、征服资源和发电站,都会影响公民的支持.</Chinesesimp>
+        <Chinesesimp>这是一场内战.如果你不能征服人们的心,他们就不会被征服.在游戏机制中,这意味着你不能征服城市.每个城镇的公民都在一定程度上支持敌人或派系.&lt;br/&gt;主导派系是指拥有城市并从其支持中获得资金和人力资源（HR）利益的人.你的行动可能降低敌人的支持或提高你的支持,或两者兼而有之.杀敌、完成任务、征服资源和发电站,都会影响公民的支持.</Chinesesimp>
         <Korean>여긴 내전상황입니다. 시민들의 환심을 사지 않으면 사로잡을 수 없습니다. 즉, 도시를 정복할수 없다는 것을 의미합니다. 각 마을마다 시민들은 적이나 아군을 어느정도 지지합니다.&lt;br/&gt;자금과 인적자원을 지원하는 그들의 지지를 받는 세력이 그 도시를 점령한 세력입니다. 아군의 행동이 적의 자원을 낮추거나 아군의 지지를 높히거나 둘다 할수 있다. 적을 죽이고, 임무를 수행하고, 자원을 모으고, 권력을 잡는것은 시민의 지원량에 영향을 미칩니다.</Korean>
         <Russian>Это гражданская война. Вам не победить, если вы не можете завоевать их сердца. В игровой механике это означает, что вы не можете завоевывать города. Жители каждого города в определенной степени поддерживают врага или фракцию. &lt;br/&gt; Доминирующая фракция - это тот, кто владеет городом и получает от их поддержки деньги и человеческие ресурсы (HR). Ваши действия могут снизить или повысить вашу поддержку противника, или и то, и другое. Убийство врагов, выполнение миссий, завоевание ресурсов и электростанций влияет на количество поддержки граждан.</Russian>
       </Key>
@@ -2481,7 +2501,7 @@
         <French>Dans les jeux MP, il y a deux porte monnaie. L'Argent de faction - qui est destiné à un usage exclusif par le Commandant - et argent personnel. L'argent personnel peut être utilisé par n'importe quel joueur pour recruter des IA ou acheter des véhicules. La faction gagne de l'argent grâce aux taxes et aux missions accomplies. L'argent personnel se gagne en tuant des ennemis et en accomplissant des missions. Les options pour transférer ou donner de l'argent se trouvent dans le menu Y. Le commandant peut récupérer de l'argent du porte monnaie de la faction sur son propre compte.</French>
         <German>In Mehrspielerspielen gibt es zwei Kassen. Die Fraktionskasse, welche nur vom Kommandanten genutzt werden kann, und das persönliche Geld. Das persönliche Geld kann von jedem Spieler selbst genutzt werden, um KI Einheiten oder Fahrzeuge zu kaufen. Die Fraktion erhält Gelder durch Abgaben und der Erfüllung von Sekundärmissionen. Persönliche Gelder erhält ein Spieler durch das Ausschalten von feindlichen Einheiten und der Erfüllung von Sekundärmissionen. Möglichkeiten Gelder zu transferieren sind im Z-Menü zu finden. Der Kommandant kann Geld aus der Fraktionskasse für seinen persönlichen Gebrauch entnehmen.</German>
         <Czech>V Multiplayerových hrách existují dva peněžní systémy. Frakční peníze - které jsou používány pouze velitelem - a osobní peníze. Osobní peníze může použít kterýkoli hráč k náboru AI nebo k nákupu vozidel. Frakce vydělává peníze z daní a ze splněných úkolů. Osobní peníze pocházejí ze zabíjení nepřátel a plnění úkolů. Možnosti převodu nebo darování peněz naleznete v nabídce Y. Velitel může vzít peníze z frakčního fondu na svůj vlastní účet.</Czech>
-        <Chinesesimp>在多人游戏中有两个资金.派系金钱仅供指挥官使用，还有个人的钱. 个人资金可以被任何玩家用来招募AI或购买载具. 派系靠缴税和完成任务赚钱. 个人钱财来源于杀敌和完成任务. 可以在Y菜单中找到转账或捐款的选项. 指挥官可以从派系资金里把钱存入自己的账户.</Chinesesimp>
+        <Chinesesimp>在多人游戏中有两个资金.派系资金仅供指挥官使用，还有个人的钱. 个人资金可以被任何玩家用来招募AI或购买载具. 派系靠缴税和完成任务赚钱. 个人钱财来源于杀敌和完成任务. 可以在Y菜单中找到转账或捐款的选项. 指挥官可以从派系资金里把钱存入自己的账户.</Chinesesimp>
         <Korean>자금은 두가지가 있습니다. 팩션 자금 (지휘관만 사용 가능)과 개인 자금. 개인 자금은 각 플레이어가 차량, 혹은 인력을 구매하는데 쓸수 있습니다. 팩션은 세금과 미션 완수로 자금을 벌수 있습니다. 개인 자금 또한 미션 완수, 킬 포인트 등으로 얻을수 있습니다. Y 메뉴를 사용해 팩션에 자금 기부가 가능합니다. 지휘관은 팩션 자금에서 인출이 가능합니다.</Korean>
         <Russian>В MP-играх есть два пула денег. Деньги фракции, предназначенные только для командиров, и личные деньги. Любой игрок может использовать личные деньги для найма ИИ или покупки транспортных средств. Фракция зарабатывает деньги налогами и выполнением миссий. Личные деньги поступают от убийства врагов и выполнения миссий. Варианты перевода или пожертвования денег находятся в меню Y. Командир может забрать деньги из пула фракций на свой счет.</Russian>
       </Key>
@@ -2517,7 +2537,7 @@
         <French>Toutes les 10 minutes, chaque faction reçoit de l'argent et de la main-d'œuvre en fonction des zones qu'elle possède et de l'état dans lequel elle se trouve. Avoir une bonne quantité de zones de ressources et d'usines est le moyen d'obtenir suffisamment de ressources pour gagner cette guerre.</French>
         <German>Alle 10 Minuten erhält jede Fraktion Geld und Mannstärke abhängig von den gehaltenen Zonen und deren Status. Eine große Anzahl and Ressourcen-Zonen und Fabriken zu besitzen ist der beste Weg, um genug Ressourcen für den Sieg in diesem Krieg zu erhalten.</German>
         <Czech>Každých 10 minut každá frakce obdrží peníze a pracovní sílu podle zón, které vlastní, a stavu, ve kterém se nacházejí. Mít dostatečné množství zón zdrojů a některé továrny je způsob, jak získat dostatek prostředků k vítězství v této válce.</Czech>
-        <Chinesesimp>每10分钟,每个阵营根据他们所属的地区和所处的州接受金钱和人力. 拥有大量的资源区和一些工厂是赢得这场战争的方法.</Chinesesimp>
+        <Chinesesimp>每10分钟,每个阵营根据他们所属的地区和所处的州接受资金和人力. 拥有大量的资源区和一些工厂是赢得这场战争的方法.</Chinesesimp>
         <Korean>매 10분마다 점거한 구역, 그리고 그 상황에 따라 인력과 자금을 받습니다. 자원 지역과 공장을 충분히 소유하는 것이 전쟁에 필요한 자금을 얻는 방법입니다.</Korean>
         <Russian>Каждые 10 минут фракция получает деньги и ЛР в соответствии с зонами, которыми они владеют, и состоянием, в котором они находятся. Наличие большого количества ресурсных зон и некоторых заводов - это способ получить достаточно ресурсов, чтобы выиграть эту войну.</Russian>
       </Key>
@@ -2813,7 +2833,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_mission_menu_logistics_missions_tooltip">
         <Original>Missions to acquire money or equipment</Original>
-        <Chinesesimp>掠夺金钱和装备的任务</Chinesesimp>
+        <Chinesesimp>掠夺资金和装备的任务</Chinesesimp>
         <Russian>Миссии по добыче денег или оборудования</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_mission_menu_support_missions">
@@ -2850,7 +2870,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_radio_comm_player_money">
         <Original>Player and Money</Original>
-        <Chinesesimp>玩家与金钱</Chinesesimp>
+        <Chinesesimp>玩家与资金</Chinesesimp>
         <Russian>Игрок и деньги</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_radio_comm_player_money_tooltip">
@@ -2880,7 +2900,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_radio_comm_construct">
         <Original>Construct Here</Original>
-        <Chinesesimp>在此驻扎</Chinesesimp>
+        <Chinesesimp>构筑工事</Chinesesimp>
         <Russian>Строительство</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_radio_comm_construct_tooltip">
@@ -3108,7 +3128,7 @@
     <Container name="commander_comm">
       <Key ID="STR_antistasi_dialogs_commander_comm">
         <Original>Commander Battle Options</Original>
-        <Chinesesimp>指挥官战斗设置</Chinesesimp>
+        <Chinesesimp>指挥官作战选项</Chinesesimp>
         <Russian>Меню командущего</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_recruit">
@@ -3118,7 +3138,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_recruit_tooltip">
         <Original>Recruit new squads and manage them with the HC Module (CTRL + SPACE)</Original>
-        <Chinesesimp>招募新的小队，并使用部队指挥模块（CTRL+SPACE）进行管理</Chinesesimp>
+        <Chinesesimp>招募新的小队，并使用HC模块(CTRL + SPACE)进行管理</Chinesesimp>
         <Russian>Набирайте новые отряды и управляйте ими с помощью модуля HC (CTRL + SPACE)</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_air_support">
@@ -3128,17 +3148,17 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_air_support_tooltip">
         <Original>Ask for Air Support (uses Airstrike points)</Original>
-        <Chinesesimp>呼叫空中支援（消耗空袭点数）</Chinesesimp>
+        <Chinesesimp>呼叫空中支援(消耗空袭点数)</Chinesesimp>
         <Russian>Запросить авиаподдержку (использует очки авиаподдержки)</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_roadblock">
         <Original>O.Post - Roadblock</Original>
-        <Chinesesimp>哨站 - 路障</Chinesesimp>
+        <Chinesesimp>观察哨 - 路障</Chinesesimp>
         <Russian>Добавить БП / НП</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_roadblock_tooltip">
         <Original>Establish a new watchpost or roadblock depending on the type of terrain you select</Original>
-        <Chinesesimp>根据您选择的地形类型建立新的路障或观察哨</Chinesesimp>
+        <Chinesesimp>根据您选择的地形类型，建立新的观察哨或路障</Chinesesimp>
         <Russian>Установите новый наблюдательный пост или блокпост в зависимости от выбранного типа местности.</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_clean">
@@ -3148,17 +3168,17 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_clean_tooltip">
         <Original>Cleans several things in game. Use with caution as it freezes the mission</Original>
-        <Chinesesimp>清理游戏中的一些东西。小心使用，因为它有可能冻结任务</Chinesesimp>
+        <Chinesesimp>清理游戏中的一些东西。谨慎使用，因为它可能导致任务卡死</Chinesesimp>
         <Russian>Очищает несколько вещей в игре. Используйте с осторожностью, так как это замораживает миссию</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_roadblock_delete">
         <Original>O.Post-Roadblock Delete</Original>
-        <Chinesesimp>删除哨站/路障</Chinesesimp>
+        <Chinesesimp>拆除观察哨/路障</Chinesesimp>
         <Russian>Удалить БП / НП</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_roadblock_delete_tooltip">
         <Original>Remove selected observation post or roadblock, money will be refunded</Original>
-        <Chinesesimp>拆除选定的观察哨或路障，费用会退回</Chinesesimp>
+        <Chinesesimp>拆除选定的观察哨或路障并退回费用</Chinesesimp>
         <Russian>Удалите выбранный наблюдательный пункт или блокпост, деньги будут возвращены</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_faction_garage">
@@ -3168,7 +3188,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_faction_garage_tooltip">
         <Original>Look at a vehicle and garage it into faction garage (shared among commanders)</Original>
-        <Chinesesimp>将你眼前的载具停放在阵营车库里（共享给指挥官）</Chinesesimp>
+        <Chinesesimp>将面前的载具存放至阵营车库(与指挥官共享)</Chinesesimp>
         <Russian>Посмотрите на машину и поставьте ее в гараж фракции (общий для командиров)</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_resign">
@@ -3178,7 +3198,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_resign_tooltip">
         <Original>Step down from commander or toggle eligibility</Original>
-        <Chinesesimp>从指挥官位离任或参与指挥官竞选</Chinesesimp>
+        <Chinesesimp>从指挥官职位离任或参与指挥官竞选</Chinesesimp>
         <Russian>Уйти от командира или изменить право на участие</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_sell">
@@ -3188,7 +3208,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_sell_tooltip">
         <Original>Look at a vehicle and sell it for money</Original>
-        <Chinesesimp>眼前的载具将被出售（换取阵营资金）</Chinesesimp>
+        <Chinesesimp>出售面前的载具以换取资金</Chinesesimp>
         <Russian>Посмотрите на автомобиль и продайте его за деньги</Russian>
       </Key>
     </Container>
@@ -3220,106 +3240,106 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_carpet_bombing_add">
         <Original>Add to Air Support</Original>
-        <Chinesesimp>加入空中支援</Chinesesimp>
+        <Chinesesimp>添加至空中支援</Chinesesimp>
         <Russian>Добавить в воздушную поддержку</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_carpet_bombing_add_tooltip">
         <Original>Gain Airstrike points giving this aircraft to the faction Air pool</Original>
-        <Chinesesimp>将这架飞机换成空袭点数</Chinesesimp>
+        <Chinesesimp>将这架飞机添加至阵营空军，并获得空袭点数</Chinesesimp>
         <Russian>Получайте очки за авиаудар, отдавая этот самолет в воздушный пул фракции.</Russian>
       </Key>
     </Container>
     <Container name="dismiss_menu">
       <Key ID="STR_antistasi_dialogs_dismiss_menu">
         <Original>Dismiss Options</Original>
-        <Chinesesimp>解雇选项</Chinesesimp>
+        <Chinesesimp>解散选项</Chinesesimp>
         <Russian>Меню роспуска</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_dismiss_menu_dismiss">
         <Original>Dismiss Units / Squad</Original>
-        <Chinesesimp>解雇单位/小队</Chinesesimp>
+        <Chinesesimp>解散单位/小队</Chinesesimp>
         <Russian>Распустить</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_dismiss_menu_dismiss_tooltip">
         <Original>Dimiss selected units or squads, recovering it's cost to the proper resource pool</Original>
-        <Chinesesimp>解雇选中的单位或小队，会退还部分资源</Chinesesimp>
+        <Chinesesimp>解散选中的单位或小队，将其花销退还至资源池</Chinesesimp>
         <Russian>Распустить выбранные отряды или отряды, вернув их стоимость в соответствующий пул ресурсов.</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_dismiss_menu_garrison">
         <Original>Garrison Units / Squads</Original>
-        <Chinesesimp>驻守单位/小队</Chinesesimp>
+        <Chinesesimp>驻扎单位/小队</Chinesesimp>
         <Russian>Добавить в гарнизон</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_dismiss_menu_garrison_tooltip">
         <Original>Adds selected units or squads to a map selected garrison</Original>
-        <Chinesesimp>将选定的单位或小队编入到地图某处的驻军</Chinesesimp>
+        <Chinesesimp>将选定的单位或小队编入在地图上选中的驻军</Chinesesimp>
         <Russian>Добавляет выбранные юниты или отряды в выбранный на карте гарнизон</Russian>
       </Key>
     </Container>
     <Container name="construction_menu">
       <Key ID="STR_antistasi_dialogs_construction_menu">
         <Original>Construction Menu</Original>
-        <Chinesesimp>建筑菜单</Chinesesimp>
+        <Chinesesimp>建造菜单</Chinesesimp>
         <Russian>Меню строительства</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_small_trench">
         <Original>Small Trench</Original>
-        <Chinesesimp>小型掩体</Chinesesimp>
+        <Chinesesimp>小型战壕</Chinesesimp>
         <Russian>Малая траншея</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_small_trench_tooltip">
         <Original>Make a quick small trench for one man</Original>
-        <Chinesesimp>构筑一个单人小型掩体</Chinesesimp>
+        <Chinesesimp>建造单人小型战壕</Chinesesimp>
         <Russian>Сделайте быстрый небольшой окоп для одного человека</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_medium_trench">
         <Original>Medium Trench</Original>
-        <Chinesesimp>中型掩体</Chinesesimp>
+        <Chinesesimp>中型战壕</Chinesesimp>
         <Russian>Средняя траншея</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_medium_trench_tooltip">
         <Original>A mid sized trench with capabilities for more than one soldier</Original>
-        <Chinesesimp>构筑一个供多人使用的中型掩体</Chinesesimp>
+        <Chinesesimp>建造可供多人使用的中型战壕</Chinesesimp>
         <Russian>Окоп среднего размера, вмещающий более одного солдата</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_vehicle_obstacles">
         <Original>Vehicle obstacles</Original>
-        <Chinesesimp>车辆障碍</Chinesesimp>
+        <Chinesesimp>行车障碍</Chinesesimp>
         <Russian>Транспортные препятствия</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_vehicle_obstacles_tooltip">
         <Original>Build some obstacles for vehicles</Original>
-        <Chinesesimp>为车辆设置一些障碍</Chinesesimp>
+        <Chinesesimp>建造一些阻碍行车的障碍物</Chinesesimp>
         <Russian>Постройте препятствия для транспортных средств</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_bunker_options">
         <Original>Bunker Options</Original>
-        <Chinesesimp>地堡选项</Chinesesimp>
+        <Chinesesimp>掩体选项</Chinesesimp>
         <Russian>Бункер</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_bunker_options_tooltip">
         <Original>Need to be built in garrison controlled zones and cost money</Original>
-        <Chinesesimp>需要花钱才能在控制区附近建造</Chinesesimp>
+        <Chinesesimp>需要在占领区花费资金才能建造</Chinesesimp>
         <Russian>Должен быть построен в зонах, контролируемых гарнизоном, и стоит денег.</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_bunker_type">
         <Original>Select Bunker Type</Original>
-        <Chinesesimp>选择地堡类型</Chinesesimp>
+        <Chinesesimp>选择掩体类型</Chinesesimp>
         <Russian>Выберите тип бункера</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_sandbag">
         <Original>Sandbag Bunker</Original>
-        <Chinesesimp>沙包工事</Chinesesimp>
+        <Chinesesimp>沙包掩体</Chinesesimp>
         <Russian>Мешки с песком</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_bunker_concrete">
         <Original>Concrete Bunker</Original>
-        <Chinesesimp>混凝土工事</Chinesesimp>
+        <Chinesesimp>混凝土掩体</Chinesesimp>
         <Russian>Бетонный бункер</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_bunker_tooltip">
         <Original>Requires to be in a garrisoned zone. It will be permanent</Original>
-        <Chinesesimp>需要在控制区建造。它将是永久的</Chinesesimp>
+        <Chinesesimp>需要在占领区才能建造。建造的掩体将永久存在</Chinesesimp>
         <Russian>Требуется находиться в гарнизонной зоне. Это будет навсегда</Russian>
       </Key>
     </Container>
@@ -3331,32 +3351,32 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_inf">
         <Original>Recruit Inf. Squad</Original>
-        <Chinesesimp>招募摩托化步小队</Chinesesimp>
+        <Chinesesimp>招募步兵小组</Chinesesimp>
         <Russian>Отряд</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_inf_team">
         <Original>Recruit Inf. Team</Original>
-        <Chinesesimp>招募摩托化步兵小组</Chinesesimp>
+        <Chinesesimp>招募步兵小队</Chinesesimp>
         <Russian>Группа</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_at">
         <Original>Recruit AT Team</Original>
-        <Chinesesimp>招募反坦克小组</Chinesesimp>
+        <Chinesesimp>招募反坦克小队</Chinesesimp>
         <Russian>Группа ПТ</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_sniper">
         <Original>Recruit Sniper Team</Original>
-        <Chinesesimp>招募狙击小组</Chinesesimp>
+        <Chinesesimp>招募狙击小队</Chinesesimp>
         <Russian>Группа снайперов</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_mg">
         <Original>Recruit MG Team</Original>
-        <Chinesesimp>招募榴弹小组</Chinesesimp>
+        <Chinesesimp>招募机枪小队</Chinesesimp>
         <Russian>Группа пулеметчиков</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_at_car">
         <Original>Recruit AT Car</Original>
-        <Chinesesimp>招募反坦克车辆小组</Chinesesimp>
+        <Chinesesimp>招募反坦克车辆</Chinesesimp>
         <Russian>ПТ Техника</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_aa_car">
@@ -3366,24 +3386,24 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruit_mortar">
         <Original>Recruit Mortar Team</Original>
-        <Chinesesimp>招募迫击炮小组</Chinesesimp>
+        <Chinesesimp>招募迫击炮小队</Chinesesimp>
         <Russian>Артилерия</Russian>
       </Key>
     </Container>
     <Container name="player_money">
       <Key ID="STR_antistasi_dialogs_player_money">
         <Original>Player and Money Interaction</Original>
-        <Chinesesimp>玩家与金钱互动</Chinesesimp>
+        <Chinesesimp>玩家/资金</Chinesesimp>
         <Russian>Меню Игроков и Снабжения</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_add_member">
         <Original>Add Server Member</Original>
-        <Chinesesimp>加入服务器会员</Chinesesimp>
+        <Chinesesimp>添加服务器会员</Chinesesimp>
         <Russian>Добавить участника сервера</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_add_member_tooltip">
         <Original>Use this option to add the player which you are currently looking to the member's list</Original>
-        <Chinesesimp>将你眼前的玩家加入会员列表</Chinesesimp>
+        <Chinesesimp>使用该选项将你面前的玩家加入到会员列表</Chinesesimp>
         <Russian>Используйте эту опцию, чтобы добавить игрока, которого вы сейчас ищете, в список участников.</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_remove_member">
@@ -3393,22 +3413,22 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_remove_member_tooltip">
         <Original>Use this option to remove the player which you are currently looking to the member's list</Original>
-        <Chinesesimp>将你眼前的玩家从会员列表中移除</Chinesesimp>
+        <Chinesesimp>使用该选项将你面前的玩家从会员列表中移除</Chinesesimp>
         <Russian>Используйте эту опцию, чтобы удалить игрока, которого вы сейчас ищете, из списка участников.</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_donate_player">
         <Original>Donate 100 € to player</Original>
-        <Chinesesimp>给眼前的玩家100 €</Chinesesimp>
+        <Chinesesimp>向玩家捐赠 100€</Chinesesimp>
         <Russian>Пожертвуйте 100 € игроку</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_donate_faction">
         <Original>Donate 100 € to Faction</Original>
-        <Chinesesimp>向阵营捐赠100 €</Chinesesimp>
+        <Chinesesimp>向阵营捐赠 100€</Chinesesimp>
         <Russian>Пожертвовать 100 € фракции</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_donate_faction_tooltip">
         <Original>It will increase your prestige among your faction</Original>
-        <Chinesesimp>它将提高你在你的阵营中的声望</Chinesesimp>
+        <Chinesesimp>这将会提升你在阵营中的威望</Chinesesimp>
         <Russian>Это повысит ваш престиж среди вашей фракции</Russian>
       </Key>
     </Container>
@@ -3430,7 +3450,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_garage_check">
         <Original>Personal or Faction Garage?</Original>
-        <Chinesesimp>存入个人或阵营车库？</Chinesesimp>
+        <Chinesesimp>将载具存入个人车库还是阵营车库?</Chinesesimp>
         <Russian>Личный гараж или гараж фракции?</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_garage_personal">
@@ -3447,12 +3467,12 @@
     <Container name="mortar_type">
       <Key ID="STR_antistasi_dialogs_mortar_type">
         <Original>Select Mortar Ammo</Original>
-        <Chinesesimp>选择迫击炮弹药种类</Chinesesimp>
+        <Chinesesimp>选择炮击弹药类型</Chinesesimp>
         <Russian>Выберите боеприпасы для минометов</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_mortar_type_he">
         <Original>HE</Original>
-        <Chinesesimp>高爆</Chinesesimp>
+        <Chinesesimp>高爆弹</Chinesesimp>
         <Russian>ОФ</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_carpet_bombing_he_tooltip">
@@ -3472,7 +3492,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_rounds_number">
         <Original>Select No. Rounds to be fired</Original>
-        <Chinesesimp>选择打几轮炮弹</Chinesesimp>
+        <Chinesesimp>选择炮击轮数</Chinesesimp>
         <Russian>Выберите кол-во снарядов</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_strike_type">
@@ -3487,24 +3507,24 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_strike_type_barrage">
         <Original>Barrage Strike</Original>
-        <Chinesesimp>弹幕炮击</Chinesesimp>
+        <Chinesesimp>弹幕打击</Chinesesimp>
         <Russian>Заградительный удар</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_mbt_type">
         <Original>Select type ammo for the strike</Original>
-        <Chinesesimp>选择攻击的弹药类型</Chinesesimp>
+        <Chinesesimp>选择空袭弹药类型</Chinesesimp>
         <Russian>Выберите тип боеприпасов для удара</Russian>
       </Key>
     </Container>
     <Container name="NATO_player">
       <Key ID="STR_antistasi_dialogs_nato_player_specop">
         <Original>SpecOp Menu</Original>
-        <Chinesesimp>SpecOp 菜单</Chinesesimp>
+        <Chinesesimp>特殊行动菜单</Chinesesimp>
         <Russian>Меню СпН</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_nato_player_quadbike">
         <Original>Quadbike</Original>
-        <Chinesesimp>自行车</Chinesesimp>
+        <Chinesesimp>四轮摩托车</Chinesesimp>
         <Russian>Квадроцикл</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_nato_player_fast">
@@ -3531,7 +3551,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_options_mg">
         <Original>MG Squad</Original>
-        <Chinesesimp>榴弹小队</Chinesesimp>
+        <Chinesesimp>机枪小队</Chinesesimp>
         <Russian>Пулеметчики</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_options_mortar">
@@ -3553,7 +3573,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_diff_menu_normal">
         <Original>Normal</Original>
-        <Chinesesimp>一般</Chinesesimp>
+        <Chinesesimp>正常</Chinesesimp>
         <Russian>Обычный</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_diff_menu_hard">
@@ -3565,7 +3585,7 @@
     <Container name="gameMode_menu">
       <Key ID="STR_antistasi_dialogs_gameMode_menu">
         <Original>Select your Game Mode</Original>
-        <Chinesesimp>选择您的游戏模式</Chinesesimp>
+        <Chinesesimp>选择游戏模式</Chinesesimp>
         <Russian>Выберите свой игровой режим</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_gameMode_menu_Reb_vs_Gov_vs_Inv">
@@ -3575,7 +3595,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_gameMode_menu_Reb_vs_Gov_and_Inv">
         <Original>Reb vs Gov &amp; Inv</Original>
-        <Chinesesimp>起义军 vs 政府军  &amp; vs 侵略者</Chinesesimp>
+        <Chinesesimp>起义军 vs 政府军 &amp; 侵略者</Chinesesimp>
         <Russian>Зеленые vs Синие и Красные</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_gameMode_menu_Reb_vs_Gov">
