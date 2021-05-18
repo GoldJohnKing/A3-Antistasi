@@ -21,7 +21,7 @@
         <Russian>Опции Штаба: Только для Командира</Russian>
         <German>HQ Optionen: Nur Kommandant</German>
         <Czech>Možnosti velitelství: Pouze pro velitel</Czech>
-        <Chinesesimp>HQ选项：仅限指挥官</Chinesesimp>
+        <Chinesesimp>总部选项：仅限指挥官使用</Chinesesimp>
         <Korean>HQ 옵션: 지휘관 전용</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_close_text">
@@ -81,7 +81,7 @@
         <Russian>Переместить Штаб</Russian>
         <German>HQ verlegen</German>
         <Czech>Přesuňte velitelství</Czech>
-        <Chinesesimp>转移HQ到其他区域</Chinesesimp>
+        <Chinesesimp>将总部转移到其他区域</Chinesesimp>
         <Korean>HQ 이사하기</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_move_headquarters_tooltip">
@@ -91,7 +91,7 @@
         <Russian>Петрос присоединится к вашей группе. Чтобы построить Штаб, выберите на нём пункт "Построить Штаб". Арсенал должен быть пуст.</Russian>
         <German>Maru/Petros tritt deiner Gruppe bei. Munitionskiste muss leer sein. Zur Neuerrichtung die Bauaktion in der Nähe von Maru/Petros auswählen.</German>
         <Czech>Petros se připojí k vaší skupině. Chcete-li vytvořit velitelství, vyberte možnost u Petrose „Zřídit velitelství“. Arzenál musí být prázdný.</Czech>
-        <Chinesesimp>Maru将会加入您的小队。弹药箱必须为空。在Maru附近选择"建造"选项来重建HQ</Chinesesimp>
+        <Chinesesimp>Maru将会加入您的小队。弹药箱必须为空。在Maru附近选择"建造"选项来重建总部。</Chinesesimp>
         <Korean>페트로스가 당신의 그룹에 참가할 것입니다. 탄약상자는 비워져 있어야합니다. 재건축하려면 페트로스 근처에서 건축하기를 선택하시오.</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_members_list_text">
@@ -1395,7 +1395,7 @@
         <English>Don't expect to be able to conquer anything in the early stages. First you have to gather enough resources (HR and Money) in order to be able to conquer and hold your positions. This mission tries to simulate real life guerilla situations. If in doubt, ask yourself what would you do in real life. Don't expect to win every time. Hit and Run is the basic manoeuvre here. Earn every resource, weapon and ammunition to gather enough assets in order to be a real challenge for the enemy. In the meantime, disturb its operations and gain support from the population.</English>
         <German>Erwarte nicht, dass du in der Lage sein wirst alles bereits zu Beginn erobern zu können. Zuallererst musst du genügend Ressourcen (Mannstärke und Geld) auftreiben müssen, um in der Lage zu sein etwas zu erobern und auch halten zu können. Diese Mission versucht reale Guerilla Situationen und Vorgehen zu simulieren. Wenn du unschlüssig bist, dann frage dich selbst, was du im echten Leben tun würdest. Erwarte nicht, dass du jedes Mal gewinnst. "Hit and Run" ist hier das übliche Vorgehen. Erbeute Ressourcen, Waffen und Munition, um letztlich genug Ausrüstung zusammen zu haben, damit du zu einer echten Bedrohung für den Feind werden kannst. Währenddessen störe die Bestrebungen des Feindes und verdiene dir die Unterstützung der Zivilbevölkerung.</German>
         <Czech>Neočekávejte, že v časných stádiích dokážete něco dobýt. Nejprve musíte shromáždit dostatek zdrojů (HR a peníze), abyste mohli dobýt a udržet své pozice. Tato mise se pokouší simulovat partyzánské situace v reálném životě. Pokud máte pochybnosti, zeptejte se sami sebe, co byste udělali v reálném životě. Nečekejte, že vyhrajete pokaždé. Udeřit a Utéct je zde základní manévr. Získejte všechny zdroje, zbraně a střelivo, abyste shromáždili dostatek prostředků, aby pro nepřítele představovali skutečnou výzvu. Mezitím narušit její činnost a získat podporu od obyvatelstva.</Czech>
-        <Chinesesimp>不要指望在前期就征服一切。首先，你必须获取足够的资源(人力和资金)，才能攻占并守住你的领地。本任务试图模拟真实世界中的游击态势。如果你有疑问，问问自己在现实生活中会怎么做。不要期待百战百胜。打完就跑是这里的基本策略。赚取各种资源、武器和弹药，来积攒真正足以对抗敌人的资产。与此同时，扰乱敌军的行动，并获得民众的支持。</Chinesesimp>
+        <Chinesesimp>不要指望在前期就征服一切。首先，你必须获取足够的资源(人力资源和资金)，才能攻占并守住你的领地。本任务试图模拟真实世界中的游击态势。如果你有疑问，问问自己在现实生活中会怎么做。不要期待百战百胜。打完就跑是这里的基本策略。赚取各种资源、武器和弹药，来积攒真正足以对抗敌人的资产。与此同时，扰乱敌军的行动，并获得民众的支持。</Chinesesimp>
         <Korean>초기에 점령할 수 있을 거라고 기대하지 마시오. 충분한 자원(인력과 자금)을 모아야 당신의 힘이 유지됩니다. 이 미션은 게릴라 상황을 재현합니다. 의심이 들면, 당신이 실제라면 무엇을 할지 스스로 물어보시오. 모든 걸 이길 것 이라고 기대하지 마시오. 힛 앤 런이 기본 전술입니다. 적을 위협하기 위해 모든 자원, 무기, 탄약을 모으십시오. 그리고 적을 방해하고 현지에서 지지를 얻으십시오.</Korean>
         <Russian>Не ожидайте, что сможете что-либо победить на ранних стадиях. Сначала вам нужно собрать достаточно ресурсов (HR и Деньги), чтобы иметь возможность завоевать и удерживать свои позиции. Эта миссия пытается смоделировать реальные партизанские ситуации. Если сомневаетесь, спросите себя, что бы вы делали в реальной жизни. Не надейтесь на победу каждый раз. Hit and Run - основной маневр здесь. Зарабатывайте все ресурсы, оружие и боеприпасы, чтобы собрать достаточно активов, чтобы стать настоящим испытанием для врага. А пока помешайте его работе и заручитесь поддержкой населения.</Russian>
       </Key>
@@ -1532,7 +1532,7 @@
         <French>Avoir un commandant est nécessaire car il est le commandant de la faction qui attaque les forces terrestres. De nombreuses options ne sont disponibles que pour le commandant et, selon vos paramètres, si vous jouez en MP, le joueur le plus expérimenté occupera généralement cette position.</French>
         <German>Einen Kommandanten zu haben ist unumgänglich, da er die Bodentruppen der Fraktion befehligt. Viele Optionen und Möglichkeiten stehen nur dem Kommandanten zur Verfügung. Je nach deinen gewählten Einstellungen, wenn du im Multiplayer spielst, wird der Spieler mit der meisten Erfahrung den Platz des Kommandanten einnehmen.</German>
         <Czech>Mít velitele je nezbytné, protože je velitelem frakce útočící na pozemní síly. Mnoho možností je k dispozici pouze pro velitele a v závislosti na vašich nastaveních, pokud hrajete MP, obvykle tuto pozici zaujme nejzkušenější hráč.</Czech>
-        <Chinesesimp>指挥官的存在是必要的，因为他能够指挥本阵营的地面攻击部队。许多选项仅限指挥官使用，并且根据你的设置，如果你玩的是多人游戏，经验最丰富的玩家通常会占据这个位置。</Chinesesimp>
+        <Chinesesimp>指挥官是必需的，因为他能够指挥我方阵营的地面攻击部队。许多选项仅限指挥官使用，并且根据你的设置，如果你玩的是多人游戏，经验最丰富的玩家通常会占据这个位置。</Chinesesimp>
         <Korean>지휘관은 지상병력에게 명령을 내릴수 있기때문에 지휘관을 뽑는것은 중요합니다. 지휘관은 많은 설정이 가능하고, 보통 멀티플레이에선 보통 가장 경험이 많은 사람이 맡습니다.</Korean>
         <Russian>Наличие командира необходимо, потому что он является командующим Фракцией, атакующей наземные силы. Многие параметры доступны только командиру, и, в зависимости от ваших настроек, если вы играете в MP, наиболее опытный игрок обычно занимает эту позицию.</Russian>
       </Key>
@@ -1550,7 +1550,7 @@
         <French>Le commandant est responsable de l'affectation d'unités comme garnisons dans les zones conquises. Utilisez l'option de gestion de garnison au drapeau du QG afin d'ajouter ou de supprimer des troupes de garnison dans chaque zone. Consultez l'écran Info carte pour un aperçu rapide du nombre de soldats affectés à chaque zone.</French>
         <German>Der Kommandant ist verantwortlich den Garnisonen der eroberten Bereiche Einheiten zuzuweisen. Mit der Garnisonsverwaltung am Flaggenmast im HQ kannst du Einheiten einer Garnison hinzufügen oder entfernen. Über den Kartenbildschirm kannst du dir einen schnellen Überblick über die Größe der jeweiligen Garnisonen verschaffen.</German>
         <Czech>Velitel je zodpovědný za přidělování jednotek jako posádky v dobývaných oblastech. Chcete-li přidat nebo odebrat posádkové jednotky v každé zóně, použijte možnost Správa posádky v vlajce HQ. Na obrazovce Informace o mapě získáte rychlý přehled o tom, kolik vojáků je přiřazeno každé zóně.</Czech>
-        <Chinesesimp>指挥官负责向占领区派遣驻军单位。使用HQ旗帜中的驻军管理选项，开向各个区域增派或删除驻军。打开地图信息界面，即可快速了解每个区域分配的士兵数量。</Chinesesimp>
+        <Chinesesimp>指挥官负责向占领区派遣驻军单位。使用总部旗帜上的驻军管理选项，开向各个区域增派或删除驻军。打开地图信息界面，即可快速了解每个区域分配的士兵数量。</Chinesesimp>
         <Korean>지휘관은 점령한 주둔지 안에서 병력을 결성할 수 있습니다. 주둔지 병력을 뽑거나 줄이려면 HQ 깃발의 주둔지 설정을 사용하십시오. 빠르게 각 구역의 병력들을 보려면 지도를 확인하십시오.</Korean>
         <Russian>Командующий отвечает за назначение подразделений в качестве гарнизонов на завоеванных территориях. Используйте опцию «Управление гарнизоном» на флаге штаба, чтобы добавлять или удалять войска гарнизона в каждой зоне. Проверьте экран «Информация о карте», чтобы получить быстрый обзор того, сколько солдат назначено на каждую зону.</Russian>
       </Key>
@@ -1568,7 +1568,7 @@
         <French>Pour un certain prix, vous pouvez améliorer la formation de la Faction afin que les futures recrues aient de meilleures compétences.</French>
         <German>Du kannst, für einen gewissen Preis, die Trainingsmethoden deiner Fraktion verbessern. Dadurch werden neue Rekruten bessere Fähigkeiten haben.</German>
         <Czech>Za cenu můžete vylepšit frakční školení tak, aby budoucí rekruti měli lepší dovednosti.</Czech>
-        <Chinesesimp>支付一定费用，你就可以提升阵营的受训程度，从而使以后招募的士兵具备更强的技能水平。</Chinesesimp>
+        <Chinesesimp>支付一定费用，你就可以提升我方阵营的受训程度，从而使以后招募的士兵具备更强的技能水平。</Chinesesimp>
         <Korean>자금으로 팩션을 훈련시켜서 나중에 더 좋은 병력을 모집할 수 있습니다.</Korean>
         <Russian>За определенную плату вы можете улучшить ИИ фракции, чтобы у будущих рекрутов были лучшие навыки.</Russian>
       </Key>
@@ -1586,7 +1586,7 @@
         <French>Demandez à Petros tout type de mission que vous souhaitez. La disponibilité de la mission dépend du positionnement du QG, des tâches actuellement attribuées et de la propriété des zones environnantes.</French>
         <German>Befrage Maru/Petros nach einer gewünschten Mission. Die Verfügbarkeit der Missionen ist abhängig von der Position des HQs, der momentan zugewiesenen Aufgaben und der Zugehörigkeit der umgebenen Bereiche.</German>
         <Czech>Zeptejte se Petrose na jakýkoli typ mise, kterou chcete. Dostupnost mise závisí na umístění velitelství, aktuálně přidělených úkolech a vlastnictví okolních oblastí.</Czech>
-        <Chinesesimp>向Petros申请任何你想要的任务。任务的可用性取决于HQ位置、当前已分配的任务和周围地区的所有权。</Chinesesimp>
+        <Chinesesimp>向Petros申请任何你想要的任务。任务的可用性取决于总部的位置、当前已分配的任务和周围地区的所有权。</Chinesesimp>
         <Korean>원하는 타입의 사이드 미션을 페트로에게 문의하십시오. HQ의 위치, 현재 할당된 임무, 주변지역의 소유에 따라 결정됩니다.</Korean>
         <Russian>Спрашивайте у Петроса любую миссию, какую захотите. Доступность миссии зависит от расположения штаб-квартиры, текущих назначенных задач и владения прилегающими территориями.</Russian>
       </Key>
@@ -1595,7 +1595,7 @@
         <French>Déplacer le QG</French>
         <German>HQ verlegen</German>
         <Czech>Přesuňte velitelství</Czech>
-        <Chinesesimp>移动HQ</Chinesesimp>
+        <Chinesesimp>转移总部</Chinesesimp>
         <Korean>HQ 이동하기</Korean>
         <Russian>Переместить штаб</Russian>
       </Key>
@@ -1604,7 +1604,7 @@
         <French>Le commandant peut sélectionner cette option sur le drapeau du QG afin de déplacer le QG à un autre endroit. Cela vous permettra de déplacer votre QG vers un endroit plus sûr ou de vous rapprocher des lignes de front. Plus votre QG est proche de l'ennemi, plus vous aurez de missions secondaires possibles. Attention! Gardez Petros en sécurité ou vous perdrez la partie!</French>
         <German>Der Kommandant kann über eine Option am Flaggenmast das HQ zu einem anderen Ort verlegen lassen. Dies gibt dir die Möglichkeit dein HQ zu einer sichereren Position oder näher an die Frontlinie zu verlegen. Umso näher dein HQ am feindlichen Gebiet ist, umso größer ist die Anzahl an möglichen Sekundärmissionen. Vorsicht! Beschütze Petros oder du verlierst das Spiel!</German>
         <Czech>Velitel může vybrat tuto možnost na velitelské vlajce, aby přesunul umístění velitelství na jiné místo. To vám umožní přesunout své velitelství na bezpečnější místo nebo se přiblížit ke frontě. Čím blíže je vaše velitelství k nepřátelům, tím větší je počet možných vedlejších misí, které budete mít k dispozici. Pamatujte si! Zachovejte Petrose v bezpečí, jinak hru prohrajete!</Czech>
-        <Chinesesimp>指挥官可在HQ旗帜上选择此选项，以便将HQ移动到其他地点。你可以将HQ移动到更安全或者更靠近前线的地方。你的HQ离敌人越近，你可以执行的支线任务就越多。记住！保护Petros的安全，否则游戏将会失败！</Chinesesimp>
+        <Chinesesimp>指挥官可在总部旗帜上选择此选项，以便将总部移动到其他地点。你可以将总部移动到更安全或者更靠近前线的地方。你的总部离敌人越近，你可以执行的支线任务就越多。记住！保护Petros的安全，否则游戏将会失败！</Chinesesimp>
         <Korean>지휘관은 HQ를 다른 장소로 이동하기위해 HQ 깃발에서 HQ 이동하기를 사용할 수 있습니다. HQ를 더 안전한 곳으로 혹은 최전방으로 이동시킬 수 있습니다. 만약 HQ가 적과 가깝다면 더 많은 서브미션이 가능합니다. 기억하십시오! 페트로스를 지키지 않으면 게임에서 패배합니다.</Korean>
         <Russian>Командующий может выбрать эту опцию у Петроса, чтобы переместить расположение штаба в другое место. Это позволит вам переместить свой штаб в более безопасное место или приблизиться к линии фронта. Чем ближе ваш штаб к противнику, тем большее количество возможных побочных миссий у вас будет. Помнить! Держите Петроса в безопасности, или вы проиграете игру</Russian>
       </Key>
@@ -1622,7 +1622,7 @@
         <French>Utilisez le menu d'action de votre feu de camp au QG pour vous reposer pendant 8 heures.</French>
         <German>Mit dieser Aktion kannst du dich am Lagerfeuer des HQs für 8 Stunden ausruhen.</German>
         <Czech>Použijte možnost na vašem táborovém ohni, abyste si mohli odpočnou na 8 hodin</Czech>
-        <Chinesesimp>使用HQ营火上的动作菜单来休息8小时。</Chinesesimp>
+        <Chinesesimp>使用总部营火上的动作菜单来休息8小时。</Chinesesimp>
         <Korean>HQ 캠프 파이어를 사용하면 8시간을 스킵할 수 있습니다.</Korean>
         <Russian>Используйте меню действий у палатки, чтобы отдохнуть в течение 8 часов.</Russian>
       </Key>
@@ -1784,7 +1784,7 @@
         <French>Avec le drapeau du QG, si la fonction de membre du serveur est activée, vous pouvez vérifier quels membres du serveur sont en jeu et le nombre total de non-membres.</French>
         <German>Am Flaggenmast im HQ kannst du, wenn das Servermitglieder Feature aktiviert ist, überprüfen, welche Servermitglieder und wie viele Nicht-Servermitglieder im Spiel sind.</German>
         <Czech>Na stožáru ve velitelství, když je povolena funkce členů serveru, můžete zkontrolovat, kteří členové serveru a kolik členů mimo server je ve hře.</Czech>
-        <Chinesesimp>如果启用了服务器会员功能，你可以在HQ旗帜上查询哪些服务器成员在线和非会员玩家的总数。</Chinesesimp>
+        <Chinesesimp>如果启用了服务器会员功能，你可以在总部的旗帜上查询哪些服务器成员在线和非会员玩家的总数。</Chinesesimp>
         <Korean>HQ 깃발에서 서버 멤버 기능이 활성화된다면 인게임 서버 멤버와 비 멤버의 수를 확인할 수 있습니다.</Korean>
         <Russian>В флаге HQ, если функция «Участник сервера» включена, вы можете проверить, кто из участников сервера находится в игре.</Russian>
       </Key>
@@ -1910,7 +1910,7 @@
         <French>Ajoute n'importe quel véhicule près de votre garage virtuel personnel (ou garage de la factions si vous êtes le commandant) et gardez-le en lieu sûr pour une utilisation future. L'option d'ajout de véhicule se trouve dans le menu Y. La gestion du garage est dans les options HQ (Flag). Les capacités de récupération du garage peuvent dépendre de l'endroit où vous vous trouvez: les unités aériennes ne peuvent être récupérées que près des bases aériennes, des bateaux, près du rivage, etc.</French>
         <German>Du kannst jedes Fahrzeug in deinen persönlichen virtuellen Fuhrpark (oder dem der Fraktion, wenn du der Kommandant bist) hinzufügen, um es sicher zu verwahren. Diese Option findest du im Z-Menü. Die Verwaltung des Fuhrparks kann am Flaggenmast im HQ aufgerufen werden. Die Möglichkeit zur Bereitstellung eines Fahrzeugs aus dem Fuhrpark hängt dabei von deiner Umgebung ab: Luftfahrzeuge können nur in der Nähe von Flugplätzen bereitgestellt werden, Boote nur in der Nähe der Küste, usw. </German>
         <Czech>Můžete přidat jakékoli vozidlo do svého osobního virtuálního vozového parku (nebo frakce, pokud jste velitel), aby bylo v bezpečí. Tuto možnost naleznete v nabídce Z. Vedení flotily může být povoláno na stožár u velitelství. Schopnost zajistit vozidlo z flotily závisí na vašem okolí: letadla mohou být poskytnuta pouze v blízkosti letišť,lodí pouze v blízkosti pobřeží atd.</Czech>
-        <Chinesesimp>将载具添加至你的个人车库(或者阵营车库，如果你是指挥官的话)，确保其安全以供将来使用。车辆添加选项位于Y键菜单下。车库管理功能在HQ选项(旗帜)下。能否从车库中取出载具取决于你所在的位置：如空中单位只能在空军基地恢复，船只只能在靠近海岸线的敌方恢复等。</Chinesesimp>
+        <Chinesesimp>将载具添加至你的个人车库(或者阵营车库，如果你是指挥官的话)，确保其安全以供将来使用。车辆添加选项位于Y键菜单下。车库管理功能在总部选项(旗帜)下。能否从车库中取出载具取决于你所在的位置：如空中单位只能在空军基地恢复，船只只能在靠近海岸线的敌方恢复等。</Chinesesimp>
         <Korean>개인용 차고(지휘관일 경우 팩션 차고) 근처에서 차량을 꺼내고 사용후 안전하게 보관하십시오. 차량 추가 옵션은 Y 메뉴에 있습니다. 차고 관리는 HQ 깃발에서 할 수 있습니다. 차고 저장 용량은 현재 위치에 따라 달라질 수 있습니다. 공중 장비는 공항에서 보트는 해안에서 저장할 수 있습니다.</Korean>
         <Russian>Добавьте любую технику рядом с вашим личным виртуальным гаражом (или гаражом фракций, если вы командир) и сохраните его для будущего использования. Опция добавления транспортного средства находится в меню Y. Возможности восстановления гаража могут зависеть от того, где вы находитесь: авиационные юниты могут быть восстановлены только возле авиабаз, лодок у берега и т.д.</Russian>
       </Key>
@@ -1928,7 +1928,7 @@
         <French>Cliquez sur ce bouton pour aller sous-couverture. Si vous remplissez les conditions, l'ennemi ne vous attaquera pas à vue. À pied, pour aller sous-couverture, vous ne devez avoir ni armes ni équipement militaire visible.&lt;br/&gt;Vous perdrez le statut d'infiltration lorsque vous changerez de chargement, serez repéré par des chiens de garde ennemis, planterez des mines et certains civils pourront également signaler à l'ennemi. Si vous êtes découvert, vous ne pourrez plus vous infiltrer à pied pendant 30 minutes. Vous pouvez également vous infiltrer en montant dans n'importe quel véhicule civil. Vous perdrez le statut d'infiltration en tirant avec n'importe quelle arme ou en étant repéré loin d'une route. Si vous êtes découvert, vous ne pourrez plus vous infiltrer dans ce véhicule. Se rapprocher des bases aériennes, des avant-postes et des barrages routiers ennemis vous fera également perdre le statut d'infiltration.</French>
         <German>Drücke diese Schaltfläche, um verdeckt zu agieren. Wenn du die Anforderungen hierfür erfüllst, werden Feinde dich nicht mehr bei Kontakt angreifen. Während du zu Fuß unterwegs bist, darfst du keine Waffen oder andere militärische Ausrüstung sichtbar tragen.&lt;br/&gt;Du wirst aufgedeckt, wenn du deine Ausrüstung änderst, von feindlichen Wachhunden enteckt wirst, Minen platzierst oder ein Zivilist dich möglicherweise dem Feind meldet. Einmal aufgedeckt, kannst du für 30 Minuten nicht mehr verdeckt agieren. Eine weitere Möglichkeit diesen Modus zu aktivieren ist die Nutzung eines Zivilfahrzeugs. Hierbei wirst du aufgedeckt, sobald du eine Waffe abfeuerst oder dabei gesehen wirst, wenn du zu weit von einer Straße entfernt bist. Wirst du mit einem Zivilfahrzeug aufgedeckt, ist es dir nicht mehr möglich, dieses Fahrzeug für verdecktes Vorgehen zu nutzen. Näherst du dich einem feindlichen Flugplatz, Außenposten oder einer feindlichen Straßensperre, wirst du ebenso aufgedeckt.</German>
         <Czech>Kliknutím na toto tlačítko přejdete do utajení. Pokud splníte požadavky, nepřítel na vás nezaútočí na první pohled. Abyste mohli jít pěšky v utajení, nesmíte mít žádné zbraně nebo vojenské vybavení viditelné.&lt;br/&gt;Ztratíte tajný status, když změníte vybavení, dostanete spatřen nepřátelskými hlídacími psy, pokládáním min, též můžete být nahlášen místníma civilistama. Pokud vás objeví, nebudete moci jít v utajení znovu  po dobu 30 minut. Můžete také jít v utajení tím, že se dostane do jakéhokoli civilního vozidla. Ztratíte tajný status tím, že vystřelíte jakoukoliv zbraň nebo budete spatřeni daleko od silnice. Pokud vás odhalí, nebudete moci znovu v tom vozidle. Když se přiblížíte k nepřátelským leteckým základnám, základnám a zátarasům, ztratíte také status v utajení.</Czech>
-        <Chinesesimp>如果你达到了要求,进入伪装状态敌人就不会攻击你.步行时您必须没有可见的武器或军事装备。当您换装时,您将失去伪装身份,被敌人的警犬发现,埋设地雷,还可以由一些平民向敌人报告.如果你被发现,30分钟内你就不能再徒步伪装了.你也可以进入任何民用车辆伪装.你将失去伪装身份,如果你被发现,你就不能再在那辆车上伪装了.接近敌人的空军基地、前哨基地和路障也会使你失去伪装身份.</Chinesesimp>
+        <Chinesesimp>点击此按钮进入伪装状态。如果你满足伪装条件，敌军在目视到你时就不会攻击你。想要在步行状态下进入伪装模式，你不能携带任何可见的武器或军用装备。&lt;br/&gt;当你更换装备，被敌方警卫犬发现，埋设地雷，或被平民报告给敌军时，伪装将会失效。如果你被识破，在30分钟内将无法再次进入步行伪装状态。你也可以通过进入民用车辆来启用伪装。使用任何武器开火，或在远离道路的敌方被发现，均会使伪装失效。如果你被识破，你将无法在该载具内再次进入伪装状态。靠近敌方空军基地、观察哨和路障也会使伪装状态失效。</Chinesesimp>
         <Korean>조건에 맞춰 잠복 버튼을 누르면, 함부로 적에게 공격받지 않습니다. 맨몸으로 잠복하기 위해선 무기 또는 군사장비가 없어야합니다.&lt;br/&gt;장비를 바꾸거나, 경비견에게 들키거나, 지뢰를 심거나 시민이 적에게 신고하면 잠복은 들킵니다. 들킨다면 30분동안은 다시 잠복을 하지 못합니다. 또한 민수차량으로 잠복을 할 수 있습니다. 사격하거나 도로에서 벗어난다면 잠복은 풀립니다. 들키면 그 차량으로는 다시 잠복할 수 없습니다. 적군 공항, 전초기지, 검문소에 가까이 간다면 잠복은 풀립니다.</Korean>
         <Russian>Нажмите на эту кнопку, чтобы перейти под прикрытие. Если вы соответствуете требованиям, противник не нападет на вас сразу же. Пешком, чтобы идти под прикрытием, у вас не должно быть видимого оружия или военной техники. &lt;br/&gt; Вы теряете статус секретного прикрытия, когда меняете расстановку сил, вас заметят вражеские сторожевые собаки, устанавливают мины, а также о вас можно сообщить некоторые мирные жители врагу. Если вас обнаружат, вы не сможете снова ходить под прикрытием в течение 30 минут. Вы также можете под прикрытием сесть в любой гражданский автомобиль. Вы потеряете статус под прикрытием, если выстрелите из любого оружия или вас заметят далеко от дороги. Если вас обнаружат, вы больше не сможете ехать под прикрытием в этом транспортном средстве. Приближение к вражеским авиабазам, заставам и блокпостам также приведет к потере статуса секретного прикрытия.</Russian>
       </Key>
@@ -1946,7 +1946,7 @@
         <French>Récupérez des objets, des armes et des magazines et mettez-les dans votre Arsenal au QG. Une fois que vous en avez un nombre spécifique, ils seront déverrouillés et ajoutés à l'arsenal pour un usage personnel (et pour vos escouades de faction).&lt;br/&gt;Le montant requis pour déverrouiller dépend du nombre d'actifs débloqués par la faction et du nombre d'usines possédées. Les armes déverrouillées, les viseurs et les lunettes de vision nocturne peuvent également modifier les équipements de vos IA. Les miliciens de base sont particulièrement touchés par cela: leur équipement commencera par de petites SMG et passera à un lanceur AA / AT supplémentaire. Veuillez noter que cela n'affectera pas leur tenue, qui dépendra du niveau de compétence de faction actuel (casques et uniformes). Arsenal est l'arsenal BIS standard, consultez leur documentation pour l'interaction et l'utilisation.&lt;br/&gt;&lt;br/&gt;Pour voir les montants nécessaires pour déverrouiller chaque groupe d'articles, ouvrez l'Arsenal au QG et vous recevrez un rapport détaillé sur la droite.</French>
         <German>Sammle Gegenstände, Waffen und Magazine, um sie in das Munitionslager deines HQs abzulegen. Sobald du eine bestimmte Anzahl eines Gegenstands vorrätig hast, wird er im Arsenal für den persönlichen Gebrauch durch dich und den Gruppen deiner Fraktion freigeschaltet.&lt;br/&gt;Die benötigte Anzahl zur Freischaltung hängt davon ab, wie viele Gegenstände die Fraktion bereits freigeschaltet hat und wie viele Fabriken im Besitz der Fraktion sind. Freigeschaltete Waffen, Visiere und Nachtsichtgeräte können auch die Ausrüstung deiner KI Einheiten verändern. Einfache Milizen sind davon im speziellen betroffen: Ihre Ausrüstung ist zu Beginn ein einfaches SMG und erweitert sich auf zusätzliche Luft- und Panzerabwehrwaffen. Beachte, dass dies nicht ihre Kleidung (Uniform und Helm) beeinflusst, da dies von dem Fertigkeitslevel der Fraktion abhängt. Das Arsenal ist das standard BI Arsenal, also nutze die darüber verfügbare Dokumentation für Bedienungshinweise.&lt;br/&gt;&lt;br/&gt;Um die notwendige Anzahl zum Freischalten von Gegenständen einzusehen, öffne das Munitionslager im HQ und du erhälst eine Auflistung am rechten Bildschirmrand.</German>
         <Czech>Hledejte předměty, zbraně a zásobníky a vložte je do svého arzenálu. Jakmile budete mít určité množství z nich, budou odemčeny a přidány do Arzenálu pro osobní potřebu (a pro vaše frakce družstva).&lt;br/&gt;Částka potřebná k odemčení závisí na tom, kolik aktiv frakce odemkla a počet vlastněných továren. Odemčené zbraně, optika a noční vidění může také změnit vybavení AI. Základní milicionáři jsou tímto obzvláště postiženi: jejich vybavení začne od malých SMG až po odpalovací zařízení AA / AT. Vezměte prosím na vědomí, že to nebude mít vliv na jejich oblečení, které bude záviset na aktuální úrovni dovedností frakce (přilby a uniformy). Arzenal je standardní BIS Arsenal, zkontrolujte jejich dokumentaci pro interakci a použití.&lt;br/&gt;&lt;br/&gt; Chcete-li zobrazit částky potřebné k odemknutí každé skupiny položek, otevřete okno hq a obdržíte podrobnou zprávu vpravo.</Czech>
-        <Chinesesimp>清除物品, 武器和弹匣放在你的总部弹药箱里.一旦拥有一定数量,它们将被解锁并添加到武器库供个人使用（并为你的派系小队使用).&lt;br/&gt;解锁所需的数量取决于该派系解锁的资产数量和拥有的工厂数量.解锁的武器,光学和夜视谷歌也可能改变人工智能的负荷.基本民兵尤其受此影响：他们的装载将从小型小型小型导弹开始,并逐步增加一个额外的防空/反坦克发射器.请注意,这不会影响他们的着装,这将取决于当前的派系技能水平（头盔和制服）.阿森纳是标准的BIS阿森纳,查看他们的文档以进行交互和使用.&lt;br/&gt;若要查看解锁每组项目所需的金额,请打开HQ弹药箱,您将收到右侧的详细报告.</Chinesesimp>
+        <Chinesesimp>搜寻物品、武器和弹夹，并将其放进总部的弹药箱中。当你拥有超过一定数量的物品之后，它们将会解锁并添加到军火库以供个人(以及阵营班组)使用。&lt;br/&gt;解锁物品所需的数量取决于我方阵营已解锁的资产和拥有的工厂数量。解锁的武器、瞄具和夜视仪也会改变AI的装备。最基础的民兵将尤其受此影响：他们的装备将从小型冲锋枪开始，发展到拥有一个额外的防空/反坦克发射器。请注意，这不会影响到AI小队的着装，而着装(头盔和制服)取决于我方阵营当前的技能等级。军火库是标准的BIS军火库，查看它们的文档来了解如何交互和使用。&lt;br/&gt;&lt;br/&gt;要查看解锁每组物品所需的数量，打开总部的弹药箱，你将在右侧看到详细报告。</Chinesesimp>
         <Korean>아이템, 무기 탄약을 모아 HQ 탄약박스에 넣으십시오. 아이템이 특정 갯수가 넘으면 아스널에서 언락되고 개인적으로 사용할수 있습니다(AI 분대도 포함).&lt;br/&gt;언락하기 위한 조건은 팩션 자금과 점령한 공장 수에 따라 다릅니다. 언락된 무기, 광학장비, 야시경은 AI병사 장비도 바꿀 수 있습니다. 기본적인 민병대원는 언락된 무기에 영향받아 SMG에서 시작해서 중방비(AA/AT)까지 무장합니다. 팩션 스킬 레벨(헬멧과 유니폼)에 따라 달라지는 그들의 복장에는 영향을 주지 않습니다. 아스널은 표준 BIS 아스널입니다. 자세한건 BIS 문서를 확인하십시오.&lt;br/&gt;&lt;br/&gt;각 항목의 언락 조건을 보려면 HQ 탄약상자를 열면 오른쪽에 자세한 정보가 제공됩니다.</Korean>
         <Russian>Найдите предметы, оружие и журналы и положите их в ящик для боеприпасов в штаб-квартире. Как только у вас будет определенное количество их, они будут разблокированы и добавлены в Арсенал для личного использования (и для ваших отрядов фракции). &lt;br/&gt; Количество, необходимое для разблокировки, зависит от того, сколько активов разблокировала фракция. и количество принадлежащих фабрик. Разблокированное оружие, оптика и очки ночного видения также могут изменить загрузку ИИ. Это особенно касается обычных ополченцев: их снаряжение начнется с небольших пистолетов-пулеметов и перейдет к дополнительным зенитным / противотанковым гранатометам. Обратите внимание, это не повлияет на их одежду, которая будет зависеть от текущего уровня навыков фракции (шлемы и униформа). Арсенал - это стандартный арсенал BIS, проверьте его документацию для взаимодействия и использования. &lt;br/&gt;&lt;br/&gt; Чтобы увидеть суммы, необходимые для разблокировки каждой группы предметов, откройте HQ Ammobox, и вы получите подробный отчет справа</Russian>
       </Key>
@@ -1964,7 +1964,7 @@
         <French>Ceci est une guerre civile. Les gens ne sont pas conquis si vous ne pouvez pas conquérir leur cœur. En mécanique de jeu, cela signifie que vous ne pouvez pas conquérir de villes. Les citoyens de chaque ville soutiennent l'ennemi ou la faction dans une certaine mesure.&lt;br/&gt;La faction dominante est celle qui possède la ville et bénéficie de leur soutien en termes d'argent et de ressources humaines (RH). Vos actions peuvent réduire le soutien ennemi ou augmenter le vôtre, ou les deux. Tuer des ennemis, accomplir des missions, conquérir des ressources et des centrales électriques affecte le niveau de soutien des citoyens.</French>
         <German>Dies ist ein Bürgerkrieg. Menschen können nicht erobert werden, wenn du nicht ihre Herzen erobern kannst. Bezogen auf die Spielmechanik bedeutet dies, dass du keine Städte erobern kannst. Die Bevölkerung jeder Stadt unterstützt die Fraktionen zu gewissen Graden.&lt;br/&gt;Die beliebteste Fraktion ist dann diejenige, welche die Stadt besitzt und von ihrer Unterstützung (Geld und Mannstärke) profitieren kann. Deine Unternehmungen können dazu führen, dass die Unterstützung für den Feind sinkt oder er für dich steigt. Das Ausschalten von feindlichen Einheiten, die Erledigung von Sekundärmissionen und das Erobern von Ressourcen und Kraftwerken beeinflusst die Unterstützung der Zivilbevölkerung.</German>
         <Czech>Toto je občanská válka. Lidé nejsou dobyti, pokud nemůžete dobýt jejich srdce. V herní mechanice to znamená, že nemůžete dobýt města. Občané každého města podporují nepřítele nebo frakce na určitou částku.&lt;br/&gt;Dominantní frakcí je ten, kdo vlastní město a těží z jejich podpory, pokud jde o peníze a lidské zdroje (HR). Vaše akce mohou snížit nepřátelské podporu nebo zvýšit vaše, nebo obojí. Zabíjení nepřátel, plnění misí, dobývání zdrojů a elektráren ovlivňuje množství podpory občanů.</Czech>
-        <Chinesesimp>这是一场内战.如果你不能征服人们的心,他们就不会被征服.在游戏机制中,这意味着你不能征服城市.每个城镇的公民都在一定程度上支持敌人或派系.&lt;br/&gt;主导派系是指拥有城市并从其支持中获得资金和人力资源（HR）利益的人.你的行动可能降低敌人的支持或提高你的支持,或两者兼而有之.杀敌、完成任务、征服资源和发电站,都会影响公民的支持.</Chinesesimp>
+        <Chinesesimp>这是一场内战。要想征服人民，你必须征服他们的心。在游戏机制中，这意味着你无法占领城镇。每个城镇都有一定数量的公民支持敌方或我方阵营。&lt;br/&gt;占领方，也就是拥有这座城镇的阵营，会获得民众的支持，并在资金和人力资源两方面获益。你的行动可能会降低敌方支持率并提升我方支持率，或者二者兼有。消灭敌军，完成任务，攻占资源点和电站，都会影响民众的支持率。</Chinesesimp>
         <Korean>여긴 내전상황입니다. 시민들의 환심을 사지 않으면 사로잡을 수 없습니다. 즉, 도시를 정복할수 없다는 것을 의미합니다. 각 마을마다 시민들은 적이나 아군을 어느정도 지지합니다.&lt;br/&gt;자금과 인적자원을 지원하는 그들의 지지를 받는 세력이 그 도시를 점령한 세력입니다. 아군의 행동이 적의 자원을 낮추거나 아군의 지지를 높히거나 둘다 할수 있다. 적을 죽이고, 임무를 수행하고, 자원을 모으고, 권력을 잡는것은 시민의 지원량에 영향을 미칩니다.</Korean>
         <Russian>Это гражданская война. Вам не победить, если вы не можете завоевать их сердца. В игровой механике это означает, что вы не можете завоевывать города. Жители каждого города в определенной степени поддерживают врага или фракцию. &lt;br/&gt; Доминирующая фракция - это тот, кто владеет городом и получает от их поддержки деньги и человеческие ресурсы (HR). Ваши действия могут снизить или повысить вашу поддержку противника, или и то, и другое. Убийство врагов, выполнение миссий, завоевание ресурсов и электростанций влияет на количество поддержки граждан.</Russian>
       </Key>
@@ -1973,7 +1973,7 @@
         <French>Tours radio</French>
         <German>Funkmasten</German>
         <Czech>Rádiové věže</Czech>
-        <Chinesesimp>无线电发射塔</Chinesesimp>
+        <Chinesesimp>无线电塔</Chinesesimp>
         <Korean>라디오 타워</Korean>
         <Russian>Радиовышки</Russian>
       </Key>
@@ -1982,7 +1982,7 @@
         <French>Détruisez ou capturez des tours radio afin de gagner la confiance des %1 citoyens.</French>
         <German>Zerstöre oder erobere Funkmaster, um das Vertrauen der Zivilbevölkerung von %1 zu erhöhen.</German>
         <Czech>Zničte nebo obsaďte rádiové věže, abyste si vybudovali důvěru u %1 občanů.</Czech>
-        <Chinesesimp>摧毁或捕获无线电发射塔以建立与 %1 个公民的信任.</Chinesesimp>
+        <Chinesesimp>摧毁或占领无线电塔，以获取 %1 个公民的信任。</Chinesesimp>
         <Korean>시민들 신뢰 %1를 쌓기 위해 라디오 타워를 파괴하거나 점령하십시오.</Korean>
         <Russian>Уничтожьте или захватите Радиовышки, чтобы завоевать доверие %1 жителей</Russian>
       </Key>
@@ -2000,7 +2000,7 @@
         <French>Vous pouvez acheter des véhicules pour votre équipe aux drapeaux de faction.</French>
         <German>Du kannst Fahrzeuge für deine Gruppe am Flaggenmast kaufen.</German>
         <Czech>Můžete si koupit vozidla pro svůj tým u frakčních vlajek.</Czech>
-        <Chinesesimp>你可以在阵营旗下为你的小队购买车载具.</Chinesesimp>
+        <Chinesesimp>你可以在我方阵营旗帜处为你的班组购买载具。</Chinesesimp>
         <Korean>HQ 깃발에서 분대를 위해 차량을 구입할 수 있습니다.</Korean>
         <Russian>Вы можете покупать технику для своего отряда в штабе фракций.</Russian>
       </Key>
@@ -2018,7 +2018,7 @@
         <French>Vous pouvez voler des armes statiques trouvées dans les aéroports ennemis. Vous devez utiliser l'action 'Steal Static' pour le faire. NE PAS les démonter avant d'utiliser l'action 'Steal Static'!</French>
         <German>Du kannst statische Geschütze von feindlichen Flugplätzen stehlen. Hierzu nutze die "Stehle Geschütz" Aktion. BEACHTE die Geschütze NICHT zu demontieren, bevor du nicht die "Stehle Geschütz" Aktion genutzt hast.</German>
         <Czech>Můžete ukrást lafetované zbraně na nepřátelských letištích. K tomu musíte použít akci „Ukrást lafetovanou zbraň“. NEPOUŽÍVEJTE „rozložit" před použitím akce „Ukrást lafetovanou zbraň“</Czech>
-        <Chinesesimp>你可以偷敌人机场发现的固定式武器.您必须使用“窃取静态”操作来执行此操作.在使用“窃取静态”操作之前,不要拆解它们!</Chinesesimp>
+        <Chinesesimp>你可以偷取在敌方机场发现的固定式武器。你必须使用"偷取固定式武器"动作来执行此操作。在使用"偷取固定式武器"动作之前，不要拆解固定式武器!</Chinesesimp>
         <Korean>적 공항에서 고정화기를 발견하면 훔칠 수 있습니다. 'Steal Static'을 사용해야합니다. 'Steal Static'을 하기전에 분해하지 마십시오.</Korean>
         <Russian>Вы можете украсть статическое оружие, найденное во вражеских аэропортах. Для этого вы должны использовать действие «Steal Static». ЗАПРЕЩАЕТСЯ разбирать их, прежде чем использовать действие «Кража статики».</Russian>
       </Key>
@@ -2036,7 +2036,7 @@
         <French>Certaines zones, comme les aéroports, vous obligent à utiliser l'action ""Prendre le drapeau"" sur leurs drapeaux respectifs afin de les conquérir. D'autres, comme les barrages routiers et certains avant-postes, vous demandent simplement de vaincre la garnison.</French>
         <German>Um eine Zone, wie z.B. einen Flugplatz, einzunehmen, musst du die "Nimm die Flagge" Aktion an dem entsprechenden Flaggenmast vor Ort nutzen.</German>
         <Czech>Některé zóny, jako jsou letiště, vyžadují, abyste na jejich příslušných vlajkách použili akci „Převzít vlajku“, abyste je mohli dobýt. Někteří jiní, jako jsou zátarasy a některé základny, prostě vyžadují, abyste porazili posádku.</Czech>
-        <Chinesesimp>有些区域,如机场,要求您在各自的旗帜上使用“夺取旗子”操作来征服它们.还有一些,比如路障和前哨,只需要你打败驻军.</Chinesesimp>
+        <Chinesesimp>你需要在敌方旗帜上使用"夺取旗帜"动作来占领某些区域，比如机场。对于另一些区域，比如路障和前哨，只需要击败敌方驻军即可。</Chinesesimp>
         <Korean>공항 같은 일부 지역에서는 ""Take the Flag""를 사용해야합니다. 검문소나 전초기같은 단순한 것들은 병력만 무력화시켜도 됩니다.</Korean>
         <Russian>Некоторые зоны, например аэропорты, требуют от вас использования действия «Взять флаг» на соответствующих флагах, чтобы захватить их. Некоторые другие, такие как блокпосты и некоторые заставы, просто требуют, чтобы вы уничтожили гарнизон.</Russian>
       </Key>
@@ -2054,7 +2054,7 @@
         <French>Lorsque vous êtes dans un camion, vous pouvez utiliser l'action Transférer dans le menu d'action. Il recherchera les boîtes de munitions à proximité et chargera le contenu de la plus proche dans l'espace de chargement du camion. Vous pouvez ensuite décharger le camion dans votre Arsenal au QG pour une utilisation future. Avant le transfert, assurez-vous de décharger le contenu du sac à dos / gilet dans l'espace de chargement du camion, puis transférez. CONSEIL: Si votre Arsenal au QG est plein, utilisez cette fonctionnalité à partir d'un camion à proximité pour ajouter plus de contenu à la boite car il acceptera alors tout :)</French>
         <German>Befindest du dich in einem LKW, kannst du die Transfer-Aktion im Aktionsmenü nutzen. Dadurch wird der Inhalt der nähsten Munitionskiste in das Inventar deines LKWs transferiert. Anschließend kannst du deinen LKW bei deinem Munitionslager im HQ entladen, um die erbeuteten Gegenstände sicher einzulagern. Bevor du das Inventar des LKWs in dein Munitionslager transferierst, solltest du alle Gegenstände aus dem Inventar von Rucksäcken und Westen in das Grundinventar deines LKWs verschieben. TIPP: Wenn dein Munitionslager im HQ voll ist, kannst du über diese Funktion dennoch Gegenstände aus einem LKW einlagern :)</German>
         <Czech>Při použití nákladního vozu můžete použít akci „Přenos" v nabídce akcí. Vyhledá v blízkém okolí krabici s municí a vloží ji do nákladního prostoru. Poté můžete nákladní vůz vyložit  na velitelství pro budoucí použití. Před přenosem se ujistěte, že jste obsahy baťohů/vest vyložili do nákladního prostoru nákladního vozu a poté jej přenesli. TIP: Pokud je váš inventář arzenálu plný, použijte tuto funkci z blízkého náklaďáku a přidejte do arzenálu další obsah, protože ten sežere všechno :)</Czech>
-        <Chinesesimp>装载卡车时,可以使用“操作”菜单中的“转移”操作.它将搜索附近的弹药箱,并将最近的弹药箱的内容物装入卡车的货舱.你可以把卡车卸在总部的弹药箱里,以备将来使用.在转移之前,确保将背包/背心内的物品卸入卡车货舱,然后转移.小贴士：如果你的总部弹药箱已经满了,使用附近卡车上的这个功能向弹药箱添加更多的内容,因为它将接受所有东西 :)</Chinesesimp>
+        <Chinesesimp>搭乘卡车时，你可以使用动作选单中的转移动作。该动作会搜索附近的弹药箱，并将最近的弹药箱中的内容装进卡车的货物空间。你可以在总部的弹药箱处卸货以供将来使用。在转移前，确保已将背包/背心中的内容卸载至卡车的货物空间在进行转移。提示: 如果总部的弹药箱已满，可以在附近的卡车上使用此功能向弹药箱中添加更多内容，这样它就会接受任何东西 :)</Chinesesimp>
         <Korean>트럭에 박스를 올릴때, 작업메뉴에서 전송을 눌러야합니다. 가까운 탄약박스을 찾아 트럭 환물칸에 옮깁니다. 그리고 미래의 HQ로 사용할 장소에 탄약박스를 내릴 수 있습니다. 옮기기전 가방과 조끼 내용물을 트럭 화물칸에 두고 운반해야합니다. 팁: 본부 탄약 상자가 가득 찬 경우 근처트럭에서 이 기능을 사용하여 탄약상자에 더 많은 짐들을 넣을수 있습니다 :)</Korean>
         <Russian>Когда вы садитесь на грузовик, вы можете использовать действие «Переместить» в меню действий. Он будет искать ближайшие боеприпасы и загружать содержимое ближайшего в грузовое пространство грузовика. Затем вы можете разгрузить грузовик в свой боезапас в штаб-квартире для будущего использования. Перед перемещением убедитесь, что содержимое рюкзака / жилета выгружено в грузовое пространство грузовика, а затем перенесите его. СОВЕТ: если ваш штаб-квартира с боеприпасами заполнена, используйте эту функцию из ближайшего грузовика, чтобы добавить больше содержимого в ящик с боеприпасами, поскольку он будет принимать все</Russian>
       </Key>
@@ -2072,7 +2072,7 @@
         <French>Lorsqu'il n'y a pas d'ennemis à proximité, voyagez rapidement vers des endroits contrôlés par la faction. Le Commandant a également la possibilité d'utiliser cette option sur les groupes HC, en sélectionnant le groupe sur la barre HC et en cliquant sur ce bouton.</French>
         <German>Sind keine Feinde in der Nähe, kannst du schnell zu von deiner Fraktion kontrollierten Orte reisen. Der Kommandant hat außerdem die Möglichkeit, diese Funktion für KI Gruppen zu nutzen, indem diese in der Oberbefehlsleiste ausgewählt und anschließend die Schaltfläche angeklickt wird.</German>
         <Czech>Pokud v okolí nejsou žádní nepřátelé, rychle cestujte na místa pod kontrolou frakce. Velitel má také možnost tuto možnost použít na štábní skupiny, výběrem skupiny na Štabní liště a kliknutím na toto tlačítko.</Czech>
-        <Chinesesimp>当附近没有敌人时,快速前往派系控制的地方.指挥官还可以在HC组上使用此选项,在HC栏上选择组并单击此按钮.</Chinesesimp>
+        <Chinesesimp>当附近没有敌人时，快速旅行至我方阵营控制的地方。指挥官还可以在指挥部选单中选择班组，再点击此按钮，即可对指挥部班组使用此选项。</Chinesesimp>
         <Korean>적이 가까이 없을때 팩션 점령 지역으로 빠룬 이동을 할 수 있습니다. 지휘관은 High Command로 분대를 선택하고 빠른 이동버튼을 눌러 사용할 수 있습니다.</Korean>
         <Russian>Когда поблизости нет врагов, быстро перемещайтесь в места, контролируемые фракцией. У Командующего также есть возможность использовать эту опцию для групп HC, выбрав группу на панели HC и нажав эту кнопку</Russian>
       </Key>
@@ -2081,7 +2081,7 @@
         <French>Emplacement statique de base</French>
         <German>Geschützstellungen</German>
         <Czech>Umístění lafetovaných zbraní na základně</Czech>
-        <Chinesesimp>基地固定式武器定位</Chinesesimp>
+        <Chinesesimp>固定式武器</Chinesesimp>
         <Korean>기지 고정화기 장비</Korean>
         <Russian>Станковое орудие в штабе</Russian>
       </Key>
@@ -2090,7 +2090,7 @@
         <French>Les armes statiques achetées ne disparaîtront pas si vous les laissez dans une base ou une zone, la garnison AI les équipera. Renforcez les lieux à votre guise.</French>
         <German>Gekaufte statische Geschütze werden werden nicht entfernt, wenn du sie in der Nähe einer Basis oder Zone stehen lässt. Die KI Garnison wird sie dann bemannen. Verstärke somit Orte ganz nach deinem Geschmack.</German>
         <Czech>Zakoupené lafetované zbraně nebudou odebrána, pokud je necháte na základně nebo v zóně, posádka AI je bude ovládat. Posilujte místa, jak si přejete.</Czech>
-        <Chinesesimp>购买的固定式武器不会消失,如果你把他们留在基地或区域,艾守军将人.按你的要求加固地方.</Chinesesimp>
+        <Chinesesimp>如果你将购买的固定式武器留在基地或占领区内，他们不会消失。AI守军将会管理他们。按你的意愿加强该地区的防守。</Chinesesimp>
         <Korean>구매한 고정화기는 기지를 떠나도 사라지지 않으며, 주둔지 AI들이 탑니다. 원하는 곳에 설치합니다.</Korean>
         <Russian>Купленное статическое оружие не исчезнет, если вы оставите его на базе или в зоне, им будет управлять гарнизон ИИ. Укрепляйте места по своему желанию</Russian>
       </Key>
@@ -2099,7 +2099,7 @@
         <French>Sélection de groupe</French>
         <German>Gruppenauswahl</German>
         <Czech>Výběr skupiny</Czech>
-        <Chinesesimp>组队选项</Chinesesimp>
+        <Chinesesimp>小队选择</Chinesesimp>
         <Korean>분대 선택</Korean>
         <Russian>Выбор группы</Russian>
       </Key>
@@ -2108,7 +2108,7 @@
         <French>Vous pouvez créer des groupes avec jusqu'à 10 joueurs humains. Le commandant est exclu de cette fonction.</French>
         <German>Eine Gruppe kann aus bis zu 10 Spielern bestehen. Der Kommandant ist hiervon ausgenommen.</German>
         <Czech>Skupina se může skládat až z 10 hráčů. Velitel je z této funkce vyloučen.</Czech>
-        <Chinesesimp>你可以建立最多有10个人玩家的群组.指挥官被排除在这项职能之外.</Chinesesimp>
+        <Chinesesimp>你可以建立由最多10个玩家组成的小队。指挥官除外。</Chinesesimp>
         <Korean>최대 10명의 분대를 만들 수 있습니다. 지휘관은 이 기능에서 제외됩니다.</Korean>
         <Russian>Вы можете создавать группы до 10 игроков-людей. Командир исключен из этой функции</Russian>
       </Key>
@@ -2126,7 +2126,7 @@
         <French>Si elle est activée, cette fonction exclura tous les non-membres d'utiliser la boite du QG et de devenir commandant. Cette fonctionnalité est destinée à éviter que votre jeu ne soit ruiné par le troll occasionnel dans des environnements de serveurs ouverts. Les commandants peuvent ajouter ou supprimer des joueurs de la liste des membres du serveur si la fonction est activée.</French>
         <German>Wenn aktiviert, können ausschließlich festgelegte Servermitglieder das Munitionslager im HQ benutzen oder Kommandant werden. Dieses Feature ist dafür gedacht, dass die üblichen Trolle dein Spiel auf einem öffentlichen Server nicht ruinieren können. Kommandanten können Spieler zu der Liste der Servermitglieder hinzufügen oder davon entfernen, wenn das Feature aktiviert ist.</German>
         <Czech>Pokud je povolena, tato funkce vyloučí všechny nečleny z použití Arzenálu a funkce stát se velitelem. Tato funkce má zabránit tomu, aby vaše hra byla zničena náhodným trolem v prostředí otevřeného serveru.</Czech>
-        <Chinesesimp>如果启用,此功能将排除所有非成员使用总部弹药箱和成为指挥官.此功能旨在避免您的游戏在开放服务器环境中被随意的熊孩子破坏.</Chinesesimp>
+        <Chinesesimp>启用此功能将会阻止所有非会员玩家使用总部的弹药箱或成为指挥官。此功能旨在避免您的游戏在服务器开放环境下被随便的散人玩家破坏。如果启用了该功能，指挥官可以向服务器会员列表中添加或删除玩家。</Chinesesimp>
         <Korean>활성화를 시키면 비멤버은 아스날이 제한되고 지휘관이 되지 못합니다. 이 기능은 공개서버에서 트롤들이 게임을 망치는 것을 방지하기 위한 것입니다. 지휘관은 이 기능이 켜진 경우 서버 멤버 목록에서 플레이어를 추가하거나 제거할 수 있습니다.</Korean>
         <Russian>Если эта функция включена, все не-члены будут исключены из использования HQ Ammobox и станут командиром. Эта функция предназначена для того, чтобы ваша игра не испортилась случайным троллем в среде открытого сервера. Командиры могут добавлять или удалять игроков из списка участников сервера, если эта функция включена.</Russian>
       </Key>
@@ -2144,7 +2144,7 @@
         <French>Utilisez cette option pour donner de l'argent à d'autres joueurs ou aux fonds de votre faction.</French>
         <German>Mit dieser Funktion kannst du Geld an andere Spieler oder der Fraktionskasse spenden.</German>
         <Czech>Použijte tuto možnost k darování peněz jiným hráčům nebo vašim frakčním fondům. Velitelé mohou přidávat nebo odebírat hráče ze seznamu členů serveru, pokud je tato funkce povolena.</Czech>
-        <Chinesesimp>使用此选项可向其他玩家或您的阵营基金捐款.如果启用了该功能,指挥官可以在服务器成员列表中添加或删除玩家.</Chinesesimp>
+        <Chinesesimp>使用此选项向其他玩家或阵营资金捐款。</Chinesesimp>
         <Korean>다른 플레이어 또는 팩션 자금에 기부를 하고싶다면 이 기능을 사용하십시오.</Korean>
         <Russian>Используйте эту опцию, чтобы передавать деньги другим игрокам или в фонд вашей фракции</Russian>
       </Key>
@@ -2153,7 +2153,7 @@
         <French>Forcer le véhicule</French>
         <German>Fahrzeuge aufbrechen</German>
         <Czech>Poškození vozidel</Czech>
-        <Chinesesimp>违规车辆</Chinesesimp>
+        <Chinesesimp>爆破载具</Chinesesimp>
         <Korean>해치 폭파</Korean>
         <Russian>Выкуривание из техники</Russian>
       </Key>
@@ -2162,7 +2162,7 @@
         <French>Les chars et les véhicules de Transports de troupes peuvent être percés par des ingénieurs avec des explosifs pour les ouvrir et faire sortir leur équipage. Cochez «Charges explosives» pour les frais nécessaires. La violation des véhicules inflige des dégâts, alors faites attention lorsque vous percez des véhicules fortement endommagés. Pour percer un véhicule, approchez-vous de celui-ci et sélectionnez l'option de perçage!</French>
         <German>Panzer und Truppentransporter können von Ingenieuren mit Sprengstoff aufgebrochen werden, um die Besatzung absitzen zu lassen. Unter "Aufspengladungen" findest du die benötigten Sprengstoffe. Ein Fahrzeug derart aufzubrechen verursacht Schaden. Sei also vorsichtig, wenn du dies an einem bereits schwer beschädigten Fahrzeug durchführst. Um ein Fahrzeug aufzubrechen, gehe nah an es heran und wähle die "Aufbrechen" Aktion.</German>
         <Czech>Tanky a APC mohou být požkozeny inženýry s výbušninami, aby je otevřeli a dostali jejich posádku ven. Zkontrolujte potřebné vybavení na „proražení vozidla“. Proražení vozidel způsobí poškození, takže při proražení silně poškozených vozidel buďte opatrní. Chcete-li vozidlo proražení, přibližte se k němu a vyberte možnost proražení!</Czech>
-        <Chinesesimp>工程师可以用炸药破坏坦克和APC，以将其打开并将其人员撤离。 在“违规费用”中检查所需的费用。 违反规定的车辆会造成损坏，因此在破坏严重损坏的车辆时请多加注意。 要破坏车辆，请靠近它并选择破坏选项！</Chinesesimp>
+        <Chinesesimp>工程师可以使用炸药爆破并打开坦克和装甲车，并使其成员离开载具。查看"爆破炸药"来了解所需的炸药。爆破载具会对载具造成伤害，因此在需要爆破严重受损的载具时要小心。要爆破载具，靠近它并选择爆破选项!</Chinesesimp>
         <Korean>탱크와 장갑차 안의 승무원을 나오게 하기위해 공병은 폭발물로 해치를 열수있습니다. 폭발물을 설치하기위해 'Breaching charge'를 확인하시오. 해치 폭파는 데미지를 받습니다, 심각하게 손상된 장비들은 폭파 할때 조심해야합니다. 해치 폭파하기 위해, 장비에 다가가서 폭탄 부착을 선택하십시오.</Korean>
         <Russian>Инженеры могут взорвать танки и БТР с помощью взрывчатки, чтобы открыть их и вывести свою команду. Проверьте «Обвинения в нарушении», чтобы узнать о необходимых обвинениях. Нарушение транспортных средств наносит ущерб, поэтому будьте осторожны при наезде на сильно поврежденные автомобили. Чтобы взломать машину, подойдите к ней и выберите вариант взлома.</Russian>
       </Key>
@@ -2171,7 +2171,7 @@
         <French>Charges explosives</French>
         <German>Aufsprengladungen</German>
         <Czech>Prorazujíci výbušniny</Czech>
-        <Chinesesimp>炸药</Chinesesimp>
+        <Chinesesimp>爆破炸药</Chinesesimp>
         <Korean>폭탄 부착</Korean>
         <Russian>Пробитие</Russian>
       </Key>
@@ -2180,7 +2180,7 @@
         <French>Pour percer un APC, vous avez besoin de %1 %2. Pour briser un tank, vous avez besoin de %3.</French>
         <German>Um einen Truppentransporter aufzusprengen benötigst du %1 %2.&lt;br/&gt;Für einen Panzer benötigst du %3.</German>
         <Czech>K proražení APC potřebujete %1 %2 K proražení Tanku potřebujete %3</Czech>
-        <Chinesesimp>要攻破装甲运兵车,你需要 %1 %2 攻破你需要的坦克 %3</Chinesesimp>
+        <Chinesesimp>要爆破装甲运兵车，你需要%1个%2。要爆破坦克，你需要%3。</Chinesesimp>
         <Korean>장갑차 해치 폭파하기위해선 %1 %2탱크 해치 폭파하기 위해선 %3</Korean>
         <Russian>Чтобы пробить APC вам нужно %1 %2 Чтобы пробить танк вам нужно %3</Russian>
       </Key>
@@ -2198,7 +2198,7 @@
         <French>Vous pouvez recruter jusqu'à 9 coéquipiers IA sur certains drapeaux de faction et au drapeau du QG.</French>
         <German>Am Flaggenmast im HQ kannst du bis zu 9 KI Einheiten für deine Gruppe rekrutieren.</German>
         <Czech>Na některých frakčních vlajkách a na velitelských vlajkách můžete najmout až 9 jednotek AI.</Czech>
-        <Chinesesimp>你可以在一些派系旗和总部旗招募最多9名AI队友.</Chinesesimp>
+        <Chinesesimp>你可以在我方阵营旗帜处和总部旗帜处招募最多9名AI队友。</Chinesesimp>
         <Korean>HQ 깃발과 일부 팩션 깃발에서 최대 9명의 AI 분대원을 모집할 수 있습니다.</Korean>
         <Russian>Вы можете нанять до 9 ИИ товарищей в отряд.</Russian>
       </Key>
@@ -2216,7 +2216,7 @@
         <French>Sélectionnez un coéquipier ou un groupe HC pour prendre le contrôle direct sur eux pendant une durée limitée. La sélection de cette option pour une équipe HC vous donnera le contrôle sur le chef de l'équipe.</French>
         <German>Wähle ein Gruppenmitglied oder eine Oberbefehl-Gruppe, um für eine bestimmte Zeit direkte Kontrolle zu erhalten. Bei der Wahl einer Oberbefehl-Gruppe erhälst du Kontrolle über den Gruppenführer.</German>
         <Czech>Vyberte skupinu nebo skupinu štábu a získejte přímou kontrolu nad nimi po omezenou dobu. Výběrem této možnosti pro skupinu štábu získáte kontrolu nad vůdcem skupiny.</Czech>
-        <Chinesesimp>选择一个队友或HC小组,在有限的时间内直接控制他们.为HC小队选择这个选项可以让你控制小队的队长.</Chinesesimp>
+        <Chinesesimp>选择一名班组成员或指挥部班组，在有限的时间范围内直接控制他们。对指挥部班组使用此选项，可以让你控制该小队的小队长。</Chinesesimp>
         <Korean>빠른 시간안에 직접 통제하려면 분대원 또는 High Command 분대를 선택합니다. High Command 분대를 선택하면 그 분대의 분대장을 컨트롤할 수 있습니다.</Korean>
         <Russian>Выберите товарища по отряду или группу HC, чтобы получить прямой контроль над ними в течение ограниченного времени. Выбор этой опции для отряда ХК даст вам контроль над лидером отряда.</Russian>
       </Key>
@@ -2234,7 +2234,7 @@
         <French>Cette fonctionnalité vise à simuler le manque de communications radio avec les combattants IA. Vos camarades IA n'auront pas de radio tant que vous ne la déverrouillerez pas dans l'Arsenal. Sans radio, si un coéquipier IA s'éloigne trop, il se perdra et reviendra vers la position du commandant après avoir terminé le dernier ordre qu'il a reçu. Pour éviter cela, vous pouvez récupérer certaines radios de l'ennemi (la fonction "Réarmement automatique \ Butin" fera l'affaire) ou laisser l'IA utiliser un véhicule militaire qui a des radios à longue portée. Si cela prend trop de temps pour trouver leur chef, ils retourneront automatiquement au QG.</French>
         <German>Dieses Feature ist dazu gedacht die fehlende Funkkommunikation mit KI Widerständskämpfern zu simulieren. Deine KI Gruppenmitglieder werden keine Funkgeräte haben, solange du sie nicht im Arsenal freischaltest. Ohne ein Funkgerät kann die Verbindung der KI Widerstandskämpfer abbrechen, wenn sie sich zu weit entfernen. Sie werden dann, nachdem sie ihren letzten Befehl erfüllt haben, zur letzten Position des Anführers zurückkehren. Um dies zu verhindern, erbeute einige Funkgeräte von feindlichen Einheiten oder lasse die KI militärische Fahrzeuge mit Langstreckenfunkgeräten nutzen. Sollte es zu lange dauern, bis die KI Widerstandskämpfer ihren Anführer finden, kehren sie automatisch zum HQ zurück.</German>
         <Czech>Tato funkce si klade za cíl simulovat nedostatek radiové komunikace se stíhači AI. Vaši kamarádi AI nebudou mít rádio, dokud jej odemknete z Arsenalu. Bez rádia, pokud se družstvo AI dostane příliš daleko, ztratí se a vrátí se na pozici vůdce po dokončení posledního přijatého příkazu. Abyste tomu zabránili, můžete vyklidit některá rádia od nepřítele (funkce „Automaticky přezbrojit" to udělá) nebo nechat AI používat vojenské vozidlo, které má rádia s dlouhým dosahem. Pokud najdou svého vůdce příliš dlouho, vrátí se automaticky na velitelství.</Czech>
-        <Chinesesimp>这个功能旨在模拟与人工智能战斗机缺乏无线电通信的情况.你的人工智能队友不会有收音机,除非你从阿森纳打开它.如果没有无线电,如果一个人工智能队友走得太远,他们会迷失方向,在完成最后一个命令后回到领导的位置.为了避免这种情况,你可以从敌人身上清除一些无线电（自动搜索功能可以做到）,或者让人工智能使用一辆有远程无线电的军用车辆.如果需要很长时间才能找到他们的领导,他们会自动返回总部.</Chinesesimp>
+        <Chinesesimp>这个功能旨在模拟AI士兵缺少无线电通讯的情况。你的AI队友不会拥有无线电，直到你在军火库中解锁了它。在没有无线电的情况下，如果一名AI队友离得太远，他们将会失去联络，并在完成接收到的最后一项命令之后返回队长所在的位置。为了避免这种情况，你可以从敌军身上搜集一些无线电(也可以使用自动重新武装功能)，或者让AI使用带有长程电台的军用载具。如果失联的士兵经过太长时间也没有找到他们的队长，他们将会自动返回总部。</Chinesesimp>
         <Korean>AI전투원과 무전부재 상황이 특징입니다. AI분대원은 아스널에서 라디오를 언락전까지 라디오를 갖을수 없습니다. 무전기가 없다면 AI분대원들은 너무 멀어지면 길을 잃고 마지막으로 받은 임무를 마친뒤 분대장 자리로 돌아옵니다. 이를 막기 위해 적으로부터 라디오를 획득하거나(자동획득 기능) AI가 장거리 라디오를 탑재한 군용차량을 사용할수 있도록하면 됩니다. 분대장을 찾는데 너무 시간이 오래걸리면 자동으로 본부로 복귀합니다.</Korean>
          <Russian>Эта функция призвана имитировать отсутствие радиосвязи с бойцами ИИ. У ваших товарищей по отряду ИИ не будет радио, пока вы не разблокируете его в Арсенале. Без радио, если товарищ по отряду ИИ уйдет слишком далеко, он заблудится и вернется на позицию лидера после выполнения последнего полученного приказа. Чтобы избежать этого, вы можете убрать несколько радиостанций у врага или позволить ИИ использовать военную машину с радиостанциями дальнего действия. Если поиск лидера займет слишком много времени, они автоматически вернутся в штаб</Russian>
       </Key>
@@ -2252,7 +2252,7 @@
         <French>Les médecins IA du groupes soigneront automatiquement les autres IA sans avoir à donner d'ordre. En combat, votre IA utilisera des grenades fumigènes pour se couvrir. S'il n'y a pas de médecin dans le groupe, l'IA utilisera ses propres medikits.</French>
         <German>KI Sanitäter heilen andere KI Einheiten in der gleichen Gruppe automatisch, ohne dass ein gesonderter Befehl gegeben werden muss. Im Feuergefecht nutzt die KI Rauchgranaten zur Deckung. Sollte kein Sanitäter in der Gruppe sein, wird die KI eigene Erste-Hilfe Ausrüstung nutzen.</German>
         <Czech>AI Zdravotník uzdraví ostatní AI automaticky, aniž byste museli vydávat příkazy. Pokud budete bojovat, vaše AI použije kouřové granáty pro zakrytí. Pokud ve skupině není žádný lékař, použije AI své vlastní léky.</Czech>
-        <Chinesesimp>AI医疗小队的队友将自动治疗其他人工智能的不需要任何命令.如果在战斗中,你的人工智能将使用烟雾手榴弹作为掩护.如果小组里没有医疗人员,人工智能将使用他们自己的医疗设备.</Chinesesimp>
+        <Chinesesimp>AI医疗兵无需下达任何指令即可自动治疗其他AI。在战斗中，AI将会使用烟雾弹掩护。如果小组里没有医疗兵，AI将会使用自己的医疗包。</Chinesesimp>
         <Korean>AI 의무병 분대원은 다른 명령이 없어도 다른 AI를 치료합니다. 만약 전투중이라면, AI는 은폐를 위해 연막탄을 씁니다. 만약 분대에 의무병이 없으면 그들은 그들의 응급키트를 씁니다.</Korean>
         <Russian>ИИ-медики будут лечить других ИИ автоматически без необходимости отдавать приказы. В бою ваш ИИ будет использовать дымовые гранаты для укрытия. Если в группе нет медика, ИИ будет использовать свои перевязочные пакеты.</Russian>
       </Key>
@@ -2261,7 +2261,7 @@
         <French>Réarmement automatique \ Butin</French>
         <German>Automatisches Aufmunitionieren/Plündern</German>
         <Czech>Automatické přezbrojení \ Rabování</Czech>
-        <Chinesesimp>自动 武装 \ 掠夺</Chinesesimp>
+        <Chinesesimp>自动重新武装\战利品</Chinesesimp>
         <Korean>자동획득 \ 약탈</Korean>
         <Russian>Автоснаряжение \ Лут</Russian>
       </Key>
@@ -2270,7 +2270,7 @@
         <French>Vos compagnons IA rechercheront et récupèreront automatiquement toutes les munitions sur des cadavres, véhicules et munitions à proximité si nécessaire. Ils essaieront également de renouveler leurs armes avec des armes plus puissantes. Si l'IA est à l'intérieur d'un véhicule, ils pilleront des armes et des lanceurs et les déposeront dans leur camion jusqu'à ce qu'il n'y ait plus rien dans la zone. Utilisez-le à la place de l'option réarmer la radio de base.</French>
         <German>Deine KI Gruppenmitglieder werden automatisch versuchen Munition von ausgeschalteten Feinden, Fahrzeugen oder Munitionskisten zu erbeuten. Außerdem versuchen sie ihre Waffen gegen durchschlagskräftigere auszutauschen. Sind die KI Einheiten in einem Fahrzeug, werden sie Waffen und Werfer plünern und sie in ihrem Fahrzeug verstauen, bis der Bereich komplett geplündert ist. Dies sollte statt des Vanilla Funkbefehls genutzt werden.</German>
         <Czech>Členové skupiny AI budou automaticky hledat a vybírat jakoukoli munici z okolních mrtvol, vozidel a beden s municí, pokud to bude potřeba. Také se pokusí vyzbrojit silnějšími zbraněmi. Pokud je umělá inteligence uvnitř vozidla, vezme zbraně a nosné rakety a hodí je do nákladního automobilu, dokud nebude v oblasti nic. Použijte toto místo možnosti „Přezbrojit" ze základního rádia hry.</Czech>
-        <Chinesesimp>如果需要的话,你的人工智能队友会自动从附近的尸体、车辆和弹药箱中寻找和清除任何弹药.同时,他们也会尝试用更强大的武器来更新他们的武器.如果人工智能在一辆车里,他们会抢劫武器和发射器,然后把它们扔到卡车里,直到该地区没有任何东西.用这个来代替普通无线电选项.</Chinesesimp>
+        <Chinesesimp>在必要情况下，你的AI队友将会自动在附近的尸体，载具和弹药箱中搜集弹药。他们还会更换强大的武器。如果AI在载具内，让门将会将武器和发射器作为战利品装到卡车里，直到该区域再也没有战利品。你应该使用此功能，而不是原版无线电中的重新武装选项。</Chinesesimp>
         <Korean>AI 분대원은 필요하다면 자동적으로 근처 시체, 차량 그리고 탄약박스에서 탄약을 모읍니다. 또한 더 강력한 무기가 있다면 더 강한 무기로 바꾸려고 합니다. AI가 차량안에 있다면 차량안에 무기를 약탈하고 아무것도 없는 지역에 트럭을 버립니다. 바닐라 기능대신 자동획득기능을 사용하십시오.</Korean>
         <Russian>Ваши товарищи по отряду ИИ будут автоматически искать и собирать любые боеприпасы с ближайших трупов, транспортных средств и ящиков с боеприпасами, если это необходимо. Также они попытаются обновить свое оружие на более мощное. Если ИИ находится внутри транспортного средства, они будут собирать оружие и пусковые установки и бросать их в свой грузовик, пока в области ничего не останется.</Russian>
       </Key>
@@ -2279,7 +2279,7 @@
         <French>Véhicule du groupe</French>
         <German>Gruppenfahrzeuge</German>
         <Czech>Vozidlo pro jednotku</Czech>
-        <Chinesesimp>车队</Chinesesimp>
+        <Chinesesimp>班组载具</Chinesesimp>
         <Korean>차량 분대</Korean>
         <Russian>Техника отряда</Russian>
       </Key>
@@ -2288,7 +2288,7 @@
         <French>Commandant seulement. Utilisez cette option pour affecter le véhicule que vous regardez à n'importe quelle escouade HC. Vérifiez l'état du véhicule, ordonnez-leur de monter ou de débarquer et d'automatiser les escouades statiques montées.</French>
         <German>Nur Kommandant. Hiermit kannst du ein Fahrzeug, dass du gerade anschaust, einer Oberbefehl-Gruppe zuweisen. Außerdem kannst du den Status des Fahrzeugs prüfen, der Gruppe befehlen auf- oder abzusitzen oder statische Geschütze bemannen lassen.</German>
         <Czech>>Pouze velitel. Pomocí této možnosti můžete přiřadit vozidlo, na které se díváte, k jakékoli skupině štábu. Zkontrolujte stav vozidla, přikažte jim k nasednutí nebo vystoupení a automatizujte lafetované čety.</Czech>
-        <Chinesesimp>只有指挥官.使用此选项将您正在查看的车辆分配给任何HC小组.检查车辆状态,命令他们上下飞机,并自动安装静态分队.</Chinesesimp>
+        <Chinesesimp>仅限指挥官使用。使用该选项将面前的载具分配给任意指挥部班组，并可检查载具状态，命令班组搭乘或离开载具，以及自动搭载固定式武器班组。</Chinesesimp>
         <Korean>지휘관 전용. 이 설정을 사용하면 원하는 차량을 High Command 분대에 할당하게 됩니다. 차량상태를 확인하고 탑승 하차 명령을 내리고, 고정화기를 자동화합니다.</Korean>
         <Russian>Используйте эту опцию, чтобы назначить машину, которую вы смотрите, любому отряду. Проверяйте состояние техники, приказывайте им садиться или выходить из машины и автоматизируйте конные статические отряды.</Russian>
       </Key>
@@ -2297,7 +2297,7 @@
         <French>Renvoyer le compagnon d'escouade</French>
         <German>Gruppenmitglied entlassen</German>
         <Czech>Člen skupiny byl propuštěn</Czech>
-        <Chinesesimp>解雇小队员</Chinesesimp>
+        <Chinesesimp>解散班组成员</Chinesesimp>
         <Korean>분대원 해산</Korean>
         <Russian>Роспуск ИИ</Russian>
       </Key>
@@ -2306,7 +2306,7 @@
         <French>Sélectionnez l'unité et utilisez l'option «Renvoyer le compagnon d'escouade» pour les renvoyer au QG. Vous récupérerez une partie de l'argent que vous y avez dépensé.</French>
         <German>Wähle die gewünschte Einheit und nutze die "Gruppenmitglied entlassen" Option, um sie zurück zum HQ zu schicken. Dabei wirst du einen Anteil des Geldes zurückerhalten, welches du vorher für es ausgegeben hast.</German>
         <Czech>Vyberte jednotku a pomocí možnosti „Propustit“ je odešlete zpět na velitelství. Získáte zpět část peněz, které jste na ně utratili.</Czech>
-        <Chinesesimp>选择单位并使用“解散队友”选项将他们送回总部.你会收回你花在他们身上的钱.</Chinesesimp>
+        <Chinesesimp>选择单位并使用"解散班组成员"来将他们送回总部。你将回收部分开销。</Chinesesimp>
         <Korean>분대원 선택 후, 분대원 해산을 할 경우 그들은 HQ로 돌아갑니다. 사용한 자금 중 일부를 돌려받습니다.</Korean>
         <Russian>Выберите отряд и используйте опцию «Роспуск ИИ», чтобы отправить его обратно в штаб. Вы вернете часть потраченных на них денег.</Russian>
       </Key>
@@ -2324,7 +2324,7 @@
         <French>Cliquez sur une ville pour connaître la force de son soutien à l'ennemi ou à la faction. Cliquez sur d'autres zones pour connaître les informations pertinentes à leur sujet.</French>
         <German>Klicke auf eine Stadt auf der Karte, um ihre Stärke und Unterstützung für die freindliche Fraktion einzusehen. Klicke auf andere Zonen, um ähnlich relevante Informationen zu erhalten.</German>
         <Czech>Kliknutím na město se dozvíte sílu jejich podpory nepříteli nebo frakci. Kliknutím na další zóny získáte o nich relevantní informace</Czech>
-        <Chinesesimp>点击一个城市,学习他们支持敌人或派别的力量.点击其他区域了解相关信息.</Chinesesimp>
+        <Chinesesimp>点击城市来了解平民对敌方或我方阵营的支持度。点击其他地区以了解与其有关的信息。</Chinesesimp>
         <Korean>도시 클릭 시, 해당 도시의 상황을 볼수 있습니다. 다른 지역의 정보를 알아보십시오.</Korean>
         <Russian>Нажмите на город, чтобы узнать, насколько они поддерживают нас или противника. Нажмите на другие зоны, чтобы узнать о них актуальную информацию</Russian>
       </Key>
@@ -2333,7 +2333,7 @@
         <French>Limiteur d'IA</French>
         <German>KI Begrenzung</German>
         <Czech>Omezení AI</Czech>
-        <Chinesesimp>AI限制</Chinesesimp>
+        <Chinesesimp>AI限制器</Chinesesimp>
         <Korean>AI 갯수 제한</Korean>
         <Russian>Лимит ИИ</Russian>
       </Key>
@@ -2342,7 +2342,7 @@
         <French>Commandant seulement. Définit la quantité maximale d'IA dans la carte par serveur ou HC. Jusqu'à 200 IA peuvent se comporter décemment.</French>
         <German>Nur Kommandant. Legt die maximale Anzahl an KI Einheiten pro Server/HC auf der Karte fest. Bis zu 200 KI Einheiten sollten keine Probleme bereiten.</German>
         <Czech>Pouze velitel. Nastavuje maximální množství AI na mapě na serveru nebo štábu. Až 200 AI se může chovat výkonostně slušně.</Czech>
-        <Chinesesimp>只有指挥官.设置每个服务器或HC在地图中的最大AI量.多达200个AI可能表现得很壮观.</Chinesesimp>
+        <Chinesesimp>仅限指挥官使用。设置每个服务器或无头客户端的最大AI数量。不超过200个AI时，AI表现应当正常。</Chinesesimp>
         <Korean>지휘관 전용. 맵상의 최대 AI 수를 설정합니다. 200 이 넘어갈경우 무리가 갈 수 있습니다.</Korean>
         <Russian>Устанавливает максимальное количество AI на карте на сервер или HC. До 200 ИИ могут вести себя прилично</Russian>
       </Key>
@@ -2351,7 +2351,7 @@
         <French>Sauvegarde persistante</French>
         <German>Persistenter Spielstand</German>
         <Czech>Uložit hru</Czech>
-        <Chinesesimp>游戏保存</Chinesesimp>
+        <Chinesesimp>持久化游戏存档</Chinesesimp>
         <Korean>게임 저장</Korean>
         <Russian>Сохранение</Russian>
       </Key>
@@ -2359,7 +2359,7 @@
         <Original>Commander Only. You may save the game at your HQ Map. This will allow you to continue playing upon mission update or server restart, preserving stats, player's equipment, conquered zones, enemy asset availability and many more things. WARNING: Normal save and load runs badly in this mission. This system is your only guarantee of saving the game properly</Original>
         <French>Commandant seulement. Vous pouvez enregistrer le jeu sur votre carte QG. Cela vous permettra de continuer à jouer après la mise à jour de la mission ou le redémarrage du serveur, en préservant les statistiques, l'équipement du joueur, les zones conquises, la disponibilité des ressources ennemies et bien d'autres choses. AVERTISSEMENT: la sauvegarde et le chargement normaux fonctionnent mal dans cette mission. Ce système est votre seule garantie de sauvegarder correctement le jeu</French>
         <Czech>Pouze velitel. Tuto hru můžete uložit u své štábní mapy. To vám umožní pokračovat ve hraní po aktualizaci mise nebo restartu serveru, při zachování statistik, vybavení hráče, dobytých zón, dostupnosti nepřátelského majetku a mnoha dalších věcí. VAROVÁNÍ: Normální ukládání a načítání probíhá v této misi špatně. Tento systém je vaší jedinou zárukou správného uložení hry</Czech>
-        <Chinesesimp>仅限指挥官. 你可以在总部地图上保存游戏. 这将允许您在任务更新或服务器重新启动时继续读取, 保存数据,玩家的装备,征服区域,敌人的资产可用性和更多的东西.警告：正常的存储和加载在这个任务中运行不好.这个系统是你正确保存游戏的唯一保证</Chinesesimp>
+        <Chinesesimp>仅限指挥官使用。你可以在总部的地图上保存游戏。这允许你在任务更新或游戏重启后继续当前游戏，并保持统计数据，玩家装备，已占领的区域，敌军资产可用性和更多的东西。警告: 普通的存档和读取功能不支持此任务。该系统是正确存档的唯一保证。</Chinesesimp>
         <Korean>지휘관 전용. HQ 지역 안에서 게임 저장이 가능합니다. 현재 모든 상황을 저장합니다.</Korean>
         <Russian>Вы можете сохранить игру на карте у штаба. Это позволит вам продолжить игру после обновления миссии или перезапуска сервера, сохраняя статистику, экипировку игрока, захваченные зоны, доступность вражеских ресурсов и многое другое. ВНИМАНИЕ: Нормальное сохранение и загрузка в этой миссии работают плохо. Эта система - ваша единственная гарантия правильного сохранения игры.</Russian>
       </Key>
@@ -2377,7 +2377,7 @@
         <French>Antistasi a un script de musique situationnelle, selon la position du joueur et l'heure de la journée. La valeur par défaut en mode multijoueur est désactivée et activée en mode solo.</French>
         <German>Antistasi nutzt situationsabhängige Musik, abhängig von der Tageszeit und des Spielerverhaltens. Es ist standardmäßig im Mehrspielermodus deaktiviert und im Einzelspielermodus aktiviert.</German>
         <Czech>Antistasi má situační hudební scénář, v závislosti na postoji hráče a denní době. Výchozí hodnota v Multiplayeru je OFF a ON v Singleplayeru</Czech>
-        <Chinesesimp>情景音乐脚本,取决于玩家的立场和时间.多人中的默认值是关闭,单机中的默认值是开启</Chinesesimp>
+        <Chinesesimp>Antistasi 内置情景音乐脚本，取决于玩家状态和时间。此功能在多人游戏中默认关闭，在单人游戏中默认开启。</Chinesesimp>
         <Korean>안티스타시는 상황에 따른 배경음이 존재합니다. 멀티플레이어에서는 기본적으로 꺼져있고, 싱글 플레이 시에 켜져있습니다.</Korean>
         <Russian>У Antistasi есть ситуативный музыкальный сценарий, зависящий от позиции игрока и времени суток. По умолчанию в многопользовательской игре выключено, а в одиночной игре включено.</Russian>
       </Key>
@@ -2395,7 +2395,7 @@
         <French>Augmentez ou diminuez le pourcentage de la population civile de la ville qui apparaît. À 0%, un seul civil apparaîtra dans chaque ville.</French>
         <German>Erhöhe oder verringere den Prozentsatz der zu spawnenden Stadtbevölkerung. Bei 0% wird nur ein einzelner Zivilist pro Stadt gespawnt.</German>
         <Czech>Zvýšit nebo snížit procento městského civilního obyvatelstva, které vznikají. V 0% se v každém městě vynoří pouze jeden civilista.</Czech>
-        <Chinesesimp>增加或减少城市平民人口的百分比. 0% 时每个城市只会产生一个平民.</Chinesesimp>
+        <Chinesesimp>增加或减少市民的生成比例。0% 时每个城市只会生成一个平民。</Chinesesimp>
         <Korean>도시 시민 스폰율을 상향 또는 하향 조정합니다. 0% 설정시 도시당 한명의 시민만 스폰됩니다.</Korean>
         <Russian>Увеличьте или уменьшите процент возрождающегося гражданского населения города. При 0% в каждом городе появится только одно гражданское лицо.</Russian>
       </Key>
@@ -2413,7 +2413,7 @@
         <French>Commandant seulement. Augmentez ou diminuez la distance d'apparition et de disparition générale. Utilisez-le soigneusement combiné avec d'autres options.</French>
         <German>Nur Kommandant. Erhöhe oder verringere die allgemeine Spawn/Despawn Entfernung. Beachte das Zusammenspiel mit den anderen Optionen.</German>
         <Czech>Pouze velitel. Zvětšení nebo zmenšení vzdálenosti vzniku a zániku. Používejte jej pečlivě v kombinaci s dalšími možnostmi.</Czech>
-        <Chinesesimp>只有指挥官.增加或减少一般产卵和毁灭距离.与其他选项一起小心使用.</Chinesesimp>
+        <Chinesesimp>仅限指挥官使用。增加或减少生成和取消生成的距离。小心地将其与其他选项结合使用。</Chinesesimp>
         <Korean>지휘관 전용. 스폰율과 스폰 거리를 상향 또는 하향 조정합니다. 사용시 주의.</Korean>
         <Russian>Увеличение или уменьшение общей дистанции появления и исчезновения. Используйте его осторожно в сочетании с другими вариантами</Russian>
       </Key>
@@ -2422,7 +2422,7 @@
         <French>Nettoyeur d'ordures</French>
         <German>Aufräumen</German>
         <Czech>Čistič odpadků</Czech>
-        <Chinesesimp>垃圾清理工具</Chinesesimp>
+        <Chinesesimp>垃圾清理器</Chinesesimp>
         <Korean>바닥 쓰레기 정리</Korean>
         <Russian>Удаление мусора</Russian>
       </Key>
@@ -2431,7 +2431,7 @@
         <French>Commandant seulement. Supprime des éléments comme les armes au sol, les magazines, les vêtements, etc.&lt;br/&gt;&lt;br/&gt;Attention, cela fige le jeu pendant un certain temps.</French>
         <German>Nur Kommandant. Dies löscht Dinge wie fallengelassene Waffen, Magazine, Kleidung, etc.&lt;br/&gt;&lt;br/&gt;Beachte, dass dies das Spiel für eine kurze Zeit einfrieren kann.</German>
         <Czech>Pouze velitel. Vymaže věci, jako jsou vyhozené zbraně, munice, oblečení atd.&lt;br/&gt;&lt;br/&gt;Pozor, hru to nějakou dobu zmrazí.</Czech>
-        <Chinesesimp>仅指挥官。 将删除掉落的武器，杂志，服装等东西etc.&lt;br/&gt;&lt;br/&gt;当心，它将冻结游戏一段时间。</Chinesesimp>
+        <Chinesesimp>仅限指挥官使用。将删除掉落的武器，弹夹和服装等东西。&lt;br/&gt;&lt;br/&gt;注意，它会使游戏冻结一段时间。</Chinesesimp>
         <Korean>지휘관 전용. 땅에 떨어진 아이템들을 전부 삭제합니다.&lt;br/&gt;&lt;br/&gt;사용시 게임이 잠시 멈출수 있습니다.</Korean>
         <Russian>Удаляет такие вещи, как брошенное оружие, магазины, одежду и т.д. &lt;br/&gt;&lt;br/&gt; Осторожно, игра на некоторое время зависает.</Russian>
       </Key>
@@ -2440,7 +2440,7 @@
         <French>Réinitialiser l'UI</French>
         <German>UI reinitializieren</German>
         <Czech>Znovu vložte uživatelské rozhraní</Czech>
-        <Chinesesimp>重新初始化UI</Chinesesimp>
+        <Chinesesimp>重新初始化用户界面</Chinesesimp>
         <Korean>UI 재설정</Korean>
         <Russian>Рестарт интерфейса</Russian>
       </Key>
@@ -2449,7 +2449,7 @@
         <French>Sélectionnez cette option lorsque la touche Y ou la barre de statistiques ne fonctionnent pas.</French>
         <German>Wähle diese Option, wenn das Z-Menü oder die Statusleise nicht funktionieren.</German>
         <Czech>Tuto možnost vyberte, pokud nefunguje klávesa Y nebo statistická lišta.</Czech>
-        <Chinesesimp>当Y键或统计栏不起作用时，请选择此选项.</Chinesesimp>
+        <Chinesesimp>当Y键菜单或统计栏无法正常工作时，请选择此选项。</Chinesesimp>
         <Korean>Y키와 상태 바가 작동하지 않을경우 이 옵션을 선택합니다.</Korean>
         <Russian>Выберите этот вариант, если клавиша Y или панель статистики не работают.</Russian>
       </Key>
@@ -2460,13 +2460,14 @@
         <Czech>%1 a %2 Agresivita</Czech>
         <Korean>%1 , %2 위협 수치</Korean>
         <Russian>%1 и %2 Агр</Russian>
+        <Chinesesimp>侵略性为 %1 和 %2</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_journal_entry_text_Diary_1">
         <Original>There is an All vs All war in %4. %1 and %2 are constantly attacking each other, but that does not mean they don't shoot at %3 on first sight.&lt;br/&gt;&lt;br/&gt;%1 and %2 Aggro points represent how much threat they see in %3 faction.&lt;br/&gt;&lt;br/&gt;Generally speaking those points will low or raise depending on your actions against them and civilians.</Original>
         <French>Il y a une guerre tous contre tous dans %4. %1 et %2 s'attaquent constamment, mais cela ne signifie pas qu'ils ne tirent pas sur %3 à première vue.&lt;br/&gt;&lt;br/&gt; Les points %1 et %2 Aggro représentent la menace qu'ils voient dans la faction  %3.&lt;br/&gt;&lt;br/&gt;De manière générale, cette valeur augmentera et baissera en fonction de vos actions contre eux et les civils.</French>
         <German>Es ist ein Jeder gegen Jeden Krieg in %4. %1 und %2 greifen sind ununterbrochen gegenseitig an. Dies bedeutet aber nicht, dass sie nicht bei Kontakt direkt %3 angreifen.&lt;br/&gt;&lt;br/&gt;%1 und %2 Aggressivitätspunkte zeigen an, wie hoch diese die Bedrohung der %3 Fraktion einschätzen.&lt;br/&gt;&lt;br/&gt;Grundsätzlich erhöhen und verringern sich diese Werte gemäß deinen Unternehmungen gegen die jeweilige Fraktion oder die Zivilbevölkerung.</German>
         <Czech>V %4 je válka Všichni proti Všem. %1 a %2 neustále útočí na sebe, ale to neznamená, že na první pohled nestřílejí na %3.&lt;br/&gt;&lt;br/&gt;%1 a %2 Aggro body představují to, jak velkou hrozbu představují vidět ve frakci %3.&lt;br/&gt;&lt;br/&gt;Obecně řečeno, tyto body se budou snižovat nebo zvyšovat v závislosti na vašem jednání proti nim a civilistům.</Czech>
-        <Chinesesimp>%4 中发生了一场全场大战.%1 和 %2一直在互相攻击，但这并不意味着它们不会对 %3 一见钟情.&lt;br/&gt;&lt;br/&gt;％1和％2 Aggro点代表他们在％3派系中看到的威胁程度.一般来说,&lt;br/&gt;&lt;br/&gt;根据您对他们和平民采取的行动，这些观点会降低或提高。</Chinesesimp>
+        <Chinesesimp>%4 发生了全面战争。%1 和 %2 在持续地互相攻击，但这并不意味着他们在见到 %3 时不会开火。&lt;br/&gt;&lt;br/&gt;%1 和 %2 点侵略性表示他们认为 %3 的威胁程度有多大。&lt;br/&gt;&lt;br/&gt;通常而言，取决于你对他们和平民的行动，这一点数将会提升或降低。</Chinesesimp>
         <Korean>%4는 프리 포 올 모드입니다. %1 과 %2는 주기적으로 서로를 공격하고, %3 또한 공격할것입니다.&lt;br/&gt;&lt;br/&gt;%1 and %2 위협 수치는 %3 에 대해 얼마나 공격하는지 보여주는 수치입니다.&lt;br/&gt;&lt;br/&gt; 시민과 해당 팩션에 하는 강도에 따라, 해당 수치는 조정됩니다.</Korean>
         <Russian>В %4 идет война Все против Всех. %1 и %2 постоянно атакуют друг друга, но это не значит, что они не стреляют по %3 с первого взгляда. &lt;br/&gt;&lt;br/&gt; %1 и %2 Агр-очков показывают, сколько угроза, которую они видят во фракции %3. &lt;br/&gt;&lt;br/&gt; В общем, эти очки будут уменьшаться или увеличиваться в зависимости от ваших действий против них и мирных жителей</Russian>
       </Key>
@@ -2483,7 +2484,7 @@
         <French>Les ressources humaines ou la main-d'œuvre proviennent du soutien des citoyens dans chaque ville. La main-d'œuvre est nécessaire pour recruter plus d'unités (1 point RH = 1 soldat)</French>
         <German>Mannstärke wird durch die zivile Unterstützung aus jeder Stadt generiert. Sie ist notwendig, um mehr Einheiten zu rekrutieren. 1 Punkt entspricht dabei einem Soldaten.</German>
         <Czech>Pracovní síla nebo Lidská sila pochází z občanské podpory v každém městě. Pro nábor více jednotek je zapotřebí pracovní síly (1 HR bod = 1 voják)</Czech>
-        <Chinesesimp>人力资源或人力资源来自每个城市的公民支持.需要人力来招募更多的部队 (1 人力资源  = 1 士兵)</Chinesesimp>
+        <Chinesesimp>人力资源或人力源自每个城市公民的支持。需要更多的人力才能招募更多的单位(1个人力资源点数 = 1名士兵)。</Chinesesimp>
         <Korean>인력은 각 도시의 지지율에 따라 제공됩니다. 병사 한명당 1 인력이 소모됩니다.</Korean>
         <Russian>HR прибывают из поддержки граждан в каждом городе. Для набора большего количества юнитов требуется рабочая сила (1 очко HR = 1 солдат).</Russian>
       </Key>
@@ -2492,7 +2493,7 @@
         <French>Argent - MP</French>
         <German>Geld - Mehrspieler</German>
         <Czech>Peníze - Multiplayer</Czech>
-        <Chinesesimp>资金 - 多人模式</Chinesesimp>
+        <Chinesesimp>资金 - 多人游戏</Chinesesimp>
         <Korean>자금 - 멀티플레이</Korean>
         <Russian>Деньги - MP</Russian>
       </Key>
@@ -2501,7 +2502,7 @@
         <French>Dans les jeux MP, il y a deux porte monnaie. L'Argent de faction - qui est destiné à un usage exclusif par le Commandant - et argent personnel. L'argent personnel peut être utilisé par n'importe quel joueur pour recruter des IA ou acheter des véhicules. La faction gagne de l'argent grâce aux taxes et aux missions accomplies. L'argent personnel se gagne en tuant des ennemis et en accomplissant des missions. Les options pour transférer ou donner de l'argent se trouvent dans le menu Y. Le commandant peut récupérer de l'argent du porte monnaie de la faction sur son propre compte.</French>
         <German>In Mehrspielerspielen gibt es zwei Kassen. Die Fraktionskasse, welche nur vom Kommandanten genutzt werden kann, und das persönliche Geld. Das persönliche Geld kann von jedem Spieler selbst genutzt werden, um KI Einheiten oder Fahrzeuge zu kaufen. Die Fraktion erhält Gelder durch Abgaben und der Erfüllung von Sekundärmissionen. Persönliche Gelder erhält ein Spieler durch das Ausschalten von feindlichen Einheiten und der Erfüllung von Sekundärmissionen. Möglichkeiten Gelder zu transferieren sind im Z-Menü zu finden. Der Kommandant kann Geld aus der Fraktionskasse für seinen persönlichen Gebrauch entnehmen.</German>
         <Czech>V Multiplayerových hrách existují dva peněžní systémy. Frakční peníze - které jsou používány pouze velitelem - a osobní peníze. Osobní peníze může použít kterýkoli hráč k náboru AI nebo k nákupu vozidel. Frakce vydělává peníze z daní a ze splněných úkolů. Osobní peníze pocházejí ze zabíjení nepřátel a plnění úkolů. Možnosti převodu nebo darování peněz naleznete v nabídce Y. Velitel může vzít peníze z frakčního fondu na svůj vlastní účet.</Czech>
-        <Chinesesimp>在多人游戏中有两个资金.派系资金仅供指挥官使用，还有个人的钱. 个人资金可以被任何玩家用来招募AI或购买载具. 派系靠缴税和完成任务赚钱. 个人钱财来源于杀敌和完成任务. 可以在Y菜单中找到转账或捐款的选项. 指挥官可以从派系资金里把钱存入自己的账户.</Chinesesimp>
+        <Chinesesimp>在多人游戏中有两种资金池。阵营资金——仅限指挥官使用——和个人资金。任何玩家都可以使用个人资金来招募AI或购买载具。阵营资金通过税收和完成任务获得。个人资金来源于击杀敌人和完成任务。Y键菜单中有用于转移或捐献资金的选项。指挥官可以将阵营资金存入他的个人账户。</Chinesesimp>
         <Korean>자금은 두가지가 있습니다. 팩션 자금 (지휘관만 사용 가능)과 개인 자금. 개인 자금은 각 플레이어가 차량, 혹은 인력을 구매하는데 쓸수 있습니다. 팩션은 세금과 미션 완수로 자금을 벌수 있습니다. 개인 자금 또한 미션 완수, 킬 포인트 등으로 얻을수 있습니다. Y 메뉴를 사용해 팩션에 자금 기부가 가능합니다. 지휘관은 팩션 자금에서 인출이 가능합니다.</Korean>
         <Russian>В MP-играх есть два пула денег. Деньги фракции, предназначенные только для командиров, и личные деньги. Любой игрок может использовать личные деньги для найма ИИ или покупки транспортных средств. Фракция зарабатывает деньги налогами и выполнением миссий. Личные деньги поступают от убийства врагов и выполнения миссий. Варианты перевода или пожертвования денег находятся в меню Y. Командир может забрать деньги из пула фракций на свой счет.</Russian>
       </Key>
@@ -2510,7 +2511,7 @@
         <French>Argent</French>
         <German>Geld</German>
         <Czech>Peníze</Czech>
-        <Chinesesimp>派系资金</Chinesesimp>
+        <Chinesesimp>资金</Chinesesimp>
         <Korean>자금</Korean>
         <Russian>Деньги</Russian>
       </Key>
@@ -2519,7 +2520,7 @@
         <French>L'argent provient d'une combinaison du soutien des citoyens dans chaque ville, des ressources conquises, des usines conquises (qui stimulent l'économie) et de l'énergie fournie à tous avec une centrale électrique amie à proximité (vous pouvez également les conquérir pour couper l'approvisionnement en argent à l'ennemi ). L'argent est utilisé pour acheter des véhicules, des unités et des escouades.</French>
         <German>Geld wird verdient durch die Unterstützung der Zivilbevölkerung in jeder Stadt, den eroberten Ressourcen und Fabriken (welche die Wirtschaft ankurbeln) und gelieferten Strom zu allen diesen Zonen von einem nahen eroberten Kraftwerk. Es ist auch möglich durch die Eroberung von Kraftwerken den Geldfluss des Feindes zu beeinflussen. Geld wird für den Kauf von Fahrzeugen, Einheiten und Gruppen genutzt.</German>
         <Czech>Peníze pocházejí z kombinace podpory občanů pro každé město, dobytých zdrojů, dobytých továren (které podporují ekonomiku) a elektřiny poskytované všem  s blízkou přátelskou elektrárnou (můžete je také dobýt, abyste přerušili dodávky peněz nepříteli). Peníze se používají na nákup vozidel, jednotek a skupin.</Czech>
-        <Chinesesimp>资金来源于每个城市的市民支持, 资源, 工厂 (促进经济发展) 附近有一个发电厂为他们提供电力 (你也可以征服他们,切断敌人的货币供应). 资金被用来购买车辆、部队和小队.</Chinesesimp>
+        <Chinesesimp>资金来源于每个城市公民的支持，占领的资源点，工厂(工厂将会促进经济发展)，以及由附近的友方发电厂提供的电力(你也可以通过占领上述区域来切断敌方的资金供应)。资金可用于购买载具、单位和班组。</Chinesesimp>
         <Korean>자금은 각 도시의 지원, 자원지대 점령, 공장 점령( 경제력 버프 ) , 그리고 파워 플랜트 ( 점거시 상대방의 자원줄 타격을 입힙니다.) 으로 수급됩니다. 자금으로는 차량, 인력 등을 고용할수 있습니다.</Korean>
         <Russian>Деньги поступают из поддержки граждан в каждом городе, завоеванных ресурсов, завоеванных заводов (которые стимулируют экономику) и энергии, предоставляемой всем им с помощью близлежащей дружественной электростанции (вы также можете победить их, чтобы отрезать денежную массу врагу). Деньги идут на покупку техники, юнитов и отрядов.</Russian>
       </Key>
@@ -2528,7 +2529,7 @@
         <French>Ressources</French>
         <German>Ressourcen</German>
         <Czech>Zdroje</Czech>
-        <Chinesesimp>战略资源</Chinesesimp>
+        <Chinesesimp>资源</Chinesesimp>
         <Korean>자원</Korean>
         <Russian>Ресурсы</Russian>
       </Key>
@@ -2537,7 +2538,7 @@
         <French>Toutes les 10 minutes, chaque faction reçoit de l'argent et de la main-d'œuvre en fonction des zones qu'elle possède et de l'état dans lequel elle se trouve. Avoir une bonne quantité de zones de ressources et d'usines est le moyen d'obtenir suffisamment de ressources pour gagner cette guerre.</French>
         <German>Alle 10 Minuten erhält jede Fraktion Geld und Mannstärke abhängig von den gehaltenen Zonen und deren Status. Eine große Anzahl and Ressourcen-Zonen und Fabriken zu besitzen ist der beste Weg, um genug Ressourcen für den Sieg in diesem Krieg zu erhalten.</German>
         <Czech>Každých 10 minut každá frakce obdrží peníze a pracovní sílu podle zón, které vlastní, a stavu, ve kterém se nacházejí. Mít dostatečné množství zón zdrojů a některé továrny je způsob, jak získat dostatek prostředků k vítězství v této válce.</Czech>
-        <Chinesesimp>每10分钟,每个阵营根据他们所属的地区和所处的州接受资金和人力. 拥有大量的资源区和一些工厂是赢得这场战争的方法.</Chinesesimp>
+        <Chinesesimp>每隔10分钟，每个阵营将会受到资金和人力，其数量取决于阵营占领的区域和所处状态。拥有足够多的资源点和工厂，是获取足够资源从而赢得这场战争的方法。</Chinesesimp>
         <Korean>매 10분마다 점거한 구역, 그리고 그 상황에 따라 인력과 자금을 받습니다. 자원 지역과 공장을 충분히 소유하는 것이 전쟁에 필요한 자금을 얻는 방법입니다.</Korean>
         <Russian>Каждые 10 минут фракция получает деньги и ЛР в соответствии с зонами, которыми они владеют, и состоянием, в котором они находятся. Наличие большого количества ресурсных зон и некоторых заводов - это способ получить достаточно ресурсов, чтобы выиграть эту войну.</Russian>
       </Key>
@@ -2546,7 +2547,7 @@
         <French>QG - Les bases</French>
         <German>HQ - Grundlagen</German>
         <Czech>Velitelství - základy</Czech>
-        <Chinesesimp>指挥部 - 基础</Chinesesimp>
+        <Chinesesimp>总部 - 基础操作</Chinesesimp>
         <Korean>HQ - 기본</Korean>
         <Russian>Штаб - Основы</Russian>
       </Key>
@@ -2555,7 +2556,7 @@
         <French>Drapeau: Achat de véhicule et d'escouade. Options Commandant.&lt;br/&gt;Petros/Maru: Missions secondaires (Commandant uniquement).&lt;br/&gt;Carte: Options de la partie.&lt;br/&gt;Feu de camp: Se reposer pendant 8 heures et nettoyer la forêt (Commandant uniquement).</French>
         <German>Flaggenmast: Fahrzeug und Gruppen kaufen/rekrutieren, Kommandantenoptionen.&lt;br/&gt;Maru/Petros: Sekundärmissionen (nur Kommandant).&lt;br/&gt;Karte: Spieloptionen.&lt;br/&gt;Lagerfeuer: 8 Stunden ausruhen und Wald abholzen (nur Kommandant).</German>
         <Czech>Vlajka: Nábor vozidel a jednotek. Možnosti velitele.&lt;br/&gt;Maru: Postranní mise (pouze velitel).&lt;br/&gt;Mapa: Možnosti hry.&lt;br/&gt;Táborový oheň: Odpočinek po dobu 8 hodin a Vyklidit les (Pouze velitel).</Czech>
-        <Chinesesimp>旗子: 载具和小队招募.指挥官选项.&lt;br/&gt;指挥官: 支线-任务 (仅限指挥官).&lt;br/&gt;地图: 游戏选项.&lt;br/&gt;营地: 休息8小时,清理森林 (仅限指挥官).</Chinesesimp>
+        <Chinesesimp>旗帜: 载具和班组招募，指挥官选项。&lt;br/&gt;Maru: 支线任务(仅限指挥官使用)。&lt;br/&gt;地图: 游戏选项。&lt;br/&gt;营火: 休息8小时并清理森林(仅限指挥官使用)。</Chinesesimp>
         <Korean>깃발 : 스쿼드, 차량 구입, 커맨더 옵션&lt;br/&gt; 페트로스 : 사이드 옵션.&lt;br/&gt;지도 : 게임 옵션.&lt;br/&gt;캠프 파이어 : 8시간 휴식, 주변 숲 정리 (지휘관만 사용 가능)</Korean>
         <Russian>Флаг: Найм ИИ. &lt;br/&gt; Пестрос: Побочные задания (только для командира). &lt;br/&gt; Карта: параметры игры. &lt;br/&gt; Палатка: отдых в течение 8 часов.</Russian>
       </Key>
@@ -2581,7 +2582,7 @@
         <French>Guerre %2 vs %1</French>
         <German>Krieg %2 gegen %1</German>
         <Czech>Válka %2 vs %1.</Czech>
-        <Chinesesimp>%2 vs %1 战争</Chinesesimp>
+        <Chinesesimp>%2 vs %1 战争。</Chinesesimp>
         <Korean>%2 vs %1 모드</Korean>
         <Russian>Война %2 против %1.</Russian>
       </Key>
@@ -2590,7 +2591,7 @@
         <French>Guerre %3 vs tous..&lt;br/&gt;&lt;br/&gt;%1 et %2 n'attaqueront que %3 et agiront indépendamment. Les deux peuvent conquérir des zones.</French>
         <German>Krieg %3 gegen alle.&lt;br/&gt;&lt;br/&gt;%1 und %2 werden selbständig nur %3 angreifen. Beide können erobern.</German>
         <Czech>Válka %3 vs Všem .&lt;br/&gt;&lt;br/&gt;%1 a %2 zaútočí pouze na %3 a bude jednat nezávisle. Oba mohou dobýt.</Czech>
-        <Chinesesimp>%3 vs All 战争&lt;br/&gt;&lt;br/&gt;%1 和 %2 只会攻击 %3 独立行动. 两者都能征服</Chinesesimp>
+        <Chinesesimp>%3 vs 全部阵营 战争。&lt;br/&gt;&lt;br/&gt;%1 和 %2 只会独立地攻击 %3。二者均可被占领。</Chinesesimp>
         <Korean>%3 vs 나머지. &lt;br/&gt;&lt;br/&gt;%1 과 %2 는 %3 만 공격합니다. 물론 둘 다 정복 가능합니다.</Korean>
         <Russian>Война %3 против всех.&lt;br/&gt;&lt;br/&gt; %1 и %2 атакуют только %3 и действуют независимо. Оба могут победить.</Russian>
       </Key>
@@ -2599,7 +2600,7 @@
         <French>Guerre tous contre tous.&lt;br/&gt;&lt;br/&gt; %1 et %2 s’attaqueront tous les deux et aussi à %3.</French>
         <German>Krieger jeder gegen jeden.&lt;br/&gt;%1 und %2 werden einander und %3 bekämpfen.</German>
         <Czech>Všichni vs Všem válka.&lt;br/&gt;&lt;br/&gt;%1 a %2 zaútočí na sebe a oba na %3.</Czech>
-        <Chinesesimp>All vs All 战争&lt;br/&gt;&lt;br/&gt;%1 和 %2 会互相攻击 %3</Chinesesimp>
+        <Chinesesimp>全部阵营 vs 全部阵营 战争。&lt;br/&gt;&lt;br/&gt;%1 和 %2 会互相攻击，二者都会攻击 %3。</Chinesesimp>
         <Korean>프리 포 올.&lt;br/&gt;&lt;br/&gt;%1 ,  %2 , %3 모두 서로 공격합니다.</Korean>
         <Russian>Все против всех.&lt;br/&gt;&lt;br/&gt;%1 и %2 будут атаковать друг друга и оба - %3.</Russian>
       </Key>
@@ -2617,7 +2618,7 @@
         <French>Bienvenue sur Arma 3 - %1. Cette mission vise à simuler des combats de guérilla, des tactiques et des situations stratégiques. Ce n'est pas un mod rapide et facile, c'est une mission à long terme, étape par étape, avec BEAUCOUP de fonctionnalités et une IA améliorée.</French>
         <German>Willkommen zu Arma 3 - %1. Diese Mission zielt darauf ab Guerillakrieg, -taktiken und -strategien zu simulieren. Es ist kein schneller und einfacher Spielmodus. Es ist eine Mission ausgelegt auf eine lange Spielzeit mit einer MENGE an Features und erweiterter KI.</German>
         <Czech>Vítejte v Arma 3 - %1. Cílem této mise je simulovat partyzánský boj, taktiku a strategické situace. Není to rychlý a snadný mód, je to dlouhodobá, postupná mise s mnoha funkcemi a vylepšeným AI.</Czech>
-        <Chinesesimp>欢迎使用Arma 3 - %1. 该任务旨在模拟游击战斗，战术和战略局势。 它不是一个快速简便的mod，而是具有很多功能和增强的AI的长期，逐步的任务。</Chinesesimp>
+        <Chinesesimp>欢迎来到 Arma 3 - %1。本任务旨在模拟游击战的战斗、战术和战略态势。这不是一个快速、简单的模式，而是长期的、循序渐进的，带有大量特性和增强型AI的任务。</Chinesesimp>
         <Korean>%1에 오신것을 환영합니다. 이 미션은 게릴라 전투, 전략 등에 초점을 맞추고 있습니다. 쉽고 빠른 진행이 되는 모드가 아니므로, 단계적으로 긴 텀을 두면서 많은 요소와 강화된 AI를 체험하세요. </Korean>
         <Russian>Добро пожаловать в Arma 3 - %1. Эта миссия направлена на моделирование партизанского боя, тактики и стратегических ситуаций. Это не быстрый и легкий мод, это долгосрочная, пошаговая миссия с МНОЖЕСТВОМ функций и улучшенным ИИ.</Russian>
       </Key>
@@ -2626,7 +2627,7 @@
         <French>Victoire</French>
         <German>Sieg</German>
         <Czech>Vítězství</Czech>
-        <Chinesesimp>获胜</Chinesesimp>
+        <Chinesesimp>胜利条件</Chinesesimp>
         <Korean>승리</Korean>
         <Russian>Победа</Russian>
       </Key>
@@ -2635,7 +2636,7 @@
         <French>Vous gagnerez la partie lorsque la plupart de la population soutiendra la faction et que vous aurez conquis toutes les bases aériennes.</French>
         <German>Du erringst den Sieg, wenn der Großteil der Zivilbevölkerung deine Fraktion unterstützt und sich alle Flugplätze in deiner Hand befinden.</German>
         <Czech>Vyhrajete hru, když většina populace podporuje frakci a dobyli jste všechny letecké základny.</Czech>
-        <Chinesesimp>当大多数民众支持游击队并且你征服了所有的空军基地时,你将赢得这场游戏.</Chinesesimp>
+        <Chinesesimp>当绝大多数民众支持我方阵营，并且我方已占领所有空军基地时，你将赢得游戏胜利。</Chinesesimp>
         <Korean>모든 공항 점거와 대다수 인구의 지지를 받으면 게임에서 승리합니다.</Korean>
         <Russian>Вы выиграете игру, когда большая часть населения поддержит фракцию и вы захватите все авиабазы.</Russian>
       </Key>
@@ -2644,7 +2645,7 @@
         <French>Défaite</French>
         <German>Niederlage</German>
         <Czech>Prohra</Czech>
-        <Chinesesimp>败北</Chinesesimp>
+        <Chinesesimp>失败条件</Chinesesimp>
         <Korean>패배</Korean>
         <Russian>Неудача</Russian>
       </Key>
@@ -2653,7 +2654,7 @@
         <French>Vous perdrez la partie si %1 a tué 1/3 de la population totale.</French>
         <German>Du verlierst das Spiel, wenn %1 1/3 der gesamten Bevölkerung ermordet hat.</German>
         <Czech>Ztratíte hru, pokud %1 zavraždí 1/3 celkové populace.</Czech>
-        <Chinesesimp>如果 %1 杀死了总人口的1/3,你将失去比赛.</Chinesesimp>
+        <Chinesesimp>如果 %1 谋杀了总人口的1/3，你将输掉这场游戏。</Chinesesimp>
         <Korean>%1이 전체 인구수의 1/3을 죽인다면, 게임에서 패배합니다.</Korean>
         <Russian>Вы проиграете игру, если %1 убил 1/3 всего населения.</Russian>
       </Key>
@@ -2662,7 +2663,7 @@
         <French>Crédit pour les scripts</French>
         <German>Genutzte Scripts</German>
         <Czech>Použité skripty</Czech>
-        <Chinesesimp>脚本积分</Chinesesimp>
+        <Chinesesimp>脚本制作者名单</Chinesesimp>
         <Korean>스크립트 도움 목록 </Korean>
         <Russian>Авторы сценария</Russian>
       </Key>
@@ -2671,6 +2672,7 @@
         <German>UPSMon von Monsada, Kronzy und Cool=Azroul13.&lt;br/&gt;Persistent Save von zooloo75.&lt;br/&gt;Tags von Marker und Melbo.&lt;br/&gt;JAS von Jeroen (Entschuldige, dass es so lange gedauert hat dich hinzuzufügen)&lt;br/&gt;Advanced Towing von Seth Duda.</German>
         <Czech>UPSMon od Monsada, Kronzy and Cool = Azroul13 &lt;br/&gt;Trvalé Uložit podle zooloo75.&lt;br/&gt;Štítky Marker a Melbo.&lt;br/&gt;JAS od Jeroen (omlouvám se za to, že jste byli pozdě)&lt;br/&gt;Štítky od Markera a Melba.&lt;br/&gt;Rozšířené tažení od Setha Dudy.</Czech>
         <Korean>UPSMon 제공 : Monsada, Kronzy and Cool=Azroul13.&lt;br/&gt;Persistent Save 제공 : zooloo75.&lt;br/&gt;태그 제공 : Marker and Melbo.&lt;br/&gt;JAS 제공: Jeroen &lt;br/&gt;Advanced Towing 제공 : Seth Duda.</Korean>
+        <Chinesesimp>UPSMon by Monsada, Kronzy 和 Cool=Azroul13。&lt;br/&gt;Persistent Save by zooloo75。&lt;br/&gt;Tags by Marker 和 Melbo。&lt;br/&gt;JAS by Jeroen (抱歉这么晚才把你添加进来)。&lt;br/&gt;Advanced Towing by Seth Duda。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_journal_entry_header_Credits_2">
         <Original>Mods</Original>
@@ -2686,13 +2688,14 @@
         <German>Integrierte (optionale) Mods:&lt;br/&gt;TFAR: Funkgerät in Arsenal integriert. Sound deaktiviert, wenn der Spieler bewusstlos ist.&lt;br/&gt;ACE Medical: Deaktiviert das Antistasi Revive System.&lt;br/&gt;VORSICHT: Die Speicherung des Spielstands mit TFAR oder jedglicher Mod für Waffen führt dazu, dass diese Mods bis zum Ende notwendig sind.&lt;br/&gt;&lt;br/&gt;Jeder clientseitige Mod, wie z.B. JSRS, Blastcore oder UI Mod sollte funktionieren.&lt;br/&gt;Einheiten und Fahrzeuge aus Mods funktionieren nicht. KI Mods können zu Fehlern führen. (Antistasi hat in jedem Fall viel am KI Verhalten geändert)</German>
         <Czech>Integrované (volitelné) Módy:&lt;br/&gt;TFAR: Rádio integrované v Arsenalu. Zvuk je deaktivován, když je hráč v bezvědomí.&lt;br/&gt;ACE Lékař: Vypne Antistasi revive system.&lt;br/&gt;&lt;br/&gt;UPOZORNĚNÍ: Používání systému Uložení hry s TFAR a jakýmkoli aktivovaným módem zbraně je v budoucnosti povinné.&lt;br/&gt;&lt;br/&gt; Mód by měl fungovat. Módy pro jednotky a vozidla nebudou fungovat.&lt;br/&gt;&lt;br/&gt; Režimy AI mohou způsobit poruchy (v každém případě má Antistasi těžké vylepšení AI).</Czech>
         <Korean>추가적인 모드들&lt;br/&gt;TFAR: 라디오 대체, 쓰러졌을 경우 라디오 비활성화&lt;br/&gt;ACE Medical: 안티스타시 기존 리바이브 시스템 대체.&lt;br/&gt;&lt;br/&gt;주의: 해당 모드들을 사용 한 채로 저장을 하면, 그 이후에도 계속 사용해야 함.&lt;br/&gt;&lt;br/&gt;클라이언트 사이드 모드, 가령 jsrs, 블라스트 코어, UI 모드들은 상관 없음..&lt;br/&gt;&lt;br/&gt;유닛과 차량 모드들은 적용되지 않고, AI 모드는 적용시 불량이 날수 있습니다.</Korean>
+        <Original>内置支持的(可选)模组: &lt;br/&gt;TFAR: 无线电已集成至军火库。玩家失去意识时将会禁用声音。&lt;br/&gt;ACE医疗: 将会禁用 Antistasi 复苏系统。&lt;br/&gt;&lt;br/&gt;注意: 进行永久性存储时使用TFAR和任何武器模组，将使它们成为强制性模组。&lt;br/&gt;&lt;br/&gt;任何客户端模组，如JSRS, Blastcore, 用户界面模组都应当能够正常使用。&lt;br/&gt;&lt;br/&gt;单位和载具模组不会正常工作。AI模组可能会导致任务异常(在绝大多数情况下，Antistasi 对AI逻辑进行了重度调整)。</Original>
       </Key>
       <Key ID="STR_antistasi_journal_entry_header_Credits_3">
         <Original>Thanks</Original>
         <French>Remerciements</French>
         <German>Danksagung</German>
         <Czech>Poděkování</Czech>
-        <Chinesesimp>感谢</Chinesesimp>
+        <Chinesesimp>致谢</Chinesesimp>
         <Korean>감사합니다</Korean>
         <Russian>Благодарность</Russian>
       </Key>
@@ -2701,6 +2704,7 @@
         <French>LanCommi pour son artwork.&lt;br/&gt;Goon et jw custom: pour une partie du code du script NAPALM.&lt;br/&gt;rebel12340: pour le script de brouillage radio.&lt;br/&gt;Manko: pour le morceau de code pour les bouchons d'oreilles.&lt;br/&gt;bobchaos: pour avoir gérer la communauté malgré toutes les difficultés.&lt;br/&gt;Et à tous les joueurs qui passent leur temps à faire des commentaires, des suggestions et des rapports sur les forums Steam, Github et BIS.</French>
         <Czech>LanCommi za jeho umělecké dílo.&lt;br/&gt;Goon a jw vlastní: Část kódu pro skript NAPALM.&lt;br/&gt;rebel12340: Radio Jam script&lt;br/&gt;Manko: Sniper snippet&lt;br/&gt;bobchaos: Správa komunity i přes všechny obtíže.&lt;br/&gt;A všichni hráči, kteří tráví čas přípravou komentářů, návrhů a zpráv na fórech Steam, Github a BIS</Czech>
         <Korean>LanCommi : 이미지 지원&lt;br/&gt;Goon and jw custom: 네이팜 코드 일부 제공&lt;br/&gt;rebel12340:라디오 먹통 스크립트 제공&lt;br/&gt;Manko: 이어플러그 제공&lt;br/&gt;bobchaos: 커뮤니티 관리&lt;br/&gt;그리고 그 외 모든 Github와 스팀 커뮤니티에서 관심을 가져주신 분들.</Korean>
+        <Original>LanCommi 的美术设计。&lt;br/&gt;Goon 和 jw custom: 部分凝固汽油弹(NAPALM)脚本。&lt;br/&gt;rebel12340: 无线电阻塞脚本。&lt;br/&gt;Manko: 耳塞脚本。&lt;br/&gt;bobchaos: 尽管困难重重，但仍在管理社区。&lt;br/&gt;以及所有花时间在Steam、Github和BIS论坛上发表评论、建议和报告的玩家。</Original>
       </Key>
     </Container>
     <Container name="game_options">
@@ -2915,7 +2919,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_radio_comm_unlock_vehicle_tooltip">
         <Original>Allow other groups to mount this vehicle</Original>
-        <Chinesesimp>允许其他小队乘坐该载具</Chinesesimp>
+        <Chinesesimp>允许其他小队搭乘该载具</Chinesesimp>
         <Russian>Разрешить другим группам садиться на этот автомобиль</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_radio_comm_ai_management">
@@ -2982,7 +2986,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_vehicle_manager_unlock_vehicle_tooltip">
         <Original>Allow other groups to mount this vehicle</Original>
-        <Chinesesimp>允许其他小队乘坐该载具</Chinesesimp>
+        <Chinesesimp>允许其他小队搭乘该载具</Chinesesimp>
         <Russian>Разрешить другим группам садиться на этот автомобиль</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_vehicle_manager_veh_query">
@@ -3019,12 +3023,12 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_manager_mount">
         <Original>Mount / Dismount</Original>
-        <Chinesesimp>乘坐/离开</Chinesesimp>
+        <Chinesesimp>搭乘/离开</Chinesesimp>
         <Russian>Погрузка / Разгрузка</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_manager_mount_tooltip">
         <Original>Force squad to mount or dismount their assigned vehicle</Original>
-        <Chinesesimp>强制班组乘坐或离开他们分配的车辆</Chinesesimp>
+        <Chinesesimp>强制班组搭乘或离开他们分配的车辆</Chinesesimp>
         <Russian>Заставить отряд сесть или слезть с назначенной машины</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_manager_static_autotarget">
@@ -3056,7 +3060,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_auto_rearm">
         <Original>Auto Rearm \ Loot</Original>\
-        <Chinesesimp>自动重新武装</Chinesesimp>
+        <Chinesesimp>自动重新武装\战利品</Chinesesimp>
         <Russian>Автоперезарядка \ Лут</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_auto_rearm_tooltip">
@@ -3081,7 +3085,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_SITREP_tooltip">
         <Original>Recover info about a HC squad status</Original>
-        <Chinesesimp>回报指挥部小队的状态</Chinesesimp>
+        <Chinesesimp>回报指挥部班组的状态</Chinesesimp>
         <Russian>Доложить информацию о статусе отряда</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_garrison">
@@ -3116,12 +3120,12 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_mount">
         <Original>Mount / Dismount</Original>
-        <Chinesesimp>乘坐/离开</Chinesesimp>
+        <Chinesesimp>搭乘/离开</Chinesesimp>
         <Russian>Погрузка / Разгрузка</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_mount_tooltips">
         <Original>Force squad to mount or dismount their assigned vehicle</Original>
-        <Chinesesimp>强制班组乘坐或离开他们分配的车辆</Chinesesimp>
+        <Chinesesimp>强制班组搭乘或离开他们分配的车辆</Chinesesimp>
         <Russian>Заставить отряд сесть или слезть с назначенной машины</Russian>
       </Key>
     </Container>
@@ -3428,7 +3432,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_player_money_donate_faction_tooltip">
         <Original>It will increase your prestige among your faction</Original>
-        <Chinesesimp>这将会提升你在阵营中的威望</Chinesesimp>
+        <Chinesesimp>这将会提升你在我方阵营中的威望</Chinesesimp>
         <Russian>Это повысит ваш престиж среди вашей фракции</Russian>
       </Key>
     </Container>
