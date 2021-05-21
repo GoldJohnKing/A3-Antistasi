@@ -703,3 +703,5 @@ class A3A
         class getRoadDirection {};
     };
 };
+
+#include "Custom\CHVD\chvd_functions.hpp" // Edited: Add CH View Distance

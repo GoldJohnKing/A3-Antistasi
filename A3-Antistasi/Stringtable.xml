@@ -3614,4 +3614,79 @@
       </Key>
     </Container>
   </Package>
+  <!-- Edited: Add CH View Distance -->
+  <Package name="CH View Distance">
+    <Key ID="STR_chvd_title">
+      <Original>视野距离设置</Original>
+    </Key>
+    <Key ID="STR_chvd_foot">
+      <Original>步行</Original>
+    </Key>
+    <Key ID="STR_chvd_car">
+      <Original>地面载具</Original>
+    </Key>
+    <Key ID="STR_chvd_air">
+      <Original>空中载具</Original>
+    </Key>
+    <Key ID="STR_chvd_view">
+      <Original>地形距离:</Original>
+    </Key>
+    <Key ID="STR_chvd_object">
+      <Original>物件距离:</Original>
+    </Key>
+    <Key ID="STR_chvd_terrain">
+      <Original>地形质量:</Original>
+    </Key>
+    <Key ID="STR_chvd_sync">
+      <Original>同步模式:</Original>
+    </Key>
+    <Key ID="STR_chvd_close">
+      <Original>关闭</Original>
+    </Key>
+    <Key ID="STR_chvd_disabled">
+      <Original>禁用</Original>
+    </Key>
+		<Key ID="STR_chvd_dynamic">
+      <Original>动态</Original>
+    </Key>
+		<Key ID="STR_chvd_fov">
+      <Original>FOV</Original>
+    </Key>
+    <Key ID="STR_chvd_low">
+      <Original>低</Original>
+    </Key>
+    <Key ID="STR_chvd_standard">
+      <Original>标准</Original>
+    </Key>
+    <Key ID="STR_chvd_high">
+      <Original>高</Original>
+    </Key>
+    <Key ID="STR_chvd_veryHigh">
+      <Original>非常高</Original>
+    </Key>
+    <Key ID="STR_chvd_ultra">
+      <Original>超高</Original>
+    </Key>		
+    <Key ID="STR_chvd_openSettings">
+      <Original>打开视野距离设置</Original>
+    </Key>
+    <Key ID="STR_chvd_decreaseVD">
+      <Original>降低视野距离</Original>
+    </Key>
+    <Key ID="STR_chvd_increaseVD">
+      <Original>增加视野距离</Original>
+    </Key>
+    <Key ID="STR_chvd_viewDistance">
+      <Original>地形距离</Original>
+    </Key>
+    <Key ID="STR_chvd_objViewDistance">
+      <Original>物件距离</Original>
+    </Key>
+    <Key ID="STR_chvd_terrainQuality">
+      <Original>地形质量</Original>
+    </Key>		
+    <Key ID="STR_chvd_terrainGrid">
+      <Original>地形网格</Original>
+    </Key>
+  </Package>
 </Project>

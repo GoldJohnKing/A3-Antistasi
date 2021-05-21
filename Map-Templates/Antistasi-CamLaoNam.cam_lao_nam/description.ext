@@ -50,3 +50,6 @@ class CfgDebriefing {
 
 // Edited: Disable unused channel
 disableChannels[] = {0, 2, 4, 5, 6};
+
+// Edited: Add CH View Distance
+#include "Custom\CHVD\chvd_dialog.hpp"
