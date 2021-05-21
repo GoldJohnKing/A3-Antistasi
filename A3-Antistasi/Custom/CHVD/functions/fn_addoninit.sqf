@@ -7,7 +7,7 @@
 	if (_scriptVersion) exitWith {systemChat "CH View Distance: Script version is running, addon disabled"};
 	
 	//Define variables, load from profileNamespace // Edited: Apply restrictions
-	CHVD_allowNoGrass = true/*if (isNil "CHVD_allowNoGrass") then {true} else {CHVD_allowNoGrass}*/;
+	CHVD_allowNoGrass = false/*if (isNil "CHVD_allowNoGrass") then {true} else {CHVD_allowNoGrass}*/;
 	CHVD_maxView = 8000/*if (isNil "CHVD_maxView") then {12000} else {CHVD_maxView}*/;
 	CHVD_maxObj = 8000/*if (isNil "CHVD_maxObj") then {12000} else {CHVD_maxObj}*/;
 	
