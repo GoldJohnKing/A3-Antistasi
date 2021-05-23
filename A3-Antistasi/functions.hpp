@@ -705,3 +705,4 @@ class A3A
 };
 
 #include "Custom\CHVD\chvd_functions.hpp" // Edited: Add CH View Distance
+#include "Custom\CH_brightNights\CH_brightNights_functions.hpp" // Edited: Add CH Bright Nights
