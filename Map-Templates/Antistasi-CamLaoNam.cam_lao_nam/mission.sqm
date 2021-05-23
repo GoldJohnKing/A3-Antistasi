@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2313;
+		nextID=2396;
 	};
 	class Camera
 	{
@@ -44,14 +44,13 @@ addons[]=
 	"A3_Modules_F_Hc",
 	"A3_Weapons_F",
 	"A3_Structures_F_Exp_Military_Flags",
-	"weapons_f_vietnam_c",
-	"modules_f_vietnam"
+	"weapons_f_vietnam_c"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=15;
+		items=14;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -150,13 +149,6 @@ class AddonsMetaData
 			author="Savage Game Design";
 			url="https://www.arma3.com";
 		};
-		class Item14
-		{
-			className="modules_f_vietnam";
-			name="modules_f_vietnam";
-			author="Savage Game Design";
-			url="https://www.arma3.com";
-		};
 	};
 };
 dlcs[]=
@@ -179,7 +171,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=25;
+		items=24;
 		class Item0
 		{
 			dataType="Layer";
@@ -34677,17 +34669,6 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4327.4482,152.92029,11713.398};
-				angles[]={6.2491984,0,6.1914454};
-			};
-			id=6289;
-			type="vn_module_situationalawarenessmodule_disable";
-		};
-		class Item23
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
 				position[]={4325.729,153.27065,11722.542};
 			};
 			areaSize[]={5,-1,5};
@@ -34738,7 +34719,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item24
+		class Item23
 		{
 			dataType="Logic";
 			class PositionInfo
