@@ -10,8 +10,8 @@
 	if (missionNamespace getVariable ["CHBN_running",false]) exitWith {/*systemChat "CHBN script is running. Addon disabled."*/}; // Edited: Disable debug info
 	CHBN_running = true;
 	
-	CHBN_adjustBrightness = missionNamespace getVariable ["CHBN_adjustBrightness",0.5]; // Edited: Tweak default brightness, default = 0.5
-	CHBN_adjustColor = missionNamespace getVariable ["CHBN_adjustColor",[0,0,0]]; // Edited: Tweak default color, default = [0.3,0.5,1]
+	CHBN_adjustBrightness = missionNamespace getVariable ["CHBN_adjustBrightness",1]; // Edited: Tweak default brightness, default = 0.5
+	CHBN_adjustColor = missionNamespace getVariable ["CHBN_adjustColor",[0.3,0.3,0.8]]; // Edited: Tweak default color, default = [0.3,0.5,1]
 
 	if (!isNil "CHBN_light") then {deleteVehicle CHBN_light};
 	CHBN_light = "#lightpoint" createVehicleLocal [0,0,0];
