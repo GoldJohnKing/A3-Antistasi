@@ -1277,7 +1277,7 @@
       <Key ID="STR_antistasi_mission_info_camlaonam_mapname_short_text">
         <Original>Antistasi Cam Lao Nam</Original>
         <English>Antistasi Cam Lao Nam</English>
-        <Chinesesimp>Antistasi Cam Lao Nam</Chinesesimp>
+        <Chinesesimp>Antistasi_游击模式_越南战争</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_mapname_text">
         <Original>Antistasi - Liberation of Cam Lao Nam</Original>
@@ -1292,7 +1292,7 @@
       <Key ID="STR_antistasi_mission_info_camlaonam_blurb_text">
         <Original>Tree? Which tree?!?</Original>
         <English>Tree? Which tree?!?</English>
-        <Chinesesimp>树? 哪棵树?!?</Chinesesimp>
+        <Chinesesimp>[越战服]老金的便宜货 QQ群: 274455383</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_2_mapname_short_text">
         <Original>Placeholder</Original>
