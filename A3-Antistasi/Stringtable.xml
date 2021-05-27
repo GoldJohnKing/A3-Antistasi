@@ -1275,13 +1275,13 @@
         <Russian>Сражайся верхом на верблюде</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_mapname_short_text">
-        <Original>Antistasi Cam Lao Nam</Original>
-        <English>Antistasi Cam Lao Nam</English>
+        <Original>Antistasi_游击模式_越南战争</Original>
+        <English>Antistasi_游击模式_越南战争</English>
         <Chinesesimp>Antistasi_游击模式_越南战争</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_mapname_text">
-        <Original>Antistasi - Liberation of Cam Lao Nam</Original>
-        <English>Antistasi - Liberation of Cam Lao Nam</English>
+        <Original>Antistasi_越战游击_解放柬老南</Original>
+        <English>Antistasi_越战游击_解放柬老南</English>
         <Chinesesimp>Antistasi - 解放柬老南</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_description_text">
