@@ -742,17 +742,23 @@ timer setVariable [vehCSATPlaneAA,10,true];
 {timer setVariable [_x,10,true]} forEach vehCSATAttackHelis;
 timer setVariable [vehNATOMRLS,0,true];
 timer setVariable [vehCSATMRLS,5,true];
-
+// Edited: Change vehicle template, default = 200,600,5000,200,50,200,300,700,400,800
 server setVariable [civCar,200,true];													//200
 server setVariable [civTruck,600,true];													//600
 server setVariable [civHeli,5000,true];													//5000
-server setVariable [civBoat,200,true];													//200
-server setVariable [vehSDKBike ,50,true];												//50
-server setVariable [vehSDKLightUnarmed,200,true];										//200
+server setVariable [civBoat,8000,true];													//200 // Edited: Change vehicle template
+server setVariable [vehSDKBike ,300,true];												//50
+server setVariable [vehSDKLightUnarmed,800,true];										//200 // Edited: Change vehicle template
 server setVariable [vehSDKTruck,300,true];											//300
-{server setVariable [_x,700,true]} forEach [vehSDKLightArmed,vehSDKAT];
-{server setVariable [_x,400,true]} forEach [SDKMGStatic,vehSDKBoat,vehSDKRepair];			//400
-{server setVariable [_x,800,true]} forEach [SDKMortar,staticATteamPlayer,staticAAteamPlayer];			//800
+// {server setVariable [_x,300,true]} forEach [vehSDKLightArmed,vehSDKAT]; // Edited: Change vehicle template
+server setVariable [vehSDKLightArmed,2500,true]; // Edited: Change vehicle template
+server setVariable [vehSDKAT,300,true]; // Edited: Change vehicle template
+// {server setVariable [_x,400,true]} forEach [SDKMGStatic,vehSDKBoat,vehSDKRepair];			//400 // Edited: Change vehicle template
+server setVariable [SDKMGStatic,4000,true]; // Edited: Change vehicle template
+{server setVariable [_x,400,true]} forEach [vehSDKBoat,vehSDKRepair];
+// {server setVariable [_x,800,true]} forEach [SDKMortar,staticATteamPlayer,staticAAteamPlayer];			//800
+server setVariable [staticATteamPlayer,5000,true]; // Edited: Change vehicle template
+{server setVariable [_x,800,true]} forEach [SDKMortar,staticAAteamPlayer]; // Edited: Change vehicle template
 
 ///////////////////////
 //     GARRISONS    ///

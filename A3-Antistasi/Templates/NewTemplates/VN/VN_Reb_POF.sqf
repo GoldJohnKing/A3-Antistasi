@@ -25,9 +25,9 @@
 //       Vehicles       //
 //////////////////////////
 
-["vehicleBasic", "vn_c_bicycle_01"] call _fnc_saveToTemplate; 			//this line determines basic vehicles, the lightest kind available. -- Example: ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets
-["vehicleLightUnarmed", "vn_i_wheeled_m151_02"] call _fnc_saveToTemplate; 		//this line determines light and unarmed vehicles. -- Example: ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets
-["vehicleLightArmed", "vn_i_wheeled_m151_mg_01"] call _fnc_saveToTemplate; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F","B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
+["vehicleBasic", "vn_o_nva_navy_static_at3"] call _fnc_saveToTemplate; 			//this line determines basic vehicles, the lightest kind available. -- Example: ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets // Edited: Change vehicle template, default = vn_c_bicycle_01
+["vehicleLightUnarmed", "vn_b_wheeled_m151_mg_04"] call _fnc_saveToTemplate; 		//this line determines light and unarmed vehicles. -- Example: ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets // Edited: Change vehicle template, default = vn_i_wheeled_m151_02
+["vehicleLightArmed", "vn_o_wheeled_btr40_mg_01_vcmf"] call _fnc_saveToTemplate; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F","B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets // Edited: Change vehicle template, default = vn_i_wheeled_m151_mg_01
 ["vehicleTruck", "vn_i_wheeled_m54_01"] call _fnc_saveToTemplate; 			//this line determines the trucks -- Example: ["vehiclesTrucks", ["B_Truck_01_transport_F","B_Truck_01_covered_F"]] -- Array, can contain multiple assets
 ["vehicleAT", "not_supported"] call _fnc_saveToTemplate; 		//this line determines AT vehicle -- Example: ["vehiclesCargoTrucks", ["B_Truck_01_transport_F","B_Truck_01_covered_F"]] -- Array, can contain multiple assets
 ["vehicleAA", "vn_b_wheeled_m54_mg_02"] call _fnc_saveToTemplate; 		//this line determines AA vehicle -- Example: ["vehiclesCargoTrucks", ["B_Truck_01_transport_F","B_Truck_01_covered_F"]] -- Array, can contain multiple assets
@@ -41,10 +41,10 @@
 ["vehicleCivCar", "vn_c_wheeled_m151_02"] call _fnc_saveToTemplate;
 ["vehicleCivTruck", "vn_b_wheeled_m54_01_airport"] call _fnc_saveToTemplate;
 ["vehicleCivHeli", "not_supported"] call _fnc_saveToTemplate;
-["vehicleCivBoat", "vn_c_boat_08_01"] call _fnc_saveToTemplate;
+["vehicleCivBoat", "vn_o_air_mi2_01_02"] call _fnc_saveToTemplate; // Edited: Change vehicle template, default = vn_c_boat_08_01
 
-["staticMG", "vn_i_static_m60_high"] call _fnc_saveToTemplate; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets
-["staticAT", "vn_i_static_tow"] call _fnc_saveToTemplate; 					//this line determinesstatic ATs -- Example: ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets
+["staticMG", "vn_o_vc_static_dshkm_low_01"] call _fnc_saveToTemplate; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets // Edited: Change vehicle template, default = vn_i_static_m60_high
+["staticAT", "vn_o_vc_static_d44_01"] call _fnc_saveToTemplate; 					//this line determinesstatic ATs -- Example: ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets // Edited: Change vehicle template, default = vn_i_static_tow
 ["staticAA", "vn_i_static_m45"] call _fnc_saveToTemplate; 					//this line determines static AAs -- Example: ["staticAA", ["B_static_AA_F"]] -- Array, can contain multiple assets
 ["staticMortar", "vn_i_static_mortar_m2"] call _fnc_saveToTemplate; 				//this line determines static mortars -- Example: ["staticMortar", ["B_Mortar_01_F"]] -- Array, can contain multiple assets
 ["staticMortarMagHE", "vn_mortar_m2_mag_he_x8"] call _fnc_saveToTemplate;
