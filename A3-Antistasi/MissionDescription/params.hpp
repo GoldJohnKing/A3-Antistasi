@@ -84,9 +84,9 @@ class Params
     class mRadius
     {
         title = "Max distance from HQ for tasks";
-        values[] = {9999,2000,4000,6000,8000,10000,12000};
-        texts[] = {"Default (4000)","2000","4000","6000","8000","10000","12000"};
-        default = 2500;
+        values[] = {9999,2000,3000,4000,6000,8000,10000,12000};
+        texts[] = {"Default (4000)","2000","3000","4000","6000","8000","10000","12000"};
+        default = 3000;
     };
     class pMarkers
     {
@@ -100,7 +100,7 @@ class Params
         title = "Mission Difficulty";
         values[] = {9999,1,2,3};
         texts[] = {"Default (Normal)","Easy","Normal","Hard"};
-        default = 2;
+        default = 3;
     };
     class unlockItem
     {
@@ -198,7 +198,7 @@ class Params
         title = "Chance of helmet loss on headshots";
         values[] = {9999,0,33,66,100};
         texts[] = {"Default (Sometimes)","Never","Sometimes","Often","Always"};
-        default = 50;
+        default = 100;
     };
     class Spacer10
     {
@@ -345,14 +345,14 @@ class Params
         title = "[Experimental - Use at own risk] Allow unfair supports to be used by the enemy";
         values[] = {9999, 0, 1};
         texts[] = {"Default (Not Allowed)", "Not allowed", "Allowed"};
-        default = 0;
+        default = 1;
     }
     class allowFuturisticSupports
     {
         title = "[Experimental - Use at own risk](Requires unfair supports) Allow futuristic supports to be used by the enemy";
         values[] = {9999, 0, 1};
         texts[] = {"Default (Not Allowed)", "Not allowed", "Allowed"};
-        default = 0;
+        default = 1;
     }
     class CrateOptions
     {
