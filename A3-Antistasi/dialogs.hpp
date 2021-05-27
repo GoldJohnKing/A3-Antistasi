@@ -637,7 +637,7 @@ class buy_vehicle 			{
 		class HQ_button_quad: RscButton
 		{
 			idc = 104;
-			text = "Malyutka (AT-3) 发射器"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_military_quad_text
+			text = "AT-3 发射器"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_military_quad_text
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -667,7 +667,7 @@ class buy_vehicle 			{
 		class HQ_button_Aoffroad: RscButton
 		{
 			idc = 107;
-			text = "BTR-40 装甲运兵车(RPD)"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_military_a_offroad_text
+			text = "BTR-40"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_military_a_offroad_text
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -677,7 +677,7 @@ class buy_vehicle 			{
 		class HQ_button_MG: RscButton
 		{
 			idc = 108;
-			text = "DShKM大口径机枪(低/重)"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_mg_text
+			text = "DShKM大口径重机枪"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_mg_text
 			tooltip = $STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_mg_tooltip;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
@@ -777,7 +777,7 @@ class civ_vehicle 			{
 		class HQ_button_Gremove: RscButton
 		{
 			idc = 106;
-			text = $STR_antistasi_dialogs_dialog_vehicle_purchase_civ_heli_text;
+			text = "Mi-2P 运输直升机"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_civ_heli_text
 			//x = 0.37749 * safezoneW + safezoneX;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
@@ -788,7 +788,7 @@ class civ_vehicle 			{
 		class HQ_button_offroad: RscButton
 		{
 			idc = 107;
-		 	text = "Mi-2P Hoplite 运输直升机"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_civ_boat_text
+		 	text = "四轮摩托车"; // Edited: Change vehicle template, default = $STR_antistasi_dialogs_dialog_vehicle_purchase_civ_boat_text
 			x = 0.272481 * safezoneW + safezoneX;
 		 	y = 0.415981 * safezoneH + safezoneY;
 		 	w = 0.175015 * safezoneW;

@@ -40,8 +40,8 @@
 
 ["vehicleCivCar", "vn_c_wheeled_m151_02"] call _fnc_saveToTemplate;
 ["vehicleCivTruck", "vn_b_wheeled_m54_01_airport"] call _fnc_saveToTemplate;
-["vehicleCivHeli", "not_supported"] call _fnc_saveToTemplate;
-["vehicleCivBoat", "vn_o_air_mi2_01_02"] call _fnc_saveToTemplate; // Edited: Change vehicle template, default = vn_c_boat_08_01
+["vehicleCivHeli", "vn_o_air_mi2_01_02"] call _fnc_saveToTemplate; // Edited: Change vehicle template, default = not_supported
+["vehicleCivBoat", "B_Quadbike_01_F"] call _fnc_saveToTemplate; // Edited: Change vehicle template, default = vn_c_boat_08_01
 
 ["staticMG", "vn_o_vc_static_dshkm_low_01"] call _fnc_saveToTemplate; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets // Edited: Change vehicle template, default = vn_i_static_m60_high
 ["staticAT", "vn_o_vc_static_d44_01"] call _fnc_saveToTemplate; 					//this line determinesstatic ATs -- Example: ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets // Edited: Change vehicle template, default = vn_i_static_tow

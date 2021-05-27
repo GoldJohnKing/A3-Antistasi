@@ -745,8 +745,8 @@ timer setVariable [vehCSATMRLS,5,true];
 // Edited: Change vehicle template, default = 200,600,5000,200,50,200,300,700,400,800
 server setVariable [civCar,200,true];													//200
 server setVariable [civTruck,600,true];													//600
-server setVariable [civHeli,5000,true];													//5000
-server setVariable [civBoat,8000,true];													//200 // Edited: Change vehicle template
+server setVariable [civHeli,8000,true];													//5000 // Edited: Change vehicle template
+server setVariable [civBoat,200,true];													//200 // Edited: Change vehicle template
 server setVariable [vehSDKBike ,300,true];												//50
 server setVariable [vehSDKLightUnarmed,800,true];										//200 // Edited: Change vehicle template
 server setVariable [vehSDKTruck,300,true];											//300
