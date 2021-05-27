@@ -7,7 +7,7 @@ if((_lastSupport select 0) == "SAM" && {(_lastSupport select 1) > time}) exitWit
 
 if !(allowUnfairSupports) exitWith {-1};
 private _loadedTemplate = if (_side isEqualTo Occupants) then {A3A_Occ_template} else {A3A_Inv_template};
-if (toLower _loadedTemplate isEqualTo "VN") exitWith {-1}; //dont allow with VN
+// if (toLower _loadedTemplate isEqualTo "VN") exitWith {-1}; //dont allow with VN // Edited: Allow use with VN
 
 if({sidesX getVariable [_x, sideUnknown] == _side} count airportsX == 0) exitWith {-1};
 
