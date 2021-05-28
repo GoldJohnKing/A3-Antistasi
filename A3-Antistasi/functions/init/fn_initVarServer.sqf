@@ -745,19 +745,19 @@ timer setVariable [vehCSATMRLS,5,true];
 // Edited: Change vehicle template, default = 200,600,5000,200,50,200,300,700,400,800
 server setVariable [civCar,200,true];													//200
 server setVariable [civTruck,600,true];													//600
-server setVariable [civHeli,8000,true];													//5000 // Edited: Change vehicle template
-server setVariable [civBoat,200,true];													//200 // Edited: Change vehicle template
+server setVariable [civHeli,6500,true];													//5000 // Edited: Change vehicle template
+server setVariable [civBoat,50,true];													//200 // Edited: Change vehicle template
 server setVariable [vehSDKBike ,300,true];												//50
 server setVariable [vehSDKLightUnarmed,800,true];										//200 // Edited: Change vehicle template
-server setVariable [vehSDKTruck,300,true];											//300
+server setVariable [vehSDKTruck,650,true];											//300 // Edited: Change vehicle template
 // {server setVariable [_x,300,true]} forEach [vehSDKLightArmed,vehSDKAT]; // Edited: Change vehicle template
-server setVariable [vehSDKLightArmed,2500,true]; // Edited: Change vehicle template
+server setVariable [vehSDKLightArmed,3000,true]; // Edited: Change vehicle template // Edited: Change vehicle template
 server setVariable [vehSDKAT,300,true]; // Edited: Change vehicle template
 // {server setVariable [_x,400,true]} forEach [SDKMGStatic,vehSDKBoat,vehSDKRepair];			//400 // Edited: Change vehicle template
-server setVariable [SDKMGStatic,4000,true]; // Edited: Change vehicle template
+server setVariable [SDKMGStatic,650,true]; // Edited: Change vehicle template
 {server setVariable [_x,400,true]} forEach [vehSDKBoat,vehSDKRepair];
 // {server setVariable [_x,800,true]} forEach [SDKMortar,staticATteamPlayer,staticAAteamPlayer];			//800
-server setVariable [staticATteamPlayer,5000,true]; // Edited: Change vehicle template
+server setVariable [staticATteamPlayer,8000,true]; // Edited: Change vehicle template
 {server setVariable [_x,800,true]} forEach [SDKMortar,staticAAteamPlayer]; // Edited: Change vehicle template
 
 ///////////////////////
