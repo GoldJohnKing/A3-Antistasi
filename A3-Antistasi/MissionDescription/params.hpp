@@ -100,7 +100,7 @@ class Params
         title = "Allow Friendly Player Markers";
         values[] = {9999,1,0};
         texts[] = {"Default (Yes)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class AISkill
     {
