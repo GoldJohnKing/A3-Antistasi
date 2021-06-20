@@ -63,46 +63,46 @@ if (count _positionTel > 0) then {
 
 if (_earlyEscape) exitWith {};
 
-// private _isEnemiesNearby = false; // Edited: Remove fast travel check
+private _isEnemiesNearby = false;
 
-// if(fastTravelIndividualEnemyCheck) then {
-// 	_isEnemiesNearby = [player,_distanceX] call A3A_fnc_enemyNearCheck;
+if(fastTravelIndividualEnemyCheck) then {
+	_isEnemiesNearby = [player,_distanceX] call A3A_fnc_enemyNearCheck;
 	
-// } else {
-// 	{
-// 		if ([_x,_distanceX] call A3A_fnc_enemyNearCheck) exitWith {_isEnemiesNearby = true}
-// 	} forEach units _groupX;
-// };
+} else {
+	{
+		if ([_x,_distanceX] call A3A_fnc_enemyNearCheck) exitWith {_isEnemiesNearby = true}
+	} forEach units _groupX;
+};
 
-// if (_isEnemiesNearby) exitWith {
-// 	["Fast Travel", "You cannot Fast Travel with enemies near the group"] call SCRT_fnc_misc_showDeniedActionHint;
-// };
+if (_isEnemiesNearby) exitWith {
+	["Fast Travel", "You cannot Fast Travel with enemies near the group"] call SCRT_fnc_misc_showDeniedActionHint;
+};
 
-// private _checkX = false;
+private _checkX = false;
 
-// if(fastTravelIndividualEnemyCheck) then {
-// 	if ((vehicle player != player) and ((isNull (driver vehicle player)) or (!canMove vehicle player) or (vehicle player isKindOf "Boat"))) then {
-// 		if (!(vehicle player isKindOf "StaticWeapon")) then {
-// 			_checkX = true;
-// 		};
-// 	};
-// } else {
-// 	{
-// 		if ((vehicle _x!= _x) and ((isNull (driver vehicle _x)) or (!canMove vehicle _x) or (vehicle _x isKindOf "Boat"))) then {
-// 			if (!(vehicle _x isKindOf "StaticWeapon")) then {
-// 				_checkX = true;
-// 			};
-// 		};
-// 	} forEach units _groupX;
-// };
+if(fastTravelIndividualEnemyCheck) then {
+	if ((vehicle player != player) and ((isNull (driver vehicle player)) or (!canMove vehicle player) or (vehicle player isKindOf "Boat"))) then {
+		if (!(vehicle player isKindOf "StaticWeapon")) then {
+			_checkX = true;
+		};
+	};
+} else {
+	{
+		if ((vehicle _x!= _x) and ((isNull (driver vehicle _x)) or (!canMove vehicle _x) or (vehicle _x isKindOf "Boat"))) then {
+			if (!(vehicle _x isKindOf "StaticWeapon")) then {
+				_checkX = true;
+			};
+		};
+	} forEach units _groupX;
+};
 
-// if (vehicle player != player && {driver vehicle player != player}) exitWith {
-// 	["Fast Travel", "Only drivers can activate fast travel in vehicles."] call SCRT_fnc_misc_showDeniedActionHint;
-// };
+if (vehicle player != player && {driver vehicle player != player}) exitWith {
+	["Fast Travel", "Only drivers can activate fast travel in vehicles."] call SCRT_fnc_misc_showDeniedActionHint;
+};
 
-// if (_checkX) exitWith {
-// 	["Fast Travel", "You cannot Fast Travel if you don't have a driver in all your vehicles or your vehicles are damaged and cannot move or you (your group) is in a boat"] call SCRT_fnc_misc_showDeniedActionHint;
-// };
+if (_checkX) exitWith {
+	["Fast Travel", "You cannot Fast Travel if you don't have a driver in all your vehicles or your vehicles are damaged and cannot move or you (your group) is in a boat"] call SCRT_fnc_misc_showDeniedActionHint;
+};
 
 if (count _positionTel > 0) then {
 	_base = [_markersX, _positionTel] call BIS_Fnc_nearestPosition;
