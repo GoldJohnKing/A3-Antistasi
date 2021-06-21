@@ -362,49 +362,49 @@ class Params
         title = "Allow Items and Vehicles from Karts DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class Mark
     {
         title = "Allow Items and Vehicles from Marksman DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class Heli
     {
         title = "Allow Items and Vehicles from Heli DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class Expansion
     {
         title = "Allow Items and Vehicles from Apex DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class Jets
     {
         title = "Allow Items and Vehicles from Jets DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class Orange
     {
         title = "Allow Items and Vehicles from Laws of War DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class Tanks
     {
         title = "Allow Items and Vehicles from Tanks DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class GlobMob
     {
@@ -418,21 +418,21 @@ class Params
         title = "Allow Items and Vehicles from Contact DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class OfficialMod
     {
         title = "Allow ADR-97 DLC?";
         values[] = {9999,1,0};
         texts[] = {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class AoW
     {
         title = "Allow Art of War DLC?";
         values[] = {9999,1,0};
         texts[] =  {"Default (No)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class Spacer0
     {
