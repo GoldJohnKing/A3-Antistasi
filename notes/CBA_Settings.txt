@@ -528,7 +528,7 @@ force force HELICOPTER_TURBULENCE_ENABLE_MASTER = true;
 force force HELICOPTER_TURBULENCE_ENABLE_WEATHEREFFECT = true;
 force force HELICOPTER_TURBULENCE_MAX_TURBULENCE = 15;
 force force HELICOPTER_TURBULENCE_MIN_TURBULENCE = 2.5;
-force force PLANE_TURBULENCE_ENABLE_MASTER = false;
+force force PLANE_TURBULENCE_ENABLE_MASTER = true;
 force force PLANE_TURBULENCE_ENABLE_WEATHEREFFECT = true;
 force force PLANE_TURBULENCE_MAX_TURBULENCE = 15;
 force force PLANE_TURBULENCE_MIN_TURBULENCE = 2.5;
@@ -581,24 +581,6 @@ force force JD_Map_CountlinesEnabled = true;
 force force JD_Map_drawShaded = 0.4;
 force force JD_Map_GridEnabled = true;
 force force JD_Map_shadedSea = 0.8;
-
-// AWESome Aerodynamics
-force force orbis_aerodynamics_dynamicWindMode = 2;
-force force orbis_aerodynamics_enabled = true;
-force force orbis_aerodynamics_pylonDragMultiplierGlobal = 1;
-force force orbis_aerodynamics_pylonMassMultiplierGlobal = 1;
-force force orbis_aerodynamics_windMultiplier = 1;
-
-// AWESome Cockpit
-force force orbis_cockpit_checklistUnits = "KM/H";
-force force orbis_cockpit_groundMultiplier = 1;
-force force orbis_cockpit_shakeEnabled = true;
-force force orbis_cockpit_speedMultiplier = 1;
-
-// AWESome GPWS
-force force orbis_gpws_automaticTransponder = true;
-force force orbis_gpws_defaultVolumeLow = false;
-force force orbis_gpws_personalDefault = "f16";
 
 // BettIR
 force force BettIR_ViewDistance = 300;
@@ -738,16 +720,6 @@ force force emr_main_preventHighVaulting = true;
 force force emr_main_staminaCoefficient = 1;
 force force emr_main_whitelistStr = "";
 
-// F/A-18
-force force js_jc_fa18_advancedStart = false;
-force force js_jc_fa18_atflirRequire = false;
-force force js_jc_fa18_canopyLoss = true;
-force force js_jc_fa18_cursorSensitivity = 2.5;
-force force js_jc_fa18_interactCursor = false;
-force force js_jc_fa18_interactionRadiusMod = 1;
-force force js_jc_fa18_mav_tdcDepressRequiredForMove = true;
-force force js_jc_fa18_showLabels = false;
-
 // Fawks' Enhanced NVGs
 force force PDT_EnhancedNVG_NVG_Blacklist = "";
 force force PDT_EnhancedNVG_NVG_Effect = "MWPhosphor";
@@ -825,10 +797,6 @@ force force lambs_main_radioWest = 500;
 // Laxemann Align
 force force L_Align_enabled = true;
 force force L_Align_steadyShake_enabled = true;
-
-// NIArms
-force force niarms_accswitch = true;
-force force niarms_magSwitch = true;
 
 // NMAB Settings
 force force NMAB_setting_particlesEnabled = true;
@@ -972,26 +940,6 @@ force force uvo_main_UVORU = true;
 force force uvo_main_UVOWest = true;
 force force uvo_main_voicePitch = 1;
 
-// USAF
-force force usaf_afterburner_setting_allow_ai = true;
-force force USAF_allowNuke = false;
-force force usaf_debug_setting_enabled_clients = false;
-force force usaf_debug_setting_enabled_server = false;
-force force usaf_f35a_allow_das_coverage = true;
-force force usaf_f35a_allow_sar_imagery = true;
-force force usaf_serviceMenu_setting_allowHangarRearm = false;
-force force usaf_serviceMenu_setting_allowHangarRefuel = false;
-force force usaf_serviceMenu_setting_allowHangarRepair = false;
-force force usaf_serviceMenu_setting_allowLoadoutModification = true;
-force force usaf_serviceMenu_setting_enabled = false;
-force force usaf_serviceMenu_setting_refuelTime = "100";
-force force usaf_serviceMenu_setting_reloadTime = "0";
-force force usaf_serviceMenu_setting_repairTime = "100";
-force force usaf_serviceMenu_setting_replaceSources = false;
-force force usaf_serviceMenu_setting_selectorSearchRadius = "30";
-force force usaf_setting_allow_aiFormlights = true;
-force force usaf_utility_core_allow_move_in_cargo = false;
-
 // VET_Unflipping
 force force vet_unflipping_require_serviceVehicle = false;
 force force vet_unflipping_require_toolkit = false;
@@ -1033,4 +981,3 @@ force force zen_vision_enableRedGreenThermal = false;
 force force zen_vision_enableRedHotCold = false;
 force force zen_vision_enableWhiteHot = true;
 force force zen_vision_enableWhiteHotRedCold = false;
-
