@@ -943,7 +943,7 @@
         <Russian>Ремонтирует радиовышки и военные здания на маркере.</Russian>
         <German>Baut Funktürme und Militärgebäude auf Marker wieder auf. </German>
         <Czech>Přestavuje rádiové věže a vojenské budovy na značku. </Czech>
-        <Chinesesimp>在选定的标记位置重建无线电塔和军事建筑。</Chinesesim
+        <Chinesesimp>在选定的标记位置重建无线电塔和军事建筑。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
         <Original>Train FIA Troops</Original>
@@ -1679,14 +1679,14 @@
         <Original>Antistasi Plus - Altis Requiem</Original>
         <English>Antistasi Plus - Altis Requiem</English>
         <Russian>Antistasi Plus - Реквием по Алтису</Russian>
-	<Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chine
+	<Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_mapname_text">
         <Original>Antistasi Plus - Altis Requiem</Original>
         <English>Antistasi Plus - Altis Requiem</English>
         <French>Antistasi Plus - Altis Requiem</French>
         <Korean>Antistasi Plus - Altis Requiem</Korean>
-	<Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chine
+	<Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chinesesimp>
         <Russian>Antistasi Plus - Реквием по Алтису</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_description_text">
