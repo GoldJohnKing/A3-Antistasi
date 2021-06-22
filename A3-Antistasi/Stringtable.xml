@@ -21,7 +21,7 @@
         <Russian>Позволяет инженеру выбрать тип конструкции, её позицию и затем построить её. Используйте клавиши стрелок для смены типа конструкции.</Russian>
         <German>Ermöglicht dem Ingenieur, den Konstruktionstyp und seine Position auszuwählen und dann zu erstellen. Verwenden Sie die Pfeiltasten, um die Bauart zu wechseln.</German>
         <Czech>Umožňuje technikovi vybrat typ konstrukce, její polohu a poté ji postavit. K přepnutí typu konstrukce použijte klávesy se šipkami.</Czech>
-        <Chinesesimp>允许工程师选择建筑类型和位置，然后建造。使用箭头键切换建筑类型。</Chinesesimp>
+        <Chinesesimp>允许工程师选择建筑类型和位置, 然后建造。使用箭头键切换建筑类型。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_select_strike_type">
         <Original>Select type of strike</Original>
@@ -264,7 +264,7 @@
         <Russian>Переворачивает автомобиль, на который вы указываете, обратно на колёса. Для выполнения требуется 3 человека, для тяжелых транспортных средств требуется ремонтная машина в непосредственной близости.</Russian>
         <German>Dreht das Fahrzeug um, auf das Sie zeigen. Benötigt 3 Personen für eine erfolgreiche Leistung, schwere Fahrzeuge erfordern einen Reparatur-LKW in der Nähe.</German>
         <Czech>Několik možností AI.</Czech>
-        <Chinesesimp>翻正你面前的载具。成功翻正载具需要3个人，翻正重型载具需要附近有维修卡车。</Chinesesimp>
+        <Chinesesimp>翻正你面前的载具。成功翻正载具需要3个人, 翻正重型载具需要附近有维修卡车。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_players_money_title">
         <Original>Players and Money</Original>
@@ -327,7 +327,7 @@
         <Russian>Телепортируйте себя и/или свой отряд или отряд, выбранный через High Command, в дружественную зону в зависимости от нескольких факторов.</Russian>
         <German>Teleportieren Sie Ihren Trupp oder einen von HC ausgewählten Trupp in Abhängigkeit von mehreren Faktoren in eine freundliche Zone.</German>
         <Czech>Teleportujte svůj tým nebo tým vybraný HC do přátelské zóny v závislosti na několika faktorech.</Czech>
-        <Chinesesimp>满足条件时, 可将你和/或你的班组，或指挥部小队传送至友军占领区。</Chinesesimp>
+        <Chinesesimp>满足条件时, 可将你和/或你的班组, 或指挥部小队传送至友军占领区。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruitment_menu_frame_text">
         <Original>Squad Recruitment</Original>
@@ -399,7 +399,7 @@
         <Russian>Обратите внимание, что список доступной для повстанцев техники будет расширяться по мере развития войны.</Russian>
         <German>Beachten Sie, dass die Liste der Rebellenfahrzeuge im Verlauf des Krieges erweitert wird.</German>
         <Czech>Pamatujte, že soupiska rebelských vozidel se bude s vývojem války rozšiřovat.</Czech>
-        <Chinesesimp>请注意，随着战争的发展，可供叛军使用的载具类型将会增加。</Chinesesimp>
+        <Chinesesimp>请注意, 随着战争的发展, 可供叛军使用的载具类型将会增加。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_available_missions_frame_text">
         <Original>Available Missions</Original>
@@ -664,7 +664,7 @@
         <Russian>Чистит некоторые вещи - тела, остовы, предметы и так далее. Использовать с осторожностью - при применении наблюдается краткосрочное падение производительности.</Russian>
         <German>Reinigt mehrere Dinge im Spiel. Verwenden Sie es mit Vorsicht, da es die Mission einfriert.</German>
         <Czech>Čistí několik věcí ve hře. Používejte opatrně, protože to zmrazí misi.</Czech>
-        <Chinesesimp>清理游戏内的各类垃圾。该功能在执行过程中会使任务卡住，请小心使用。</Chinesesimp>
+        <Chinesesimp>清理游戏内的各类垃圾。该功能在执行过程中会使任务卡住, 请小心使用。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_faction_garage_tooltip">
         <Original>Look at a vehicle and garage it into faction garage (shared among commanders).</Original>
@@ -794,7 +794,7 @@
         <Russian>Открывает меню миномётной поддержки, которое позволяет игроку задавать цели для миномётных расчётов.</Russian>
         <German>Öffnet das Mörser-Sperrmenü, mit dem der Spieler das Artillerieziel für einen sofortigen Treffer festlegen kann.</German>
         <Czech>Otevírá nabídku minometné palby, která umožňuje hráči nastavit dělostřelecký cíl pro okamžitý úder.</Czech>
-        <Chinesesimp>打开火炮支援菜单，玩家可以设定目标以立即进行火炮打击。</Chinesesimp>
+        <Chinesesimp>打开火炮支援菜单, 玩家可以设定目标以立即进行火炮打击。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_auto_rearm_title">
         <Original>Auto Rearm / Loot</Original>
@@ -1807,7 +1807,7 @@
         <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Altis.</German>
         <Czech>Ať jsme to chtěli nebo ne, vstoupili jsme do války s obyvateli Altisu.</Czech>
         <Korean>우리가 원하든 원하지 않든, 우리는 알 티스에서 거주자들과 전쟁에 뛰어 들었습니다.</Korean>
-	<Chinesesimp>无论我们愿不愿意，我们都卷入了一场与阿尔蒂斯的占领者的战争。</Chinesesimp>
+	<Chinesesimp>无论我们愿不愿意, 我们都卷入了一场与阿尔蒂斯的占领者的战争。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_stratis_mapname_short_text">
         <Original>Antistasi Stratis</Original>
@@ -4312,14 +4312,14 @@
           <English>Unfortunately, enemy intel is mostly outdated. Nothing useful was found.</English>
           <French>Malheureusement, les informations ennemies sont pour la plupart dépassées. Rien d'utile n'a été trouvé.</French>
           <Russian>Донесения, которые мы добыли, к сожалению, устарели.</Russian>
-          <Chinesesimp>不幸的是，敌军情报大多已经过时了。没有发现任何有用的东西。</Chinesesimp>
+          <Chinesesimp>不幸的是, 敌军情报大多已经过时了。没有发现任何有用的东西。</Chinesesimp>
       </Key>
       <Key ID="STR_trader_task_hint_description">
           <Original>Enemy's latest report contains information about infamous arms dealer which has been arrived in our restless state. We need to find him and establish contacts between black market and the resistance.</Original>
           <English>Enemy's latest report contains information about infamous arms dealer which has been arrived in our restless state. We need to find him and establish contacts between black market and the resistance.</English>
           <French>Le dernier rapport d'Enemy contient des informations sur l'infâme marchand d'armes qui est arrivé dans notre état agité. Nous devons le trouver et établir des contacts entre le marché noir et la résistance.</French>
           <Russian>В свежих донесениях противника содержится информация о том, что в зону конфликта прибыл торговец оружием. Необходимо наладить контакт между ним и сопротивлением.</Russian>
-          <Chinesesimp>敌军的最新情报显示，一位臭名昭著的军火商在我们忙个不停的时候已经抵达该地区。我们需要找到他，建立黑市与叛军之间的联系。</Chinesesimp>
+          <Chinesesimp>敌军的最新情报显示, 一位臭名昭著的军火商在我们忙个不停的时候已经抵达该地区。我们需要找到他, 建立黑市与叛军之间的联系。</Chinesesimp>
       </Key>
     </Container>
     <Container name="common_actions">
@@ -4365,14 +4365,14 @@
         <English>Money has been found. Found banknotes have been divided equally among all players.</English>
         <French>Rien d'utile n'a été.</French>
         <Russian>В грузе были найдены деньги. Найденная валюта разделена поровну между всеми игроками.</Russian>
-        <Chinesesimp>在战利品中发现了钞票，并已平分给所有玩家。</Chinesesimp>
+        <Chinesesimp>在战利品中发现了钞票, 并已平分给所有玩家。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_common_notifications_share_money_text">
         <Original>Faction money has been shared by commander equally among all server members.</Original>
         <English>Faction money has been shared by commander equally among all server members.</English>
         <French>Rien d'utile n'a été.</French>
         <Russian>Деньги фракции были разделены поровну между всеми членами сервера.</Russian>
-        <Chinesesimp>阵营资金已由指挥官共享，并已平分给所有服务器会员。</Chinesesimp>
+        <Chinesesimp>阵营资金已由指挥官共享, 并已平分给所有服务器会员。</Chinesesimp>
       </Key>
     </Container>
     <Container name="draw3d_text">
@@ -4513,7 +4513,7 @@
         <Russian>Пошёл ты!</Russian>
         <German>Fick dich ins Knie!</German>
         <Czech>Do prdele!</Czech>
-        <Chinesesimp>去你妈的！</Chinesesimp>
+        <Chinesesimp>去你妈的!</Chinesesimp>
       </Key>
       <Key ID="STR_recruit_success_text">
         <Original>Why not? It can't be any worse.</Original>
@@ -4522,7 +4522,7 @@
         <Russian>Почему бы и нет? Я согласен.</Russian>
         <German>Warum nicht? Schlimmer kann es nicht sein.</German>
         <Czech>Proč ne? Nemůže to být o nic horší.</Czech>
-        <Chinesesimp>为什么不呢？已经没有比这更糟的了。</Chinesesimp>
+        <Chinesesimp>为什么不呢? 已经没有比这更糟的了。</Chinesesimp>
       </Key>
       <Key ID="STR_release_request_text">
         <Original>Go back to your base and tell your comrades we are not enemies. We just want to live in peace.</Original>
@@ -4531,7 +4531,7 @@
         <Russian>Возвращайся на свою базу и скажи товарищам, что мы не враги. Мы просто хотим жить в мире.</Russian>
         <German>Geh zurück zu deiner Basis und sag deinen Kameraden, dass wir keine Feinde sind. Wir wollen nur in Frieden leben.</German>
         <Czech>Vraťte se na svou základnu a řekněte svým kamarádům, že nejsme nepřátelé. Chceme jen žít v míru.</Czech>
-        <Chinesesimp>回到你的基地，告诉你的同志们我们不是敌人。我们只想过和平的生活。</Chinesesimp>
+        <Chinesesimp>回到你的基地, 告诉你的同志们我们不是敌人。我们只想过和平的生活。</Chinesesimp>
       </Key>
       <Key ID="STR_release_response_one_text">
         <Original>Thank you. I owe you my life.</Original>
@@ -4549,7 +4549,7 @@
         <Russian>Спасибо. Клянусь, ты не пожалеешь об этом!</Russian>
         <German>Danke dir. Ich schwöre, du wirst es nicht bereuen!.</German>
         <Czech>Děkuju. Přísahám, že toho nebudeš litovat!</Czech>
-        <Chinesesimp>谢谢。我发誓你不会后悔的！</Chinesesimp>
+        <Chinesesimp>谢谢。我发誓你不会后悔的!</Chinesesimp>
       </Key>
       <Key ID="STR_release_response_three_text">
         <Original>Thank you, I will definitely remember this when I shoot you next time!</Original>
@@ -4558,7 +4558,7 @@
         <Russian>Спасибо, я обязательно об этом вспомню, когда буду стрелять в вас в следующий раз!</Russian>
         <German>Danke, ich werde mich definitiv daran erinnern, wenn ich dich das nächste Mal erschieße!</German>
         <Czech>Děkuji, určitě si to zapamatuji, až vás příště zastřelím!</Czech>
-        <Chinesesimp>谢谢，下次遇到你的时候我一定会记住的！</Chinesesimp>
+        <Chinesesimp>谢谢, 下次遇到你的时候我一定会记住的!</Chinesesimp>
       </Key>
       <Key ID="STR_interrogate_text">
         <Original>Tell me what you know!</Original>
@@ -4567,7 +4567,7 @@
         <Russian>Скажи мне, что ты знаешь!</Russian>
         <German>Sag mir, was du weisst!</German>
         <Czech>Řekni mi, co víš!</Czech>
-        <Chinesesimp>告诉我你知道的一切！</Chinesesimp>
+        <Chinesesimp>告诉我你知道的一切!</Chinesesimp>
       </Key>
       <Key ID="STR_reveal_text">
         <Original>Tell me where are your comrades!</Original>
@@ -4577,7 +4577,7 @@
         <German>Sag mir, wo sind deine Kameraden!</German>
         <Czech>Řekněte mi, kde jsou vaši soudruzi!</Czech>
         <Korean>동지들이 어디 있는지 말해줘!</Korean>
-        <Chinesesimp>告诉我你的同志们在哪里！</Chinesesimp>
+        <Chinesesimp>告诉我你的同志们在哪里!</Chinesesimp>
       </Key>
       <Key ID="STR_interrogation_success_text">
         <Original>Okay, I tell you what I know.</Original>
@@ -4586,7 +4586,7 @@
         <Russian>Хорошо, я всё скажу, только не бейте!</Russian>
         <German>Okay, ich sage dir was ich weiß.</German>
         <Czech>Dobře, říkám ti, co vím.</Czech>
-        <Chinesesimp>好吧，我会把我知道的都告诉你。</Chinesesimp>
+        <Chinesesimp>好吧, 我会把我知道的都告诉你。</Chinesesimp>
       </Key>
       <Key ID="STR_interrogation_fail_nosquadleader_text">
         <Original>I would, but only our squadleader may knows something.</Original>
@@ -4595,7 +4595,7 @@
         <Russian>Я простой солдат и ничего не знаю, спросите лучше командира отделения.</Russian>
         <German>Ich würde, aber nur Ihr Truppführer kann etwas wissen.</German>
         <Czech>Chtěl bych, ale jen váš vůdce družstva může něco vědět.</Czech>
-        <Chinesesimp>我很想告诉你，但只有我们的队长知道些什么。</Chinesesimp>
+        <Chinesesimp>我很想告诉你, 但只有我们的队长知道些什么。</Chinesesimp>
       </Key>
       <Key ID="STR_interrogation_fail_noknowledge_text">
         <Original>I would, but I don't know anything.</Original>
@@ -4604,7 +4604,7 @@
         <Russian>Я бы рассказал, но я совершенно ничего не знаю.</Russian>
         <German>Ich würde, aber ich weiß nichts.</German>
         <Czech>Chtěl bych, ale nic nevím.</Czech>
-        <Chinesesimp>我很想告诉你，但是我什么都不知道。</Chinesesimp>
+        <Chinesesimp>我很想告诉你, 但是我什么都不知道。</Chinesesimp>
       </Key>
     </Container>
   </Package>
