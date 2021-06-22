@@ -21,6 +21,7 @@
         <Russian>Позволяет инженеру выбрать тип конструкции, её позицию и затем построить её. Используйте клавиши стрелок для смены типа конструкции.</Russian>
         <German>Ermöglicht dem Ingenieur, den Konstruktionstyp und seine Position auszuwählen und dann zu erstellen. Verwenden Sie die Pfeiltasten, um die Bauart zu wechseln.</German>
         <Czech>Umožňuje technikovi vybrat typ konstrukce, její polohu a poté ji postavit. K přepnutí typu konstrukce použijte klávesy se šipkami.</Czech>
+        <Chinesesimp>允许工程师选择建筑类型和位置，然后建造。使用箭头键切换建筑类型。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_select_strike_type">
         <Original>Select type of strike</Original>
@@ -29,6 +30,7 @@
         <Russian>Выберите тип артналёта</Russian>
         <German>Wählen Sie die Art des Streiks</German>
         <Czech>Vyberte typ stávky</Czech>
+        <Chinesesimp>选择打击类型</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_single_point_strike">
         <Original>Single Point Strike</Original>
@@ -37,6 +39,7 @@
         <Russian>Одиночный</Russian>
         <German>Einzelpunktschlag</German>
         <Czech>Single Point Strike</Czech>
+        <Chinesesimp>精准打击</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_barrage_strike">
         <Original>Barrage</Original>
@@ -45,6 +48,7 @@
         <Russian>Заградительный огонь</Russian>
         <German>Sperrfeuer</German>
         <Czech>Příval</Czech>
+        <Chinesesimp>弹幕打击</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_personal_garage">
         <Original>Personal Garage</Original>
@@ -53,6 +57,7 @@
         <Russian>Личный гараж</Russian>
         <German>Persönliche Garage</German>
         <Czech>Osobní garáž</Czech>
+        <Chinesesimp>个人车库</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_faction_garage">
         <Original>Faction Garage</Original>
@@ -61,6 +66,7 @@
         <Russian>Фракционный гараж</Russian>
         <German>Fraktionsgarage</German>
         <Czech>Frakční garáž</Czech>
+        <Chinesesimp>阵营车库</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_add_server_member_title">
         <Original>Add Server Member</Original>
@@ -69,6 +75,7 @@
         <Russian>Добавить участника сервера</Russian>
         <German>Servermitglied hinzufügen</German>
         <Czech>Přidat člena serveru</Czech>
+        <Chinesesimp>添加服务器会员</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_add_server_member_tooltip">
         <Original>Use this option to add the player which you are currently looking to the member's list.</Original>
@@ -77,6 +84,7 @@
         <Russian>Используйте эту опцию для добавления игрока, на которого вы в текущий момент смотрите, в список участников сервера.</Russian>
         <German>Utilisez cette option pour ajouter le joueur que vous recherchez actuellement à la liste des membres.</German>
         <Czech>Pomocí této možnosti můžete přidat hráče, kterého právě hledáte, do seznamu členů.</Czech>
+        <Chinesesimp>使用该选项将你面前的玩家加入到会员列表。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_remove_server_member_title">
         <Original>Remove Server Member</Original>
@@ -85,6 +93,7 @@
         <Russian>Удалить участника сервера</Russian>
         <German>Servermitglied entfernen</German>
         <Czech>Odebrat člena serveru</Czech>
+        <Chinesesimp>移除服务器会员</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_remove_server_member_tooltip">
         <Original>Use this option to remove the player which you are currently looking to the member's list.</Original>
@@ -93,6 +102,7 @@
         <Russian>Используйте эту опцию для удаления игрока, на которого вы в текущий момент смотрите, из списка участников сервера.</Russian>
         <German>Verwenden Sie diese Option, um den Player, den Sie gerade suchen, aus der Mitgliederliste zu entfernen.</German>
         <Czech>Pomocí této možnosti odeberete hráče, kterého právě hledáte, ze seznamu členů.</Czech>
+        <Chinesesimp>使用该选项将你面前的玩家从会员列表中移除。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_faction_title">
         <Original>Donate 100€ to Faction</Original>
@@ -101,6 +111,7 @@
         <Russian>Передать 100€ фракции</Russian>
         <German>Spenden Sie 100€ an Fraction</German>
         <Czech>Přispějte 100€ na frakci</Czech>
+        <Chinesesimp>向阵营捐赠 100€</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_faction_tooltip">
         <Original>Donates your personal money to rebel faction. It will increase your prestige among rebels.</Original>
@@ -109,6 +120,7 @@
         <Russian>Передаёт ваши персональные деньги на счёт фракции. Это действие увеличивает ваш престиж среди других повстанцев.</Russian>
         <German>Spendet dein persönliches Geld an die Rebellenfraktion. Es wird Ihr Ansehen unter den Rebellen erhöhen.</German>
         <Czech>Darujte své osobní peníze povstalecké frakci. Zvýší vaši prestiž mezi rebely.</Czech>
+        <Chinesesimp>将你的个人资产捐献给反抗阵营。这将会提高你在叛军中的声望。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_player_title">
         <Original>Donate 100€ to player</Original>
@@ -117,6 +129,7 @@
         <Russian>Передать 100€ игроку</Russian>
         <German>Spende 100€ an den Spieler</German>
         <Czech>Přispějte 100€ hráči</Czech>
+        <Chinesesimp>向玩家捐赠 100€</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_player_tooltip">
         <Original>Donates your personal money to player you're looking at.</Original>
@@ -125,6 +138,7 @@
         <Russian>Передаёт ваши персональные деньги на счёт игрока, на которого вы смотрите в текущий момент.</Russian>
         <German>Spendet Ihr persönliches Geld an den Spieler, den Sie sich ansehen.</German>
         <Czech>Daruje své osobní peníze hráči, na kterého se díváte.</Czech>
+        <Chinesesimp>将你的个人资产捐给你面前的玩家。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_quadbike">
         <Original>Quadbike</Original>
@@ -133,6 +147,7 @@
         <Russian>Квадроцикл</Russian>
         <German>Quad-Bike</German>
         <Czech>Čtyřkolka</Czech>
+        <Chinesesimp>四轮摩托车</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_tooltip">
         <Original>Accesses various commander options.</Original>
@@ -141,6 +156,7 @@
         <Russian>Различные опции только для командира.</Russian>
         <German>Öffnen Sie verschiedene Commander-Optionen.</German>
         <Czech>Otevřete různé možnosti velitele.</Czech>
+        <Chinesesimp>访问指挥官选项。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_menu_frame_text">
         <Original>Construction</Original>
@@ -149,6 +165,7 @@
         <Russian>Строительство</Russian>
         <German>Konstruktion</German>
         <Czech>Konstrukce</Czech>
+        <Chinesesimp>建造</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_construction_tooltip">
         <Original>Accesses construction menu.</Original>
@@ -157,6 +174,7 @@
         <Russian>Меню строительства.</Russian>
         <German>Ruft das Konstruktionsmenü auf.</German>
         <Czech>Vstup do konstrukčního menu.</Czech>
+        <Chinesesimp>访问建造菜单。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_ai_control_title">
         <Original>AI Control</Original>
@@ -165,6 +183,7 @@
         <Russian>Прямое управление</Russian>
         <German>KI-Steuerung</German>
         <Czech>Ovládání AI</Czech>
+        <Chinesesimp>AI 控制</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_ai_control_tooltip">
         <Original>Take temporary personal control of the selected squad member or HC squad leader and be able to perform any kind of actions for 60 seconds. Control state will be cancelled if the player or the controlled unit receives any kind of damage.</Original>
@@ -173,6 +192,7 @@
         <Russian>Берёт прямое управление над ИИ-юнитом на 60 секунд. Если игрок или управляемый юнит получит урон, прямой контроль будет отменён.</Russian>
         <German>Übernehmen Sie vorübergehend die persönliche Kontrolle über das ausgewählte Squad-Mitglied oder den HC-Squad-Anführer und können Sie 60 Sekunden lang jede Art von Aktion ausführen. Der Kontrollstatus wird aufgehoben, wenn der Spieler oder die kontrollierte Einheit Schaden erleidet.</German>
         <Czech>Převezměte dočasnou osobní kontrolu nad vybraným členem týmu nebo vedoucím týmu HC a buďte schopni provádět jakékoli akce po dobu 60 sekund. Stav ovládání bude zrušen, pokud hráč nebo ovládaná jednotka utrpí jakýkoli druh poškození.</Czech>
+        <Chinesesimp>亲自控制选定的班组成员或指挥部班组的班长, 并可在60秒内执行任何动作。如果玩家或受控单位受到任何伤害, 控制状态将被取消。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_move_veh_title">
         <Original>Move Static/Loot Crate</Original>
@@ -181,6 +201,7 @@
         <Russian>Переместить стат. орудие/ящик</Russian>
         <German>Statik / Kiste bewegen</German>
         <Czech>Přesunout statický / přepravka</Czech>
+        <Chinesesimp>移动固定式武器/板条箱</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_move_veh_tooltip">
         <Original>Moves static weapon or loot crate you're pointing at.</Original>
@@ -189,6 +210,7 @@
         <Russian>Двигает орудие на станке или ящик, на который направлен взгляд.</Russian>
         <German>Bewegt statische Waffen oder Beutekisten, auf die Sie zeigen.</German>
         <Czech>Pohybuje statickou zbraní nebo kořistí, na kterou míříte.</Czech>
+        <Chinesesimp>移动你面前的固定式武器或板条箱。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_unlock_vehicle_title">
         <Original>Unlock Vehicle</Original>
@@ -197,6 +219,7 @@
         <Russian>Закрыть машину</Russian>
         <German>Fahrzeug entsperren</German>
         <Czech>Odemkněte vozidlo</Czech>
+        <Chinesesimp>解锁载具</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_unlock_vehicle_tooltip">
         <Original>Locks/unlocks vehicle you're pointing at.</Original>
@@ -205,6 +228,7 @@
         <Russian>Открывает/закрывает технику, на которую вы смотрите.</Russian>
         <German>Sperrt / entsperrt das Fahrzeug, auf das Sie zeigen.</German>
         <Czech>Zamkne / odemkne vozidlo, na které míříte.</Czech>
+        <Chinesesimp>锁定/解锁你面前的载具。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_ai_management_title">
         <Original>AI Management</Original>
@@ -213,6 +237,7 @@
         <Russian>Управление ИИ</Russian>
         <German>KI-Management</German>
         <Czech>Správa AI</Czech>
+        <Chinesesimp>AI 管理</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_ai_management_tooltip">
         <Original>Several AI options.</Original>
@@ -221,6 +246,7 @@
         <Russian>Некоторые опции для управления ИИ.</Russian>
         <German>Mehrere KI-Optionen.</German>
         <Czech>Několik možností AI.</Czech>
+        <Chinesesimp>AI 选项。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_flip_vehicle_title">
         <Original>Flip Vehicle</Original>
@@ -229,6 +255,7 @@
         <Russian>Перевернуть автомобиль</Russian>
         <German>Fahrzeug umdrehen</German>
         <Czech>Flip Vehicle</Czech>
+        <Chinesesimp>翻正载具</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_flip_vehicle_tooltip">
         <Original>Flips the vehicle you're pointing at. Requires 3 people to successfully perform, heavy vehicles requires repair truck in proximity.</Original>
@@ -237,6 +264,7 @@
         <Russian>Переворачивает автомобиль, на который вы указываете, обратно на колёса. Для выполнения требуется 3 человека, для тяжелых транспортных средств требуется ремонтная машина в непосредственной близости.</Russian>
         <German>Dreht das Fahrzeug um, auf das Sie zeigen. Benötigt 3 Personen für eine erfolgreiche Leistung, schwere Fahrzeuge erfordern einen Reparatur-LKW in der Nähe.</German>
         <Czech>Několik možností AI.</Czech>
+        <Chinesesimp>翻正你面前的载具。成功翻正载具需要3个人，翻正重型载具需要附近有维修卡车。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_players_money_title">
         <Original>Players and Money</Original>
@@ -245,6 +273,7 @@
         <Russian>Игроки и Деньги</Russian>
         <German>Spieler und Geld</German>
         <Czech>Hráči a peníze</Czech>
+        <Chinesesimp>玩家和资产</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_players_money_tooltip">
         <Original>Various operations with money and players. To transfer money to player you must look at him.</Original>
@@ -253,6 +282,7 @@
         <Russian>Различные операции с деньгами и игроками. Чтобы перевести деньги игроку, вы должны смотреть на него.</Russian>
         <German>Verschiedene Operationen mit Geld und Spielern. Um Geld an den Spieler zu überweisen, musst du ihn ansehen.</German>
         <Czech>Různé operace s penězi a hráči. Chcete-li převést peníze hráči, musíte se na něj podívat.</Czech>
+        <Chinesesimp>与玩家和资产有关的操作。你必须面向一名玩家才能将资产转移给他。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_put_garage_title">
         <Original>Put Vehicle in Garage</Original>
@@ -261,6 +291,7 @@
         <Russian>Поставить технику в гараж</Russian>
         <German>Fahrzeug in Garage stellen</German>
         <Czech>Umístěte vozidlo do garáže</Czech>
+        <Chinesesimp>将载具存入车库</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_put_garage_tooltip">
         <Original>Vehicle or Static gun you're looking at will be garaged, interact with Flag to retrieve from garage.</Original>
@@ -269,6 +300,7 @@
         <Russian>Автомобиль или статическое орудие, на которое вы смотрите, будет положен в гараж. Взаимодействуйте с флагом или ящиком, чтобы получить его из гаража.</Russian>
         <German>Das Fahrzeug oder die statische Waffe, die Sie sich ansehen, wird in die Garage gestellt. Interagieren Sie mit Flag, um sie aus der Garage zu holen.</German>
         <Czech>Vozidlo nebo statická zbraň, na které se díváte, budou garážovány, komunikujte s Flag a získejte z garáže.</Czech>
+        <Chinesesimp>你面前的载具或固定式武器将被存放至车库, 与旗帜互动可将其从车库中取出。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_undercover_title">
         <Original>Turn on Undercover</Original>
@@ -277,6 +309,7 @@
         <Russian>Включить прикрытие</Russian>
         <German>Schalten Sie Undercover ein</German>
         <Czech>Zapněte Undercover</Czech>
+        <Chinesesimp>启用伪装</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_undercover_tooltip">
         <Original>Become Undercover if you match the requirements. Enemy AI won't attack you until they discover you.</Original>
@@ -285,6 +318,7 @@
         <Russian>Противник не узнает вас, если вы соответствуеете требованиям. Вражеские солдаты не будут атаковать вас, пока не раскроют вашу истинную сущность.</Russian>
         <German>Werden Sie Undercover, wenn Sie die Anforderungen erfüllen. Die feindliche KI wird dich nicht angreifen, bis sie dich entdeckt.</German>
         <Czech>Staňte se v utajení, pokud splňujete požadavky. Nepřátelská AI na vás nezaútočí, dokud vás neobjeví.</Czech>
+        <Chinesesimp>满足条件时可进入伪装状态。敌方AI在识破你之前不会攻击你。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_fast_travel_tooltip">
         <Original>Teleport you and/or your squad or a HC selected squad to a friendly zone depending on several factors.</Original>
@@ -293,6 +327,7 @@
         <Russian>Телепортируйте себя и/или свой отряд или отряд, выбранный через High Command, в дружественную зону в зависимости от нескольких факторов.</Russian>
         <German>Teleportieren Sie Ihren Trupp oder einen von HC ausgewählten Trupp in Abhängigkeit von mehreren Faktoren in eine freundliche Zone.</German>
         <Czech>Teleportujte svůj tým nebo tým vybraný HC do přátelské zóny v závislosti na několika faktorech.</Czech>
+        <Chinesesimp>满足条件时, 可将你和/或你的班组，或指挥部小队传送至友军占领区。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_squad_recruitment_menu_frame_text">
         <Original>Squad Recruitment</Original>
@@ -301,6 +336,7 @@
         <Russian>Набор отрядов</Russian>
         <German>Squad Rekrutierung</German>
         <Czech>Nábor družstev</Czech>
+        <Chinesesimp>招募班组</Chinesesimp>
       </Key>
        <Key ID="STR_antistasi_dialogs_squad_money_player_interaction_menu_frame_text">
         <Original>Player and Money</Original>
@@ -309,6 +345,7 @@
         <Russian>Игроки и деньги</Russian>
         <German>Spieler und Geld</German>
         <Czech>Hráč a peníze</Czech>
+        <Chinesesimp>玩家和资产</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_battle_options_frame_text">
         <Original>Battle Options</Original>
@@ -317,14 +354,16 @@
         <Russian>Быстрые действия</Russian>
         <German>Kampfoptionen</German>
         <Czech>Možnosti bitvy</Czech>
+        <Chinesesimp>作战选项</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_battle_options_frame_text">
-        <Original>Commander  Battle Options</Original>
+        <Original>Commander Battle Options</Original>
         <English>Commander Battle Options</English>
         <French>Options de combat du commandant</French>
         <Russian>Командирские быстрые действия</Russian>
         <German>Commander Battle-Optionen</German>
         <Czech>Možnosti bitvy velitele</Czech>
+        <Chinesesimp>指挥官作战选项</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_add_vehicle_to_squad_frame_text">
         <Original>Add Vehicle To Squad?</Original>
@@ -333,6 +372,7 @@
         <Russian>Придать технику отряду?</Russian>
         <German>Fahrzeug zum Kader hinzufügen?</German>
         <Czech>Přidat vozidlo do týmu?</Czech>
+        <Chinesesimp>将载具分配给班组?</Chinesesimp>
       </Key>
        <Key ID="STR_antistasi_dialogs_ai_management_frame_text">
         <Original>AI Management</Original>
@@ -341,6 +381,7 @@
         <Russian>Менеджмент ИИ</Russian>
         <German>KI-Management</German>
         <Czech>Správa AI</Czech>
+        <Chinesesimp>AI 管理</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_buy_vehicle_frame_text">
         <Original>Buy Vehicle</Original>
@@ -349,6 +390,7 @@
         <Russian>Покупка техники</Russian>
         <German>Fahrzeug kaufen</German>
         <Czech>Koupit vozidlo</Czech>
+        <Chinesesimp>购买载具</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_buy_vehicle_note_text">
         <Original>Note that rebel vehicle roster will expand as war evolves.</Original>
@@ -357,6 +399,7 @@
         <Russian>Обратите внимание, что список доступной для повстанцев техники будет расширяться по мере развития войны.</Russian>
         <German>Beachten Sie, dass die Liste der Rebellenfahrzeuge im Verlauf des Krieges erweitert wird.</German>
         <Czech>Pamatujte, že soupiska rebelských vozidel se bude s vývojem války rozšiřovat.</Czech>
+        <Chinesesimp>请注意，随着战争的发展，可供叛军使用的载具类型将会增加。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_available_missions_frame_text">
         <Original>Available Missions</Original>
@@ -365,6 +408,7 @@
         <Russian>Доступные миссии</Russian>
         <German>Verfügbare Missionen</German>
         <Czech>Dostupné mise</Czech>
+        <Chinesesimp>可用任务</Chinesesimp>
       </Key>
     </Container>
      <Container name="simple_menu_infantry_recruitment">
@@ -375,6 +419,7 @@
         <Russian>Обычный отряд</Russian>
         <German>Ordentlicher Kader</German>
         <Czech>Obyčejný oddíl</Czech>
+        <Chinesesimp>常规班组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_engineer_squad_title">
         <Original>Engineer Squad</Original>
@@ -383,6 +428,7 @@
         <Russian>Инженерный отряд</Russian>
         <German>Ingenieur-Trupp</German>
         <Czech>Ženijní jednotka</Czech>
+        <Chinesesimp>工程师班组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_mg_squad_title">
         <Original>MG Squad</Original>
@@ -391,6 +437,7 @@
         <Russian>Пулемётный отряд</Russian>
         <German>Maschinengewehr-Trupp</German>
         <Czech>Četa kulometčíků</Czech>
+        <Chinesesimp>机枪班</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_mortar_squad_title">
         <Original>Mortar Squad</Original>
@@ -399,6 +446,7 @@
         <Russian>Миномётный отряд</Russian>
         <German>Mörsertrupp</German>
         <Czech>Mortar Squad</Czech>
+        <Chinesesimp>迫击炮班组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_infantry_squad_title">
         <Original>Recruit Infantry Squad</Original>
@@ -407,6 +455,7 @@
         <Russian>Набрать отряд пехоты</Russian>
         <German>Rekrutiere Infanterietrupp</German>
         <Czech>Naverbujte pěchotní jednotku</Czech>
+        <Chinesesimp>招募步兵班组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_at_team_title">
         <Original>Recruit AT Team</Original>
@@ -415,6 +464,7 @@
         <Russian>Набрать ПТ-команду</Russian>
         <German>Rekrutiere ein Panzerabwehr-Team</German>
         <Czech>Naverbujte protitankový tým</Czech>
+        <Chinesesimp>招募反坦克小组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_sniper_team_title">
         <Original>Recruit Snipers</Original>
@@ -423,6 +473,7 @@
         <Russian>Набрать снайперов</Russian>
         <German>Scharfschützen rekrutieren</German>
         <Czech>Naverbujte odstřelovače</Czech>
+        <Chinesesimp>招募狙击手</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_mg_team_title">
         <Original>Recruit MG Team</Original>
@@ -431,6 +482,7 @@
         <Russian>Набрать пулемётное звено</Russian>
         <German>Rekrutieren Sie das MG-Team</German>
         <Czech>Nábor týmu MG</Czech>
+        <Chinesesimp>招募机枪小组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_veh_crew_title">
         <Original>Recruit Vehicle Crew</Original>
@@ -439,6 +491,7 @@
         <Russian>Набрать экипаж машины</Russian>
         <German>Fahrzeugbesatzung rekrutieren</German>
         <Czech>Nábor posádky vozidla</Czech>
+        <Chinesesimp>招募车组成员</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_inf_team_title">
         <Original>Recruit Inf. Team</Original>
@@ -447,6 +500,7 @@
         <Russian>Набрать пехотное звено</Russian>
         <German>Rekrutiere Infanterieteam</German>
         <Czech>Naverbujte pěchotní tým</Czech>
+        <Chinesesimp>招募步兵小组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_at_car_title">
         <Original>Recruit AT Car</Original>
@@ -455,6 +509,7 @@
         <Russian>Набрать ПТ-машину</Russian>
         <German>Rekrutieren Sie Panzerabwehrwagen</German>
         <Czech>Naverbujte protitankové auto</Czech>
+        <Chinesesimp>招募反坦克车辆</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_mg_car_title">
         <Original>Recruit MG Car</Original>
@@ -463,6 +518,7 @@
         <Russian>Набрать машину с пулеметом</Russian>
         <German>Rekrutieren Sie MG Auto</German>
         <Czech>Naverbujte MG auto</Czech>
+        <Chinesesimp>招募机枪车辆</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_aa_car_title">
         <Original>Recruit AA Truck</Original>
@@ -471,6 +527,7 @@
         <Russian>Набрать зенитную машину</Russian>
         <German>Rekrutieren Sie AA Truck</German>
         <Czech>Nábor AA kamionu</Czech>
+        <Chinesesimp>招募防空卡车</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_mortar_team_title">
         <Original>Recruit Mortar Team</Original>
@@ -479,6 +536,7 @@
         <Russian>Набрать миномётный расчёт</Russian>
         <German>Recruter l'équipe de mortier</German>
         <Czech>Naverbujte tým malty</Czech>
+        <Chinesesimp>招募迫击炮小组</Chinesesimp>
       </Key>
      </Container>
      <Container name="simple_menu_commander_menu">
@@ -489,6 +547,7 @@
         <Russian>Нанять отряд</Russian>
         <German>Rekrutieren Sie Squad</German>
         <Czech>Naverbujte jednotku</Czech>
+        <Chinesesimp>招募班组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_add_recruit_squad_tooltip">
         <Original>Recruit new squads and manage them with the HC Module (CTRL + SPACE).</Original>
@@ -497,6 +556,7 @@
         <Russian>Нанимайте новые отряды и управляйте ими через High Command-меню (CTRL + SPACE).</Russian>
         <German>Rekrutiere neue Trupps und verwalte sie mit dem HC-Modul (CTRL + SPACE).</German>
         <Czech>Přijměte nové jednotky a spravujte je pomocí modulu HC (CTRL + SPACE).</Czech>
+        <Chinesesimp>招募新的班组, 并通过指挥模块(CTRL + SPACE)进行管理。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_rally_point_title">
         <Original>Place / Remove Rally Point</Original>
@@ -505,6 +565,7 @@
         <Russian>Поставить / удалить точку сбора</Russian>
         <German>Sammelpunkt platzieren / entfernen</German>
         <Czech>Umístit / Odebrat Rally Point</Czech>
+        <Chinesesimp>放置/移除集合点</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_add_rally_point_tooltip">
         <Original>Places or removes temporary rally spawn point.</Original>
@@ -513,6 +574,7 @@
         <Russian>Ставит или убирает временную точку сбора.</Russian>
         <German>Platziert oder entfernt temporären Rallye-Spawnpunkt.</German>
         <Czech>Umístí nebo odstraní dočasný bod rozmístění rally.</Czech>
+        <Chinesesimp>放置或移除临时集合重生点。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_share_faction_money_title">
         <Original>Share Faction Money</Original>
@@ -521,6 +583,7 @@
         <Russian>Раздать деньги фракции</Russian>
         <German>Fraktionsgeld teilen</German>
         <Czech>Sdílejte peníze z frakce</Czech>
+        <Chinesesimp>共享阵营资产</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_share_faction_money_tooltip">
         <Original>Shares faction money between server members.</Original>
@@ -529,6 +592,7 @@
         <Russian>Распределяет деньги фракции между участниками сервера.</Russian>
         <German>Teilt Fraktionsgeld zwischen Servermitgliedern.</German>
         <Czech>Sdílí peníze frakce mezi členy serveru.</Czech>
+        <Chinesesimp>在服务器会员间共享阵营资产。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_resign_title">
         <Original>Resign / Eligible</Original>
@@ -537,6 +601,7 @@
         <Russian>Уйти в отставку / Право на командира</Russian>
         <German>Rücktritt / Berechtigung</German>
         <Czech>Odstoupit / Způsobilý</Czech>
+        <Chinesesimp>辞职/竞选</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_resign_tooltip">
         <Original>Step down from commander or toggle eligibility.</Original>
@@ -545,6 +610,7 @@
         <Russian>Перестать быть командиром или поставить право быть им.</Russian>
         <German>Treten Sie vom Kommandanten zurück oder schalten Sie die Berechtigung um.</German>
         <Czech>Odstoupit z funkce velitele nebo přepnout způsobilost.</Czech>
+        <Chinesesimp>从指挥官职位离任或参与指挥官竞选。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_comm_menu_title">
         <Original>Open Commander Menu</Original>
@@ -553,6 +619,7 @@
         <Russian>Открыть меню командира</Russian>
         <German>Öffnen Sie das Commander-Menü</German>
         <Czech>Otevřete nabídku Commander</Czech>
+        <Chinesesimp>打开指挥官菜单</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_comm_menu_tooltip">
         <Original>Opens commander menu. Also can be accessed via O key.</Original>
@@ -561,6 +628,7 @@
         <Russian>Открывает командирское меню. Также доступно через клавишу О.</Russian>
         <German>Öffnet das Commander-Menü. Kann auch über die O-Taste aufgerufen werden.</German>
         <Czech>Otevře nabídku velitele. Lze k nim přistupovat také pomocí klávesy O.</Czech>
+        <Chinesesimp>打开指挥官菜单。也可以通过O键访问。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_add_to_air_title">
         <Original>Add to Air Support</Original>
@@ -569,6 +637,7 @@
         <Russian>Добавить в авиаподдержку</Russian>
         <German>Zur Luftunterstützung hinzufügen</German>
         <Czech>Přidat do letecké podpory</Czech>
+        <Chinesesimp>添加至空中支援</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_add_to_air_tooltip">
         <Original>Gain Airstrike points giving this vehicle to the faction Air pool.</Original>
@@ -577,6 +646,7 @@
         <Russian>Добавляет Airstrike-очки путём передачи самолёта, на который вы смотрите, на нужды фракции.</Russian>
         <German>Sammeln Sie Luftangriffspunkte, um dieses Fahrzeug dem Fraktionsluftpool zu geben.</German>
         <Czech>Získejte body náletu, které tomuto vozidlu poskytnou frakci Air pool.</Czech>
+        <Chinesesimp>将这架飞机添加至阵营空军以换取空袭点数。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_clean_garbage_title">
         <Original>Clean Garbage</Original>
@@ -585,6 +655,7 @@
         <Russian>Чистка мусора</Russian>
         <German>Müll reinigen</German>
         <Czech>Čistý odpad</Czech>
+        <Chinesesimp>清理垃圾</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_clean_garbage_tooltip">
         <Original>Cleans several things in game. Use with caution as it freezes the mission.</Original>
@@ -593,6 +664,7 @@
         <Russian>Чистит некоторые вещи - тела, остовы, предметы и так далее. Использовать с осторожностью - при применении наблюдается краткосрочное падение производительности.</Russian>
         <German>Reinigt mehrere Dinge im Spiel. Verwenden Sie es mit Vorsicht, da es die Mission einfriert.</German>
         <Czech>Čistí několik věcí ve hře. Používejte opatrně, protože to zmrazí misi.</Czech>
+        <Chinesesimp>清理游戏内的各类垃圾。该功能在执行过程中会使任务卡住，请小心使用。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_open_faction_garage_tooltip">
         <Original>Look at a vehicle and garage it into faction garage (shared among commanders).</Original>
@@ -601,6 +673,7 @@
         <Russian>Машина, на которую вы смотрите будет поставлена в фракционный гараж (общий для всех командиров).</Russian>
         <German>Schauen Sie sich ein Fahrzeug an und stellen Sie es in eine Fraktionsgarage (geteilt unter den Kommandanten).</German>
         <Czech>Podívejte se na vozidlo a zařaďte jej do garáže frakce (sdílené mezi veliteli).</Czech>
+        <Chinesesimp>将面前的载具存放至阵营车库(在指挥官间共享)。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_sell_vehicle_title">
         <Original>Sell Vehicle</Original>
@@ -609,6 +682,7 @@
         <Russian>Продать технику</Russian>
         <German>Fahrzeug verkaufen</German>
         <Czech>Prodat vozidlo</Czech>
+        <Chinesesimp>出售载具</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_sell_vehicle_tooltip">
         <Original>Look at a vehicle and sell it for money.</Original>
@@ -617,6 +691,7 @@
         <Russian>Продаёт машину, на которую вы смотрите и зачисляет деньги на счёт фракции.</Russian>
         <German>Schauen Sie sich ein Fahrzeug an und verkaufen Sie es für Geld.</German>
         <Czech>Podívejte se na vozidlo a prodejte ho za peníze.</Czech>
+        <Chinesesimp>出售面前的载具以换取资金。</Chinesesimp>
       </Key>
      </Container>
     <Container name="simple_menu_actions_and_tooltips">
@@ -627,6 +702,7 @@
         <Russian>Построить</Russian>
         <German>Bauen</German>
         <Czech>Stavět</Czech>
+        <Chinesesimp>建造</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_buy">
         <Original>Buy</Original>
@@ -635,6 +711,7 @@
         <Russian>Купить</Russian>
         <German>Kaufen</German>
         <Czech>Koupit</Czech>
+        <Chinesesimp>购买</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_price">
         <Original>Price</Original>
@@ -643,6 +720,7 @@
         <Russian>Цена</Russian>
         <German>Preis</German>
         <Czech>Cena</Czech>
+        <Chinesesimp>价格</Chinesesimp>
       </Key>
     </Container>
     <Container name="simple_menu_commander_menu">
@@ -653,6 +731,7 @@
         <Russian>Автолечение</Russian>
         <German>Automatische Heilung</German>
         <Czech>Auto Heal</Czech>
+        <Chinesesimp>自动医疗</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_auto_heal_tooltip">
         <Original>AI squad mates will heal proactively each other.</Original>
@@ -661,6 +740,7 @@
         <Russian>ИИ-солдаты будут лечить друг друга.</Russian>
         <German>KI-Truppkollegen heilen sich proaktiv gegenseitig.</German>
         <Czech>Spoluhráči týmu AI se budou vzájemně proaktivně léčit.</Czech>
+        <Chinesesimp>AI小队成员将会主动互相治疗。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_garrison_units_title">
         <Original>Garrison Units / Squads</Original>
@@ -669,6 +749,7 @@
         <Russian>Гарнизоны / отряды</Russian>
         <German>Garnisonseinheiten / Trupps</German>
         <Czech>Posádkové jednotky / oddíly</Czech>
+        <Chinesesimp>驻扎单位/班组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_garrison_units_tooltip">
         <Original>Adds selected units or squads to a map selected garrison.</Original>
@@ -677,6 +758,7 @@
         <Russian>Добавляет выбранные отряды или отряды в выбранный на карте гарнизон.</Russian>
         <German>Fügt ausgewählte Karten oder Trupps zu einer ausgewählten Garnison hinzu.</German>
         <Czech>Přidá vybrané jednotky nebo jednotky do mapy vybrané posádky.</Czech>
+        <Chinesesimp>将选定的单位或班组编入选定地点的驻军。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_dismiss_title">
         <Original>Dismiss Units / Squad</Original>
@@ -685,6 +767,7 @@
         <Russian>Распустить юниты/отряды</Russian>
         <German>Einheiten / Trupp entlassen</German>
         <Czech>Odmítnout jednotky / oddíl</Czech>
+        <Chinesesimp>解散单位/班组</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_dismiss_tooltip">
         <Original>Dimiss selected units or squads, recovering it's cost to the proper resource pool.</Original>
@@ -693,6 +776,7 @@
         <Russian>Распустите выбранных юнитов или отряды, вернув их стоимость в соответствующий пул ресурсов.</Russian>
         <German>Entlassen Sie ausgewählte Einheiten oder Trupps und erstatten Sie die Kosten für den richtigen Ressourcenpool.</German>
         <Czech>Odmítnout vybrané jednotky nebo jednotky a obnovit jejich náklady do správného fondu zdrojů.</Czech>
+        <Chinesesimp>解散选定的单位或班组, 将其成本回收至对应的资源池。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_arty_support_title">
         <Original>Artillery Support Menu</Original>
@@ -701,6 +785,7 @@
         <Russian>Меню артиллерийской поддержки</Russian>
         <German>Artillerie-Unterstützungsmenü</German>
         <Czech>Nabídka podpory dělostřelectva</Czech>
+        <Chinesesimp>火炮支援菜单</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_arty_support_tooltip">
         <Original>Opens mortar barrage menu that allows player to set artillery target for immediate strike.</Original>
@@ -709,6 +794,7 @@
         <Russian>Открывает меню миномётной поддержки, которое позволяет игроку задавать цели для миномётных расчётов.</Russian>
         <German>Öffnet das Mörser-Sperrmenü, mit dem der Spieler das Artillerieziel für einen sofortigen Treffer festlegen kann.</German>
         <Czech>Otevírá nabídku minometné palby, která umožňuje hráči nastavit dělostřelecký cíl pro okamžitý úder.</Czech>
+        <Chinesesimp>打开火炮支援菜单，玩家可以设定目标以立即进行火炮打击。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_auto_rearm_title">
         <Original>Auto Rearm / Loot</Original>
@@ -717,6 +803,7 @@
         <Russian>Автоперевооружение / лутинг</Russian>
         <German>Auto Rearm / Loot</German>
         <Czech>Automatické vyzbrojení / kořist</Czech>
+        <Chinesesimp>自动重新武装/搜集战利品</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_auto_rearm_tooltip">
         <Original>AI will search for better weapons, vests, helmets etc. If they are in a vehicle, they will just store what they scavenge in the vehicle. If not, they will equip them.</Original>
@@ -725,6 +812,7 @@
         <Russian>ИИ-солдаты будут искать себе лучшее оружие, броню и шлемы на поле боя. Если они сидят в технике, они будут складировать всё что собрали в машине. Если нет, то они будут экипировать найденное снаряжение.</Russian>
         <German>AI sucht nach besseren Waffen, Westen, Helmen usw. Wenn sie sich in einem Fahrzeug befinden, speichern sie nur das, was sie im Fahrzeug auffangen. Wenn nicht, werden sie sie ausrüsten.</German>
         <Czech>AI bude hledat lepší zbraně, vesty, přilby atd. Pokud jsou ve vozidle, ukládají pouze to, co ve vozidle uklízejí. Pokud ne, vybaví je.</Czech>
+        <Chinesesimp>AI将会搜寻更好的武器, 背心, 头盔等。如果他们在载具载具内, 他们就会把捡到的物品存放至载具内。否则, AI将会装备它们。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_sitrep_tooltip">
         <Original>Squad statuses.</Original>
@@ -733,6 +821,7 @@
         <Russian>Статус отрядов.</Russian>
         <German>Squad-Status.</German>
         <Czech>Stavy družstva.</Czech>
+        <Chinesesimp>班组状态</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_assign_vehicle_title">
         <Original>Assign Vehicle</Original>
@@ -741,6 +830,7 @@
         <Russian>Придать технику</Russian>
         <German>Fahrzeug zuweisen</German>
         <Czech>Přiřadit vozidlo</Czech>
+        <Chinesesimp>分配载具</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_assign_vehicle_tooltip">
         <Original>Look at some vehicle and assign it to the selected squad for it's use.</Original>
@@ -749,6 +839,7 @@
         <Russian>Машина, на которую вы смотрите, будет придана отряду.</Russian>
         <German>Schauen Sie sich ein Fahrzeug an und weisen Sie es dem ausgewählten Trupp für seine Verwendung zu.</German>
         <Czech>Podívejte se na nějaké vozidlo a přiřaďte jej vybranému týmu pro jeho použití.</Czech>
+        <Chinesesimp>将面前的载具分配给选定的班组使用。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_mount_veh_title">
         <Original>Mount / Dismount Vehicle</Original>
@@ -757,6 +848,7 @@
         <Russian>Спешиться / Сесть в технику</Russian>
         <German>Fahrzeug montieren / demontieren </German>
         <Czech>Nasazení / demontáž vozidla</Czech>
+        <Chinesesimp>乘坐/离开载具</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_mount_veh_tooltip">
         <Original>Mount / Dismount</Original>
@@ -765,6 +857,7 @@
         <Russian>Сесть / Вылезти</Russian>
         <German>Ein- / Aussteigen</German>
         <Czech>Mount / Demontovat</Czech>
+        <Chinesesimp>乘坐/离开载具</Chinesesimp>
       </Key>
      </Container>
     <Container name="simple_menu_missions">
@@ -775,6 +868,7 @@
         <Russian>Миссии по устранению</Russian>
         <German>Attentatsmission</German>
         <Czech>Atentátová mise</Czech>
+        <Chinesesimp>刺杀任务</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_convoy_text">
         <Original>Convoy Ambush</Original>
@@ -783,6 +877,7 @@
         <Russian>Засады на конвой</Russian>
         <German>Konvoi Hinterhalt</German>
         <Czech>Konvoj Ambush</Czech>
+        <Chinesesimp>伏击车队</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_destroy_text">
         <Original>Destroy Missions</Original>
@@ -791,6 +886,7 @@
         <Russian>Миссии по уничтожению</Russian>
         <German>Missionen zerstören</German>
         <Czech>Zničte mise</Czech>
+        <Chinesesimp>摧毁任务</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_logistics_text">
         <Original>Logistics Missions</Original>
@@ -799,6 +895,7 @@
         <Russian>Логистические миссии</Russian>
         <German>Logistikmissionen</German>
         <Czech>Logistické mise</Czech>
+        <Chinesesimp>后勤任务</Chinesesimp>
       </Key>
     <Key ID="STR_antistasi_dialogs_rescue_text">
       <Original>Rescue Missions</Original>
@@ -807,6 +904,7 @@
       <Russian>Спасательные миссии</Russian>
       <German>Rettungsmissionen</German>
       <Czech>Záchranné mise</Czech>
+      <Chinesesimp>救援任务</Chinesesimp>
     </Key>
     <Key ID="STR_antistasi_dialogs_supply_text">
       <Original>Supply Missions</Original>
@@ -815,6 +913,7 @@
       <Russian>Миссии по снабжению</Russian>
       <German>Versorgungsmissionen</German>
       <Czech>Zásobovací mise</Czech>
+      <Chinesesimp>补给任务</Chinesesimp>
     </Key>
     <Key ID="STR_antistasi_dialogs_conquest_text">
       <Original>Conquest Missions</Original>
@@ -823,6 +922,7 @@
       <Russian>Миссии по захвату</Russian>
       <German>Eroberungsmissionen</German>
       <Czech>Dobývací mise</Czech>
+      <Chinesesimp>攻占任务</Chinesesimp>
     </Key>
     </Container>
     <Container name="dialog_headquarters">
@@ -1982,7 +2082,7 @@
         <French>Agressivité IA</French>
         <German>Aggression</German>
         <Czech>Agresivita</Czech>
-        <Chinesesimp>侵略性</Chinesesimp>
+        <Chinesesimp>进攻性</Chinesesimp>
         <Korean>어그로 수치</Korean>
         <Russian>Агрессия</Russian>
       </Key>
@@ -1992,7 +2092,7 @@
         <French>Gardez un œil dessus. S'il est trop haut, vous devrez faire face à plus d'attaques avec de meilleures troupes.</French>
         <German>Behalte dies im Auge. Wenn sie zu hoch wird, wirst du dich deutlich mehr Angriffen und besseren Einheiten entgegenstellen müssen.</German>
         <Czech>Dávejte pozor na to. Pokud je příliš vysoká, budete muset čelit více útokům s lepšími jednotkami.</Czech>
-        <Chinesesimp>密切关注侵略性。如果侵略性太高, 你将不得不面对更多、更强的进攻部队。</Chinesesimp>
+        <Chinesesimp>密切关注进攻性。如果进攻性太高, 你将不得不面对更多、更强的进攻部队。</Chinesesimp>
         <Korean>경계하십시오. 수치가 너무 높다면, 적군이 더 자주, 강하게 공격할것입니다.</Korean>
         <Russian>Следите за уровнем агрессии. Если он слишком высок, вам придется встретить больше атак с лучшими войсками.</Russian>
       </Key>
@@ -2253,7 +2353,7 @@
         <French>Le commandant peut recruter une escouade IA au drapeau du QG. Utilisez le module HC (CTRL + ESPACE) pour donner des ordres à vos escouades. Vous pouvez également contrôler et renvoyer temporairement le chef d'escouade de la même manière que vous le faites avec vos coéquipiers.</French>
         <German>Als Kommandant kannst du KI Gruppen im HQ rekrutieren. Nutze das Oberbefehlsmodul (Strg + Leertaste), um deinen Gruppen Befehle zu erteilen. Außerdem kannst du temporär Gruppenführer, auf die gleiche Art wie deine Gruppenmitglieder, kontrollieren.</German>
         <Czech>Velitel může najmout posádku AI na vlajkách základního tábora. Pomocí modulu Štábu (CTRL + MEZERNÍK) zadávejte rozkazy svým jednotkám. Rovněž můžete dočasně ovládat a propouštět velitele družstva stejným způsobem, jako to děláte s AI členy týmu.</Czech>
-        <Chinesesimp>指挥官可以在基地旗帜招募AI班组。使用指挥部模块(Ctrl + 空格)来给你的班组下达命令。你也可以临时控制班长, 从而像指挥小队成员一样指挥AI小队。</Chinesesimp>
+        <Chinesesimp>指挥官可以在基地旗帜招募AI班组。使用指挥模块(Ctrl + 空格)来给你的班组下达命令。你也可以临时控制班长, 从而像指挥小队成员一样指挥AI小队。</Chinesesimp>
         <Korean>지휘관은 베이스 캠프 깃발에서 AI 분대를 모집할 수 있습니다. High Command (CTRL + SPACE)를 사용하여 분대에 명령을 내릴 수 있습니다. 또한 분대원과 같은 방식으로 임시적으로 컨트롤 하거나 분대장의 권한을 박탈할 수 있습니다.</Korean>
         <Russian>Командующий может нанять отряд ИИ у флага штаба. Используйте модуль высшего командования (CTRL + SPACE), чтобы отдавать приказы своим отрядам. Также вы можете временно контролировать и увольнять лидера отряда так же, как и с товарищами по отряду.</Russian>
       </Key>
@@ -3028,14 +3128,14 @@
         <Czech>%1 a %2 Agresivita</Czech>
         <Korean>%1 , %2 위협 수치</Korean>
         <Russian>%1 и %2 Агр</Russian>
-        <Chinesesimp>侵略性为 %1 和 %2</Chinesesimp>
+        <Chinesesimp>进攻性 %1 和 %2</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_journal_entry_text_Diary_1">
         <Original>There is an All vs All war in %4. %1 and %2 are constantly attacking each other, but that does not mean they don't shoot at %3 on first sight.&lt;br/&gt;&lt;br/&gt;%1 and %2 Aggro points represent how much threat they see in %3 faction.&lt;br/&gt;&lt;br/&gt;Generally speaking those points will low or raise depending on your actions against them and civilians.</Original>
         <French>Il y a une guerre tous contre tous dans %4. %1 et %2 s'attaquent constamment, mais cela ne signifie pas qu'ils ne tirent pas sur %3 à première vue.&lt;br/&gt;&lt;br/&gt; Les points %1 et %2 Aggro représentent la menace qu'ils voient dans la faction  %3.&lt;br/&gt;&lt;br/&gt;De manière générale, cette valeur augmentera et baissera en fonction de vos actions contre eux et les civils.</French>
         <German>Es ist ein Jeder gegen Jeden Krieg in %4. %1 und %2 greifen sind ununterbrochen gegenseitig an. Dies bedeutet aber nicht, dass sie nicht bei Kontakt direkt %3 angreifen.&lt;br/&gt;&lt;br/&gt;%1 und %2 Aggressivitätspunkte zeigen an, wie hoch diese die Bedrohung der %3 Fraktion einschätzen.&lt;br/&gt;&lt;br/&gt;Grundsätzlich erhöhen und verringern sich diese Werte gemäß deinen Unternehmungen gegen die jeweilige Fraktion oder die Zivilbevölkerung.</German>
         <Czech>V %4 je válka Všichni proti Všem. %1 a %2 neustále útočí na sebe, ale to neznamená, že na první pohled nestřílejí na %3.&lt;br/&gt;&lt;br/&gt;%1 a %2 Aggro body představují to, jak velkou hrozbu představují vidět ve frakci %3.&lt;br/&gt;&lt;br/&gt;Obecně řečeno, tyto body se budou snižovat nebo zvyšovat v závislosti na vašem jednání proti nim a civilistům.</Czech>
-        <Chinesesimp>%4 发生了全面战争。%1 和 %2 在持续地互相攻击, 但这并不意味着他们在见到 %3 时不会开火。&lt;br/&gt;&lt;br/&gt;%1 和 %2 点侵略性表示他们认为 %3 的威胁程度有多大。&lt;br/&gt;&lt;br/&gt;通常而言, 取决于你对他们和平民的行动, 这一点数将会提升或降低。</Chinesesimp>
+        <Chinesesimp>%4 发生了全面战争。%1 和 %2 在持续地互相攻击, 但这并不意味着他们在见到 %3 时不会开火。&lt;br/&gt;&lt;br/&gt;%1 和 %2 的进攻性表示他们认为 %3 的威胁程度有多大。&lt;br/&gt;&lt;br/&gt;通常而言, 根据你对他们和平民的行动, 这一点数将会提升或降低。</Chinesesimp>
         <Korean>%4는 프리 포 올 모드입니다. %1 과 %2는 주기적으로 서로를 공격하고, %3 또한 공격할것입니다.&lt;br/&gt;&lt;br/&gt;%1 and %2 위협 수치는 %3 에 대해 얼마나 공격하는지 보여주는 수치입니다.&lt;br/&gt;&lt;br/&gt; 시민과 해당 팩션에 하는 강도에 따라, 해당 수치는 조정됩니다.</Korean>
         <Russian>В %4 идет война Все против Всех. %1 и %2 постоянно атакуют друг друга, но это не значит, что они не стреляют по %3 с первого взгляда. &lt;br/&gt;&lt;br/&gt; %1 и %2 Агр-очков показывают, сколько угроза, которую они видят во фракции %3. &lt;br/&gt;&lt;br/&gt; В общем, эти очки будут уменьшаться или увеличиваться в зависимости от ваших действий против них и мирных жителей</Russian>
       </Key>
@@ -3240,7 +3340,7 @@
         <German>UPSMon von Monsada, Kronzy und Cool=Azroul13.&lt;br/&gt;Persistent Save von zooloo75.&lt;br/&gt;Tags von Marker und Melbo.&lt;br/&gt;JAS von Jeroen (Entschuldige, dass es so lange gedauert hat dich hinzuzufügen)&lt;br/&gt;Advanced Towing von Seth Duda.</German>
         <Czech>UPSMon od Monsada, Kronzy and Cool = Azroul13 &lt;br/&gt;Trvalé Uložit podle zooloo75.&lt;br/&gt;Štítky Marker a Melbo.&lt;br/&gt;JAS od Jeroen (omlouvám se za to, že jste byli pozdě)&lt;br/&gt;Štítky od Markera a Melba.&lt;br/&gt;Rozšířené tažení od Setha Dudy.</Czech>
         <Korean>UPSMon 제공 : Monsada, Kronzy and Cool=Azroul13.&lt;br/&gt;Persistent Save 제공 : zooloo75.&lt;br/&gt;태그 제공 : Marker and Melbo.&lt;br/&gt;JAS 제공: Jeroen &lt;br/&gt;Advanced Towing 제공 : Seth Duda.</Korean>
-        <Chinesesimp>UPSMon by Monsada, Kronzy 和 Cool=Azroul13。&lt;br/&gt;Persistent Save by zooloo75。&lt;br/&gt;Tags by Marker 和 Melbo。&lt;br/&gt;JAS by Jeroen (抱歉这么晚才把你添加进来)。&lt;br/&gt;Advanced Towing by Seth Duda。</Chinesesimp>
+        <Chinesesimp>由 Monsada, Kronzy 和 Cool=Azroul13 制作的 UPSMon。&lt;br/&gt;由 zooloo75 制作的 Persistent Save。&lt;br/&gt;由 Marker 和 Melbo 制作的 Tags。&lt;br/&gt;由 Jeroen 制作的 JAS (抱歉这么晚才把你添加进来)。&lt;br/&gt;由 Seth Duda 制作的Advanced Towing。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_journal_entry_header_Credits_2">
         <Original>Mods</Original>
@@ -3658,7 +3758,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_garrison">
         <Original>Garrison Units / Squads</Original>
-        <Chinesesimp>驻军单位/班组</Chinesesimp>
+        <Chinesesimp>驻扎单位/班组</Chinesesimp>
         <Russian>Добавить в гарнизон</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_AI_management_garrison_tooltip">
@@ -3710,7 +3810,7 @@
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_recruit_tooltip">
         <Original>Recruit new squads and manage them with the HC Module (CTRL + SPACE)</Original>
-        <Chinesesimp>招募新的班组, 并使用指挥部模块(CTRL + SPACE)进行管理</Chinesesimp>
+        <Chinesesimp>招募新的班组, 并使用指挥模块(CTRL + SPACE)进行管理</Chinesesimp>
         <Russian>Набирайте новые отряды и управляйте ими с помощью модуля HC (CTRL + SPACE)</Russian>
       </Key>
       <Key ID="STR_antistasi_dialogs_commander_comm_air_support">
@@ -4147,6 +4247,7 @@
         <Russian>Собрать добычу вокруг</Russian>
         <German>Sammle verstreute Beute</German>
         <Czech>Shromážděte rozptýlenou kořist</Czech>
+        <Chinesesimp>收集散落的战利品</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_successful_loot_text">
         <Original>Scattered loot has been successfully gathered.</Original>
@@ -4155,6 +4256,7 @@
         <Russian>Добыча вокруг была успешно собрана.</Russian>
         <Czech>Rozptýlená kořist byla úspěšně shromážděna.</Czech>
         <German>Verstreute Beute wurde erfolgreich gesammelt.</German>
+        <Chinesesimp>已成功搜集散落的战利品。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_no_bodies_text">
         <Original>No loot in proximity.</Original>
@@ -4163,18 +4265,21 @@
         <Czech>Žádná kořist v blízkosti.</Czech>
         <Russian>Нет тел, ящиков или иной добычи поблизости.</Russian>
         <German>Keine Beute in der Nähe.</German>
+        <Chinesesimp>附近没有可供搜集的战利品。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_looter_cooldown_text">
         <Original>The looting ability has been used in the last 15 seconds! Please wait for a bit.</Original>
         <English>The looting ability has been used in the last 15 seconds! Please wait for a bit.</English>
         <French>La capacité de pillage a été utilisée au cours des 15 dernières secondes! Veuillez patienter un peu.</French>
         <Russian>Сборщик лута уже был использован недавно. Пожалуйста, подождите 15 секунд.</Russian>
+        <Chinesesimp>搜集功能在15秒内已经使用过了! 请稍等片刻。</Chinesesimp>
       </Key>
         <Key ID="STR_antistasi_actions_looter_found_money_titleЬш">
           <Original>Money</Original>
           <English>Money</English>
           <French>Argent</French>
           <Russian>Деньги</Russian>
+          <Chinesesimp>资金</Chinesesimp>
         </Key>
     </Container>
     <Container name="black_market">
@@ -4186,6 +4291,7 @@
           <German>Schwarzmarkt für Militärfahrzeuge</German>
           <Czech>Černý trh s vojenskými vozidly</Czech>
           <Korean>군용 차량 암시장</Korean>
+          <Chinesesimp>军用载具黑市</Chinesesimp>
       </Key>
     </Container>
     <Container name="technicals_menu">
@@ -4197,6 +4303,7 @@
           <German>Schwarzmarkt für Militärfahrzeuge</German>
           <Czech>Další povstalecká vozidla</Czech>
           <Korean>추가 반란군 차량</Korean>
+          <Chinesesimp>额外的叛军车辆</Chinesesimp>
       </Key>
     </Container>
     <Container name="intel_tasks">
@@ -4205,12 +4312,14 @@
           <English>Unfortunately, enemy intel is mostly outdated. Nothing useful was found.</English>
           <French>Malheureusement, les informations ennemies sont pour la plupart dépassées. Rien d'utile n'a été trouvé.</French>
           <Russian>Донесения, которые мы добыли, к сожалению, устарели.</Russian>
+          <Chinesesimp>不幸的是，敌军情报大多已经过时了。没有发现任何有用的东西。</Chinesesimp>
       </Key>
       <Key ID="STR_trader_task_hint_description">
           <Original>Enemy's latest report contains information about infamous arms dealer which has been arrived in our restless state. We need to find him and establish contacts between black market and the resistance.</Original>
           <English>Enemy's latest report contains information about infamous arms dealer which has been arrived in our restless state. We need to find him and establish contacts between black market and the resistance.</English>
           <French>Le dernier rapport d'Enemy contient des informations sur l'infâme marchand d'armes qui est arrivé dans notre état agité. Nous devons le trouver et établir des contacts entre le marché noir et la résistance.</French>
           <Russian>В свежих донесениях противника содержится информация о том, что в зону конфликта прибыл торговец оружием. Необходимо наладить контакт между ним и сопротивлением.</Russian>
+          <Chinesesimp>敌军的最新情报显示，一位臭名昭著的军火商在我们忙个不停的时候已经抵达该地区。我们需要找到他，建立黑市与叛军之间的联系。</Chinesesimp>
       </Key>
     </Container>
     <Container name="common_actions">
@@ -4219,12 +4328,14 @@
           <English>Access Vehicle Market</English>
           <French>Accéder au marché des véhicules</French>
           <Russian>Посмотреть чёрный рынок техники</Russian>
+          <Chinesesimp>访问载具市场</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_common_move_trader_text">
           <Original>Move Arms Dealer to Rebel HQ</Original>
           <English>Move Arms Dealer to Rebel HQ</English>
           <French>Déplacer le commerçant vers le QG des rebelles</French>
           <Russian>Перевести торговца оружием на базу</Russian>
+          <Chinesesimp>将军火商移动到叛军总部</Chinesesimp>
       </Key>
     </Container>
     <Container name="common_notifications">
@@ -4233,30 +4344,35 @@
           <English>Money</English>
           <French>Argent</French>
           <Russian>Деньги</Russian>
+          <Chinesesimp>资金</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_common_notifications_share_money_title">
           <Original>Faction money has been shared</Original>
           <English>Faction money has been shared</English>
           <French>L'argent a été partagé</French>
           <Russian>Разделение денег фракции</Russian>
+          <Chinesesimp>已共享阵营资金</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_common_notifications_share_money_not_enough_text">
         <Original>Not enough money to share.</Original>
         <English>Not enough money to share.</English>
         <French>Pas assez d'argent à partager.</French>
         <Russian>Недостаточно денег для разделения.</Russian>
+        <Chinesesimp>没有足够的资金可供共享。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_common_notifications_money_found_text">
         <Original>Money has been found. Found banknotes have been divided equally among all players.</Original>
         <English>Money has been found. Found banknotes have been divided equally among all players.</English>
         <French>Rien d'utile n'a été.</French>
         <Russian>В грузе были найдены деньги. Найденная валюта разделена поровну между всеми игроками.</Russian>
+        <Chinesesimp>在战利品中发现了钞票，并已平分给所有玩家。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_common_notifications_share_money_text">
         <Original>Faction money has been shared by commander equally among all server members.</Original>
         <English>Faction money has been shared by commander equally among all server members.</English>
         <French>Rien d'utile n'a été.</French>
         <Russian>Деньги фракции были разделены поровну между всеми членами сервера.</Russian>
+        <Chinesesimp>阵营资金已由指挥官共享，并已平分给所有服务器会员。</Chinesesimp>
       </Key>
     </Container>
     <Container name="draw3d_text">
@@ -4267,6 +4383,7 @@
         <Russian>Раненый</Russian>
         <German>Bewusstlos</German>
         <Czech>Nevědomý</Czech>
+        <Chinesesimp>失去意识</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_draw3d_commander_text">
         <Original>Commander</Original>
@@ -4275,6 +4392,7 @@
         <Russian>Командир</Russian>
         <German>Kommandant</German>
         <Czech>Velitel</Czech>
+        <Chinesesimp>指挥官</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_draw3d_engineer_text">
         <Original>Engineer</Original>
@@ -4283,6 +4401,7 @@
         <Russian>Инженер</Russian>
         <German>Ingenieur</German>
         <Czech>Inženýr</Czech>
+        <Chinesesimp>工程师</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_draw3d_medic_text">
         <Original>Medic</Original>
@@ -4291,6 +4410,7 @@
         <Russian>Санинструктор</Russian>
         <German>Medizin</German>
         <Czech>Medic</Czech>
+        <Chinesesimp>医疗兵</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_draw3d_grenadier_text">
         <Original>Grenadier</Original>
@@ -4299,6 +4419,7 @@
         <Russian>Гренадер</Russian>
         <German>Grenadier</German>
         <Czech>Grenadier</Czech>
+        <Chinesesimp>掷弹手</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_draw3d_autorifleman_text">
         <Original>Autorifleman</Original>
@@ -4307,6 +4428,7 @@
         <Russian>Пулеметчик</Russian>
         <German>Maschinengewehrschütze</German>
         <Czech>Kulometčík</Czech>
+        <Chinesesimp>自动步枪手</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_draw3d_teamleader_text">
         <Original>Team Leader</Original>
@@ -4315,6 +4437,7 @@
         <Russian>Командир звена</Russian>
         <German>Gruppenführer</German>
         <Czech>Vedoucí týmu</Czech>
+        <Chinesesimp>小队长</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_actions_draw3d_rifleman_text">
         <Original>Rifleman</Original>
@@ -4323,6 +4446,7 @@
         <Russian>Стрелок</Russian>
         <German>Schütze</German>
         <Czech>Střelec</Czech>
+        <Chinesesimp>步枪手</Chinesesimp>
       </Key>
     </Container>
     <Container name="surrender_actions">
@@ -4333,6 +4457,7 @@
         <Russian>Допросить</Russian>
         <German>Abfragen</German>
         <Czech>Vyslýchat</Czech>
+        <Chinesesimp>审问</Chinesesimp>
       </Key>
       <Key ID="STR_release_action">
         <Original>Release</Original>
@@ -4341,6 +4466,7 @@
         <Russian>Освободить</Russian>
         <German>Freisetzung</German>
         <Czech>Uvolnění</Czech>
+        <Chinesesimp>释放</Chinesesimp>
       </Key>
       <Key ID="STR_reveal_action">
         <Original>Reveal Enemy Positions</Original>
@@ -4350,6 +4476,7 @@
         <German>Enthülle feindliche Positionen</German>
         <Czech>Odhalte nepřátelské pozice</Czech>
         <Korean>적 위치 공개</Korean>
+        <Chinesesimp>透露敌军位置</Chinesesimp>
       </Key>
       <Key ID="STR_recruit_action">
         <Original>Recruit</Original>
@@ -4358,6 +4485,7 @@
         <Russian>Рекрутировать</Russian>
         <German>Rekrutieren</German>
         <Czech>Rekrut</Czech>
+        <Chinesesimp>招募</Chinesesimp>
       </Key>
       <Key ID="STR_recruit_text">
         <Original>How about joining the good guys?</Original>
@@ -4366,6 +4494,7 @@
         <Russian>Не хочешь присоединиться к сопротивлению?</Russian>
         <German>Wie wäre es mit den Guten?</German>
         <Czech>Co takhle se přidat k dobrým klukům?</Czech>
+        <Chinesesimp>你想成为正义的伙伴吗?</Chinesesimp>
       </Key>
       <Key ID="STR_search_intel_text">
         <Original>Search for Intel</Original>
@@ -4375,6 +4504,7 @@
         <German>Suche nach Informationen</German>
         <Czech>Hledat informace</Czech>
         <Korean>인텔 검색</Korean>
+        <Chinesesimp>搜索情报</Chinesesimp>
       </Key>
       <Key ID="STR_recruit_fail_text">
         <Original>Screw you!</Original>
@@ -4383,6 +4513,7 @@
         <Russian>Пошёл ты!</Russian>
         <German>Fick dich ins Knie!</German>
         <Czech>Do prdele!</Czech>
+        <Chinesesimp>去你妈的！</Chinesesimp>
       </Key>
       <Key ID="STR_recruit_success_text">
         <Original>Why not? It can't be any worse.</Original>
@@ -4391,6 +4522,7 @@
         <Russian>Почему бы и нет? Я согласен.</Russian>
         <German>Warum nicht? Schlimmer kann es nicht sein.</German>
         <Czech>Proč ne? Nemůže to být o nic horší.</Czech>
+        <Chinesesimp>为什么不呢？已经没有比这更糟的了。</Chinesesimp>
       </Key>
       <Key ID="STR_release_request_text">
         <Original>Go back to your base and tell your comrades we are not enemies. We just want to live in peace.</Original>
@@ -4399,6 +4531,7 @@
         <Russian>Возвращайся на свою базу и скажи товарищам, что мы не враги. Мы просто хотим жить в мире.</Russian>
         <German>Geh zurück zu deiner Basis und sag deinen Kameraden, dass wir keine Feinde sind. Wir wollen nur in Frieden leben.</German>
         <Czech>Vraťte se na svou základnu a řekněte svým kamarádům, že nejsme nepřátelé. Chceme jen žít v míru.</Czech>
+        <Chinesesimp>回到你的基地，告诉你的同志们我们不是敌人。我们只想过和平的生活。</Chinesesimp>
       </Key>
       <Key ID="STR_release_response_one_text">
         <Original>Thank you. I owe you my life.</Original>
@@ -4407,6 +4540,7 @@
         <Russian>Спасибо. Я обязан тебе жизнью.</Russian>
         <German>Danke dir. Ich schulde dir mein Leben.</German>
         <Czech>Děkuju. Dlužím ti svůj život.</Czech>
+        <Chinesesimp>谢谢。我欠你一条命。</Chinesesimp>
       </Key>
       <Key ID="STR_release_response_two_text">
         <Original>Thank you. I swear you won't regret it!</Original>
@@ -4415,6 +4549,7 @@
         <Russian>Спасибо. Клянусь, ты не пожалеешь об этом!</Russian>
         <German>Danke dir. Ich schwöre, du wirst es nicht bereuen!.</German>
         <Czech>Děkuju. Přísahám, že toho nebudeš litovat!</Czech>
+        <Chinesesimp>谢谢。我发誓你不会后悔的！</Chinesesimp>
       </Key>
       <Key ID="STR_release_response_three_text">
         <Original>Thank you, I will definitely remember this when I shoot you next time!</Original>
@@ -4423,6 +4558,7 @@
         <Russian>Спасибо, я обязательно об этом вспомню, когда буду стрелять в вас в следующий раз!</Russian>
         <German>Danke, ich werde mich definitiv daran erinnern, wenn ich dich das nächste Mal erschieße!</German>
         <Czech>Děkuji, určitě si to zapamatuji, až vás příště zastřelím!</Czech>
+        <Chinesesimp>谢谢，下次遇到你的时候我一定会记住的！</Chinesesimp>
       </Key>
       <Key ID="STR_interrogate_text">
         <Original>Tell me what you know!</Original>
@@ -4431,6 +4567,7 @@
         <Russian>Скажи мне, что ты знаешь!</Russian>
         <German>Sag mir, was du weisst!</German>
         <Czech>Řekni mi, co víš!</Czech>
+        <Chinesesimp>告诉我你知道的一切！</Chinesesimp>
       </Key>
       <Key ID="STR_reveal_text">
         <Original>Tell me where are your comrades!</Original>
@@ -4440,6 +4577,7 @@
         <German>Sag mir, wo sind deine Kameraden!</German>
         <Czech>Řekněte mi, kde jsou vaši soudruzi!</Czech>
         <Korean>동지들이 어디 있는지 말해줘!</Korean>
+        <Chinesesimp>告诉我你的同志们在哪里！</Chinesesimp>
       </Key>
       <Key ID="STR_interrogation_success_text">
         <Original>Okay, I tell you what I know.</Original>
@@ -4448,6 +4586,7 @@
         <Russian>Хорошо, я всё скажу, только не бейте!</Russian>
         <German>Okay, ich sage dir was ich weiß.</German>
         <Czech>Dobře, říkám ti, co vím.</Czech>
+        <Chinesesimp>好吧，我会把我知道的都告诉你。</Chinesesimp>
       </Key>
       <Key ID="STR_interrogation_fail_nosquadleader_text">
         <Original>I would, but only our squadleader may knows something.</Original>
@@ -4456,6 +4595,7 @@
         <Russian>Я простой солдат и ничего не знаю, спросите лучше командира отделения.</Russian>
         <German>Ich würde, aber nur Ihr Truppführer kann etwas wissen.</German>
         <Czech>Chtěl bych, ale jen váš vůdce družstva může něco vědět.</Czech>
+        <Chinesesimp>我很想告诉你，但只有我们的队长知道些什么。</Chinesesimp>
       </Key>
       <Key ID="STR_interrogation_fail_noknowledge_text">
         <Original>I would, but I don't know anything.</Original>
@@ -4464,6 +4604,7 @@
         <Russian>Я бы рассказал, но я совершенно ничего не знаю.</Russian>
         <German>Ich würde, aber ich weiß nichts.</German>
         <Czech>Chtěl bych, ale nic nevím.</Czech>
+        <Chinesesimp>我很想告诉你，但是我什么都不知道。</Chinesesimp>
       </Key>
     </Container>
   </Package>
@@ -4476,6 +4617,7 @@
 		    <Russian>Магазин</Russian>
 		    <Spanish>Comprar</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>商店</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_OPEN_ACTION">
 		    <Original>Open the %1</Original> <!--e.g. open the Weapons Store-->
@@ -4485,6 +4627,7 @@
 		    <Russian></Russian>
 		    <Spanish></Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>打开 %1</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
 		    <Original>Item unavaliable.</Original>
@@ -4494,6 +4637,7 @@
 		    <Russian>Предмет недоступен</Russian>
 		    <Spanish>Objeto no disponible.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>物品不可用。</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_ITEM_OUTOFSTOCK">
 		    <Original>Insufficient stock.</Original>
@@ -4503,6 +4647,7 @@
 		    <Russian>Товар закончился</Russian>
 		    <Spanish>Sin stock.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>库存容量不足。</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_ITEM_TOOEXPENSIVE">
 		    <Original>Insufficient funds.</Original>
@@ -4512,6 +4657,7 @@
 		    <Russian>Недостаточно средств</Russian>
 		    <Spanish>Dinero insuficiente.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>资金不足。</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_ITEM_NOEQUIP">
 		    <Original>Unable to equip.</Original>
@@ -4521,6 +4667,7 @@
 		    <Russian>Невозможно экипировать</Russian>
 		    <Spanish>Imposible equipar.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>无法装备。</Chinesesimp>
 		  </Key>
 		<Key ID="STR_HALS_STORE_ITEM_NOCARGOSPACE">
 		    <Original>Insufficient cargo space.</Original>
@@ -4530,6 +4677,7 @@
 		    <Russian>Не хватает места в инвентаре</Russian>
 		    <Spanish>Espacio insuficiente.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>货物空间不足。</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_ITEM_PURCHASED">
 		    <Original>purchased</Original>
@@ -4539,17 +4687,20 @@
 		    <Russian>куплен</Russian>
 		    <Spanish>comprad</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>成交</Chinesesimp>
 		</Key>
         <!-- Thanks to JakeHekesFists -->
         <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
 			<Original>You cannot sell your %1 (%2) because it is not empty.</Original>
 			<English>You cannot sell your %1 (%2) because it is not empty.</English>
       <Russian>Вы не можете продать %1 (%2), поскольку он не пустой.</Russian>
+      <Chinesesimp>无法出售 %1 (%2), 因为它不是空的。</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_ITEM_SELL_SOLD">
 			<Original>Sold x%1 %2(s) for $%3.</Original>
 			<English>Sold x%1 %2(s) for $%3.</English>
       <Russian>Продано x%1 %2(s) за $%3.</Russian>
+      <Chinesesimp>卖掉 %2 x%1 以换取 $%3。</Chinesesimp>
 		</Key>
 	</Package>
 	<Package name="Dialog">
@@ -4561,6 +4712,7 @@
 		    <Russian>Показывать только предметы, на которые хватает денег</Russian>
 		    <Spanish>Mostrar solo objetos que pueda comprar.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>只显示玩家买得起的商品。</Chinesesimp>
 		</Key>
         <Key ID="STR_HALS_STORE_CHECKBOX_AVALIABLE">
             <Original>Only show items that are avaliable for purchase.</Original>
@@ -4570,6 +4722,7 @@
             <Russian>Показывать только предметы, доступные к покупке.</Russian>
             <Spanish></Spanish>
             <Italian></Italian>
+            <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
         </Key>
 	    <Key ID="STR_HALS_STORE_CHECKBOX_STOCK">
 		    <Original>Only show items which are in stock.</Original>
@@ -4579,6 +4732,7 @@
 		    <Russian>Показывать только предметы, доступные для продажи.</Russian>
 		    <Spanish>Mostrar solo objetos en stock.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>只显示有货的商品。</Chinesesimp>
 		</Key>
 	    <Key ID="STR_HALS_STORE_CHECKBOX_COMPATIBLE">
 		    <Original>Only show items compatible with the player's equipped weapons.</Original>
@@ -4588,12 +4742,14 @@
 		    <Russian>Показывать только предметы, совместимые с оружием игрока.</Russian>
 		    <Spanish>Mostrar solo objetos compatibles con armas equipadas.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>只显示与玩家当前武器兼容的商品。</Chinesesimp>
 		</Key>
         <!-- SELL BOX -->
         <Key ID="STR_HALS_STORE_CHECKBOX_SELLFILTER">
             <Original>Only show items that the player can sell.</Original>
             <English>Only show items that the player can sell.</English>
             <Russian>Показывать только предметы, которые можно продать.</Russian>
+            <Chinesesimp>只显示玩家可以出售的物品。</Chinesesimp>
         </Key>
         <!-- SELL BUTTON -->
         <Key ID="STR_HALS_STORE_BUTTON_SELL">
@@ -4604,6 +4760,7 @@
             <Russian>Продать</Russian>
             <Spanish>Vender</Spanish>
             <Italian>Vendere</Italian>
+            <Chinesesimp>出售</Chinesesimp>
         </Key>
 	    <Key ID="STR_HALS_STORE_CHECKBOX_EQUIP">
 		    <Original>Equip item upon purchase (if possible).</Original>
@@ -4613,6 +4770,7 @@
 		    <Russian>Экипировать после покупки (по возможности).</Russian>
 		    <Spanish>Equipar el articulo al comprar (si es posible).</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>成交后立即装备物品(如果可以的话)。</Chinesesimp>
 		</Key>
 	    <Key ID="STR_HALS_STORE_BUTTON_PURCHASE">
 		    <Original>Purchase</Original>
@@ -4622,6 +4780,7 @@
 		    <Russian>Купить</Russian>
 		    <Spanish>Compra</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>购买</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_TEXT_PRICE">
 		    <Original>Price</Original>
@@ -4631,6 +4790,7 @@
 		    <Russian>Цена</Russian>
 		    <Spanish>Precio</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>价格</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_TEXT_INSTOCK">
 		    <Original>IN STOCK</Original>
@@ -4640,6 +4800,7 @@
 		    <Russian>В ПРОДАЖЕ</Russian>
 		    <Spanish>EN STOCK</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>现货</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_TEXT_NOSTOCK">
 		    <Original>OUT OF STOCK.</Original>
@@ -4649,6 +4810,7 @@
 		    <Russian>ЗАКОНЧИЛСЯ</Russian>
 		    <Spanish>FUERA DE STOCK.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>缺货</Chinesesimp>
 		</Key>
 		<Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
 		    <Original>%1¢ more required.</Original>
@@ -4658,6 +4820,7 @@
 		    <Russian>Не хватает %1¢.</Russian>
 		    <Spanish>Se necesitan %1¢.</Spanish>
 		    <Italian></Italian>
+        <Chinesesimp>还需要 %1¢。</Chinesesimp>
 		</Key>
 	</Package>
 </Project>
