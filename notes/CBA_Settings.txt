@@ -292,7 +292,7 @@ force force ace_frag_enabled = true;
 force force ace_frag_maxTrack = 10;
 force force ace_frag_maxTrackPerFrame = 10;
 force force ace_frag_reflectionsEnabled = true;
-force force ace_frag_spallEnabled = true;
+force force ace_frag_spallEnabled = false;
 
 // ACE 武器按键
 force force ace_common_persistentLaserEnabled = true;
@@ -526,11 +526,11 @@ force force AGC_showBodyCount = false;
 // Aircraft Turbulence
 force force HELICOPTER_TURBULENCE_ENABLE_MASTER = true;
 force force HELICOPTER_TURBULENCE_ENABLE_WEATHEREFFECT = true;
-force force HELICOPTER_TURBULENCE_MAX_TURBULENCE = 15;
+force force HELICOPTER_TURBULENCE_MAX_TURBULENCE = 10;
 force force HELICOPTER_TURBULENCE_MIN_TURBULENCE = 2.5;
 force force PLANE_TURBULENCE_ENABLE_MASTER = true;
 force force PLANE_TURBULENCE_ENABLE_WEATHEREFFECT = true;
-force force PLANE_TURBULENCE_MAX_TURBULENCE = 15;
+force force PLANE_TURBULENCE_MAX_TURBULENCE = 10;
 force force PLANE_TURBULENCE_MIN_TURBULENCE = 2.5;
 
 // Anti-Bounce System
@@ -722,7 +722,7 @@ force force emr_main_whitelistStr = "";
 
 // Fawks' Enhanced NVGs
 force force PDT_EnhancedNVG_NVG_Blacklist = "";
-force force PDT_EnhancedNVG_NVG_Effect = "MWPhosphor";
+force force PDT_EnhancedNVG_NVG_Effect = "GreenPhosphor";
 force force PDT_EnhancedNVG_Using_ACE = true;
 
 // Goobin's Gameplay Enhancements Core
@@ -749,7 +749,7 @@ force force grad_trenches_functions_vehicleEnvelopeDigTime = 75;
 
 // Headlamps
 force force Headlamps_Settings_AllowAll = true;
-Headlamps_Settings_ExtraCompatibleItems = "[]";
+force force Headlamps_Settings_ExtraCompatibleItems = "[]";
 
 // LAMBS Danger
 force force lambs_danger_cqbRange = 75;
@@ -760,7 +760,7 @@ force force lambs_danger_disableAIHideFromTanksAndAircraft = false;
 force force lambs_danger_disableAIPlayerGroup = false;
 force force lambs_danger_disableAIPlayerGroupReaction = false;
 force force lambs_danger_disableAutonomousFlares = false;
-force force lambs_danger_panicChance = 0.05;
+force force lambs_danger_panicChance = 0;
 
 // LAMBS Danger Eventhandlers
 force force lambs_eventhandlers_ExplosionEventHandlerEnabled = true;
