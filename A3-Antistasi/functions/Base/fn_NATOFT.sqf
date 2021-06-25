@@ -42,11 +42,11 @@ if (count _positionTel > 0) then
 
 	if (!(_base in airportsX) and !(_base in milbases) and !(_base in seaports) and !(_base in outposts) and (_base != _mrkRespawn)) exitWith {["Fast Travel", "You can only Fast Travel to Airbases, Outposts, Seaports and Military Bases"] call A3A_fnc_customHint; openMap [false,false]};
 
-	// { // Edited: Disable fast travel target location enemy check
-	// 	if (((side (group _x) == teamPlayer) or (side (group _x) == _enemyFaction)) and (_x distance (getMarkerPos _base) < 500) and (not(captive _x))) then {_checkX = true};
-	// } forEach allUnits;
+	{
+		if (((side (group _x) == teamPlayer) or (side (group _x) == _enemyFaction)) and (_x distance (getMarkerPos _base) < 500) and (not(captive _x))) then {_checkX = true};
+	} forEach allUnits;
 
-	// if (_checkX) exitWith {["Fast Travel", "You cannot Fast Travel to an area under attack or with enemies in the surrounding area"] call A3A_fnc_customHint; openMap [false,false]};
+	if (_checkX) exitWith {["Fast Travel", "You cannot Fast Travel to an area under attack or with enemies in the surrounding area"] call A3A_fnc_customHint; openMap [false,false]};
 
 	if (_positionTel distance getMarkerPos _base < 50) then
 		{

@@ -33,9 +33,9 @@ if (_remainingTravels < 1) exitWith {
 private _rallyPoint = rallyProps select 0;
 private _rallyPosition = position _rallyPoint;
 
-// if ([_rallyPoint, 50] call A3A_fnc_enemyNearCheck) exitWith { // Edited: Disable fast travel target location enemy check
-//     ["Rally Point", "You cannot travel when enemies are surrounding rally point."] call SCRT_fnc_misc_showDeniedActionHint;
-// };
+if ([_rallyPoint, 50] call A3A_fnc_enemyNearCheck) exitWith {
+    ["Rally Point", "You cannot travel when enemies are surrounding rally point."] call SCRT_fnc_misc_showDeniedActionHint;
+};
 
 private _positionX = [_rallyPosition, 10, random 360] call BIS_fnc_relPos;
 private _distanceX = round (((player distance2D _positionX)/200)/2);

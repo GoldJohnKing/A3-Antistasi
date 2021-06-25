@@ -115,9 +115,9 @@ if (count _positionTel > 0) then {
 		["Fast Travel", "You cannot Fast Travel to an enemy controlled zone"] call A3A_fnc_customHint; openMap [false,false];
 	};
 
-	// if ([getMarkerPos _base,_distanceX] call A3A_fnc_enemyNearCheck) exitWith { // Edited: Disable fast travel target location enemy check
-	// 	["Fast Travel", "You cannot Fast Travel to an area under attack or with enemies in the surrounding"] call SCRT_fnc_misc_showDeniedActionHint; openMap [false,false]
-	// };
+	if ([getMarkerPos _base,_distanceX] call A3A_fnc_enemyNearCheck) exitWith {
+		["Fast Travel", "You cannot Fast Travel to an area under attack or with enemies in the surrounding"] call SCRT_fnc_misc_showDeniedActionHint; openMap [false,false]
+	};
 
 	if (_positionTel distance getMarkerPos _base < 50) then {
 		_positionX = [getMarkerPos _base, 10, random 360] call BIS_Fnc_relPos;
