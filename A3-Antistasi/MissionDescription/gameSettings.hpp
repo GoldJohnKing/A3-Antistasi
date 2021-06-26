@@ -1,5 +1,5 @@
 respawn = "BASE";
-respawnDelay = 15;
+respawnDelay = 10; // Edited: Decrease respawn delay
 
 aiKills = 0;
 disabledAI = 1;
