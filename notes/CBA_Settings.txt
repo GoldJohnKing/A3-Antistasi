@@ -108,7 +108,7 @@ force force ace_switchunits_switchToWest = false;
 
 // ACE 医疗系统
 force force ace_medical_ai_enabledFor = 2;
-force force ace_medical_AIDamageThreshold = 0.08;
+force force ace_medical_AIDamageThreshold = 0.03;
 force force ace_medical_bleedingCoefficient = 0.5;
 force force ace_medical_blood_bloodLifetime = 180;
 force force ace_medical_blood_enabledFor = 0;
@@ -961,6 +961,7 @@ force force zen_common_disableGearAnim = true;
 force force zen_common_preferredArsenal = 1;
 force force zen_compat_ace_hideModules = true;
 force force zen_context_menu_enabled = 2;
+force force zen_context_menu_overrideWaypoints = false;
 force force zen_editor_addGroupIcons = false;
 force force zen_editor_declutterEmptyTree = true;
 force force zen_editor_disableLiveSearch = true;
