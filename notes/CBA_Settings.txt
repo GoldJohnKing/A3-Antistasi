@@ -1,5 +1,12 @@
-// 社群基础模组 - 网路
+// 社群基础模组
+cba_diagnostic_ConsoleIndentType = -1;
+force force cba_disposable_dropUsedLauncher = 2;
+force force cba_disposable_replaceDisposableLauncher = true;
+cba_events_repetitionMode = 1;
 force force cba_network_loadoutValidation = 0;
+cba_optics_usePipOptics = true;
+cba_ui_notifyLifetime = 4;
+cba_ui_StorePasswords = 1;
 
 // ACE夜视镜
 force force ace_nightvision_aimDownSightsBlur = 0;
@@ -108,11 +115,11 @@ force force ace_switchunits_switchToWest = false;
 
 // ACE 医疗系统
 force force ace_medical_ai_enabledFor = 2;
-force force ace_medical_AIDamageThreshold = 0.03;
+force force ace_medical_AIDamageThreshold = 0.01;
 force force ace_medical_bleedingCoefficient = 0.5;
-force force ace_medical_blood_bloodLifetime = 180;
-force force ace_medical_blood_enabledFor = 0;
-force force ace_medical_blood_maxBloodObjects = 50;
+force force ace_medical_blood_bloodLifetime = 300;
+force force ace_medical_blood_enabledFor = 2;
+force force ace_medical_blood_maxBloodObjects = 500;
 force force ace_medical_fatalDamageSource = 2;
 force force ace_medical_feedback_bloodVolumeEffectType = 2;
 force force ace_medical_feedback_painEffectType = 2;
@@ -124,11 +131,11 @@ force force ace_medical_gui_enableSelfActions = true;
 force force ace_medical_gui_interactionMenuShowTriage = 1;
 force force ace_medical_gui_maxDistance = 5;
 force force ace_medical_gui_openAfterTreatment = true;
-force force ace_medical_ivFlowRate = 3;
+force force ace_medical_ivFlowRate = 2.5;
 force force ace_medical_limping = 1;
 force force ace_medical_painCoefficient = 0.8;
 force force ace_medical_painUnconsciousChance = 0.15;
-force force ace_medical_playerDamageThreshold = 3;
+force force ace_medical_playerDamageThreshold = 2.5;
 force force ace_medical_spontaneousWakeUpChance = 1;
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 3;
 force force ace_medical_statemachine_AIUnconsciousness = false;
@@ -151,13 +158,13 @@ force force ace_medical_treatment_consumeSurgicalKit = 0;
 force force ace_medical_treatment_convertItems = 0;
 force force ace_medical_treatment_cprSuccessChance = 1;
 force force ace_medical_treatment_holsterRequired = 0;
-force force ace_medical_treatment_litterCleanupDelay = 90;
+force force ace_medical_treatment_litterCleanupDelay = 180;
 force force ace_medical_treatment_locationEpinephrine = 0;
 force force ace_medical_treatment_locationIV = 0;
 force force ace_medical_treatment_locationPAK = 3;
 force force ace_medical_treatment_locationsBoostTraining = true;
 force force ace_medical_treatment_locationSurgicalKit = 0;
-force force ace_medical_treatment_maxLitterObjects = 50;
+force force ace_medical_treatment_maxLitterObjects = 100;
 force force ace_medical_treatment_medicEpinephrine = 0;
 force force ace_medical_treatment_medicIV = 0;
 force force ace_medical_treatment_medicPAK = 2;
@@ -458,8 +465,12 @@ force force ace_tagging_quickTag = 0;
 // ACE Vehicle Medical
 force force MIRA_Vehicle_Medical_CacheInterval = 0.5;
 force force MIRA_Vehicle_Medical_EnableAVM = true;
+force force MIRA_Vehicle_Medical_EnableIncapacitated = true;
 force force MIRA_Vehicle_Medical_EnableStable = true;
 force force MIRA_Vehicle_Medical_EnableUnstable = true;
+force force MIRA_Vehicle_Medical_Incapacitated_CanUnloadAll = true;
+force force MIRA_Vehicle_Medical_Incapacitated_ShowCount = true;
+force force MIRA_Vehicle_Medical_Stable_ShowCount = true;
 force force MIRA_Vehicle_Medical_Stable_ThresholdLowBP = 80;
 force force MIRA_Vehicle_Medical_Stable_ThresholdLowHR = 50;
 force force MIRA_Vehicle_Medical_Stable_TrackFractures = true;
@@ -470,6 +481,9 @@ force force MIRA_Vehicle_Medical_Stable_TrackNeedsBandage = true;
 force force MIRA_Vehicle_Medical_Stable_TrackSplints = true;
 force force MIRA_Vehicle_Medical_Stable_TrackStitchableWounds = true;
 force force MIRA_Vehicle_Medical_Stable_TrackTourniquets = true;
+force force MIRA_Vehicle_Medical_Unstable_DogtagsDeadOnly = true;
+force force MIRA_Vehicle_Medical_Unstable_ShowCount = true;
+force force MIRA_Vehicle_Medical_Unstable_TakeDogtags = true;
 force force MIRA_Vehicle_Medical_Unstable_ThresholdLowBP = 80;
 force force MIRA_Vehicle_Medical_Unstable_ThresholdLowHR = 50;
 force force MIRA_Vehicle_Medical_Unstable_TrackBleeding = true;
@@ -510,12 +524,12 @@ force force acex_viewrestriction_preserveView = true;
 // Advanced Garbage Collector
 force force AGC_bodyType = "body";
 force force AGC_checkTimes = 50;
-force force AGC_GCenabled = false;
+force force AGC_GCenabled = true;
 force force AGC_GCmaxBodyTime = 180;
-force force AGC_GCmaxDistance = 150;
-force force AGC_GCmaxTime = 150;
-force force AGC_GCminDistance = 75;
-force force AGC_GCminTime = 75;
+force force AGC_GCmaxDistance = 300;
+force force AGC_GCmaxTime = 300;
+force force AGC_GCminDistance = 150;
+force force AGC_GCminTime = 180;
 force force AGC_GCrefreshInterval = 0;
 force force AGC_GCvehicleCleanupDistance = 0;
 force force AGC_maxBodyHandle = 0;
@@ -528,7 +542,7 @@ force force HELICOPTER_TURBULENCE_ENABLE_MASTER = true;
 force force HELICOPTER_TURBULENCE_ENABLE_WEATHEREFFECT = true;
 force force HELICOPTER_TURBULENCE_MAX_TURBULENCE = 10;
 force force HELICOPTER_TURBULENCE_MIN_TURBULENCE = 2.5;
-force force PLANE_TURBULENCE_ENABLE_MASTER = true;
+force force PLANE_TURBULENCE_ENABLE_MASTER = false;
 force force PLANE_TURBULENCE_ENABLE_WEATHEREFFECT = true;
 force force PLANE_TURBULENCE_MAX_TURBULENCE = 10;
 force force PLANE_TURBULENCE_MIN_TURBULENCE = 2.5;
@@ -582,19 +596,43 @@ force force JD_Map_drawShaded = 0.4;
 force force JD_Map_GridEnabled = true;
 force force JD_Map_shadedSea = 0.8;
 
+// AWESome Aerodynamics
+force force orbis_aerodynamics_dynamicWindMode = 2;
+force force orbis_aerodynamics_enabled = true;
+force force orbis_aerodynamics_pylonDragMultiplierGlobal = 1;
+force force orbis_aerodynamics_pylonMassMultiplierGlobal = 1;
+force force orbis_aerodynamics_windMultiplier = 1;
+
+// AWESome Cockpit
+force force orbis_cockpit_checklistUnits = "KIAS";
+force force orbis_cockpit_groundMultiplier = 1;
+force force orbis_cockpit_shakeEnabled = true;
+force force orbis_cockpit_speedMultiplier = 1;
+
+// AWESome GPWS
+force force orbis_gpws_automaticTransponder = true;
+force force orbis_gpws_defaultVolume = false;
+force force orbis_gpws_personalDefault = "f16";
+
+// Barotrauma
+force force Barotrauma_DoomMode = false;
+force force Barotrauma_FineSplatterEnabled = true;
+force force Barotrauma_FineSplatterIterations = 30;
+force force Barotrauma_GibsEnabled = true;
+force force Barotrauma_GibSmearEnabled = true;
+force force Barotrauma_MaxGibs = 50;
+force force Barotrauma_MaxMajorSplatters = 15;
+force force Barotrauma_MaxMinorSplatters = 500;
+force force Barotrauma_VaporizationDamageThreshold = 0.2;
+
 // BettIR
 force force BettIR_ViewDistance = 300;
 
-// CBA UI
-cba_diagnostic_ConsoleIndentType = -1;
-cba_ui_notifyLifetime = 4;
-cba_ui_StorePasswords = 1;
-
-// CBA Weapons
-force force cba_disposable_dropUsedLauncher = 2;
-force force cba_disposable_replaceDisposableLauncher = true;
-cba_events_repetitionMode = 1;
-cba_optics_usePipOptics = true;
+// CQB Weapon Stance
+DEVAS_CQB_GunReady = "Random";
+DEVAS_CQB_HighReady = "Random";
+DEVAS_CQB_LowReady = "Random";
+DEVAS_CQB_Ready_Click = "Left";
 
 // DUI - 小队雷达 - 主要
 force force diwako_dui_ace_hide_interaction = false;
@@ -789,10 +827,10 @@ force force lambs_main_minFriendlySuppressionDistance = 5;
 force force lambs_main_minSuppressionRange = 25;
 force force lambs_main_radioBackpack = 5000;
 force force lambs_main_radioDisabled = false;
-force force lambs_main_radioEast = 3000;
-force force lambs_main_radioGuer = 3000;
+force force lambs_main_radioEast = 1500;
+force force lambs_main_radioGuer = 2500;
 force force lambs_main_radioShout = 100;
-force force lambs_main_radioWest = 500;
+force force lambs_main_radioWest = 1500;
 
 // Laxemann Align
 force force L_Align_enabled = true;
@@ -923,6 +961,7 @@ force force uvo_main_compatSmoke = "";
 force force uvo_main_deathShoutDistance = 300;
 force force uvo_main_deathShoutVolume = 3;
 force force uvo_main_debug = false;
+force force uvo_main_enableCallouts = true;
 force force uvo_main_enablePlayers = true;
 force force uvo_main_hearingDistance = 300;
 force force uvo_main_killConfirmChanceAI = 1;
