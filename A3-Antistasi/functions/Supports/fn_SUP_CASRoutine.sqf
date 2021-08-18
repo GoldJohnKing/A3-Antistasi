@@ -2,7 +2,7 @@ params ["_side", "_sleepTime", "_timerIndex", "_airport", "_supportName", "_setu
 
 private _fileName = "SUP_CASRoutine";
 
-private _plane = if (_side == Occupants) then {selectRandom vehNATOPlanes} else {selectRandom vehCSATPlanes};
+private _plane = if (_side == Occupants) then {vehNATOPlane} else {vehCSATPlane};
 private _crewUnits = if(_side == Occupants) then {NATOPilot} else {CSATPilot};
 
 //Sleep to simulate preparetion time
@@ -19,7 +19,7 @@ while {_sleepTime > 0} do
 //150 is more likely to be in the actual viewcone of a player
 private _spawnPos = (getMarkerPos _airport);
 private _strikePlane = createVehicle [_plane, _spawnPos, [], 0, "FLY"];
-_strikePlane setDir (_spawnPos getDir _setupPos);
+_strikePlane setDir (_spawnPos getDir _supportObj);
 
 //Put it in the sky
 _strikePlane setPosATL (_spawnPos vectorAdd [0, 0, 1000]);
@@ -100,7 +100,6 @@ _strikePlane addEventHandler
                 };
             };
         };
-        nil; //HandleDamage must return Nothing for damage to apply normally.
     }
 ];
 

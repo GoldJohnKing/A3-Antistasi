@@ -131,7 +131,7 @@ class playerMenu
 					colorText[] = {1,1,1,0.7};
 				};
 
-				class musicSwitchButton: RscControlsGroupNoScrollbarsMain 
+				class musicSwitchButton: RscControlsGroupNoScrollbars 
 				{
 					idc = 5100;
 					y = "4 * pixelGridNoUIScale * pixelH";
@@ -160,7 +160,7 @@ class playerMenu
 					};		
 				};
 
-				class rocketCameraSwitchButton: RscControlsGroupNoScrollbarsMain 
+				class rocketCameraSwitchButton: RscControlsGroupNoScrollbars 
 				{
 					idc = 5200;
 					y = "7.5 * pixelGridNoUIScale * pixelH";
@@ -189,7 +189,7 @@ class playerMenu
 					};		
 				};
 
-				class paradropButton: RscControlsGroupNoScrollbarsMain 
+				class paradropButton: RscControlsGroupNoScrollbars 
 				{
 					idc = 5400;
 					y = "11 * pixelGridNoUIScale * pixelH";

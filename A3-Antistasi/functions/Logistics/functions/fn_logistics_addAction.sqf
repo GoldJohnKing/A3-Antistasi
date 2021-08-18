@@ -17,8 +17,8 @@
 
     Example: [_object , _action] remoteExec ["A3A_fnc_logistics_addAction", 0, _object];
 */
-params [["_object", objNull, [objNull]], "_action"];
-if (isNull _object) exitWith {};
+params ["_object", "_action"];
+
 private _actionNames = (actionIDs _object) apply {(_object actionParams _x)#0};
 
 
@@ -48,17 +48,9 @@ switch (_action) do {
             true,
             "",
             "(
-                ((attachedTo _originalTarget) isEqualTo objNull)
+                ((attachedTo _target) isEqualTo objNull)
                 and ((vehicle _this) isEqualTo _this)
-                and (alive _originalTarget)
-                and {
-                    !(_originalTarget isKindOf 'CAManBase')
-                    or {
-                        (_originalTarget getVariable ['incapacitated',false])
-                        and (_target isEqualTo _originalTarget)
-                    }
-                }
-                and _originalTarget isNotEqualTo _this
+                and (alive _target)
             )",
             5
         ];
@@ -84,8 +76,8 @@ switch (_action) do {
             true,
             "",
             "(
-                !((_originalTarget getVariable ['Cargo', []]) isEqualTo [])
-                and !(_originalTarget getVariable ['LoadingCargo', false])
+                !((_target getVariable ['Cargo', []]) isEqualTo [])
+                and !(_target getVariable ['LoadingCargo', false])
                 and ((vehicle _this) isEqualTo _this)
             )",
             5

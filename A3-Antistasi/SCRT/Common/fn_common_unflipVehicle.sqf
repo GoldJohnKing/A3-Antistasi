@@ -1,9 +1,7 @@
 private _vehicle = cursorTarget;
 
 if(isNil "_vehicle" || {isNull _vehicle}) exitWith {};
-if !(_vehicle isKindOf "LandVehicle") exitWith {
-    ["Unflip failed", "This kind of vehicle can't be flipped."] call SCRT_fnc_misc_showDeniedActionHint;
-};
+if !(_vehicle isKindOf "Car") exitWith {};
 
 private _isAlive = alive _vehicle;
 if !(alive _vehicle) exitWith {
@@ -25,15 +23,15 @@ private _vehicleMass = getMass _vehicle;
 private _escape = false;
 
 if(_vehicleMass > 10000) then {
-    private _nearVehicles = nearestObjects [(position _vehicle),["Car", "Truck", "Tank"],50];
+    _nearVehicles = nearestObjects [(position _vehicle),["TANK","CAR"],50,true];
 
-    if (count _nearVehicles < 2) then { //flippable vehicle is included too
+    if !(count _nearVehicles < 1) then {
         _escape = true;
     };
 };
 
 if (_escape) exitWith {
-    ["Unflip failed", "Vehicle is too heavy, additional car is required to perform unflip."] call SCRT_fnc_misc_showDeniedActionHint;
+    ["Unflip failed", "Vehicle is too heavy, additional car is needed to perform unflip."] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
 (_vehicle call BIS_fnc_getPitchBank) params ["_vx","_vy"];

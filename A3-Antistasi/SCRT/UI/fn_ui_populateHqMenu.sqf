@@ -3,7 +3,7 @@ disableSerialization;
 menuComplete = false;
 
 menuSliderArray = [
-	[format ["%1 MANAGEMENT", (toUpper nameTeamPlayer)], 3000],
+	["HQ MANAGEMENT", 3000],
 	["MANAGE GARRISONS", 2000]
 ];
 
@@ -16,19 +16,15 @@ ctrlSetFocus ((findDisplay 60000) displayCtrl 1151);
 outpostType = "WATCHPOST";
 minefieldType = "APERSMine";
 
-//Create Outpost Combobox 
+//Support Combobox 
 lbAdd [2750, "Watchpost"];
 lbSetData [2750, 0, "WATCHPOST"];
 lbAdd [2750, "Roadblock"];
 lbSetData [2750, 1, "ROADBLOCK"];
-lbAdd [2750, "HMG Emplacement"];
-lbSetData [2750, 2, "HMG"];
 lbAdd [2750, "AA Emplacement"];
-lbSetData [2750, 3, "AA"];
+lbSetData [2750, 2, "AA"];
 lbAdd [2750, "AT Emplacement"];
-lbSetData [2750, 4, "AT"];
-lbAdd [2750, "Mortar Emplacement"];
-lbSetData [2750, 5, "MORTAR"];
+lbSetData [2750, 3, "AT"];
 
 lbSetCurSel [2750, 0];
 

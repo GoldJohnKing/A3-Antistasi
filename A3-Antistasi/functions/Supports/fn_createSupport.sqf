@@ -41,10 +41,6 @@ switch (_supportType) do
     {
         _supportMarker = [_side, _supportTarget, _supportName] call A3A_fnc_SUP_QRF;
     };
-    case ("AIRDROP"):
-    {
-        _supportMarker = [_side, _timerIndex, _supportTarget, _supportName] call A3A_fnc_SUP_airdrop;
-    };
     case ("AIRSTRIKE"):
     {
         _supportMarker = [_side, _timerIndex, _supportTarget, _supportName] call A3A_fnc_SUP_airstrike;

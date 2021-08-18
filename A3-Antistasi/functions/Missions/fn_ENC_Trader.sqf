@@ -21,10 +21,8 @@ _traderPosition = [
 _radGrad = [_traderPosition, 0] call BIS_fnc_terrainGradAngle;
 private _iterations = 0;
 
-private _outOfBounds = _traderPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
-
 //mitigation of negative terrain gradient
-if(!(_radGrad > -0.4 && _radGrad < 0.4) || isOnRoad _traderPosition || surfaceIsWater _traderPosition || _outOfBounds) then {
+if(!(_radGrad > -0.3 && _radGrad < 0.3) || isOnRoad _traderPosition || surfaceIsWater _traderPosition) then {
     private _radiusX = 100;
     while {true} do {
         _traderPosition = [
@@ -39,8 +37,7 @@ if(!(_radGrad > -0.4 && _radGrad < 0.4) || isOnRoad _traderPosition || surfaceIs
             [_positionX, _positionX] //default position
         ] call BIS_fnc_findSafePos;
         _radGrad = [_traderPosition, 0] call BIS_fnc_terrainGradAngle;
-        _outOfBounds = _traderPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
-        if ((_radGrad > -0.4 && _radGrad < 0.4) && !(isOnRoad _traderPosition) && !(surfaceIsWater _traderPosition) && !(_outOfBounds)) exitWith {};
+        if ((_radGrad > -0.3 && _radGrad < 0.3) && !(isOnRoad _traderPosition) && !(surfaceIsWater _traderPosition)) exitWith {};
         _radiusX = _radiusX + 50;
     };
 };
@@ -90,7 +87,7 @@ waitUntil {
 
 [_taskId, "ENC", "SUCCEEDED"] call A3A_fnc_taskSetState;
 
-{ [30, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+{ [35, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
 [20, theBoss] call A3A_fnc_playerScoreAdd;
 
 traderPosition = _traderPosition;

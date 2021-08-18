@@ -17,29 +17,20 @@ private _hr = 0;
 
 private _pool = jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_CARGOPUT;
 private _quantity = 0;
-private _minePool = APERSMineMags;
-private _mine = "";
+private _typeM = APERSMineMag;
 
-if (_minefieldType == "ATMine") then {
-	_minePool = ATMineMags;
+if (_typeX == "ATMine") then {
+	_typeM = ATMineMag;
 };
 
-private _availableMinesPool = _pool select { 
-	private _className = _x select 0;
-	private _quantity = _x select 1;
-	_className in _minePool && {_quantity >= 5};
-};
-
-if (count _availableMinesPool < 1) then {
-	_quantity = 0;
-} else {
-	_mine = selectRandom (_availableMinesPool apply {_x select 0});
-	private _mineQuantity = (_availableMinesPool select {(_x select 0) == _mine }) apply {_x select 1}; //quantity
-	_quantity = _mineQuantity select 0;
-};
+{
+	if (_x select 0 == _typeM) exitWith {
+		_quantity = _x select 1;
+	};
+} forEach _pool;
 
 _costs = (2*(server getVariable (SDKExp select 0))) + ([vehSDKTruck] call A3A_fnc_vehiclePrice);
 _hr = 2;
 _costTextBox ctrlSetText format ["Cost: 5 %1s, %2 HR and %3€", minefieldType, _hr, _costs];
 
-minefieldCost = [_costs, _hr, _quantity, _mine];
+minefieldCost = [_costs, _hr, _quantity];

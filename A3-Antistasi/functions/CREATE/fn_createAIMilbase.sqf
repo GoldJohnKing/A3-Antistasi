@@ -26,10 +26,12 @@ private _countX = 0;
 private _sideX = sidesX getVariable [_markerX,sideUnknown];
 
 private _radarType = if (_sideX == Occupants) then {NATOAARadar} else {CSATAARadar};
+private _ciwsType = if (_sideX == Occupants) then {NATOAACiws} else {CSATAACiws};
 private _samType = if (_sideX == Occupants) then {NATOAASam} else {CSATAASam};
-private _aaElements = [_radarType, _samType];
+private _vehCargoTruck =  if (_sideX == Occupants) then {selectRandom vehNATOCargoTrucks} else {selectRandom vehCSATTrucks};
+private _aaElements = [_radarType, _ciwsType, _samType];
 
-private _heavyVehicles = if (_sideX == Occupants) then { vehNATOAPC + vehNATOTanks + vehNATOAA } else { vehCSATAPC + vehCSATTanks + vehCSATAA };
+private _heavyVehicles = if (_sideX == Occupants) then { vehNATOAPC + vehNATOTanks + [vehNATOAA] } else { vehCSATAPC + vehCSATTanks  + [vehCSATAA] };
 
 
 /////////////////////////////
@@ -67,26 +69,39 @@ while {_spawnParameter isEqualType []} do {
                     };
                 }; 
             };
+
+            ///CIWS truck
+            if(_x == _ciwsType) then {
+                private _ciwsTruckData = [_spawnParameter select 0, _rotation, _vehCargoTruck, _sideX] call A3A_fnc_spawnVehicle;
+                private _ciwsVehicle = _ciwsTruckData select 0;
+				private _ciwsVehicleCrew = _ciwsTruckData select 1;
+            	{deleteVehicle _x} forEach _ciwsVehicleCrew;
+            	[_ciwsVehicle, _sideX] call A3A_fnc_AIVEHinit;
+				_ciwsVehicleGroup = _ciwsTruckData select 2;
+				deleteGroup _ciwsVehicleGroup;
+            	_vehiclesX pushBack _ciwsVehicle;
+
+                _aaVehicle attachTo [_ciwsVehicle, [0, 0, 1.65]];
+            };
         };
     } forEach _aaElements;
 	_spawnParameter = [_markerX, "Sam"] call A3A_fnc_findSpawnPosition;
 	sleep 1;
 };
 
-//Close Radius AA
-private _aaVehicleType = if(_sideX == Occupants) then {selectRandom vehNATOAA} else {selectRandom vehCSATAA};
-private _vehiclePosition = [_positionX, 0, 50, 8, 0, 0.5] call BIS_fnc_findSafePos;
-private _aaVehicleData = [_vehiclePosition, (random 360), _aaVehicleType, _sideX] call A3A_fnc_spawnVehicle;
-private _aaVehicle = _aaVehicleData select 0;
-private _aaVehicleCrew = _aaVehicleData select 1;
-{[_x] call A3A_fnc_NATOinit} forEach _aaVehicleCrew;
-_soldiers = _soldiers + _aaVehicleCrew;
-[_aaVehicle, _sideX] call A3A_fnc_AIVEHinit;
-_aaVehicleGroup = _aaVehicleData select 2;
-_vehiclesX pushBack _aaVehicle;
-_groups pushBack _aaVehicleGroup;
-sleep 0.1;
-[(gunner _aaVehicle), 300] spawn SCRT_fnc_common_scanHorizon;
+if(_ciwsType == "") then {
+	private _aaVehicleType = if(_sideX == Occupants) then {vehNATOAA} else {vehCSATAA};
+	private _vehiclePosition = [_positionX, 0, 50, 8, 0, 0.5] call BIS_fnc_findSafePos;
+	private _aaVehicleData = [_vehiclePosition, (random 360), _aaVehicleType, _sideX] call A3A_fnc_spawnVehicle;
+	private _aaVehicle = _aaVehicleData select 0;
+	private _aaVehicleCrew = _aaVehicleData select 1;
+	{[_x] call A3A_fnc_NATOinit} forEach _aaVehicleCrew;
+	_soldiers = _soldiers + _aaVehicleCrew;
+	[_aaVehicle, _sideX] call A3A_fnc_AIVEHinit;
+	_aaVehicleGroup = _aaVehicleData select 2;
+	_vehiclesX pushBack _aaVehicle;
+	_groups pushBack _aaVehicleGroup;
+};
 
 /////////////////////////////
 // SPAWNING PATROL VEHICLES
@@ -279,6 +294,7 @@ _groups pushBack (_ret select 0);
 _vehiclesX append (_ret select 1);
 _soldiers append (_ret select 2);
 {[_x, _sideX] call A3A_fnc_AIVEHinit} forEach (_ret select 1);
+
 
 if(random 100 < (50 + tierWar * 3)) then
 {

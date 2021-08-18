@@ -2,7 +2,7 @@ params ["_side", "_timerIndex", "_sleepTime", "_airport", "_supportName", "_setu
 
 private _fileName = "SUP_ASFRoutine";
 
-private _plane = if (_side == Occupants) then {selectRandom vehNATOPlanesAA} else {selectRandom vehCSATPlanesAA};
+private _plane = if (_side == Occupants) then {vehNATOPlaneAA} else {vehCSATPlaneAA};
 private _crewUnits = if(_side == Occupants) then {NATOPilot} else {CSATPilot};
 private _timerArray = if(_side == Occupants) then {occupantsASFTimer} else {invadersASFTimer};
 
@@ -106,7 +106,6 @@ _strikePlane addEventHandler
                 };
             };
         };
-        nil; //HandleDamage must return Nothing for damage to apply normally.
     }
 ];
 

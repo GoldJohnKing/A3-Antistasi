@@ -1,31 +1,23 @@
 /*
-Author: Håkon
-Description:
-    Gets the radio class the unit is using
-    does not include backpack radios
+	Returns the unit's radio - be it vanilla, TFAR or ACRE.
 
-Arguments:
-0. <Object> Unit to get the radio class from
+    Inputs:
+        1: unit			"Unit to get radio from"
 
-Return Value: <String> Classname of radio or "" if not found
-
-Scope: Any
-Environment: Any
-Public: Yes
-Dependencies:
-Performance: 0.0109 - 0.0203ms
-
-Example: [_unit] call A3A_fnc_getRadio
-
-License: MIT License
+    Outputs
+        Class name of radio or "" if not found
 */
+
+//Note: This file has been optimised. Avoid changing unless necessary.
+
 params ["_unit"];
+ 
+private _items = assignedItems _unit; 
 
-private _items = assignedItems _unit;
-private _radioPosition = _items findIf { _x == "ItemRadio" || {"tf_" in _x} || {"TFAR_" in _x} || {"item_radio" in _x} };
-
+private _radioPosition = _items findIf {_x == "ItemRadio" || {_x find "tf_" > -1} || {_x find "acre_" > -1}}; 
+ 
 if (_radioPosition > -1) then {
-	_items # _radioPosition;
+	_items select _radioPosition;
 } else {
 	"";
 };

@@ -1,26 +1,16 @@
-/*
-Author: Håkon
-Description:
-    checks if unit should be considered as having a radio.
+private ["_unit"];
 
-    this is the more general check over hasARadio, as this also returns true if the flag haveRadio is true,
-    or if its IFA and the group has a unit of type SDKGL (dont know why GL here but...)
+_unit = _this select 0;
 
-Arguments:
-0. <Object> unit to consider
+_result = false;
 
-Return Value: <Bool> if we considere the unit as having a radio
+if (haveRadio) then {
+	_result = true;
+}
+else {
+	if (_unit call A3A_fnc_getRadio != "") then {
+		_result = true
+	}
+};
 
-Scope: Any
-Environment: Any
-Public: Yes
-Dependencies:
-Performance: varies depending on condition run, from instant, to around 0.02ms
-
-Example: [_unit] call A3A_fnc_hasRadio;
-
-License: MIT License
-*/
-params ["_unit"];
-
-haveRadio || {_unit call A3A_fnc_hasARadio}
+_result

@@ -4,8 +4,6 @@ class SCRT
     {
 		file = "SCRT\Arsenal";
         class arsenal_getSimilarWeapons {};
-        class arsenal_loadoutArsenal {}; 
-        class arsenal_clearLoadout {};
 	};
 
     class Effect 
@@ -30,6 +28,7 @@ class SCRT
 	class Loot 
     {
 		file = "SCRT\Loot";
+        class loot_addLooterCapability {};
         class loot_gatherLoot {};
         class loot_addActionLoot {};
         class loot_removeActionLoot {};
@@ -53,7 +52,6 @@ class SCRT
         class misc_createBelonging {};
         class misc_extendPosition {};
         class misc_isInHouse {};
-        class misc_getLoadoutName {};
     };
 
     class UI
@@ -90,7 +88,6 @@ class SCRT
         class ui_toggleCommanderMenu {};
         class ui_createConstructionMenu {};
         class ui_prepareConstructionBuild {};
-        class ui_prepareConstructionRemoval {};
         class ui_setBuildTypeCostText {};
         class ui_setAvailableVehicleTypes {};
         class ui_createVehicleBlackMarketMenu {};
@@ -99,7 +96,6 @@ class SCRT
         class ui_setAvailableBuyVehicleTypes {};
         class ui_getMarketLookup {};
         class ui_buyBuyVehicle {};
-        class ui_createRebelLoadoutMenu {};
     };
 
     class Trader
@@ -146,10 +142,6 @@ class SCRT
         class common_addActionMove {};
         class common_removeActionMove {};
         class common_setUnitTraits {};
-        class common_moveOutpostStatic {};
-        class common_hcTransfer {};
-        class common_paradropVehicle {};
-        class common_toggleCoverBeforeRevive {};
     };
 
     class Garrison
@@ -179,11 +171,7 @@ class SCRT
         class outpost_createAaDistance {};
         class outpost_createAt {};
         class outpost_createAtDistance {};
-        class outpost_createMortar {};
-        class outpost_createMortarDistance {};
-        class outpost_createHmg {};
-        class outpost_createHmgDistance {};
-    };
+    }
 
     class Unit 
     {

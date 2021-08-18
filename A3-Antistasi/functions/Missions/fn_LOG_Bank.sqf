@@ -5,8 +5,6 @@ private ["_banco","_markerX","_difficultX","_leave","_contactX","_groupContact",
 _banco = _this select 0;
 _markerX = [citiesX,_banco] call BIS_fnc_nearestPosition;
 
-private _side = if (gameMode == 4) then {Invaders} else {Occupants};
-
 _difficultX = if (random 10 < tierWar) then {true} else {false};
 _leave = false;
 _contactX = objNull;
@@ -26,6 +24,9 @@ _city = [citiesX, _positionX] call BIS_fnc_nearestPosition;
 _mrkFinal = createMarker [format ["LOG%1", random 100], _positionX];
 _nameDest = [_city] call A3A_fnc_localizar;
 _mrkFinal setMarkerShape "ICON";
+//_mrkFinal setMarkerType "hd_destroy";
+//_mrkFinal setMarkerColor "ColorBlue";
+//_mrkFinal setMarkerText "Bank";
 
 _pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1,50,"C_Van_01_box_F"];
 
@@ -61,11 +62,9 @@ _soldiers = [];
 for "_i" from 1 to 4 do
 	{
 	_groupX = if (_difficultX) then {
-		private _sentryGroup = if (_side == Occupants) then {(groupsNATOSentry call SCRT_fnc_unit_selectInfantryTier)} else {(groupsCSATSentry call SCRT_fnc_unit_selectInfantryTier)};
-		[_positionX,_side, _sentryGroup] call A3A_fnc_spawnGroup;
+		[_positionX,Occupants, (groupsNATOSentry call SCRT_fnc_unit_selectInfantryTier)] call A3A_fnc_spawnGroup
 	} else {
-		private _policeGroup = [policeOfficer, policeGrunt];
-		[_positionX,_side, _policeGroup] call A3A_fnc_spawnGroup
+		[_positionX,Occupants, groupsNATOGen] call A3A_fnc_spawnGroup
 	};
 	sleep 1;
 	_nul = [leader _groupX, _mrk, "SAFE","SPAWNED", "NOVEH2", "FORTIFY"] execVM "scripts\UPSMON.sqf";
@@ -80,7 +79,7 @@ _bonus = if (_difficultX) then {2} else {1};
 if ((dateToNumber date > _dateLimitNum) or (!alive _truckX)) then
 	{
 	[_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
-	[-1800*_bonus, _side] remoteExec ["A3A_fnc_timingCA",2];
+	[-1800*_bonus, Occupants] remoteExec ["A3A_fnc_timingCA",2];
 	[-10*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 	}
 else
@@ -89,12 +88,12 @@ else
     private _reveal = [_positionX , Invaders] call A3A_fnc_calculateSupportCallReveal;
     [_positionX, 4, ["QRF"], Invaders, _reveal] remoteExec ["A3A_fnc_sendSupport", 2];
 	[10*_bonus,-20*_bonus,_markerX] remoteExec ["A3A_fnc_citySupportChange",2];
-	["TaskFailed", ["", format ["Bank of %1 being assaulted",_nameDest]]] remoteExec ["BIS_fnc_showNotification",_side];
+	["TaskFailed", ["", format ["Bank of %1 being assaulted",_nameDest]]] remoteExec ["BIS_fnc_showNotification",Occupants];
 	{_friendX = _x;
 	if (_friendX distance _truckX < 300) then
 		{
 		if ((captive _friendX) and (isPlayer _friendX)) then {[_friendX,false] remoteExec ["setCaptive",0,_friendX]; _friendX setCaptive false};
-		{if (side _x == _side) then {_x reveal [_friendX,4]};
+		{if (side _x == Occupants) then {_x reveal [_friendX,4]};
 		} forEach allUnits;
 		};
 	} forEach ([distanceSPWN,0,_positionX,teamPlayer] call A3A_fnc_distanceUnits);
@@ -139,8 +138,8 @@ if ((_truckX distance _posbase < 50) and (dateToNumber date < _dateLimitNum)) th
         "aggroEvent",
         true
     ] call A3A_fnc_log;
-	[_side, 20 * _bonus, 120] remoteExec ["A3A_fnc_addAggression",2];
-	[1800*_bonus, _side] remoteExec ["A3A_fnc_timingCA",2];
+	[Occupants, 20 * _bonus, 120] remoteExec ["A3A_fnc_addAggression",2];
+	[1800*_bonus, Occupants] remoteExec ["A3A_fnc_timingCA",2];
 	{ [20 * _bonus, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
 	[5*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 	waitUntil {sleep 1; speed _truckX == 0};
@@ -150,7 +149,7 @@ if ((_truckX distance _posbase < 50) and (dateToNumber date < _dateLimitNum)) th
 if (!alive _truckX) then
 	{
 	[_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
-	[1800*_bonus, _side] remoteExec ["A3A_fnc_timingCA",2];
+	[1800*_bonus, Occupants] remoteExec ["A3A_fnc_timingCA",2];
 	[-10*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 	};
 

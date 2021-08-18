@@ -1,4 +1,4 @@
-params ["_unit"];
+private _unit = _this select 0;
 
 if (isNull _unit) exitWith {false};
 if (!alive _unit) exitWith {false};

@@ -3,6 +3,7 @@ if(!isServer) exitWith {};
 
 params ["_position", "_count"];
 
+_moneyItems = ["Item_Money","Item_Money_bunch","Item_Money_roll","Item_Money_stack"];
 _spawnPosition = [
     _position, //center
     0, //minimal distance
@@ -16,5 +17,5 @@ _spawnPosition = [
 ] call BIS_fnc_findSafePos;
 
 for "_i" from 1 to _count do {
-	_moneyVeh = createVehicle [(selectRandom arrayMoneyLand), _spawnPosition, [], 0, "CAN_COLLIDE"];
+	_moneyVeh = createVehicle [(selectRandom _moneyItems), _spawnPosition, [], 0, "CAN_COLLIDE"];
 };

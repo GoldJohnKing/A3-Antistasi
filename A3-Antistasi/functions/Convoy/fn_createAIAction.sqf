@@ -281,10 +281,9 @@ if(_type == "airstrike") then
     //NATO accepts 2 casulties, CSAT does not really care
     if((_side == Occupants && {count _friendlies < 3}) || {_side == Invaders && {count _friendlies < 8}}) then
     {
-      private _planePool = if (_side == Occupants) then {vehNATOPlanes} else {vehCSATPlanes};
-      private _casPlaneIndex = _planePool findIf {[_x] call A3A_fnc_vehAvailable};
+      _plane = if (_side == Occupants) then {vehNATOPlane} else {vehCSATPlane};
       _crewUnits = if(_side == Occupants) then {NATOCrew} else {CSATCrew};
-    	if (_casPlaneIndex != -1) then
+    	if ([_plane] call A3A_fnc_vehAvailable) then
     	{
         _bombType = "";
         if(count _arguments != 0) then
@@ -326,7 +325,7 @@ if(_type == "airstrike") then
         diag_log format ["CreateAIAction[%1]: Selected airstrike of bombType %2 from %3",_convoyID, _bombType, _airport];
         _origin = _airport;
         _originPos = getMarkerPos _airport;
-        _units pushBack [(_planePool select _casPlaneIndex), [_crewUnits],[]];
+        _units pushBack [_plane, [_crewUnits],[]];
         _vehicleCount = 1;
         _cargoCount = 1;
       }
@@ -376,7 +375,7 @@ if(_type == "convoy") then
       	{
       		if ((_destinationX in resourcesX) or (_destinationX in factories)) then
           {
-            _typeConvoy = ["Money", "Fuel"];
+            _typeConvoy = ["Money"];
           }
           else
           {
@@ -429,19 +428,12 @@ if(_type == "convoy") then
       		_taskIcon = "rearm";
       		_typeVehObj = if (_side == Occupants) then {vehNATOAmmoTruck} else {vehCSATAmmoTruck};
       	};
-        case "Fuel":
-      	{
-      		_text = format ["A convoy from %1 is about to depart at %2. It will provide fuel to %3. Try to intercept it. Steal or destroy that truck before it reaches it's destination.",_nameOrigin,_displayTime,_nameDest];
-      		_taskTitle = "Fuel Convoy";
-      		_taskIcon = "refuel";
-      		_typeVehObj = if (_side == Occupants) then {vehNATOFuelTruck} else {vehCSATFuelTruck};
-      	};
       	case "Armor":
       	{
       		_text = format ["A convoy from %1 is about to depart at %2. It will reinforce %3 with armored vehicles. Try to intercept it. Steal or destroy that thing before it reaches it's destination.",_nameOrigin,_displayTime,_nameDest];
       		_taskTitle = "Armored Convoy";
       		_taskIcon = "Destroy";
-      		_typeVehObj = if (_side == Occupants) then {selectRandom vehNATOAA} else {selectRandom vehCSATAA};
+      		_typeVehObj = if (_side == Occupants) then {vehNATOAA} else {vehCSATAA};
       	};
       	case "Prisoners":
       	{
@@ -483,7 +475,7 @@ if(_type == "convoy") then
         _crewUnits = if(_side == Occupants) then {NATOCrew} else {CSATCrew};
 
         //Creating convoy lead vehicle
-        _typeVehLead = if (_side == Occupants) then {if (!_isEasy) then {selectRandom vehNATOLightArmed} else {selectRandom vehPoliceCars}} else {selectRandom vehCSATLightArmed};
+        _typeVehLead = if (_side == Occupants) then {if (!_isEasy) then {selectRandom vehNATOLightArmed} else {vehPoliceCar}} else {selectRandom vehCSATLightArmed};
         _crew = [_typeVehLead, _crewUnits] call A3A_fnc_getVehicleCrew;
         _units pushBack [_typeVehLead, _crew, []];
         _vehicleCount = _vehicleCount + 1;
@@ -512,7 +504,7 @@ if(_type == "convoy") then
           }
           else
           {
-            vehMilitia
+            [vehFIAArmedCar,vehFIATruck,vehFIACar,vehFIAAPC]
           };
         }
         else

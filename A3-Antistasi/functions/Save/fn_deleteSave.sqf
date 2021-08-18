@@ -1,4 +1,4 @@
-params ["_campaignID", "_worldname"];
+params ["_campaignID", "_worldname", ["_gametype", "Greenfor"]];
 
 private _postfix = format["%1%2AntistasiPlus%3",serverID,_campaignID,_worldName]; 
 
@@ -24,10 +24,10 @@ private _savedPlayers = profileNamespace getVariable ["savedPlayers" + _postfix,
 	"chopForest", "maxUnits", "maxConstructions", "nextTick", "weather", "destroyedBuildings", "aggressionOccupants",
 	"aggressionInvaders", "resourcesFIA", "hr", "vehInGarage", "staticsX", "constructionsX", "jna_datalist",
 	"prestigeOPFOR", "prestigeBLUFOR", "garrison", "wurzelGarrison", "usesWurzelGarrison", "minesX",
-	"watchpostsFIA", "roadblocksFIA", "aapostsFIA", "mortarpostsFIA", "atpostsFIA", "hmgpostsFIA", "tasks", "idlebases", 
+	"watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "tasks", "idlebases", 
 	"idleassets", "killZones", "controlsSDK", "params",
 	"attackCountdownOccupants", "attackCountdownInvaders", "prestigeNATO", "prestigeCSAT",
-	"savedPlayers", "testingTimerIsActive", "traderPosition", "isTraderQuestCompleted", "traderDiscount", "areOccupantsDefeated", "areInvadersDefeated", "rebelLoadouts"];
+	"savedPlayers", "testingTimerIsActive", "traderPosition", "isTraderQuestCompleted", "traderDiscount", "areOccupantsDefeated", "areInvadersDefeated"];
 
 
 // Remove this campaign from the save list, if present

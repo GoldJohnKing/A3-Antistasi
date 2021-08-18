@@ -14,7 +14,6 @@
 params ["_class"];
 
 private _magazines = getArray (configFile >> "CfgWeapons" >> _class >> "Magazines");
-if ("CBA_FakeLauncherMagazine" in _magazines) exitWith {[]};
 private _magazineType = "";
 
 if (count _magazines > 0) then {

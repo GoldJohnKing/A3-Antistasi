@@ -7,7 +7,7 @@ if (player != theBoss) exitWith {
     ] spawn SCRT_fnc_ui_showMessage;
 };
 
-if (skillFIA > 44) exitWith {
+if (skillFIA > 50) exitWith {
     [
         "FAIL",
         "Skill Add",  
@@ -43,8 +43,8 @@ server setVariable ["resourcesFIA",_resourcesFIA,true];
 [] spawn A3A_fnc_statistics;
 
 {
-    private _costs = server getVariable _x;
-    _costs = round (_costs + (_costs * (skillFIA/560)));
+    _costs = server getVariable _x;
+    _costs = round (_costs + (_costs * (skillFIA/280)));
     server setVariable [_x,_costs,true];
 } forEach soldiersSDK;
 
