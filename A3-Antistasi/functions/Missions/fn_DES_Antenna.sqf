@@ -3,6 +3,7 @@ if (!isServer and hasInterface) exitWith{};
 
 private ["_antenna","_positionX","_timeLimit","_markerX","_nameDest","_mrkFinal","_tsk"];
 
+
 _antenna = _this select 0;
 _markerX = [markersX,_antenna] call BIS_fnc_nearestPosition;
 
@@ -15,6 +16,7 @@ _nameDest = [_markerX] call A3A_fnc_localizar;
 _positionX = getPos _antenna;
 
 private _side = sidesX getVariable [_markerX, sideUnknown];
+private _sideName = if (_side == Invaders) then {nameInvaders} else {nameOccupants};
 
 _timeLimit = if (_difficultX) then {30 * settingsTimeMultiplier} else {120 * settingsTimeMultiplier};
 _dateLimit = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _timeLimit];
@@ -26,9 +28,9 @@ _mrkFinal = createMarker [format ["DES%1", random 100], _positionX];
 _mrkFinal setMarkerShape "ICON";
 
 private _taskId = "DES" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[format ["We need to destroy or take a Radio Tower in %1. This will interrupt %3 Propaganda Nework. Do it before %2.",_nameDest,_displayTime,nameOccupants],"Destroy Radio Tower",_mrkFinal],_positionX,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
+[[teamPlayer,civilian],_taskId,[format ["We need to destroy or take a Radio Tower in %1. This will interrupt %3 Propaganda Nework. Do it before %2.",_nameDest,_displayTime,_sideName],"Destroy Radio Tower",_mrkFinal],_positionX,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
 [_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
-waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or (not alive _antenna) or (not(sidesX getVariable [_markerX,sideUnknown] == Occupants))};
+waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or (not alive _antenna) or (not(sidesX getVariable [_markerX,sideUnknown] == _side))};
 
 _bonus = if (_difficultX) then {2} else {1};
 
@@ -46,7 +48,7 @@ else
 	//[-5,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
     [_side, 15, 90] remoteExec ["A3A_fnc_addAggression", 2];
 	[600*_bonus, _side] remoteExec ["A3A_fnc_timingCA",2];
-    { [40*_bonus, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+    { [25*_bonus, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
 	[10*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 	};
 

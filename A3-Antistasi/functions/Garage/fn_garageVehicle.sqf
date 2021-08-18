@@ -17,9 +17,8 @@ if (!alive _veh) exitWith {["Garage", "You can't add destroyed vehicles to your 
 _closeX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
 _closeX = _closeX select {(player inArea _x) and (_veh inArea _x)};
 
-if (_closeX isEqualTo []) exitWith {["Garage", format ["You and the vehicle need to be in a %1 garrison surrounding in order to garage a it",nameTeamPlayer]] call A3A_fnc_customHint;};
 
-//if (player distance2d getMarkerPos respawnTeamPlayer > 50) exitWith {hint "You must be closer than 50 meters to HQ"};
+if (_closeX isEqualTo []) exitWith {["Garage", format ["You and the vehicle need to be in a %1 garrison surrounding in order to garage a it",nameTeamPlayer]] call A3A_fnc_customHint;};
 
 if ({alive _x} count (crew vehicle _veh) > 0) exitWith {["Garage", "In order to store a vehicle, its crew must disembark."] call A3A_fnc_customHint;};
 

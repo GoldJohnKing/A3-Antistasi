@@ -28,33 +28,19 @@ A3A_paramTable = [
     ["gameMode", "gameMode", ["locked", "oldsave"], 1],
     ["autoSave", "autoSave", [], true],
     ["autoSaveInterval", "autoSaveInterval", [], 3600],
-    ["distanceMission", "mRadius", [], 4000],
+    ["distanceMission", "mRadius", [], 3000],
     ["skillMult", "AISkill", [], 2],
-    ["personalGarageMax", "personalGarageMax", [], 2],
     ["civTraffic", "civTraffic", [], 2],
-    ["limitedFT", "allowFT", [], true],									// backwards naming...
+    ["civPedestrians", "civPedestrians", [], 10],
+    ["limitedFT", "allowFT", [], false],									// backwards naming...
     ["napalmEnabled", "napalmEnabled", [], false],
     ["playerMarkersEnabled", "pMarkers", [], true],
     ["allowUnfairSupports", "allowUnfairSupports", [], false],
     ["allowFuturisticSupports", "allowFuturisticSupports", [], false],
 
-    ["allowDLCKart", "Kart", ["server"], false],
-    ["allowDLCMark", "Mark", ["server"], false],
-    ["allowDLCHeli", "Heli", ["server"], false],
-    ["allowDLCExpansion", "Expansion", ["server"], false],
-    ["allowDLCJets", "Jets", ["server"], false],
-    ["allowDLCOrange", "Orange", ["server"], false],
-    ["allowDLCTanks", "Tanks", ["server"], false],
-    ["allowDLCGlobMob", "GlobMob", ["server"], false],
-    ["allowDLCEnoch", "Enoch", ["server"], false],
-    ["allowDLCOfficialMod", "OfficialMod", ["server"], false],
-    ["allowDLCAoW", "AoW", ["server"], false],
-
     ["membershipEnabled", "membership", [], true],
-    ["switchCom", "switchComm", ["server"], true],						// dead param
     ["tkpunish", "tkPunish", [], true],
     ["pvpEnabled", "allowPvP", [], true],
-    ["allowMembersFactionGarageAccess", "allowMembersFactionGarageAccess", [], true],
     ["teamSwitchDelay", "teamSwitchDelay", ["server"], 3600],
 
     ["startWithLongRangeRadio", "startWithLongRangeRadio", [], false],
@@ -92,7 +78,6 @@ A3A_paramTable = [
     ["distanceSPWN", "", ["oldsave"], 1000],
     ["maxUnits", "", ["oldsave"], 140],
     ["maxConstructions", "", ["oldsave"], 150],
-    ["minPlayersRequiredForPVP", "", [], 2],
 
     //Antistasi Plus parameters
     ["settingsTimeMultiplier", "timeMultiplier", [], 1],
@@ -107,7 +92,8 @@ A3A_paramTable = [
     ["rhsOccupantFaction", "rhsOccupantFaction", ["server"], 0],
     ["threecbfOccupantFaction", "threecbfOccupantFaction", ["server"], 0],
     ["cupOccupantFaction", "cupOccupantFaction", ["server"], 0],
-    ["aiControlTime", "aiControlTime", [], 60]
+    ["aiControlTime", "aiControlTime", [], 60],
+    ["deathPenalty", "deathPenalty", [], 0.3]
     // beware of the comma
 ];
 
@@ -178,7 +164,7 @@ if (isMultiplayer) then {
             // disabled for backwards compatibility
             //if (loadLastSave && ("locked" in _options)) exitWith {};
 
-            private _val = [_paramName, 9998] call BIS_fnc_getParamValue;         
+            private _val = [_paramName, 9998] call BIS_fnc_getParamValue;
             if (_val == 9998) exitWith {
                 [1, format ["Param %1 not found", _paramName], _filename] call A3A_fnc_log;
             };

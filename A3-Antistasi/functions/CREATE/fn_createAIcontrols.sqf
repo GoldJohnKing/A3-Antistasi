@@ -21,8 +21,7 @@ _leave = false;
 
 _isControl = if (isOnRoad _positionX) then {true} else {false};
 
-if (_isControl) then
-	{
+if (_isControl) then {
 	if (gameMode != 4) then
 		{
 		if (_sideX == Occupants) then
@@ -30,7 +29,7 @@ if (_isControl) then
 			if ((random 10 > (tierWar + difficultyCoef)) and (!([_markerX] call A3A_fnc_isFrontline))) then
 				{
 				_isFIA = true;
-				}
+				};
 			};
 		}
 	else
@@ -120,27 +119,36 @@ if (_isControl) then
 		};
 	}
 	else {
-		_typeVehX = vehFIAArmedCar;
+		_typeVehX = if(random 10 < (tierWar + (difficultyCoef / 2))) then {
+			if (_sideX == Occupants) then {selectRandom vehFIAAPC} else {selectRandom vehWAMAPC};
+		} else {
+			if (_sideX == Occupants) then {selectRandom vehFIAArmedCars} else {selectRandom vehWAMArmedCars};
+		};
+
 		_veh = _typeVehX createVehicle getPos (_roads select 0);
 		_veh setDir _dirveh + 90;
 		[_veh, _sideX] call A3A_fnc_AIVEHinit;
 		_vehiclesX pushBack _veh;
 		sleep 1;
-		_typeGroup = if (_sideX == Occupants) then {selectRandom groupsFIAMidOcc} else {selectRandom groupsFIAMidInv};
+		_typeGroup = if (_sideX == Occupants) then {selectRandom groupsFIAMid} else {selectRandom groupsWAMMid};
 		_groupX = [_positionX, _sideX, _typeGroup, true] call A3A_fnc_spawnGroup;
-		if !(isNull _groupX) then
-			{
-			private _fiaRifleman = if(_sideX == Occupants) then {FIARiflemanOcc} else {FIARiflemanInv};
+		if !(isNull _groupX) then {
+			private _fiaRifleman = if(_sideX == Occupants) then {FIARifleman} else {WAMRifleman};
 			_unit = [_groupX, _fiaRifleman, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 			_unit moveInGunner _veh;
-			{_soldiers pushBack _x; [_x,"", false] call A3A_fnc_NATOinit} forEach units _groupX;
-			};
+			sleep 1;
+			_unit lookAt (_unit getRelPos [100, _dirveh]);
+			{
+				_soldiers pushBack _x;
+				[_x,"", false] call A3A_fnc_NATOinit;
+			} forEach units _groupX;
 		};
-	}
+	};
+}
 else
 	{
 	_markersX = markersX select {(getMarkerPos _x distance _positionX < distanceSPWN) and (sidesX getVariable [_x,sideUnknown] == teamPlayer)};
-	_markersX = _markersX - ["Synd_HQ"] - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA;
+	_markersX = _markersX - ["Synd_HQ"] - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - mortarpostsFIA - hmgpostsFIA;
 	_frontierX = if (count _markersX > 0) then {true} else {false};
 	if (_frontierX) then
 		{
@@ -153,26 +161,31 @@ else
 		_size = [_markerX] call A3A_fnc_sizeMarker;
 		if ({if (_x inArea _markerX) exitWith {1}} count allMines == 0) then
 			{
-			for "_i" from 1 to 60 do
-				{
-				_mineX = createMine ["APERSMine",_positionX,[],_size];
-				if (_sideX == Occupants) then {Occupants revealMine _mineX} else {Invaders revealMine _mineX};
+			    diag_log format ["%1: [Antistasi]: Server | Creating a Minefield at %1", _markerX];
+				private _mines = ([A3A_faction_inv,A3A_faction_occ] select (_sideX == Occupants)) getVariable "minefieldAPERS";
+				private _revealTo = [Invaders,Occupants] select (_sideX == Occupants);
+				for "_i" from 1 to 45 do {
+					_mineX = createMine [ selectRandom _mines ,_positionX,[],_size];
+					_revealTo revealMine _mineX;
 				};
 			};
 		_groupX = [_positionX,_sideX, _cfg] call A3A_fnc_spawnGroup;
 		_nul = [leader _groupX, _markerX, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] execVM "scripts\UPSMON.sqf";//TODO need delete UPSMON link
 
-		sleep 1;
-		{_soldiers pushBack _x} forEach units _groupX;
-		_typeVehX = if (_sideX == Occupants) then {vehNATOUAVSmall} else {vehCSATUAVSmall};
-		_uav = createVehicle [_typeVehX, _positionX, [], 0, "FLY"];
-		[_sideX, _uav] call A3A_fnc_createVehicleCrew;
-		_vehiclesX pushBack _uav;
-		_groupUAV = group (crew _uav select 1);
-		{[_x] joinSilent _groupX; _pilots pushBack _x} forEach units _groupUAV;
-		deleteGroup _groupUAV;
+		    sleep 1;
+		    {_soldiers pushBack _x} forEach units _groupX;
+		    _typeVehX = if (_sideX == Occupants) then {vehNATOUAVSmall} else {vehCSATUAVSmall};
+		    if (_typeVehX != "not_supported") then {
+                _uav = createVehicle [_typeVehX, _positionX, [], 0, "FLY"];
+                [_sideX, _uav] call A3A_fnc_createVehicleCrew;
+                _vehiclesX pushBack _uav;
+                _groupUAV = group (crew _uav select 1);
+                {[_x] joinSilent _groupX; _pilots pushBack _x} forEach units _groupUAV;
+                deleteGroup _groupUAV;
+            };
+
 		{[_x,""] call A3A_fnc_NATOinit} forEach units _groupX;
-		}
+	}
 	else
 		{
 		_leave = true;
@@ -300,19 +313,5 @@ if (_conquered) then
 				sidesX setVariable [_markerX,Invaders,true];
 				};
 			};
-		}
-	else
-		{
-		/*
-		if ((!_isControl) and (_winner == teamPlayer)) then
-			{
-			_size = [_markerX] call A3A_fnc_sizeMarker;
-			for "_i" from 1 to 60 do
-				{
-				_mineX = createMine ["APERSMine",_positionX,[],_size];
-				if (_loser == Occupants) then {Occupants revealMine _mineX} else {Invaders revealMine _mineX};
-				};
-			};
-		*/
 		};
 	};

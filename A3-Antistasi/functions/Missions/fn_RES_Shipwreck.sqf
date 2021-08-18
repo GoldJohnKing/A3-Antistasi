@@ -306,7 +306,7 @@ private _taskText = format ["A smuggler's ship has been crashed %1. We must resc
 
 waitUntil {
     sleep 5;
-    private _players = (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+    private _players = (call BIS_fnc_listPlayers) select { side _x == teamPlayer || {side _x == civilian}};
     (_players findIf {_x inArea _shoreMarker} != -1) || {dateToNumber date > _dateLimitNum}
 };
 

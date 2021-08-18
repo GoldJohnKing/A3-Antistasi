@@ -63,15 +63,23 @@ _fnc_initGarrison =
 			_side = sidesX getVariable [_marker, sideUnknown];
 			if(_side != Occupants) then
 			{
-				private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
-				private _fiaSquads = if (_side == Occupants) then {groupsFIASquadOcc} else {groupsFIASquadInv};
-				_groupsRandom = [_squads, _fiaSquads] select ((_marker in outposts) && (gameMode == 4));
+				if(_type != "Airport" && {_type != "Outpost"} && {_type != "MilitaryBase"}) then
+				{
+					private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+					private _fiaSquads = groupsWAMSquad;
+					_groupsRandom = [_squads, _fiaSquads] select ((_marker in outposts) && (gameMode == 4));
+				}
+				else
+				{
+					private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+	 				_groupsRandom = _squads;
+				};
 			}
 			else
 			{
 				if(_type != "Airport" && {_type != "Outpost"} && {_type != "MilitaryBase"}) then
 				{
-					_groupsRandom = if (_side == Occupants) then {groupsFIASquadOcc} else {groupsFIASquadInv};
+					_groupsRandom = groupsFIASquad;
 				}
 				else
 				{
@@ -110,11 +118,11 @@ if (gameMode == 1) then
 			_controlsCSAT = ["control_20"];
 		};
 		case "altis": {
-			_mrkCSAT = ["airport_2", "seaport_4", "outpost_5", "outpost_6", "milbase_4", "control_52", "control_33"];
+			_mrkCSAT = ["outpost_24", "factory_7", "factory_5","airport_2", "seaport_4", "outpost_5", "outpost_6", "milbase_4", "control_52", "control_33"];
 			_controlsCSAT = ["control_52", "control_33"];
 		};
 		case "enoch": {
-			_mrkCSAT = ["airport_3", "factory_6", "factory_7", "outpost_16", "resource_15"];
+			_mrkCSAT = ["resource_13","airport_3", "factory_6", "factory_7", "outpost_16", "resource_15"];
 			_controlsCSAT = ["control_14", "control_47"];
 		};
 		case "vt7": {
@@ -132,13 +140,13 @@ if (gameMode == 1) then
 			_mrkCSAT = ["airport_2", "outpost_5", "outpost_6", "outpost_7", "seaport_1","control_44", "control_49", "control_43", "control_53", "control_23", "control_52", "control_46", "control_47", "control_54", "control_50", "control_16", "control_17"];
             _controlsCSAT = ["control_44", "control_49", "control_43", "control_53", "control_23", "control_52", "control_46", "control_47", "control_54", "control_50", "control_16", "control_17"];
 		};
-		case "abramia": {
-			_mrkCSAT = ["airport_2", "outpost_5", "outpost_7", "factory_4", "outpost_8", "resource_2", "resource_4", "seaport_3", "airport_3"];
-            _controlsCSAT = ["control_43", "control_39", "control_40", "control_41", "control_44", "control_45", "control_46", "control_36", "control_37", "control_42"];
-		};
 		case "panthera3": {
 			_mrkCSAT = ["airport_4", "outpost_9", "outpost_10", "outpost_12", "control_64", "control_63", "control_50", "control_65"];
             _controlsCSAT = ["control_64", "control_63", "control_50", "control_65"];
+		};
+		case "abramia": {
+			_mrkCSAT = ["resource_4","outpost_5", "outpost_7", "factory_4", "seaport_3", "outpost_8", "resource_2", "airport_3", "control_36", "control_46", "control_45", "control_44", "control_37", "control_38", "control_42", "control_43", "control_40"];
+            _controlsCSAT = ["control_36", "control_46", "control_45", "control_44", "control_37", "control_38", "control_42", "control_43", "control_40"];
 		};
 		case "takistan": {
 			_mrkCSAT = ["airport_1", "outpost_5", "outpost_6", "outpost_7", "outpost_8", "resource", "resource_5", "resource_6"];
@@ -152,6 +160,18 @@ if (gameMode == 1) then
 		    _mrkCSAT = ["airport","outpost","outpost_2", "resource", "seaport", "outpost_8", "outpost_3", "outpost_5", "factory", "control", "control_1", "control_2"];
             _controlsCSAT = ["control", "control_1", "control_2"];
 		};
+		case "blud_vidda": {
+		    _mrkCSAT = ["factory","resource_1", "airport_1", "outpost_1", "resource", "milbase", "outpost", "control_2", "control_1", "control_7", "control", "control_6", "control_3", "control_8", "control_16"];
+            _controlsCSAT = ["control_2", "control_1", "control_7", "control", "control_6", "control_3", "control_8", "control_16"];
+		};
+		case "gm_weferlingen_summer": {
+		    _mrkCSAT = ["gm_weferlingen_summer", "factory_7", "outpost_13", "resource_4", "resource_5", "outpost_8", "outpost_17", "outpost_16", "factory_6", "resource_3", "resource_6", "milbase_2", "factory_5", "factory_9", "milbase_3", "factory_8", "airport_3", "outpost_3", "outpost_6", "control_83", "control_76", "control_84", "control_82", "control_93", "control_89", "control_88", "control_85", "control_96", "control_5", "control_86", "control_87", "control_80", "control_81", "control_29", "control_79", "control_49", "control_50", "control_4", "control_70", "control_91", "control_90", "control_95", "control_98", "control_66", "control_65", "control_64", "control_22", "control_67", "control_92", "control_20", "control_75", "control_74", "control_73", "control_78", "control_77", "control_69", "control_19", "control_52", "control_51", "control_63"];
+            _controlsCSAT = ["control_83", "control_76", "control_84", "control_82", "control_93", "control_89", "control_88", "control_85", "control_96", "control_5", "control_86", "control_87", "control_80", "control_81", "control_29", "control_79", "control_49", "control_50", "control_4", "control_70", "control_91", "control_90", "control_95", "control_98", "control_66", "control_65", "control_64", "control_22", "control_67", "control_92", "control_20", "control_75", "control_74", "control_73", "control_78", "control_77", "control_69", "control_19", "control_52", "control_51", "control_63"];
+		};
+		case "cam_lao_nam": {
+            _mrkCSAT = ["airport_5", "outpost_33", "outpost_34", "resource_4", "seaport_3", "outpost_15", "outpost_22", "outpost_8", "outpost_4", "resource_9", "outpost_21", "resource_14", "outpost_3", "outpost_2", "factory_3", "outpost_1", "outpost_7", "seaport_2", "outpost_32", "airport_1", "outpost_23", "outpost_10", "outpost_5", "outpost_16", "outpost_6", "outpost_11", "resource_6", "resource_20", "outpost_9", "outpost_38"];
+            _controlsCSAT = ["control_1", "control_2", "control_3", "control_4", "control_5", "control_6", "control_7", "control_8", "control_9", "control_10", "control_11", "control_12", "control_13", "control_14", "control_15", "control_16", "control_17", "control_18", "control_19", "control_20", "control_21", "control_22", "control_23", "control_24", "control_25", "control_26", "control_27", "control_28", "control_29"];
+        };
 	};
     _controlsNATO = _controlsNATO - _controlsCSAT;
 	_mrkNATO = markersX - _mrkCSAT - ["Synd_HQ"];
@@ -239,5 +259,7 @@ if (debug) then {
 
 //New system, adding cities
 [citiesX, "City", [0,0,0]] call A3A_fnc_createGarrison;
+
+publicVariable "controlsX";		// because it adds to the array
 
 [2,"InitGarrisons completed",_fileName] call A3A_fnc_log;

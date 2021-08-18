@@ -13,89 +13,9 @@ CALLBACK_VEH_CUSTOM_CREATE_VEHICLE - Given a class, position and direction. Retu
 */
 
 switch (_callbackTarget) do {
-	case "GARAGE": {
-		switch (_callbackType) do {
-			case CALLBACK_VEH_PLACEMENT_CLEANUP: {
-				garageIsOpen = false;
-				garageLocked = nil;
-				publicVariable "garageLocked";
-			};
-
-			case CALLBACK_VEH_PLACEMENT_CANCELLED: {
-			};
-
-			case CALLBACK_SHOULD_CANCEL_PLACEMENT: {
-				if (!(player inArea garage_nearestMarker)) exitWith {
-					[true, "You need to be close to one of your garrisons to be able to retrieve a vehicle from your garage"];
-				};
-				[false];
-			};
-
-			case CALLBACK_VEH_IS_VALID_LOCATION: {
-				private _pos = _callbackParams select 0;
-				private _maxDist = [50,150] select ((_callbackParams select 2) isKindOf "Ship");
-				if (_pos distance2d (getMarkerPos garage_nearestMarker) > _maxDist) exitWith
-				{
-					[false, format ["This vehicle must be placed within %1m of the flag", _maxDist]];
-				};
-				[true];
-			};
-
-			case CALLBACK_CAN_PLACE_VEH: {
-				if (!(player inArea garage_nearestMarker)) exitWith
-				{
-					[false, "You need to be close to one of your garrisons to be able to retrieve a vehicle from your garage"];
-				};
-				if ([player,300] call A3A_fnc_enemyNearCheck) exitWith
-				{
-					[false, "You cannot manage the Garage with enemies nearby"];
-				};
-				[true];
-			};
-
-			case CALLBACK_VEH_PLACED_SUCCESSFULLY: {
-				private _garageVeh = _callbackParams param [0];
-				[_garageVeh, teamPlayer] call A3A_fnc_AIVEHinit;
-				if !(_garageVeh isKindOf "StaticWeapon") then { [_garageVeh] spawn A3A_fnc_vehDespawner };
-
-				if (_garageVeh isKindOf "Car") then {_garageVeh setPlateNumber format ["%1",name player]};
-
-				//Handle Garage removal
-				private _newArr = [];
-				private _found = false;
-				if (garage_mode == GARAGE_FACTION) then
-					{
-					{
-						if ((_x != (garage_vehiclesAvailable select garage_vehicleIndex)) or (_found)) then {_newArr pushBack _x} else {_found = true};
-					} forEach vehInGarage;
-					vehInGarage = _newArr;
-					publicVariable "vehInGarage";
-					}
-				else
-					{
-					{
-						if ((_x != (garage_vehiclesAvailable select garage_vehicleIndex)) or (_found)) then {_newArr pushBack _x} else {_found = true};
-					} forEach ([] call A3A_fnc_getPersonalGarageLocal);
-					[_newArr] call A3A_fnc_setPersonalGarageLocal;
-					_garageVeh setVariable ["ownerX",getPlayerUID player,true];
-					};
-				if (_garageVeh isKindOf "StaticWeapon") then {staticsToSave pushBack _garageVeh; publicVariable "staticsToSave"};
-			};
-
-			case CALLBACK_VEH_CUSTOM_CREATE_VEHICLE: {
-				_callbackParams params ["_vehicleType", "_pos", "_dir"];
-				_createdVehicle = 0;
-                _createdVehicle = [_vehicleType, _pos, _dir] call A3A_fnc_placeEmptyVehicle;
-                [_createdVehicle] call SCRT_fnc_loot_addLooterCapability;
-                _createdVehicle;
-			};
-		};
-	};
-
 	case "BUYFIA": {
 		switch (_callbackType) do {
 			case CALLBACK_VEH_PLACEMENT_CLEANUP: {
-				garageIsOpen = false;
 				[] call SCRT_fnc_misc_updateRichPresence;
 			};
 
@@ -161,7 +81,6 @@ switch (_callbackTarget) do {
 				_callbackParams params ["_vehicleType", "_pos", "_dir"];
 				_createdVehicle = 0;
                 _createdVehicle = [_vehicleType, _pos, _dir] call A3A_fnc_placeEmptyVehicle;
-				[_createdVehicle] call SCRT_fnc_loot_addLooterCapability;
 				_createdVehicle;
 			};
 		};
@@ -170,7 +89,6 @@ switch (_callbackTarget) do {
 	case "BUYVEHICLEMARKET": {
 		switch (_callbackType) do {
 			case CALLBACK_VEH_PLACEMENT_CLEANUP: {
-				garageIsOpen = false;
 				[] call SCRT_fnc_misc_updateRichPresence;
 			};
 
@@ -274,10 +192,6 @@ switch (_callbackTarget) do {
 			};
 
 			case CALLBACK_VEH_PLACED_SUCCESSFULLY: {
-				//No return needed.
-				// private _construction = _callbackParams param [0];
-				// constructionsToSave pushBack _construction;
-				// publicVariable "constructionsToSave";
 			};
 
 			case CALLBACK_VEH_CUSTOM_CREATE_VEHICLE: {
@@ -423,7 +337,6 @@ switch (_callbackTarget) do {
 				diag_log format ["%1 %2 %3", _vehicleType, _pos, _dir];
 				_createdVehicle = 0;
                 _createdVehicle = [_vehicleType, _pos, _dir] call A3A_fnc_placeEmptyVehicle;
-                [_createdVehicle] call SCRT_fnc_loot_addLooterCapability;
                 _createdVehicle;
 			};
 		};

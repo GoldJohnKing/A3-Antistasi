@@ -107,7 +107,7 @@ if (_part == "") then
 			};
 			if (isPlayer (leader group _unit)) then
 			{
-				if (autoheal) then
+				if (autoHeal) then
 				{
 					_helped = _unit getVariable ["helped",objNull];
 					if (isNull _helped) then {[_unit] call A3A_fnc_askHelp;};

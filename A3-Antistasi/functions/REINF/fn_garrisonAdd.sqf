@@ -26,8 +26,8 @@ if (_costs > _resourcesFIA) exitWith {
 
 _markerX = positionXGarr;
 
-if ((_typeX == staticCrewTeamPlayer) and (_markerX in watchpostsFIA || _markerX in roadblocksFIA || _markerX in aapostsFIA || _markerX in atpostsFIA)) exitWith {
-	["Garrison", "You cannot add mortars to a Roadblock, Watchpost, AA, AT emplacement garrisons.", "FAIL"] call SCRT_fnc_ui_showDynamicTextMessage;
+if (_typeX == staticCrewTeamPlayer && _markerX in (watchpostsFIA + roadblocksFIA + aapostsFIA + atpostsFIA + mortarpostsFIA + hmgpostsFIA)) exitWith {
+	["Garrison", "You cannot add mortars to a Roadblock, Watchpost, AA, AT, Mortar, HMG emplacement garrisons.", "FAIL"] call SCRT_fnc_ui_showDynamicTextMessage;
 };
 
 _positionX = getMarkerPos _markerX;

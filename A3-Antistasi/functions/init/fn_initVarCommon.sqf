@@ -66,8 +66,8 @@ aggregateCategories = ["Weapons", "Items", "Magazines", "Explosives"];
 //These are here because it's non-trivial to identify items in them. They might be a very specific subset of items, or the logic that identifies them might not be perfect.
 //It's recommended that these categories be used with caution.
 specialCategories = ["AA", "AT", "GrenadeLaunchers", "LightAttachments", "LaserAttachments", "Chemlights", "SmokeGrenades", "LaunchedSmokeGrenades", "LaunchedFlares", "HandFlares", "IRGrenades","LaserBatteries",
-	"RebelUniforms", "CivilianUniforms", "BackpacksEmpty", "BackpacksTool", "BackpacksStatic", "BackpacksDevice", "BackpacksRadio", "CivilianVests", "ArmoredVests", "ArmoredHeadgear", "CivilianHeadgear",
-	"CivilianGlasses"];
+	"RebelUniforms", "CivilianUniforms", "BackpacksEmpty", "BackpacksTool", "BackpacksStatic", "BackpacksDevice", "BackpacksRadio", "CivilianVests", "ArmoredVests", "ArmoredHeadgear", "CosmeticHeadgear",
+	"CosmeticGlasses"];
 
 
 allCategoriesExceptSpecial = weaponCategories + itemCategories + magazineCategories + explosiveCategories + otherCategories + aggregateCategories;
@@ -77,7 +77,10 @@ allCategories = allCategoriesExceptSpecial + specialCategories;
 //     BEGIN MOD DETECTION       ///
 ////////////////////////////////////
 [2,"Starting mod detection",_fileName] call A3A_fnc_log;
-allDLCMods = ["kart", "mark", "heli", "expansion", "jets", "orange", "tank", "globmob", "enoch", "officialmod", "tacops", "argo", "warlords", "aow"];
+private _modsInfo = getLoadedModsInfo;
+allDLCMods = _modsInfo select {_x#2};
+allCDLC = _modsInfo select { !(_x#2) && _x#3 };
+allmods = _modsInfo - allDLCMods - allCDLC;
 
 // Short Info of loaded mods needs to be added to this array. eg: `A3A_loadedTemplateInfoXML pushBack ["RHS","All factions will be replaced by RHS (AFRF &amp; USAF &amp; GREF)."];`
 A3A_loadedTemplateInfoXML = [];
@@ -101,9 +104,117 @@ call compile preProcessFileLineNumbers "Templates\detector.sqf";
 ////////////////////////////////////
 [2,"Creating building arrays",_fileName] call A3A_fnc_log;
 
-listbld = ["Land_Cargo_Tower_V1_F","Land_Cargo_Tower_V1_No1_F","Land_Cargo_Tower_V1_No2_F","Land_Cargo_Tower_V1_No3_F","Land_Cargo_Tower_V1_No4_F","Land_Cargo_Tower_V1_No5_F","Land_Cargo_Tower_V1_No6_F","Land_Cargo_Tower_V1_No7_F","Land_Cargo_Tower_V2_F", "Land_Cargo_Tower_V3_F", "Land_Cargo_Tower_V4_F"];
-listMilBld = listbld + ["land_bunker_garage","Land_Hlidac_budka","Land_Bunker_01_big_F", "Land_Bunker_01_tall_F", "Land_Bunker_01_small_F", "Land_Bunker_01_HQ_F", "Land_Mil_House","Land_aif_strazni_vez", "Land_aif_hlaska", "Land_MBG_Killhouse_2", "WarfareBDepot", "Land_Cargo_HQ_V1_F", "Land_Cargo_HQ_V2_F", "Land_Cargo_HQ_V3_F", "Land_Cargo_HQ_V4_F", "Land_Cargo_Patrol_V1_F", "Land_Cargo_Patrol_V2_F", "Land_Cargo_Patrol_V3_F", "Land_Cargo_Patrol_V4_F", "Land_HelipadSquare_F", "Land_Posed", "Land_Hlaska", "Land_fortified_nest_small_EP1", "Land_fortified_nest_small", "Fort_Nest", "Fortress1", "Land_GuardShed", "Land_BagBunker_Small_F", "Land_BagBunker_01_small_green_F", "Land_GuardTower_01_F", "Land_Radar_01_HQ_F", "Land_Barracks_06_F", "Land_ControlTower_02_F", "Land_ControlTower_01_F", "Land_GuardHouse_02_F", "Land_ServiceHangar_01_L_F", "Land_ServiceHangar_01_R_F", "Land_GuardTower_02_F", "Land_MobileRadar_01_radar_F"];
-UPSMON_Bld_remove = ["Bridge_PathLod_base_F","Land_Slum_House03_F","Land_Bridge_01_PathLod_F","Land_Bridge_Asphalt_PathLod_F","Land_Bridge_Concrete_PathLod_F","Land_Bridge_HighWay_PathLod_F","Land_Bridge_01_F","Land_Bridge_Asphalt_F","Land_Bridge_Concrete_F","Land_Bridge_HighWay_F","Land_Canal_Wall_Stairs_F","warehouse_02_f","cliff_wall_tall_f","cliff_wall_round_f","containerline_02_f","containerline_01_f","warehouse_01_f","quayconcrete_01_20m_f","airstripplatform_01_f","airport_02_terminal_f","cliff_wall_long_f","shop_town_05_f","Land_ContainerLine_01_F","Land_MilOffices_V1_F"];
+listMilBld = [
+	"Land_Cargo_Tower_V1_F",
+	"Land_Cargo_Tower_V1_No1_F",
+	"Land_Cargo_Tower_V1_No2_F",
+	"Land_Cargo_Tower_V1_No3_F",
+	"Land_Cargo_Tower_V1_No4_F",
+	"Land_Cargo_Tower_V1_No5_F",
+	"Land_Cargo_Tower_V1_No6_F",
+	"Land_Cargo_Tower_V1_No7_F",
+	"Land_Cargo_Tower_V2_F",
+	"Land_Cargo_Tower_V3_F",
+	"Land_Cargo_Tower_V4_F",
+	"Land_vn_b_tower_01",
+	"Land_vn_o_shelter_05",
+	"Land_vn_bagbunker_01_small_green_f",
+	"Land_vn_bagbunker_small_f",
+	"Land_vn_o_tower_01","Land_vn_o_tower_02",
+	"Land_vn_o_tower_03",
+	"Land_vn_hut_tower_01",
+	"Land_vn_o_platform_05",
+	"Land_vn_o_platform_06",
+	"Land_vn_o_snipertree_01",
+	"Land_vn_o_snipertree_02",
+	"Land_vn_o_snipertree_03",
+	"Land_vn_o_snipertree_04",
+	"Land_vn_o_platform_01",
+	"Land_vn_o_platform_02",
+	"Land_vn_o_platform_03",
+	"Land_vn_hlaska",
+	"Land_vn_b_trench_bunker_04_01",
+	"Land_vn_pillboxbunker_02_hex_f",
+	"Land_vn_guardtower_01_f",
+	"Land_vn_strazni_vez",
+	"Land_vn_b_trench_firing_05",
+	"Land_vn_cementworks_01_grey_f",
+	"Land_vn_cementworks_01_brick_f",
+	"Land_vn_radar_01_hq_f",
+	"Land_vn_a_office01",
+	"land_bunker_garage",
+	"Land_Hlidac_budka",
+	"Land_Bunker_01_big_F",
+	"Land_Bunker_01_tall_F",
+	"Land_Bunker_01_small_F",
+	"Land_Bunker_01_HQ_F",
+	"Land_Mil_House",
+	"Land_aif_strazni_vez",
+	"Land_aif_hlaska",
+	"Land_MBG_Killhouse_2",
+	"WarfareBDepot",
+	"Land_Cargo_HQ_V1_F",
+	"Land_Cargo_HQ_V2_F",
+	"Land_Cargo_HQ_V3_F",
+	"Land_Cargo_HQ_V4_F",
+	"Land_Cargo_Patrol_V1_F",
+	"Land_Cargo_Patrol_V2_F",
+	"Land_Cargo_Patrol_V3_F",
+	"Land_Cargo_Patrol_V4_F",
+	"Land_HelipadSquare_F",
+	"Land_HelipadCivil_F",
+	"Land_HelipadCircle_F",
+	"Land_BludpadCircle",
+	"Land_Posed",
+	"Land_Hlaska",
+	"Land_fortified_nest_small_EP1",
+	"Land_fortified_nest_small",
+	"Fort_Nest",
+	"Fortress1",
+	"Land_GuardShed",
+	"Land_BagBunker_Small_F",
+	"Land_BagBunker_01_small_green_F",
+	"Land_Radar_01_HQ_F",
+	"Land_Barracks_06_F",
+	"Land_ControlTower_02_F",
+	"Land_ControlTower_01_F",
+	"Land_GuardHouse_02_F",
+	"Land_GuardHouse_02_grey_F",
+	"Land_ServiceHangar_01_L_F",
+	"Land_ServiceHangar_01_R_F",
+	"Land_MobileRadar_01_radar_F",
+	"Land_i_Barracks_V1_F",
+	"Land_i_Barracks_V2_F",
+	"Land_u_Barracks_V2_F",
+	"Land_Barracks_01_dilapidated_F",
+	"Land_Barracks_01_grey_F",
+	"Land_Barracks_01_camo_F",
+	"land_gm_euro_barracks_02_win",
+	"land_gm_euro_barracks_02",
+	"land_gm_euro_barracks_01_win",
+	"land_gm_euro_barracks_01",
+	"land_gm_tower_bt_6_fuest_80",
+	"land_gm_tower_bt_11_60",
+	"land_gm_sandbags_02_bunker_high",
+	"land_gm_woodbunker_01_bags",
+	"land_gm_euro_misc_viewplatform_01",
+	"Land_Vez",
+	"Land_Hlaska",
+	"Land_Posed",
+	"Land_Strazni_vez",
+	"Land_HBarrierTower_F",
+	"Land_HBarrier_01_big_tower_green_F",
+	"Land_Fort_Watchtower_EP1",
+	"Land_Fort_Watchtower",
+	"Land_HBarrier_01_tower_green_F",
+	"Land_BagBunker_Tower_F",
+	"Land_BagBunker_Large_F",
+	"Land_fortified_nest_big_EP1",
+	"Land_fortified_nest_big",
+	"Land_BagBunker_01_large_green_F"
+];
+
+UPSMON_Bld_remove = ["Bridge_PathLod_base_F","Land_Slum_House03_F","Land_Bridge_01_PathLod_F","Land_Bridge_Asphalt_PathLod_F","Land_Bridge_Concrete_PathLod_F","Land_Bridge_HighWay_PathLod_F","Land_Bridge_01_F","Land_Bridge_Asphalt_F","Land_Bridge_Concrete_F","Land_Bridge_HighWay_F","Land_Canal_Wall_Stairs_F","warehouse_02_f","cliff_wall_tall_f","cliff_wall_round_f","containerline_02_f","containerline_01_f","warehouse_01_f","quayconcrete_01_20m_f","airstripplatform_01_f","airport_02_terminal_f","cliff_wall_long_f","shop_town_05_f","Land_ContainerLine_01_F","Land_MilOffices_V1_F","Land_vn_b_trench_bunker_01_01","Land_vn_mil_barracks_i_ep1","Land_vn_barracks_03_f","Land_vn_barracks_01","Land_vn_b_trench_bunker_02_01","Land_vn_b_trench_bunker_02_02","Land_vn_hootch_01_12","Land_vn_hootch_01_11","Land_vn_barracks_02_f","Land_vn_hootch_01_01","Land_vn_barracks_05_f","Land_vn_barracks_04_f","Land_vn_barracks_03_01","Land_vn_barracks_03","Land_vn_barracks_03_02","Land_vn_b_trench_bunker_02_04","Land_vn_b_trench_bunker_02_03","Land_vn_b_trench_bunker_01_02","Land_vn_hootch_01_02","Land_vn_hootch_02_11","Land_vn_hootch_02_01","Land_vn_hootch_02_02","Land_vn_hootch_01_03","Land_vn_hootch_02_03","Land_vn_hootch_01_13","Land_vn_barracks_03_04","Land_vn_barracks_03_03","Land_vn_b_trench_bunker_03_02","Land_vn_b_trench_bunker_03_01","Land_vn_quonset_02_01","Land_vn_quonset_02","Land_vn_quonset_01","Land_vn_hootch_01","Land_vn_hootch_02","Land_vn_barracks_02","Land_vn_barracks_02_01","Land_vn_barracks_04","Land_vn_b_trench_bunker_03_03","Land_vn_tent_mash_01_01","Land_vn_tent_mash_01_02","Land_vn_tent_01_03","Land_vn_tent_01_01","Land_vn_tent_01_02","Land_vn_tent_01_04","Land_vn_barracks_04_01","Land_vn_barracks_04_02","Land_vn_b_trench_bunker_01_03","Land_vn_b_trench_bunker_03_04","Land_vn_tent_mash_01_04","Land_vn_tent_02_01","Land_vn_tent_02_02","Land_vn_tent_mash_01","Land_vn_tent_mash_02_03","Land_vn_tent_mash_02_04","Land_vn_hut_old02","Land_vn_tent_02_04","Land_vn_tent_02_03","Land_vn_tent_mash_02_02","Land_vn_tent_mash_02_01","Land_vn_tent_mash_01_03","Land_vn_army_hut_storrage","Land_vn_army_hut_int","Land_vn_wf_field_hospital_east","Land_vn_army_hut2_int","Land_vn_army_hut3_long_int", "Land_vn_o_prop_cong_cage_01", "Land_vn_o_prop_cong_cage_02", "Land_vn_o_prop_cong_cage_03"];
 //Lights and Lamps array used for 'Blackout'
 lamptypes = ["Lamps_Base_F", "PowerLines_base_F","Land_LampDecor_F","Land_LampHalogen_F","Land_LampHarbour_F","Land_LampShabby_F","Land_NavigLight","Land_runway_edgelight","Land_PowerPoleWooden_L_F"];
 
@@ -161,20 +272,16 @@ for "_person" from 1 to 18 do {
 	} forEach ["Low","Mid","Max"];
 };
 
-belongings = ["Land_Document_01_F",
+belongings = [
+	"Land_Document_01_F",
 	"Land_File1_F",
 	"Land_FilePhotos_F",
 	"Land_File2_F",
 	"Land_File_research_F",
 	"Land_Notepad_F",
 	"Land_PenBlack_F",
-	"Land_Wallet_01_F",
 	"Land_TacticalBacon_F",
 	"Land_TinContainer_F",
-	"Land_MobilePhone_smart_F",
-	"Land_MobilePhone_old_F",
-	"Land_SatellitePhone_F",
-	"Land_Tablet_01_F",
 	"Land_Magazine_rifle_F",
 	"Land_Antimalaricum_01_F",
 	"Land_Bandage_F",
@@ -203,6 +310,18 @@ if (A3A_hasCup) then {
 		"\CUP\WheeledVehicles\CUP_WheeledVehicles_Hilux\hiluxV2_armored_UB32"
 	];
 };
+
+flaresPool = if (A3A_hasCup) then {
+	["CUP_F_40mm_Star_White", "CUP_F_40mm_Star_Red"]
+} else {
+	if (A3A_hasRhs) then {
+		["rhsusf_40mm_white", "rhsusf_40mm_green", "rhs_mag_m662_red"]
+	} else {
+		["F_40mm_white", "F_40mm_Red", "F_40mm_Yellow"]
+	};
+};
+
+flareSounds = ["A3\Sounds_F\weapons\Flare_Gun\flaregun_1.wss", "A3\Sounds_F\weapons\Flare_Gun\flaregun_2.wss"];
 
 medicAnims = ["AinvPknlMstpSnonWnonDnon_medic_1","AinvPknlMstpSnonWnonDnon_medic0","AinvPknlMstpSnonWnonDnon_medic1","AinvPknlMstpSnonWnonDnon_medic2"];
 

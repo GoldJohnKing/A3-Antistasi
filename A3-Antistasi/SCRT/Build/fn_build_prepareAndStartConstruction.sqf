@@ -3,7 +3,7 @@ params ["_constructionType"];
 #define K_UP 200
 #define K_DOWN 208
 
-private _fileName = "build_setConstructionPool";
+private _fileName = "build_prepareAndStartConstruction";
 
 if (!(isNil "placingVehicle") && {placingVehicle}) exitWith {
     ["Construction", "You can't build while placing something."] call SCRT_fnc_misc_showDeniedActionHint;

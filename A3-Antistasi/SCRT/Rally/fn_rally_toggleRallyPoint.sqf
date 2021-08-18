@@ -12,6 +12,10 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
     private _remainingTravels = rallyPointRoot getVariable ["remainingTravels", 0];
     if (_remainingTravels > 0) then {
         private _finalCost = _cost * _remainingTravels;
+        if (_finalCost < 100) then {
+            _finalCost = 100;
+        };
+        
         [0, round (_finalCost/1.3)] remoteExec ["A3A_fnc_resourcesFIA",2];
     };
 

@@ -6,6 +6,7 @@ private _fileName = "fn_AS_Collaborationist";
 
 private _markerX = _this select 0;
 private _positionX = getMarkerPos _markerX;
+private _side = if (gameMode == 4) then {Invaders} else {Occupants};
 
 private _POWs = [];
 private _groups = [];
@@ -23,7 +24,7 @@ private _destinationName = [_markerX] call A3A_fnc_localizar;
 //building occupation
 ////////////
 private _sites = outposts + airportsX + resourcesX + factories + seaports + milbases;
-private _appropriateBuildings = nearestObjects [_positionX, ["Land_zachytka","Land_PoliceStation_01_F","Land_i_Barracks_V2_F"], 1000, true]; 
+private _appropriateBuildings = nearestObjects [_positionX, ["Land_zachytka_nov","Land_zachytka","Land_PoliceStation_01_F","Land_i_Barracks_V2_F", "land_gm_euro_office_02"], 1000, true]; 
 
 //we need only intact buildings that are not under some marker
 _appropriateBuildings = _appropriateBuildings select {
@@ -44,24 +45,30 @@ private _tablePositions = nil;
 private _soldierPositions = nil;
 private _collaborantPositions = nil;
 
-switch(true) do {
-    case (_buildingType == "Land_zachytka"): {
+switch(_buildingType) do {
+    case "Land_zachytka": {
         _powPositions = [43, 44, 53, 54, 55, 59, 61];
         _tablePositions = [64];
         _soldierPositions = [0,12,13,14,16,17,18,19,20,21,22,23,25,29,34,38,47,49,56,67,68,69,70,71,72,73,74,75,76,77,78,79];
         _collaborantPositions = [24, 28, 50, 51, 63];
     };
-    case (_buildingType == "Land_PoliceStation_01_F"): {
+    case "Land_PoliceStation_01_F": {
         _powPositions = [0, 4];
         _tablePositions = [6];
         _soldierPositions = [1,2,5,7,8,9,10,11,12];
         _collaborantPositions = [3,6,7];
     };
-    case (_buildingType == "Land_i_Barracks_V2_F"): {
+    case "Land_i_Barracks_V2_F": {
         _powPositions = [15,16,48,49];
         _tablePositions = [11,12,21,22,23,29];
         _soldierPositions = [0,1,2,3,4,5,6,14,17,18,19,24,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
         _collaborantPositions = [10,13,20,27,28,30];
+    };
+    case "land_gm_euro_office_02": {
+        _powPositions = [1,2,3,4];
+        _tablePositions = [12,49,50];
+        _soldierPositions = [13,9,19,20,21,22,23,6,10,33,26,36,37,38,57,34,35,36,37,38,39,40,41,42,43,44,45,52,53,47];
+        _collaborantPositions = [58,62,48,54];
     };
 };
 
@@ -128,7 +135,7 @@ for "_i" from 0 to _powCount do {
 ////////////
 //Collaborationist
 ////////////
-private _groupCollaborant = createGroup Occupants;
+private _groupCollaborant = createGroup _side;
 private _buildingPosIndex = selectRandom _collaborantPositions;
 private _buildingPosition = _buildingPositions select _buildingPosIndex;
 
@@ -159,14 +166,14 @@ private _patrolPosition = [
     [_buildingPos, _buildingPos]
 ] call BIS_fnc_findSafePos;
 
-private _patrolGroup1 = [_patrolPosition, Occupants, _patrolGroupRoster] call A3A_fnc_spawnGroup;
+private _patrolGroup1 = [_patrolPosition, _side, _patrolGroupRoster] call A3A_fnc_spawnGroup;
 {
     [_x] call A3A_fnc_NATOinit;
 } forEach units _patrolGroup1;
 [_patrolGroup1, _buildingPos, 250] call bis_fnc_taskPatrol;
 _groups pushBack _patrolGroup1;
 
-private _patrolGroup2 = [_patrolPosition, Occupants, _patrolGroupRoster] call A3A_fnc_spawnGroup;
+private _patrolGroup2 = [_patrolPosition, _side, _patrolGroupRoster] call A3A_fnc_spawnGroup;
 {
     [_x] call A3A_fnc_NATOinit;
 } forEach units _patrolGroup2;
@@ -211,13 +218,16 @@ private _roadcon = roadsConnectedto (_road select 0);
 private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
-private _policeVehicle1 = vehPoliceCar createVehicle getPos (_road select 0);
-_policeVehicle1 setDir _dirveh + 45;
-[_policeVehicle1, Occupants] call A3A_fnc_AIVEHinit;
+private _policeVehClass1 = selectRandom vehPoliceCars;
+private _policeVehClass2 = selectRandom vehPoliceCars;
 
-private _policeVehicle2 = vehPoliceCar createVehicle getPos (_road select 0);
+private _policeVehicle1 = _policeVehClass1 createVehicle getPos (_road select 0);
+_policeVehicle1 setDir _dirveh + 45;
+[_policeVehicle1, _side] call A3A_fnc_AIVEHinit;
+
+private _policeVehicle2 = _policeVehClass2 createVehicle getPos (_road select 0);
 _policeVehicle2 setDir _dirveh;
-[_policeVehicle2, Occupants] call A3A_fnc_AIVEHinit;
+[_policeVehicle2, _side] call A3A_fnc_AIVEHinit;
 
 [_policeVehicle1, ["BeaconsStart", 1]] remoteExecCall ["animate", 0, _policeVehicle1];
 
@@ -235,12 +245,10 @@ _desk setDir (getDir _building);
 sleep 5;
 _desk enableSimulation false;
 
-_moneyItems = ["Item_Money","Item_Money_bunch","Item_Money_roll","Item_Money_stack"];
-
 _randomPos = [(random 0.4) + 0.2, (random 0.2) - 0.2, 0]; 
-_objects1 = [[_desk,"TOP"], selectRandom _moneyItems, 1, _randomPos, random 180, {0}, true] call BIS_fnc_spawnObjects;
+_objects1 = [[_desk,"TOP"], selectRandom arrayMoneyLand, 1, _randomPos, random 180, {0}, true] call BIS_fnc_spawnObjects;
 _randomPos = [(random 0.2) + 0.1, (random 0.1) - 0.2, 0]; 
-_objects2 = [[_desk,"TOP"], selectRandom _moneyItems, 1, _randomPos, random 180, {0}, true] call BIS_fnc_spawnObjects;
+_objects2 = [[_desk,"TOP"], selectRandom arrayMoneyLand, 1, _randomPos, random 180, {0}, true] call BIS_fnc_spawnObjects;
 
 //make sure that no one is invincible
 {
@@ -265,7 +273,7 @@ if (dateToNumber date > _dateLimitNum) then {
     [10,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 } else {
     [_taskId, "AS", "SUCCEEDED"] call A3A_fnc_taskSetState;
-    { [60,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+    { [37,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
     [10,theBoss] call A3A_fnc_playerScoreAdd;
     [0,400] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[0,5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];

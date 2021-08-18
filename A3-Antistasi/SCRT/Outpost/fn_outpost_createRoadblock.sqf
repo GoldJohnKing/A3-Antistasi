@@ -17,16 +17,12 @@ private _dateLimit = [date select 0, date select 1, date select 2, date select 3
 private _dateLimitNum = dateToNumber _dateLimit;
 
 private _taskId = "outpostTask" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,["We are sending a team to establish a roadblock. Use HC to send the team to their destination","Post \ Roadblock Deploy",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
+[[teamPlayer,civilian],_taskId,["We are sending a team to establish a roadblock. Use HC to send the team to their destination","Roadblock Deploy",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 _formatX = [];
 {
-    if (random 20 <= skillFIA) then {
-        _formatX pushBack (_x select 1)
-    } else {
-        _formatX pushBack (_x select 0)
-    };
+    _formatX pushBack (_x select 0);
 } forEach groupsSDKSquad;
 
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
@@ -69,16 +65,12 @@ if ({(alive _x) and (_x distance _position < 10)} count units _groupX > 0) then 
 	spawner setVariable [_marker,2,true];
 	[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 	_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
-	_marker setMarkerType "n_recon";
+	_marker setMarkerType "n_support";
 	_marker setMarkerColor colorTeamPlayer;
 	_marker setMarkerText _textX;
     _garrison = [(SDKMil select 0)];
     {
-        if (random 20 <= skillFIA) then {
-            _garrison pushBack (_x select 1)
-        } else {
-            _garrison pushBack (_x select 0)
-        };
+        _garrison pushBack (_x select 0);
     } forEach groupsSDKSquad;
     garrison setVariable [_marker,_garrison,true];
 } else {

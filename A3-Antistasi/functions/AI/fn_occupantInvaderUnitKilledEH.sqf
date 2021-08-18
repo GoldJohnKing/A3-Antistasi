@@ -57,6 +57,7 @@ if (side (group _killer) == teamPlayer) then
 		{
 			[0,-2,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
 		};
+        [_victimSide, 20, 30] remoteExec ["A3A_fnc_addAggression", 2];
 	}
 	else
 	{

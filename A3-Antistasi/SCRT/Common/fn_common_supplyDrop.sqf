@@ -43,7 +43,7 @@ if (alive _planeVehicle) then {
         };
     };
 
-    private _para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "FLY"];
+    private _para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "NONE"];
     _para setDir getDir _supplyDrop;
     _para setPos getPos _supplyDrop;
     _supplyDrop attachTo [_para, _paraPos];

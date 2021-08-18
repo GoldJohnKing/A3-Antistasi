@@ -50,10 +50,9 @@ if (_shouldStripLoadout) then {
 	[_playerId, "loadoutPlayer", getUnitLoadout _playerUnit] call A3A_fnc_savePlayerStat;
 };
 
-private _garage = [_playerUnit] call A3A_fnc_getPersonalGarage;
 [_playerId, "scorePlayer", _playerUnit getVariable "score"] call A3A_fnc_savePlayerStat;
 [_playerId, "rankPlayer", rank _playerUnit] call A3A_fnc_savePlayerStat;
-[_playerId, "personalGarage", [_playerUnit] call A3A_fnc_getPersonalGarage] call A3A_fnc_savePlayerStat;
+[_playerId, "personalGarage", []] call A3A_fnc_savePlayerStat;
 
 _totalMoney = _playerUnit getVariable ["moneyX", 0];
 if (_shouldStripLoadout) then { _totalMoney = round (_totalMoney * 0.85) };

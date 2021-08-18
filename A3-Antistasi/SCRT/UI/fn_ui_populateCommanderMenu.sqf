@@ -8,7 +8,7 @@ if (theBoss distance2D _hqMarkerPos < 50) then {
 	menuSliderArray = [
 		["SUPPORT", 1140],
 		["MANAGE GARRISONS", 2000],
-		["HQ MANAGEMENT", 3000],
+		[format ["%1 MANAGEMENT", (toUpper nameTeamPlayer)], 3000],
 		["ENVIRONMENT", 4000],
 		["GAME OPTIONS", 5000],
 		["GAME INFO", 6000]
@@ -76,7 +76,7 @@ lbSetTooltip [1750, 8, "Plane flies over and drops Cluster bombs at the specifie
 
 lbAdd [1750, "Chemical Airstrike"];
 lbSetData [1750, 9, "CHEMICAL"];
-lbSetTooltip [1750, 9, "Plane flies over and drops bomb with hazardous chemicals at the specified location. Violates Geneva Protocol."];
+lbSetTooltip [1750, 9, "Plane flies over and drops bombs with hazardous chemicals at the specified location. Violates Geneva Protocol."];
 
 if (napalmEnabled) then { 
 	lbAdd [1750, "Napalm Airstrike"];
@@ -107,10 +107,14 @@ lbAdd [2750, "Watchpost"];
 lbSetData [2750, 0, "WATCHPOST"];
 lbAdd [2750, "Roadblock"];
 lbSetData [2750, 1, "ROADBLOCK"];
+lbAdd [2750, "HMG Emplacement"];
+lbSetData [2750, 2, "HMG"];
 lbAdd [2750, "AA Emplacement"];
-lbSetData [2750, 2, "AA"];
+lbSetData [2750, 3, "AA"];
 lbAdd [2750, "AT Emplacement"];
-lbSetData [2750, 3, "AT"];
+lbSetData [2750, 4, "AT"];
+lbAdd [2750, "Mortar Emplacement"];
+lbSetData [2750, 5, "MORTAR"];
 
 lbSetCurSel [2750, 0];
 
@@ -161,14 +165,16 @@ sliderSetPosition [5081, maxUnits];
 ((findDisplay 60000) displayCtrl 5080) ctrlSetText format ["AI Limit: %1", maxUnits];
 
 private _gameInfoText = format [
-    "Antistasi - %2, Version: %1, Antistasi Plus Version: %6, Difficulty: %3, Unlock Weapon Number: %4, Limited Fast Travel: %5", 
+    "Antistasi - %2, Version: %1, Antistasi Plus Version: %6, Difficulty: %3, Unlock Weapon Number: %4, Limited Fast Travel: %5, Time since GC: %7", 
     antistasiVersion, 
     worldName, 
     if (skillMult == 2) then {"Normal"} else {if (skillMult == 1) then {"Easy"} else {"Hard"}},
     minWeaps,
     if (limitedFT) then {"Yes"} else {"No"},
-    antistasiPlusVersion
+    antistasiPlusVersion,
+	([[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,1,0,false,2,false,true] call A3A_fnc_timeSpan_format)
 ];
+
 ((findDisplay 60000) displayCtrl 6011) ctrlSetText _gameInfoText;
 
 private _serverMembersText = [] call A3A_fnc_membersList;

@@ -11,7 +11,7 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "draw3D": {
-		_display = uiNamespace getVariable "arsanalDisplay";
+		_display = uiNamespace getVariable "arsenalDisplay";
 		_cam = (uinamespace getvariable ["BIS_fnc_arsenal_cam",objnull]);
 		_center = (missionnamespace getvariable ["JNG_CENTER",objnull]);
 		_target = (missionnamespace getvariable ["BIS_fnc_arsenal_target",objnull]);
@@ -369,7 +369,7 @@ switch _mode do {
 		_data =  _this select 0;
 		_index = _this select 1;
 
-		_display =  uiNamespace getVariable ["arsanalDisplay","No display"];
+		_display =  uiNamespace getVariable ["arsenalDisplay","No display"];
 
 		if (typeName _display == "STRING") exitWith {};
 		if(str _display isEqualTo "No display")exitWith{};
@@ -391,7 +391,7 @@ switch _mode do {
 	case "updateVehicle":{
 		_dataNew =  _this select 0;
 		_index = _this select 1;
-		_display =  uiNamespace getVariable ["arsanalDisplay","No display"];
+		_display =  uiNamespace getVariable ["arsenalDisplay","No display"];
 		if (typeName _display == "STRING") exitWith {};
 		if(str _display isEqualTo "No display")exitWith{};
 
@@ -454,7 +454,7 @@ switch _mode do {
 		_beingChangedUpdate = _this select 2;
 		_lockedUpdate = _this select 3;
 		_lockedNameUpdate = _this select 4;
-		_display =  uiNamespace getVariable ["arsanalDisplay","No display"];
+		_display =  uiNamespace getVariable ["arsenalDisplay","No display"];
 
 		if (typeName _display == "STRING") exitWith {};
 		if(str _display isEqualTo "No display")exitWith{};
@@ -489,7 +489,7 @@ switch _mode do {
 		_nameRemove = _this select 0;
 		_index = _this select 1;
 
-		_display =  uiNamespace getVariable ["arsanalDisplay","No display"];
+		_display =  uiNamespace getVariable ["arsenalDisplay","No display"];
 
 		if (typeName _display == "STRING") exitWith {};
 		if(str _display isEqualTo "No display")exitWith{};
@@ -1329,7 +1329,7 @@ switch _mode do {
 								_ctrl setVariable ["location",_center selectionposition _selectionName];
 								_ctrl ctrladdeventhandler ["buttonclick",format ["
 									_damageID = %1;
-									_display = uiNamespace getVariable 'arsanalDisplay';
+									_display = uiNamespace getVariable 'arsenalDisplay';
 
 									['SelectRepairIcon',[_display,_damageID,_this select 0]] call jn_fnc_garage;
 								",_foreachindex,_ctrl]];
@@ -1361,7 +1361,7 @@ switch _mode do {
 							_ctrl ctrlsetfade 0;
 							_ctrl ctrladdeventhandler ["buttonclick",format ["
 								_idPylon = %1;
-								_display = uiNamespace getVariable 'arsanalDisplay';
+								_display = uiNamespace getVariable 'arsenalDisplay';
 
 								['SelectPylonIcon',[_display,_idPylon]] call jn_fnc_garage;
 							",_idPylon]];
@@ -1393,7 +1393,7 @@ switch _mode do {
 									_ctrl ctrlshow false;
 									_ctrl ctrlsetfade 0;
 									_ctrl ctrladdeventhandler ["buttonclick",format["
-										_display = uiNamespace getVariable 'arsanalDisplay';
+										_display = uiNamespace getVariable 'arsenalDisplay';
 
 										['SelectPylonIcon',[_display,%1]] call jn_fnc_garage;
 									",-_nodeID]];
@@ -1579,7 +1579,7 @@ switch _mode do {
 
 	/////////////////////////////////////////////////////////////////////////////////////////// EVENT
 	case "buttonClose": {
-		_display = uiNamespace getVariable "arsanalDisplay";
+		_display = uiNamespace getVariable "arsenalDisplay";
 		with missionnamespace do{
 			if( (!isnil "JNG_CENTER") && {!isnull JNG_CENTER} && {JNG_CENTER != player} )then{
 				private _center = JNG_CENTER;

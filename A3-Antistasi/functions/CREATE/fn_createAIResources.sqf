@@ -22,12 +22,18 @@ _frontierX = [_markerX] call A3A_fnc_isFrontline;
 _sideX = Invaders;
 
 _isFIA = false;
-if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then
-{
-	_sideX = Occupants;
-	if ((random 10 <= (tierWar + difficultyCoef)) and !(_frontierX)) then //Forced spawn is missing (check createAI outpost)
-	{
-		_isFIA = true;
+
+switch (true) do {
+	case (gameMode == 4 && {sidesX getVariable [_markerX,sideUnknown] == Invaders}): {
+		if ((random 10 <= (tierWar + difficultyCoef)) and !(_frontierX)) then { //Forced spawn is missing (check createAI outpost)
+			_isFIA = true;
+		};
+	};
+	case (sidesX getVariable [_markerX,sideUnknown] == Occupants): {
+		_sideX = Occupants;
+		if ((random 10 <= (tierWar + difficultyCoef)) and !(_frontierX)) then { //Forced spawn is missing (check createAI outpost)
+			_isFIA = true;
+		};
 	};
 };
 
@@ -134,13 +140,17 @@ if (_patrol) then
 		{
 			if (!_isFIA) then {
 				[(groupsNATOSentry call SCRT_fnc_unit_selectInfantryTier), (groupsNATOSniper call SCRT_fnc_unit_selectInfantryTier)]
-				} else {
-					if (_sideX == Occupants) then {groupsFIASmallOcc} else {groupsFIASmallInv}
-				};
+			} else {
+				groupsFIASmall
+			};
 		}
 		else
 		{
-			[(groupsCSATSentry call SCRT_fnc_unit_selectInfantryTier), (groupsCSATSniper call SCRT_fnc_unit_selectInfantryTier)]
+			if (!_isFIA) then {
+				[(groupsCSATSentry call SCRT_fnc_unit_selectInfantryTier), (groupsCSATSniper call SCRT_fnc_unit_selectInfantryTier)]
+			} else {
+				groupsWAMSmall
+			};
 		};
 
 		if ([_markerX,false] call A3A_fnc_fogCheck < 0.3) then {_arraygroups = _arraygroups - sniperGroups};
@@ -203,17 +213,12 @@ if (not(_markerX in destroyedSites)) then
 private _spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
 if (_spawnParameter isEqualType []) then
 {
-	_typeVehX = if (_sideX == Occupants) then
-	{
-		private _types = if (!_isFIA) then {vehNATOTrucks + vehNATOCargoTrucks} else {[vehFIATruck]};
-		_types = _types select { _x in vehCargoTrucks };
-		if (count _types == 0) then { vehNATOCargoTrucks } else { _types };
-	}
-	else
-	{
-		vehCSATTrucks
+	_typeVehX = if (_sideX == Occupants) then {
+		if (!_isFIA) then {(vehNATOTrucks + vehNATOCargoTrucks + [vehNATOFuelTruck, vehNATORepairTruck, vehNATOMedical])} else {vehFIATrucks};
+	} else {
+		if (!_isFIA) then {(vehCSATTrucks + vehCSATCargoTrucks + [vehCSATFuelTruck, vehCSATRepairTruck, vehCSATMedical])} else {vehWAMTrucks};
 	};
-	_veh = createVehicle [selectRandom _typeVehX, (_spawnParameter select 0), [], 0, "NONE"];
+	_veh = createVehicle [(selectRandom _typeVehX), (_spawnParameter select 0), [], 0, "NONE"];
 	_veh setDir (_spawnParameter select 1);
 	_vehiclesX pushBack _veh;
 	[_veh, _sideX] call A3A_fnc_AIVEHinit;

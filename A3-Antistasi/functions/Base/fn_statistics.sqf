@@ -14,18 +14,36 @@ private _rallytxt = ["Absent", "<t color='#1DA81D'>Established</t>"] select (!is
 
 private _aggrString = nil;
 
-switch (true) do {
-	case (!areOccupantsDefeated && {!areInvadersDefeated}): {
-		_aggrString = format ["| %1 Aggr: %2 | %3 Aggr: %4 |", nameOccupants, [aggressionLevelOccupants] call A3A_fnc_getAggroLevelString,  nameInvaders, [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
+switch (gameMode) do {
+	case 3: {
+		if (!areOccupantsDefeated) then {
+			_aggrString = format ["| %1 Aggr: %2 |", nameOccupants, [aggressionLevelOccupants] call A3A_fnc_getAggroLevelString];
+		} else {
+			_aggrString = "";
+		};
 	};
-	case (!areOccupantsDefeated && {areInvadersDefeated}): {
-		_aggrString = format ["| %1 Aggr: %2 |", nameOccupants, [aggressionLevelOccupants] call A3A_fnc_getAggroLevelString];
+	case 4: {
+		if (!areInvadersDefeated) then {
+			_aggrString = format ["| %1 Aggr: %2 |", nameInvaders, [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
+		} else {
+			_aggrString = "";
+		};
 	};
-	case (!areInvadersDefeated && {areOccupantsDefeated}): {
-		_aggrString = format ["| %1 Aggr: %2 |", nameInvaders, [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
-	};
-	case (areOccupantsDefeated && {areOccupantsDefeated}): {
-		_aggrString = "";
+	default {
+		switch (true) do {
+			case (!areOccupantsDefeated && {!areInvadersDefeated}): {
+				_aggrString = format ["| %1 Aggr: %2 | %3 Aggr: %4 |", nameOccupants, [aggressionLevelOccupants] call A3A_fnc_getAggroLevelString,  nameInvaders, [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
+			};
+			case (!areOccupantsDefeated && {areInvadersDefeated}): {
+				_aggrString = format ["| %1 Aggr: %2 |", nameOccupants, [aggressionLevelOccupants] call A3A_fnc_getAggroLevelString];
+			};
+			case (!areInvadersDefeated && {areOccupantsDefeated}): {
+				_aggrString = format ["| %1 Aggr: %2 |", nameInvaders, [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
+			};
+			case (areOccupantsDefeated && {areOccupantsDefeated}): {
+				_aggrString = "";
+			};
+		};
 	};
 };
 

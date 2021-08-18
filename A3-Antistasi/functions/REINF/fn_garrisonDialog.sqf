@@ -6,6 +6,9 @@ private _watchpostFIA = if (_site in watchpostsFIA) then {true} else {false};
 private _roadblockFIA = if (_site in roadblocksFIA) then {true} else {false};
 private _aapostFIA = if (_site in aapostsFIA) then {true} else {false};
 private _atpostFIA = if (_site in atpostsFIA) then {true} else {false};
+private _mortarpostFIA = if (_site in mortarpostsFIA) then {true} else {false};
+private _hmgpostFIA = if (_site in hmgpostsFIA) then {true} else {false};
+
 _garrison = if (!_watchpostFIA) then {
 	garrison getVariable [_site,[]]
 } else {
@@ -107,6 +110,20 @@ if (_typeX == "rem") then {
 			deleteMarker _site;
 			sidesX setVariable [_site,nil,true];
 		};
+		case (_mortarpostFIA): {
+			garrison setVariable [_site,nil,true];
+			mortarpostsFIA = mortarpostsFIA - [_site]; publicVariable "mortarpostsFIA";
+			markersX = markersX - [_site]; publicVariable "markersX";
+			deleteMarker _site;
+			sidesX setVariable [_site,nil,true];
+		};
+		case (_hmgpostFIA): {
+			garrison setVariable [_site,nil,true];
+			hmgpostsFIA = hmgpostsFIA - [_site]; publicVariable "hmgpostsFIA";
+			markersX = markersX - [_site]; publicVariable "markersX";
+			deleteMarker _site;
+			sidesX setVariable [_site,nil,true];
+		};
 		default {
 			garrison setVariable [_site,[],true];
 			{if (_x getVariable ["markerX",""] == _site) then {deleteVehicle _x}} forEach allUnits;
@@ -140,12 +157,10 @@ if (_typeX == "rem") then {
 		_ChildControl = _display displayCtrl 107;
 		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKSL select 0)];
 		_ChildControl = _display displayCtrl 108;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",(server getVariable staticCrewTeamPlayer) + ([SDKMortar] call A3A_fnc_vehiclePrice)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKATman select 0)];
 		_ChildControl = _display displayCtrl 109;
 		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKGL select 0)];
 		_ChildControl = _display displayCtrl 110;
 		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKSniper select 0)];
-		_ChildControl = _display displayCtrl 111;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKATman select 0)];
 	};
 };

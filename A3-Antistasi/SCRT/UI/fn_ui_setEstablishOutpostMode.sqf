@@ -31,11 +31,11 @@ if (!([player] call A3A_fnc_hasRadio)) exitWith {
     ] spawn SCRT_fnc_ui_showMessage;
 };
 
-if (outpostType == "ROADBLOCK" && {tierWar < 3}) exitWith {
+if (outpostType in ["ROADBLOCK", "HMG"] && {tierWar < 3}) exitWith {
     [
         "FAIL",
         "Establish Outpost",  
-        parseText "You need to be at War Level 3 to be able to establish roadblocks.", 
+        parseText "You need to be at War Level 3 to be able to establish roadblocks or HMG emplacements.", 
         15
     ] spawn SCRT_fnc_ui_showMessage;
 };
@@ -44,7 +44,16 @@ if (outpostType in ["AA", "AT"] && {tierWar < 4}) exitWith {
     [
         "FAIL",
         "Establish Outpost",  
-        parseText "You need to be at War Level 4 to be able to establish emplacement.", 
+        parseText "You need to be at War Level 4 to be able to establish AA/AT emplacement.", 
+        15
+    ] spawn SCRT_fnc_ui_showMessage;
+};
+
+if (outpostType == "MORTAR" && {tierWar < 5}) exitWith {
+    [
+        "FAIL",
+        "Establish Outpost",  
+        parseText "You need to be at War Level 5 to be able to establish mortar emplacement.", 
         15
     ] spawn SCRT_fnc_ui_showMessage;
 };

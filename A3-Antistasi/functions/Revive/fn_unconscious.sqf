@@ -113,7 +113,7 @@ while {(time < _bleedOut) && (_unit getVariable ["incapacitated",false]) && (ali
 	}
 	else {
 		if (_inPlayerGroup) then {
-			if (autoheal) then {
+			if (autoHeal) then {
 				_helped = _unit getVariable ["helped",objNull];
 				if (isNull _helped) then {[_unit] call A3A_fnc_askHelp;};
 			};

@@ -6,7 +6,7 @@ if (!isServer) exitWith {
 if (savingServer) exitWith {["Save Game", "Server data save is still in progress"] remoteExecCall ["A3A_fnc_customHint",theBoss]};
 savingServer = true;
 [2, "Starting persistent save", _filename] call A3A_fnc_log;
-["Persistent Save Starting","Starting persistent save..."] remoteExec ["A3A_fnc_customHint",0,false];
+["Persistent Save","Starting persistent save..."] remoteExec ["A3A_fnc_customHint",0,false];
 
 // Set next autosave time, so that we won't run another shortly after a manual save
 autoSaveTime = time + autoSaveInterval;
@@ -25,8 +25,7 @@ private _saveIndex = -1;
 
 // If not, append a new entry
 if (_saveIndex == -1) then {
-	private _gametype = if (teamPlayer isEqualTo independent) then {"Greenfor"} else {"Blufor"};
-	_saveList pushBack [campaignID, worldName, _gametype];
+	_saveList pushBack [campaignID, worldName, "Greenfor"];
 	profileNamespace setVariable ["antistasiPlusSavedGames", _saveList];
 };
 
@@ -53,7 +52,7 @@ private _antennasDeadPositions = [];
 { _antennasDeadPositions pushBack getPos _x; } forEach antennasDead;
 ["antennas", _antennasDeadPositions] call A3A_fnc_setStatVariable;
 //["mrkNATO", (markersX - controlsX) select {sidesX getVariable [_x,sideUnknown] == Occupants}] call A3A_fnc_setStatVariable;
-["mrkSDK", (markersX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA) select {sidesX getVariable [_x,sideUnknown] == teamPlayer}] call A3A_fnc_setStatVariable;
+["mrkSDK", (markersX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - mortarpostsFIA - hmgpostsFIA) select {sidesX getVariable [_x,sideUnknown] == teamPlayer}] call A3A_fnc_setStatVariable;
 ["mrkCSAT", (markersX - controlsX) select {sidesX getVariable [_x,sideUnknown] == Invaders}] call A3A_fnc_setStatVariable;
 ["posHQ", [getMarkerPos respawnTeamPlayer,[getDir boxX,getPos boxX],[getDir mapX,getPos mapX],getPos flagX,[getDir vehicleBox,getPos vehicleBox]]] call A3A_fnc_setStatVariable;
 ["dateX", date] call A3A_fnc_setStatVariable;
@@ -71,6 +70,7 @@ private _destroyedPositions = destroyedBuildings apply { getPosATL _x };
 ["areOccupantsDefeated", areOccupantsDefeated] call A3A_fnc_setStatVariable;
 ["areInvadersDefeated", areInvadersDefeated] call A3A_fnc_setStatVariable;
 ["traderPosition", traderPosition] call A3A_fnc_setStatVariable;
+["rebelLoadouts", rebelLoadouts] call A3A_fnc_setStatVariable;
 
 //Save aggression values
 ["aggressionOccupants", [aggressionLevelOccupants, aggressionStackOccupants]] call A3A_fnc_setStatVariable;
@@ -128,13 +128,14 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 ["resourcesFIA", _resourcesBackground] call A3A_fnc_setStatVariable;
 ["hr", _hrBackground] call A3A_fnc_setStatVariable;
 ["vehInGarage", _vehInGarage] call A3A_fnc_setStatVariable;
+["HR_Garage", [] call HR_GRG_fnc_getSaveData] call A3A_fnc_setStatVariable;
 
 _arrayEst = [];
 {
 	_veh = _x;
 	_typeVehX = typeOf _veh;
-	if ((_veh distance getMarkerPos respawnTeamPlayer < 50) and !(_veh in staticsToSave) and !(_typeVehX in ["ACE_SandbagObject","Land_FoodSacks_01_cargo_brown_F","Land_Pallet_F"])) then {
-		if (((not (_veh isKindOf "StaticWeapon")) and (not (_veh isKindOf "ReammoBox")) and (not (_veh isKindOf "ReammoBox_F")) and (not (_veh isKindOf "FlagCarrier")) and (not(_veh isKindOf "Building"))) and (not (_typeVehX == "C_Van_01_box_F")) and (count attachedObjects _veh == 0) and (alive _veh) and ({(alive _x) and (!isPlayer _x)} count crew _veh == 0) and (not(_typeVehX == "WeaponHolderSimulated"))) then {
+	if ((_veh distance getMarkerPos respawnTeamPlayer < 50) and !(_veh in staticsToSave) and !(_typeVehX in ["ACE_SandbagObject","Land_FoodSacks_01_cargo_brown_F","Land_Pallet_F", "Land_DeskChair_01_black_F", "Land_PortableDesk_01_black_F","Land_Laptop_02_unfolded_F","Land_Ammobox_rounds_F","Land_Cargo20_military_green_F"])) then {
+		if (((not (_veh isKindOf "StaticWeapon")) and (not (_veh isKindOf "ReammoBox")) and (not (_veh isKindOf "ReammoBox_F")) and (not(_veh isKindOf "Building"))) and (not (_typeVehX == "C_Van_01_box_F")) and (count attachedObjects _veh == 0) and (alive _veh) and ({(alive _x) and (!isPlayer _x)} count crew _veh == 0) and (not(_typeVehX == "WeaponHolderSimulated"))) then {
 			_posVeh = getPosWorld _veh;
 			_xVectorUp = vectorUp _veh;
 			_xVectorDir = vectorDir _veh;
@@ -188,7 +189,7 @@ _prestigeBLUFOR = [];
 ["prestigeOPFOR", _prestigeOPFOR] call A3A_fnc_setStatVariable;
 ["prestigeBLUFOR", _prestigeBLUFOR] call A3A_fnc_setStatVariable;
 
-_markersX = markersX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - controlsX;
+_markersX = markersX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - mortarpostsFIA - hmgpostsFIA - controlsX;
 _garrison = [];
 _wurzelGarrison = [];
 
@@ -248,7 +249,11 @@ private _arrayAAPostsFIA = [];
 
 {
 	_positionOutpost = getMarkerPos _x;
-	_arrayAAPostsFIA pushBack [_positionOutpost,garrison getVariable [_x,[]]];
+	_arrayAAPostsFIA pushBack [
+		_positionOutpost,
+		garrison getVariable [_x,[]],
+		staticPositions getVariable [_x,[]]
+	];
 } forEach aapostsFIA;
 
 ["aapostsFIA", _arrayAAPostsFIA] call A3A_fnc_setStatVariable;
@@ -257,10 +262,40 @@ private _arrayATPostsFIA = [];
 
 {
 	_positionOutpost = getMarkerPos _x;
-	_arrayATPostsFIA pushBack [_positionOutpost,garrison getVariable [_x,[]]];
+	_arrayATPostsFIA pushBack [
+		_positionOutpost,
+		garrison getVariable [_x,[]],
+		staticPositions getVariable [_x,[]]
+	];
 } forEach atpostsFIA;
 
 ["atpostsFIA", _arrayATPostsFIA] call A3A_fnc_setStatVariable;
+
+private _arrayMortarPostsFIA = [];
+
+{
+	_positionOutpost = getMarkerPos _x;
+	_arrayMortarPostsFIA pushBack [
+		_positionOutpost,
+		garrison getVariable [_x,[]],
+		staticPositions getVariable [_x,[]]
+	];
+} forEach mortarpostsFIA;
+
+["mortarpostsFIA", _arrayMortarPostsFIA] call A3A_fnc_setStatVariable;
+
+private _arrayHMGPostsFIA = [];
+
+{
+	_positionOutpost = getMarkerPos _x;
+	_arrayHMGPostsFIA pushBack [
+		_positionOutpost,
+		garrison getVariable [_x,[]],
+		staticPositions getVariable [_x,[]]
+	];
+} forEach hmgpostsFIA;
+
+["hmgpostsFIA", _arrayHMGPostsFIA] call A3A_fnc_setStatVariable;
 
 if (!isDedicated) then {
 	_typesX = [];
@@ -269,7 +304,7 @@ if (!isDedicated) then {
 		private _index = A3A_tasksData findIf { (_x#1) isEqualTo _type and (_x#2) isEqualTo "CREATED" };
 		if (_index != -1) then { _typesX pushBackUnique _type };
 
-	} forEach ["AS","CON","DES","LOG","RES","CONVOY","DEF_HQ","rebelAttack","invaderPunish"];
+	} forEach ["AS","CON","DES","LOG","RES","ENC","CONVOY","DEF_HQ","rebelAttack","invaderPunish"];
 
 	["tasks",_typesX] call A3A_fnc_setStatVariable;
 };
@@ -304,5 +339,5 @@ _controlsX = controlsX select {(sidesX getVariable [_x,sideUnknown] == teamPlaye
 saveProfileNamespace;
 savingServer = false;
 _saveHintText = ["<t size='1.5'>",nameTeamPlayer," Assets:<br/><t color='#f0d498'>HR: ",str _hrBackground,"<br/>Money: ",str _resourcesBackground," €</t></t><br/><br/>"] joinString "";
-["Persistent Save Completed",_saveHintText] remoteExec ["A3A_fnc_customHint",0,false];
+["Persistent Save",_saveHintText] remoteExec ["A3A_fnc_customHint",0,false];
 [2, "Persistent Save Completed", _filename] call A3A_fnc_log;

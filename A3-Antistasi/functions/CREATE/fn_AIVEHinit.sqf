@@ -22,7 +22,7 @@ _veh setVariable ["originalSide", _side, true];
 _veh setVariable ["ownerSide", _side, true];
 
 // probably just shouldn't be called for these
-if ((_veh isKindOf "FlagCarrier") or (_veh isKindOf "Building") or (_veh isKindOf "ReammoBox_F")) exitWith {};
+if ((_veh isKindOf "Building") or (_veh isKindOf "ReammoBox_F")) exitWith {};
 
 // this might need moving into a different function later
 if (_side == teamPlayer) then
@@ -40,7 +40,7 @@ _veh call A3A_fnc_vehicleTextureSync;
 
 private _typeX = typeOf _veh;
 
-if (_typeX in (vehNormal + vehAttack + vehBoats + vehAA)) then {
+if (_typeX in vehNormal || {_typeX in (vehAttack + vehBoats + vehAA)}) then {
 	_veh call A3A_fnc_addActionBreachVehicle;
 
 	if !(_typeX in vehAttack) then {
@@ -99,25 +99,13 @@ if (_typeX in (vehNormal + vehAttack + vehBoats + vehAA)) then {
 	{
 		if (_veh isKindOf "StaticWeapon") then
 		{
-			[_veh] call A3A_fnc_logistics_addLoadAction;
 			_veh setCenterOfMass [(getCenterOfMass _veh) vectorAdd [0, 0, -1], 0];
-			if ((not (_veh in staticsToSave)) and (side gunner _veh != teamPlayer)) then
-			{
-				if (A3A_hasRHS and ((_typeX == staticATteamPlayer) or (_typeX == staticAAteamPlayer))) then {[_veh,"moveS"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_veh]};
-			};
-			if (_typeX == SDKMortar) then
-			{
-			    _veh addEventHandler ["Fired", SCRT_fnc_common_triggerArtilleryResponseEH];
+
+			if !(_typeX isKindOf "StaticMortar") then {
+				[_veh, "static"] remoteExec ["A3A_fnc_flagAction", [teamPlayer,civilian], _veh];
+				if (_side == teamPlayer && !isNil {serverInitDone}) then { [_veh] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
 			};
 		};
-	};
-};
-
-if (!(additionalShopArtillery isEqualTo [])) then {
-	private _model = _typeX call A3A_fnc_classNameToModel;
-
-	if (_model in noArtilleryComputerVehicles) then {
-		_veh addEventHandler ["Fired", SCRT_fnc_common_triggerArtilleryResponseEH];
 	};
 };
 
@@ -139,9 +127,12 @@ private _artilleryTypes = vehMRLS + additionalShopArtillery + [CSATMortar, NATOM
 if (NATOHowitzer != "") then {_artilleryTypes pushBack NATOHowitzer};
 if (CSATHowitzer != "") then {_artilleryTypes pushBack CSATHowitzer};
 
-if(!_excludeTrails && {_typeX in _artilleryTypes}) then
-{
-    [_veh] call A3A_fnc_addArtilleryTrailEH;
+if(_typeX in _artilleryTypes) then {
+	_veh addEventHandler ["Fired", SCRT_fnc_common_triggerArtilleryResponseEH];
+
+	if (!_excludeTrails) then {
+		[_veh] call A3A_fnc_addArtilleryTrailEH;
+	};
 };
 
 // EH behaviour:
@@ -223,8 +214,8 @@ _veh addEventHandler ["Dammaged", {
 	};
 }];
 
-//add JNL loading to quadbikes
-if(typeOf _veh in [vehSDKBike,vehNATOBike,vehCSATBike]) then {[_veh] call A3A_fnc_logistics_addLoadAction;};
+//add logistics loading to loadable objects
+if([typeOf _veh] call A3A_fnc_logistics_isLoadable) then {[_veh] call A3A_fnc_logistics_addLoadAction;};
 
 // deletes vehicle if it exploded on spawn...
 [_veh] spawn A3A_fnc_cleanserVeh;

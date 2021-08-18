@@ -18,8 +18,8 @@ if(_vehicle in vehNATOTanks) exitWith {groupsNATOAT};
 if(_vehicle in vehCSATTanks) exitWith {groupsCSATAT};
 
 //If AA-tank, select AA team
-if(_vehicle == vehNATOAA) exitWith {groupsNATOAA call SCRT_fnc_unit_selectInfantryTier};
-if(_vehicle == vehCSATAA) exitWith {groupsCSATAA call SCRT_fnc_unit_selectInfantryTier};
+if(_vehicle in vehNATOAA) exitWith {groupsNATOAA call SCRT_fnc_unit_selectInfantryTier};
+if(_vehicle in vehCSATAA) exitWith {groupsCSATAA call SCRT_fnc_unit_selectInfantryTier};
 
 _result = "";
 //If no vehicle return preference

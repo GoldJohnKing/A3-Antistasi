@@ -19,6 +19,10 @@ while {true} do
 	private _suppBoost = 0.5 * (1+ ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count seaports));
 	private _resBoost = 1 + (0.25*({(sidesX getVariable [_x,sideUnknown] == teamPlayer) and !(_x in destroyedSites)} count factories));
 
+	private _governmentCitySide = if (gameMode == 4) then {Invaders} else {Occupants};
+	private _governmentCityColor = if (gameMode == 4) then {colorInvaders} else {colorOccupants};
+	private _governmentCityName = if (gameMode == 4) then {nameInvaders} else {nameOccupants};
+
 	{
 		private _city = _x;
 		private _resAddCity = 0;
@@ -33,21 +37,25 @@ while {true} do
 		private _radioTowerSide = [_city] call A3A_fnc_getSideRadioTowerInfluence;
 		_multiplyRes = if (_radioTowerSide != teamPlayer) then {0.5} else {1};
 
-		if (_city in destroyedSites) then
-		{
+		if (_city in destroyedSites) then {
 			_popKilled = _popKilled + _numCIV;
 		}
-		else
-		{
+		else {
 			_resAddCity = _numciv * _multiplyRes * (_supportReb / 100) / 3;
 			_hrAddCity = _numciv * (_supportReb / 10000);
 			switch (_radioTowerSide) do
 			{
 				case teamPlayer: {[-1,_suppBoost,_city,false,true] spawn A3A_fnc_citySupportChange};
 				case Occupants: {[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
-				case Invaders: {[-1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
+				case Invaders: {
+					if (gameMode == 4) then {
+						[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange;
+					} else {
+						[-1,-1,_city,false,true] spawn A3A_fnc_citySupportChange;
+					};
+				};
 			};
-			if (sidesX getVariable [_city,sideUnknown] == Occupants) then
+			if (sidesX getVariable [_city,sideUnknown] == _governmentCitySide) then
 			{
 				_resAddCity = _resAddCity / 2;
 				_hrAddCity = _hrAddCity / 2;
@@ -57,11 +65,11 @@ while {true} do
 		_hrAdd = _hrAdd + _hrAddCity;
 
 		// revuelta civil!!
-		if ((_supportGov < _supportReb) and (sidesX getVariable [_city,sideUnknown] == Occupants)) then
+		if ((_supportGov < _supportReb) and (sidesX getVariable [_city,sideUnknown] == _governmentCitySide)) then
 		{
 			["TaskSucceeded", ["", format ["%1 joined %2",[_city, false] call A3A_fnc_location,nameTeamPlayer]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
 			sidesX setVariable [_city,teamPlayer,true];
-			[Occupants, 10, 60] remoteExec ["A3A_fnc_addAggression",2];
+			[_governmentCitySide, 10, 60] remoteExec ["A3A_fnc_addAggression",2];
 			_mrkD = format ["Dum%1",_city];
 			_mrkD setMarkerColor colorTeamPlayer;
 			garrison setVariable [_city,[],true];
@@ -77,13 +85,12 @@ while {true} do
 			};
 			[] call A3A_fnc_tierCheck;
 		};
-		if ((_supportGov > _supportReb) and (sidesX getVariable [_city,sideUnknown] == teamPlayer)) then
-		{
-			["TaskFailed", ["", format ["%1 joined %2",[_city, false] call A3A_fnc_location,nameOccupants]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
-			sidesX setVariable [_city,Occupants,true];
-			[Occupants, -10, 45] remoteExec ["A3A_fnc_addAggression",2];
+		if ((_supportGov > _supportReb) and (sidesX getVariable [_city,sideUnknown] == teamPlayer)) then {
+			["TaskFailed", ["", format ["%1 joined %2",[_city, false] call A3A_fnc_location,_governmentCityName]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
+			sidesX setVariable [_city,_governmentCitySide,true];
+			[_governmentCitySide, -10, 45] remoteExec ["A3A_fnc_addAggression",2];
 			_mrkD = format ["Dum%1",_city];
-			_mrkD setMarkerColor colorOccupants;
+			_mrkD setMarkerColor _governmentCityColor;
 			garrison setVariable [_city,[],true];
 			sleep 5;
 			[] call A3A_fnc_tierCheck;
@@ -91,7 +98,10 @@ while {true} do
 	} forEach citiesX;
 
 	if (_popKilled > (_popTotal / 3)) then {["destroyedSites",false,true] remoteExec ["BIS_fnc_endMission"]};
-	if ((_popReb > _popGov) and ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count airportsX == count airportsX)) then {["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0]};
+
+	if (_popReb > _popGov && {((airportsX + milbases) findIf {sidesX getVariable [_x, sideUnknown] != teamPlayer} == -1)}) then {
+		["end1",true,true,true,true] remoteExec ["BIS_fnc_endMission",0];
+	};
 
 	{
 		if ((sidesX getVariable [_x,sideUnknown] == teamPlayer) and !(_x in destroyedSites)) then
@@ -108,7 +118,9 @@ while {true} do
     if(_rebelsCount > 0) then {
         private _incomePerPlayer = round(_totalSalary / _rebelsCount);
         {
-            _x setVariable ["moneyX", ((_x getVariable ["moneyX", 0]) + _incomePerPlayer) max 0, true];
+			private _playerMoney = round (((_x getVariable ["moneyX", 0]) + _incomePerPlayer) max 0);
+			private _owner = owner _x;
+            _x setVariable ["moneyX", _playerMoney, _owner];
             private _paycheckText = format [
                 "<t size='0.6'>%1 got paid <t color='#00FF00'>%2 €</t> for fighting for the freedom!</t>",
                 name _x,

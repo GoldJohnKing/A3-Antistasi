@@ -19,7 +19,7 @@ private _helipads = [];
 {
     private _building = _x;
     private _pos = getPos _building;
-    if(_building isKindOf "Helipad_Base_F" && {_pos inArea _marker}) then
+    if((_building isKindOf "Helipad_Base_F" || {_building isKindOf "Land_BludpadCircle"}) && {_pos inArea _marker}) then
     {
         _helipads pushBack [[_pos, getDir _building], false];
     }
@@ -34,7 +34,7 @@ private _helipads = [];
     private _subMarker = _x;
     private _markerSize = markerSize _subMarker;
     private _distance = sqrt ((_markerSize select 0) * (_markerSize select 0) + (_markerSize select 1) * (_markerSize select 1));
-    private _subBuildings = nearestObjects [getMarkerPos _subMarker, ["Helipad_Base_F"], _distance, true];
+    private _subBuildings = nearestObjects [getMarkerPos _subMarker, ["Helipad_Base_F","Land_BludpadCircle"], _distance, true];
     {
         private _pos = getPos _x;
         if(_pos inArea _subMarker) then

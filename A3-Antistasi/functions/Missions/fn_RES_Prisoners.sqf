@@ -3,6 +3,8 @@ if (!isServer and hasInterface) exitWith{};
 
 private ["_unit","_markerX","_positionX","_countX"];
 
+private _side = if (gameMode == 4) then {Invaders} else {Occupants};
+
 _markerX = _this select 0;
 
 _difficultX = if (random 10 < tierWar) then {true} else {false};
@@ -84,6 +86,24 @@ sleep 5;
 
 {_x allowDamage true} forEach _POWS;
 
+_mrk = createMarkerLocal [format ["%1patrolarea", floor random 100], getPos _houseX];
+_mrk setMarkerShapeLocal "RECTANGLE";
+_mrk setMarkerSizeLocal [50,50];
+_mrk setMarkerTypeLocal "hd_warning";
+_mrk setMarkerColorLocal "ColorRed";
+_mrk setMarkerBrushLocal "DiagGrid";
+_mrk setMarkerAlphaLocal 0;
+
+private _squad = if (_side == Invaders) then {CSATSquad} else {NATOSquad};
+_typeGroup = if (random 10 < tierWar) then {
+	_squad call SCRT_fnc_unit_selectInfantryTier
+} else {
+	[policeOfficer,policeGrunt,policeGrunt,policeGrunt,policeGrunt,policeGrunt,policeGrunt,policeGrunt]
+};
+_groupX = [_positionX,_side, _typeGroup] call A3A_fnc_spawnGroup;
+_nul = [leader _groupX, _mrk, "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+{[_x,""] call A3A_fnc_NATOinit} forEach units _groupX;
+
 waitUntil {sleep 1; ({alive _x} count _POWs == 0) or ({(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _POWs > 0) or (dateToNumber date > _dateLimitNum)};
 
 if (dateToNumber date > _dateLimitNum) then
@@ -129,7 +149,7 @@ else
 	_resourcesFIA = 100 * _countX*_bonus;
 	[_hr,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[0,10*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
-	[Occupants, -(_countX * 1.5), 90] remoteExec ["A3A_fnc_addAggression",2];
+	[_side, -(_countX * 1.5), 90] remoteExec ["A3A_fnc_addAggression",2];
 	{ [_countX*10, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
 	[round ((_countX*_bonus/2)*10),theBoss] call A3A_fnc_playerScoreAdd;
 	{[_x] join _grpPOW; [_x] orderGetin false} forEach _POWs;
@@ -153,5 +173,9 @@ deleteGroup _grpPOW;
 {boxX addWeaponCargoGlobal [_x,1]} forEach _weaponsX;
 {boxX addMagazineCargoGlobal [_x,1]} forEach _ammunition;
 {boxX addItemCargoGlobal [_x,1]} forEach _items;
+
+[_groupX] spawn A3A_fnc_groupDespawner;
+
+deleteMarkerLocal _mrk;
 
 [_taskId, "RES", 1200] spawn A3A_fnc_taskDelete;

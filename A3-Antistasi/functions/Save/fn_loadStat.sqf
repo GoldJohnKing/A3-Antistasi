@@ -18,14 +18,15 @@ private _translateMarker = {
 };
 
 private _specialVarLoads = [
-	"watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "minesX","staticsX","constructionsX","attackCountdownOccupants","antennas","mrkNATO","mrkSDK","prestigeNATO",
+	"watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "mortarpostsFIA", "hmgpostsFIA", "minesX","staticsX","constructionsX","attackCountdownOccupants","antennas","mrkNATO","mrkSDK","prestigeNATO",
 	"prestigeCSAT","posHQ","hr","armas","items","backpcks","ammunition","dateX","prestigeOPFOR",
 	"prestigeBLUFOR","resourcesFIA","skillFIA", "maxConstructions", "destroyedSites",
 	"garrison","tasks","smallCAmrk","membersX","vehInGarage","destroyedBuildings","idlebases",
 	"idleassets","chopForest","weather","killZones","jna_dataList","controlsSDK","mrkCSAT","nextTick",
 	"bombRuns","wurzelGarrison","aggressionOccupants", "aggressionInvaders", "attackCountdownInvaders", "testingTimerIsActive",
 	"traderDiscount", "supportPoints", "isTraderQuestCompleted", "traderPosition", "areOccupantsDefeated", "areInvadersDefeated",
-	"version"
+	"rebelLoadouts",
+	"version", "HR_Garage"
 ];
 
 private _varName = _this select 0;
@@ -75,7 +76,9 @@ if (_varName in _specialVarLoads) then {
 	if (_varName == 'hr') then {server setVariable ["HR",_varValue,true]};
 	if (_varName == 'dateX') then {setDate _varValue};
 	if (_varName == 'weather') then {
-		0 setFog (_varValue select 0);
+		// Avoid persisting potentially-broken fog values
+		private _fogParams = _varValue select 0;
+		0 setFog [_fogParams#0, (_fogParams#1) max 0, (_fogParams#2) max 0];
 		0 setRain (_varValue select 1);
 		forceWeatherChange
 	};
@@ -92,7 +95,14 @@ if (_varName in _specialVarLoads) then {
 		} forEach soldiersSDK;
 	};
 	if (_varName == 'maxConstructions') then {maxConstructions=_varValue; publicVariable "maxConstructions"};
-	if (_varName == 'vehInGarage') then {vehInGarage= +_varValue; publicVariable "vehInGarage"};
+    if (_varname == "HR_Garage") then {
+        [_varValue] call HR_GRG_fnc_loadSaveData;
+    };
+	if (_varName == 'vehInGarage') then { //convert old garage to new garage
+        vehInGarage= [];
+        publicVariable "vehInGarage";
+        [_varValue, ""] call HR_GRG_fnc_addVehiclesByClass;
+    };
 	if (_varName == 'destroyedBuildings') then {
 		{
 			// nearestObject sometimes picks the wrong building and is several times slower
@@ -135,15 +145,21 @@ if (_varName in _specialVarLoads) then {
 	};
 	if (_varName == 'garrison') then {
 		{
-			garrison setVariable [[_x select 0] call _translateMarker, _x select 1, true];
+			private _garrison = +(_x select 1);
+			{
+				// fix for 2.4 -> 2.5 rebel garrison incompatibity
+				if (_x find "loadouts_rebel" != 0) then { continue };
+				_garrison set [_forEachIndex, "loadouts_reb" + (_x select [14])];
+			} forEach _garrison;
+			garrison setVariable [[_x select 0] call _translateMarker, _garrison, true];
 			if (count _x > 2) then { garrison setVariable [(_x select 0) + "_lootCD", _x select 2, true] };
 		} forEach _varvalue;
 	};
 	if (_varName == 'wurzelGarrison') then {
 		{
-			garrison setVariable [format ["%1_garrison", (_x select 0)], _x select 1, true];
-			garrison setVariable [format ["%1_requested", (_x select 0)], _x select 2, true];
-			garrison setVariable [format ["%1_over", (_x select 0)], _x select 3, true];
+			garrison setVariable [format ["%1_garrison", (_x select 0)], +(_x select 1), true];
+			garrison setVariable [format ["%1_requested", (_x select 0)], +(_x select 2), true];
+			garrison setVariable [format ["%1_over", (_x select 0)], +(_x select 3), true];
 			[(_x select 0)] call A3A_fnc_updateReinfState;
 		} forEach _varvalue;
 	};
@@ -182,10 +198,11 @@ if (_varName in _specialVarLoads) then {
 		};
 	};
 	if (_varName == 'aapostsFIA') then {
-		if (count (_varValue select 0) == 2) then {
+		if (count (_varValue select 0) >= 2) then {
 			{
 				_positionX = _x select 0;
 				_garrison = _x select 1;
+				_staticPositions = _x select 2;
 				_mrk = createMarker [format ["FIAAApost%1", random 1000], _positionX];
 				_mrk setMarkerShape "ICON";
 				_mrk setMarkerType "n_antiair";
@@ -193,16 +210,18 @@ if (_varName in _specialVarLoads) then {
 				_mrk setMarkerText format ["%1 AA Emplacement",nameTeamPlayer];
 				spawner setVariable [_mrk,2,true];
 				if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+				if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
 				aapostsFIA pushBack _mrk;
 				sidesX setVariable [_mrk,teamPlayer,true];
 			} forEach _varvalue;
 		};
 	};
 	if (_varName == 'atpostsFIA') then {
-		if (count (_varValue select 0) == 2) then {
+		if (count (_varValue select 0) >= 2) then {
 			{
 				_positionX = _x select 0;
 				_garrison = _x select 1;
+				_staticPositions = _x select 2;
 				_mrk = createMarker [format ["FIAATpost%1", random 1000], _positionX];
 				_mrk setMarkerShape "ICON";
 				_mrk setMarkerType "n_armor";
@@ -210,7 +229,46 @@ if (_varName in _specialVarLoads) then {
 				_mrk setMarkerText format ["%1 AT Emplacement",nameTeamPlayer];
 				spawner setVariable [_mrk,2,true];
 				if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+				if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
 				atpostsFIA pushBack _mrk;
+				sidesX setVariable [_mrk,teamPlayer,true];
+			} forEach _varvalue;
+		};
+	};
+	if (_varName == 'mortarpostsFIA') then {
+		if (count (_varValue select 0) >= 2) then {
+			{
+				_positionX = _x select 0;
+				_garrison = _x select 1;
+				_staticPositions = _x select 2;
+				_mrk = createMarker [format ["FIAMortarpost%1", random 1000], _positionX];
+				_mrk setMarkerShape "ICON";
+				_mrk setMarkerType "n_mortar";
+				_mrk setMarkerColor colorTeamPlayer;
+				_mrk setMarkerText format ["%1 Mortar Emplacement",nameTeamPlayer];
+				spawner setVariable [_mrk,2,true];
+				if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+				if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+				mortarpostsFIA pushBack _mrk;
+				sidesX setVariable [_mrk,teamPlayer,true];
+			} forEach _varvalue;
+		};
+	};
+	if (_varName == 'hmgpostsFIA') then {
+		if (count (_varValue select 0) >= 2) then {
+			{
+				_positionX = _x select 0;
+				_garrison = _x select 1;
+				_staticPositions = _x select 2;
+				_mrk = createMarker [format ["FIAHmgpost%1", random 1000], _positionX];
+				_mrk setMarkerShape "ICON";
+				_mrk setMarkerType "n_unknown";
+				_mrk setMarkerColor colorTeamPlayer;
+				_mrk setMarkerText format ["%1 HMG Emplacement",nameTeamPlayer];
+				spawner setVariable [_mrk,2,true];
+				if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+				if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+				hmgpostsFIA pushBack _mrk;
 				sidesX setVariable [_mrk,teamPlayer,true];
 			} forEach _varvalue;
 		};
@@ -358,10 +416,16 @@ if (_varName in _specialVarLoads) then {
                     [Occupants] spawn A3A_fnc_rebelAttack;
                 };
 			} else {
-				if (_x == "DEF_HQ") then {
-					[] spawn A3A_fnc_attackHQ;
-				} else {
-					[_x,clientOwner,true] call A3A_fnc_missionRequest;
+				switch (_x) do {
+					case "DEF_HQ": {
+						[] spawn A3A_fnc_attackHQ;
+					};
+					case "ENC": {
+						[] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
+					};
+					default {
+						[_x,clientOwner,true] call A3A_fnc_missionRequest;
+					};
 				};
 			};
 		} forEach _varvalue;
@@ -413,6 +477,12 @@ if (_varName in _specialVarLoads) then {
 			"CSAT_carrier" setMarkerAlpha 0;
 		};
     };
+
+	if(_varname == 'rebelLoadouts') then {
+        diag_log format ["Rebel Loadouts: %1", str _varvalue];
+        rebelLoadouts = _varvalue;  publicVariable "rebelLoadouts";
+    };
+
 } else {
 	call compile format ["%1 = %2",_varName,_varValue];
 };

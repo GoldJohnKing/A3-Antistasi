@@ -20,11 +20,6 @@ if !(_positionTel inArea _nearX) exitWith {["Garrison", "You must click near a m
 
 if (not(sidesX getVariable [_nearX,sideUnknown] == teamPlayer)) exitWith {["Garrison", format ["That zone does not belong to %1",nameTeamPlayer]] call A3A_fnc_customHint;};
 
-if ((_nearX in watchpostsFIA) and !(isOnRoad getMarkerPos _nearX)) exitWith {["Garrison", "You cannot manage garrisons on this kind of zone"] call A3A_fnc_customHint;};
-if ((_nearX in roadblocksFIA) and !(isOnRoad getMarkerPos _nearX)) exitWith {["Garrison", "You cannot manage garrisons on this kind of zone"] call A3A_fnc_customHint;};
-if ((_nearX in aapostsFIA) and !(isOnRoad getMarkerPos _nearX)) exitWith {["Garrison", "You cannot manage garrisons on this kind of zone"] call A3A_fnc_customHint;};
-if ((_nearX in atpostsFIA) and !(isOnRoad getMarkerPos _nearX)) exitWith {["Garrison", "You cannot manage garrisons on this kind of zone"] call A3A_fnc_customHint;};
-
 _thingX = _this select 0;
 
 _groupX = grpNull;
@@ -79,11 +74,11 @@ private _unitTypes = _unitsX apply { _x getVariable "unitType" };
 _noBorrar = false;
 
 if (spawner getVariable _nearX != 2) then
-	{
-
-	{deleteWaypoint _x} forEach waypoints _groupX;
-	_wp = _groupX addWaypoint [(getMarkerPos _nearX), 0];
+{
+	private _targPos = getMarkerPos _nearX;
+	private _wp = _groupX addWaypoint [(getMarkerPos _nearX), 0];
 	_wp setWaypointType "MOVE";
+	_groupX setCurrentWaypoint _wp;
 	{
 	_x setVariable ["markerX",_nearX,true];
 	_x setVariable ["spawner",nil,true];
@@ -102,9 +97,20 @@ if (spawner getVariable _nearX != 2) then
 		}];
 	} forEach _unitsX;
 
-	waitUntil {sleep 1; (spawner getVariable _nearX == 2 or !(sidesX getVariable [_nearX,sideUnknown] == teamPlayer))};
-	if (!(sidesX getVariable [_nearX,sideUnknown] == teamPlayer)) then {_noBorrar = true};
+	// trigger actual garrison join when close to target
+	[_nearX, _groupX] spawn {
+		params ["_marker", "_group"];
+		waitUntil {
+			sleep 5;
+			isNull leader _group or { leader _group distance getMarkerPos _marker < 20 } 
+		};
+		sleep 10;			// give units some time to get onto marker
+		if !(isNull leader _group) then { [_marker] remoteExec ["A3A_fnc_updateRebelStatics", 2] };
 	};
+
+	waitUntil {sleep 1; (spawner getVariable _nearX == 2 or !(sidesX getVariable [_nearX,sideUnknown] == teamPlayer))};
+	if (!(sidesX getVariable [_nearX,sideUnknown] == teamPlayer)) exitWith {_noBorrar = true};
+};
 
 if (!_noBorrar) then
 	{

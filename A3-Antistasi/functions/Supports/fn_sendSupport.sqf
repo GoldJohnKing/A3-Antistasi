@@ -69,7 +69,7 @@ private _supportArray = if(_side == Occupants) then {occupantsSupports} else {in
     private _index = -1;
     _index = _supportArray findIf {((_x select 0) == _supportType) && {_supportPos inArea (_x select 1)}};
 
-    if((_index != -1) && {_supportType in ["AIRSTRIKE", "QRF"]}) then
+    if((_index != -1) && {_supportType in ["AIRSTRIKE", "QRF", "AIRDROP"]}) then
     {
         [2, format ["Blocking %1 support for given position, as another support of this type is near", _supportType], _fileName] call A3A_fnc_log;
         _index = -1;
@@ -129,7 +129,7 @@ if(_selectedSupport == "") exitWith
 
 [2, format ["Sending support type %1 to help at %2", _selectedSupport, _supportPos], _fileName] call A3A_fnc_log;
 
-if(_selectedSupport in ["MORTAR", "QRF", "AIRSTRIKE", "ORBSTRIKE", "CARPETBOMB"]) then
+if(_selectedSupport in ["MORTAR", "QRF", "AIRDROP", "AIRSTRIKE", "ORBSTRIKE", "CARPETBOMB"]) then
 {
     //Areal support methods, transmit position info
     [_side, _timerIndex, _selectedSupport, _supportPos, _precision, _revealCall] spawn A3A_fnc_createSupport;

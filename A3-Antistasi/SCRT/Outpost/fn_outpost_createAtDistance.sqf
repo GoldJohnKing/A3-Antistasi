@@ -7,10 +7,10 @@ private _garrison = garrison getVariable [_markerX, []];
 private _props = [];
 
 if (isNil "_garrison") then {//this is for backward compatibility, remove after v12
-    _garrison = ["loadouts_rebel_militia_Rifleman"];
+    _garrison = [];
     {
         _garrison pushBack (_x select 0);
-    } forEach groupsSDKAT;
+    } forEach [SDKSL,SDKMil,SDKATman,SDKATman,SDKATman,SDKMedic];
     garrison setVariable [_markerX,_garrison,true];
 };
 
@@ -25,25 +25,40 @@ if (isNil "_garrison") then {//this is for backward compatibility, remove after 
 private _camonet = createVehicle ["CamoNet_BLUFOR_open_F", _positionX, [], 0, "CAN_COLLIDE"];
 _props pushBack _camonet;
 
-_veh = staticATteamPlayer createVehicle _positionX;
+private _veh = objNull;
+
+//overriden static position and direction
+private _staticPositionInfo = staticPositions getVariable [_markerX, []];
+if (!(_staticPositionInfo isEqualTo [])) then {
+    private _staticPosition = _staticPositionInfo select 0;
+    private _staticDirection = _staticPositionInfo select 1;
+    _veh = createVehicle [staticATteamPlayer, _positionX, [], 0, "CAN_COLLIDE"];
+    _veh setPosATL _staticPosition;
+    _veh setDir _staticDirection;
+} else {
+    _veh = staticATteamPlayer createVehicle _positionX;
+};
+
 _veh lock 3;
-[_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 
 sleep 1;
+
+[_veh,"Move_Outpost_Static"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian], _veh];
 
 private _groupX = [_positionX, teamPlayer, _garrison,true,false] call A3A_fnc_spawnGroup;
 private _groupXUnits = units _groupX;
 _groupXUnits apply { [_x,_markerX] spawn A3A_fnc_FIAinitBases; };
 
-private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == "loadouts_rebel_militia_Rifleman"};
+private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == "loadouts_reb_militia_Rifleman"};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
     _crewMan moveInGunner _veh;
-    [_crewMan, 200] spawn SCRT_fnc_common_scanHorizon;
 };
 
 _groupX setBehaviour "AWARE";
 _groupX setCombatMode "YELLOW";
+
+[_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 
 waitUntil {
 	sleep 1; 

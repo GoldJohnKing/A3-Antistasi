@@ -114,7 +114,6 @@ if(_mode == "ADD") then {
                             supportMarkerDestination setMarkerTextLocal "Recon Plane Search Area";
                         };
                         case ("PARADROP"): {
-                            supportMarkerDestination setMarkerTypeLocal "hd_dot";
                             supportMarkerDestination setMarkerColorLocal "ColorGrey";
                             supportMarkerDestination setMarkerTextLocal "Paradrop Exit";
                         };

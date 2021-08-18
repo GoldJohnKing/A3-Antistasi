@@ -15,7 +15,7 @@ private _fileName = "SelectVehicleType";
 
 if(_preference == "LAND_AIR") exitWith
 {
-  if(_side == Occupants) then {vehNATOAA} else {vehCSATAA};
+  if(_side == Occupants) then {selectRandom vehNATOAA} else {selectRandom vehCSATAA};
 };
 if(_preference == "LAND_TANK") exitWith
 {
@@ -108,11 +108,11 @@ if(_preference in ["AIR_GENERIC", "AIR_DEFAULT"]) then
 {
   if(_side == Occupants) then
   {
-    _possibleVehicles append [vehNATOPlane, vehNATOPlaneAA];
+    _possibleVehicles append (vehNATOPlanes + vehNATOPlanesAA);
   }
   else
   {
-    _possibleVehicles append [vehCSATPlane, vehCSATPlaneAA];
+    _possibleVehicles append (vehCSATPlanes + vehCSATPlanesAA);
   };
 };
 

@@ -38,6 +38,12 @@ if(_mode == "ADD") then {
                 case ("AT"): {
                     [_pos] spawn SCRT_fnc_outpost_createAt;
                 };
+                case ("MORTAR"): {
+                    [_pos] spawn SCRT_fnc_outpost_createMortar;
+                };
+                case ("HMG"): {
+                    [_pos] spawn SCRT_fnc_outpost_createHmg;
+                };
                 default {
                     [1, "Bad outpost type.", "establishOutpostEventHandler"] call A3A_fnc_log;
                 };

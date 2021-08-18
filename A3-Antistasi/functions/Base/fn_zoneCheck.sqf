@@ -69,6 +69,13 @@ private _markerPos = getMarkerPos _marker;
 if (_enemy1UnitCount > 3 * _defenderUnitCount || {_enemy2UnitCount > 3 * _defenderUnitCount}) then
 {
     private _winner = if (_enemy1UnitCount > _enemy2UnitCount) then {_enemy1} else {_enemy2};
+    if (_winner isEqualTo teamPlayer) exitWith {
+        [
+            3,
+            format ["Rebel auto capture of %1 was blocked, %1 remains side %2", _marker, _side],
+            "zoneCheck"
+        ] call A3A_fnc_log;
+    };
     [_winner,_marker] remoteExec ["A3A_fnc_markerChange",2];
 };
 zoneCheckInProgress = false;

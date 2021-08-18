@@ -1,6 +1,8 @@
-private _filename = "fn_garbageCleaner.sqf";
-[petros,"hint","Deleting Garbage. Please wait", "Garbage Cleaner"] remoteExec ["A3A_fnc_commsMP", 0];
+// Do not localise timeSpan, it is broadcast to all connected clients.
+private _timeSinceLastGC = [[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,0,0,false,2] call A3A_fnc_timeSpan_format;
+["Garbage Cleaner","Please wait for GC to finish.<br/>Last GC was " + _timeSinceLastGC + " ago."] remoteExec ["A3A_fnc_customHint", 0];
 [2, "Cleaning garbage...", _filename] call A3A_fnc_log;
+
 
 private _rebelSpawners = allUnits select { side group _x == teamPlayer && {_x getVariable ["spawner",false]} };
 
@@ -24,7 +26,7 @@ private _fnc_distCheck = {
 { deleteVehicle _x } forEach (allMissionObjects "Bo_Mk82_MI08");
 
 private _rebelPlayers = (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
-private _lootCrates = (allMissionObjects lootCrate) select { 
+private _lootCrates = (allMissionObjects lootCrate) select {
 	private _crate = _x;
 	private _isOnHq = (getMarkerPos "Synd_HQ") distance2D _crate < 50;
 	private _isPlayersNear = _rebelPlayers findIf {_crate distance2D _x < 100} != -1;
@@ -37,20 +39,18 @@ if (!isNil "_lootCrates" && {count _lootCrates > 0}) then {
 	} forEach _lootCrates;
 };
 
-_moneyItems = ["Item_Money","Item_Money_bunch","Item_Money_roll","Item_Money_stack"];
-
 {
 	private _moneyItem = _x;
-	{ 
-		deleteVehicle _x; 
-	} forEach (allMissionObjects _moneyItem);	
-} forEach _moneyItems;
+	{
+		deleteVehicle _x;
+	} forEach (allMissionObjects _moneyItem);
+} forEach arrayMoneyLand;
 
 {
 	private _belongingItem = _x;
-	{ 
-		deleteVehicle _x; 
-	} forEach (allMissionObjects _belongingItem);	
+	{
+		deleteVehicle _x;
+	} forEach (allMissionObjects _belongingItem);
 } forEach belongings;
 
 if (A3A_hasACE) then {
@@ -82,5 +82,7 @@ if (A3A_hasRHS) then {
 
 };
 
-[petros,"hint","Garbage deleted", "Garbage Cleaner"] remoteExec ["A3A_fnc_commsMP", 0];
+// Do not localise timeSpan, it is broadcast to all connected clients.
+["Garbage Cleaner","Garbage Deleted.<br/>Last GC was " + _timeSinceLastGC + " ago."] remoteExec ["A3A_fnc_customHint", 0];
+missionNamespace setVariable ["A3A_lastGarbageCleanTime",serverTime,true];
 [2, "Garbage clean completed", _filename] call A3A_fnc_log;

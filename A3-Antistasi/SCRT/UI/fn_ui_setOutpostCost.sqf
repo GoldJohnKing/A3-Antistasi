@@ -24,7 +24,7 @@ switch (outpostType) do {
         _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
     };
     case ("ROADBLOCK"): {
-        _costs = 1000; //car with mg
+        _costs = [vehSDKLightArmed] call A3A_fnc_vehiclePrice; //MG car
         _hr = 1; //static gunner
         {
             _costs = _costs + (server getVariable (_x select 0));
@@ -33,8 +33,8 @@ switch (outpostType) do {
         _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
     };
     case ("AA"): {
-        _costs = 1300; //AA
-        _hr = 1; //static gunner
+        _costs = [staticAAteamPlayer] call A3A_fnc_vehiclePrice;
+        _hr = 1;
         {
             _costs = _costs + (server getVariable (_x select 0)); 
             _hr = _hr +1;
@@ -42,7 +42,25 @@ switch (outpostType) do {
        _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
     };
     case ("AT"): {
-        _costs = 1500; //AT
+        _costs = [staticATteamPlayer] call A3A_fnc_vehiclePrice; //AT
+        _hr = 1; //static gunner
+        {
+            _costs = _costs + (server getVariable (_x select 0)); 
+            _hr = _hr +1;
+        } forEach groupsSDKAT;
+       _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+    };
+    case ("MORTAR"): {
+        _costs = [SDKMortar] call A3A_fnc_vehiclePrice; //Mortar
+        _hr = 1; //static gunner
+        {
+            _costs = _costs + (server getVariable (_x select 0)); 
+            _hr = _hr +1;
+        } forEach groupsSDKAT;
+       _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+    };
+    case ("HMG"): {
+        _costs = [SDKMGStatic] call A3A_fnc_vehiclePrice;
         _hr = 1; //static gunner
         {
             _costs = _costs + (server getVariable (_x select 0)); 

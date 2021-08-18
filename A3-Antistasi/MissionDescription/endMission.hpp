@@ -31,14 +31,6 @@ class pvpMem
 	picture = "b_unknown";
 	pictureColor[] = {0.0,0.5,0.0,1};
 };
-class pvpCount
-{
-	title = "PvP Player Overflow";
-	subtitle = "This slot is unavailable";
-	description = "PvP is not available as there are too many PvP slots in use, or not enough Rebels online.";
-	picture = "b_unknown";
-	pictureColor[] = {0.0,0.5,0.0,1};
-};
 class BossMiss
 {
 	title = "MIA Rebel Commander";

@@ -108,8 +108,12 @@ if(_vehPool isEqualTo []) then
 
 for "_i" from 1 to _vehicleCount do
 {
+    if ([_side] call A3A_fnc_remUnitCount < 4) exitWith {
+        [2, "Cancelling because maxUnits exceeded", _filename] call A3A_fnc_log;
+    };
+
     private _vehicleType = selectRandomWeighted _vehPool;
-    private _vehicleData = [_vehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin] call A3A_fnc_createAttackVehicle;
+    private _vehicleData = [_vehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin, _posDestination] call A3A_fnc_createAttackVehicle;
     if (_vehicleData isEqualType []) then
     {
         _vehicles pushBack (_vehicleData select 0);

@@ -27,7 +27,7 @@ _size = [_markerX] call A3A_fnc_sizeMarker;
 
 if ((!(_markerX in citiesX)) and (spawner getVariable _markerX != 2)) then
 	{
-	_flagsX = nearestObjects [_positionX, ["FlagCarrier"], _size];
+	_flagsX = nearestObjects [_positionX, ["FlagCarrierCore"], _size];
 	_flagX = _flagsX select 0;
 	};
 if (isNil "_flagX") then {_flagX = objNull};
@@ -474,6 +474,8 @@ if ((_winner != teamPlayer) and (_looser != teamPlayer)) then {
 };
 markersChanging = markersChanging - [_markerX];
 
-[_looser] remoteExecCall ["SCRT_fnc_common_defeatFactionIfPossible", 2];
+if (_winner == teamPlayer) then {
+	[_looser] remoteExecCall ["SCRT_fnc_common_defeatFactionIfPossible", 2];
+};
 
 [3, format ["Finished marker change at %1", _markerX], _fileName] call A3A_fnc_log;

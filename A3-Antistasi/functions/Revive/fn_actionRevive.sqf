@@ -1,162 +1,133 @@
-params ["_healed", "_healer"];
+params ["_cured", "_medic"];
+
+private _player = isPlayer _medic;
+private _inPlayerGroup = if !(_player) then {if ({isPlayer _x} count (units group _medic) > 0) then {true} else {false}} else {false};
+private _isMedic = [_medic] call A3A_fnc_isMedic;
+
+if (captive _medic) then { _medic setCaptive false };         // medic is will be local
+if !(alive _cured) exitWith
+{
+    if (_player) then {["Revive", format ["%1 is already dead",name _cured]] call A3A_fnc_customHint;};
+    if (_inPlayerGroup) then {_medic groupChat format ["%1 is already dead",name _cured]};
+    false
+};
+if !([_medic] call A3A_fnc_canFight) exitWith
+{
+    if (_player) then { ["Revive", "You are not able to revive anyone"] call A3A_fnc_customHint };
+    false
+};
+if !(isNull attachedTo _cured) exitWith
+{
+    if (_player) then {["Revive", format ["%1 is being carried or transported and you cannot heal him",name _cured]] call A3A_fnc_customHint;};
+    if (_inPlayerGroup) then {_medic groupChat format ["%1 is being carried or transported and I cannot heal him",name _cured]};
+    false
+};
+if !(_cured getVariable ["incapacitated",false]) exitWith
+{
+    if (_player) then {["Revive", format ["%1 no longer needs your help",name _cured]] call A3A_fnc_customHint;};
+    if (_inPlayerGroup) then {_medic groupChat format ["%1 no longer needs my help",name _cured]};
+    false
+};
+
+private _medkits = ["Medikit"] + (A3A_faction_reb getVariable "mediKits");    // Medikit is kept in case a unit still got hold of it.
+private _firstAidKits = ["FirstAidKit"] + (A3A_faction_reb getVariable "firstAidKits");    // FirstAidKit is kept in case a unit still got hold of it.
+private _hasMedkit = (count (_medkits arrayIntersect items _medic) > 0);
+private _medicFAKs = if (!_hasMedkit) then { _firstAidKits arrayIntersect items _medic };
+private _curedFAKs = if (!_hasMedkit) then { _firstAidKits arrayIntersect items _cured };
+
+if (!_hasMedkit && {count _medicFAKs == 0 && count _curedFAKs == 0}) exitWith
+{
+    if (_player) then {["Revive", format ["You or %1 need a First Aid Kit or Medikit to be able to revive",name _cured]] call A3A_fnc_customHint;};
+    if (_inPlayerGroup) then {_medic groupChat "I'm out of FA kits and I have no Medikit!"};
+    false
+};
+
+private _timer = if (_isMedic) then { time + 10 } else { time + 20 };
+
+_medic setVariable ["helping",true];
+_medic playMoveNow selectRandom medicAnims;
+_medic setVariable ["cancelRevive",false];
 
 private _actionX = 0;
-private _isHealed = false;
-private _isPlayer = isPlayer _healer;
-private _inPlayerGroup = if !(_isPlayer) then {if ({isPlayer _x} count (units group _healer) > 0) then {true} else {false}} else {false};
+if (!_player) then
+{
+    {_medic disableAI _x} forEach ["ANIM","AUTOTARGET","FSM","MOVE","TARGET"];
+}
+else
+{
+    _actionX = _medic addAction ["Cancel Revive", {(_this select 1) setVariable ["cancelRevive",true]},nil,6,true,true,"",""];
+    _cured setVariable ["helped",_medic,true];
 
-if (captive _healer) then {
-    [_healer,false] remoteExec ["setCaptive",0,_healer];
-    _healer setCaptive false;
-};
-
-if (!alive _healed) exitWith {
-    if (_isPlayer) then {["Revive", format ["%1 is already dead",name _healed]] call A3A_fnc_customHint;};
-    if (_inPlayerGroup) then {_healer groupChat format ["%1 is already dead", name _healed]};
-    _isHealed
-};
-
-if !([_healer] call A3A_fnc_canFight) exitWith {
-    if (_isPlayer) then {
-        ["Revive", "You are not able to revive anyone"] call A3A_fnc_customHint;};
-        _isHealed
-    };
-
-if  ((!([_healer] call A3A_fnc_isMedic && "Medikit" in (items _healer))) && {(!("FirstAidKit" in (items _healer))) && {(!("FirstAidKit" in (items _healed)))}}) exitWith{
-    if (_isPlayer) then {["Revive", format ["You or %1 need a First Aid Kit or Medikit to be able to revive",name _healed]] call A3A_fnc_customHint;};
-    if (_inPlayerGroup) then {_healer groupChat "I'm out of FA kits and I have no Medikit!"};
-    _isHealed
-};
-
-if ((!("FirstAidKit" in (items _healer))) && !(_healer canAdd "FirstAidKit")) exitWith {
-    if (_isPlayer) then {["Revive", format ["%1 has a First Aid Kit but you do not have enough space in your inventory to use it",name _healed]] call A3A_fnc_customHint;};
-    if (_inPlayerGroup) then {_healer groupChat "I'm out of FA kits!"};
-    _isHealed
-};
-
-if !(isNull attachedTo _healed) exitWith {
-    if (_isPlayer) then {["Revive", format ["%1 is being carried or transported and you cannot heal him",name _healed]] call A3A_fnc_customHint;};
-    if (_inPlayerGroup) then {_healer groupChat format ["%1 is being carried or transported and I cannot heal him",name _healed]};
-    _isHealed
-};
-
-if !(_healed getVariable ["incapacitated",false]) exitWith {
-    if (_isPlayer) then {["Revive", format ["%1 no longer needs your help",name _healed]] call A3A_fnc_customHint;};
-    if (_inPlayerGroup) then {_healer groupChat format ["%1 no longer needs my help",name _healed]};
-    _isHealed
-};
-
-if (_isPlayer) then {
-    _healed setVariable ["helped",_healer,true];
-};
-_healer setVariable ["helping",true];
-if  ((!("FirstAidKit" in (items _healer))) && {!("Medikit" in (items _healer))}) then {
-    _healer addItem "FirstAidKit";
-    _healed removeItem "FirstAidKit";
-};
-
-
-private _timer = if ([_healer] call A3A_fnc_isMedic) then { time + 8 }else { time + 14 };
-
-_healer setVariable ["timeToHeal",_timer];
-_healer playMoveNow selectRandom medicAnims;
-_healer setVariable ["animsDone",false];
-_healer setVariable ["cured",_healed];
-_healer setVariable ["success",false];
-_healer setVariable ["cancelRevive",false];
-if (!_isPlayer) then {
-    {_healer disableAI _x} forEach ["ANIM","AUTOTARGET","FSM","MOVE","TARGET"];
-} else {
-    _actionX = _healer addAction ["Cancel Revive", {(_this select 1) setVariable ["cancelRevive",true]},nil,6,true,true,"","(_this getVariable [""helping"",false]) && (isPlayer _this)"];
-
-    if (isPlayer _healed) then {
-		[["UpdateState", format ["Treats %1", (name _healed)]]] call SCRT_fnc_misc_updateRichPresence;
+    if (isPlayer _cured) then {
+		[["UpdateState", format ["Treats %1", (name _cured)]]] call SCRT_fnc_misc_updateRichPresence;
     };
 };
 
-_healer addEventHandler ["AnimDone", {
-    private _healer = _this select 0;
-    private _healed = _healer getVariable ["cured",objNull];
-    if (([_healer] call A3A_fnc_canFight) 
-        && (time <= (_healer getVariable ["timeToHeal",time])) 
-        && !(_healer getVariable ["cancelRevive",false]) 
-        && (alive _healed) 
-        && (_healed getVariable ["incapacitated",false]) 
-        && (_healer == vehicle _healer)) then {
-        _healer playMoveNow selectRandom medicAnims;
-    }
-    else {
-        _healer removeEventHandler ["AnimDone",_thisEventHandler];
-        _healer setVariable ["animsDone",true];
-        if (([_healer] call A3A_fnc_canFight) && !(_healer getVariable ["cancelRevive",false]) && (_healer == vehicle _healer) && (alive _healed)) then
-        {
-            if (_healed getVariable ["incapacitated",false]) then
-            {
-                _healer setVariable ["success",true];
-                if ([_healer] call A3A_fnc_isMedic) then {_healed setDamage 0.25} else {_healed setDamage 0.5};
-                if(!("Medikit" in (items _healer))) then
-                {
-                    _healer removeItem "FirstAidKit";
-                };
-            };
-        };
-    };
+private _animHandler = _medic addEventHandler ["AnimDone",
+{
+    private _medic = _this select 0;
+    _medic playMoveNow selectRandom medicAnims;
 }];
 
-waitUntil {sleep 0.5; (_healer getVariable ["animsDone",true])};
-_healer setVariable ["animsDone",nil];
-_healer setVariable ["timeToHeal",nil];
-_healer setVariable ["cured",nil];
-_healer setVariable ["helping",false];
-if (!_isPlayer) then {
-    {_healer enableAI _x} forEach ["ANIM","AUTOTARGET","FSM","MOVE","TARGET"];
+waitUntil {
+    sleep 1;
+    !([_medic] call A3A_fnc_canFight)
+    or (time > _timer)
+    or (_medic getVariable ["cancelRevive", false])		// medic might get deleted
+    or !(alive _cured)
+};
+
+if (isNull _medic) exitWith {};
+
+_medic removeEventHandler ["AnimDone", _animHandler];
+_medic setVariable ["helping",false];
+_medic playMoveNow "AinvPknlMstpSnonWnonDnon_medicEnd";
+
+if (!_player) then
+{
+    {_medic enableAI _x} forEach ["ANIM","AUTOTARGET","FSM","MOVE","TARGET"];
 }
-else {
-    _healer removeAction _actionX;
-    _healed setVariable ["helped",objNull,true];
-    _healer setVariable ["helping",false];
+else
+{
+    _medic removeAction _actionX;
+    _cured setVariable ["helped",objNull,true];
 
     [] call SCRT_fnc_misc_updateRichPresence;
 };
 
-if (_healer getVariable ["cancelRevive",false]) exitWith {
-    if (_isPlayer) then {
+if (_medic getVariable ["cancelRevive",false]) exitWith
+{
+    // AI medics can be cancelled from A3A_fnc_help
+    if (_player) then
+    {
         ["Revive", "Revive cancelled"] call A3A_fnc_customHint;
-        _healer setVariable ["cancelRevive",nil];
+        _medic setVariable ["cancelRevive",nil];
     };
-    _isHealed
+    false;
+};
+if !(alive _cured) exitWith
+{
+    if (_player) then {["Revive", format ["We lost %1",name _cured]] call A3A_fnc_customHint;};
+    if (_inPlayerGroup) then {_medic groupChat format ["We lost %1",name _cured]};
+    false;
+};
+if (!([_medic] call A3A_fnc_canFight)) exitWith
+{
+    if (_player) then {["Revive", "Revive cancelled"] call A3A_fnc_customHint;};
+    false;
 };
 
-
-if !(alive _healed) exitWith {
-    if (_isPlayer) then {
-        ["Revive", format ["We lost %1",name _healed]] call A3A_fnc_customHint;
-    };
-    if (_inPlayerGroup) then {_healer groupChat format ["We lost %1",name _healed]};
-    
-    _isHealed
+// Successful revive
+if (_isMedic) then {_cured setDamage 0.25} else {_cured setDamage 0.5};
+if (!_hasMedkit) then {
+    if (count _medicFAKs == 0) then { _cured removeItem selectRandom _curedFAKs }
+    else { _medic removeItem selectRandom _medicFAKs };
 };
-
-if (!([_healer] call A3A_fnc_canFight) || {(_healer != vehicle _healer) || {(_healer distance _healed > 3)}}) exitWith {
-    if (_isPlayer) then {
-        ["Revive", "Revive cancelled"] call A3A_fnc_customHint;
-    };
-
-    _isHealed
+private _sideX = side (group _cured);
+if ((_sideX != side (group _medic)) and ((_sideX == Occupants) or (_sideX == Invaders))) then
+{
+    _cured setVariable ["surrendering",true,true];
+    sleep 2;
 };
-
-if (_healer getVariable ["success",true]) then {
-    private _sideX = side (group _healed);
-    if ((_sideX != side (group _healer)) && ((_sideX == Occupants) || (_sideX == Invaders))) then
-        {
-        _healed setVariable ["surrendering",true,true];
-        sleep 2;
-        };
-    _healed setVariable ["incapacitated",false,true];
-    _isHealed = true;
-} else {
-    if (_isPlayer) then {["Revive", "Revive unsuccesful"] call A3A_fnc_customHint;};
-    if (_inPlayerGroup) then {_healer groupChat "Revive failed"};
-};
-
-_isHealed
+_cured setVariable ["incapacitated",false,true];        // why is this applied later? check
+true;

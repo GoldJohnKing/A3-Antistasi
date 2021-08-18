@@ -1,26 +1,21 @@
 if (!isServer and hasInterface) exitWith {};
 
-private ["_typeX","_quantity","_typeAmmunition","_groupX","_unit","_radiusX","_roads","_road","_pos","_truckX","_textX","_mrk","_ATminesAdd","_APminesAdd","_positionTel","_tsk","_magazines","_typeMagazines","_cantMagazines","_newCantMagazines","_mineX","_typeX","_truckX"];
+private ["_groupX","_unit","_radiusX","_roads","_road","_pos","_truckX","_textX","_mrk","_ATminesAdd","_APminesAdd","_tsk","_magazines","_typeMagazines","_cantMagazines","_newCantMagazines","_mineX","_typeX","_truckX"];
 
-_typeX = _this select 0;
-_positionTel = _this select 1;
-_quantity = _this select 2;
-_costs = (2*(server getVariable (SDKExp select 0))) + ([vehSDKTruck] call A3A_fnc_vehiclePrice);
+private _typeX = _this select 0;
+private _positionTel = _this select 1;
+private _quantity = _this select 2;
+private _mine = _this select 3;
+
+private _costs = (2*(server getVariable (SDKExp select 0))) + ([vehSDKTruck] call A3A_fnc_vehiclePrice);
 [-2,(-1*_costs)] remoteExec ["A3A_fnc_resourcesFIA",2];
 
-if (_typeX == "ATMine") then
-	{
-	_typeAmmunition = ATMineMag;
-	};
-if (_typeX == "APERSMine") then
-	{
-	_typeAmmunition = APERSMineMag;
-	};
+
 
 #include "\A3\Ui_f\hpp\defineResinclDesign.inc"
 
-_index = _typeAmmunition call jn_fnc_arsenal_itemType;
-[_index,_typeAmmunition,_quantity] call jn_fnc_arsenal_removeItem;
+_index = _mine call jn_fnc_arsenal_itemType;
+[_index,_mine,_quantity] call jn_fnc_arsenal_removeItem;
 
 _mrk = createMarker [format ["Minefield%1", random 1000], _positionTel];
 _mrk setMarkerShape "ELLIPSE";

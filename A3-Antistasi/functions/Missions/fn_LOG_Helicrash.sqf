@@ -47,7 +47,12 @@ private _respawnTeamPlayerMarkerPos = getMarkerPos respawnTeamPlayer;
 while {true} do {
 	_posCrashOrigin = _missionOriginPos getPos [_distance,_angle];
     _respawnTeamPlayerMarkerPos = getMarkerPos respawnTeamPlayer;
-	if (!surfaceIsWater _posCrashOrigin && _posCrashOrigin distance _respawnTeamPlayerMarkerPos < 4000 && _posCrashOrigin distance _respawnTeamPlayerMarkerPos > 1000) exitWith {};
+    _outOfBounds = _posCrashOrigin findIf { (_x < 0) || {_x > worldSize}} != -1;
+	if (!surfaceIsWater _posCrashOrigin 
+        && _posCrashOrigin distance _respawnTeamPlayerMarkerPos < 4000 
+        && _posCrashOrigin distance _respawnTeamPlayerMarkerPos > 1000
+        && !_outOfBounds
+    ) exitWith {};
 	_angle = _angle + 1;
 	_countX = _countX + 1;
 	if (_countX > 360) then {
@@ -535,7 +540,7 @@ switch(true) do {
 
         [0, 600] remoteExec ["A3A_fnc_resourcesFIA",2];
         [1800, _sideX] remoteExec ["A3A_fnc_timingCA",2];
-        { [100,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+        { [50,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
         [20, theBoss] call A3A_fnc_playerScoreAdd;
     };
     default {

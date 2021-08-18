@@ -44,6 +44,7 @@ private _spawnRadius = 5;
 private _spawnPos = [];
 private _spawnDir = 0;
 
+private _base = "";
 
 if(_isMortar) then
 {
@@ -78,7 +79,7 @@ if(_isMortar) then
     }
     else
     {
-        private _base = selectRandom _possibleBases;
+        _base = selectRandom _possibleBases;
         _spawnPos = getMarkerPos _base;
     };
 }
@@ -94,7 +95,7 @@ else
 
     if(count _possibleBases == 0) exitWith {};
 
-    private _base = selectRandom _possibleBases;
+    _base = selectRandom _possibleBases;
     _spawnPos = getMarkerPos _base;
     _spawnDir = random 360;
     _spawnRadius = 50;

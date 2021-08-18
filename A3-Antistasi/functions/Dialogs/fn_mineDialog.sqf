@@ -3,6 +3,7 @@ params ["_typeX", "_position"];
 private _moneyCost = minefieldCost select 0;
 private _hrCost = minefieldCost select 1;
 private _quantity = minefieldCost select 2;
+private _mine = minefieldCost select 3;
 
 if (_typeX == "delete") then {
 	_moneyCost = _moneyCost - (server getVariable (SDKExp select 0));
@@ -19,17 +20,15 @@ if (_typeX == "delete") exitWith {
 };
 
 private _quantityMax = 40;
-private _typeM = APERSMineMag;
 if (_typeX == "ATMine") then {
 	_quantityMax = 20;
-	_typeM = ATMineMag;
 };
 
 if (_quantity > _quantityMax) then {
 	_quantity = _quantityMax;
 };
 
-[[_typeX,_position,_quantity],"A3A_fnc_buildMinefield"] remoteExec ["A3A_fnc_scheduler",2];
+[[_typeX,_position,_quantity,_mine],"A3A_fnc_buildMinefield"] remoteExec ["A3A_fnc_scheduler",2];
 
 closeDialog 0;
 closeDialog 0;

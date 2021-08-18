@@ -7,10 +7,10 @@ private _garrison = garrison getVariable [_markerX, []];
 private _props = [];
 
 if (isNil "_garrison") then {
-    _garrison = [(SDKMil select 0)];
+    _garrison = [];
     {
         _garrison pushBack (_x select 0);
-    } forEach [SDKSL,SDKMG,SDKGL,SDKMil,SDKMil];
+    } forEach [SDKSL,SDKMG,SDKMil,SDKMil,SDKMil,SDKMedic];
     garrison setVariable [_markerX,_garrison,true];
 };
 
@@ -22,17 +22,31 @@ if (isNil "_garrison") then {
     _props pushBack _sandbag;
 } forEach [0, 90, 180, 270];
 
-_veh = staticAAteamPlayer createVehicle _positionX;
+private _veh = objNull;
+
+//overriden static position and direction
+private _staticPositionInfo = staticPositions getVariable [_markerX, []];
+if (!(_staticPositionInfo isEqualTo [])) then {
+    private _staticPosition = _staticPositionInfo select 0;
+    private _staticDirection = _staticPositionInfo select 1;
+    _veh = createVehicle [staticAAteamPlayer, _positionX, [], 0, "CAN_COLLIDE"];
+    _veh setPosATL _staticPosition;
+    _veh setDir _staticDirection;
+} else {
+    _veh = staticAAteamPlayer createVehicle _positionX;
+};
+
 _veh lock 3;
-[_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 
 sleep 1;
+
+[_veh,"Move_Outpost_Static"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian], _veh];
 
 private _groupX = [_positionX, teamPlayer, _garrison,true,false] call A3A_fnc_spawnGroup;
 private _groupXUnits = units _groupX;
 _groupXUnits apply { [_x,_markerX] spawn A3A_fnc_FIAinitBases; };
 
-private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == "loadouts_rebel_militia_Rifleman"};
+private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == "loadouts_reb_militia_Rifleman"};
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
     _crewMan moveInGunner _veh;
@@ -41,6 +55,8 @@ if (_crewManIndex != -1) then {
 
 _groupX setBehaviour "AWARE";
 _groupX setCombatMode "YELLOW"; 
+
+[_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 
 waitUntil {
 	sleep 1; 

@@ -16,17 +16,13 @@ private _timeLimit = 90 * settingsTimeMultiplier;
 private _dateLimit = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _timeLimit];
 private _dateLimitNum = dateToNumber _dateLimit;
 private _taskId = "outpostTask" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,["We are sending a team to establish a AT emplacement. Use HC to send the team to their destination","Post \ AT Emplacement Deploy",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
+[[teamPlayer,civilian],_taskId,["We are sending a team to establish a AT emplacement. Use HC to send the team to their destination","AT Emplacement Deploy",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 _formatX = [];
 {
-    if (random 20 <= skillFIA) then {
-        _formatX pushBack (_x select 1)
-    } else {
-        _formatX pushBack (_x select 0)
-    };
-} forEach groupsSDKAT;
+    _formatX pushBack (_x select 0)
+} forEach [SDKSL,SDKMil,SDKATman,SDKATman,SDKATman,SDKMedic];
 
 _groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
 _groupX setGroupId ["Emplacement Crew"];
@@ -71,10 +67,10 @@ if ({(alive _x) and (_x distance _position < 10)} count units _groupX > 0) then 
 	_marker setMarkerType "n_armor";
 	_marker setMarkerColor colorTeamPlayer;
 	_marker setMarkerText _textX;
-    _garrison = ["loadouts_rebel_militia_Rifleman"];
+    _garrison = [];
     {
         _garrison pushBack (_x select 0);
-    } forEach groupsSDKAT;
+    } forEach [SDKSL,SDKMil,SDKATman,SDKATman,SDKATman,SDKMedic];
     garrison setVariable [_marker,_garrison,true];
 } else {
     [_taskId, "outpostTask", "FAILED"] call A3A_fnc_taskSetState;

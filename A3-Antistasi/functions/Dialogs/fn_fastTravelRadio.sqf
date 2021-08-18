@@ -31,6 +31,8 @@ if (({isPlayer _x} count units _groupX > 1) and (_esHC)) exitWith {
 	["Fast Travel", "You cannot Fast Travel groups commanded by players"] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
+if (!isNil "A3A_FFPun_Jailed" && {(getPlayerUID player) in A3A_FFPun_Jailed}) exitWith {["Fast Travel", "You cannot fast travel while being FF Punished."] call A3A_fnc_customHint;};
+
 if (player != player getVariable ["owner",player]) exitWith {
 	["Fast Travel", "You cannot Fast Travel while you are controlling AI"] call SCRT_fnc_misc_showDeniedActionHint;
 };
@@ -67,7 +69,7 @@ private _isEnemiesNearby = false;
 
 if(fastTravelIndividualEnemyCheck) then {
 	_isEnemiesNearby = [player,_distanceX] call A3A_fnc_enemyNearCheck;
-	
+
 } else {
 	{
 		if ([_x,_distanceX] call A3A_fnc_enemyNearCheck) exitWith {_isEnemiesNearby = true}

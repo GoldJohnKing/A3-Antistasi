@@ -26,10 +26,8 @@ _nVeh = round (_size/60);
 _sideX = sidesX getVariable [_markerX,sideUnknown];
 
 private _radarType = if (_sideX == Occupants) then {NATOAARadar} else {CSATAARadar};
-private _ciwsType = if (_sideX == Occupants) then {NATOAACiws} else {CSATAACiws};
 private _samType = if (_sideX == Occupants) then {NATOAASam} else {CSATAASam};
-private _vehCargoTruck =  if (_sideX == Occupants) then {selectRandom vehNATOCargoTrucks} else {selectRandom vehCSATTrucks};
-private _aaElements = [_radarType, _ciwsType, _samType];
+private _aaElements = [_radarType, _samType];
 
 /////////////////////////////
 // SPAWNING AA ELEMENTS
@@ -66,20 +64,6 @@ while {_spawnParameter isEqualType []} do {
                     };
                 };
             };
-
-             ///CIWS truck
-            if(_x == _ciwsType) then {
-                private _ciwsTruckData = [_spawnParameter select 0, _rotation, _vehCargoTruck, _sideX] call A3A_fnc_spawnVehicle;
-                private _ciwsVehicle = _ciwsTruckData select 0;
-				private _ciwsVehicleCrew = _ciwsTruckData select 1;
-            	{deleteVehicle _x} forEach _ciwsVehicleCrew;
-            	[_ciwsVehicle, _sideX] call A3A_fnc_AIVEHinit;
-				_ciwsVehicleGroup = _ciwsTruckData select 2;
-				deleteGroup _ciwsVehicleGroup;
-            	_vehiclesX pushBack _ciwsVehicle;
-
-                _aaVehicle attachTo [_ciwsVehicle, [0, 0, 1.65]];
-            };
         };
     } forEach _aaElements;
 	_spawnParameter = [_markerX, "Sam"] call A3A_fnc_findSpawnPosition;
@@ -87,7 +71,7 @@ while {_spawnParameter isEqualType []} do {
 };
 
 
-_typeVehX = if (_sideX == Occupants) then {vehNATOAA} else {vehCSATAA};
+_typeVehX = if (_sideX == Occupants) then {selectRandom vehNATOAA} else {selectRandom vehCSATAA};
 _max = if (_frontierX && {[_typeVehX] call A3A_fnc_vehAvailable}) then {2} else {1};
 for "_i" from 1 to _max do {
 	_spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
@@ -103,7 +87,7 @@ for "_i" from 1 to _max do {
 		_soldiers = _soldiers + _vehCrew;
 		_groups pushBack _groupVeh;
 		_vehiclesX pushBack _veh;
-		sleep 1;
+		sleep 0.1;
 		[(gunner _veh), 300] spawn SCRT_fnc_common_scanHorizon;
 	}
 	else
@@ -321,20 +305,23 @@ if (!_busy) then
 	_groupX = createGroup _sideX;
 	_groups pushBack _groupX;
 	_countX = 0;
-	while {_countX < 3} do
+	while {_countX < 4} do
 	{
 		private _veh = objNull;
 		if(_spawnParameter isEqualType []) then
 		{
 			private _vehPool = [];
-			if (_sideX == Occupants) then
-			{
-				_vehPool = ([vehNATOPlane, vehNATOPlaneAA] select {[_x] call A3A_fnc_vehAvailable})
+			if (_sideX == Occupants) then {
+				private _casPlanes = vehNATOPlanes select {[_x] call A3A_fnc_vehAvailable};
+				private _aaPlanes = vehNATOPlanesAA select {[_x] call A3A_fnc_vehAvailable};
+				_vehPool = _casPlanes + _aaPlanes;
 			}
-			else
-			{
-				_vehPool = ([vehCSATPlane, vehCSATPlaneAA] select {[_x] call A3A_fnc_vehAvailable})
+			else {
+				private _casPlanes = vehCSATPlanes select {[_x] call A3A_fnc_vehAvailable};
+				private _aaPlanes = vehCSATPlanesAA select {[_x] call A3A_fnc_vehAvailable};
+				_vehPool = _casPlanes + _aaPlanes;
 			};
+			
 			if(count _vehPool > 0) then
 			{
 				_typeVehX = selectRandom _vehPool;
@@ -377,7 +364,7 @@ _vehiclesX pushBack _flagX;
 private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
 {
 	private _ammoBoxType = if (_sideX == Occupants) then {NATOAmmoBox} else {CSATAmmoBox};
-	private _ammoBox = _ammoBoxType createVehicle _positionX;
+	private _ammoBox = [_ammoBoxType, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
 	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
 	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
 	[_ammoBox] spawn A3A_fnc_fillLootCrate;

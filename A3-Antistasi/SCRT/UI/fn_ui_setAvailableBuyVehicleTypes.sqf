@@ -30,11 +30,11 @@ switch(_vehicleType) do {
             _shopLookupArray pushBack SDKMortar;
         };
 
-        if ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count resourcesX > 2) then {
+        if ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count resourcesX > 4) then {
             _shopLookupArray pushBack vehSDKFuel;
         };
 
-        if ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count factories > 2) then {
+        if ({sidesX getVariable [_x,sideUnknown] == teamPlayer} count factories > 4) then {
             _shopLookupArray pushBack vehSDKRepair;
         };
 
@@ -75,10 +75,5 @@ private _fillCombo = {
 };
 
 [_shopLookupArray, _vehicleComboBox] call _fillCombo;
-
-if (_vehicleType == "CIV") then {
-    _vehicleComboBox lbAdd "Loot Truck";
-    _vehicleComboBox lbSetData [count _shopLookupArray, civLooter];
-};
 
 _vehicleComboBox lbSetCurSel 0;

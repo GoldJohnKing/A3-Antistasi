@@ -26,16 +26,16 @@ while {killZoneRemove >= 1} do
 
 // Handle the old reinforcements
 
-private ["_airportsX","_reinfPlaces","_airportX","_numberX","_numGarr","_numReal","_sideX","_potentials","_countX","_siteX","_positionX"];
-_airportsX = airportsX select {(sidesX getVariable [_x,sideUnknown] != teamPlayer) and (spawner getVariable _x == 2)};
+private ["_reinfPlaces","_numberX","_numGarr","_numReal","_sideX","_potentials","_countX","_siteX","_positionX"];
+private _airportsX = (airportsX + milbases) select {(sidesX getVariable [_x,sideUnknown] != teamPlayer) and (spawner getVariable _x == 2)};
 if (count _airportsX == 0) exitWith {};
 _reinfPlaces = [];
 {
-	_airportX = _x;
+	private _base = _x;
 	_numberX = 8;
-	_numGarr = [_airportX] call A3A_fnc_garrisonSize;
-	_numReal = count (garrison getVariable [_airportX, []]);
-	_sideX = sidesX getVariable [_airportX,sideUnknown];
+	_numGarr = [_base] call A3A_fnc_garrisonSize;
+	_numReal = count (garrison getVariable [_base, []]);
+	_sideX = sidesX getVariable [_base,sideUnknown];
 
 	//Self reinforce the airport if needed
 	if (_numReal + 4 <= _numGarr) then
@@ -43,13 +43,13 @@ _reinfPlaces = [];
 		if (_numReal + 8 <= _numGarr) then
 		{
 			private _squads = [_sideX, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
-			[selectRandom _squads,_sideX,_airportX,0] remoteExec ["A3A_fnc_garrisonUpdate",2];
+			[selectRandom _squads,_sideX,_base,0] remoteExec ["A3A_fnc_garrisonUpdate",2];
 			_numberX = 0;
 		}
 		else
 		{
 			private _mid = [_sideX, "MID"] call SCRT_fnc_unit_getGroupSet;
-			[selectRandom _mid,_sideX,_airportX,0] remoteExec ["A3A_fnc_garrisonUpdate",2];
+			[selectRandom _mid,_sideX,_base,0] remoteExec ["A3A_fnc_garrisonUpdate",2];
 			_numberX = 4;
 		};
 	};
@@ -58,12 +58,12 @@ _reinfPlaces = [];
 	//Reinforce nearby sides
 	if (_numberX >= 4) then
 	{
-		_potentials = (outposts + milbases + seaports - _reinfPlaces - (killZones getVariable [_airportX,[]])) select {sidesX getVariable [_x,sideUnknown] == _sideX};
+		_potentials = (outposts + seaports - _reinfPlaces - (killZones getVariable [_base,[]])) select {sidesX getVariable [_x,sideUnknown] == _sideX};
 		if (_potentials isEqualTo []) then
 		{
-			_potentials = (resourcesX + factories - _reinfPlaces - (killZones getVariable [_airportX,[]])) select {sidesX getVariable [_x,sideUnknown] == _sideX};
+			_potentials = (resourcesX + factories - _reinfPlaces - (killZones getVariable [_base,[]])) select {sidesX getVariable [_x,sideUnknown] == _sideX};
 		};
-		_positionX = getMarkerPos _airportX;
+		_positionX = getMarkerPos _base;
 		_potentials = _potentials select {((getMarkerPos _x distance2D _positionX) < distanceForAirAttack) and !(_x in forcedSpawn)};
 		if (count _potentials > 0) then
 		{
@@ -92,16 +92,11 @@ _reinfPlaces = [];
 							selectRandom _squads
 						};
 						[_typeGroup,_sideX,_siteX,2] remoteExec ["A3A_fnc_garrisonUpdate",2];
-
-						//This line send a virtual convoy, execute [] execVM "Convoy\convoyDebug.sqf" as admin to see it
-						//If it breaks, it doesn't change anything
-						//If it works, it will not add any troups
-						//[_siteX, "Reinforce", _sideX, [(_numberX == 4)]] remoteExec ["A3A_fnc_createAIAction", 2];
 					}
 					else
 					{
 						_reinfPlaces pushBack _siteX;
-						[[_siteX,_airportX,_numberX,_sideX],"A3A_fnc_patrolReinf"] call A3A_fnc_scheduler;
+						[[_siteX,_base,_numberX,_sideX],"A3A_fnc_patrolReinf"] call A3A_fnc_scheduler;
 					};
 				};
 			};
@@ -136,15 +131,15 @@ if ((count _reinfPlaces == 0) and (AAFpatrols <= 3)) then {[] spawn A3A_fnc_AAFr
 } forEach outposts;
 
 {
-    //Setting the number of recruitable units per ticks per outpost
+    //Setting the number of recruitable units per ticks per milbases
 	garrison setVariable [format ["%1_recruit", _x], 6, true];
 } forEach milbases;
 
 //New reinf system (still reactive, so a bit shitty)
 {
 	_side = _x;
-  	_reinfMarker = if(_x == Occupants) then {reinforceMarkerOccupants} else {reinforceMarkerInvader};
-	_canReinf = if(_x == Occupants) then {canReinforceOccupants} else {canReinforceInvader};
+  	_reinfMarker = if(_x == Occupants) then {reinforceMarkerOccupants} else {reinforceMarkerInvaders};
+	_canReinf = if(_x == Occupants) then {canReinforceOccupants} else {canReinforceInvaders};
   	diag_log format ["Side %1, needed %2, possible %3", _x, count _reinfMarker, count _canReinf];
 	_reinfMarker sort true;
 	{

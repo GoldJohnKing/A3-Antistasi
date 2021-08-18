@@ -7,6 +7,8 @@ if !(local _unit) exitWith {
 	[_unit] remoteExec ["SCRT_fnc_common_panicFlee", _unit];
 };
 
+if (vehicle _unit != _unit) exitWith {}; 				//fleeing vehicles is hilarious
+
 if (_unit getVariable ["surrendered", false]) exitWith {};
 _unit setVariable ["surrendered", true, true];
 

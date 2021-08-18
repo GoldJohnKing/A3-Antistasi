@@ -12,8 +12,71 @@
 //////////////////////////////////////
 //       Antistasi Plus Stuff       //
 //////////////////////////////////////
-["baseSoldier", "CUP_O_RU_Soldier_Ratnik_Desert"] call _fnc_saveToTemplate;
-["baseSoldierMilitia", "CUP_O_RU_Soldier_Ratnik_Desert"] call _fnc_saveToTemplate;
+["baseSoldiers", [ // Cases matter. Lower case here because allVariables on namespace returns lowercase
+	["militia_squadleader", "CUP_O_RU_Soldier_SL_M_EMR"],
+	["militia_rifleman", "CUP_O_RU_Soldier_M_EMR"],
+	["militia_radioman", "CUP_O_RU_Soldier_M_EMR"],
+	["militia_medic", "CUP_O_RU_Medic_M_EMR"],
+	["militia_engineer", "CUP_O_RU_Engineer_M_EMR"],
+	["militia_explosivesexpert", "CUP_O_RU_Explosive_Specialist_M_EMR"],
+	["militia_grenadier", "CUP_O_RU_Soldier_GL_M_EMR"],
+	["militia_lat", "CUP_O_RU_Soldier_LAT_M_EMR"],
+	["militia_at", "CUP_O_RU_Soldier_AT_M_EMR"],
+	["militia_aa", "CUP_O_RU_Soldier_AA_M_EMR"],
+	["militia_machinegunner", "CUP_O_RU_Soldier_MG_M_EMR"],
+	["militia_marksman", "CUP_O_RU_Soldier_Marksman_M_EMR"],
+	["militia_sniper", "CUP_O_RU_Sniper_M_EMR"],
+
+	["military_squadleader", "CUP_O_RU_Soldier_SL_M_EMR"],
+	["military_rifleman", "CUP_O_RU_Soldier_M_EMR"],
+	["military_radioman", "CUP_O_RU_Soldier_M_EMR"],
+	["military_medic", "CUP_O_RU_Medic_M_EMR"],
+	["military_engineer", "CUP_O_RU_Engineer_M_EMR"],
+	["military_explosivesexpert", "CUP_O_RU_Explosive_Specialist_M_EMR"],
+	["military_grenadier", "CUP_O_RU_Soldier_GL_M_EMR"],
+	["military_lat", "CUP_O_RU_Soldier_LAT_M_EMR"],
+	["military_at", "CUP_O_RU_Soldier_AT_M_EMR"],
+	["military_aa", "CUP_O_RU_Soldier_AA_M_EMR"],
+	["military_machinegunner", "CUP_O_RU_Soldier_MG_M_EMR"],
+	["military_marksman", "CUP_O_RU_Soldier_Marksman_M_EMR"],
+	["military_sniper", "CUP_O_RU_Sniper_M_EMR"],
+
+	["elite_squadleader", "CUP_O_RU_Soldier_SL_M_EMR"],
+	["elite_rifleman", "CUP_O_RU_Soldier_M_EMR"],
+	["elite_radioman", "CUP_O_RU_Soldier_M_EMR"],
+	["elite_medic", "CUP_O_RU_Medic_M_EMR"],
+	["elite_engineer", "CUP_O_RU_Engineer_M_EMR"],
+	["elite_explosivesexpert", "CUP_O_RU_Explosive_Specialist_M_EMR"],
+	["elite_grenadier", "CUP_O_RU_Soldier_GL_M_EMR"],
+	["elite_lat", "CUP_O_RU_Soldier_LAT_M_EMR"],
+	["elite_at", "CUP_O_RU_Soldier_AT_M_EMR"],
+	["elite_aa", "CUP_O_RU_Soldier_AA_M_EMR"],
+	["elite_machinegunner", "CUP_O_RU_Soldier_MG_M_EMR"],
+	["elite_marksman", "CUP_O_RU_Soldier_Marksman_M_EMR"],
+	["elite_sniper", "CUP_O_RU_Sniper_M_EMR"],
+
+	["sf_squadleader", "CUP_O_RUS_Soldier_TL_Autumn"],
+	["sf_rifleman", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_radioman", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_medic", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_engineer", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_explosivesexpert", "CUP_O_RUS_Saboteur_Autumn"],
+	["sf_grenadier", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_lat", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_at", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_aa", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_machinegunner", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+	["sf_marksman", "CUP_O_RUS_Soldier_Marksman_Autumn"],
+	["sf_sniper", "CUP_O_RUS_SpecOps_Scout_Autumn"],
+
+	["other_crew", "CUP_O_RU_Crew_M_EMR"],
+	["other_unarmed", "CUP_O_RU_Soldier_Light_M_EMR"],
+	["other_official", "CUP_O_RU_Officer_M_EMR"],
+	["other_traitor", "O_G_officer_F"],
+	["other_pilot", "CUP_O_RU_Pilot_M_EMR"],
+	["police_squadleader", "CUP_O_RU_Soldier_M_EMR"],
+	["police_standard", "CUP_O_RU_Soldier_M_EMR"]
+]] call _fnc_saveToTemplate;
 
 
 //////////////////////////
@@ -32,13 +95,13 @@
 ["vehiclesRepairTrucks", ["CUP_O_Kamaz_Repair_RU", "CUP_O_Ural_Repair_RU"]] call _fnc_saveToTemplate; 		
 ["vehiclesFuelTrucks", ["CUP_O_Kamaz_Refuel_RU", "CUP_O_Ural_Refuel_RU"]] call _fnc_saveToTemplate;		
 ["vehiclesMedical", ["CUP_O_GAZ_Vodnik_MedEvac_RU","CUP_O_BMP2_AMB_RU","CUP_O_UAZ_AMB_RU"]] call _fnc_saveToTemplate;			
-["vehiclesAPCs", ["CUP_O_BMP2_RU", "CUP_O_BMP3_RU", "CUP_O_BTR60_Green_RU", "CUP_O_BTR80A_DESERT_RU", "CUP_O_BTR80_DESERT_RU", "CUP_O_BTR90_RU", "CUP_O_MTLB_pk_WDL_RU"]] call _fnc_saveToTemplate; 				
-["vehiclesTanks", ["CUP_O_T72_RU", "CUP_O_T90_RU"]] call _fnc_saveToTemplate; 			
+["vehiclesAPCs", ["CUP_O_BMP2_RU", "CUP_O_BMP3_RU", "CUP_O_BTR80A_DESERT_RU", "CUP_O_BTR80_DESERT_RU", "CUP_O_BTR90_RU"]] call _fnc_saveToTemplate; 				
+["vehiclesTanks", ["CUP_O_T90_RU"]] call _fnc_saveToTemplate; 			
 ["vehiclesAA", ["CUP_O_2S6M_RU"]] call _fnc_saveToTemplate; 				
-["vehiclesLightAPCs", []] call _fnc_saveToTemplate;			
+["vehiclesLightAPCs", ["CUP_O_BMP3_RU"]] call _fnc_saveToTemplate;			
 ["vehiclesIFVs", []] call _fnc_saveToTemplate;				
 
-["vehiclesSam", ["O_Radar_System_02_F","O_SAM_System_04_F", ""]] call _fnc_saveToTemplate; 	//this line determines SAM systems, order: radar, SAM, CIWS
+["vehiclesSam", ["",""]] call _fnc_saveToTemplate; 	//this line determines SAM systems, order: radar, SAM
 
 
 ["vehiclesTransportBoats", ["CUP_O_PBX_RU"]] call _fnc_saveToTemplate; 	
@@ -64,11 +127,12 @@
 ["vehiclesMilitiaLightArmed", ["CUP_O_UAZ_MG_RU"]] call _fnc_saveToTemplate; 
 ["vehiclesMilitiaTrucks", ["CUP_O_Ural_Empty_RU", "CUP_O_Ural_Open_RU"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["CUP_O_UAZ_Unarmed_RU", "CUP_O_UAZ_Open_RU"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaApcs", []] call _fnc_saveToTemplate;
+["vehiclesMilitiaApcs", ["CUP_O_MTLB_pk_WDL_RU","CUP_O_BTR60_Green_RU"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaTanks", ["CUP_O_T72_RU"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["B_GEN_Offroad_01_gen_F"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["CUP_B_Kord_Gun_Bag", "CUP_O_KORD_high_RU"]] call _fnc_saveToTemplate; 					
+["staticMGs", ["rhs_KORD_high_MSV"]] call _fnc_saveToTemplate; 					
 ["staticAT", ["CUP_O_Kornet_RU"]] call _fnc_saveToTemplate; 					
 ["staticAA", ["CUP_O_Igla_AA_pod_RU"]] call _fnc_saveToTemplate; 					
 ["staticMortars", ["CUP_O_D30_ChDKZ"]] call _fnc_saveToTemplate;
@@ -114,7 +178,8 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData setVariable ["rifles", []]; 					
 _loadoutData setVariable ["carbines", []]; 					
 _loadoutData setVariable ["grenadeLaunchers", []]; 			
-_loadoutData setVariable ["SMGs", []]; 						
+_loadoutData setVariable ["SMGs", []]; 	
+_loadoutData setVariable ["shotguns", []];					
 _loadoutData setVariable ["machineGuns", []]; 				
 _loadoutData setVariable ["marksmanRifles", []]; 			
 _loadoutData setVariable ["sniperRifles", []]; 				
@@ -137,8 +202,8 @@ _loadoutData setVariable ["heavyExplosives", ["SatchelCharge_Remote_Mag"]];
 
 _loadoutData setVariable ["antiInfantryGrenades", ["CUP_HandGrenade_RGD5", "CUP_HandGrenade_RGO"]]; 		
 _loadoutData setVariable ["antiTankGrenades", []]; 			
-_loadoutData setVariable ["smokeGrenades", ["SmokeShell", "SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
-
+_loadoutData setVariable ["smokeGrenades", ["SmokeShell"]];
+_loadoutData setVariable ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
 
 
 _loadoutData setVariable ["maps", ["ItemMap"]];				
@@ -344,6 +409,10 @@ _militiaLoadoutData setVariable ["grenadeLaunchers", [
 _militiaLoadoutData setVariable ["SMGs", [
 ["CUP_smg_vityaz", "", "", "", ["CUP_30Rnd_9x19_Vityaz", "CUP_30Rnd_9x19_Vityaz", "CUP_30Rnd_9x19AP_Vityaz"], [], ""]
 ]];
+_militiaLoadoutData setVariable ["shotguns", [
+	["CUP_sgun_Saiga12K", "", "", "", ["CUP_5Rnd_B_Saiga12_Buck_00", "CUP_5Rnd_B_Saiga12_Slug"], [], ""],
+	["CUP_sgun_Saiga12K_top_rail", "", "", "", ["CUP_5Rnd_B_Saiga12_Buck_00", "CUP_5Rnd_B_Saiga12_Slug"], [], ""]
+]];
 _militiaLoadoutData setVariable ["machineGuns", [
 ["CUP_arifle_RPK74_45", "", "", "", ["CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"], [], ""],
 ["CUP_arifle_RPK74", "", "", "", ["CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M", "CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"], [], ""]
@@ -469,7 +538,7 @@ private _squadLeaderTemplate = {
 	["items_miscEssentials"] call _fnc_addItemSet;
 	["antiInfantryGrenades", 2] call _fnc_addItem;
 	["smokeGrenades", 2] call _fnc_addItem;
-	["smokeGrenades", 2] call _fnc_addItem;
+	["signalsmokeGrenades", 2] call _fnc_addItem;
 
 	["maps"] call _fnc_addMap;
 	["watches"] call _fnc_addWatch;
@@ -536,7 +605,7 @@ private _medicTemplate = {
 	["uniforms"] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
-  	[selectRandom ["carbines", "smgs"]] call _fnc_setPrimary;
+  	[["shotguns", "carbines"] call _fnc_fallback] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["sidearms"] call _fnc_setHandgun;
@@ -619,7 +688,7 @@ private _engineerTemplate = {
 	["uniforms"] call _fnc_setUniform;
 	["backpacks"] call _fnc_setBackpack;
 
-	[selectRandom ["carbines", "smgs"]] call _fnc_setPrimary;
+	[["shotguns", "carbines"] call _fnc_fallback] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 
 	["sidearms"] call _fnc_setHandgun;

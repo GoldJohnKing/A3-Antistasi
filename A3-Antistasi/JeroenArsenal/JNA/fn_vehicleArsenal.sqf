@@ -6,7 +6,7 @@
     fuctions:
     ["Preload"] call jn_fnc_arsenal;
     	preloads the arsenal like the default arsenal but it doesnt have "BIS_fnc_endLoadingScreen" so you dont have errors
-    ["customInit", "arsanalDisplay"] call jn_fnc_arsenal;
+    ["customInit", "arsenalDisplay"] call jn_fnc_arsenal;
     	overwrites all functions in the arsenal with JNA ones.
 */
 
@@ -461,7 +461,6 @@ switch _mode do {
 			_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _list);
 
 			if (_active) then {
-
 				_ctrlLineTab = _display displayctrl ([IDC_RSCDISPLAYARSENAL_LINETABRIGHT,IDC_RSCDISPLAYARSENAL_LINETABLEFT] select _isLeft);
 
 				_ctrlLineTab ctrlsetfade 0;

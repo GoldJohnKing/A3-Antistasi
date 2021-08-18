@@ -1,4 +1,4 @@
-if (!(A3A_hasRhs && {A3A_hasCup})) exitWith {};
+if (!A3A_hasRhs && !A3A_hasCup) exitWith {};
 
 private _fileName = "common_fixCupRhsLaunchers";
 
@@ -6,7 +6,7 @@ private _fileName = "common_fixCupRhsLaunchers";
 #include "\A3\Ui_f\hpp\defineResinclDesign.inc"
 
 private _brokenLaunchers = (jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON) select {
-    private _weaponClass = _x select 0;
+    private _weaponClass = toLower (_x select 0);
     "_loaded" in _weaponClass || {"_used" in _weaponClass}
 };
 

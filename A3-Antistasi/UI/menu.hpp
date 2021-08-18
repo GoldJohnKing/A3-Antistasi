@@ -110,10 +110,10 @@ class garrisonRecruit: SimpleMenuBig
 		class mortarButton: SimpleButton
 		{
 			idc = 108;
-			text = $STR_antistasi_dialogs_garrison_spawn_mortar_text;
+			text = $STR_antistasi_dialogs_garrison_spawn_at_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
-			action = "[staticCrewTeamPlayer] spawn A3A_fnc_garrisonAdd";
+			action = "[SDKATman] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class grenadierButton: SimpleButton
@@ -132,15 +132,6 @@ class garrisonRecruit: SimpleMenuBig
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
 			action = "[SDKSniper] spawn A3A_fnc_garrisonAdd";
-		};
-
-		class atButton: SimpleButton
-		{
-			idc = 111;
-			text = $STR_antistasi_dialogs_garrison_spawn_at_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
-			action = "[SDKATman] spawn A3A_fnc_garrisonAdd";
 		};
 	};
 };
@@ -377,7 +368,7 @@ class radioComm: SimpleMenuBigger
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_put_garage_tooltip;
-			action = "closeDialog 0; if (player call A3A_fnc_isMember) then {createDialog ""garageCheck""} else {[false] call A3A_fnc_garageVehicle};";
+			action = "closeDialog 0; [cursorObject, clientOwner, call HR_GRG_dLock, player] remoteExecCall ['HR_GRG_fnc_addVehicle',2];";
 		};
 
 		class l4Button: SimpleButton
@@ -433,7 +424,7 @@ class radioComm: SimpleMenuBigger
 		class r4Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_actions_draw3d_commander_text;
+			text = $STR_antistasi_actions_commander_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_commander_tooltip;
@@ -487,6 +478,43 @@ class vehQuery: SimpleMenuSmall
 	};
 };
 
+class constructionRemovalConfirmation: SimpleMenuSmall
+{
+	idd=123;
+	onLoad = "";
+	onUnload = "";
+
+	class Controls
+	{
+		class title: SimpleTitle
+		{
+			idc = 1244;
+			text = $STR_antistasi_dialogs_remove_construction_confirmation;
+		};
+
+		class yesButton: SimpleButton
+		{
+			idc = 104;
+			text = $STR_antistasi_dialogs_generic_button_yes_text;
+			tooltip = $STR_antistasi_dialogs_generic_button_yes_tooltip;
+			x = 0.257187 * safezoneW + safezoneX;
+			y = 0.304 * safezoneH + safezoneY;
+			colorBackground[] = {"0.376","0.125","0.043",0.9};
+			action = "closeDialog 0; removeConstruction = true;";
+		};
+		
+		class noButton: SimpleButton
+		{
+			idc = 105;
+			text = $STR_antistasi_dialogs_generic_button_no_text;
+			tooltip = $STR_antistasi_dialogs_generic_button_no_tooltip;
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.304 * safezoneH + safezoneY;
+			action = "closeDialog 0; removeConstruction = nil;";
+		};
+	};
+};
+
 class aiManagement: SimpleMenuBigger 
 {
 	idd = -1;
@@ -522,11 +550,11 @@ class aiManagement: SimpleMenuBigger
 		class l2Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_auto_heal_title;
+			text = $STR_antistasi_dialogs_ai_healing_options_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
 			tooltip = $STR_antistasi_dialogs_auto_heal_tooltip;
-			action = "if (autoHeal) then {autoHeal = false; [""AI Auto Heal"", ""Auto Healing disabled""] call A3A_fnc_customHint;} else {autoHeal = true; [""AI Auto Heal"", ""Auto Heal enabled""] call A3A_fnc_customHint; nul = [] spawn A3A_fnc_autoHealFnc}";
+			action = "closeDialog 0; createDialog 'aiOptionsMenu';";
 		};
 
 		class l3Button: SimpleButton
@@ -598,10 +626,20 @@ class aiManagement: SimpleMenuBigger
 			tooltip = $STR_antistasi_dialogs_mount_veh_tooltip;
 			action = "[""mount""] call A3A_fnc_vehStats";
 		};
+
+		class r5Button: SimpleButton
+		{
+			idc = 113;
+			text = $STR_antistasi_dialogs_high_command_transfer_title;
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.682 * safezoneH + safezoneY;
+			tooltip = $STR_antistasi_dialogs_arty_high_command_transfer_tooltip;
+			action = "closeDialog 0;[] call SCRT_fnc_common_hcTransfer";
+		};
 	};
 };
 
-class commanderComm: SimpleMenuBigger
+class commanderComm: SimpleMenuBig
 {
 	idd = -1;
 
@@ -663,16 +701,6 @@ class commanderComm: SimpleMenuBigger
 			action = "closeDialog 0; [player, cursorTarget] remoteExec ['A3A_fnc_theBossToggleEligibility', 2];";
 		};
 
-		class l5Button: SimpleButton
-		{
-			idc = -1;
-			text = $STR_antistasi_dialogs_open_comm_menu_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.682 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_open_comm_menu_tooltip;
-			action = "closeDialog 0; closeDialog 0; [] call SCRT_fnc_ui_toggleCommanderMenu;";
-		};
-		
 		class r1Button: SimpleButton
 		{
 			idc = -1;
@@ -696,11 +724,11 @@ class commanderComm: SimpleMenuBigger
 		class r3Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_faction_garage;
+			text = $STR_antistasi_dialogs_open_comm_menu_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_open_faction_garage_tooltip;
-			action = "closeDialog 0; [true] call A3A_fnc_garageVehicle;";
+			tooltip = $STR_antistasi_dialogs_open_comm_menu_tooltip;
+			action = "closeDialog 0; closeDialog 0; [] call SCRT_fnc_ui_toggleCommanderMenu;";
 		};
 
 		class r4Button: SimpleButton
@@ -755,6 +783,17 @@ class constructionMenu: SimpleMenuSmall
 			y = 0.304 * safezoneH + safezoneY;
 			w = 0.183333 * safezoneW;	
 			h = 0.0222222 * safezoneH;
+		};
+
+		class r1Button: SimpleButton
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_remove_construction;
+			tooltip = $STR_antistasi_dialogs_remove_construction_tooltip;
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.262 * safezoneH + safezoneY;	
+			colorBackground[] = {"0.376","0.125","0.043",0.9};
+			action = "[] spawn SCRT_fnc_ui_prepareConstructionRemoval;";
 		};
 
 		class r2Button: SimpleButton
@@ -1007,48 +1046,6 @@ class playerMoney: SimpleMenuSmall
 	};
 };
 
-class garageCheck: SimpleMenuSmall 
-{
-	idd=-1;
-
-	class Controls
-	{
-		class closeButton: RscCloseButton
-		{
-			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
-			action = "closeDialog 0; createDialog 'radioComm'";
-		};
-
-		class title: SimpleTitle
-		{
-			idc = -1;
-			text = $STR_antistasi_dialogs_lps_frame_text;
-		};
-
-		class l1Button: SimpleButton
-		{
-			idc = -1;
-			text = $STR_antistasi_dialogs_personal_garage;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
-			action = "closeDialog 0;[false] call A3A_fnc_garageVehicle;";
-		};
-		
-		class r1Button: SimpleButton
-		{
-			idc = -1;
-			text = $STR_antistasi_dialogs_faction_garage;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
-			action = "closeDialog 0; [true] call A3A_fnc_garageVehicle;";
-		};
-	};
-};
-
 class mortarType: SimpleMenuSmall 
 {
 	idd=-1;
@@ -1100,7 +1097,7 @@ class roundsNumber: SimpleMenuBig
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_squad_recruitment_menu_frame_text;
+			text = $STR_antistasi_dialogs_rounds_quantity_title;
 		};
 
 		class l1Button: SimpleButton
@@ -1385,6 +1382,350 @@ class buyVehicleMenu: SimpleMenuSmall
 			y = 0.346 * safezoneH + safezoneY;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",0.9};
 			action = "[] call SCRT_fnc_ui_buyBuyVehicle;";
+		};
+	};
+};
+
+class rebelLoadoutMenu: SimpleMenuMedium
+{
+	idd = 120000;
+	onUnload ="";
+
+	class Controls
+	{
+		class closeButton: RscCloseButton
+		{
+			idc = -1;
+			x = 0.567031 * safezoneW + safezoneX;
+			y = 0.225 * safezoneH + safezoneY;
+			w = 0.02 * safezoneW;
+			h = 0.02 * safezoneH;
+			action = "closeDialog 0;";
+		};
+
+		class title: SimpleTitle
+		{
+			idc = -1;
+			x = 0.4175 * safezoneW + safezoneX;
+			y = 0.225 * safezoneH + safezoneY;
+			w = 0.165 * safezoneW;
+			h = 0.02 * safezoneH;
+			text = $STR_antistasi_dialogs_hq_button_rebel_loadouts_menu_title_text;
+		};
+
+		class l1Text: SimpleText
+		{
+			idc = 120001;
+			text = $STR_antistasi_dialogs_rifleman_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l2Text: SimpleText
+		{
+			idc = 120002;
+			text = $STR_antistasi_dialogs_autorifleman_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.291 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l3Text: SimpleText
+		{
+			idc = 120003;
+			text = $STR_antistasi_dialogs_medic_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.324 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l4Text: SimpleText
+		{
+			idc = 120004;
+			text = $STR_antistasi_dialogs_engineer_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.357 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l5Text: SimpleText
+		{
+			idc = 120005;
+			text = $STR_antistasi_dialogs_grenadier_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.39 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l6Text: SimpleText
+		{
+			idc = 120006;
+			text = $STR_antistasi_dialogs_marksman_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.423 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l7Text: SimpleText
+		{
+			idc = 120007;
+			text = $STR_antistasi_dialogs_at_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.456 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l8Text: SimpleText
+		{
+			idc = 120008;
+			text = $STR_antistasi_dialogs_crewman_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.489 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l9Text: SimpleText
+		{
+			idc = 120009;
+			text = $STR_antistasi_dialogs_squad_leader_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.522 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
+		class l1ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_Rifleman'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l1ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.258 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_Rifleman' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l2ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.291 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_MachineGunner'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l2ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.291 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_MachineGunner' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l3ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.324 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_medic'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l3ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.324 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_medic' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l4ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.357 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_Engineer'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l4ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.357 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_Engineer' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+		
+		class l5ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.39 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_Grenadier'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l5ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.39 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_Grenadier' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l6ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.423 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_sniper'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l6ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.423 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_sniper' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l7ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.456 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_lat'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l7ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.456 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_lat' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l8ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.489 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_staticCrew'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l8ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.489 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_staticCrew' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l9ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.522 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_SquadLeader'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l9ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.522 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_SquadLeader' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+	};
+};
+
+
+class aiOptionsMenu: SimpleMenuSmall
+{
+	idd=-1;
+
+	class Controls
+	{
+		class title: SimpleTitle
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_ai_healing_options_title;
+		};
+
+		class closeButton: RscCloseButton
+		{
+			idc = -1;
+			x = 0.674 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.02 * safezoneW;
+			h = 0.02 * safezoneH;
+			action = "closeDialog 0; createDialog 'aiManagement';";
+		};
+
+		class autoHealButton: SimpleButton
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_auto_heal_title;
+			x = 0.257187 * safezoneW + safezoneX;
+			y = 0.304 * safezoneH + safezoneY;
+			tooltip = $STR_antistasi_dialogs_auto_heal_tooltip;
+			action = "if (autoHeal) then {autoHeal = false; [""AI Auto Heal"", ""Auto Healing disabled""] call A3A_fnc_customHint;} else {autoHeal = true; [""AI Auto Heal"", ""Auto Heal enabled""] call A3A_fnc_customHint; nul = [] spawn A3A_fnc_autoHealFnc}";
+		};
+		
+		class coverBeforeReviveButton: SimpleButton
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_cover_before_revive_title;
+			tooltip = $STR_antistasi_dialogs_cover_before_revive_tooltip;
+			x = 0.477 * safezoneW + safezoneX;
+			y = 0.304 * safezoneH + safezoneY;
+			action = "[] call SCRT_fnc_common_toggleCoverBeforeRevive";
 		};
 	};
 };

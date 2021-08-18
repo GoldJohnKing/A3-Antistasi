@@ -123,11 +123,11 @@ class commanderMenu
 				class commanderDescriptionText: TextBaseMT
 				{
 					idc = 1701;			
-					text = "Select support type, click on desired position on the map and press Launch. Note that some call-ins require at least 1 captured airport.";
+					text = "Select support type, click on desired position on the map and press Launch. Some call-ins require at least 1 captured airport. Support points will gain automatically starting War Level 2.";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
-					h = "3.5 * pixelGridNoUIScale * pixelH";
+					h = "5 * pixelGridNoUIScale * pixelH";
 					colorText[] = {1,1,1,0.7};
 				};
 
@@ -135,7 +135,7 @@ class commanderMenu
 				{
 					idc = 1750;
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "7 * pixelGridNoUIScale * pixelH";					
+					y = "7.5 * pixelGridNoUIScale * pixelH";					
 					w = "22 * pixelGridNoUIScale * pixelW";
 					h = "2 * pixelGridNoUIScale * pixelH";	
 					onLBSelChanged = "[] call SCRT_fnc_ui_setSupportCostText; [] spawn SCRT_fnc_ui_clearSupport;";
@@ -146,7 +146,7 @@ class commanderMenu
 					idc = 1751;
 					text = "Costs";
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "10 * pixelGridNoUIScale * pixelH";	
+					y = "10.5 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 				};
@@ -182,7 +182,7 @@ class commanderMenu
 				};
 
 
-				class SupportTabFooter: RscControlsGroupNoScrollbars 
+				class SupportTabFooter: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 1710;
 					x = "1 * pixelGridNoUIScale * pixelW";
@@ -273,7 +273,7 @@ class commanderMenu
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 				};
 
-				class garrisonFooter: RscControlsGroupNoScrollbars 
+				class garrisonFooter: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 2752;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
@@ -358,7 +358,7 @@ class commanderMenu
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 				};
 
-				class mineFooter: RscControlsGroupNoScrollbars 
+				class mineFooter: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 2759;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
@@ -466,10 +466,24 @@ class commanderMenu
 					action = "[] call A3A_fnc_FIAskillAdd";		
 				};
 
+				class rebelLoadoutButton: ButtonBase
+				{			
+					idc = 3104;
+					text = $STR_antistasi_dialogs_hq_button_rebel_loadouts_text;
+					tooltip = $STR_antistasi_dialogs_hq_button_rebel_loadouts_tooltip;
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "14 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";	
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;	
+					action = "[] call SCRT_fnc_ui_createRebelLoadoutMenu;";
+				};
+
 				class hqSpacer2: brSpacer 
 				{
-					idc = 3104;					
-					y = "14 * pixelGridNoUIScale * pixelH";	
+					idc = 3105;					
+					y = "18 * pixelGridNoUIScale * pixelH";	
 				};
 
 				class movePetrosButton: ButtonBase
@@ -548,10 +562,10 @@ class commanderMenu
 					y = "10 * pixelGridNoUIScale * pixelH";	
 					w = "21.5 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = "_value = ((_this select 1)/100); _rounded = [_value, 2] call BIS_fnc_cutDecimals; ((findDisplay 60000) displayCtrl 4040) ctrlSetText format ['Fog: %1', _rounded]; fogValue = _rounded;";
+					onSliderPosChanged = "_value = ((_this select 1)/100); _rounded = [_value, 2] call BIS_fnc_cutDecimals; ((findDisplay 60000) displayCtrl 4040) ctrlSetText format ['Fog: %1', _rounded]; fogValue = [_rounded,0,0];";
 				};
 
-				class fogFooter: RscControlsGroupNoScrollbars 
+				class fogFooter: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 4110;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
@@ -606,7 +620,7 @@ class commanderMenu
 					onSliderPosChanged = "_value = ((_this select 1)/100); _rounded = [_value, 2] call BIS_fnc_cutDecimals; ((findDisplay 60000) displayCtrl 4060) ctrlSetText format ['Overcast: %1', _rounded]; overcastValue = _rounded;";
 				};
 
-				class overcastFooter: RscControlsGroupNoScrollbars 
+				class overcastFooter: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 4062;
 					x = "1.5 * pixelGridNoUIScale * pixelW";
@@ -815,7 +829,7 @@ class commanderMenu
 					colorText[] = {1,1,1,0.7};
 				};
 
-				class musicSwitchButton: RscControlsGroupNoScrollbars 
+				class musicSwitchButton: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5100;
 					y = "23 * pixelGridNoUIScale * pixelH";
@@ -844,7 +858,7 @@ class commanderMenu
 					};		
 				};
 
-				class rocketCameraSwitchButton: RscControlsGroupNoScrollbars 
+				class rocketCameraSwitchButton: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5200;
 					y = "26.5 * pixelGridNoUIScale * pixelH";
@@ -873,7 +887,7 @@ class commanderMenu
 					};		
 				};
 
-				class paradropButton: RscControlsGroupNoScrollbars 
+				class paradropButton: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5400;
 					y = "30 * pixelGridNoUIScale * pixelH";

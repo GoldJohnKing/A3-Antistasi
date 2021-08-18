@@ -19,7 +19,7 @@ if (areInvadersDefeated) exitWith {
 };
 _nameDestination = [_attackDestination] call A3A_fnc_localizar;
 private _taskId = "invaderPunish" + str A3A_taskCount;
-[[teamPlayer,civilian,Occupants],_taskId,[format ["%2 is attacking innocent civilians in %1! Defend the city at all costs",_nameDestination,nameInvaders],format ["%1 Punishment",nameInvaders],_attackDestination],getMarkerPos _attackDestination,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
+[[teamPlayer,civilian,Occupants],_taskId,[format ["%2 is attacking critical positions within %1! Defend the city at all costs",_nameDestination,nameInvaders],format ["%1 Punishment",nameInvaders],_attackDestination],getMarkerPos _attackDestination,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
 [_taskId, "invaderPunish", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 
@@ -115,6 +115,7 @@ if (sidesX getVariable [_attackDestination,sideUnknown] == Occupants) then
     [_posDestination, 4, ["QRF"], Invaders, _reveal] remoteExec ["A3A_fnc_sendSupport", 2];
 };
 if (_numCiv < 8) then {_numCiv = 8};
+if (_numCiv > 40) then {_numCiv = 40};
 
 _size = [_attackDestination] call A3A_fnc_sizeMarker;
 
@@ -144,8 +145,9 @@ _soldiersSpawned = count _soldiers;
 
 if (tierWar >= 5) then {
 	for "_i" from 0 to round random 1 do {
-		if ([vehCSATPlane] call A3A_fnc_vehAvailable) then {
-            private _reveal = [_posDestination, Invaders] call A3A_fnc_calculateSupportCallReveal;
+		private _isCasPlanesAvailable = vehCSATPlanes findIf {[_x] call A3A_fnc_vehAvailable} != -1;
+		if (_isCasPlanesAvailable) then {
+			private _reveal = [_posDestination, Invaders] call A3A_fnc_calculateSupportCallReveal;
             [_posDestination, 4, ["AIRSTRIKE"], Invaders, _reveal] remoteExec ["A3A_fnc_sendSupport", 2];
 			sleep 30;
 		};

@@ -51,7 +51,7 @@ if (_exit) exitWith {
 _pointsX = 2;
 
 if (_typeX in vehAttackHelis) then {_pointsX = 5};
-if ((_typeX == vehCSATPlane) or (_typeX == vehNATOPlane)) then {_pointsX = 10};
+if ((_typeX in vehCSATPlanes) or (_typeX in vehNATOPlanes)) then {_pointsX = 10};
 deleteVehicle _veh;
 ["Airstrike", format ["Air Support increased in %1 points",_pointsX]] call A3A_fnc_customHint;
 bombRuns = bombRuns + _pointsX;

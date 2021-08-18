@@ -20,7 +20,7 @@ if ((_side == Occupants && areOccupantsDefeated) || {(_side == Invaders && areIn
     [2, format ["%1 faction was defeated earlier, aborting attack.", str _side], _fileName, true] call A3A_fnc_log;
 };
 
-private _possibleTargets = markersX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - ["Synd_HQ","NATO_carrier","CSAT_carrier"] - destroyedSites;
+private _possibleTargets = markersX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - mortarpostsFIA - hmgpostsFIA - ["Synd_HQ","NATO_carrier","CSAT_carrier"] - destroyedSites;
 private _possibleStartBases = airportsX select {([_x,false] call A3A_fnc_airportCanAttack)};
 private _targetSide = sideEnemy;
 //No AI vs AI, possible targets are only bases held by rebels
@@ -153,7 +153,7 @@ private _availableTargets = [];
             };
 
             //If the target is surrounded by our friendly markers, remove points
-            private _nearbyFriendlyMarkers = (markersX - controlsX - citiesX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA) select
+            private _nearbyFriendlyMarkers = (markersX - controlsX - citiesX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - mortarpostsFIA - hmgpostsFIA) select
             {
                 (sidesX getVariable [_x,sideUnknown] == _airportSide) &&
                 {(getMarkerPos _x) distance2D (getMarkerPos _target) < 1500}
@@ -216,7 +216,7 @@ if (count _availableTargets == 0) exitWith
     };
 
     //Adding points based on nearby friendly locations
-    private _nearbyFriendlyMarkers = (markersX - controlsX - citiesX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA) select
+    private _nearbyFriendlyMarkers = (markersX - controlsX - citiesX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - mortarpostsFIA - hmgpostsFIA) select
     {
         (sidesX getVariable [_x,sideUnknown] == _targetSide) &&
         {(getMarkerPos _x) distance2D (getMarkerPos _target) < 1500}
@@ -415,9 +415,7 @@ else
 	_waves = round _waves;
     if(_waves < 1) then {_waves = 1};
 
-    //Send the actual attacks
-    if (sidesX getVariable [_attackOrigin, sideUnknown] == Occupants || {!(_attackTarget in citiesX)}) then
-    {
+    if (gameMode == 4) then {
         private _nearPlayers = allPlayers findIf {(getMarkerPos (_attackTarget) distance2D _x) < 1500};
         if((_nearPlayers != -1) || ((spawner getVariable _attackTarget) != 2) || (sidesX getVariable _attackTarget == teamPlayer) || (_attackTarget in citiesX)) then
         {
@@ -430,10 +428,27 @@ else
             [_side, _attackTarget, 4, 3] spawn _fnc_flipMarker;
             [5400, _side] call A3A_fnc_timingCA;
         };
-    }
-    else
-    {
-        [2, format ["Starting punishment mission from %1 to %2", _attackOrigin, _attackTarget], _fileName] call A3A_fnc_log;
-        [_attackTarget, _attackOrigin] spawn A3A_fnc_invaderPunish;
+    } else {
+        //Send the actual attacks
+        if (sidesX getVariable [_attackOrigin, sideUnknown] == Occupants || {!(_attackTarget in citiesX)}) then
+        {
+            private _nearPlayers = allPlayers findIf {(getMarkerPos (_attackTarget) distance2D _x) < 1500};
+            if((_nearPlayers != -1) || ((spawner getVariable _attackTarget) != 2) || (sidesX getVariable _attackTarget == teamPlayer) || (_attackTarget in citiesX)) then
+            {
+                //Sending real attack, execute the fight
+                [2, format ["Starting waved attack with %1 waves from %2 to %3", _waves, _attackOrigin, _attackTarget], _fileName] call A3A_fnc_log;
+                [_attackTarget, _attackOrigin, _waves] spawn A3A_fnc_wavedCA;
+            }
+            else
+            {
+                [_side, _attackTarget, 4, 3] spawn _fnc_flipMarker;
+                [5400, _side] call A3A_fnc_timingCA;
+            };
+        }
+        else
+        {
+            [2, format ["Starting punishment mission from %1 to %2", _attackOrigin, _attackTarget], _fileName] call A3A_fnc_log;
+            [_attackTarget, _attackOrigin] spawn A3A_fnc_invaderPunish;
+        };
     };
 };

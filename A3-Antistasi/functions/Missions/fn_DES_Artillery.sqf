@@ -31,15 +31,27 @@ private _squads = [_sideX, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
 private _infantrySquadArray = selectRandom _squads;
 
 if(_sideX == Occupants) then { 
-    _artilleryClass = vehNATOMRLS;
-    _artilleryShellClass = vehNATOMRLSMags;
+    if (NATOHowitzer != "") then {
+        _artilleryClass = NATOHowitzer;
+        _artilleryShellClass = NATOHowitzerMagazineHE;
+    } else {
+        _artilleryClass = vehNATOMRLS;
+        _artilleryShellClass = vehNATOMRLSMags;
+    };
+
     _mgClass = NATOMG;
     _mgCrewClass = staticCrewOccupants call SCRT_fnc_unit_selectInfantryTier;
 } 
 else { 
-    _artilleryClass = vehCSATMRLS;
-    _artilleryShellClass = vehCSATMRLSMags;
-    _mgClass = CSATGMG;
+    if (CSATHowitzer != "") then {
+        _artilleryClass = CSATHowitzer;
+        _artilleryShellClass = CSATHowitzerMagazineHE;
+    } else {
+        _artilleryClass = vehCSATMRLS;
+        _artilleryShellClass = vehCSATMRLSMags;
+    };
+
+    _mgClass = CSATMG;
     _mgCrewClass = staticCrewInvaders call SCRT_fnc_unit_selectInfantryTier;
 };
 
@@ -134,7 +146,10 @@ if (([_vx,_vy] findIf {_x > 80 || _x < -80}) != -1) then {
 } forEach nearestTerrainObjects [_artilleryPosition, [], 50, false, true];
 
 _artilleryVeh allowDamage true;
-_artilleryVeh lock 2;
+
+if !(_artilleryClass in [NATOHowitzer, CSATHowitzer]) then {
+    _artilleryVeh lock 2;
+};
 
 //////////////////////
 //Artillery fake fire
@@ -164,7 +179,7 @@ _artilleryVeh addEventHandler ["Fired", {
 //Task
 /////////////////////
 private _nameDest = [_markerX] call A3A_fnc_localizar;
-private _taskText = format ["Artillery is firing at our positions from %1. We must destroy it. Do this before %2, or they will destroy something valuable.", _nameDest, _displayTime];
+private _taskText = format ["Artillery is firing at our positions from %1. We must destroy it or kill it's crew. Do this before %2, or they will destroy something valuable.", _nameDest, _displayTime];
 private _taskId = "DES" + str A3A_taskCount;
 
 [
@@ -238,7 +253,7 @@ switch (true) do {
         [-900, _sideX] remoteExec ["A3A_fnc_timingCA",2];
         [-15,theBoss] call A3A_fnc_playerScoreAdd;
 
-        _artilleryVeh removeAllEventHandlers "Fired"; //shells are no longer fake
+        _artilleryVeh removeAllEventHandlers "Fired"; //shells will be no longer fake
         _shellCount = round(random [2,4,7]);
         sleep 1;
         _artilleryVeh doArtilleryFire [_targetPosition, _artilleryShellClass, _shellCount];
@@ -250,7 +265,7 @@ switch (true) do {
 
         [0, 400] remoteExec ["A3A_fnc_resourcesFIA",2];
         [1800, _sideX] remoteExec ["A3A_fnc_timingCA",2];
-        { [50,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+        { [30,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
         [15, theBoss] call A3A_fnc_playerScoreAdd;
     };
     default {

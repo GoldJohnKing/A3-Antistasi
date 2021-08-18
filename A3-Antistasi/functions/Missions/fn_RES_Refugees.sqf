@@ -36,7 +36,11 @@ _dateLimit = numberToDate [date select 0, _dateLimitNum];//converts datenumber b
 _displayTime = [_dateLimit] call A3A_fnc_dateToTimeString;//Converts the time portion of the date array to a string for clarity in hints
 
 _sideX = if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then {Occupants} else {Invaders};
-_textX = if (_sideX == Occupants) then {format ["A group of smugglers have been arrested in %1 and they are about to be sent to prison. Go there and free them in order to make them join our cause. Do this before %2",_nameDest,_displayTime]} else {format ["A group of %3 supportes are hidden in %1 awaiting for evacuation. We have to find them before %2 does it. If not, there will be a certain death for them. Bring them back to HQ",_nameDest,nameInvaders,nameTeamPlayer]};
+_textX = if (_sideX == Occupants) then {
+	format ["A group of smugglers have been arrested in %1 and they are about to be sent to prison. Go there and free them in order to make them join our cause. Do this before %2",_nameDest,_displayTime]
+} else {
+	format ["A group of %3 supportes are hidden in %1 awaiting for evacuation. We have to find them before %2 does it. If not, there will be a certain death for them. Bring them back to HQ",_nameDest,nameInvaders,nameTeamPlayer]
+};
 _posTsk = if (_sideX == Occupants) then {(position _houseX) getPos [random 100, random 360]} else {position _houseX};
 
 private _taskId = "RES" + str A3A_taskCount;
@@ -109,7 +113,8 @@ else
 		_dirVeh = getDir _road;
 		};
 	_posVeh = [_posroad, 3, _dirveh + 90] call BIS_Fnc_relPos;
-	_veh = vehPoliceCar createVehicle _posVeh;
+	private _policeVehClass = selectRandom vehPoliceCars;
+	_veh = _policeVehClass createVehicle _posVeh;
 	_veh allowDamage false;
 	_veh setDir _dirVeh;
 	sleep 15;
@@ -139,7 +144,8 @@ else
 		};
 	_nul = [leader _groupX, _mrk, "SAFE","SPAWNED", "NOVEH2","RANDOM", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
 	{[_x,""] call A3A_fnc_NATOinit} forEach units _groupX;
-	_groupX1 = [_houseX buildingExit 0, Occupants, groupsNATOGen] call A3A_fnc_spawnGroup;
+	private _policeGroup = [policeOfficer, policeGrunt];
+	_groupX1 = [_houseX buildingExit 0, Occupants, _policeGroup] call A3A_fnc_spawnGroup;
 	};
 
 _bonus = if (_difficultX) then {2} else {1};

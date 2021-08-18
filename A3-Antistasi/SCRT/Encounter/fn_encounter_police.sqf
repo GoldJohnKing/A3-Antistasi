@@ -6,6 +6,7 @@ private _groups = [];
 
 private _allPlayers = (call BIS_fnc_listPlayers) select {side _x == teamPlayer};
 private _player = selectRandom _allPlayers;
+private _side = if (gameMode == 4) then {Invaders} else {Occupants};
 
 private _cities = citiesX select {sidesX getVariable [_x, sideUnknown] != teamPlayer && {(getMarkerPos _x) distance2D _player < distanceSPWN}};
 
@@ -31,10 +32,12 @@ private _roadcon = roadsConnectedto (_road select 0);
 private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
-private _policeVehicleData = [(getPos (_road select 0)), _dirveh, vehPoliceCar, Occupants] call A3A_fnc_spawnVehicle;
+private _policeVehicleClass = selectRandom vehPoliceCars;
+
+private _policeVehicleData = [(getPos (_road select 0)), _dirveh, _policeVehicleClass, _side] call A3A_fnc_spawnVehicle;
 private _policeVehicle = _policeVehicleData select 0;
 _policeVehicle limitSpeed 50;
-[_policeVehicle, Occupants] call A3A_fnc_AIVEHinit;
+[_policeVehicle, _side] call A3A_fnc_AIVEHinit;
 [_policeVehicle, ["BeaconsStart", 1]] remoteExecCall ["animate", 0, _policeVehicle];
 
 private _policeVehicleCrew = _policeVehicleData select 1;
@@ -44,8 +47,8 @@ private _policeGroup = _policeVehicleData select 2;
 _groups pushBack _policeGroup;
 _vehicles pushBack _policeVehicle;
 
-private _typeCargoGroup = [vehPoliceCar, Occupants] call A3A_fnc_cargoSeats;
-private _cargoGroup = [_cityPosition, Occupants, _typeCargoGroup, true,false] call A3A_fnc_spawnGroup;
+private _typeCargoGroup = [_policeVehicleClass, _side] call A3A_fnc_cargoSeats;
+private _cargoGroup = [_cityPosition, _side, _typeCargoGroup, true,false] call A3A_fnc_spawnGroup;
 
 {
     _x assignAsCargo _policeVehicle;

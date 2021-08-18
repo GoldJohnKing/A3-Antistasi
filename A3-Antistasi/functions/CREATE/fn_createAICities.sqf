@@ -11,7 +11,7 @@ _positionX = getMarkerPos (_markerX);
 
 _num = [_markerX] call A3A_fnc_sizeMarker;
 _sideX = sidesX getVariable [_markerX,sideUnknown];
-if ({if ((getMarkerPos _x inArea _markerX) and (sidesX getVariable [_x,sideUnknown] != _sideX)) exitWith {1}} count markersX > 0) exitWith {};
+if ((markersX - controlsX) findIf {(getMarkerPos _x inArea _markerX) and (sidesX getVariable [_x,sideUnknown] != _sideX)} != -1) exitWith {};
 _num = round (_num / 100);
 
 diag_log format ["[Antistasi] Spawning City Patrol in %1 (createAICities.sqf)", _markerX];
@@ -20,37 +20,44 @@ _dataX = server getVariable _markerX;
 _prestigeOPFOR = _dataX select 2;
 _prestigeBLUFOR = _dataX select 3;
 _esAAF = true;
-if (_markerX in destroyedSites) then
-	{
+if (_markerX in destroyedSites) then {
 	_esAAF = false;
 	_params = [_positionX,Invaders,CSATSpecOp];
-	}
-else
-	{
-	if (_sideX == Occupants) then
-		{
-		_num = round (_num * (_prestigeOPFOR + _prestigeBLUFOR)/100);
-		_frontierX = [_markerX] call A3A_fnc_isFrontline;
-		if (_frontierX) then
-			{
-			_num = _num * 2;
-			private _sentry = groupsNATOSentry call SCRT_fnc_unit_selectInfantryTier;
-			_params = [_positionX, Occupants, _sentry];
-			}
-		else
-			{
-			_params = [_positionX, Occupants, groupsNATOGen];
+} else {
+	switch (_sideX) do {
+		case Occupants: {
+			_num = round (_num * (_prestigeOPFOR + _prestigeBLUFOR)/100);
+			_frontierX = [_markerX] call A3A_fnc_isFrontline;
+			if (_frontierX) then {
+				_num = _num * 2;
+				private _sentry = groupsNATOSentry call SCRT_fnc_unit_selectInfantryTier;
+				_params = [_positionX, Occupants, _sentry];
+			} else {
+				_params = [_positionX, Occupants, [policeOfficer, policeGrunt]];
 			};
-		}
-	else
-		{
-		_esAAF = false;
-		_num = round (_num * (_prestigeBLUFOR/100));
-		_array = [];
-		{if (random 20 < skillFIA) then {_array pushBack (_x select 0)} else {_array pushBack (_x select 1)}} forEach groupsSDKSentry;
-		_params = [_positionX, teamPlayer, _array];
+		};
+		case Invaders: {
+			_num = round (_num * (_prestigeOPFOR + _prestigeBLUFOR)/100);
+			_frontierX = [_markerX] call A3A_fnc_isFrontline;
+			if (_frontierX || {gameMode != 4}) then {
+				_num = _num * 2;
+				private _sentry = groupsCSATSentry call SCRT_fnc_unit_selectInfantryTier;
+				_params = [_positionX, Invaders, _sentry];
+			} else {
+				_params = [_positionX, Invaders, [policeOfficer, policeGrunt]];
+			};
+		};
+		case teamPlayer: {
+			_esAAF = false;
+			_num = round (_num * (_prestigeBLUFOR/100));
+			_array = [];
+			{
+				_array pushBack (_x select 0);
+			} forEach groupsSDKSentry;
+			_params = [_positionX, teamPlayer, _array];
 		};
 	};
+};
 if (_num < 1) then {_num = 1};
 
 _countX = 0;

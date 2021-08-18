@@ -8,17 +8,17 @@ private _allPlayers = (call BIS_fnc_listPlayers) select {side _x == teamPlayer};
 private _player = selectRandom _allPlayers;
 private _originPosition = position _player;
 
-private _spawnPosition = [_originPosition, 700, distanceSPWN, 0, 0, 1] call BIS_fnc_findSafePos;
+private _spawnPosition = [_originPosition, 900, distanceSPWN, 0, 0] call BIS_fnc_findSafePos;
 private _road = objNull;
 private _radiusX = 5;
 
 while {true} do {
     _road = _spawnPosition nearRoads _radiusX;
-    if (count _road > 0) exitWith {};
+    if (count _road > 0 && {_road findIf {(position _x) distance2D _originPosition > 500} != -1}) exitWith {};
     _radiusX = _radiusX + 5;
 };
 
-private _roadcon = roadsConnectedto (_road select 0);
+private _roadcon = roadsConnectedto ((_road select {(position _x) distance2D _originPosition > 500}) select 0); //guaranteed due to top condition on road search
 private _dirveh = if (count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 

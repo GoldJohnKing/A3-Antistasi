@@ -84,7 +84,18 @@ if (!isNil "_shopLookupArrayIndex" && {_shopLookupArrayIndex != -1}) then {
 
 vehiclePurchase_cost = round _price;
 
-private _resourcesFIA = player getVariable "moneyX";
+private _resourcesFIA = 0;
+
+if (player != theBoss) then {
+	_resourcesFIA = player getVariable "moneyX";
+} else {
+	private _factionMoney = server getVariable "resourcesFIA";
+	if (vehiclePurchase_cost <= _factionMoney) then {
+		_resourcesFIA = _factionMoney;
+	} else {
+		_resourcesFIA = player getVariable "moneyX";
+	};
+};
 
 if (_resourcesFIA < vehiclePurchase_cost) exitWith {
     ["Vehicle Market", format ["You do not have enough money for this vehicle: %1 € required",vehiclePurchase_cost]] call SCRT_fnc_misc_showDeniedActionHint;

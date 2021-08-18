@@ -20,12 +20,19 @@ _size = [_markerX] call A3A_fnc_sizeMarker;
 _frontierX = [_markerX] call A3A_fnc_isFrontline;
 _sideX = Invaders;
 _isFIA = false;
-if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then
-{
-	_sideX = Occupants;
-	if ((random 10 >= (tierWar + difficultyCoef)) and !(_frontierX) and !(_markerX in forcedSpawn)) then
-	{
-		_isFIA = true;
+
+switch (true) do {
+	case ((gameMode == 4 && {sidesX getVariable [_markerX,sideUnknown] == Invaders})): {
+		if ((random 10 >= (tierWar + difficultyCoef)) and !(_frontierX) and !(_markerX in forcedSpawn)) then {
+			_isFIA = true;
+		};
+	};
+
+	case (sidesX getVariable [_markerX,sideUnknown] == Occupants): {
+		_sideX = Occupants;
+		if ((random 10 >= (tierWar + difficultyCoef)) and !(_frontierX) and !(_markerX in forcedSpawn)) then {
+			_isFIA = true;
+		};
 	};
 };
 
@@ -105,18 +112,20 @@ if (_patrol) then
 	_countX = 0;
 	while {_countX < 4} do
 	{
-		_arraygroups = if (_sideX == Occupants) then
-		{
-			if (!_isFIA) then {
-				[(groupsNATOSentry call SCRT_fnc_unit_selectInfantryTier), (groupsNATOSniper call SCRT_fnc_unit_selectInfantryTier)]
+		_arraygroups = if (!_isFIA) then {
+			if (_sideX == Occupants) then {
+				[(groupsNATOSentry call SCRT_fnc_unit_selectInfantryTier), (groupsNATOSniper call SCRT_fnc_unit_selectInfantryTier)];
 			} else {
-				if (_sideX == Occupants) then {groupsFIASmallOcc} else {groupsFIASmallInv}
+				[(groupsCSATSentry call SCRT_fnc_unit_selectInfantryTier), (groupsCSATSniper call SCRT_fnc_unit_selectInfantryTier)];
 			};
-		}
-		else
-		{
-			[(groupsCSATSentry call SCRT_fnc_unit_selectInfantryTier), (groupsCSATSniper call SCRT_fnc_unit_selectInfantryTier)]
+		} else {
+			if (_sideX == Occupants) then {
+				groupsFIASmall;
+			} else {
+				groupsWAMSmall;
+			};
 		};
+
 				
 		if ([_markerX,false] call A3A_fnc_fogCheck < 0.3) then {_arraygroups = _arraygroups - sniperGroups};
 		_typeGroup = selectRandom _arraygroups;
@@ -193,7 +202,7 @@ _vehiclesX pushBack _flagX;
 private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
 {
 	private _ammoBoxType = if (_sideX == Occupants) then {NATOAmmoBox} else {CSATAmmoBox};
-	private _ammoBox = _ammoBoxType createVehicle _positionX;
+	private _ammoBox = [_ammoBoxType, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
 	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
 	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
 	[_ammoBox] spawn A3A_fnc_fillLootCrate;
@@ -291,18 +300,29 @@ else
 };
 
 _spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
-if (_spawnParameter isEqualType []) then
-{
-	_typeVehX = if (_sideX == Occupants) then
-	{
-		private _types = if (!_isFIA) then {vehNATOTrucks + vehNATOCargoTrucks} else {[vehFIATruck]};
-		_types = _types select { _x in vehCargoTrucks };
-		if (count _types == 0) then { vehNATOCargoTrucks } else { _types };
-	}
-	else
-	{
-		vehCSATTrucks
+if (_spawnParameter isEqualType []) then {
+	_typeVehX = if !(_isFIA) then {
+		if (_sideX == Occupants) then {
+			private _types = vehNATOTrucks + vehNATOCargoTrucks;
+			_types = _types select { _x in vehCargoTrucks };
+			if (count _types == 0) then { vehNATOCargoTrucks } else { _types };
+		} else {
+			private _types = vehCSATTrucks + vehCSATCargoTrucks;
+			_types = _types select { _x in vehCargoTrucks };
+			if (count _types == 0) then { vehCSATCargoTrucks } else { _types };
+		};
+	} else {
+		if (_sideX == Occupants) then {
+			private _types = vehFIATrucks;
+			_types = _types select { _x in vehCargoTrucks };
+			if (count _types == 0) then { vehNATOCargoTrucks } else { _types };
+		} else {
+			private _types = vehWAMTrucks;
+			_types = _types select { _x in vehCargoTrucks };
+			if (count _types == 0) then { vehCSATCargoTrucks } else { _types };
+		};
 	};
+
 	_veh = createVehicle [selectRandom _typeVehX, (_spawnParameter select 0), [], 0, "NONE"];
 	_veh setDir (_spawnParameter select 1);
 	_vehiclesX pushBack _veh;
@@ -329,15 +349,13 @@ if (!isNull _antenna) then
 			_posF set [2,24.3];
 		};
 		_typeUnit = if (_sideX == Occupants) then {
-			if (!_isFIA) then {
-				NATOMarksman call SCRT_fnc_unit_selectInfantryTier
-			} else {FIAMarksmanOcc}
-		} else {CSATMarksman};
+			if (!_isFIA) then {NATOMarksman call SCRT_fnc_unit_selectInfantryTier} else {FIAMarksman};
+		} else {
+			if (!_isFIA) then {CSATMarksman call SCRT_fnc_unit_selectInfantryTier} else {WAMMarksman};
+		};
 		_unit = [_groupX, _typeUnit, _positionX, [], _dir, "NONE"] call A3A_fnc_createUnit;
 		_unit setPosATL _posF;
 		_unit forceSpeed 0;
-		//_unit disableAI "MOVE";
-		//_unit disableAI "AUTOTARGET";
 		_unit setUnitPos "UP";
 		[_unit,_markerX] call A3A_fnc_NATOinit;
 		_soldiers pushBack _unit;

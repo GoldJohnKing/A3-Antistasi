@@ -123,8 +123,12 @@ if(_vehPool isEqualTo []) then
 //Spawn in the vehicles
 for "_i" from 1 to _vehicleCount do
 {
+    if ([_side] call A3A_fnc_remUnitCount < 4) exitWith {
+        [2, "Cancelling because maxUnits exceeded", _filename] call A3A_fnc_log;
+    };
+
     private _vehicleType = selectRandomWeighted _vehPool;
-    private _vehicleData = [_vehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin] call A3A_fnc_createAttackVehicle;
+    private _vehicleData = [_vehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin, _posDestination] call A3A_fnc_createAttackVehicle;
     if (_vehicleData isEqualType []) then
     {
         _vehicles pushBack (_vehicleData select 0);
@@ -139,9 +143,9 @@ for "_i" from 1 to _vehicleCount do
 };
 
 if ((_posOrigin distance2D _posDestination < distanceForLandAttack) && {[_posOrigin, _posDestination] call A3A_fnc_arePositionsConnected}) then {
-    private _heavyResponseChance =  if (side _x == Occupants) then {aggressionOccupants/2} else {aggressionInvaders/2};
-    if (_heavyResponseChance > 35) then {
-        _heavyResponseChance = 35;
+    private _heavyResponseChance =  if (_side == Occupants) then {aggressionOccupants/2} else {aggressionInvaders/2};
+    if (_heavyResponseChance > 30) then {
+        _heavyResponseChance = 30;
     };
 
     if ((random 100) < _heavyResponseChance) then {
@@ -149,7 +153,7 @@ if ((_posOrigin distance2D _posDestination < distanceForLandAttack) && {[_posOri
         private _additionalVehicleType = selectRandom vehNATOAttack;
         [2, format ["Heavy response rolled: added %1 attack vehicles to pool.", str _quantity], _filename] call A3A_fnc_log;
         for "_i" from 1 to _quantity do {
-            private _vehicleData = [_additionalVehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin] call A3A_fnc_createAttackVehicle;
+            private _vehicleData = [_additionalVehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin, _posDestination] call A3A_fnc_createAttackVehicle;
             if (_vehicleData isEqualType []) then
             {
                 _vehicles pushBack (_vehicleData select 0);
