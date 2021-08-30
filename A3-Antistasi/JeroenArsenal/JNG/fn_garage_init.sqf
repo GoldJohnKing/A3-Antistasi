@@ -46,14 +46,14 @@ if(hasInterface)then{
     //add open event
     [missionNamespace, "arsenalOpened", {
         disableSerialization;
-        UINamespace setVariable ["arsanalDisplay",(_this select 0)];
+        UINamespace setVariable ["arsenalDisplay",(_this select 0)];
 
         //spawn this to make sure it doesnt freeze the game
         [] spawn {
             disableSerialization;
             _type = UINamespace getVariable ["jn_type",""];
             if(_type isEqualTo "garage")then{
-                ["CustomInit", [uiNamespace getVariable "arsanalDisplay"]] call jn_fnc_garage;
+                ["CustomInit", [uiNamespace getVariable "arsenalDisplay"]] call jn_fnc_garage;
             };
         };
 

@@ -292,6 +292,7 @@ if(alive _planeVeh) then {
             position _planeVeh
         ] call SCRT_fnc_common_airdropCargo;
         [_ammoBox] spawn A3A_fnc_fillLootCrate;
+        [_ammoBox] call A3A_fnc_logistics_addLoadAction;
     };
 
     sleep 10;
@@ -332,9 +333,9 @@ switch(true) do {
 
         private _boxesCount = { _x distance (getMarkerPos respawnTeamPlayer) < 25 } count _boxes;
 
-        [0, 400 * _boxesCount] remoteExec ["A3A_fnc_resourcesFIA",2];
+        [0, 40 * _boxesCount] remoteExec ["A3A_fnc_resourcesFIA",2];
         { 
-            [400 * _boxesCount, _x] call A3A_fnc_playerScoreAdd;
+            [40 * _boxesCount, _x] call A3A_fnc_playerScoreAdd;
         } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
         [20, theBoss] call A3A_fnc_playerScoreAdd;
 

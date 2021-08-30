@@ -129,7 +129,49 @@ private _categoryOverrideTable = [
 ["ACE_DAGR", ["Gadgets","Items"]],
 ["rhsusf_Rhino", ["Unknown", "Items"]],    //Just a Headmount not NVG
 ["ace_dragon_super", ["MissileLaunchers","Weapons","AT"]],
-["ace_dragon_sight", ["Binoculars","Items"]] ];
+["ace_dragon_sight", ["Binoculars","Items"]],
+//Flashlights
+["vn_mx991", ["Unknown","Weapons"]],
+["vn_mx991_red", ["Unknown","Weapons"]],
+["vn_fkb1_red", ["Unknown","Weapons"]],
+["vn_fkb1", ["Unknown","Weapons"]],
+["ACE_SatchelCharge_Remote_Mag_Throwable", ["Unknown", "Explosives", "Items"]],
+["ACE_DemoCharge_Remote_Mag_Throwable", ["Unknown", "Explosives", "Items"]],
+["ACE_Flashlight_Maglite_ML300L", ["Unknown","Weapons"]],
+["vn_default_helmetbase_09", ["Unknown","Headgear"]],	//Goat Hat
+["vn_m1897", ["Shotguns","Weapons"]],
+["vn_izh54", ["Shotguns","Weapons"]],
+["vn_izh54_shorty", ["Shotguns","Weapons"]],
+["vn_pps52", ["SMGs","Weapons"]],
+["vn_pps43", ["SMGs","Weapons"]],
+["vn_mc10", ["SMGs","Weapons"]],
+["vn_ppsh41", ["SMGs","Weapons"]],
+["vn_k50m", ["SMGs","Weapons"]],
+["vn_mat49", ["SMGs","Weapons"]],
+["vn_mat49_f", ["SMGs","Weapons"]],
+["vn_mat49_vc", ["SMGs","Weapons"]],
+["vn_m3a1", ["SMGs","Weapons"]],
+["vn_sten", ["SMGs","Weapons"]],
+["vn_m79", ["GrenadeLaunchers","Weapons"]],
+["vn_sa7b", ["MissileLaunchers","Weapons"]],
+["vn_sa7", ["MissileLaunchers","Weapons"]],
+["vn_m4956_gl", ["GrenadeLaunchers","Weapons"]],
+["vn_m2carbine_gl", ["GrenadeLaunchers","Weapons"]],
+["vn_m1carbine_gl", ["GrenadeLaunchers","Weapons"]],
+["vn_sks_gl", ["GrenadeLaunchers","Weapons"]],
+["vn_type56", ["Rifles","Weapons"]],
+
+["ACRE_PRC148", ["Gadgets","items"]],
+["ACRE_PRC152", ["Gadgets","items"]],
+["ACRE_PRC343", ["Gadgets","items"]],
+["ACRE_PRC77", ["Gadgets","items"]],
+["ACRE_SEM52SL", ["Gadgets","items"]],
+["ACRE_SEM70", ["Gadgets","items"]],
+["ACRE_VHF30108SPIKE", ["Gadgets","items"]],
+["ACRE_VHF30108", ["Gadgets","items"]],
+["ACRE_VHF30108MAST", ["Gadgets","items"]],
+["ACRE_PRC117F", ["Gadgets","items"]]
+];
 
 //Create a local namespace. Should only run on the server.
 categoryOverrides = false call A3A_fnc_createNamespace;

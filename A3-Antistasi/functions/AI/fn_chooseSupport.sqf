@@ -62,7 +62,7 @@ switch (true) do
             ) then
             {
                 //Use spread out attacks first, if not available use more precise attacks
-                _supportTypes = ["MORTAR", "CANNON", "AIRSTRIKE", "CARPETBOMB", "AIRDROP", "GUNSHIP", "ORBSTRIKE", "QRF"];
+                _supportTypes = ["MORTAR", "CANNON", "AIRSTRIKE", "CARPETBOMB", "GUNSHIP", "ORBSTRIKE", "AIRDROP", "QRF"];
             };
         }
         else
@@ -117,7 +117,7 @@ switch (true) do
         ) then
         {
             //Use something that can attack targets directly, if not available use strong AoE attacks
-            _supportTypes = ["CAS", "GUNSHIP", "MISSILE", "CANNON", "AIRDROP", "EMP", "ORBSTRIKE", "MORTAR", "AIRSTRIKE"];
+            _supportTypes = ["CAS", "GUNSHIP", "MISSILE", "CANNON", "EMP", "ORBSTRIKE", "MORTAR", "AIRSTRIKE"];
         };
     };
     case (_enemyVehicle isKindOf "LandVehicle"):
@@ -133,7 +133,7 @@ switch (true) do
         ) then
         {
             //Use something that can target directly, otherwise use something against vehicle groups
-            _supportTypes = ["CAS", "CANNON", "EMP", "AIRSTRIKE", "MISSILE", "CARPETBOMB", "MORTAR", "GUNSHIP", "AIRDROP"];
+            _supportTypes = ["CAS", "CANNON", "EMP", "AIRSTRIKE", "MISSILE", "CARPETBOMB", "MORTAR", "GUNSHIP"];
         };
     };
     case (_enemyVehicle isKindOf "Plane"):
@@ -151,7 +151,7 @@ switch (true) do
         ) then
         {
             //Strike back with a dogfighter, if not available fall back to AA or AoE remote weapons
-            _supportTypes = ["ASF", "SAM", "EMP", "AIRDROP"];
+            _supportTypes = ["ASF", "SAM", "EMP"];
         };
     };
     case (_enemyVehicle isKindOf "Helicopter"):
@@ -200,10 +200,22 @@ switch (true) do
     };
 };
 
+// Avoid making area attacks against friendlies, although "mistakes" can be made
+private _friendlyUnits = if (side _group == Invaders) then { units Invaders } else { units Occupants + units civilian };
+private _friendlyCount = count (_friendlyUnits inAreaArray [getpos _enemy, 200, 200]);
+private _maxFriendlies = if (side _group == Invaders) then { random [1, 2, 10] } else { random [0, 0, 5] };
+
+if (_friendlyCount > _maxFriendlies) then
+{
+    _supportTypes = _supportTypes - ["MORTAR", "AIRSTRIKE", "CARPETBOMB", "MISSILE", "ORBSTRIKE"];
+};
+
 if(_forceSupport) then
 {
     //Remove the slow QRF support if too far away, help needs to be there fast
     _supportTypes = _supportTypes - ["QRF"];
+    //meh, leave it as a fallback at least
+    _supportTypes pushBack "QRF";
 };
 
 _supportTypes;

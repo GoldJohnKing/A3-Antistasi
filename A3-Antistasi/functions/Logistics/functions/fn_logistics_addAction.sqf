@@ -6,6 +6,7 @@
     Arguments:
     0. <Object> Object to add action to
     1. <String> Which action to add ("load"/"unload")
+    2. <String> Custom JIP key to prevent overwriting (usually build with object string of cargo)
 
     Return Value:
     <nil>
@@ -17,7 +18,10 @@
 
     Example: [_object , _action] remoteExec ["A3A_fnc_logistics_addAction", 0, _object];
 */
-params ["_object", "_action"];
+params [["_object", objNull, [objNull]], "_action", ["_jipKey", "", [""]]];
+if (isNull _object) exitWith {
+    remoteExec ["", _jipKey]; //clear custom JIP
+};
 
 private _actionNames = (actionIDs _object) apply {(_object actionParams _x)#0};
 
@@ -48,9 +52,17 @@ switch (_action) do {
             true,
             "",
             "(
-                ((attachedTo _target) isEqualTo objNull)
+                ((attachedTo _originalTarget) isEqualTo objNull)
                 and ((vehicle _this) isEqualTo _this)
-                and (alive _target)
+                and (alive _originalTarget)
+                and {
+                    !(_originalTarget isKindOf 'CAManBase')
+                    or {
+                        (_originalTarget getVariable ['incapacitated',false])
+                        and (_target isEqualTo _originalTarget)
+                    }
+                }
+                and _originalTarget isNotEqualTo _this
             )",
             5
         ];
@@ -76,8 +88,8 @@ switch (_action) do {
             true,
             "",
             "(
-                !((_target getVariable ['Cargo', []]) isEqualTo [])
-                and !(_target getVariable ['LoadingCargo', false])
+                !((_originalTarget getVariable ['Cargo', []]) isEqualTo [])
+                and !(_originalTarget getVariable ['LoadingCargo', false])
                 and ((vehicle _this) isEqualTo _this)
             )",
             5

@@ -42,7 +42,7 @@ if (!(isClass (configfile >> "cfgVehicles" >> _object)) || _centre isEqualTo [0,
 };
 
 private _obj = createVehicle [_object, [_centre select 0, _centre select 1, (_centre select 2) - 10], [], 0, "NONE"]; 
-private _para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "FLY"];
+private _para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "NONE"];
 
 _para setDir getDir _obj;
 _para setPos getPos _obj;

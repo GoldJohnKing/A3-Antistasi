@@ -84,7 +84,7 @@ class playerMenu
 			w = "2.5 * pixelGridNoUIScale * pixelW";	
 			h = "3 * pixelGridNoUIScale * pixelH";
 			sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 2) * 0.5";
-			action = "[70000,'LEFT'] spawn SCRT_fnc_ui_changeTab; [] spawn SCRT_fnc_ui_clearSupport;";
+			action = "[70000,'LEFT'] spawn SCRT_fnc_ui_changeTab; [] spawn SCRT_fnc_ui_clearSupport; [] call SCRT_fnc_ui_clearOutpost;";
 		};
 
 		class tabSelectorRightButton: ButtonBase
@@ -96,7 +96,7 @@ class playerMenu
 			w = "2.5 * pixelGridNoUIScale * pixelW";	
 			h = "3 * pixelGridNoUIScale * pixelH";
 			sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 2) * 0.5";	
-			action = "[70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab; [] spawn SCRT_fnc_ui_clearSupport;";
+			action = "[70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab; [] spawn SCRT_fnc_ui_clearSupport; [] call SCRT_fnc_ui_clearOutpost;";
 		};					
 		
 		// Game Options (Client)
@@ -131,7 +131,7 @@ class playerMenu
 					colorText[] = {1,1,1,0.7};
 				};
 
-				class musicSwitchButton: RscControlsGroupNoScrollbars 
+				class musicSwitchButton: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5100;
 					y = "4 * pixelGridNoUIScale * pixelH";
@@ -160,7 +160,7 @@ class playerMenu
 					};		
 				};
 
-				class rocketCameraSwitchButton: RscControlsGroupNoScrollbars 
+				class rocketCameraSwitchButton: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5200;
 					y = "7.5 * pixelGridNoUIScale * pixelH";
@@ -189,7 +189,7 @@ class playerMenu
 					};		
 				};
 
-				class paradropButton: RscControlsGroupNoScrollbars 
+				class paradropButton: RscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5400;
 					y = "11 * pixelGridNoUIScale * pixelH";

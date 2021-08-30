@@ -74,7 +74,7 @@ try {
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_NVGS) + 
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR) + 
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_VEST)
-	) select {_x select 1 == -1};
+	) select {(_x select 1) == -1 || {(_x select 1) >= minWeaps}};
 
 	if (_classname in _unlockedItems) then {
 		throw ["The trader is not interested in this item, no deal."]

@@ -11,7 +11,9 @@ private _plane = _planeData select 0;
 private _planeCrew = _planeData select 1;
 private _groupPlane = _planeData select 2;
 
-_plane setPosATL [getPosATL _plane select 0, getPosATL _plane select 1, 1000];
+private _isHelicopter = _plane isKindOf "helicopter";
+
+_plane setPosATL [getPosATL _plane select 0, getPosATL _plane select 1, if (_isHelicopter) then {100} else {1000}];
 _plane disableAI "TARGET";
 _plane disableAI "AUTOTARGET";
 _plane flyInHeight 120;
@@ -21,7 +23,7 @@ _plane flyInHeightASL [(_minAltASL select 2) +120, (_minAltASL select 2) +120, (
 driver _plane sideChat "Starting plane run. ETA 30 seconds.";
 private _wp1 = group _plane addWaypoint [_positionOrigin, 0];
 _wp1 setWaypointType "MOVE";
-_wp1 setWaypointSpeed "LIMITED";
+if (!_isHelicopter) then { _wp1 setWaypointSpeed "LIMITED" };
 _wp1 setWaypointBehaviour "CARELESS";
 
 private _text = nil;
@@ -65,7 +67,7 @@ switch (supportType) do {
 };
 
 _wp2 = group _plane addWaypoint [_positionDestination, 1];
-_wp2 setWaypointSpeed "LIMITED";
+if (!_isHelicopter) then { _wp2 setWaypointSpeed "LIMITED" };
 _wp2 setWaypointType "MOVE";
 _wp2 setWaypointStatements ["true", "isSupportMarkerPlacingLocked=false;publicVariable 'isSupportMarkerPlacingLocked';"];
 

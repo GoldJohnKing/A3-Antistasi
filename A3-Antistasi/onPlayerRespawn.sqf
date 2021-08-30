@@ -35,7 +35,7 @@ if (side group player == teamPlayer) then
 	_score = _oldUnit getVariable ["score",0];
 	_punish = _oldUnit getVariable ["punish",0];
 	_moneyX = _oldUnit getVariable ["moneyX",0];
-	_moneyX = round (_moneyX - (_moneyX * 0.15));
+	_moneyX = round (_moneyX - (_moneyX * deathPenalty));
 	_eligible = _oldUnit getVariable ["eligible",true];
 	_rankX = _oldUnit getVariable ["rankX","PRIVATE"];
 
@@ -76,15 +76,10 @@ if (side group player == teamPlayer) then
 		{
 		[_newUnit, true] remoteExec ["A3A_fnc_theBossTransfer", 2];
 		};
-
-
-	removeAllItemsWithMagazines _newUnit;
-	{_newUnit removeWeaponGlobal _x} forEach weapons _newUnit;
-	removeBackpackGlobal _newUnit;
-	removeVest _newUnit;
-	removeAllAssignedItems _newUnit;
 	//Give them a map, in case they're commander and need to replace petros.
-	_newUnit linkItem "ItemMap";
+	_newUnit setUnitLoadout [[],[],[],[selectRandom ((A3A_faction_civ getVariable "uniforms") + (A3A_faction_reb getVariable "uniforms")), []],[],[],selectRandom (A3A_faction_civ getVariable "headgear"),"",[],
+	[(selectRandom unlockedmaps),"","",(selectRandom unlockedCompasses),(selectRandom unlockedwatches),""]];
+
 	if (!isPlayer (leader group player)) then {(group player) selectLeader player};
 	player addEventHandler ["FIRED", {
 		_player = _this select 0;

@@ -24,6 +24,7 @@ private _markerOrigin = "";
 private _posOrigin = [];
 
 private _posDestination = getMarkerPos _markerDestination;
+private _isFIA = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
 
 //Parameter is the starting base
 if(_side isEqualType "") then
@@ -65,18 +66,18 @@ private _landPosBlacklist = [];
 private _aggression = if (_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
 if (sidesX getVariable [_markerDestination, sideUnknown] != teamPlayer) then {_aggression = 100 - _aggression};
 
-private _divisor = [48, 32, 16] select (skillMult - 1);
+private _divisor = [64, 48, 32] select (skillMult - 1);
 
 private _vehicleCount = if(_side == Occupants) then {
     1
     + (_aggression/_divisor)
-    + ([0, 3] select _super)
+    + ([0, 2] select _super)
     + ([-0.5, 0, 0.5] select (skillMult - 1))
 }
 else {
     1
     + (_aggression/_divisor)
-    + ([0, 4] select _super)
+    + ([0, 2] select _super)
     + ([0, 0.5, 1.5] select (skillMult - 1))
 };
 _vehicleCount = (round (_vehicleCount)) max 1;
@@ -104,9 +105,17 @@ if ((_posOrigin distance2D _posDestination < distanceForLandAttack) && {[_posOri
     //The attack will be carried out by land and air vehicles
 	_vehPool = [_side] call A3A_fnc_getVehiclePoolForAttacks;
     _replacement = if(_side == Occupants) then {
-        (vehNATOTransportHelis + vehNATOTrucks + vehNATOAPC + [vehNATOPatrolHeli])
+        if (_isFIA) then {
+            (vehNATOTransportHelis + vehFIATrucks + vehFIAAPC + [vehNATOPatrolHeli])
+        } else {
+            (vehNATOTransportHelis + vehNATOTrucks + vehNATOAPC + [vehNATOPatrolHeli])
+        };
     } else {
-        (vehCSATTransportHelis + vehCSATTrucks + vehCSATAPC + [vehCSATPatrolHeli])
+         if (_isFIA) then {
+            (vehNATOTransportHelis + vehWAMTrucks + vehWAMAPC + [vehNATOPatrolHeli])
+        } else {
+            (vehCSATTransportHelis + vehCSATTrucks + vehCSATAPC + [vehCSATPatrolHeli])
+        };
     };
 } else {
     //The attack will be carried out by air vehicles only
@@ -123,8 +132,12 @@ if(_vehPool isEqualTo []) then
 //Spawn in the vehicles
 for "_i" from 1 to _vehicleCount do
 {
+    if ([_side] call A3A_fnc_remUnitCount < 4) exitWith {
+        [2, "Cancelling because maxUnits exceeded", _filename] call A3A_fnc_log;
+    };
+
     private _vehicleType = selectRandomWeighted _vehPool;
-    private _vehicleData = [_vehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin] call A3A_fnc_createAttackVehicle;
+    private _vehicleData = [_vehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin, _posDestination] call A3A_fnc_createAttackVehicle;
     if (_vehicleData isEqualType []) then
     {
         _vehicles pushBack (_vehicleData select 0);
@@ -139,17 +152,30 @@ for "_i" from 1 to _vehicleCount do
 };
 
 if ((_posOrigin distance2D _posDestination < distanceForLandAttack) && {[_posOrigin, _posDestination] call A3A_fnc_arePositionsConnected}) then {
-    private _heavyResponseChance =  if (side _x == Occupants) then {aggressionOccupants/2} else {aggressionInvaders/2};
-    if (_heavyResponseChance > 35) then {
-        _heavyResponseChance = 35;
+    private _heavyResponseChance =  if (_side == Occupants) then {aggressionOccupants/2} else {aggressionInvaders/2};
+    if (_heavyResponseChance > 30) then {
+        _heavyResponseChance = 30;
     };
 
     if ((random 100) < _heavyResponseChance) then {
         private _quantity =  round random 2;
-        private _additionalVehicleType = selectRandom vehNATOAttack;
+        private _heavyVehPool = if (_side == Occupants) then {
+            if (_isFIA) then {
+                vehFIATanks + vehFIAAPC
+            } else {
+                vehNATOAttack
+            };
+        } else {
+            if (_isFIA) then {
+                vehWAMTanks + vehWAMAPC
+            } else {
+                vehCSATAttack
+            };
+        };
+        private _additionalVehicleType = selectRandom _heavyVehPool;
         [2, format ["Heavy response rolled: added %1 attack vehicles to pool.", str _quantity], _filename] call A3A_fnc_log;
         for "_i" from 1 to _quantity do {
-            private _vehicleData = [_additionalVehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin] call A3A_fnc_createAttackVehicle;
+            private _vehicleData = [_additionalVehicleType, _typeOfAttack, _landPosBlacklist, _side, _markerOrigin, _posDestination] call A3A_fnc_createAttackVehicle;
             if (_vehicleData isEqualType []) then
             {
                 _vehicles pushBack (_vehicleData select 0);

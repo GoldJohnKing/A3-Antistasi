@@ -9,7 +9,6 @@ private _enemyPresence = false;
 
 if (_enemyPresence) exitWith {["Skip Time / Rest", "You cannot rest while enemies are near our units"] call A3A_fnc_customHint;};
 if ("rebelAttack" in A3A_activeTasks) exitWith {["Skip Time / Rest", "You cannot rest while the enemy is counterattacking"] call A3A_fnc_customHint;};
-if ("invaderPunish" in A3A_activeTasks) exitWith {["Skip Time / Rest", "You cannot rest while citizens are under attack"] call A3A_fnc_customHint;};
 if ("DEF_HQ" in A3A_activeTasks) exitWith {["Skip Time / Rest", "You cannot rest while your HQ is under attack"] call A3A_fnc_customHint;};
 
 _checkX = false;

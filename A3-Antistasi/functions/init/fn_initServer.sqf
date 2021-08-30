@@ -12,6 +12,11 @@ vehicleBox allowDamage false;
 mapX allowDamage false;
 teamPlayer = side group petros; 				// moved here because it must be initialized before accessing any saved vars
 
+//Disable VN music
+if (isClass (configFile/"CfgVehicles"/"vn_module_dynamicradiomusic_disable")) then {
+    A3A_VN_MusicModule = (createGroup sideLogic) createUnit ["vn_module_dynamicradiomusic_disable", [worldSize, worldSize,0], [],0,"NONE"];
+};
+
 //Load server id
 serverID = profileNameSpace getVariable ["ss_ServerID",nil];
 if(isNil "serverID") then {
@@ -21,11 +26,8 @@ if(isNil "serverID") then {
 publicVariable "serverID";
 
 
-// Read loadLastSave param directly, SP handles this in createDialog_setParams
-if (isMultiplayer) then {
-	//Load server parameters
-	loadLastSave = if ("loadSave" call BIS_fnc_getParamValue == 1) then {true} else {false};
-};
+// Read loadLastSave param directly
+loadLastSave = if ("loadSave" call BIS_fnc_getParamValue == 1) then {true} else {false};
 
 // Maintain a profilenamespace array called antistasiPlusSavedGames
 // Each entry is an array: [campaignID, mapname, "Blufor"|"Greenfor"]
@@ -178,6 +180,18 @@ addMissionEventHandler ["BuildingChanged", {
 	};
 }];
 
+addMissionEventHandler ["EntityKilled", {
+	params ["_victim", "_killer", "_instigator"];
+	private _killerSide = side group (if (isNull _instigator) then {_killer} else {_instigator});
+	[3, format ["%1 killed by %2", typeof _victim, _killerSide], "fn_initServer_EntityKilledEH"] call A3A_fnc_log;
+
+	if !(isNil {_victim getVariable "ownerSide"}) then {
+		// Antistasi-created vehicle
+		[_victim, _killerSide, false] call A3A_fnc_vehKilledOrCaptured;
+		[_victim] spawn A3A_fnc_postmortem;
+	};
+}];
+
 serverInitDone = true; publicVariable "serverInitDone";
 [2,"Setting serverInitDone as true",_fileName] call A3A_fnc_log;
 
@@ -191,8 +205,21 @@ distanceXs = [] spawn A3A_fnc_distance;
 [] spawn A3A_fnc_aggressionUpdateLoop;
 [] execVM "Scripts\fn_advancedTowingInit.sqf";
 
-if(areRandomEventsEnabled) then {
+if (areRandomEventsEnabled) then {
 	[] spawn SCRT_fnc_encounter_gameEventLoop;
+};
+
+if (!loadLastSave) then {
+	switch (gameMode) do {
+		case 3: {
+			areInvadersDefeated = true;
+			publicVariable "areInvadersDefeated";
+		};
+		case 4: {
+			areOccupantsDefeated = true;
+			publicVariable "areOccupantsDefeated";
+		};
+	};
 };
 
 savingServer = false;

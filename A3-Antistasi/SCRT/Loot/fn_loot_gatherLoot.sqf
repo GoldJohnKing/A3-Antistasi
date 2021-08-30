@@ -21,7 +21,7 @@ private _position = if (!(_overridePosition isEqualTo [])) then {_overridePositi
 
 _supplies = (_position nearSupplies _radius) select {
     (_x isKindOf "Man" && !(alive _x)) || 
-    {(typeOf _x) in [CSATSurrenderCrate, NATOSurrenderCrate, "WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder", "Item_Money","Item_Money_bunch","Item_Money_roll","Item_Money_stack"]}
+    {(typeOf _x) in ([CSATSurrenderCrate, NATOSurrenderCrate, "WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"] + arrayMoneyLand)}
 };
 
 if(count _supplies < 1) exitWith {

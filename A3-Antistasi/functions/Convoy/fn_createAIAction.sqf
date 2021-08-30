@@ -22,6 +22,8 @@ _acceptedTypes = ["attack", "patrol", "reinforce", "convoy", "airstrike"];
 if(isNil "_type" || {!((toLower _type) in _acceptedTypes)}) exitWith {diag_log "CreateAIAction: Type is not in the accepted types"};
 if(isNil "_side" || {!(_side == Occupants || _side == Invaders)}) exitWith {diag_log "CreateAIAction: Can only create AI for Inv and Occ"};
 
+private _isFia = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
+
 _convoyID = round (random 1000);
 _IDinUse = server getVariable [format ["Con%1", _convoyID], false];
 sleep 0.1;
@@ -77,23 +79,6 @@ if(_abort) exitWith
   diag_log format ["CreateAIAction[%1]: Aborting creation of AI action because, there is already a action close by!", _convoyID];
   server setVariable [format ["Con%1", _convoyID], nil, true];
 };
-
-//TODO rebalance that somehow
-/*
-_allUnits = {(local _x) and (alive _x)} count allUnits;
-_allUnitsSide = 0;
-_maxUnitsSide = maxUnits;
-
-if (gameMode <3) then
-{
-	_allUnitsSide = {(local _x) and (alive _x) and (side group _x == _side)} count allUnits;
-	_maxUnitsSide = round (maxUnits * 0.7);
-};
-if ((_allUnits + 4 > maxUnits) or (_allUnitsSide + 4 > _maxUnitsSide)) then {_abort = true};
-
-if (_abort) exitWith {diag_log format ["CreateAIAction[%1]: AI action cancelled because of reaching the maximum of units on attacking %2", _convoyID, _destination]};
-*/
-
 
 _destinationPos = if(_isMarker) then {getMarkerPos _destination} else {_destination};
 _originPos = [];
@@ -154,12 +139,36 @@ if(_type == "patrol") then
         case (tierWar < 3):
         {
           _count = 1;
-          _vehPool = if(_side == Occupants) then {vehNATOLight} else {vehCSATLightArmed};
+          _vehPool = if(_side == Occupants) then {
+            if(_isFia) then {
+              vehFIACars + vehFIAArmedCars
+            } else {
+              vehNATOLight
+            };
+          } else {
+            if(_isFia) then {
+              vehWAMArmedCars
+            } else {
+              vehCSATLightArmed
+            };
+          };
         };
         case (tierWar < 6 && {tierWar > 2}):
         {
           _count = 2 + (round (random 1));
-          _vehPool = if(_side == Occupants) then {vehNATOLightArmed + vehNATOAPC} else {vehCSATLightArmed + vehCSATAPC};
+          _vehPool = if(_side == Occupants) then {
+            if(_isFia) then {
+              vehFIAArmedCars + vehFIAAPC
+            } else {
+              vehNATOLightArmed + vehNATOAPC
+            };
+          } else {
+            if(_isFia) then {
+              vehWAMArmedCars + vehWAMAPC
+            } else {
+              vehCSATLightArmed + vehCSATAPC
+            };
+          };
         };
         case (tierWar > 5):
         {
@@ -238,11 +247,6 @@ if(_type == "reinforce") then
 
       _vehicleCount = _vehicleCount + (_countUnits select 0);
       _cargoCount = _cargoCount + (_countUnits select 1) + (_countUnits select 2);
-
-      //For debug is direct placement
-      //diag_log format ["Reinforce %1 from %2", _target, _selectedBase];
-      //[_units, "Reinf units"] call A3A_fnc_logArray;
-      //[_target, _units] call A3A_fnc_addGarrison;
     };
   }
   else
@@ -281,9 +285,10 @@ if(_type == "airstrike") then
     //NATO accepts 2 casulties, CSAT does not really care
     if((_side == Occupants && {count _friendlies < 3}) || {_side == Invaders && {count _friendlies < 8}}) then
     {
-      _plane = if (_side == Occupants) then {vehNATOPlane} else {vehCSATPlane};
+      private _planePool = if (_side == Occupants) then {vehNATOPlanes} else {vehCSATPlanes};
+      private _casPlaneIndex = _planePool findIf {[_x] call A3A_fnc_vehAvailable};
       _crewUnits = if(_side == Occupants) then {NATOCrew} else {CSATCrew};
-    	if ([_plane] call A3A_fnc_vehAvailable) then
+    	if (_casPlaneIndex != -1) then
     	{
         _bombType = "";
         if(count _arguments != 0) then
@@ -325,7 +330,7 @@ if(_type == "airstrike") then
         diag_log format ["CreateAIAction[%1]: Selected airstrike of bombType %2 from %3",_convoyID, _bombType, _airport];
         _origin = _airport;
         _originPos = getMarkerPos _airport;
-        _units pushBack [_plane, [_crewUnits],[]];
+        _units pushBack [(_planePool select _casPlaneIndex), [_crewUnits],[]];
         _vehicleCount = 1;
         _cargoCount = 1;
       }
@@ -375,7 +380,7 @@ if(_type == "convoy") then
       	{
       		if ((_destinationX in resourcesX) or (_destinationX in factories)) then
           {
-            _typeConvoy = ["Money"];
+            _typeConvoy = ["Money", "Fuel"];
           }
           else
           {
@@ -428,12 +433,19 @@ if(_type == "convoy") then
       		_taskIcon = "rearm";
       		_typeVehObj = if (_side == Occupants) then {vehNATOAmmoTruck} else {vehCSATAmmoTruck};
       	};
+        case "Fuel":
+      	{
+      		_text = format ["A convoy from %1 is about to depart at %2. It will provide fuel to %3. Try to intercept it. Steal or destroy that truck before it reaches it's destination.",_nameOrigin,_displayTime,_nameDest];
+      		_taskTitle = "Fuel Convoy";
+      		_taskIcon = "refuel";
+      		_typeVehObj = if (_side == Occupants) then {vehNATOFuelTruck} else {vehCSATFuelTruck};
+      	};
       	case "Armor":
       	{
       		_text = format ["A convoy from %1 is about to depart at %2. It will reinforce %3 with armored vehicles. Try to intercept it. Steal or destroy that thing before it reaches it's destination.",_nameOrigin,_displayTime,_nameDest];
       		_taskTitle = "Armored Convoy";
       		_taskIcon = "Destroy";
-      		_typeVehObj = if (_side == Occupants) then {vehNATOAA} else {vehCSATAA};
+      		_typeVehObj = if (_side == Occupants) then {selectRandom vehNATOAA} else {selectRandom vehCSATAA};
       	};
       	case "Prisoners":
       	{
@@ -475,7 +487,7 @@ if(_type == "convoy") then
         _crewUnits = if(_side == Occupants) then {NATOCrew} else {CSATCrew};
 
         //Creating convoy lead vehicle
-        _typeVehLead = if (_side == Occupants) then {if (!_isEasy) then {selectRandom vehNATOLightArmed} else {vehPoliceCar}} else {selectRandom vehCSATLightArmed};
+        _typeVehLead = if (_side == Occupants) then {if (!_isEasy) then {selectRandom vehNATOLightArmed} else {selectRandom vehPoliceCars}} else {selectRandom vehCSATLightArmed};
         _crew = [_typeVehLead, _crewUnits] call A3A_fnc_getVehicleCrew;
         _units pushBack [_typeVehLead, _crew, []];
         _vehicleCount = _vehicleCount + 1;
@@ -504,7 +516,7 @@ if(_type == "convoy") then
           }
           else
           {
-            [vehFIAArmedCar,vehFIATruck,vehFIACar,vehFIAAPC]
+            vehMilitia
           };
         }
         else
@@ -593,7 +605,7 @@ if(_abort) exitWith
 };
 
 _target = if(_destination isEqualType "") then {_destination} else {str _destination};
-diag_log format ["CreateAIAction[%1]: Created AI action to %2 from %3 to %4 with %5 vehicles and %6 units", _convoyID, _type, _origin, _targetString, _vehicleCount , _cargoCount];
+diag_log format ["CreateAIAction[%1]: Created AI action to %2 from %3 to %4 with %5 vehicles, %6 units, units: %7", _convoyID, _type, _origin, _targetString, _vehicleCount , _cargoCount, str _units];
 
 [_convoyID, _units, _originPos, _destinationPos, [_origin, if(_isMarker) then {_destination} else {""}], _type, _side] spawn A3A_fnc_createConvoy;
 true;

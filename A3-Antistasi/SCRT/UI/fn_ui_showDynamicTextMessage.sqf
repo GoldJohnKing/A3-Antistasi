@@ -7,6 +7,11 @@ switch (_severity) do {
         _finalText = format ["<t size='0.6' color='#f0d498'>%1</t><br/><t size='0.5'>%2</t>", _header, _text];
     };
 
+    case ("WARNING"): {
+        playSound "3DEN_notificationWarning";
+        _finalText = format ["<t size='0.6' color='#f0d498'>%1</t><br/><t size='0.5'>%2</t>", _header, _text];
+    };
+
     case ("FAIL"): {
         playSound "3DEN_notificationWarning";
         _finalText = format ["<t size='0.6' color='#e60000'>%1</t><br/><t size='0.5'>%2</t>", _header, _text];

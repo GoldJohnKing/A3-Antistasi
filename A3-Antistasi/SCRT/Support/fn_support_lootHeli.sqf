@@ -88,7 +88,7 @@ deleteMarker "LootHeliAreaGlobalMarker";
     [petros, "support", _text] remoteExec ["A3A_fnc_commsMP", _x];
 } forEach ([250, _positionDestination, teamPlayer] call SCRT_fnc_common_getNearPlayers);
 
-private _para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "FLY"];
+private _para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "NONE"];
 _para setDir getDir _lootCrate;
 _para setPos getPos _lootCrate;
 _lootCrate attachTo [_para, [0, 0, -1.2]];

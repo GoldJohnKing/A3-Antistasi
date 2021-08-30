@@ -19,3 +19,4 @@ if (!isNil "forbiddenParadropZones") then {
 };
 
 [] spawn SCRT_fnc_ui_clearSupport;
+[] call SCRT_fnc_ui_clearOutpost;

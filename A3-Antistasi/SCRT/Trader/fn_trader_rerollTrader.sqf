@@ -49,11 +49,6 @@ deleteMarker "TraderMarker";
 traderMarker = nil;
 publicVariable "traderMarker";
 
-deleteMarker "TraderVehicleMarker";
-traderVehicleMarker = nil;
-publicVariable "traderVehicleMarker";
-
-
 [2,"Deleting trader.",_fileName, true] call A3A_fnc_log;
 
 deleteVehicle traderX;

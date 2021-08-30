@@ -73,7 +73,7 @@ if (!isNil "_shopLookupArrayIndex" && {_shopLookupArrayIndex != -1}) then {
         case(_shopLookupArrayIndex == 0 && {tierWar > 6}): {
             _price = _price * 0.7;
         };
-        case(_shopLookupArrayIndex == 0 && {tierWar > 3}): {
+        case(_shopLookupArrayIndex == 0 && {tierWar > 4}): {
            _price = _price * 0.85;
         };
         case(_shopLookupArrayIndex == 1 && {tierWar > 6}): {
@@ -84,7 +84,18 @@ if (!isNil "_shopLookupArrayIndex" && {_shopLookupArrayIndex != -1}) then {
 
 vehiclePurchase_cost = round _price;
 
-private _resourcesFIA = player getVariable "moneyX";
+private _resourcesFIA = 0;
+
+if (player != theBoss) then {
+	_resourcesFIA = player getVariable "moneyX";
+} else {
+	private _factionMoney = server getVariable "resourcesFIA";
+	if (vehiclePurchase_cost <= _factionMoney) then {
+		_resourcesFIA = _factionMoney;
+	} else {
+		_resourcesFIA = player getVariable "moneyX";
+	};
+};
 
 if (_resourcesFIA < vehiclePurchase_cost) exitWith {
     ["Vehicle Market", format ["You do not have enough money for this vehicle: %1 € required",vehiclePurchase_cost]] call SCRT_fnc_misc_showDeniedActionHint;

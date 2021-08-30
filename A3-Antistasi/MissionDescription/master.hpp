@@ -5,6 +5,7 @@
 #include "..\UI\commanderMenu.hpp"
 #include "..\UI\playerMenu.hpp"
 #include "..\UI\menu.hpp"
+#include "..\Garage\Dialogs.hpp"
 
 author = $STR_antistasi_credits_generic_author_text;
 Keys[] = {"A3-Antistasi-is-not-available-in-single-player"};

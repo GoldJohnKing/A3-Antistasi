@@ -267,7 +267,7 @@ if(_intelType == "Medium") then
                 private _toName = [_site] call A3A_fnc_localizar;
                 _text = format ["We found some information about possible convoy route from %1 to %2. We can prepare an ambush on it.", _fromName, _toName];
                 if (_base != "") then {
-					[[_site,_base, true],"A3A_fnc_convoy"] call A3A_fnc_scheduler;
+					[[_site,_base, "", -1, true],"A3A_fnc_convoy"] call A3A_fnc_scheduler;
 				};
 			} else {
                 _worldName = [] call SCRT_fnc_misc_getWorldName;

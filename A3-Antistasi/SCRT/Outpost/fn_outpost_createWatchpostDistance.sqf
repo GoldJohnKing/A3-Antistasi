@@ -5,16 +5,7 @@ private _positionX = getMarkerPos _markerX;
 
 private _props = [];
 
-_formatX = [];
-{
-    if (random 20 <= skillFIA) then {
-        _formatX pushBack (_x select 1)
-    } else {
-        _formatX pushBack (_x select 0)
-    };
-} forEach groupsSDKSniper;
-
-private _groupX = [_positionX, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
+private _groupX = [_positionX, teamPlayer, groupsSDKSniper] call A3A_fnc_spawnGroup;
 _groupX setBehaviour "STEALTH";
 _groupX setCombatMode "GREEN";
 {

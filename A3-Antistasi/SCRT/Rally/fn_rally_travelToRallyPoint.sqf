@@ -54,7 +54,7 @@ while {_timePassed < _distanceX} do {
 
 {
     _unit = _x;
-    if (!isPlayer _unit || _unit == player) then {
+    if ((!isPlayer _unit) || {_unit == player}) then {
         _unit allowDamage false;
         if (!(_unit getVariable ["incapacitated",false])) then {
             _positionX = _positionX findEmptyPosition [1,25,typeOf _unit];
@@ -68,7 +68,6 @@ while {_timePassed < _distanceX} do {
         };
     };
 } forEach units _groupX;
-
 
 disableUserInput false;
 cutText ["You arrived to rally point.", "BLACK IN", 1];

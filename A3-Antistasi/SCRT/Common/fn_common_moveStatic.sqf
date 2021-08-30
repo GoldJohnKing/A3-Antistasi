@@ -13,7 +13,7 @@ if (!(isNull attachedTo _thingX)) exitWith {
 if (vehicle _playerX != _playerX) exitWith {
 	["Move Asset Failed", "You cannot move assets while being in a vehicle."] call SCRT_fnc_misc_showDeniedActionHint;
 };
-if ({!(isNull _x)} count (attachedObjects _playerX) != 0) exitWith {
+if (([_playerX] call A3A_fnc_countAttachedObjects) > 0) exitWith {
 	["Move Asset Failed", "You have other things attached, you cannot move this."] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
@@ -65,7 +65,15 @@ private _actionX = _playerX addAction ["Drop Here", {
 	[_thingX, player, (_this select 2)] call _fnc_placeObject;
 }, [_thingX, _fnc_placeObject],0,false,true,"",""];
 
-waitUntil {sleep 1; (_playerX != attachedTo _thingX) or (vehicle _playerX != _playerX) or !([_playerX] call A3A_fnc_canFight) or (!isPlayer _playerX)};
+waitUntil {
+	sleep 1; 
+	(_playerX != attachedTo _thingX) 
+	or {(vehicle _playerX != _playerX) 
+	or {(!isPlayer _playerX) 
+	or {(isNull _playerX) 
+	or {!(alive _playerX)
+	or {(_playerX getVariable ["incapacitated",false])}}}}}
+};
 
 [_thingX, _playerX, _actionX] call _fnc_placeObject;
 

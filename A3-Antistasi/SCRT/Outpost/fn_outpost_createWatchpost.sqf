@@ -16,20 +16,11 @@ private _timeLimit = 90 * settingsTimeMultiplier;
 private _dateLimit = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _timeLimit];
 private _dateLimitNum = dateToNumber _dateLimit;
 private _taskId = "outpostTask" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,["We are sending a team to establish a watchpost. Use HC to send the team to their destination","Post \ Watchpost Deploy",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
+[[teamPlayer,civilian],_taskId,["We are sending a team to establish a watchpost. Use HC to send the team to their destination","Watchpost Deploy",_marker],_position,false,0,true,"Move",true] call BIS_fnc_taskCreate;
 [_taskId, "outpostTask", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
-_formatX = [];
-{
-    if (random 20 <= skillFIA) then {
-        _formatX pushBack (_x select 1)
-    } else {
-        _formatX pushBack (_x select 0)
-    };
-} forEach groupsSDKSniper;
-
-_groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, _formatX] call A3A_fnc_spawnGroup;
-_groupX setGroupId ["Watchpost"];
+_groupX = [getMarkerPos respawnTeamPlayer, teamPlayer, groupsSDKSniper] call A3A_fnc_spawnGroup;
+_groupX setGroupId ["Watch"];
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
 _pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
 _truckX = vehSDKBike createVehicle _pos;
@@ -47,6 +38,7 @@ ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
 sleep 0.01;
 closeDialog 0;
 closeDialog 0;
+[] call SCRT_fnc_ui_clearOutpost;
 
 waitUntil {sleep 1; ({alive _x} count units _groupX == 0) or ({(alive _x) and (_x distance _position < 10)} count units _groupX > 0) or (dateToNumber date > _dateLimitNum)};
 

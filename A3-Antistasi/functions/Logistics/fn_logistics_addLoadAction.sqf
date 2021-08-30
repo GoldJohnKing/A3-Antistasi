@@ -17,8 +17,9 @@
 
     Example: [_object] call A3A_fnc_logistics_addLoadAction;
 */
-params ["_object", ["_action", "load"]];
+params [["_object", objNull, [objNull]], ["_action", "load", [""]]];
 
+if (isNull _object) exitWith {};
 if (isNil "A3A_logistics_vehicleHardpoints") exitWith {
     [1, "Logistics nodes not initialized", "fn_logistics_addLoadAction.sqf"] call A3A_fnc_log;
     nil
@@ -31,5 +32,9 @@ if (_object isKindOf "StaticWeapon") then {
 };
 if (_nonSupportedStatic) exitWith {nil};
 
-[_object , _action] remoteExec ["A3A_fnc_logistics_addAction", 0, _object];
+
+private _objStringCargo = str _object splitString ":" joinString "";
+private _jipKey = "A3A_Logistics_" + _action + "_" + _objStringCargo;
+[_object , _action, _jipKey] remoteExec ["A3A_fnc_logistics_addAction", 0, _jipKey];
+
 nil

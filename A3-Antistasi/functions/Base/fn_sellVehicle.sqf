@@ -36,12 +36,9 @@ private _filename = "fn_sellVehicle";
 if (isNull _player) exitWith {[1,"_player is null.",_filename] call A3A_fnc_log;};
 if (isNull _veh) exitWith {["Sell Vehicle", "You are not looking at a vehicle."] remoteExecCall ["A3A_fnc_customHint",_player];};
 
-if (_veh getVariable ["A3A_sellVehicle_inProgress",false]) exitWith {["Sell Vehicle", "Vehicle sale already in progress."] remoteExecCall ["A3A_fnc_customHint",_player];};
-_veh setVariable ["A3A_sellVehicle_inProgress",true,false];  // Only processed on the server. It is absolutely pointless trying to network this due to race conditions.
-
 if (_veh distance getMarkerPos respawnTeamPlayer > 50) exitWith {
     _veh setVariable ["A3A_sellVehicle_inProgress",false,false];
-    ["Sell Vehicle", "Vehicle must be closer than 50 meters to the flag marker."] remoteExecCall ["A3A_fnc_customHint",_player];
+    ["Sell Vehicle", "Vehicle must be closer than 50 meters to the headquarters marker."] remoteExecCall ["A3A_fnc_customHint",_player];
 };
 
 if ({isPlayer _x} count crew _veh > 0) exitWith {
@@ -51,21 +48,23 @@ if ({isPlayer _x} count crew _veh > 0) exitWith {
 
 _owner = _veh getVariable ["ownerX",""];
 if !(_owner isEqualTo "" || {getPlayerUID _player isEqualTo _owner}) exitWith {  // Vehicle cannot be sold if owned by another player.
-    _veh setVariable ["A3A_sellVehicle_inProgress",false,false];
     ["Sell Vehicle", "You are not the owner of this vehicle. Therefore, you cannot sell it."] remoteExecCall ["A3A_fnc_customHint",_player];
 };
+
+if (_veh getVariable ["A3A_sellVehicle_inProgress",false]) exitWith {["Sell Vehicle", "Vehicle sale already in progress."] remoteExecCall ["A3A_fnc_customHint",_player];};
+_veh setVariable ["A3A_sellVehicle_inProgress",true,false];  // Only processed on the server. It is absolutely pointless trying to network this due to race conditions.
 
 private _typeX = typeOf _veh;
 private _costs = call {
     if (_veh isKindOf "StaticWeapon") exitWith {400};			// in case rebel static is same as enemy statics
-    if (_typeX == vehPoliceCar) exitWith {250};
+    if (_typeX in vehPoliceCars) exitWith {250};
     if (_typeX in vehFIA) exitWith { ([_typeX] call A3A_fnc_vehiclePrice) / 2 };
-    if ((_typeX in arrayCivVeh) or (_typeX in civBoats) or (_typeX in [civBoat,civCar,civTruck])) exitWith {150};
-    if ((_typeX in vehNormal) or (_typeX in vehBoats) or (_typeX in vehAmmoTrucks)) exitWith {500};
+    if (_typeX in (arrayCivVeh + civBoats + [civBoat,civCar,civTruck])) exitWith {150};
+    if (_typeX in vehNormal || {_typeX in (vehBoats + vehAmmoTrucks + vehSupplyTrucks)}) exitWith {500};
     if (_typeX in [vehCSATPatrolHeli, vehNATOPatrolHeli, civHeli]) exitWith {3000};
-    if ((_typeX in vehAPCs) || (_typeX in vehTransportAir) || (_typeX in vehUAVs)) exitWith {2500};
-    if ((_typeX in vehAttackHelis) or (_typeX in vehTanks) or (_typeX in vehAA) or (_typeX in vehMRLS)) exitWith {6500};
-    if (_typeX in [vehNATOPlane,vehNATOPlaneAA,vehCSATPlane,vehCSATPlaneAA]) exitWith {7500};
+    if (_typeX in (vehAPCs + vehTransportAir + vehUAVs)) exitWith {2500};
+    if (_typeX in (vehAttackHelis + vehTanks + vehAA + vehMRLS)) exitWith {6500};
+    if (_typeX in (vehNATOPlanes + vehNATOPlanesAA + vehCSATPlanes + vehCSATPlanesAA)) exitWith {7500};
     0;
 };
 

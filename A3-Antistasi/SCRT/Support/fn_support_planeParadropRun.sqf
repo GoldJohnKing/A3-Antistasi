@@ -14,10 +14,10 @@ private _groupPlane = _planeData select 2;
 
 clearBackpackCargoGlobal paradropPlane; //people will not accidentially swap their backpacks to parachutes
 
-paradropPlane setPosATL [getPosATL paradropPlane select 0, getPosATL paradropPlane select 1, 1700];
+paradropPlane setPosATL [getPosATL paradropPlane select 0, getPosATL paradropPlane select 1, 950];
 paradropPlane disableAI "TARGET";
 paradropPlane disableAI "AUTOTARGET";
-paradropPlane flyInHeight 1400;
+paradropPlane flyInHeight 800;
 private _minAltASL = ATLToASL [_positionDestination select 0, _positionDestination select 1, 0];
 paradropPlane flyInHeightASL [(_minAltASL select 2) +100, (_minAltASL select 2) +100, (_minAltASL select 2) +100];
 

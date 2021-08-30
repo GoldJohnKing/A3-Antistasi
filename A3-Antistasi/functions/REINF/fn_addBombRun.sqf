@@ -15,7 +15,13 @@ if ((typeOf _veh) in [vehSDKPlane,vehSDKPayloadPlane]) exitWith {
 	["Airstrike", format ["%1 have plenty of these planes, they cannot be used to increase Airstrike points.",nameTeamPlayer]] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
-if ({isPlayer _x} count crew _veh > 0) exitWith {["Airstrike", "In order to convert, Vehicle must be empty."] call SCRT_fnc_misc_showDeniedActionHint;};
+if ({isPlayer _x} count crew _veh > 0) exitWith {
+	["Airstrike", "In order to convert, Vehicle must be empty."] call SCRT_fnc_misc_showDeniedActionHint;
+};
+
+if (bombRuns > 4) exitWith {
+	["Airstrike", "There can be no more than 5 available airstrikes."] call SCRT_fnc_misc_showDeniedActionHint;
+};
 
 _owner = _veh getVariable "ownerX";
 _exit = false;
@@ -46,14 +52,18 @@ if (_exit) exitWith {
     ["Airstrike", "Backpack drones can't be used to increase Airstrike points"] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
-
-
-_pointsX = 2;
+private _pointsX = 1;
 
 if (_typeX in vehAttackHelis) then {_pointsX = 5};
-if ((_typeX == vehCSATPlane) or (_typeX == vehNATOPlane)) then {_pointsX = 10};
+if ((_typeX in vehCSATPlanes) or (_typeX in vehNATOPlanes)) then {_pointsX = 10};
 deleteVehicle _veh;
-["Airstrike", format ["Air Support increased in %1 points",_pointsX]] call A3A_fnc_customHint;
-bombRuns = bombRuns + _pointsX;
+
+private _newBombRuns = bombRuns + _pointsX;
+if (_newBombRuns > 5) then {
+	_newBombRuns = 5;
+};
+
+["Airstrike", "Air Support points has been increased."] call A3A_fnc_customHint;
+bombRuns = _newBombRuns;
 publicVariable "bombRuns";
-[] remoteExec ["A3A_fnc_statistics",theBoss];
+[] remoteExec ["A3A_fnc_statistics", theBoss];

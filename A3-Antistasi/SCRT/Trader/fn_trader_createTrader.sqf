@@ -22,14 +22,6 @@ traderMarker setMarkerAlpha 1;
 sidesX setVariable [traderMarker,teamPlayer,true];
 publicVariable "traderMarker";
 
-traderVehicleMarker = createMarker ["TraderVehicleMarker", _position];
-traderVehicleMarker setMarkerSize [25, 25];
-traderVehicleMarker setMarkerColor "ColorUNKNOWN";
-traderVehicleMarker setMarkerShape "RECTANGLE";
-traderVehicleMarker setMarkerAlpha 0;
-sidesX setVariable [traderVehicleMarker,teamPlayer,true];
-publicVariable "traderVehicleMarker";
-
 //clear point
 {  
 	[_x, true] remoteExec ["hideObject", 0, true];

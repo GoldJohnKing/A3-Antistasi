@@ -31,9 +31,5 @@ if (_remainingBases < 1) then {
         [petros, "announce", _text] remoteExec ["A3A_fnc_commsMP", 0];
     };
 
-    private _enemyCities = citiesX select {sidesX getVariable [_x, sideUnknown] == _sideX};
-    {
-        [teamPlayer,_x] remoteExec ["A3A_fnc_markerChange",2];
-    } forEach _enemyCities;
     [] remoteExec ["A3A_fnc_statistics", [teamPlayer, civilian]];
 };

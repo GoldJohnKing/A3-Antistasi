@@ -102,7 +102,7 @@ else
     private _convoyArray = server getVariable ["convoyMarker_Invaders", []];
     _convoyArray pushBack _convoyMarker;
     server setVariable ["convoyMarker_Invaders", _convoyArray, true];
-    _convoyMarker setMarkerText (format ["[GPS-%3] %1 %2 Convoy", nameInvaders, _convoyType, _convoyID]);
+    _convoyMarker setMarkerText (format ["[GLONASS-%3] %1 %2 Convoy", nameInvaders, _convoyType, _convoyID]);
 };
 
 

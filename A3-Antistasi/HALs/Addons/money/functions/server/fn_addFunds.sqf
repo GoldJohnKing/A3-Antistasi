@@ -21,7 +21,10 @@ if (!local _unit) exitWith {
 	[_unit, _funds] remoteExec ["HALs_money_fnc_addFunds", _unit, false]
 };
 
-_unit setVariable ["moneyX", ((_unit getVariable ["moneyX", 0]) + _funds) max 0, true];
+private _money = ((_unit getVariable ["moneyX", 0]) + _funds) max 0;
+_money = round _money;
+
+_unit setVariable ["moneyX", _money, true];
 _sign = if(_funds > 0) then {"+"} else {""};
 
 _textX = format ["<br/><br/><br/><br/><br/><br/><t color='#00FF00'>%1 %2 €</t>",_sign,_funds];

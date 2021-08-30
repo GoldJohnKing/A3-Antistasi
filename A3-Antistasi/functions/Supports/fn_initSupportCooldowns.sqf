@@ -84,5 +84,13 @@ for "_i" from 0 to 0 do
     invadersCASTimer pushBack (random (3600 * 2));
 };
 
+occupantsAirdropTimer = [];
+invadersAirdropTimer = [];
+for "_i" from 0 to 0 do
+{
+    occupantsAirdropTimer pushBack (random (3600 * 2));
+    invadersAirdropTimer pushBack (random (3600 * 2));
+};
+
 occupantsOrbitalStrikeTimer = [random (3600 * 12)];
 invadersOrbitalStrikeTimer = [random (3600 * 12)];

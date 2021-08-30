@@ -2,13 +2,13 @@ if (!isServer and hasInterface) exitWith {};
 
 private ["_costs","_groupX","_unit","_minesX","_radiusX","_roads","_truckX","_mineX","_countX"];
 
-_costs = (server getVariable (SDKExp select 0)) + ([vehSDKRepair] call A3A_fnc_vehiclePrice);
+_costs = (server getVariable SDKExp) + ([vehSDKRepair] call A3A_fnc_vehiclePrice);
 
 [-1,-1*_costs] remoteExec ["A3A_fnc_resourcesFIA",2];
 
 _groupX = createGroup teamPlayer;
 
-_unit = [_groupX, (SDKExp select 0), getMarkerPos respawnTeamPlayer, [], 0, "NONE"] call A3A_fnc_createUnit;
+_unit = [_groupX, SDKExp, getMarkerPos respawnTeamPlayer, [], 0, "NONE"] call A3A_fnc_createUnit;
 _groupX setGroupIdGlobal [format ["MineSw%1",{side (leader _x) == teamPlayer} count allGroups]];
 _minesX = [];
 sleep 1;

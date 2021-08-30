@@ -3,9 +3,6 @@
 #define QUOTE(var1) #var1
 #endif
 
-//Other Includes
-#include "functions\Garage\defineGarage.inc"
-
 // Control types
 #define CT_STATIC           0
 #define CT_BUTTON           1
@@ -556,7 +553,7 @@ class SliderBase
 	shadow = 0;    
 };
 
-class RscControlsGroupNoScrollbars
+class RscControlsGroupNoScrollbarsMain
 {
 	class VScrollbar
 	{
@@ -1067,9 +1064,61 @@ class RscCloseButton
 	colorActive[] = {1, 1, 1, 1};
 	color[] = {1, 1, 1, 1};
 	text = "\a3\3DEN\Data\ControlsGroups\Tutorial\close_ca.paa";
-	tooltip = "Close";
+	tooltip = $STR_antistasi_dialogs_generic_button_close_text;
 	sizeEx = "4.32 * (1 / (getResolution select 3)) * pixelGrid * 0.5";
 	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R', 0])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0])", 0};
+};
+
+class RscSimpleMenuButton 
+{
+	type = CT_BUTTON;
+	style = ST_CENTER + ST_MULTI + ST_TITLE_BAR + ST_KEEP_ASPECT_RATIO;
+	colorBackgroundDisabled[] = {0, 0, 0, 0.5};
+	colorBackgroundActive[] = {
+		"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",
+		1
+	};
+	colorFocused[] = {
+		"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.77])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_G',0.51])",
+		"(profilenamespace getvariable ['GUI_BCG_RGB_B',0.08])",
+		1
+	};
+	font = "PuristaLight";
+	colorText[] = {1, 1, 1, 1};
+	colorDisabled[] = {1, 1, 1, 0.25};
+	borderSize = 0;
+	colorBorder[] = {0, 0, 0, 0};
+	colorShadow[] = {0, 0, 0, 0};
+	offsetX = 0;
+	offsetY = 0;
+	offsetPressedX = "pixelW";
+	offsetPressedY = "pixelH";
+	period = 0;
+	periodFocus = 2;
+	periodOver = 0.5;
+	soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick", 0.09, 1};
+	soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter", 0.09, 1};
+	soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush", 0.09, 1};
+	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape", 0.09, 1};
+	colorActive[] = {1, 1, 1, 1};
+	color[] = {1, 1, 1, 1};
+	sizeEx = "4.32 * (1 / (getResolution select 3)) * pixelGrid * 0.5";
+	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R', 0])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0])", 0};
+};
+
+class ArsenalButton : RscSimpleMenuButton
+{
+	text = "\a3\3den\data\displays\display3den\entitymenu\arsenal_ca.paa";
+	tooltip = $STR_antistasi_dialogs_hq_button_rebel_set_loadout_button_tooltip;
+};
+
+class ResetButton : RscSimpleMenuButton
+{
+	text = "\a3\3den\data\displays\display3den\toolbar\undo_ca.paa";
+	tooltip = $STR_antistasi_dialogs_hq_button_rebel_reset_button_tooltip;
 };
 
 class SimpleMenu
@@ -1154,6 +1203,33 @@ class SimpleMenuSmall : SimpleMenu
 			x = 0.244979 * safezoneW + safezoneX;
 			y = 0.223941 * safezoneH + safezoneY;
 			w = 0.445038 * safezoneW;
+			h = 0.02 * safezoneH;
+			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
+		};
+	};
+};
+
+class SimpleMenuMedium : SimpleMenu
+{
+	class ControlsBackground
+	{
+		class background: BOX
+		{
+			idc = -1;
+			text = "";
+			x = 0.4175 * safezoneW + safezoneX;
+			y = 0.225 * safezoneH + safezoneY;
+			w = 0.165 * safezoneW;
+			h = 0.330 * safezoneH;
+		};
+
+		class titleBackground: BOX
+		{
+			idc = -1;
+			text = "";
+			x = 0.4175 * safezoneW + safezoneX;
+			y = 0.225 * safezoneH + safezoneY;
+			w = 0.165 * safezoneW;
 			h = 0.02 * safezoneH;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
 		};

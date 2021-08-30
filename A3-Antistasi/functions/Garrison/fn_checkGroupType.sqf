@@ -15,8 +15,9 @@ _result = false;
 
 //Tanks are always combined with an AT team
 if(_vehicle == "LAND_TANK") exitWith {
-  _currentNATOATGroup = groupsNATOAT;
-  (_group == _currentNATOATGroup || {_group == groupsCSATAT})
+  _currentOccATGroup = groupsNATOAT call SCRT_fnc_unit_selectInfantryTier;
+  _currentInvATGroup = groupsCSATAT call SCRT_fnc_unit_selectInfantryTier;
+  (_group == _currentOccATGroup || {_group == _currentInvATGroup})
 };
 
 //AA is always combined with an AA team

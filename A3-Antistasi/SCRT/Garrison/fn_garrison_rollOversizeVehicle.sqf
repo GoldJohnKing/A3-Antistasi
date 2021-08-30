@@ -3,13 +3,26 @@ params ["_side", "_markerPosition", "_size"];
 
 private _return = [];
 private _aggression = if (_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
+private _isFia = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
 private _oversizeChance =  _aggression / 2;
 if (_oversizeChance > 25) then {
 	_oversizeChance = 25;
 };
 
 if ((random 100) < _oversizeChance) then {
-    private _vehiclePool = if (_side == Occupants) then { vehNATOAPC + vehNATOLightArmed } else { vehCSATAPC + vehCSATLightArmed };
+    private _vehiclePool = if (_side == Occupants) then {
+        if (_isFia) then {
+            vehFIAAPC + vehFIATanks
+        } else {
+            vehNATOAPC + vehNATOLightArmed 
+        };
+    } else { 
+        if (_isFia) then {
+            vehWAMAPC + vehWAMTanks
+        } else {
+            vehCSATAPC + vehCSATLightArmed 
+        };
+    };
     _vehiclePool = _vehiclePool call BIS_fnc_arrayShuffle;
 
     private _selectedVehicle = selectRandom _vehiclePool;

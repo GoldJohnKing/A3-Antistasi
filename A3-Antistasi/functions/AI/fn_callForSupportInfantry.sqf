@@ -14,7 +14,7 @@ params ["_group", "_supportTypes", "_target"];
     Returns:
         Nothing
 */
-private _fileName = "callForSupportInfantry";
+private _fileName = "fn_callForSupportInfantry";
 
 private _side = side _group;
 

@@ -6,9 +6,8 @@
 *     Nothing
 */
 
-private ["_isSinglePlayer", "_preference"];
+private ["_preference"];
 
-_isSinglePlayer = !isMultiplayer;
 
 //Setting up airport preferences
 _preference =

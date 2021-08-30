@@ -1,22 +1,9 @@
 params ["_unit"];
 
+if (side _unit != teamPlayer) exitWith {};
 
-private _exit = false;
-private _type = typeOf _unit;
-if (_type in [vehNATOMRLS, vehCSATMRLS]) then {
-    private _gunner  = gunner _unit;
-    if (side _unit != teamPlayer) exitWith {
-        _exit = true;
-    };
-    if (!isPlayer _gunner) exitWith {
-        _exit = true;
-    };
-    if (_gunner == objNull) exitWith {
-        _exit = true;
-    };
-};
-
-if (_exit) exitWith {};
+private _gunner  = gunner _unit;
+if (!isNull _gunner && {side _gunner != teamPlayer}) exitWith {};
 
 private _artillery = _this select 0;
 private _dataX = _artillery getVariable ["detection",[position _artillery,0]];
@@ -33,22 +20,34 @@ if (random 100 < _chance) then {
     { if ((side _x == Occupants) or (side _x == Invaders)) then {_x reveal [_artillery,4]}} forEach allUnits;
     if (_artillery distance posHQ < 300) then {
         if !("DEF_HQ" in A3A_activeTasks) then {
-            _LeaderX = leader (gunner _artillery);
-            if (!isPlayer _LeaderX) then
-            {
-                [[],"A3A_fnc_attackHQ"] remoteExec ["A3A_fnc_scheduler",2];
+            [[],"A3A_fnc_attackHQ"] remoteExec ["A3A_fnc_scheduler",2];
+            _chance = 0;
+        };
+    } else {
+        private _airports = airportsX select {
+            (getMarkerPos _x distance _artillery < distanceForAirAttack) and ([_x,true] call A3A_fnc_airportCanAttack) and (sidesX getVariable [_x,sideUnknown] != teamPlayer)
+        };
+
+        private _milbases = airportsX select {
+            (getMarkerPos _x distance _artillery < distanceForLandAttack) and ([_positionX, getMarkerPos _x] call A3A_fnc_arePositionsConnected) and (sidesX getVariable [_x,sideUnknown] != teamPlayer)
+        };
+
+        private _bases = _airports + _milbases;
+
+        if (count _bases > 0) then {
+            private _base = selectRandom _bases;
+            _sideX = sidesX getVariable [_base,sideUnknown];
+            
+            private _reveal = [_positionX, _sideX] call A3A_fnc_calculateSupportCallReveal;
+
+            if (_base in _airports) then {
+                [_artillery, _reveal, ["AIRSTRIKE", "CAS", "QRF"], _sideX, 0.4] remoteExec ["A3A_fnc_sendSupport", 2];
+            } else {
+                [_artillery, _reveal, ["MORTAR", "QRF"], _sideX, 0.75] remoteExec ["A3A_fnc_sendSupport", 2];
             };
         };
-    }
-    else {
-        _possibleSites = airportsX + milbases;
-        _bases = _possibleSites select {(getMarkerPos _x distance _artillery < distanceForAirAttack) and ([_x,true] call A3A_fnc_airportCanAttack) and (sidesX getVariable [_x,sideUnknown] != teamPlayer)};
-        if (count _bases > 0) then
-        {
-            _base = [_bases,_positionX] call BIS_fnc_nearestPosition;
-            _sideX = sidesX getVariable [_base,sideUnknown];
-            [_artillery, 1, ["AIRSTRIKE", "MORTAR", "QRF", "CANNON", "CARPETBOMB", "GUNSHIP"], _sideX, 0.1] remoteExec ["A3A_fnc_sendSupport", 2];
-        };
+
+        _chance = 0;
     };
 };
 

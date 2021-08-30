@@ -37,8 +37,13 @@ if ((_sideX == Occupants) and (!(sidesX getVariable [_markerX,sideUnknown] == Oc
 if ((_sideX == Invaders) and (!(sidesX getVariable [_markerX,sideUnknown] == Invaders))) exitWith {garrisonIsChanging = false};
 if ((_sideX == teamPlayer) and (!(sidesX getVariable [_markerX,sideUnknown] == teamPlayer))) exitWith {garrisonIsChanging = false};
 
+private _previousGarrison = garrison getVariable [_markerX,[]];
+
+[2, format ["Garrison before update: %1", str _previousGarrison], "garrisonUpdate.sqf"] call A3A_fnc_log;
+
 _garrison = [];
-_garrison = _garrison + (garrison getVariable [_markerX,[]]);
+_garrison = _garrison + _previousGarrison;
+
 if (_modeX == -1) then
 	{
 	for "_i" from 0 to (count _garrison -1) do
@@ -51,6 +56,7 @@ else
 	if (_modeX == 1) then {_garrison pushBack _typeX} else {_garrison append _typeX};
 	};
 if (isNil "_garrison") exitWith {garrisonIsChanging = false};
+[2, format ["Garrison after update: %1", str _garrison], "garrisonUpdate.sqf"] call A3A_fnc_log;
 garrison setVariable [_markerX,_garrison,true];
 if (_sideX == teamPlayer) then {[_markerX] call A3A_fnc_mrkUpdate};
 garrisonIsChanging = false;

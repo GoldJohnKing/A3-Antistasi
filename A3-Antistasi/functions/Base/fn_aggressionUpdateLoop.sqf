@@ -39,7 +39,7 @@ while {true} do
     {
         //Update attack countdown for occupants and execute attack if needed
         attackCountdownOccupants = attackCountdownOccupants - (60 * (0.5 + (aggressionOccupants/100)));
-        [3, format ["Time to next occupant attack:%1, time to next invader attack: %2", attackCountdownOccupants, attackCountdownInvaders], "aggressionUpdateLoop"] call A3A_fnc_log;
+        [2, format ["Time to next occupant attack:%1", attackCountdownOccupants], "aggressionUpdateLoop"] call A3A_fnc_log;
 
     	if (attackCountdownOccupants < 0) then
         {
@@ -50,7 +50,7 @@ while {true} do
             }
             else
             {
-                [900, Occupants] call A3A_fnc_timingCA;
+                [1200, Occupants] call A3A_fnc_timingCA;
             };
         }
         else
@@ -64,8 +64,7 @@ while {true} do
     {
         //Update attack countdown for invaders and execute attack if needed
         attackCountdownInvaders = attackCountdownInvaders - (60 * (0.5 + (aggressionInvaders/100)));
-        [3, format ["Time to next occupant attack:%1, time to next invader attack: %2", attackCountdownOccupants, attackCountdownInvaders], "aggressionUpdateLoop"] call A3A_fnc_log;
-
+        [2, format ["Time to next invader attack: %1", attackCountdownInvaders], "aggressionUpdateLoop"] call A3A_fnc_log;
     	if (attackCountdownInvaders < 0) then
         {
             attackCountdownInvaders = 0;
@@ -75,13 +74,13 @@ while {true} do
             }
             else
             {
-                [900, Invaders] call A3A_fnc_timingCA;
+                [1200, Invaders] call A3A_fnc_timingCA;
             };
         }
         else
         {
             //timingCA broadcasts the value in the if case
-            publicVariable "attackCountdownOccupants";
+            publicVariable "attackCountdownInvaders";
         };
     };
 };

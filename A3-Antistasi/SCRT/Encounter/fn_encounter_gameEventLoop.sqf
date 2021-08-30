@@ -27,7 +27,7 @@ isEventInProgress = false;
 private _chance = 5;
 
 while {true} do {
-    sleep 450;
+    sleep 600;
     if (isEventInProgress) then {  
         [2, "Random event in progress, waiting...", _filename] call A3A_fnc_log; 
         waitUntil {sleep 30; !isEventInProgress};
@@ -39,7 +39,7 @@ while {true} do {
     private _isEventProcced = if ((random 100) < _chance) then {true} else {false};
 
     if (_isEventProcced) then {
-        [2, format ["Event check successfull, has the %1 chance.", str _chance], _filename] call A3A_fnc_log;  
+        [2, format ["Event check successful, had the %1 chance.", str _chance], _filename] call A3A_fnc_log;  
         isEventInProgress = true;
         _chance = 0;
 

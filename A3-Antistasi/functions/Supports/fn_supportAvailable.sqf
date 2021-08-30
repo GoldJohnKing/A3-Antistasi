@@ -23,6 +23,11 @@ switch (_supportType) do
     {
         _timerIndex = [_side, _position] call A3A_fnc_SUP_QRFAvailable;
     };
+    case ("AIRDROP"):       //Airborne vehicle insertion
+    {
+        _timerIndex = [_side] call A3A_fnc_SUP_airdropAvailable;
+        _arrays = if(_side == Occupants) then {occupantsAirdropTimer} else {invadersAirdropTimer};
+    };
     case ("AIRSTRIKE"):     //Normal airstrike
     {
         _timerIndex = [_side] call A3A_fnc_SUP_airstrikeAvailable;
@@ -75,10 +80,6 @@ switch (_supportType) do
 
     }
     case ("EMP"):           //Electromagnetic puls
-    {
-
-    }
-    case ("AIRDROP"):       //Airborne vehicle insertion
     {
 
     }

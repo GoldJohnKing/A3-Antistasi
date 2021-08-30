@@ -81,23 +81,28 @@ if(hasInterface)then{
     //add open event
     [missionNamespace, "arsenalOpened", {
         disableSerialization;
-        UINamespace setVariable ["arsanalDisplay",(_this select 0)];
+        UINamespace setVariable ["arsenalDisplay",(_this select 0)];
 
         //spawn this to make sure it doesnt freeze the game
         [] spawn {
             disableSerialization;
-
-            _type = UINamespace getVariable ["jn_type",""];
-            if(_type isEqualTo "arsenal")then{
+            private _type = UINamespace getVariable ["jn_type",""];
+            if (_type isEqualTo "arsenal") then {
                 _veh = vehicle player;
-                if((_veh != player) && driver _veh == player)then{
-                    ["CustomInit", [uiNamespace getVariable "arsanalDisplay"]] call jn_fnc_vehicleArsenal;
-                    UINamespace setVariable ["jn_type","vehicleArsenal"];
-                }else{
-                    ["CustomInit", [uiNamespace getVariable "arsanalDisplay"]] call jn_fnc_arsenal;
+                switch (true) do {
+                    case (uiNamespace getVariable ["isLoadoutArsenal", false]): {
+                        ["CustomInit", [uiNamespace getVariable "arsenalDisplay"]] call SCRT_fnc_arsenal_loadoutArsenal;
+                        UINamespace setVariable ["jn_type","loadoutArsenal"];
+                    };
+                    case (_veh != player && {driver _veh == player}): {
+                        ["CustomInit", [uiNamespace getVariable "arsenalDisplay"]] call jn_fnc_vehicleArsenal;
+                        UINamespace setVariable ["jn_type","vehicleArsenal"];
+                    };
+                    default {
+                        ["CustomInit", [uiNamespace getVariable "arsenalDisplay"]] call jn_fnc_arsenal;
+                    };
                 };
             };
-
         };
 
         [["UpdateState", format ["Inspects %1 Arsenal", nameTeamPlayer]]] call SCRT_fnc_misc_updateRichPresence;
@@ -114,6 +119,15 @@ if(hasInterface)then{
         if(_type isEqualTo "vehicleArsenal")then{
             ["Close"] call jn_fnc_vehicleArsenal;
             [clientOwner] remoteExecCall ["jn_fnc_arsenal_requestClose",2];
+        };
+
+        if(_type isEqualTo "loadoutArsenal") then {
+            ["Close"] call SCRT_fnc_arsenal_loadoutArsenal;
+            [clientOwner] remoteExecCall ["jn_fnc_arsenal_requestClose",2];
+        };
+
+        if (uiNamespace getVariable ["isLoadoutArsenal", false]) then {
+            uiNamespace setVariable ["isLoadoutArsenal", nil];
         };
 
         [] call SCRT_fnc_misc_updateRichPresence;

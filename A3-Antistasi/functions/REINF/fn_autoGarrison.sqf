@@ -27,11 +27,7 @@ _typesGroup = [groupsSDKmid,groupsSDKAT,groupsSDKSquad,groupsSDKSniper];
 while {(_size > 0)} do
 	{
 	_typeGroup = selectRandom _typesGroup;
-	_formatX = [];
-	{
-	if (random 20 <= skillFIA) then {_formatX pushBack (_x select 1)} else {_formatX pushBack (_x select 0)};
-	} forEach _typeGroup;
-	_groupX = [_originX, teamPlayer, _formatX,false,true] call A3A_fnc_spawnGroup;
+	_groupX = [_originX, teamPlayer, _typeGroup, false, true] call A3A_fnc_spawnGroup;
 	if !(isNull _groupX) then
 		{
 		_groups pushBack _groupX;

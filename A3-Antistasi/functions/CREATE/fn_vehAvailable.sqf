@@ -1,7 +1,7 @@
 params ["_typeX"];
 
 if (_typeX == "") exitWith {false};
-if (_typeX in vehCSATTrucks + vehNATOTrucks + vehNATOCargoTrucks + [vehCSATPatrolHeli,vehNATOPatrolHeli,vehCSATRBoat,vehNATORBoat]) exitWith {true};
+if (_typeX in vehCSATTrucks + vehNATOTrucks + vehNATOCargoTrucks + vehCSATCargoTrucks + [vehCSATPatrolHeli,vehNATOPatrolHeli,vehCSATRBoat,vehNATORBoat]) exitWith {true};
 
 private _cant = timer getVariable _typeX;
 

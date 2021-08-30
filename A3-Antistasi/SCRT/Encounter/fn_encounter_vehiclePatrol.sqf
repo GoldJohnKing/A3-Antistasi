@@ -36,7 +36,20 @@ private _roadcon = roadsConnectedto (_road select 0);
 private _dirveh = if (count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
-private _vehClass = if (_side == Occupants) then {selectRandom vehNATOAttack} else {selectRandom vehCSATAttack};
+private _isFia = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
+private _vehClass = if (_side == Occupants) then {
+    if (_isFia) then {
+        selectRandom (vehFIAAPC + vehFIATanks)
+    } else {
+        selectRandom vehNATOAttack
+    };
+} else {
+    if (_isFia) then {
+        selectRandom (vehWAMAPC + vehWAMTanks)
+    } else {
+        selectRandom vehCSATAttack
+    };
+};
 
 if (_vehClass == "" || {_vehClass == "not_supported"}) exitWith {
     [2, "No vehicle class, aborting Vehicle Patrol Event.", _filename] call A3A_fnc_log;

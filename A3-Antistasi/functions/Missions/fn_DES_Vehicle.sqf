@@ -20,7 +20,7 @@ _displayTime = [_dateLimit] call A3A_fnc_dateToTimeString;//Converts the time po
 
 _nameDest = [_markerX] call A3A_fnc_localizar;
 
-_typeVehX = if (_sideX == Occupants) then {vehNATOAA} else {vehCSATAA};
+_typeVehX = if (_sideX == Occupants) then {selectRandom vehNATOAA} else {selectRandom vehCSATAA};
 
 private _taskId = "DES" + str A3A_taskCount;
 [[teamPlayer,civilian],_taskId,[format ["We know an enemy armor (%3) is stationed in %1. It is a good chance to destroy or steal it before it causes more damage. Do it before %2.",_nameDest,_displayTime,getText (configFile >> "CfgVehicles" >> (_typeVehX) >> "displayName")],"Steal or Destroy Armor",_markerX],_positionX,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;

@@ -1,4 +1,6 @@
-private ["_typeGroup","_esinf","_typeVehX","_costs","_costHR","_exit","_formatX","_pos","_hr","_resourcesFIA","_groupX","_roads","_road","_truckX","_vehicle","_mortarX","_morty"];
+params ["_typeGroup"];
+
+private ["_esinf","_typeVehX","_costs","_costHR","_exit","_formatX","_pos","_hr","_resourcesFIA","_groupX","_roads","_road","_truckX","_vehicle","_mortarX","_morty"];
 
 if (player != theBoss) exitWith {["Recruit Squad", "Only the Commander has access to this function"] call A3A_fnc_customHint;};
 
@@ -14,7 +16,6 @@ private _enemyNear = false;
 
 if (_enemyNear) exitWith {["Recruit Squad", "You cannot recruit squads with enemies near your HQ"] call A3A_fnc_customHint;};
 
-_typeGroup = _this select 0;
 _exit = false;
 
 if (_typeGroup isEqualType "") then {
@@ -62,9 +63,10 @@ _resourcesFIA = server getVariable "resourcesFIA";
 private _withBackpck = "";
 if (_typeGroup isEqualType []) then {
 	{
-		private _typeUnit = if (random 20 <= skillFIA) then {_x select 1} else {_x select 0};
+		private _typeUnit = _x;
 		_formatX pushBack _typeUnit;
-		_costs = _costs + (server getVariable _typeUnit); _costHR = _costHR +1
+		_costs = _costs + (server getVariable _typeUnit); 
+		_costHR = _costHR + 1;
 	} forEach _typeGroup;
 
 	if (count _this > 1) then {
@@ -73,7 +75,6 @@ if (_typeGroup isEqualType []) then {
 		if (_withBackpck == "Mortar") then {_costs = _costs + ([SDKMortar] call A3A_fnc_vehiclePrice)};
 	};
 	_esinf = true;
-
 } else {
 	_costs = _costs + (2*(server getVariable staticCrewTeamPlayer)) + ([_typeGroup] call A3A_fnc_vehiclePrice);
 	_costHR = 2;

@@ -63,7 +63,7 @@ private _fillCombo = {
     params ["_shopArray", "_comboBox"];
 
     {
-        if (_forEachIndex > 0 && {tierWar < 4}) exitWith {};
+        if (_forEachIndex > 0 && {tierWar < 5}) exitWith {};
         if (_forEachIndex > 1 && {tierWar < 7}) exitWith {};
         private _name = getText (configFile >> "CfgVehicles" >> _x >> "displayName");
         _comboBox lbAdd _name;

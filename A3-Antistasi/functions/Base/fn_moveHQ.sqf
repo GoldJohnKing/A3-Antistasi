@@ -1,21 +1,35 @@
-if (player != theBoss) exitWith {
-	["Move HQ", "Only our Commander has access to this function"] call A3A_fnc_customHint;
-};
+/*
+Maintainer: Wurzel0701
+    Starts the HQ moving process if possible
 
-private _hqPosition = getMarkerPos "Synd_HQ";
+Arguments:
+    <NIL>
 
-if (theBoss distance2D _hqPosition > 50) exitWith {
-	["Move HQ", "Commander needs to be at HQ site to move it."] call A3A_fnc_customHint;
-};
+Return Value:
+    <NIL>
 
-if ((count weaponCargo boxX >0) or (count magazineCargo boxX >0) or (count itemCargo boxX >0) or (count backpackCargo boxX >0)) exitWith {
-	["Move HQ", "You must first empty your Ammobox in order to move the HQ"] call A3A_fnc_customHint;
-};
+Scope: Local
+Environment: Scheduled
+Public: Yes
+Dependencies:
+    <OBJECT> petros
+    <OBJECT> theBoss
+    <STRING> respawnTeamPlayer
+    <SIDE> teamPlayer
+    <NAMESPACE> garrison
+    <SIDE> Occupants
+    <SIDE> Invaders
+    <ARRAY> soldiersSDK
+    <STRING> staticCrewTeamPlayer
+    <STRING> SDKMortar
+    <NAMESPACE> server
 
-if !(isNull attachedTo petros) exitWith {
-	["Move HQ", "Put Petros down before you move the HQ!"] call A3A_fnc_customHint;
-};
+Example:
+[] call A3A_fnc_moveHQ;
+*/
 
+private _possible = [] call A3A_fnc_canMoveHQ;
+if !(_possible#0) exitWith {};
 
 [petros,"remove"] remoteExec ["A3A_fnc_flagaction",0];
 private _groupPetros = group petros;
@@ -29,47 +43,59 @@ petros enableAI "AUTOTARGET";
 [respawnTeamPlayer, 0, teamPlayer] call A3A_fnc_setMarkerAlphaForSide;
 [respawnTeamPlayer, 0, civilian] call A3A_fnc_setMarkerAlphaForSide;
 
-_garrison = garrison getVariable ["Synd_HQ", []];
-_positionX = getMarkerPos "Synd_HQ";
+private _garrison = garrison getVariable ["Synd_HQ", []];
+private _posHQ = getMarkerPos "Synd_HQ";
+
 if (count _garrison > 0) then
-	{
-	_costs = 0;
-	_hr = 0;
-	if ({(alive _x) and (!captive _x) and ((side _x == Occupants) or (side _x == Invaders)) and (_x distance _positionX < 500)} count allUnits > 0) then
-		{
-		["Garrison", "HQ Garrison will stay here and hold the enemy"] call A3A_fnc_customHint;
-		}
-	else
-		{
-		_size = ["Synd_HQ"] call A3A_fnc_sizeMarker;
-		{
-		if ((side group _x == teamPlayer) and (not(_x getVariable ["spawner",false])) and (_x distance _positionX < _size) and (_x != petros)) then
-			{
-			if (!alive _x) then
-				{
-				private _unitType = _x getVariable "unitType";
-				if (_unitType in soldiersSDK) then
-					{
-					if (_unitType == staticCrewTeamPlayer) then {_costs = _costs - ([SDKMortar] call A3A_fnc_vehiclePrice)};
-					_hr = _hr - 1;
-					_costs = _costs - (server getVariable (_unitType));
-					};
-				};
-			if (typeOf (vehicle _x) == SDKMortar) then {deleteVehicle vehicle _x};
-			deleteVehicle _x;
-			};
-		} forEach allUnits;
-		};
-	{
-	if (_x == staticCrewTeamPlayer) then {_costs = _costs + ([SDKMortar] call A3A_fnc_vehiclePrice)};
-	_hr = _hr + 1;
-	_costs = _costs + (server getVariable _x);
-	} forEach _garrison;
-	[_hr,_costs] remoteExec ["A3A_fnc_resourcesFIA",2];
-	garrison setVariable ["Synd_HQ",[],true];
-	["Garrison", format ["Garrison removed<br/><br/>Recovered Money: %1 €<br/>Recovered HR: %2",_costs,_hr]] call A3A_fnc_customHint;
-	};
+{
+    private _costs = 0;
+    private _hr = 0;
+    if (allUnits findIf {(alive _x) && (!captive _x) && ((side (group _x) == Occupants) || (side (group _x) == Invaders)) && {_x distance2D _posHQ < 500}} != -1) then
+    {
+        ["Garrison", "HQ Garrison will stay here and distract the enemy"] call A3A_fnc_customHint;
+        //Is there a despawn routine attached to them?
+        //Why are they getting refunded if they stay?
+    }
+    else
+    {
+        private _size = ["Synd_HQ"] call A3A_fnc_sizeMarker;
+        {
+            if ((side (group _x) == teamPlayer) && (!(_x getVariable ["spawner",false])) && (_x distance2D _posHQ < _size) && (_x != petros)) then
+            {
+                if (!alive _x) then
+                {
+                    private _unitType = _x getVariable "unitType";
+                    if (_unitType in soldiersSDK) then
+                    {
+                        if (_unitType == staticCrewTeamPlayer) then
+                        {
+                            _costs = _costs - ([SDKMortar] call A3A_fnc_vehiclePrice)
+                        };
+                        _hr = _hr - 1;
+                        _costs = _costs - (server getVariable (_unitType));
+                    };
+                };
+                if (typeOf (vehicle _x) == SDKMortar) then
+                {
+                    deleteVehicle vehicle _x
+                };
+                deleteVehicle _x;
+            };
+        } forEach allUnits;
+    };
+    {
+        if (_x == staticCrewTeamPlayer) then
+        {
+            _costs = _costs + ([SDKMortar] call A3A_fnc_vehiclePrice)
+        };
+        _hr = _hr + 1;
+        _costs = _costs + (server getVariable _x);
+    } forEach _garrison;
+    [_hr,_costs] remoteExec ["A3A_fnc_resourcesFIA",2];
+    garrison setVariable ["Synd_HQ",[],true];
+    ["Garrison", format ["Garrison removed<br/><br/>Recovered Money: %1 €<br/>Recovered HR: %2",_costs,_hr]] call A3A_fnc_customHint;
+};
 
 sleep 5;
 
-petros addAction ["Build HQ here", A3A_fnc_buildHQ,nil,0,false,true];
+petros addAction ["Build HQ here", A3A_fnc_buildHQ, nil, 0, false, true];

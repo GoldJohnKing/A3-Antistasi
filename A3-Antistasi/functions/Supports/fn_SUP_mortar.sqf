@@ -44,14 +44,15 @@ private _spawnRadius = 5;
 private _spawnPos = [];
 private _spawnDir = 0;
 
+private _base = "";
 
 if(_isMortar) then
 {
-    //Search for a outpost, that isnt more than 3 kilometers away, which isnt spawned
+    //Search for a outpost, that isnt more than 4 kilometers away, which isnt spawned
     private _possibleBases = (outposts + airportsX + milbases) select
     {
         (sidesX getVariable [_x, sideUnknown] == _side) &&
-        {((getMarkerPos _x) distance2D _supportPos <= 3000) &&
+        {((getMarkerPos _x) distance2D _supportPos <= 4000) &&
         {spawner getVariable [_x, -1] == 2}}
     };
 
@@ -78,7 +79,7 @@ if(_isMortar) then
     }
     else
     {
-        private _base = selectRandom _possibleBases;
+        _base = selectRandom _possibleBases;
         _spawnPos = getMarkerPos _base;
     };
 }
@@ -94,7 +95,7 @@ else
 
     if(count _possibleBases == 0) exitWith {};
 
-    private _base = selectRandom _possibleBases;
+    _base = selectRandom _possibleBases;
     _spawnPos = getMarkerPos _base;
     _spawnDir = random 360;
     _spawnRadius = 50;
@@ -106,8 +107,9 @@ if(_spawnPos isEqualTo []) exitWith
     ["", 0, 0];
 };
 
-if (_isMortar && {_base in (airportsX + milbases)}) then {
-    if (_side == Occupants && NATOHowitzer == "" || {_side == Invaders && CSATHowitzer == ""}) exitWith {};
+if (_isMortar && {(airportsX + milbases) findIf {_spawnPos inArea _x} != -1 }) then {
+    if ((_side == Occupants && NATOHowitzer == "") || {(_side == Invaders && CSATHowitzer == "")}) exitWith {};
+    if (_spawnPos distance2D _supportPos < 2000) exitWith {}; //too short for howitzers
 
     if (_side == Occupants) then {
         _mortarType = NATOHowitzer;

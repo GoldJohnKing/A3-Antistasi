@@ -7,7 +7,7 @@ _sideX = _this select 1;
 if (_markerX isEqualType []) then {_positionX = _markerX} else {_positionX = getMarkerPos _markerX};
 _threat = _threat + 2 * ({
 	(isOnRoad getMarkerPos _x) and (getMarkerPos _x distance _positionX < distanceSPWN)
-} count roadblocksFIA + watchpostsFIA + aapostsFIA + atpostsFIA);
+} count roadblocksFIA + watchpostsFIA + aapostsFIA + atpostsFIA + mortarpostsFIA + hmgpostsFIA);
 
 {
 if (getMarkerPos _x distance _positionX < distanceSPWN) then
@@ -21,6 +21,6 @@ if (getMarkerPos _x distance _positionX < distanceSPWN) then
 		_threat = _threat + ({typeOf _x == SDKMortar} count _staticsX) + (2*({typeOf _x == staticATteamPlayer} count _staticsX))
 		};
 	};
-} forEach (markersX - citiesX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA) select {sidesX getVariable [_x,sideUnknown] != _sideX};
+} forEach (markersX - citiesX - controlsX - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - mortarpostsFIA - hmgpostsFIA) select {sidesX getVariable [_x,sideUnknown] != _sideX};
 
 _threat

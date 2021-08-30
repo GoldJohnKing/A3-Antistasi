@@ -29,7 +29,7 @@ if(roleDescription player == "Default Commander") then {
     player setUnitTrait ["explosiveSpecialist", true];
 	player setUnitTrait ["engineer", true];
 	player setUnitTrait ["UAVHacker",true];
-    _text = "Commander role.<br/><br/>The commander is a unit with increased camouflage, medical, UAV hacking and engineering capabilities with the access to exclusive Commander Menu (O key).";
+    _text = "Commander role.<br/><br/>The commander is a unit with increased camouflage, medical, UAV hacking and engineering capabilities with the access to exclusive Commander Menu (CTRL+T).";
 }
 else
 {

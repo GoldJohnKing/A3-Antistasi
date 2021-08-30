@@ -1,4 +1,4 @@
-params ["_arraytypeUnit"];
+params ["_typeUnit"];
 
 if !(player call A3A_fnc_isMember) exitWith {["AI Recruitment", "Only Server Members can recruit AI units"] call A3A_fnc_customHint;};
 
@@ -13,16 +13,13 @@ if (player != leader group player) exitWith {["AI Recruitment", "You cannot recr
 private _hr = server getVariable "hr";
 
 if (_hr < 1) exitWith {["AI Recruitment", "You do not have enough HR for this request"] call A3A_fnc_customHint;};
-private _typeUnit = _arraytypeUnit select 0;
 private _costs = server getVariable _typeUnit;
 private _resourcesFIA = player getVariable ["moneyX", 0];
 
 
 private _exit = false;
 {
-	private _unitArray = _x;
-	private _index = _unitArray findIf { _typeUnit == _x };
-	if (_index != -1) exitWith {
+	if (_x == _typeUnit) exitWith {
 		_exit = true;
 	};
 } forEach [SDKMG, SDKGL, SDKSniper, SDKExp];
@@ -31,7 +28,7 @@ if (_exit && {tierWar < 2}) exitWith {
 	["Recruit Squad", "You can not recruit this type of unit at war level 1."] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
-if (_typeUnit in SDKATman && {tierWar < 4}) exitWith {
+if (_typeUnit == SDKATman && {tierWar < 4}) exitWith {
 	["Recruit Squad", "You can not recruit this type of unit at war level 3 or less."] call SCRT_fnc_misc_showDeniedActionHint;
 };
 

@@ -1,9 +1,14 @@
 private _title = call SCRT_fnc_misc_getMissionTitle;
 
-_credits = [ [_title, [antistasiVersion]], ["Antistasi Plus Version:", [antistasiPlusVersion]], [ "Antistasi Authors:", ["Barbolani","Official AntiStasi Community"]], [ "Antistasi Plus Authors:", ["Socrates"]] ];
+_credits = [ 
+	[ _title, [antistasiPlusVersion]], 
+	[ "Antistasi Version:", [antistasiVersion]], 
+	[ "Antistasi Plus Authors:", ["Socrates"]], 
+	[ "Antistasi Authors:", ["Barbolani","Official Antistasi Community"]] 
+];
 _layer = "credits1" call bis_fnc_rscLayer;
-_delay = 5;
-_duration = 5;
+_delay = 4;
+_duration = 4;
 {
 	_title = _x param [0,""];
 	_names = _x select 1;

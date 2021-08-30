@@ -47,16 +47,16 @@ if(_displayId == 90000) then {
             _shopLookupArrayIndex = shop_plane find _vehicleClass;
         };
         case ("LUV"): {
-            _shopLookupArray = additionalShopLight find _vehicleClass;
+            _shopLookupArrayIndex = additionalShopLight find _vehicleClass;
         };
         case ("ATGM"): {
-            _shopLookupArray = additionalShopAtgmVehicles find _vehicleClass;
+            _shopLookupArrayIndex = additionalShopAtgmVehicles find _vehicleClass;
         };
         case ("MANPADS"): {
-            _shopLookupArray = additionalShopManpadsVehicles find _vehicleClass;
+            _shopLookupArrayIndex = additionalShopManpadsVehicles find _vehicleClass;
         };
         case ("ARTILLERY"): {
-            _shopLookupArray = additionalShopArtillery find _vehicleClass;
+            _shopLookupArrayIndex = additionalShopArtillery find _vehicleClass;
         };
     };
 
@@ -65,7 +65,7 @@ if(_displayId == 90000) then {
             case(_shopLookupArrayIndex == 0 && {tierWar > 6}): {
                 _price = _price * 0.7;
             };
-            case(_shopLookupArrayIndex == 0 && {tierWar > 3}): {
+            case(_shopLookupArrayIndex == 0 && {tierWar > 4}): {
                 _price = _price * 0.85;
             };
             case(_shopLookupArrayIndex == 1 && {tierWar > 6}): {

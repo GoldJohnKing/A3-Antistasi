@@ -114,7 +114,7 @@ if ((spawner getVariable _markerX != 2) and !(sidesX getVariable [_markerX,sideU
 			[_taskId, "LOG", "SUCCEEDED"] call A3A_fnc_taskSetState;
 			[0,600*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 			[1200*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2];
-			{ [60 * _bonus, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+			{ [40 * _bonus, _x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
 			[5*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 		};
 	}

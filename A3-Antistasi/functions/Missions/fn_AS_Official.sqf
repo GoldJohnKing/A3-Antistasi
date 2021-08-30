@@ -17,7 +17,7 @@ _dateLimit = [date select 0, date select 1, date select 2, date select 3, (date 
 _dateLimitNum = dateToNumber _dateLimit;
 
 _nameDest = [_markerX] call A3A_fnc_localizar;
-_naming = if (_sideX == Occupants) then {"NATO"} else {"CSAT"};
+_naming = if (_sideX == Occupants) then {nameOccupants} else {nameInvaders};
 private _taskString = format ["A %4 officer is inspecting %1. Go there and kill him before %2:%3.",_nameDest,numberToDate [2035,_dateLimitNum] select 3,numberToDate [2035,_dateLimitNum] select 4,_naming];
 
 private _taskId = "AS" + str A3A_taskCount;
@@ -27,7 +27,11 @@ private _taskId = "AS" + str A3A_taskCount;
 _grp = createGroup _sideX;
 _typeX = if (_sideX == Occupants) then {NATOOfficer} else {CSATOfficer};
 _official = [_grp, _typeX, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
-_typeX = if (_sideX == Occupants) then {NATOBodyG} else {CSATBodyG};
+_typeX = if (_sideX == Occupants) then {
+	(NATOGrunt call SCRT_fnc_unit_selectInfantryTier)
+} else {
+	(CSATGrunt call SCRT_fnc_unit_selectInfantryTier)
+};
 _pilot = [_grp, _typeX, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 if (_difficultX) then
 	{
@@ -50,7 +54,7 @@ if (not alive _official) then {
 	if (_difficultX) then {
 		[0,600] remoteExec ["A3A_fnc_resourcesFIA",2];
 		[2400, _sideX] remoteExec ["A3A_fnc_timingCA",2];
-		{ [60,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+		{ [45,_x] call A3A_fnc_playerScoreAdd } forEach (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
 		[10,theBoss] call A3A_fnc_playerScoreAdd;
 		[_markerX,60] call A3A_fnc_addTimeForIdle;
 	}

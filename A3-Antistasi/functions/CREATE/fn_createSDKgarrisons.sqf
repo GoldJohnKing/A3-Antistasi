@@ -91,7 +91,8 @@ if (staticCrewTeamPlayer in _garrison) then
 
 // Move riflemen into saved static weapons in area
 {
-	private _index = _garrison findIf {_x in SDKMil};
+	if !(isNil {_x getVariable "lockedForAI"}) then { continue };
+	private _index = _garrison findIf {_x == SDKMil};
 	if (_index == -1) exitWith {};
 	private _unit = objNull;
 	if (typeOf _x == SDKMortar) then
@@ -131,7 +132,7 @@ while {(spawner getVariable _markerX != 2) and (_countUnits < _totalUnits)} do
 	};
 	private _typeX = _garrison select _countUnits;
 	private _unit = [_groupX, _typeX, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
-	if (_typeX in SDKSL) then {_groupX selectLeader _unit};
+	if (_typeX == SDKSL) then {_groupX selectLeader _unit};
 	[_unit,_markerX] call A3A_fnc_FIAinitBases;
 	_soldiers pushBack _unit;
 	_countUnits = _countUnits + 1;

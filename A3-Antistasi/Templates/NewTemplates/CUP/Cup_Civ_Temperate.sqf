@@ -2,7 +2,7 @@
 //   Civilian Information   //
 //////////////////////////////
 
-["civilianUniforms", [
+["uniforms", [
 		"CUP_U_C_Worker_01", 
 		"CUP_U_C_Worker_02",
 		"CUP_U_C_Worker_03",
@@ -49,7 +49,7 @@
 	]
 ] call _fnc_saveToTemplate;
 
-["civilianHeadgear", [
+["headgear", [
 		"CUP_H_C_Ushanka_01",
 		"CUP_H_C_Ushanka_02",
 		"CUP_H_C_Ushanka_03",
@@ -91,7 +91,6 @@
 ["vehiclesCivIndustrial", [
 		"CUP_C_Ural_Civ_03", 0.3
 		,"CUP_C_Ural_Open_Civ_03", 0.3
-		,"C_Tractor_01_F", 0.3
 		,"CUP_C_V3S_Open_TKC", 0.3	
 		,"CUP_C_Tractor_Old_CIV", 0.3
 		,"CUP_C_Tractor_CIV", 0.3		
@@ -101,13 +100,7 @@
 ["vehiclesCivHeli", ["not_supported"]] call _fnc_saveToTemplate; 			//this line determines civilian helis -- Example: ["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] -- Array, can contain multiple assets
 
 ["vehiclesCivBoat", [
-	"C_Boat_Civil_01_rescue_F", 0.1			// motorboats
-	,"C_Boat_Civil_01_police_F", 0.1
-	,"C_Boat_Civil_01_F", 1.0
-	,"C_Rubberboat", 1.0					// rescue boat
-	,"C_Boat_Transport_02_F", 1.0			// RHIB
-	,"C_Scooter_Transport_01_F", 0.5		// jetski
-	,"CUP_C_Fishing_Boat_Chernarus", 1.0
+	"CUP_C_Fishing_Boat_Chernarus", 1.0
 	,"CUP_C_PBX_CIV", 1.0
 	,"CUP_C_Zodiac_CIV", 1.0
 	]

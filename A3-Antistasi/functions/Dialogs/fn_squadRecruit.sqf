@@ -16,19 +16,19 @@ if (str (_display) != "no display") then
 	_ChildControl = _display displayCtrl 105;
 	_costs = 0;
 	_costHR = 0;
-	{_costs = _costs + (server getVariable (_x select 0)); _costHR = _costHR +1} forEach groupsSDKmid;
+	{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach groupsSDKmid;
 	_ChildControl  ctrlSetTooltip format ["Cost: %1 €. HR: %2",_costs,_costHR];
 
 	_ChildControl = _display displayCtrl 106;
 	_costs = 0;
 	_costHR = 0;
-	{_costs = _costs + (server getVariable (_x select 0)); _costHR = _costHR +1} forEach groupsSDKAT;
+	{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach groupsSDKAT;
 	_ChildControl  ctrlSetTooltip format ["Cost: %1 €. HR: %2",_costs,_costHR];
 
 	_ChildControl = _display displayCtrl 107;
 	_costs = 0;
 	_costHR = 0;
-	{_costs = _costs + (server getVariable (_x select 0)); _costHR = _costHR +1} forEach groupsSDKSniper;
+	{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach groupsSDKSniper;
 	_ChildControl  ctrlSetTooltip format ["Cost: %1 €. HR: %2",_costs,_costHR];
 
 	_ChildControl = _display displayCtrl 108;
@@ -58,7 +58,7 @@ if (str (_display) != "no display") then
 	_ChildControl = _display displayCtrl 112;
 	_costs = 0;
 	_costHR = 0;
-	{_costs = _costs + (server getVariable (_x select 0)); _costHR = _costHR +1} forEach groupsSDKCrew;
+	{_costs = _costs + (server getVariable _x); _costHR = _costHR +1} forEach groupsSDKCrew;
 	_ChildControl  ctrlSetTooltip format ["Cost: %1 €. HR: %2",_costs,_costHR];
 
 	_ChildControl = _display displayCtrl 113;

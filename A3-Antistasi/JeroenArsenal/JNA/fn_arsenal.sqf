@@ -6,7 +6,7 @@
     fuctions:
     ["Preload"] call jn_fnc_arsenal;
     	preloads the arsenal like the default arsenal but it doesnt have "BIS_fnc_endLoadingScreen" so you dont have errors
-    ["customInit", "arsanalDisplay"] call jn_fnc_arsenal;
+    ["customInit", "arsenalDisplay"] call jn_fnc_arsenal;
     	overwrites all functions in the arsenal with JNA ones.
 */
 
@@ -309,11 +309,11 @@ switch _mode do {
 			//Arsenal gives players base TFAR radio items. TFAR will, at some point, replace this with an 'instanced' version.
 			//This can cause freq to reset. To fix, check if we have a radio first, and wait around if we do, but TFAR isn't showing it.
 			//Spawn so we can sleep without bothering the arsenal.
-			private _hasRadio =	player call A3A_fnc_getRadio != "";
+			private _hasRadio = player call A3A_fnc_hasARadio;
 			if (_hasRadio) then {
 				[] spawn {
 					//Wait around until TFAR has done its work. Frequent checks - we shouldn't have to wait more than a handful of seconds for TFAR;
-					waitUntil {sleep 1; player call A3A_fnc_getRadio != "" && call TFAR_fnc_haveSWRadio};
+					waitUntil {sleep 1; player call A3A_fnc_hasARadio && call TFAR_fnc_haveSWRadio};
 					private _swRadio = if (call TFAR_fnc_haveSWRadio) then { call TFAR_fnc_activeSwRadio } else { nil };
 					//Doesn't hurt to be careful!
 					if (!isNil "_swRadio") then {
@@ -577,7 +577,7 @@ switch _mode do {
 			} forEach ((missionNamespace getVariable "jna_containerCargo_init") select _foreachindex);
 		} forEach [uniformContainer player,vestContainer player,backpackContainer player];
 
-		//replace magazines with partial filled, just like it was before entering the box, entering the arsanal refilles all ammo
+		//replace magazines with partial filled, just like it was before entering the box, entering the arsenal refilles all ammo
 		// Do this after setUnitLoadout, because that fills magazines when you have >1 with the same bullet count (BIS bug)
 		_mags = missionNamespace getVariable "jna_magazines_init";//get ammo list from before arsenal started
 		{
@@ -1035,7 +1035,15 @@ switch _mode do {
 				if!(_radioName isEqualTo "")then{_return1 = _radioName};
 
 				_return1;
+
+								//ACRE FIX
+				_radioName = getText(configfile >> "CfgVehicles" >> _return1 >> "acre_baseClass");
+				if!(_radioName isEqualTo "")then{_return1 = _radioName};
+
+				_return1;
+
 			};
+
 			case IDC_RSCDISPLAYARSENAL_TAB_MAP;
 			case IDC_RSCDISPLAYARSENAL_TAB_GPS;
 			case IDC_RSCDISPLAYARSENAL_TAB_COMPASS;
@@ -1152,7 +1160,7 @@ switch _mode do {
 			jna_dataList set [_index, [jna_dataList select _index, [_item, _amount]] call jn_fnc_arsenal_addToArray];
 		};
 
-		private _display =  uiNamespace getVariable ["arsanalDisplay","No display"];
+		private _display =  uiNamespace getVariable ["arsenalDisplay","No display"];
 
 		if (typeName _display == "STRING") exitWith {};
 		if(str _display isEqualTo "No display")exitWith{};
@@ -1213,7 +1221,7 @@ switch _mode do {
 			jna_dataList set [_index, [jna_dataList select _index, [_item, _amount]] call jn_fnc_arsenal_removeFromArray];
 		};
 
-		private _display =  uiNamespace getVariable ["arsanalDisplay","No display"];
+		private _display =  uiNamespace getVariable ["arsenalDisplay","No display"];
 
 		if (typeName _display == "STRING") exitWith {};
 		if(str _display isEqualTo "No display")exitWith{};
@@ -1923,6 +1931,15 @@ switch _mode do {
 				_OldItemUnequal = _oldItem;
 				if(_index == IDC_RSCDISPLAYARSENAL_TAB_COMPASS)then{
 					_radioName = getText(configfile >> "CfgWeapons" >> _oldItem >> "tf_parent");
+					if!(_radioName isEqualTo "")exitWith{
+						_OldItemUnequal = _radioName;
+					};
+				};
+
+				//ACRE FIX
+				_OldItemUnequal = _oldItem;
+				if(_index == IDC_RSCDISPLAYARSENAL_TAB_COMPASS)then{
+					_radioName = getText(configfile >> "CfgVehicles" >> _oldItem >> "acre_baseClass");
 					if!(_radioName isEqualTo "")exitWith{
 						_OldItemUnequal = _radioName;
 					};

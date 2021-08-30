@@ -1,6 +1,8 @@
 
 private _fileName = "fn_civilian_removeCivilianPresence";
 
+if (civPedestrians == 0) exitWith {};
+
 private _marker = _this;
 private _position = getMarkerPos _marker;
 

@@ -38,7 +38,12 @@ if (sidesX getVariable [_base,sideUnknown] == Occupants) then {
 		if (random 100 < aggressionOccupants) then {
 			_typeCar = if (_base in airportsX) then {
 				if(_base in milbases) then {
-					selectRandom vehNATOAttack;
+					private _isFia = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
+					if (_isFia) then {
+						selectRandom (vehFIAAPC + vehFIATanks)
+					} else {
+						selectRandom vehNATOAttack;
+					};
 				} else {
 					selectRandom (vehNATOLight + [vehNATOPatrolHeli]);
 				};
@@ -49,28 +54,56 @@ if (sidesX getVariable [_base,sideUnknown] == Occupants) then {
 			if (_typeCar == vehNATOPatrolHeli) then {_typePatrol = "AIR"};
 		}
 		else {
-			_typeCar = selectRandom [vehPoliceCar,vehFIAArmedCar];
+			_typeCar = selectRandom (vehPoliceCars + vehFIAArmedCars);
 		};
 	};
-}
-else {
+} else {
 	_sideX = Invaders;
-	if ((_base in seaports) and ([vehCSATBoat] call A3A_fnc_vehAvailable)) then {
-		_typeCar = vehCSATBoat;
-		_typePatrol = "SEA";
-	}
-	else {
-		_typeCar = if (_base in airportsX) then {
-			if(_base in milbases) then {
-				selectRandom vehCSATAttack;
-			} else {
-				selectRandom (vehCSATLight + [vehCSATPatrolHeli]);
-			};
-		} else {
-			selectRandom vehCSATLight
-		};
 
-		if (_typeCar == vehCSATPatrolHeli) then {_typePatrol = "AIR"};
+	if (gameMode == 4) then {
+		if ((_base in seaports) and ([vehCSATBoat] call A3A_fnc_vehAvailable)) then {
+			_typeCar = vehCSATBoat;
+			_typePatrol = "SEA";
+		} else {
+			if (random 100 < aggressionInvaders) then {
+				_typeCar = if (_base in airportsX) then {
+					if(_base in milbases) then {
+						if (_isFia) then {
+							selectRandom (vehWAMAPC + vehWAMTanks);
+						} else {
+							selectRandom vehCSATAttack;
+						};
+					} else {
+						selectRandom (vehCSATLight + [vehCSATPatrolHeli]);
+					};
+				} else {
+					selectRandom vehCSATLight
+				};
+
+				if (_typeCar == vehCSATPatrolHeli) then {_typePatrol = "AIR"};
+			}
+			else {
+				_typeCar = selectRandom (vehPoliceCars + vehWAMArmedCars);
+			};
+		};
+	} else {
+		if ((_base in seaports) and ([vehCSATBoat] call A3A_fnc_vehAvailable)) then {
+			_typeCar = vehCSATBoat;
+			_typePatrol = "SEA";
+		}
+		else {
+			_typeCar = if (_base in airportsX) then {
+				if(_base in milbases) then {
+					selectRandom vehCSATAttack;
+				} else {
+					selectRandom (vehCSATLight + [vehCSATPatrolHeli]);
+				};
+			} else {
+				selectRandom vehCSATLight
+			};
+
+			if (_typeCar == vehCSATPatrolHeli) then {_typePatrol = "AIR"};
+		};
 	};
 };
 

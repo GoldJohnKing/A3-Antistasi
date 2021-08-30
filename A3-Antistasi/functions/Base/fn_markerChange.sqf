@@ -27,7 +27,7 @@ _size = [_markerX] call A3A_fnc_sizeMarker;
 
 if ((!(_markerX in citiesX)) and (spawner getVariable _markerX != 2)) then
 	{
-	_flagsX = nearestObjects [_positionX, ["FlagCarrier"], _size];
+	_flagsX = nearestObjects [_positionX, ["FlagCarrierCore"], _size];
 	_flagX = _flagsX select 0;
 	};
 if (isNil "_flagX") then {_flagX = objNull};
@@ -396,11 +396,13 @@ if (_winner == teamPlayer) then
 	};
     ([Occupants] + _prestigeOccupants) spawn A3A_fnc_addAggression;
     ([Invaders] + _prestigeInvaders) spawn A3A_fnc_addAggression;
-	waitUntil {sleep 1; ((spawner getVariable _markerX == 2)) or ({((side group _x) in [_looser,_other]) and (_x getVariable ["spawner",false]) and ([_x,_markerX] call A3A_fnc_canConquer)} count allUnits > 3*({(side _x == teamPlayer) and ([_x,_markerX] call A3A_fnc_canConquer)} count allUnits))};
-	if (spawner getVariable _markerX != 2) then
-	{
-		sleep 10;
-		[_markerX,teamPlayer] remoteExec ["A3A_fnc_zoneCheck",2];
+	[_markerX] spawn {
+		params ["_markerX"];
+		// This allows enemies to retake rebel markers with random junk until the marker is despawned
+		while { spawner getVariable _markerX != 2 and sidesX getVariable _markerX == teamPlayer } do {
+			sleep 60;
+			[_markerX,teamPlayer] remoteExec ["A3A_fnc_zoneCheck",2];
+		};
 	};
 }
 else {
@@ -474,6 +476,8 @@ if ((_winner != teamPlayer) and (_looser != teamPlayer)) then {
 };
 markersChanging = markersChanging - [_markerX];
 
-[_looser] remoteExecCall ["SCRT_fnc_common_defeatFactionIfPossible", 2];
+if (_winner == teamPlayer) then {
+	[_looser] remoteExecCall ["SCRT_fnc_common_defeatFactionIfPossible", 2];
+};
 
 [3, format ["Finished marker change at %1", _markerX], _fileName] call A3A_fnc_log;

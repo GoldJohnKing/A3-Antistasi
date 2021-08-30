@@ -63,6 +63,7 @@ if(_displayId == 60000) then {
             ["REMOVE"] call SCRT_fnc_ui_recruitGarrisonEventHandler;
             ["REMOVE"] call SCRT_fnc_ui_minefieldEventHandler;
             [] spawn SCRT_fnc_ui_clearSupport;
+            [] call SCRT_fnc_ui_clearOutpost;
         };
     };
 };
