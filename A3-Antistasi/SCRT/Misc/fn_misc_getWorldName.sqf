@@ -16,6 +16,18 @@ if (isNil "storedWorldName") then {
 		{
 			storedWorldName = "Vidda";
 		};
+		case "cam_lao_nam": 
+		{
+			storedWorldName = "Cam Lao Nam";
+		};
+		case "vn_khe_sanh": 
+		{
+			storedWorldName = "Khe Sanh";
+		};
+		case "rhspkl": 
+		{
+			storedWorldName = "Prei Khmaoch Luong";
+		};
 		default
 		{
 			storedWorldName = toUpper([worldName, 0, 0] call BIS_fnc_trimString) + ([worldName, 1, count worldName] call BIS_fnc_trimString);

@@ -15,6 +15,14 @@ class noPvP
 	picture = "b_unknown";
 	pictureColor[] = {0.0,0.5,0.0,1};
 };
+class factionDefeat
+{
+	title = "Faction Defeat";
+	subtitle = "This faction was defeated, PVP for this faction is unavailable. ";
+	description = "PVP is unavailable.";
+	picture = "b_unknown";
+	pictureColor[] = {0.0,0.5,0.0,1};
+};
 class noJip
 {
 	title = "Can't startup as PvP";

@@ -238,7 +238,7 @@ switch (_callbackTarget) do {
 					playSound "3DEN_notificationDefault";
 				};
 
-				[_purchasedVeh, false] remoteExec ["allowDamage", 0, _purchasedVeh];
+				_purchasedVeh allowDamage false;
 				[_purchasedVeh] call SCRT_fnc_loot_addLootCrateActions;
 			};
 

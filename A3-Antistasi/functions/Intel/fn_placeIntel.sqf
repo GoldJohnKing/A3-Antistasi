@@ -34,7 +34,7 @@ private _size = markerSize _marker;
 private _radius = sqrt ((_size select 0) * (_size select 0) + (_size select 1) * (_size select 1));
 
 private _listStaticHQ = ["Land_Cargo_HQ_V1_F", "Land_Cargo_HQ_V2_F", "Land_Cargo_HQ_V3_F"];
-private _listRadarComplexHq = ["Land_Radar_01_HQ_F"];
+private _listRadarComplexHq = ["Land_Radar_01_HQ_F", "Land_vn_radar_01_hq_f"];
 private _listGuardhouse = ["Land_GuardHouse_02_F", "Land_GuardHouse_02_grey_F"];
 private _listBarracks = ["Land_i_Barracks_V1_F", "Land_i_Barracks_V2_F", "Land_u_Barracks_V2_F", "Land_Barracks_01_dilapidated_F", "Land_Barracks_01_grey_F", "Land_Barracks_01_camo_F"];
 private _listBarracksLivonia = ["Land_Barracks_06_F"];
@@ -137,7 +137,7 @@ if (_isLarge && _isComputer) then {
 	private _isTrap = (random 100 < (20 + (4 * tierWar)));
 	if(_isTrap) then
 	{
-		[3, format ["Large intel on %1 is selected as trap, spawning explosives", _marker], _fileName, true] call A3A_fnc_log;
+		[3, format ["Large intel on %1 is selected as trap, spawning explosives", _marker, true], _fileName, true] call A3A_fnc_log;
 		private _bomb = "DemoCharge_F" createVehicle [0,0,0];
 		_bomb setVectorDirAndUp [(vectorDir _intel), [0,0,-1]];
 		_bomb setPosWorld ((getPosWorld _intel) vectorAdd [0,0,-0.2]);

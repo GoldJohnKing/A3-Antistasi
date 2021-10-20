@@ -17,9 +17,9 @@ if (player != theBoss) then {
 };
 
 if (_resourcesFIA < vehiclePurchase_cost) exitWith {
-    ["Loot Crate Purchase", format ["You have not enough money to make loot crate. %1 € needed.", vehiclePurchase_cost]] call SCRT_fnc_misc_showDeniedActionHint;
+    ["Loot Crate Purchase", format ["You have not enough money to make loot crate. %1%2 needed.", vehiclePurchase_cost, currencySymbol]] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
-private _extraMessage = format  ["Select loot crate position.<br/>Price: %1€<br/>", vehiclePurchase_cost];
+private _extraMessage = format  ["Select loot crate position.<br/>Price: %1%2<br/>", vehiclePurchase_cost, currencySymbol];
 
 [lootCrate, "CREATELOOTCRATE", _extraMessage, "Loot Crate"] call A3A_fnc_vehPlacementBegin;

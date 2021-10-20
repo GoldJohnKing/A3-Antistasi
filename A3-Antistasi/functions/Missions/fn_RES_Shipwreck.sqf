@@ -34,7 +34,7 @@ private _shorePosition = [
 ] call BIS_fnc_findSafePos;
 
 if (_shorePosition isEqualTo [0,0,0]) exitWith {
-    ["RES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, "Problems with shore positions, rerequesting new rescue mission.", _filename] call A3A_fnc_log;
 };
 
@@ -86,7 +86,7 @@ if (!(surfaceIsWater _shipPosition) || _outOfBounds) then {
 if (_shipPosition isEqualTo [0,0,0]) exitWith {
     [1, "Problems with ship positions, rerequesting new rescue mission.", _filename] call A3A_fnc_log;
     deleteVehicle _ship;
-    ["RES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 };
 
 
@@ -146,7 +146,7 @@ else {
 };
 
 if (isNil "_infantrySquadArray" || {isNil "_boatClass"} || {isNil "_officerClass"} || {isNil "_truckClass"}) exitWith {
-	["RES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+	["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, "Problems with unit templates, rerequesting new rescue mission.", _filename] call A3A_fnc_log;
 };
 

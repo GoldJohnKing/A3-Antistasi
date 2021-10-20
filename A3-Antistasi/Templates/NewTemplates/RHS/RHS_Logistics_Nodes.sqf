@@ -267,7 +267,7 @@ A3A_logistics_attachmentOffset append [
     ["rhs_SPG9_INS" call A3A_fnc_classNameToModel,                              [-0.1, 0, 0.99],            [-0.96,0.25,0],             4,      250],               //RHS SPG-9, facing 75 degrees to the left
     ["RHS_AGS30_TriPod_MSV" call A3A_fnc_classNameToModel,                      [-0.4, 0, 1.21],            [0, -1, 0],                 4,      100],               //RHS AGS-30 the russian GMG, facing right
     ["rhs_Igla_AA_pod_msv" call A3A_fnc_classNameToModel,                       [0.3, 0, 1.555],             [0, 1, 0],                  4,      250],               //RHS double Igla launcher
-    ["RHS_ZU23_MSV" call A3A_fnc_classNameToModel,                              [0,0,1.88],                    [0,1,0],                    2,      750],               //RHS ZU-23 //no rhs vehicle can fit it :D
+    ["RHS_ZU23_MSV" call A3A_fnc_classNameToModel,                              [0,0,1.88],                    [0,1,0],                    2,      250],               //RHS ZU-23 //no rhs vehicle can fit it :D
     ["rhsgref_ins_2b14" call A3A_fnc_classNameToModel,                          [0, -0.55, 0.74],            [0, 1, 0],                  2,      2000],              //RHS Podnos Mortar
     ["RHS_M252_USMC_WD" call A3A_fnc_classNameToModel,                          [0, -0.45, 1.16],           [0, 1, 0],                  2,      2000]               //RHS M252
 //Crates

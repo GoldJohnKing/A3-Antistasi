@@ -147,14 +147,7 @@ addMissionEventHandler ["EachFrame",
 	private _placementPos = [];
 	//Just use the current position, if we're in 'Precision' mode
 	if (inputAction "turbo" > 0) then {
-		if (vehPlace_callbackTarget == "BUILDSTRUCTURE") then {
-			_placementPos = _pos;
-		} else {
-			private _validPos = _pos findEmptyPosition [0, 1];
-			if (count _validPos > 0) then {
-				_placementPos = _pos;
-			};
-		};
+		_placementPos = _pos;
 	} else {
 		//Only update the position when we're looking a certain distance away from the position we were looking at when we last placed the preview.
 		//Helps avoid lots of rapid, potentially large changes in position.

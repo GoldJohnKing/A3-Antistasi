@@ -49,13 +49,13 @@ switch (gameMode) do {
 
 if (_player != theBoss) then {
 	private _nameC = if !(isNull theBoss) then {name theBoss} else {"None"};
-	_textX = format ["<t size='0.67' shadow='2'>" + "Commander: %3 | %2 | HR: %1 | Money: %4 € %5 WL: %6 | Undercover: %7 | Rally Point: %8</t>", server getVariable "hr", rank _player, _nameC, _player getVariable "moneyX", _aggrString, tierWar, _ucovertxt, _rallytxt];
+	_textX = format ["<t size='0.67' shadow='2'>" + "Commander: %3 | %2 | HR: %1 | Money: %4 %9 %5 WL: %6 | Undercover: %7 | Rally Point: %8</t>", server getVariable "hr", rank _player, _nameC, _player getVariable "moneyX", _aggrString, tierWar, _ucovertxt, _rallytxt, currencySymbol];
 } else {
 	if (_player call A3A_fnc_isMember) then {
-		_textX = format ["<t size='0.67' shadow='2'>" + "%1 | HR: %2 | %3 Money: %4 € | Money: %5 € %6 WL: %7 | Undercover: %8 | Rally Point: %9</t>", rank _player, server getVariable "hr", nameTeamPlayer, server getVariable "resourcesFIA", _player getVariable "moneyX", _aggrString, tierWar, _ucovertxt, _rallytxt];
+		_textX = format ["<t size='0.67' shadow='2'>" + "%1 | HR: %2 | %3 Money: %4 %10 | Money: %5 %10 %6 WL: %7 | Undercover: %8 | Rally Point: %9</t>", rank _player, server getVariable "hr", nameTeamPlayer, server getVariable "resourcesFIA", _player getVariable "moneyX", _aggrString, tierWar, _ucovertxt, _rallytxt, currencySymbol];
 	}
 	else {
-		_textX = format ["<t size='0.67' shadow='2'>" + "%1 | Money: %2 € | %3 Money: %4 € %5 WL: %6 | Undercover: %7  | Rally Point: %8</t>",rank _player,_player getVariable "moneyX",nameTeamPlayer,server getVariable "resourcesFIA", _aggrString, tierWar, _ucovertxt, _rallytxt];
+		_textX = format ["<t size='0.67' shadow='2'>" + "%1 | Money: %2 %9 | %3 Money: %4 %9 %5 WL: %6 | Undercover: %7 | Rally Point: %8</t>",rank _player,_player getVariable "moneyX",nameTeamPlayer,server getVariable "resourcesFIA", _aggrString, tierWar, _ucovertxt, _rallytxt, currencySymbol];
 	};
 };
 

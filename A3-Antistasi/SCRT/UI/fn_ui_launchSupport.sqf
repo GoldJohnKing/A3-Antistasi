@@ -40,7 +40,7 @@ if (supportType == "STATIC_MG_AIRDROP" && {_resourcesFIA < 1000}) exitWith {
     [
 		"FAIL",
 		"Support",  
-		parseText "HQ needs to have at least 1000€ to make this support request.", 
+		parseText format ["HQ needs to have at least 1000%1 to make this support request.", currencySymbol], 
 		30
 	] spawn SCRT_fnc_ui_showMessage;
 };
@@ -49,7 +49,7 @@ if (supportType == "PARADROP" && {_resourcesFIA < 500}) exitWith {
     [
 		"FAIL",
 		"Support",  
-		parseText "HQ needs to have at least 500€ to make this support request.", 
+		parseText format ["HQ needs to have at least 500%1 to make this support request.", currencySymbol], 
 		30
 	] spawn SCRT_fnc_ui_showMessage;
 };
@@ -58,7 +58,7 @@ if (supportType == "LOOTHELI" && {_resourcesFIA < 2000}) exitWith {
     [
 		"FAIL",
 		"Support",  
-		parseText "HQ needs to have at least 2000€ to make this support request.", 
+		parseText format ["HQ needs to have at least 2000%1 to make this support request.", currencySymbol], 
 		30
 	] spawn SCRT_fnc_ui_showMessage;
 };
@@ -67,7 +67,7 @@ if (supportType in ["VEH_AIRDROP", "LOOTCRATE_AIRDROP"] && {_resourcesFIA < 200}
     [
 		"FAIL",
 		"Support",  
-		parseText "HQ needs to have at 200€ to make this support request.", 
+		parseText format ["HQ needs to have at 200%1 to make this support request.", currencySymbol], 
 		30
 	] spawn SCRT_fnc_ui_showMessage;
 };

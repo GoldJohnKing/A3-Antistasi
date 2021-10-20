@@ -124,12 +124,11 @@ if (_side == civilian) then
 };
 
 private _artilleryTypes = vehMRLS + additionalShopArtillery + [CSATMortar, NATOMortar, SDKMortar];
-if (NATOHowitzer != "") then {_artilleryTypes pushBack NATOHowitzer};
-if (CSATHowitzer != "") then {_artilleryTypes pushBack CSATHowitzer};
+if (NATOHowitzer != "not_supported") then {_artilleryTypes pushBack NATOHowitzer};
+if (CSATHowitzer != "not_supported") then {_artilleryTypes pushBack CSATHowitzer};
 
 if(_typeX in _artilleryTypes) then {
-	_veh addEventHandler ["Fired", SCRT_fnc_common_triggerArtilleryResponseEH];
-
+    [_veh, ["Fired", SCRT_fnc_common_triggerArtilleryResponseEH]] remoteExec ["addEventHandler", 2];
 	if (!_excludeTrails) then {
 		[_veh] call A3A_fnc_addArtilleryTrailEH;
 	};

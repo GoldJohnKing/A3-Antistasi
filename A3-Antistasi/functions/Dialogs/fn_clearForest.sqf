@@ -1,5 +1,5 @@
 if (player != theBoss) exitWith {
-    ["Clean Forest", "Only Commanders can order to clean the forest"] call A3A_fnc_customHint;
+    ["Clear Forest", "Only Commanders can order to clear the forest."] call A3A_fnc_customHint;
 };
 
 {[_x,true] remoteExec ["hideObjectGlobal",2]} forEach (nearestTerrainObjects [getMarkerPos respawnTeamPlayer,["tree","bush","small tree"],70]);

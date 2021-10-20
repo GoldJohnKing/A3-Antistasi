@@ -118,9 +118,9 @@
 ["vehiclesHelisAttack", ["UK3CB_CW_SOV_O_LATE_Mi_24V", "UK3CB_CW_SOV_O_LATE_Mi_24P"]] call _fnc_saveToTemplate; 		
 
 ["vehiclesArtillery", [
+["UK3CB_CW_SOV_O_LATE_BM21",["rhs_mag_m21of_1"]],
 ["UK3CB_CW_SOV_O_LATE_2S1", ["rhs_mag_3of56_35"]],
-["UK3CB_CW_SOV_O_LATE_2S3", ["rhs_mag_HE_2a33", "rhs_mag_WP_2a33"]],
-["UK3CB_CW_SOV_O_LATE_BM21",["rhs_mag_m21of_1"]]
+["UK3CB_CW_SOV_O_LATE_2S3", ["rhs_mag_HE_2a33", "rhs_mag_WP_2a33"]]
 ]] call _fnc_saveToTemplate; 		
 
 ["uavsAttack", ["not_supported"]] call _fnc_saveToTemplate;			

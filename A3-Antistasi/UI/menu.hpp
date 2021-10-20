@@ -1503,6 +1503,16 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			h = 0.022 * safezoneH;
 		};
 
+		class l10Text: SimpleText
+		{
+			idc = 120010;
+			text = $STR_antistasi_dialogs_demolitionist_title;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.555 * safezoneH + safezoneY;
+			w = 0.0773437 * safezoneW;	
+			h = 0.022 * safezoneH;
+		};
+
 		class l1ArsenalButton: ArsenalButton
 		{
 			idc = -1;
@@ -1681,6 +1691,26 @@ class rebelLoadoutMenu: SimpleMenuMedium
 			w = 0.0103125 * safezoneW;
 			h = 0.022 * safezoneH;
 			action = "'loadouts_reb_militia_SquadLeader' call SCRT_fnc_arsenal_clearLoadout;";
+		};
+
+		class l10ArsenalButton: ArsenalButton
+		{
+			idc = -1;
+			x = 0.54125 * safezoneW + safezoneX;
+			y = 0.555 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "currentRebelLoadout = 'loadouts_reb_militia_ExplosivesExpert'; [] call JN_fnc_arsenal_handleAction;";
+		};
+
+		class l10ResetButton: ResetButton
+		{
+			idc = -1;
+			x = 0.561875 * safezoneW + safezoneX;
+			y = 0.555 * safezoneH + safezoneY;
+			w = 0.0103125 * safezoneW;
+			h = 0.022 * safezoneH;
+			action = "'loadouts_reb_militia_ExplosivesExpert' call SCRT_fnc_arsenal_clearLoadout;";
 		};
 	};
 };

@@ -111,16 +111,16 @@
 ["vehiclesPlanesAA", ["CUP_B_JAS39_HIL"]] call _fnc_saveToTemplate; 			
 ["vehiclesPlanesTransport", ["CUP_B_C130J_USMC"]] call _fnc_saveToTemplate; 	
 
-["vehiclesHelisLight", ["CUP_B_AW159_Unarmed_HIL"]] call _fnc_saveToTemplate; 		
+["vehiclesHelisLight", ["CUP_B_412_Mil_Transport_HIL"]] call _fnc_saveToTemplate; 		
 ["vehiclesHelisTransport", ["CUP_B_AW159_Unarmed_HIL","CUP_B_CH47F_HIL", "CUP_B_CH47F_VIV_HIL"]] call _fnc_saveToTemplate; 	
-["vehiclesHelisAttack", ["CUP_B_AW159_HIL", "CUP_B_AH64_DL_USA"]] call _fnc_saveToTemplate; 		
+["vehiclesHelisAttack", ["CUP_B_AW159_HIL", "CUP_B_412_Military_Armed_HIL"]] call _fnc_saveToTemplate; 		
 
 ["vehiclesArtillery", [
 ["CUP_B_M270_HE_HIL",["CUP_12Rnd_MLRS_HE"]],
 ["CUP_B_M270_DPICM_HIL",["CUP_12Rnd_MLRS_DPICM"]]
 ]] call _fnc_saveToTemplate; 		
 
-["uavsAttack", ["CUP_B_USMC_DYN_MQ9", "B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate; 				
+["uavsAttack", ["not_supported"]] call _fnc_saveToTemplate; 				
 ["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate; 				
 
 

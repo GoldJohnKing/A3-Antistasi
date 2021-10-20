@@ -98,10 +98,10 @@ if (player != theBoss) then {
 };
 
 if (_resourcesFIA < vehiclePurchase_cost) exitWith {
-    ["Vehicle Market", format ["You do not have enough money for this vehicle: %1 € required",vehiclePurchase_cost]] call SCRT_fnc_misc_showDeniedActionHint;
+    ["Vehicle Market", format ["You do not have enough money for this vehicle: %1 %2 required",vehiclePurchase_cost,currencySymbol]] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
-private _extraMessage = format  ["Price: %1€<br/>", vehiclePurchase_cost];
+private _extraMessage = format  ["Price: %1%2<br/>", vehiclePurchase_cost, currencySymbol];
 
 [["UpdateState", "Buys vehicle at black market"]] call SCRT_fnc_misc_updateRichPresence;
 

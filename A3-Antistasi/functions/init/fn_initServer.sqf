@@ -3,7 +3,6 @@ private _fileName = "initServer.sqf";
 scriptName "initServer.sqf";
 //Define logLevel first thing, so we can start logging appropriately.
 logLevel = "LogLevel" call BIS_fnc_getParamValue; publicVariable "logLevel"; //Sets a log level for feedback, 1=Errors, 2=Information, 3=DEBUG
-isSystemChatPostingAllowed = ("SystemChatLogMessages" call BIS_fnc_getParamValue == 1); publicVariable "isSystemChatPostingAllowed";
 [2,"Dedicated server detected",_fileName] call A3A_fnc_log;
 [2,"Server init started",_fileName] call A3A_fnc_log;
 boxX allowDamage false;

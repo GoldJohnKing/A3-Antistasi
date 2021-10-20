@@ -24,6 +24,9 @@ private _filename = "fn_initParams";
 // default can be either a number or bool. If bool, values from config params will be converted
 // params.hpp should be updated to match this table
 
+//too dense outposts
+private _distanceSpwn = if (toLower worldName == "rhspkl") then {800} else {1000};
+
 A3A_paramTable = [
     ["gameMode", "gameMode", ["locked", "oldsave"], 1],
     ["autoSave", "autoSave", [], true],
@@ -32,7 +35,7 @@ A3A_paramTable = [
     ["skillMult", "AISkill", [], 2],
     ["civTraffic", "civTraffic", [], 2],
     ["civPedestrians", "civPedestrians", [], 10],
-    ["limitedFT", "allowFT", [], false],									// backwards naming...
+    ["limitedFT", "allowFT", [], true],									// backwards naming...
     ["napalmEnabled", "napalmEnabled", [], false],
     ["playerMarkersEnabled", "pMarkers", [], true],
     ["allowUnfairSupports", "allowUnfairSupports", [], false],
@@ -75,7 +78,7 @@ A3A_paramTable = [
     ["crateDeviceNumMax", "crateDeviceNumMax", [], 3],
 
     // Not visible parameters yet, but otherwise handled the same way
-    ["distanceSPWN", "", ["oldsave"], 1000],
+    ["distanceSPWN", "", ["oldsave"], _distanceSpwn],
     ["maxUnits", "", ["oldsave"], 140],
     ["maxConstructions", "", ["oldsave"], 150],
 
@@ -94,8 +97,8 @@ A3A_paramTable = [
     ["cupOccupantFaction", "cupOccupantFaction", ["server"], 0],
     ["aiControlTime", "aiControlTime", [], 60],
     ["deathPenalty", "deathPenalty", [], 0.3],
-    ["allowDLCGlobMob", "GlobMob", [], false],
-    ["allowDLCVN", "VN", [], false]
+    ["saveZeusBuildings", "saveZeusBuildings", [], true],
+    ["aiAccuracyCeiling", "aiAccuracyCeiling", [], 0.5]
     // beware of the comma
 ];
 

@@ -31,7 +31,7 @@ while {true} do {
 private _heliPool = if (_sideX == Occupants) then {vehNATOTransportHelis + vehNATOAttackHelis} else {vehCSATAttackHelis + vehCSATTransportHelis};
 private _typeVehH = selectRandom (_heliPool select {_x isKindOf "Helicopter"});
 if (isNil "_typeVehH") exitWith {
-    ["DES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["DES"] remoteExec ["A3A_fnc_missionRequest",2];
     [1, format ["No aircrafts in arrays VehNatoTransportHelis, VehNatoAttackHelis or VehCSATTransportHelis, VehCSATAttackHelis. Reselecting DES mission"], _filename] call A3A_fnc_log;
 };
 

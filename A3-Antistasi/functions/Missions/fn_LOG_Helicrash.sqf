@@ -70,7 +70,7 @@ _boxClass = nil;
 _escortClass = nil;
 _specOpsArray = nil;
 
-private _squads = [_sideX, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+private _squads = [_sideX, "MID"] call SCRT_fnc_unit_getGroupSet;
 
 _infantrySquadArray = selectRandom _squads;
 
@@ -97,12 +97,12 @@ if (isNil "_pilotClass" ||
     {isNil "_helicopterClass"} || 
     {isNil "_searchHeliClass"} || 
     {isNil "_cargoTruckClass"} || 
-    {isNil "_boxClass"} || 
-    {isNil "_escortClass"} || 
+    {isNil "_boxClass"} ||
+    {isNil "_escortClass"} ||
     {isNil "_infantrySquadArray"} ||
     {isNil "_specOpsArray"}) 
 exitWith {
-	["LOG"] remoteExecCall ["A3A_fnc_missionRequest",2];
+	["LOG"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, format ["Problems with unit templates, rerequesting new logistics mission."], _filename] call A3A_fnc_log;
 };
 
@@ -160,7 +160,6 @@ _vehicles append [_helicopter, _crater];
 //pilot body will stay as monument to my failed efforts to make this mission as "rescue pilot" task 
 _groupPilot = createGroup _sideX;
 _pilot = [_groupPilot, _pilotClass, _crashPosition, [], 0, "NONE"] call A3A_fnc_createUnit;
-sleep 2;
 _pilotPosition = position _pilot;
 _bloodSplatter = createVehicle ["BloodSplatter_01_Large_New_F", [_pilotPosition select 0, _pilotPosition select 1, (_pilotPosition select 2) + 0.05], [], 0,  "CAN_COLLIDE"];
 _pilot setDammage 1;
@@ -223,7 +222,7 @@ _box setVectorDirAndUp [[0,0,-1], [0,1,0]];
 [_box] spawn A3A_fnc_fillLootCrate;
 [_box] call A3A_fnc_logistics_addLoadAction;
 
-sleep 3;
+sleep 1;
 _box allowDamage true;
 
 [2, format ["Box type: %1, box position: %2", str (typeOf _box), str (position _box)], "LOG_Helicrash", true] call A3A_fnc_log;
@@ -249,12 +248,12 @@ _box allowDamage true;
 ////////////////
 
 //finding road
-private _radiusX = 100;
+private _radiusX = 1500;
 private _roads = [];
 while {true} do {
-	_roads = _missionOriginPos nearRoads _radiusX;
+	_roads = (position _box) nearRoads _radiusX;
 	if (count _roads > 1) exitWith {};
-	_radiusX = _radiusX + 50;
+	_radiusX = _radiusX + 25;
 };
 private _roadE = _roads select 1;
 private _roadR = _roads select 0;
@@ -294,7 +293,6 @@ private _cargoVehicleData = [position _roadR, 0, _cargoTruckClass, _sideX] call 
 private _cargoVehicle = _cargoVehicleData select 0;
 _cargoVehicle limitSpeed 50;
 [_cargoVehicle, _sideX] call A3A_fnc_AIVEHinit;
-sleep 1;
 [_cargoVehicle,"Cargo Truck"] spawn A3A_fnc_inmuneConvoy;
 private _cargoVehicleGroup = _cargoVehicleData select 2;
 private _cargoVehicleCrew = units _cargoVehicleGroup;
@@ -360,7 +358,7 @@ if(_searchHeliClass == vehNATOPatrolHeli || _searchHeliClass == vehCSATPatrolHel
     [_heliVehicleGroup, 0] setWaypointLoiterRadius 400;
     [_heliVehicleGroup, 0] setWaypointLoiterType "CIRCLE_L";
 
-    //spawning escort inf
+    //spawning heli inf
     private _heliInfGroup = if (_sideX == Occupants) then {
         private _mid = [Occupants, "MID"] call SCRT_fnc_unit_getGroupSet;
         selectRandom _mid;
@@ -412,7 +410,7 @@ if(_cargoVehicle distance _box < 50 && {alive _cargoVehicle} && {!isNull (driver
 
         _escortVehicleGroup setCombatMode "YELLOW";
         _escortVehicleGroup setBehaviour "AWARE";
-     
+
         _heliVehicleGroup setCombatMode "YELLOW";
         _heliVehicleGroup setBehaviour "AWARE";
 
@@ -421,8 +419,13 @@ if(_cargoVehicle distance _box < 50 && {alive _cargoVehicle} && {!isNull (driver
 
     [3, "Cargo truck has reached helicopter, starting doing some actions...", _filename] call A3A_fnc_log;
 
-    _waypointTimeout = time + 10;
+    _waypointTimeout = time + 15;
     waitUntil{sleep 1; time > _waypointTimeout };
+
+    private _cargoSquad = units _cargoVehicleGroup; 
+    {
+        moveOut _x;
+    } forEach _cargoSquad;
 
     _cargoTimeout = time + 100;
     waitUntil{sleep 1; time > _cargoTimeout };
@@ -442,7 +445,7 @@ if(_cargoVehicle distance _box < 50 && {alive _cargoVehicle} && {!isNull (driver
     if(({alive _x} count units _cargoVehicleGroup) > 3 && {alive _cargoVehicle}) then {
         [3, "Putting ammobox inside truck", _filename] call A3A_fnc_log;
 
-        private _return = [_vehicle, _cargo] call A3A_fnc_logistics_canLoad;
+        private _return = [_cargoVehicle, _box] call A3A_fnc_logistics_canLoad;
         if !(_return isEqualType 0) exitWith {
             _return remoteExec ["A3A_fnc_logistics_load", 2];
         };
@@ -490,7 +493,6 @@ if(_cargoVehicle distance _box < 50 && {alive _cargoVehicle} && {!isNull (driver
        _cargoWp2 setWaypointBehaviour "SAFE";
     };
 
-
     if(count waypoints _escortVehicleGroup > 0) then {
         for "_i" from count waypoints _escortVehicleGroup - 1 to 0 step -1 do {
             deleteWaypoint [_escortVehicleGroup, _i];
@@ -504,7 +506,7 @@ if(_cargoVehicle distance _box < 50 && {alive _cargoVehicle} && {!isNull (driver
         _escortWp1 setWaypointBehaviour "SAFE";
     };
 
-    if(count waypoints _escortVehicleGroup > 0) then {
+    if(count waypoints _heliVehicleGroup > 0) then {
         for "_i" from count waypoints _heliVehicleGroup - 1 to 0 step -1 do {
             deleteWaypoint [_heliVehicleGroup, _i];
         };
@@ -522,7 +524,7 @@ waitUntil {
 	sleep 1;
 	!alive _box ||
 	_box distance _deliverySite < 50 ||
-	_box distance (getMarkerPos respawnTeamPlayer) < 25 ||
+	_box distance (getMarkerPos respawnTeamPlayer) < 50 ||
 	dateToNumber date > _dateLimitNum
 };
 
@@ -559,11 +561,15 @@ switch(true) do {
     deleteVehicle _x;
 } forEach _effects;
 
-
 [_taskId, "LOG", 1200] spawn A3A_fnc_taskDelete;
 
 deleteMarker _taskMarker;
 
 {[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
 {[_x] spawn A3A_fnc_groupDespawner} forEach _groups;
+
+if (alive _box && {_box distance (getMarkerPos respawnTeamPlayer) > 50}) then {
+    deleteVehicle _box;
+};
+
 [3, format ["Helicrash clean up complete."], _filename] call A3A_fnc_log;

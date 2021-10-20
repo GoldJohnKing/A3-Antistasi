@@ -131,7 +131,7 @@
 
 ["vehiclesPolice", ["UK3CB_CW_US_B_EARLY_M151_Jeep_Closed", "UK3CB_CW_US_B_EARLY_M151_Jeep_Open"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["RHS_M2StaticMG_D"]] call _fnc_saveToTemplate; 					
+["staticMGs", ["RHS_M2StaticMG_D", "UK3CB_CW_US_B_LATE_M240_High"]] call _fnc_saveToTemplate; 					
 ["staticAT", ["RHS_TOW_TriPod_D"]] call _fnc_saveToTemplate; 					
 ["staticAA", ["RHS_Stinger_AA_pod_D"]] call _fnc_saveToTemplate; 					
 ["staticMortars", ["RHS_M252_D"]] call _fnc_saveToTemplate;

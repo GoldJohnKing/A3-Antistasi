@@ -7,7 +7,6 @@ private _fileName = "init.sqf";
 scriptName "init.sqf";
 
 if (isNil "logLevel") then {logLevel = 2};
-if (isNil "isSystemChatPostingAllowed") then {isSystemChatPostingAllowed = false};
 Info("Init SQF started");
 
 //Singleplayer is no longer supported
@@ -16,7 +15,8 @@ if (!isMultiplayer) then {
 };
 
 enableSaving [false,false];
-if !(toLower worldName == "cam_lao_nam") then {mapX setObjectTexture [0, "Pictures\Mission\whiteboard.jpg"];}
-	else {};
+if !(toLower worldName == "cam_lao_nam") then {
+	mapX setObjectTexture [0, "Pictures\Mission\whiteboard.jpg"];
+};
 
 Info("Init Finished");

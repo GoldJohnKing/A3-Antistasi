@@ -59,7 +59,7 @@ switch (_typeX) do {
 		_textX = format ["War Level Changed<br/><br/>Current Level: %1",tierWar];
 
 		if (tierWar in [5,8]) then {
-			_textX = _textX + format ["<br/>Enemy Infantry Equipment has been upgraded."];
+			_textX = _textX + format ["<br/>Enemy infantry equipment has been upgraded."];
 		};
 
 		[_textX, [safeZoneX + (0.8 * safeZoneW), (0.2 * safeZoneW)], 0.5, 5, 0, 0, 2] spawn bis_fnc_dynamicText;
@@ -108,27 +108,21 @@ switch (_typeX) do {
 			};
 		};
 
-		private _additionalText = "";
-
 		if (!isSupportAnnounced) then {
 			private _outposts = {sidesX getVariable [_x,sideUnknown] == teamPlayer} count outposts;
 			if(_outposts > 4 && {player == theBoss}) then {
-				_additionalText = _additionalText + format ["<br/><br/><t size='0.6'>Non-offensive support actions are available (Commander Menu).</t>"];
+				_textX = _textX + format ["<br/><br/><t size='0.6'>Non-offensive support actions are available (Commander Menu).</t>"];
 				isSupportAnnounced = true;
 				publicVariable "isPowPaycheckAnnounced";
 			};
 		};
 
 		if(tierWar > 3 && {!isPowPaycheckAnnounced}) then {
-			_additionalText = _additionalText + format ["<br/><br/><t size='0.6'>Resistance has been recognized by <t size='0.6' color='#FFA500'>IDAP</t>, an third party peace-keeping organization and agreement has been made - <br/><t size='0.6' color='#FFA500'>IDAP</t> will pay <t size='0.6' color='#008000'>%1</t> for freeing <t size='0.6' color='#0033CC'>%2</t> soldiers.</t>", nameTeamPlayer, nameOccupants];
+			_textX = _textX + format ["<br/><br/><t size='0.6'>Resistance has been recognized by <t size='0.6' color='#FFA500'>IDAP</t>, an third party peace-keeping organization and agreement has been made - <br/><t size='0.6' color='#FFA500'>IDAP</t> will pay <t size='0.6' color='#008000'>%1</t> for freeing <t size='0.6' color='#0033CC'>%2</t> soldiers.</t>", nameTeamPlayer, nameOccupants];
 			isPowPaycheckAnnounced = true; 
 			publicVariable "isPowPaycheckAnnounced";
 		};
 
-		if (_additionalText != "") then {
-			[_additionalText, [safeZoneX + (0.65 * safeZoneW), (0.2 * safeZoneW)], 0.65, 8, 0, 0, 147] spawn BIS_fnc_dynamicText;
-		};
-
-		[_textX, [safeZoneX + (0.65 * safeZoneW), (0.2 * safeZoneW)], 0.65, 8, 0, 0, 359] spawn BIS_fnc_dynamicText;
+		[_textX, [safeZoneX + (0.55 * safeZoneW), (0.2 * safeZoneW)], 0.45, 8, 0, 0, 359] spawn BIS_fnc_dynamicText;
 	};
 };

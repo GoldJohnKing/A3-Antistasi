@@ -79,20 +79,13 @@ if (_varName in _specialVarLoads) then {
 		// Avoid persisting potentially-broken fog values
 		private _fogParams = _varValue select 0;
 		0 setFog [_fogParams#0, (_fogParams#1) max 0, (_fogParams#2) max 0];
-		0 setRain (_varValue select 1);
+		0 setOvercast (_varValue select 1);
 		forceWeatherChange
 	};
 	if (_varName == 'resourcesFIA') then {server setVariable ["resourcesFIA",_varValue,true]};
 	if (_varName == 'destroyedSites') then {destroyedSites = +_varValue; publicVariable "destroyedSites"};
 	if (_varName == 'skillFIA') then {
 		skillFIA = _varValue; publicVariable "skillFIA";
-		{
-			_costs = server getVariable _x;
-			for "_i" from 1 to _varValue do {
-				_costs = round (_costs + (_costs * (_i/280)));
-			};
-			server setVariable [_x,_costs,true];
-		} forEach soldiersSDK;
 	};
 	if (_varName == 'maxConstructions') then {maxConstructions=_varValue; publicVariable "maxConstructions"};
     if (_varname == "HR_Garage") then {
@@ -124,23 +117,10 @@ if (_varName in _specialVarLoads) then {
 	};
 	if (_varName == 'minesX') then {
 		for "_i" from 0 to (count _varvalue) - 1 do {
-			_typeMine = _varvalue select _i select 0;
-			switch _typeMine do {
-				case "APERSMine_Range_Ammo": {_typeMine = "APERSMine"};
-				case "ATMine_Range_Ammo": {_typeMine = "ATMine"};
-				case "APERSBoundingMine_Range_Ammo": {_typeMine = "APERSBoundingMine"};
-				case "SLAMDirectionalMine_Wire_Ammo": {_typeMine = "SLAMDirectionalMine"};
-				case "APERSTripMine_Wire_Ammo": {_typeMine = "APERSTripMine"};
-				case "ClaymoreDirectionalMine_Remote_Ammo": {_typeMine = "Claymore_F"};
-			};
-			_posMine = _varvalue select _i select 1;
-			_mineX = createMine [_typeMine, _posMine, [], 0];
-			_detected = _varvalue select _i select 2;
+			(_varvalue select _i) params ["_typeMine", "_posMine", "_detected", "_dirMine"];
+			private _mineX = createVehicle [_typeMine, _posMine, [], 0, "CAN_COLLIDE"];
+			if !(isNil "_dirMine") then { _mineX setDir _dirMine };
 			{_x revealMine _mineX} forEach _detected;
-			if (count (_varvalue select _i) > 3) then {
-				_dirMine = _varvalue select _i select 3;
-				_mineX setDir _dirMine;
-			};
 		};
 	};
 	if (_varName == 'garrison') then {
@@ -312,6 +292,15 @@ if (_varName in _specialVarLoads) then {
 			_numVeh = _dataX select 1;
 			_prestigeOPFOR = _varvalue select _i;
 			_prestigeBLUFOR = _dataX select 3;
+
+			if (isNil "_prestigeOPFOR") then {
+				_prestigeOPFOR = 50;
+			};
+
+			if (isNil "_prestigeBLUFOR") then {
+				_prestigeBLUFOR = 50;
+			};
+
 			_dataX = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
 			server setVariable [_city,_dataX,true];
 		};
@@ -324,6 +313,15 @@ if (_varName in _specialVarLoads) then {
 			_numVeh = _dataX select 1;
 			_prestigeOPFOR = _dataX select 2;
 			_prestigeBLUFOR = _varvalue select _i;
+
+			if (isNil "_prestigeOPFOR") then {
+				_prestigeOPFOR = 50;
+			};
+
+			if (isNil "_prestigeBLUFOR") then {
+				_prestigeBLUFOR = 50;
+			};
+
 			_dataX = [_numCiv,_numVeh,_prestigeOPFOR,_prestigeBLUFOR];
 			server setVariable [_city,_dataX,true];
 		};
@@ -372,15 +370,11 @@ if (_varName in _specialVarLoads) then {
 	};
 	if (_varname == 'staticsX') then {
 		for "_i" from 0 to (count _varvalue) - 1 do {
-			_typeVehX = _varvalue select _i select 0;
-			_posVeh = _varvalue select _i select 1;
-			_xVectorUp = _varvalue select _i select 2;
-			_xVectorDir = _varvalue select _i select 3;
+            (_varValue#_i) params ["_typeVehX", "_posVeh", "_xVectorUp", "_xVectorDir", "_state"];
 			private _veh = createVehicle [_typeVehX,[0,0,1000],[],0,"CAN_COLLIDE"];
 			// This is only here to handle old save states. Could be removed after a few version itterations. -Hazey
-			if ((_varvalue select _i select 2) isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
-				_dirVeh = _varvalue select _i select 2;
-				_veh setDir _dirVeh;
+			if (_xVectorUp isEqualType 0) then { // We have to check number because old save state might still be using getDir. -Hazey
+				_veh setDir _xVectorUp; //is direction due to old save
 				_veh setVectorUp surfaceNormal (_posVeh);
 				_veh setPosATL _posVeh;
 			} else {
@@ -392,6 +386,9 @@ if (_varName in _specialVarLoads) then {
 				staticsToSave pushBack _veh;
 			}
 			else {
+                if (!isNil "_state") then {
+                    [_veh, _state] call HR_GRG_fnc_setState;
+                };
 				[_veh] spawn A3A_fnc_vehDespawner;
 			};
 		};
@@ -427,6 +424,8 @@ if (_varName in _specialVarLoads) then {
 						[] spawn A3A_fnc_attackHQ;
 					};
 					case "ENC": {
+						isTraderQuestAssigned = true;
+						publicVariable "isTraderQuestAssigned";
 						[] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
 					};
 					default {
@@ -472,6 +471,7 @@ if (_varName in _specialVarLoads) then {
 		publicVariable "areOccupantsDefeated";
 		if (areOccupantsDefeated) then {
 			"NATO_carrier" setMarkerAlpha 0;
+			"respawn_west" setMarkerAlpha 0;
 		};
     };
 
@@ -481,6 +481,7 @@ if (_varName in _specialVarLoads) then {
 		publicVariable "areInvadersDefeated";
 		if (areInvadersDefeated) then {
 			"CSAT_carrier" setMarkerAlpha 0;
+			"respawn_east" setMarkerAlpha 0;
 		};
     };
 

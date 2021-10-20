@@ -45,10 +45,7 @@ if ((!dialog) && {isNil "removeConstruction"}) exitWith {
 
 removeConstruction = nil;
 
-deleteVehicle _construction;
-
-constructionsToSave deleteAt _buildingIndex;
-publicVariable "constructionsToSave";
+[_construction] remoteExecCall ["SCRT_fnc_build_removeConstruction", 2];
 
 sleep 0.5;
 

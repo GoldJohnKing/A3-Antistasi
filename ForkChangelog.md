@@ -1,5 +1,85 @@
 # Changelog
 
+### 1.8.2.1 
+- (Cam Lao Nam) save corruption fix
+
+## 1.8.2
+### Changes
+- Multiple fixes and improvements to Salvage Helicrash mission
+- Fixed non-invincible airdroppable autoloot crate
+- (Khe Sanh) Moved seaport that doesn't allow to buy vehicles, crates and place rally point to another area thus fixing those issues
+- (Altis) additional outpost and radio tower
+
+### Removals
+- Removed leftover debug system chat posting
+
+## 1.8.1
+
+### Changes
+- Fixed missing direction on built constructions
+- (SOGPF, SOGPF + Unsung Redux) Fixed missing civilian helicopters on rebel template
+- (SOGPF, SOGPF + Unsung Redux) Fixed non-working Loot Helicopter commander ability
+- Fixed non-persistent Zeus-placed constructions on dedicated server
+
+### Removals
+- Removed "Allow Items and Vehicles from S.O.G. PRAIRIE FIRE DLC?" and "Allow Items and Vehicles from Global Mobilization DLC?" parameters (CDLC content presence will depend on which CDLCs are enabled in A3 Launcher)
+
+## 1.8
+
+## Additions
+- SOG Prairie Fire CDLC support
+- Cam Lao Nam terrain support
+- Khe Sanh terrain support
+- RHSPKL (Prei Khmaoch Luong) terrain support
+- Chernarus 2020 terrain newest update support
+- Unsung Redux (SOGPF complement mod) support
+- Persistent Save for Zeus-placed Constructions mission parameter
+- Enemy AI Maximum Accuracy mission parameter
+- Load to Vehicle action (Arsenal backport, replaces Vehicle Arsenal action)
+
+### Changes
+- 2.5.3 Community Version integration (multiple fixes of core systems of Antistasi, player balance scaling)
+- Invader Punishment mission is back
+- Airbases and milbases will no longer spawn howitzers (mortars will be used instead) when players in proximity, they will be only used as support 
+- Fixed no undercover break on outposts and sea ports
+- Fixed "Error Type Array, expected String" on some unit spawn
+- Fixed overlapping annoucement text
+- Fixed Rescue Prisoners _houseX error
+- Fixed inability to garage vehicles on milbases
+- Fixed exploit that allowed to sell unlocked items to Arms Dealer 
+- Fixed unintended ability to get second Find the Arms Dealer task if task was persistently saved but not completed
+- Enemy support call timeout increased to 20 minutes
+- Increased Arms Dealer stocks - rifle stock (15->20), pistol stock (20-50), launcher stock (10->15)
+- Helicrash mission undefined variable fix
+- Multiple static MG types support
+- Limited Fast Travel mission parameter is on by default
+- Players will be kicked if they will try to join into PVP slot of defeated faction
+- Faction defeat will hide faction PVP marker
+- Enemy will no longer spawn in the middle of friendly town on Deliver Supplies missions
+- Reduced number of cops in Supply mission
+- Persistent weather variable uses overcast instead of rain
+- Rebel Troops Training no longer increases infantry price
+- Surrendered units will be removed by garbage cleaner
+- Big guard towers will be occupied 
+- Deliver Supplies timer will no longer reset
+- Ability to override Demolitionist loadout in Rebel Loadouts
+- Arsenal action icon (Arsenal backport)  
+- Raw position for precision placing mode (SHIFT hotkey while placing something)
+- Vehicles can be put into garage near Arms Dealer
+- Slightly lowered chance to pop smoke grenade by enemy in some circumstances (40%->35% for general AI reactions, 60%->50% for medics)
+- (GM, SOGPF) Items from Global Mobilization may appear in loot boxes when SOGPF DLC is used and "Allow items from Global Mobilization" option is turned on
+- (RHS) Lowered recoil of Zu-23 when it is mounted on vehicle
+- (3CB Factions Cold War, Takistan) Fixed no tribal uniforms issue 
+- (CUP) Adjustments of faction templates with the usage of new CUP Vehicles/Units/Weapons mod items
+- (SOGPF) CDLC napalm usage instead of Antistasi implementation
+
+### Removals
+- (GM Cold War Mode) Removed HK69 grenade launcher from Bundeswehr weapon pool
+- (Cold War mode) removed unintentional modern variants of AS VAL from Arms Dealer store  
+- Removed Interrogate action on enemy surrendered units
+- Removed inability to put aircrafts on non-airport markers
+- Removed Post Log Messages to systemChat (Debug) mission parameter
+
 ## 1.7.5
 ### Additions
 - Simplified Chinese translation (provided by GoldJohnKing)

@@ -21,7 +21,7 @@ private _act = if (_captured) then {"captured"} else {"destroyed"};
 
 if (_side == Occupants or _side == Invaders) then
 {
-	_type call A3A_fnc_removeVehFromPool;
+	_type remoteExecCall ["A3A_fnc_removeVehFromPool", 2];
 	if (_sideEnemy != teamPlayer) exitWith {};
 
 	private _value = call {

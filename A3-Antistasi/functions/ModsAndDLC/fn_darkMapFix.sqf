@@ -22,7 +22,7 @@ if (!canSuspend) exitWith {
     [3, "Executed in non-suspendable environment", _fileName] call A3A_fnc_log;
 };
 
-_darkMaps = ["cam_lao_nam"];
+_darkMaps = ["cam_lao_nam", "vn_khe_sanh"];
 if !(toLower worldName in _darkMaps) exitWith {};
 if (!isNil "A3A_darkMapFixRunning" && {A3A_darkMapFixRunning}) exitWith {
     [3, "Dark map fix is already running", _fileName] call A3A_fnc_log;

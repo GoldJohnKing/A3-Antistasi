@@ -53,6 +53,14 @@ switch (toLower worldName) do {
 	{
 	    _title = localize "STR_antistasi_mission_info_camlaonam_mapname_text";
 	};
+	case "vn_khe_sanh":
+	{
+	    _title = localize "STR_antistasi_mission_info_khesanh_mapname_text";
+	};
+	case "rhspkl":
+	{
+	    _title = localize "STR_antistasi_mission_info_rhspkl_mapname_text";
+	};
 	default
 	{
 	    _title = "Antistasi Plus";

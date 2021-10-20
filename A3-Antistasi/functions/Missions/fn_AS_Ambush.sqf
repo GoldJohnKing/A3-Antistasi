@@ -42,7 +42,7 @@ if(count _potentialSites > 0) then {
 };
 
 if (isNil "_destinationSite") exitWith {
-    ["AS"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["AS"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, format ["Problems with finding proper delivery site, rerequesting new AS mission."], _filename] call A3A_fnc_log;
 };
 
@@ -82,7 +82,7 @@ if (_sideX == Occupants) then {
 };
 
 if (isNil "_officerClass" || {isNil "_officerVehicleClass"} || {isNil "_escortVehicleClass"} || {isNil "_infantrySquadArray"}) exitWith {
-    ["AS"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["AS"] remoteExec ["A3A_fnc_missionRequest",2];
     [1, format ["Classname problems, rerequesting new AS mission."], _filename] call A3A_fnc_log;
 };
 

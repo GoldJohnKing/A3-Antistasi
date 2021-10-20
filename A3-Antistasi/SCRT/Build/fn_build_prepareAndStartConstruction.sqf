@@ -191,7 +191,7 @@ if (isNil "construction_keyDownHandler") then {
 private _money = player getVariable "moneyX";
 
 if (_money < construction_cost) exitWith {
-    ["Construction", format ["You do not have enough money for this vehicle: %1 € required", construction_cost]] call SCRT_fnc_misc_showDeniedActionHint;
+    ["Construction", format ["You do not have enough money for this vehicle: %1%2 required", construction_cost, currencySymbol]] call SCRT_fnc_misc_showDeniedActionHint;
     construction_buildingsAvailable = nil;
     construction_buildingIndex = nil;
     construction_cost = nil; 
@@ -200,7 +200,7 @@ if (_money < construction_cost) exitWith {
     construction_type = nil;
 };
 
-private _extraMessage = format ["Use Arrow Up-Down Keys to Switch Building Type.<br/> Building construction for $%1", construction_cost];
+private _extraMessage = format ["Use Arrow Up-Down Keys to Switch Building Type.<br/> Building construction for %1%2", construction_cost, currencySymbol];
 
 construction_handleDamageHandler = player addEventHandler ["HandleDamage",{[] call A3A_fnc_vehPlacementCancel;nil;}];
 

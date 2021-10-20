@@ -17,42 +17,45 @@
 ["toolKits", ["vn_b_item_toolkit"]] call _fnc_saveToTemplate;  // Relies on autodetection.
 ["itemMaps", ["vn_b_item_map"]] call _fnc_saveToTemplate;  // Relies on autodetection.
 
-// This should be replaced by static loot lists.
-["addDiveGear",false] call _fnc_saveToTemplate;
-["addFlightGear",false] call _fnc_saveToTemplate;
+["diveGear", ["vn_b_uniform_seal_09_01", "vn_b_acc_seal_01", "vn_b_vest_seal_01"]] call _fnc_saveToTemplate;
+
+["flyGear", ["vn_b_uniform_heli_01_01"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
 
 ["vehicleBasic", "vn_c_bicycle_01"] call _fnc_saveToTemplate; 			//this line determines basic vehicles, the lightest kind available. -- Example: ["vehiclesBasic", ["B_Quadbike_01_F"]] -- Array, can contain multiple assets
-["vehicleLightUnarmed", "vn_i_wheeled_m151_02"] call _fnc_saveToTemplate; 		//this line determines light and unarmed vehicles. -- Example: ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets
-["vehicleLightArmed", "vn_i_wheeled_m151_mg_01"] call _fnc_saveToTemplate; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F","B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
+["vehicleLightUnarmed", "vn_o_car_04_01"] call _fnc_saveToTemplate; 		//this line determines light and unarmed vehicles. -- Example: ["vehiclesLightUnarmed", ["B_MRAP_01_F"]] -- Array, can contain multiple assets
+["vehicleLightArmed", "vn_o_car_04_mg_01"] call _fnc_saveToTemplate; 		//this line determines light and armed vehicles -- Example: ["vehiclesLightArmed",["B_MRAP_01_hmg_F","B_MRAP_01_gmg_F"]] -- Array, can contain multiple assets
 ["vehicleTruck", "vn_i_wheeled_m54_01"] call _fnc_saveToTemplate; 			//this line determines the trucks -- Example: ["vehiclesTrucks", ["B_Truck_01_transport_F","B_Truck_01_covered_F"]] -- Array, can contain multiple assets
 ["vehicleAT", "not_supported"] call _fnc_saveToTemplate; 		//this line determines AT vehicle -- Example: ["vehiclesCargoTrucks", ["B_Truck_01_transport_F","B_Truck_01_covered_F"]] -- Array, can contain multiple assets
 ["vehicleAA", "vn_b_wheeled_m54_mg_02"] call _fnc_saveToTemplate; 		//this line determines AA vehicle -- Example: ["vehiclesCargoTrucks", ["B_Truck_01_transport_F","B_Truck_01_covered_F"]] -- Array, can contain multiple assets
 
 ["vehicleBoat", "vn_o_boat_02_01"] call _fnc_saveToTemplate; 	//this line determines transport boats -- Example: ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] -- Array, can contain multiple assets
 ["vehicleRepair", "vn_i_wheeled_m54_repair"] call _fnc_saveToTemplate; 			//this line determines gun boats -- Example: ["vehiclesGunboats", ["B_Boat_Armed_01_minigun_F"]] -- Array, can contain multiple assets
+["vehicleFuel", "UK3CB_CHD_I_Kraz255_Fuel"] call _fnc_saveToTemplate;
 
-["vehiclePlane", "vn_o_air_mi2_01_02"] call _fnc_saveToTemplate; 		//this line determines CAS planes -- Example: ["vehiclesPlanesCAS", ["B_Plane_CAS_01_dynamicLoadout_F"]] -- Array, can contain multiple assets
+["vehiclePlane", "I_C_Plane_Civil_01_F"] call _fnc_saveToTemplate;
+["vehiclePayloadPlane", "I_C_Plane_Civil_01_F"] call _fnc_saveToTemplate;
 ["vehicleHeli", "not_supported"] call _fnc_saveToTemplate; 		//this line determines light helis -- Example: ["vehiclesHelisLight", ["B_Heli_Light_01_F"]] -- Array, can contain multiple assets
 
-["vehicleCivCar", "vn_c_wheeled_m151_02"] call _fnc_saveToTemplate;
+["vehicleCivCar", "vn_c_car_02_01"] call _fnc_saveToTemplate;
 ["vehicleCivTruck", "vn_b_wheeled_m54_01_airport"] call _fnc_saveToTemplate;
-["vehicleCivHeli", "not_supported"] call _fnc_saveToTemplate;
+["vehicleCivHeli", "C_Heli_Light_01_civil_F"] call _fnc_saveToTemplate;
 ["vehicleCivBoat", "vn_c_boat_08_01"] call _fnc_saveToTemplate;
+["vehicleCivSupply", "vn_b_wheeled_m54_repair_airport"] call _fnc_saveToTemplate;
 
-["staticMG", "vn_i_static_m60_high"] call _fnc_saveToTemplate; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets
-["staticAT", "vn_i_static_tow"] call _fnc_saveToTemplate; 					//this line determinesstatic ATs -- Example: ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets
+["staticMG", "vn_i_static_m1919a4_high"] call _fnc_saveToTemplate; 					//this line determines static MGs -- Example: ["staticMG", ["B_HMG_01_high_F"]] -- Array, can contain multiple assets
+["staticAT", "vn_o_vc_static_type56rr"] call _fnc_saveToTemplate; 					//this line determinesstatic ATs -- Example: ["staticAT", ["B_static_AT_F"]] -- Array, can contain multiple assets
 ["staticAA", "vn_i_static_m45"] call _fnc_saveToTemplate; 					//this line determines static AAs -- Example: ["staticAA", ["B_static_AA_F"]] -- Array, can contain multiple assets
 ["staticMortar", "vn_i_static_mortar_m2"] call _fnc_saveToTemplate; 				//this line determines static mortars -- Example: ["staticMortar", ["B_Mortar_01_F"]] -- Array, can contain multiple assets
 ["staticMortarMagHE", "vn_mortar_m2_mag_he_x8"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "vn_mortar_m2_mag_wp_x8"] call _fnc_saveToTemplate;
 
 //Static weapon definitions
-["baggedMGs", [["vn_b_pack_static_base_01","vn_b_pack_static_m60_high_01"]]] call _fnc_saveToTemplate; 				//this line determines bagged static MGs -- Example: ["baggedMGs", [["B_HMG_01_high_F", "B_HMG_01_support_high_F"]]] -- Array, can contain multiple assets
-["baggedAT", [["vn_b_pack_static_base_01","vn_b_pack_static_tow"]]] call _fnc_saveToTemplate; 					//this line determines bagged static ATs -- Example: ["baggedAT", [["B_AT_01_weapon_F", "B_HMG_01_support_F"]]] -- Array, can contain multiple assets
+["baggedMGs", [["vn_b_pack_static_base_01", "vn_b_pack_static_m1919a4_high_01"]]] call _fnc_saveToTemplate; 				//this line determines bagged static MGs -- Example: ["baggedMGs", [["B_HMG_01_high_F", "B_HMG_01_support_high_F"]]] -- Array, can contain multiple assets
+["baggedAT", [["vn_o_pack_static_base_01","vn_o_pack_static_type56rr_01"]]] call _fnc_saveToTemplate; 					//this line determines bagged static ATs -- Example: ["baggedAT", [["B_AT_01_weapon_F", "B_HMG_01_support_F"]]] -- Array, can contain multiple assets
 ["baggedAA", [["not_supported", "not_supported"]]] call _fnc_saveToTemplate; 					//this line determines bagged static AAs -- Example: ["baggedAA", [["B_AA_01_weapon_F", "B_HMG_01_support_F"]]] -- Array, can contain multiple assets
 ["baggedMortars", [["vn_b_pack_static_base_01","vn_b_pack_static_m2_01"]]] call _fnc_saveToTemplate; 			//this line determines bagged static mortars -- Example: ["baggedMortars", [["B_Mortar_01_F", "B_Mortar_01_weapon_F"]]] -- Array, can contain multiple assets
 
@@ -89,12 +92,13 @@
 ]] call _fnc_saveToTemplate;
 
 private _initialRebelEquipment = [
-"vn_p38s","vn_welrod",
-"vn_m38",
+"vn_p38s", "vn_mc10", "vn_fkb1",
+"vn_m38", "vn_izh54", "vn_izh54_shorty",
 "vn_m_mk2_knife_01","vn_m_axe_01","vn_b_type56","vn_b_sks","vn_b_m38","vn_b_camo_m9130","vn_b_camo_m40a1","vn_b_camo_m14",
-"vn_m127",
-"vn_m10_mag","vn_welrod_mag","vn_m38_t_mag","vn_m38_mag","vn_t67_grenade_mag","vn_rdg2_mag","vn_molotov_grenade_mag","vn_m127_mag","vn_mine_punji_03_mag",
-"vn_c_pack_01",
+"vn_m127", "vn_mc10_mag", "vn_mc10_t_mag",
+"vn_m10_mag","vn_m38_t_mag","vn_m38_mag","vn_rdg2_mag","vn_molotov_grenade_mag","vn_m127_mag","vn_mine_punji_03_mag",
+"vn_izh54_mag",
+"B_FieldPack_khk",
 "vn_o_vest_05","vn_b_vest_usarmy_01",
 "vn_m19_binocs_grey","vn_mx991","vn_mx991_red"
 ];
@@ -126,14 +130,14 @@ lootCrate = "Box_Syndicate_Ammo_F";
 rallyPoint = "B_RadioBag_01_wdl_F";
 
 //black market stuff
-shop_UAV = ["I_UAV_01_F"];
-shop_AA = ["I_LT_01_AA_F"];
-shop_MRAP = ["I_MRAP_03_hmg_F", "B_MRAP_01_hmg_F", "O_MRAP_02_hmg_F"];
-shop_wheel_apc = ["O_APC_Wheeled_02_rcws_v2_F", "B_APC_Wheeled_01_cannon_F", "I_APC_Wheeled_03_cannon_F"];
-shop_track_apc = ["I_APC_tracked_03_cannon_F", "I_APC_tracked_03_cannon_F", "B_APC_Tracked_01_rcws_F"];
-shop_heli = ["O_Heli_Light_02_dynamicLoadout_F", "B_Heli_Light_01_dynamicLoadout_F", "I_Heli_light_03_dynamicLoadout_F"];
-shop_tank = ["I_LT_01_cannon_F", "I_LT_01_AT_F", "I_MBT_03_cannon_F"];
-shop_plane = ["I_Plane_Fighter_03_dynamicLoadout_F"];
+shop_UAV = [];
+shop_AA = ["vn_o_wheeled_z157_mg_02_nva65"];
+shop_MRAP = [];
+shop_wheel_apc = ["vn_o_wheeled_btr40_mg_01_nva65", "vn_o_wheeled_btr40_mg_02_nva65", "vn_o_wheeled_btr40_mg_03_nva65"];
+shop_track_apc = [];
+shop_heli = ["vn_o_air_mi2_04_03"];
+shop_tank = ["vn_i_armor_type63_01", "vn_i_armor_m41_01"];
+shop_plane = [];
 
 additionalShopLight = [];
 additionalShopAtgmVehicles = [];
@@ -143,7 +147,6 @@ additionalShopArtillery = [];
 //military building models (common for all sides)
 smallBunker = "Land_BagBunker_Small_F";
 sandbag = "Land_BagFence_Long_F";
-
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

@@ -37,20 +37,20 @@ class A3A
         class addHC {};
         class addTimeForIdle {};
         class aggressionUpdateLoop {};
-		class AILoadInfo {};
+        class AILoadInfo {};
         class airspaceControl {};
-		class rebelAttack {};
-		class blackout {};
-		class buildHQ {};
+        class rebelAttack {};
+        class blackout {};
+        class buildHQ {};
         class calculateAggression {};
         class canMoveHQ {};
         class chooseAttackType {};
-		class citiesToCivPatrol {};
-		class citySupportChange {};
-		class commsMP {};
+        class citiesToCivPatrol {};
+        class citySupportChange {};
+        class commsMP {};
         class createBreachChargeText {};
-		class createControls {};
-		class createPetros {};
+        class createControls {};
+        class createPetros {};
 		class deleteControls {};
 		class destroyCity {};
 		class distance {};
@@ -59,50 +59,51 @@ class A3A
 		class ejectPvPPlayerIfInvalidVehicle {};
 		class FIAradio {};
         class findBaseForQRF {};
-		class findBasesForConvoy {};
-		class findNearestGoodRoad {};
-		class flagaction {};
-		class fogCheck {};
-		class garbageCleaner {};
-		class garrisonInfo {};
+        class findBasesForConvoy {};
+        class findNearestGoodRoad {};
+        class flagaction {};
+        class fogCheck {};
+        class garbageCleaner {};
+        class garrisonInfo {};
         class getAggroLevelString {};
+        class getPlayerScale {};
         class getVehiclePoolForAttacks {};
         class getVehiclePoolForQRFs {};
-		class vehicleBoxHeal {};
-		class initPetros {};
-		class isFrontline {};
-		class arePositionsConnected {};
-		class joinMultipleGroups {};
-		class keys {};
-		class localizar {};
-		class location {};
+        class vehicleBoxHeal {};
+        class initPetros {};
+        class isFrontline {};
+        class arePositionsConnected {};
+        class joinMultipleGroups {};
+        class keys {};
+        class localizar {};
+        class location {};
         class lockStatic {};
-		class logPerformance {};
-		class markerChange {};
-		class moveHQ {};
-		class mrkUpdate {};
-		class mrkWIN {};
-		class NATOFT {};
-		class numericRank {};
-		class onHeadlessClientDisconnect {};
-		class onPlayerDisconnect {};
-		class patrolDestinations {};
+        class logPerformance {};
+        class markerChange {};
+        class moveHQ {};
+        class mrkUpdate {};
+        class mrkWIN {};
+        class NATOFT {};
+        class numericRank {};
+        class onHeadlessClientDisconnect {};
+        class onPlayerDisconnect {};
+        class patrolDestinations {};
 		class placementSelection {};
 		class playableUnits {};
 		class getSideRadioTowerInfluence {};
-		class radioCheck {};
-		class rebuildAssets {};
-		class rebuildRadioTower {};
-		class relocateHQObjects {};
-		class remUnitCount {};
-		class repairRuinedBuilding {};
-		class resourceCheckSkipTime {};
-		class resourcesFIA {};
-		class returnMuzzle {};
-		class revealToPlayer {};
-		class scheduler {};
-		class sellVehicle {};
-		class setMarkerAlphaForSide {};
+        class radioCheck {};
+        class rebuildAssets {};
+        class rebuildRadioTower {};
+        class relocateHQObjects {};
+        class remUnitCount {};
+        class repairRuinedBuilding {};
+        class resourceCheckSkipTime {};
+        class resourcesFIA {};
+        class returnMuzzle {};
+        class revealToPlayer {};
+        class scheduler {};
+        class sellVehicle {};
+        class setMarkerAlphaForSide {};
         class setPlaneLoadout {};
         class sizeMarker {};
         class splitVehicleCrewIntoOwnGroups {};
@@ -151,7 +152,6 @@ class A3A
         class help {};
         class hideInBuilding {};
         class inmuneConvoy {};
-        class interrogate {};
         class isBuildingPosition {};
         class landThreatEval {};
         class liberaterefugee {};
@@ -205,8 +205,8 @@ class A3A
         class spawnConvoyLine {};
     };
 
-	class CREATE
-	{
+    class CREATE
+    {
         class AAFroadPatrol {};
         class airportCanAttack {};
         class AIVEHinit {};
@@ -238,6 +238,7 @@ class A3A
         class garrisonSize {};
         class garrisonUpdate {};
         class groupDespawner {};
+        class invaderPunish {};
         class milBuildings {};
         class minefieldAAF {};
         class mortarPos {};
@@ -259,7 +260,7 @@ class A3A
         class vehKilledOrCaptured {};
         class wavedCA {};
         class WPCreate {};
-	};
+    };
 
     class Debugging
     {
@@ -349,21 +350,21 @@ class A3A
     };
 
     class Loadouts
-	{
-		file = "functions\Templates\Loadouts";
-		class loadout_setBackpack {};
-		class loadout_addEquipment {};
-		class loadout_setHelmet {};
-		class loadout_addItems {};
-		class loadout_additionalMuzzleMags {};
-		class loadout_setUniform {};
-		class loadout_setVest {};
-		class loadout_setWeapon {};
-		class loadout_builder {};
-		class loadout_createBase {};
-		class loadout_defaultWeaponMag {};
-		class loadout_itemLoad {};
-	};
+    {
+        file = "functions\Templates\Loadouts";
+        class loadout_setBackpack {};
+        class loadout_addEquipment {};
+        class loadout_setHelmet {};
+        class loadout_addItems {};
+        class loadout_additionalMuzzleMags {};
+        class loadout_setUniform {};
+        class loadout_setVest {};
+        class loadout_setWeapon {};
+        class loadout_builder {};
+        class loadout_createBase {};
+        class loadout_defaultWeaponMag {};
+        class loadout_itemLoad {};
+    };
 
     class Logistics
     {
@@ -545,7 +546,8 @@ class A3A
 		class postmortem {};
 		class reDress {};
 		class reinfPlayer {};
-		class stealStatic {};
+		class spawnHCGroup {};
+        class stealStatic {};
 		class vehiclePrice {};
 		class vehStats {};
 	};
@@ -652,9 +654,9 @@ class A3A
     class Templates
     {
         class aceModCompat {};
-		class compatibilityLoadFaction {};
-		class getLoadout {};
-		class loadFaction {};
+        class compatibilityLoadFaction {};
+        class getLoadout {};
+        class loadFaction {};
         class rhsModCompat {};
         class cupModCompat {};
     };

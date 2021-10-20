@@ -76,4 +76,4 @@ if(_displayId == 90000) then {
 };
 
 private _costLocalized = localize "STR_antistasi_dialogs_price";
-_costTextBox ctrlSetText format ["%1: %2€", _costLocalized, _price];
+_costTextBox ctrlSetText format ["%1: %2%3", _costLocalized, _price, currencySymbol];

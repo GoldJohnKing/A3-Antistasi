@@ -17,7 +17,11 @@ else {
 };
 
 if (random 100 < _chance) then {
-    { if ((side _x == Occupants) or (side _x == Invaders)) then {_x reveal [_artillery,4]}} forEach allUnits;
+    {
+        if !(side _x in [Occupants, Invaders]) then { continue };
+        [leader _x, [_artillery, 4]] remoteExec ["reveal", leader _x];
+    } forEach allGroups;
+
     if (_artillery distance posHQ < 300) then {
         if !("DEF_HQ" in A3A_activeTasks) then {
             [[],"A3A_fnc_attackHQ"] remoteExec ["A3A_fnc_scheduler",2];

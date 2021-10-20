@@ -224,6 +224,10 @@ class SCRT
     {
         file = "SCRT\Build";
         class build_prepareAndStartConstruction {};
+        class build_addConstruction {};
+        class build_saveConstruction {};
+        class build_updateConstruction {};
+        class build_removeConstruction {};
     };
 
     class Civilian 

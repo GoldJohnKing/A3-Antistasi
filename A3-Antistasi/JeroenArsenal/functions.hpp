@@ -1,5 +1,26 @@
 
 class JN {
+	class Common {
+		file = "JeroenArsenal\Common";
+		class common_addActionSelect {};
+		class common_addActionCancel {};
+		class common_updateActionCancel {};
+		class common_removeActionCancel {};
+		class common_getActionCanceled {};
+	};
+	
+	class Common_Vehicle {
+		file = "JeroenArsenal\Common\vehicle";
+		class common_vehicle_getSeatNames {};
+		class common_vehicle_getVehicleType {};
+	};
+
+	class Common_Array {
+		file = "JeroenArsenal\Common\array";
+		class common_array_add {};
+		class common_array_remove {};
+	};
+
 	class JNA {
 		file = "JeroenArsenal\JNA";
 		class arsenal {};
@@ -19,27 +40,6 @@ class JN {
 		class arsenal_requestClose {};
 		class vehicleArsenal {};
 
-	};
-	
-	class JND {
-		file = "JeroenArsenal\JND";
-		class debugv2 {postinit = 1;};
-	};
-
-	class JNG {
-		file = "JeroenArsenal\JNG";
-		class garage {};
-		class garage_addVehicle {};
-		class garage_init {};
-		class garage_releaseVehicle {};
-		class garage_removeVehicle {};
-		class garage_requestOpen {};
-		class garage_requestClose {};
-		class garage_requestVehicle {};
-		class garage_getVehicleIndex {};
-		class garage_getVehicleData {};
-		class garage_garageVehicle {};
-		class garage_canGarageVehicle {};
 	};
 
 	class JNL {

@@ -327,7 +327,7 @@ private _processInvaderMarker = {
             switch (true)
             do
             {
-                case (gameMode == 4 && {_marker in citiesX}):
+                case (_marker in citiesX):
                 {
                     [[_marker], "A3A_fnc_createAICities"] call A3A_fnc_scheduler;
                 };

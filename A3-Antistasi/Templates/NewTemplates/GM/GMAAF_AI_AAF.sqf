@@ -133,7 +133,7 @@
 ["staticAT", ["I_static_AT_F"]] call _fnc_saveToTemplate; 					
 ["staticAA", ["I_static_AA_F"]] call _fnc_saveToTemplate; 					
 ["staticMortars", ["I_Mortar_01_F"]] call _fnc_saveToTemplate;
-["staticHowitzers", [""]] call _fnc_saveToTemplate;
+["staticHowitzers", ["not_supported"]] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;

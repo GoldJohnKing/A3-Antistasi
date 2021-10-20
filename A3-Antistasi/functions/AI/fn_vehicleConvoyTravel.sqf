@@ -11,7 +11,7 @@ Parameters:
 */
 
 params ["_vehicle", "_route", "_convoy", "_maxSpeed", ["_critical", false]];
-private _filename = "fn_vehicleConvoyTravel";
+private _fileName = "fn_vehicleConvoyTravel";
 
 // Handle some broken input errors
 private _error = call {
@@ -21,7 +21,7 @@ private _error = call {
 };
 if (!isNil "_error") exitWith {
     _convoy deleteAt (_convoy find _vehicle);
-    [1, _error, _filename] call A3A_fnc_log;
+    [1, _error, _fileName, true] call A3A_fnc_log;
 };
 
 // Split driver from crew and make them ignore enemies
@@ -50,11 +50,11 @@ while {true} do
 
     // Exit conditions
     if (!canMove _vehicle || !alive driver _vehicle || { lifestate driver _vehicle == "INCAPACITATED" }) exitWith {
-        [2, "Vehicle or driver died during travel, abandoning", _filename] call A3A_fnc_log;
+         [2, "Vehicle or driver died during travel, abandoning", _fileName, true] call A3A_fnc_log;
     };
     if (_vehIndex == -1) exitWith {};				// external abort
     if (_vehicle distance _destination < 100) exitWith {
-        [3, "Vehicle arrived at destination", _filename] call A3A_fnc_log;
+        [3, "Vehicle arrived at destination", _fileName, true] call A3A_fnc_log;
     };
 
     // Transition to next waypoint if close
@@ -67,7 +67,7 @@ while {true} do
         _timeout = time + (_vehicle distance2d _nextPos);
     };
     if (!_critical && time > _timeout) exitWith {
-        [2, "Vehicle stuck during travel, abandoning", _filename] call A3A_fnc_log;
+        [2, "Vehicle stuck during travel, abandoning", _fileName, true] call A3A_fnc_log;
     };
 
     // Hack to work around Arma bugging out and refusing to path

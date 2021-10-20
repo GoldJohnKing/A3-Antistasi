@@ -120,6 +120,16 @@
         <Czech>Velitel družstva</Czech>
         <Chinesesimp>班长</Chinesesimp>
       </Key>
+      <Key ID="STR_antistasi_dialogs_demolitionist_title">
+        <Original>Demolitionist</Original>
+        <English>Demolitionist</English>
+        <French>Démolisseur</French>
+        <Russian>Подрывник</Russian>
+        <German>Sprengmeister</German>
+        <Czech>Demolitionist</Czech>
+        <Chinesesimp>拆迁人</Chinesesimp>
+        <Korean>철거업자</Korean>
+      </Key>
     </Container>
     <Container name="simple_menu_dialogs">
       <Key ID="STR_antistasi_dialogs_rounds_quantity_title">
@@ -240,13 +250,13 @@
         <Chinesesimp>使用该选项将你面前的玩家从会员列表中移除。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_faction_title">
-        <Original>Donate 100€ to Faction</Original>
-        <English>Donate 100€ to Faction</English>
-        <French>Faites un don de 100€ à Fraction</French>
-        <Russian>Передать 100€ фракции</Russian>
-        <German>Spenden Sie 100€ an Fraction</German>
-        <Czech>Přispějte 100€ na frakci</Czech>
-        <Chinesesimp>向阵营捐赠 100€</Chinesesimp>
+        <Original>Donate 100 Money to Faction</Original>
+        <English>Donate 100 Money to Faction</English>
+        <French>Faites un don de 100 argent à Faction</French>
+        <Russian>Передать 100 денег фракции</Russian>
+        <German>Spende 100 Geld an die Fraktion</German>
+        <Czech>Darujte 100 peněz frakci</Czech>
+        <Chinesesimp>捐赠 100 钱给派系</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_faction_tooltip">
         <Original>Donates your personal money to rebel faction. It will increase your prestige among rebels.</Original>
@@ -258,13 +268,13 @@
         <Chinesesimp>将你的个人资产捐献给反抗阵营。这将会提高你在叛军中的声望。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_player_title">
-        <Original>Donate 100€ to player</Original>
-        <English>Donate 100€ to player</English>
-        <French>Faites un don de 100€ au joueur</French>
-        <Russian>Передать 100€ игроку</Russian>
-        <German>Spende 100€ an den Spieler</German>
-        <Czech>Přispějte 100€ hráči</Czech>
-        <Chinesesimp>向玩家捐赠 100€</Chinesesimp>
+        <Original>Donate 100 money to player</Original>
+        <English>Donate 100 money to player</English>
+        <French>Donner 100 d'argent au joueur</French>
+        <Russian>Передать 100 денег игроку</Russian>
+        <German>Spende 100 Geld an den Spieler</German>
+        <Czech>Darujte hráči 100 peněz</Czech>
+        <Chinesesimp>捐100钱给玩家</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_donate_player_tooltip">
         <Original>Donates your personal money to player you're looking at.</Original>
@@ -886,7 +896,7 @@
       </Key>
     </Container>
     <Container name="simple_menu_commander_menu">
-    <Key ID="STR_antistasi_dialogs_ai_healing_options_title">
+      <Key ID="STR_antistasi_dialogs_ai_healing_options_title">
         <Original>Healing Options</Original>
         <English>Healing Options</English>
         <French>Options de guérison</French>
@@ -1154,24 +1164,22 @@
         <Korean>닫기</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_withdraw_text">
-        <Original>Grab 500€ from Pool</Original>
-        <English>Grab 500€ from Pool</English>
-        <French>Prendre 500€ de la cagnotte</French>
-        <Russian>Взять 500€ из казны</Russian>
-        <German>Entnehme 500€ aus der Kasse</German>
-        <Czech>Vzít 500€ ze společného fondu</Czech>
-        <Chinesesimp>从资金池中拿取500€</Chinesesimp>
-        <Korean>팩션 자금에서 500€ 가져가기</Korean>
+        <Original>Grab 500 Money from Faction</Original>
+        <English>Grab 500 Money from Faction</English>
+        <French>Récupérez 500 d'argent de la faction</French>
+        <Russian>Взять 500 денег из казны</Russian>
+        <German>Schnapp dir 500 Geld von der Fraktion</German>
+        <Czech>Získejte 500 peněz z frakce</Czech>
+        <Chinesesimp>从派系中获得 500 金钱</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_withdraw_tooltip">
-        <Original>Take 500€ from faction pool and add it to your personal account. It will damage your position among the faction in the commander career.</Original>
-        <English>Take 500€ from faction pool and add it to your personal account. It will damage your position among the faction in the commander career.</English>
-        <French>Prendre 500€ de la cagnotte de la faction pour l'ajouter sur votre compte. Cela va nuire à votre réputation au sein de la faction et ralentir votre progression des rangs.</French>
-        <Russian>Перевести 500$ из казны сопротивления себе на счёт. Это вредит вашей репутации как командира.</Russian>
-        <German>Transferiere 500€ aus der Fraktionskasse zu deinem persönlichen Konto. Dies wird deiner Reputation bezüglich deiner Karriere innerhalb der Fraktion schaden.</German>
-        <Czech>Převod 500€ ze společného fondu na váš účet.Poškodí vaši pozici mezi frakcí a též vaší kariéru velitele.</Czech>
-        <Chinesesimp>从阵营的资金池中拿取500€并将其添加到您的个人帐户中。这会损害您在指挥官生涯中的地位。</Chinesesimp>
-        <Korean>팩션 자금 500€를 당신의 계좌에 가져가면 횡령이기때문에 팩션내 당신의 평판이 내려갈 것입니다.</Korean>
+        <Original>Take money from faction pool and add it to your personal account. It will damage your position among the faction in the commander career.</Original>
+        <English>Take money from faction pool and add it to your personal account. It will damage your position among the faction in the commander career.</English>
+        <French>Prenez de l'argent du pool de factions et ajoutez-le à votre compte personnel. Cela endommagera votre position parmi la faction dans la carrière de commandant.</French>
+        <Russian>Перевести 500 денег из казны сопротивления себе на счёт. Это вредит вашей репутации как командира.</Russian>
+        <German>Nehmen Sie Geld aus dem Fraktionspool und fügen Sie es Ihrem persönlichen Konto hinzu. Es wird Ihrer Position innerhalb der Fraktion in der Kommandantenkarriere schaden.</German>
+        <Czech>Vezměte peníze ze skupiny frakcí a přidejte je na svůj osobní účet. Poškozuje to vaši pozici mezi frakcemi v kariéře velitele.</Czech>
+        <Chinesesimp>从派系池中取钱并将其添加到您的个人帐户。 它会损害您在指挥官职业中在派系中的地位。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_hq_button_garrisons_text">
         <Original>Manage Garrisons</Original>
@@ -1688,12 +1696,12 @@
         <Korean>공병 모집</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_unit_recruit_explosive_text">
-        <Original>Recruit Bomb Specialist</Original>
-        <English>Recruit Bomb Specialist</English>
+        <Original>Recruit Demolitionist</Original>
+        <English>Recruit Demolitionist</English>
         <French>Recruter un Expert en Démolition</French>
         <Russian>Подрывник</Russian>
-        <German>Sprengstoffspezialist rekrutieren</German>
-        <Czech>Specialista na výbušniny</Czech>
+        <German>Rekrutiere Sprengmeister</German>
+        <Czech>Recruit Demolitionist</Czech>
         <Chinesesimp>招募炸弹专家</Chinesesimp>
         <Korean>폭탄 전문가 모집</Korean>
       </Key>
@@ -1798,7 +1806,7 @@
         <Russian>Socrates</Russian>
         <Czech>Socrates</Czech>
         <Korean>Socrates</Korean>
-	      <Chinesesimp>Socrates</Chinesesimp>
+        <Chinesesimp>Socrates</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_credits_generic_overview_text">
         <Original>Build FIA Army from scratch and defeat the AAF and CSAT forces in a whole map Dynamic Mission.</Original>
@@ -1831,10 +1839,10 @@
         <Korean>저항세력의 지도자가 되고 영웅이 되십시오.</Korean>
       </Key>
       <Key ID="STR_antistasi_credits_generic_version_text">
-        <Original>2.5.2</Original>
+        <Original>2.5.3</Original>
       </Key>
       <Key ID="STR_antistasi_plus_credits_generic_version_text">
-        <Original>1.7.5</Original>
+        <Original>1.8.2.1</Original>
       </Key>
     </Container>
     <Container name="dialog_vehicle_purchase">
@@ -1966,7 +1974,7 @@
         <English>Truck (Looter)</English>
         <French>Camion (Looter)</French>
         <Russian>Грузовик (Сборщик)</Russian>
-	      <Chinesesimp>卡车 (战利品搜集)</Chinesesimp>
+        <Chinesesimp>卡车 (战利品搜集)</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_aa_tooltip">
         <Original>Buy Static Anti-Air emplacement</Original>
@@ -1983,7 +1991,7 @@
         <English>Buy a truck with looter capabilites (loot bodies and supplies).</English>
         <French>Achetez un camion avec des capacités de pillage (corps de butin et fournitures).</French>
         <Russian>Купить грузовик с способностью автолута (тела и ящики).</Russian>
-	      <Chinesesimp>购买一辆能够从尸体和补给箱中搜集战利品的卡车。</Chinesesimp>
+        <Chinesesimp>购买一辆能够从尸体和补给箱中搜集战利品的卡车。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_s_at_text">
         <Original>Static AT</Original>
@@ -2022,7 +2030,7 @@
         <Russian>Автомобиль с ПТ-орудием</Russian>
         <German>AT Auto</German>
         <Czech>AT Car</Czech>
-	      <Chinesesimp>反坦克(AT)车辆</Chinesesimp>
+        <Chinesesimp>反坦克(AT)车辆</Chinesesimp>
         <Korean>AT Car</Korean>
       </Key>
       <Key ID="STR_antistasi_dialogs_dialog_vehicle_purchase_military_a_offroad_text">
@@ -2093,14 +2101,14 @@
         <Original>Antistasi Plus - Altis Requiem</Original>
         <English>Antistasi Plus - Altis Requiem</English>
         <Russian>Antistasi Plus - Реквием по Алтису</Russian>
-	      <Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_mapname_text">
         <Original>Antistasi Plus - Altis Requiem</Original>
         <English>Antistasi Plus - Altis Requiem</English>
         <French>Antistasi Plus - Altis Requiem</French>
         <Korean>Antistasi Plus - Altis Requiem</Korean>
-	      <Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 阿尔蒂斯安魂曲</Chinesesimp>
         <Russian>Antistasi Plus - Реквием по Алтису</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_description_text">
@@ -2111,7 +2119,7 @@
         <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 26 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
         <Czech>Buďte vedoucím odboje. Bojujte proti nadřazenému nepříteli v technologii, počtu, majetku a vozidlech. Použijte partyzánskou taktiku ve zcela dynamickém světě, přibližně s 26 vedlejšími misemi, všude kdykoli a cokoli.</Czech>
         <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 25개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
-	      <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约25种支线任务, 任何时间, 任何地点, 任何情况, 运用游击战术。</Chinesesimp>
+        <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约25种支线任务, 任何时间, 任何地点, 任何情况, 运用游击战术。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_altis_blurb_text">
         <Original>Whether we wanted it or not, we stepped into a war with occupants on Altis.</Original>
@@ -2121,7 +2129,7 @@
         <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Altis.</German>
         <Czech>Ať jsme to chtěli nebo ne, vstoupili jsme do války s obyvateli Altisu.</Czech>
         <Korean>우리가 원하든 원하지 않든, 우리는 알 티스에서 거주자들과 전쟁에 뛰어 들었습니다.</Korean>
-	      <Chinesesimp>无论我们愿不愿意, 我们都卷入了一场与阿尔蒂斯的占领者的战争。</Chinesesimp>
+        <Chinesesimp>无论我们愿不愿意, 我们都卷入了一场与阿尔蒂斯的占领者的战争。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_stratis_mapname_short_text">
         <Original>Antistasi Stratis</Original>
@@ -2162,7 +2170,7 @@
         <German>Antistasi Plus - Horizontinseln</German>
         <Czech>Antistasi Plus - Horizon Islands</Czech>
         <Russian>Antistasi Plus - Острова Горизонта</Russian>
-	      <Chinesesimp>Antistasi Plus - 地平线群岛</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 地平线群岛</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_tanoa_mapname_text">
         <Original>Antistasi Plus - Horizon Islands</Original>
@@ -2171,7 +2179,7 @@
         <German>Antistasi Plus - Horizontinseln</German>
         <Czech>Antistasi Plus - Horizon Islands</Czech>
         <Russian>Antistasi Plus - Острова Горизонта</Russian>
-	      <Chinesesimp>Antistasi Plus - 地平线群岛</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 地平线群岛</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_tanoa_blurb_text">
         <Original>A pack of old men in a job where people die young.</Original>
@@ -2180,7 +2188,7 @@
         <Russian>Стая стариков там, где люди умирают молодыми.</Russian>
         <German>Ein Rudel alter Männer in einem Job, in dem Menschen jung sterben.</German>
         <Czech>Balíček starých mužů v práci, kde lidé umírají mladí.</Czech>
-	      <Chinesesimp>一群老人们在做一项会让人英年逝世的工作。</Chinesesimp>
+        <Chinesesimp>一群老人们在做一项会让人英年逝世的工作。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_livonia_mapname_short_text">
         <Original>Antistasi Plus - Horizon Scan</Original>
@@ -2189,7 +2197,7 @@
         <German>Antistasi Plus -  Horizontscan</German>
         <Czech>Antistasi Plus - Horizon Scan</Czech>
         <Russian>Antistasi Plus - Ливония</Russian>
-	      <Chinesesimp>Antistasi Plus - 扫视地平线</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 扫视地平线</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_livonia_mapname_text">
         <Original>Antistasi Plus - Horizon Scan</Original>
@@ -2198,7 +2206,7 @@
         <Russian>Antistasi Plus - Сканирование Горизонта</Russian>
         <German>Antistasi Plus - Horizontscan</German>
         <Czech>Antistasi Plus - Horizon Scan</Czech>
-	      <Chinesesimp>Antistasi Plus - 扫视地平线</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 扫视地平线</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_livonia_description_text">
         <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
@@ -2217,7 +2225,7 @@
         <Russian>"... это просто окрытое поле."</Russian>
         <German>"... es ist nur ein weites Feld."</German>
         <Czech>"... je to jen široce otevřené pole."</Czech>
-	      <Chinesesimp>"……这是一片开阔的原野。"</Chinesesimp>
+        <Chinesesimp>"……这是一片开阔的原野。"</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_chernarus2020_mapname_text">
         <Original>Antistasi Plus - Harvest Blue</Original>
@@ -2233,7 +2241,7 @@
         <English>Antistasi Plus - Harvest Blue</English>
         <French>Antistasi Plus - Bleu récolte</French>
         <German>Antistasi Plus - Ernte blau</German>
-	      <Chinesesimp>Antistasi Plus - 蓝色收获</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 蓝色收获</Chinesesimp>
         <Russian>Antistasi Plus - Лазурный урожай</Russian>
         <Czech>Antistasi Plus - Harvest Blue</Czech>
       </Key>
@@ -2242,7 +2250,7 @@
         <English>Bardak is out there.</English>
         <German>Bardak ist da draußen.</German>
         <French>Bardak est là-bas.</French>
-	      <Chinesesimp>Bardak 就在外面。</Chinesesimp>
+        <Chinesesimp>Bardak 就在外面。</Chinesesimp>
         <Russian>Бардак где-то рядом.</Russian>
         <Czech>Bardak je někde poblíž. </Czech>
       </Key>
@@ -2278,7 +2286,7 @@
         <English>Antistasi Plus - The Red Dawn</English>
         <French>Antistasi Plus - L'aube rouge</French>
         <Russian>Antistasi Plus - Красный Рассвет</Russian>
-	      <Chinesesimp>Antistasi Plus - 红色黎明</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 红色黎明</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_taviana_mapname_short_text">
         <Original>Antistasi Plus - The Red Dawn</Original>
@@ -2286,7 +2294,7 @@
         <German>Antistasi Plus - Die rote Morgendämmerung</German>
         <French>Antistasi Plus - L'aube rouge</French>
         <Russian>Antistasi Plus - Красный Рассвет</Russian>
-	      <Chinesesimp>Antistasi Plus - 红色黎明</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 红色黎明</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_taviana_blurb_text">
         <Original>Red in blue.</Original>
@@ -2294,7 +2302,7 @@
         <German>Rot in Blau.</German>
         <French>Rouge en bleu.</French>
         <Russian>Красный в синем.</Russian>
-	      <Chinesesimp>红蓝相间。</Chinesesimp>
+        <Chinesesimp>红蓝相间。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_napf_mapname_text">
         <Original>Antistasi Plus - Amber Insurgency</Original>
@@ -2302,7 +2310,7 @@
         <French>Antistasi Plus - Insurrection ambre</French>
         <German>Antistasi Plus - Bernsteinfarbener Aufstand</German>
         <Chinesesimp>Antistasi Plus - 黄色叛乱</Chinesesimp>
-	      <Russian>Antistasi Plus - Янтарное Восстание</Russian>
+        <Russian>Antistasi Plus - Янтарное Восстание</Russian>
       </Key>
       <Key ID="STR_antistasi_mission_info_napf_mapname_short_text">
         <Original>Antistasi Plus - Amber Ins.</Original>
@@ -2310,7 +2318,7 @@
         <French>Antistasi Plus - Insur. ambre</French>
         <German>Antistasi Plus - Bernst. Aufstand</German>
         <Russian>Antistasi Plus - Янтарь</Russian>
-	      <Chinesesimp>Antistasi Plus - 黄色叛乱</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 黄色叛乱</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_napf_blurb_text">
         <Original>Yellow soil is under our boots.</Original>
@@ -2318,7 +2326,7 @@
         <German>Gelber Boden unter unseren Stiefeln.</German>
         <French>De la terre jaune sous nos bottes.</French>
         <Russian>Желтая почва у нас под ногами.</Russian>
-	      <Chinesesimp>黄土地就在我们脚下。</Chinesesimp>
+        <Chinesesimp>黄土地就在我们脚下。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_abramia_mapname_text">
         <Original>Antistasi Plus - White Mountains</Original>
@@ -2326,7 +2334,7 @@
         <French>Antistasi Plus - Montagnes Blanches</French>
         <German>Antistasi Plus - Weiße Berge</German>
         <Russian>Antistasi Plus - Белые Горы</Russian>
-	      <Chinesesimp>Antistasi Plus - 白色山脉</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 白色山脉</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_abramia_mapname_short_text">
         <Original>Antistasi Plus - White Mountains</Original>
@@ -2351,7 +2359,7 @@
         <German>Antistasi Plus - Wasserstraßen</German>
         <Russian>Antistasi Plus - Водные Пути</Russian>
         <Czech>Antistasi Plus - Vodní cesty</Czech>
-	      <Chinesesimp>Antistasi Plus - 航道</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 航道</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_panthera_mapname_short_text">
         <Original>Antistasi Plus - Waterways</Original>
@@ -2360,7 +2368,7 @@
         <German>Antistasi Plus - Wasserstraßen</German>
         <Russian>Antistasi Plus - Водные Пути</Russian>
         <Czech>Antistasi Plus - Vodní cesty</Czech>
-	      <Chinesesimp>Antistasi Plus - 航道</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 航道</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_panthera_blurb_text">
         <Original>Rivers and mountains.</Original>
@@ -2369,7 +2377,7 @@
         <French>Rivières et montagnes.</French>
         <Czech>Řeky a hory.</Czech>
         <Russian>Реки и горы.</Russian>
-	      <Chinesesimp>河流与山脉。</Chinesesimp>
+        <Chinesesimp>河流与山脉。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_vt7_mapname_text">
         <Original>Antistasi Plus - Kesäsota</Original>
@@ -2378,7 +2386,7 @@
         <French>Antistasi Plus - Kesäsota</French>
         <Czech>Antistasi Plus - Kesäsota</Czech>
         <Russian>Antistasi Plus - Летняя Война</Russian>
-	      <Chinesesimp>Antistasi Plus - 夏季战争</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 夏季战争</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_vt7_mapname_short_text">
         <Original>Antistasi Plus - Kesäsota</Original>
@@ -2387,7 +2395,7 @@
         <French>Antistasi Plus - Kesäsota</French>
         <Czech>Antistasi Plus - Kesäsota</Czech>
         <Russian>Antistasi Plus - Летняя Война</Russian>
-	      <Chinesesimp>Antistasi Plus - 夏季战争</Chinesesimp>
+        <Chinesesimp>Antistasi Plus - 夏季战争</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_vt7_blurb_text">
         <Original>They are not here.</Original>
@@ -2396,7 +2404,7 @@
         <French>Ils ne sont pas là.</French>
         <Czech>Nejsou tam.</Czech>
         <Russian>Их там нет.</Russian>
-	      <Chinesesimp>他们不在这里。</Chinesesimp>
+        <Chinesesimp>他们不在这里。</Chinesesimp>
       </Key>
       <Key ID="STR_antistasi_mission_info_takistan_mapname_text">
         <Original>Antistasi Plus - Takistan</Original>
@@ -2469,11 +2477,57 @@
         <Czech>Antistasi Plus - Agent Orange</Czech>
       </Key>
       <Key ID="STR_antistasi_mission_info_camlaonam_blurb_text">
-        <Original>Why we're still here, just to suffer?</Original>
-        <German>Warum sind wir immer noch hier, nur um zu leiden?</German>
-        <French>Pourquoi sommes-nous toujours là, juste pour souffrir?</French>
+        <Original>Why are we still here, just to suffer?</Original>
+        <German>Warum sind wir noch hier, nur um zu leiden?</German>
+        <French>Pourquoi sommes-nous encore là, juste pour souffrir?</French>
         <Russian>Почему мы все еще здесь, просто чтобы страдать?</Russian>
         <Czech>Proč jsme pořád tady, jen trpět?</Czech>
+      </Key>
+      <Key ID="STR_antistasi_mission_info_khesanh_mapname_text">
+        <Original>Antistasi Plus - Battle of Khe Sanh</Original>
+        <English>Antistasi Plus - Battle of Khe Sanh</English>
+        <French>Antistasi Plus - Bataille de Khe Sanh</French>
+        <German>Antistasi Plus - Schlacht von Khe Sanh</German>
+        <Russian>Antistasi Plus - Битва при Кшешани</Russian>
+        <Czech>Antistasi Plus - Bitva u Khe Sanh</Czech>
+      </Key>
+      <Key ID="STR_antistasi_mission_info_khesanh_mapname_short_text">
+        <Original>Antistasi Plus - Battle of Khe Sanh</Original>
+        <English>Antistasi Plus - Battle of Khe Sanh</English>
+        <French>Antistasi Plus - Bataille de Khe Sanh</French>
+        <German>Antistasi Plus - Schlacht von Khe Sanh</German>
+        <Russian>Antistasi Plus - Осада Кшешаня</Russian>
+        <Czech>Antistasi Plus - Bitva u Khe Sanh</Czech>
+      </Key>
+      <Key ID="STR_antistasi_mission_info_khesanh_blurb_text">
+        <Original>“In this world, a man, himself, is nothing. And there ain’t no world but this one.”</Original>
+        <German>„In dieser Welt ist ein Mensch selbst nichts. Und es gibt keine Welt außer dieser.“</German>
+        <French>«Dans ce monde, un homme, lui-même, n'est rien. Et il n'y a pas d'autre monde que celui-ci.»</French>
+        <Russian>„В этом мире человек, сам по себе - ничто. И нет другого мира, кроме этого."</Russian>
+        <Czech>„V tomto světě člověk sám není nic. A neexistuje jiný svět než tento.“</Czech>
+      </Key>
+      <Key ID="STR_antistasi_mission_info_rhspkl_mapname_text">
+        <Original>Antistasi Plus - Red War</Original>
+        <English>Antistasi Plus - Red War</English>
+        <French>Antistasi Plus - Guerre rouge</French>
+        <German>Antistasi Plus - Roter Krieg</German>
+        <Russian>Antistasi Plus - Красная Война</Russian>
+        <Czech>Antistasi Plus - Červená válka</Czech>
+      </Key>
+      <Key ID="STR_antistasi_mission_info_rhspkl_mapname_short_text">
+        <Original>Antistasi Plus - Red War</Original>
+        <English>Antistasi Plus - Red War</English>
+        <French>Antistasi Plus - Guerre rouge</French>
+        <German>Antistasi Plus - Roter Krieg</German>
+        <Russian>Antistasi Plus - Красная Война</Russian>
+        <Czech>Antistasi Plus - Červená válka</Czech>
+      </Key>
+      <Key ID="STR_antistasi_mission_info_rhspkl_blurb_text">
+        <Original>Close skirmishes of intense kind.</Original>
+        <German>Enge Scharmützel intensiver Art.</German>
+        <French>Des escarmouches rapprochées de type intense.</French>
+        <Russian>Близкие стычки напряженного характера.</Russian>
+        <Czech>Blízké potyčky intenzivního druhu.</Czech>
       </Key>
     </Container>
     <Container name="journal_entries">
@@ -2952,7 +3006,7 @@
         <German>Drücken Sie EINFÜGEN, um die Informationszeichenfolge oben auf dem Bildschirm anzuzeigen/auszublenden.</German>
         <Czech>Stisknutím INSERT zobrazíte/skryjete informační řetězec v horní části obrazovky.</Czech>
         <Chinesesimp>按INSERT可在屏幕顶部显示/隐藏信息字符串。</Chinesesimp>
-	<Russian>Нажмите INSERT, чтобы показать / скрыть информационную строку вверху экрана.</Russian>
+        <Russian>Нажмите INSERT, чтобы показать / скрыть информационную строку вверху экрана.</Russian>
       </Key>
       <Key ID="STR_antistasi_journal_entry_header_SpecialK_7">
         <Original>Toggle Info Bar Visibility</Original>
@@ -3883,8 +3937,8 @@
         <Chinesesimp>可用任务</Chinesesimp>
         <Russian>Доступные миссии</Russian>
       </Key>
-      <Key ID="STR_antistasi_dialogs_mission_menu_assasination_missions">
-        <Original>Assasination Mission</Original>
+      <Key ID="STR_antistasi_dialogs_mission_menu_assassination_missions">
+        <Original>Assassination Mission</Original>
         <Chinesesimp>刺杀任务</Chinesesimp>
         <Russian>Миссия на убийство</Russian>
       </Key>
@@ -4645,394 +4699,388 @@
       </Key>
     </Container>
     <Container name="HR_GRG">
-        <Key ID="STR_HR_GRG_Generic_Cancel">
-            <Original>Cancel</Original>
-            <English>Cancel</English>
-            <Chinesesimp>取消</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Lock">
-            <Original>(Un)Lock</Original>
-            <English>(Un)Lock</English>
-            <Chinesesimp>(解除)锁定</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Confirm">
-            <Original>Confirm</Original>
-            <English>Confirm</English>
-            <Chinesesimp>确认</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Cars">
-            <Original>Cars</Original>
-            <English>Cars</English>
-            <Chinesesimp>车辆</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Armored">
-            <Original>Armor</Original>
-            <English>Armor</English>
-            <Chinesesimp>军火库</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Air">
-            <Original>Aircraft</Original>
-            <English>Aircraft</English>
-            <Chinesesimp>飞机</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_AirDisabled">
-            <Original>You can only acces aircrafts from a friendly airbase</Original>
-            <English>You can only acces aircrafts from a friendly airbase</English>
-            <Chinesesimp>你只能从友军空军基地取出飞机</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Boat">
-            <Original>Ships</Original>
-            <English>Ships</English>
-            <Chinesesimp>船只</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Static">
-            <Original>Statics</Original>
-            <English>Statics</English>
-            <Chinesesimp>固定武器</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Mounts">
-            <Original>Mounts</Original>
-            <English>Mounts</English>
-            <Chinesesimp>装载</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Texture">
-            <Original>Texture</Original>
-            <English>Texture</English>
-            <Chinesesimp>贴图</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Anim">
-            <Original>Customize</Original>
-            <English>Customize</English>
-            <Chinesesimp>定制</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_Pylons">
-            <Original>Pylons</Original>
-            <English>Pylons</English>
-            <Chinesesimp>挂架</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Generic_PylonDisabled">
-            <Original>Pylons require an ammo source to edit</Original>
-            <English>Pylons require an ammo source to edit</English>
-            <Chinesesimp>挂架需要一个弹药源(弹药车）来编辑</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_Header">
-            <Original>Sources:</Original>
-            <English>Sources:</English>
-            <Chinesesimp>资料来源: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Available">
-            <Original>Vehicles will be rearmed when ungaraged</Original>
-            <English>Vehicles will be rearmed when ungaraged</English>
-            <Chinesesimp>车辆脱钩后将重新武装</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Unavailable">
-            <Original>Vehicles won't be rearmed when ungaraged as the garage lacks a ammo source</Original>
-            <English>Vehicles won't be rearmed when ungaraged as the garage lacks a ammo source</English>
-            <Chinesesimp>由于车库缺乏弹药来源, 车辆在解除武装时无法重新武装</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Disabled">
-            <Original>Rearm disabled by server</Original>
-            <English>Rearm disabled by server</English>
-            <Chinesesimp>服务器已禁用重新武装</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Available">
-            <Original>Vehicles will be refueled when ungaraged</Original>
-            <English>Vehicles will be refueled when ungaraged</English>
-            <Chinesesimp>车辆将在出库时加油</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Unavailable">
-            <Original>Vehicles won't be refueled when ungaraged as the garage lacks a fuel source</Original>
-            <English>Vehicles won't be refueled when ungaraged as the garage lacks a fuel source</English>
-            <Chinesesimp>由于车库缺乏燃料来源, 车辆在出库时不会加油</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Disabled">
-            <Original>Refuel disabled by server settings</Original>
-            <English>Refuel disabled by server settings</English>
-            <Chinesesimp>服务器设定禁用加油</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Available">
-            <Original>Vehicles will be repaired when ungaraged</Original>
-            <English>Vehicles will be repaired when ungaraged</English>
-            <Chinesesimp>车辆将在出库时进行维修</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Unavailable">
-            <Original>Vehicles won't be repaired when ungaraged as the garage lacks a repair source</Original>
-            <English>Vehicles won't be repaired when ungaraged as the garage lacks a repair source</English>
-            <Chinesesimp>由于车库缺少维修来源, 车辆在出库时将无法维修</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Disabled">
-            <Original>Repair disabled by server settings</Original>
-            <English>Repair disabled by server settings</English>
-            <Chinesesimp>服务器已禁用维修</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_isAmmoSource">
-            <Original>Vehicle is an ammo source</Original>
-            <English>Vehicle is an ammo source</English>
-            <Chinesesimp>该车辆是一种弹药源</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_isFuelSource">
-            <Original>Vehicle is an fuel source</Original>
-            <English>Vehicle is an fuel source</English>
-            <Chinesesimp>该车辆是一种油料源</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_isRepairSource">
-            <Original>Vehicle is an repair source</Original>
-            <English>Vehicle is an repair source</English>
-            <Chinesesimp>该车辆是一种维修源</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_isNotSource">
-            <Original>Vehicle is not a source</Original>
-            <English>Vehicle is not a source</English>
-            <Chinesesimp>车辆不能提供任何来源</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_Seats">
-            <Original>Seats:</Original>
-            <English>Seats:</English>
-            <Chinesesimp>座位: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_Cargo">
-            <Original>Cargo:</Original>
-            <English>Cargo:</English>
-            <Chinesesimp>货物: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_AceCargo">
-            <Original>Ace Cargo:</Original>
-            <English>Ace Cargo:</English>
-            <Chinesesimp>ACE货物</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_Capacity">
-            <Original>Capacity:</Original>
-            <English>Capacity:</English>
-            <Chinesesimp>容量: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_Available">
-            <Original>Available:</Original>
-            <English>Available:</English>
-            <Chinesesimp>提供: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_Speed">
-            <Original>Top speed:</Original>
-            <English>Top speed:</English>
-            <Chinesesimp>最高速度: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_HP">
-            <Original>Horse power:</Original>
-            <English>Horse power:</English>
-            <Chinesesimp>马力: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_InfoPanel_Mass">
-            <Original>Mass:</Original>
-            <English>Mass:</English>
-            <Chinesesimp>质量: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_openGarage_Action">
-            <Original>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Open Garage</Original>
-            <English>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Open Garage</English>
-            <Chinesesimp>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; 打开车库</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_addVehicle_Action">
-            <!--%1 is display name of vehicle-->
-            <Original>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</Original>
-            <English>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</English>
-            <Chinesesimp>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; 车库 %1</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_Null">
-            <Original>You are not looking at a vehicle</Original>
-            <English>You are not looking at a vehicle</English>
-            <Chinesesimp>你眼前的不是载具</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_confirm_NullSelection">
-            <Original>No vehicle selected</Original>
-            <English>No vehicle selected</English>
-            <Chinesesimp>未选择任何车辆</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_SATow">
-            <Original>You can't garage a Vehicle with your Tow Rope out or a Vehicle attached</Original>
-            <English>You can't garage a Vehicle with your Tow Rope out or a Vehicle attached</English>
-            <Chinesesimp>您不能在牵引绳伸出或车辆连接的情况下将车辆停放在车库中</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_LTC">
-            <Original>Loot crate stored</Original>
-            <English>Loot crate stored</English>
-            <Chinesesimp>存放战利品的箱子</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_LightSource_Stored">
-            <Original>Light stored</Original>
-            <English>Light stored</English>
-            <Chinesesimp>轻型储存</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_Distance">
-            <Original>You can't garage vehicles that are more than 25m away from you</Original>
-            <English>You can't garage vehicles that are more than 25m away from you</English>
-            <Chinesesimp>你不能储存距离你25米以上的车辆</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_Destroyed">
-            <Original>You can't garage a destroyed vehicle</Original>
-            <English>You can't garage a destroyed vehicle</English>
-            <Chinesesimp>你不能把一辆被毁的车停在车库里</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_Locked">
-            <Original>You can't garage a locked vehicle</Original>
-            <English>You can't garage a locked vehicle</English>
-            <Chinesesimp>你不能把锁着的车停在车库里</Chinesesimp>
-        </Key>
-        <!--%1 is faction name-->
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_badLocation">
-            <Original>You and the vehicle need to be in a %1 garrison surrounding in order to garage a it</Original>
-            <English>You and the vehicle need to be in a %1 garrison surrounding in order to garage a it</English>
-            <Chinesesimp>您和车辆需要在%1守备区周围才能存车</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesEngaging">
-            <Original>You can't garage vehicles while enemies are engaging you</Original>
-            <English>You can't garage vehicles while enemies are engaging you</English>
-            <Chinesesimp>当敌人与你交战时, 你不能存储汽车</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesNear">
-            <Original>You can't garage vehicles while enemies are near you</Original>
-            <English>You can't garage vehicles while enemies are near you</English>
-            <Chinesesimp>当敌人在你附近时, 你不能存储汽车</Chinesesimp>
-        </Key>
-        <!--%1 is faction name-->
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_airBlocked">
-            <Original>You can't garage a aircraft while you are not near an Aiport which belongs to %1. Please move your aircraft to an Airport to garage it</Original>
-            <English>You can't garage a aircraft while you are not near an Aiport which belongs to %1. Please move your aircraft to an Airport to garage it</English>
-            <Chinesesimp>当您不在属于%1的机场附近时, 您不能停放飞机。请将您的飞机移至机场停放</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_GenericFail">
-            <Original>You can't garage this</Original>
-            <English>You can't garage this</English>
-            <Chinesesimp>你不能停放这个</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_inVehicle">
-            <Original>You can't garage a vehicle while in another vehicle</Original>
-            <English>You can't garage a vehicle while in another vehicle</English>
-            <Chinesesimp>你不能在另一辆车上存车</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_Crewed">
-            <Original>You can't garage a vehicle with crew inside</Original>
-            <English>You can't garage a vehicle with crew inside</English>
-            <Chinesesimp>你不能在车内有乘员的情况下停车</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_Capacity">
-            <Original>Theres not enough room to garage this vehicle</Original>
-            <English>Theres not enough room to garage this vehicle</English>
-            <Chinesesimp>没有足够的空间停放这辆车</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_addVehicle_Success">
-            <!--%1 is display name of vehicle-->
-            <Original>%1 Garaged</Original>
-            <English>%1 Garaged</English>
-            <Chinesesimp>%1 停放</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_requestMount_Denied">
-            <Original>Cant mount static</Original>
-            <English>Cant mount static</English>
-            <Chinesesimp>不能安装静固定武器</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_checkedOutToolTip">
-            <!-- name is appended on at the start with a spcae in between-->
-            <Original>is looking at this vehicle.</Original>
-            <English>is looking at this vehicle.</English>
-            <Chinesesimp>正在看这辆车。</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_LockedToolTip">
-            <!-- name is appended on at the end with a spcae in between-->
-            <Original>Vehicle is locked by</Original>
-            <English>Vehicle is locked by</English>
-            <Chinesesimp>锁定载具的是</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_CP_Rotation">
-            <!--Keybinds are hardcoded to key DIK codes: DIK_E, DIK_Q, DIK_ESCAPE, DIK_RETURN, and DIK_SPACE-->
-            <Original>&lt;t size='0.6'&gt;Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;br/&gt;Place: Space&lt;/t&gt;</Original>
-            <English>&lt;t size='0.6'&gt;Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;br/&gt;Place: Space&lt;/t&gt;</English>
-            <Chinesesimp>&lt;t size='0.6'&gt;向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/退出 &lt;br/&gt;放置: 空格&lt;/t&gt;</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_CP_TooFar">
-            <Original>&lt;t size='0.6'&gt;Cant place vehicle that far away &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
-            <English>&lt;t size='0.6'&gt;Cant place vehicle that far away &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</English>
-            <Chinesesimp>&lt;t size='0.6'&gt;不能把车放那么远 &lt;br/&gt;取消: 回车/退出 &lt;/t&gt;</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_CP_Blocked">
-            <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
-            <English>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</English>
-            <Chinesesimp>&lt;t size='0.6'&gt;有东西挡住了位置 &lt;br/&gt; 向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_CallbackFailed">
-            <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
-            <English>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</English>
-            <Chinesesimp>&lt;t size='0.6'&gt;有东西挡住了位置 &lt;br/&gt; 向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_Cam_Controls">
-            <Original>Camera controls</Original>
-            <English>Camera controls</English>
-            <Chinesesimp>摄像机控制</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_Cam_Rotate">
-            <Original>Rotate: Right Mouse Button + Move mouse</Original>
-            <English>Rotate: Right Mouse Button + Move mouse</English>
-            <Chinesesimp>旋转: 鼠标右键+移动鼠标</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Feedback_Cam_Zoom">
-            <Original>Zoom: Right Mouse Button + Mouse wheel</Original>
-            <English>Zoom: Right Mouse Button + Mouse wheel</English>
-            <Chinesesimp>缩放: 鼠标右键+鼠标滚轮</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Pylons_Mirror">
-            <Original>Mirror</Original>
-            <English>Mirror</English>
-            <Chinesesimp>镜子</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Pylons_CustomPreset">
-            <Original>[Custom preset]</Original>
-            <English>[Custom preset]</English>
-            <Chinesesimp>[自定义预设]</Chinesesimp>
-        </Key>
-        <!--%1 is pylon number-->
-        <Key ID="STR_HR_GRG_Pylons_PylonText">
-            <Original>Pylon %1</Original>
-            <English>Pylon %1</English>
-            <Chinesesimp>挂架 %1</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Pylons_Empty">
-            <Original>[Empty]</Original>
-            <English>[Empty]</English>
-            <Chinesesimp>[空]</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Pylons_noPylons">
-            <Original>No pylon customizations for:</Original>
-            <English>No pylon customizations for:</English>
-            <Chinesesimp>没有针对以下对象的自定义挂架: </Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Pylons_Gunner">
-            <Original>Gunner</Original>
-            <English>Gunner</English>
-            <Chinesesimp>炮手</Chinesesimp>
-        </Key>
-        <Key ID="STR_HR_GRG_Pylons_Driver">
-            <Original>Driver</Original>
-            <English>Driver</English>
-            <Chinesesimp>驾驶员</Chinesesimp>
-        </Key>
-        </Container>
+      <Key ID="STR_HR_GRG_Generic_Cancel">
+        <Original>Cancel</Original>
+        <English>Cancel</English>
+        <Chinesesimp>取消</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Lock">
+        <Original>(Un)Lock</Original>
+        <English>(Un)Lock</English>
+        <Chinesesimp>(解除)锁定</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Confirm">
+        <Original>Confirm</Original>
+        <English>Confirm</English>
+        <Chinesesimp>确认</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Cars">
+        <Original>Cars</Original>
+        <English>Cars</English>
+        <Chinesesimp>车辆</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Armored">
+        <Original>Armor</Original>
+        <English>Armor</English>
+        <Chinesesimp>军火库</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Air">
+        <Original>Aircraft</Original>
+        <English>Aircraft</English>
+        <Chinesesimp>飞机</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_AirDisabled">
+        <Original>You can only acces aircrafts from a friendly airbase</Original>
+        <English>You can only acces aircrafts from a friendly airbase</English>
+        <Chinesesimp>你只能从友军空军基地取出飞机</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Boat">
+        <Original>Ships</Original>
+        <English>Ships</English>
+        <Chinesesimp>船只</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Static">
+        <Original>Statics</Original>
+        <English>Statics</English>
+        <Chinesesimp>固定武器</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Mounts">
+        <Original>Mounts</Original>
+        <English>Mounts</English>
+        <Chinesesimp>装载</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Texture">
+        <Original>Texture</Original>
+        <English>Texture</English>
+        <Chinesesimp>贴图</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Anim">
+        <Original>Customize</Original>
+        <English>Customize</English>
+        <Chinesesimp>定制</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_Pylons">
+        <Original>Pylons</Original>
+        <English>Pylons</English>
+        <Chinesesimp>挂架</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Generic_PylonDisabled">
+        <Original>Pylons require an ammo source to edit</Original>
+        <English>Pylons require an ammo source to edit</English>
+        <Chinesesimp>挂架需要一个弹药源(弹药车）来编辑</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_Header">
+        <Original>Sources:</Original>
+        <English>Sources:</English>
+        <Chinesesimp>资料来源: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Available">
+        <Original>Vehicles will be rearmed when ungaraged</Original>
+        <English>Vehicles will be rearmed when ungaraged</English>
+        <Chinesesimp>车辆脱钩后将重新武装</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Unavailable">
+        <Original>Vehicles won't be rearmed when ungaraged as the garage lacks a ammo source</Original>
+        <English>Vehicles won't be rearmed when ungaraged as the garage lacks a ammo source</English>
+        <Chinesesimp>由于车库缺乏弹药来源, 车辆在解除武装时无法重新武装</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Ammo_Disabled">
+        <Original>Rearm disabled by server</Original>
+        <English>Rearm disabled by server</English>
+        <Chinesesimp>服务器已禁用重新武装</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Available">
+        <Original>Vehicles will be refueled when ungaraged</Original>
+        <English>Vehicles will be refueled when ungaraged</English>
+        <Chinesesimp>车辆将在出库时加油</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Unavailable">
+        <Original>Vehicles won't be refueled when ungaraged as the garage lacks a fuel source</Original>
+        <English>Vehicles won't be refueled when ungaraged as the garage lacks a fuel source</English>
+        <Chinesesimp>由于车库缺乏燃料来源, 车辆在出库时不会加油</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Fuel_Disabled">
+        <Original>Refuel disabled by server settings</Original>
+        <English>Refuel disabled by server settings</English>
+        <Chinesesimp>服务器设定禁用加油</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Available">
+        <Original>Vehicles will be repaired when ungaraged</Original>
+        <English>Vehicles will be repaired when ungaraged</English>
+        <Chinesesimp>车辆将在出库时进行维修</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Unavailable">
+        <Original>Vehicles won't be repaired when ungaraged as the garage lacks a repair source</Original>
+        <English>Vehicles won't be repaired when ungaraged as the garage lacks a repair source</English>
+        <Chinesesimp>由于车库缺少维修来源, 车辆在出库时将无法维修</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_SourcePanel_toolTip_Repair_Disabled">
+        <Original>Repair disabled by server settings</Original>
+        <English>Repair disabled by server settings</English>
+        <Chinesesimp>服务器已禁用维修</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_isAmmoSource">
+        <Original>Vehicle is an ammo source</Original>
+        <English>Vehicle is an ammo source</English>
+        <Chinesesimp>该车辆是一种弹药源</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_isFuelSource">
+        <Original>Vehicle is an fuel source</Original>
+        <English>Vehicle is an fuel source</English>
+        <Chinesesimp>该车辆是一种油料源</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_isRepairSource">
+        <Original>Vehicle is an repair source</Original>
+        <English>Vehicle is an repair source</English>
+        <Chinesesimp>该车辆是一种维修源</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_isNotSource">
+        <Original>Vehicle is not a source</Original>
+        <English>Vehicle is not a source</English>
+        <Chinesesimp>车辆不能提供任何来源</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_Seats">
+        <Original>Seats:</Original>
+        <English>Seats:</English>
+        <Chinesesimp>座位: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_Cargo">
+        <Original>Cargo:</Original>
+        <English>Cargo:</English>
+        <Chinesesimp>货物: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_AceCargo">
+        <Original>Ace Cargo:</Original>
+        <English>Ace Cargo:</English>
+        <Chinesesimp>ACE货物</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_Capacity">
+        <Original>Capacity:</Original>
+        <English>Capacity:</English>
+        <Chinesesimp>容量: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_Available">
+        <Original>Available:</Original>
+        <English>Available:</English>
+        <Chinesesimp>提供: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_Speed">
+        <Original>Top speed:</Original>
+        <English>Top speed:</English>
+        <Chinesesimp>最高速度: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_HP">
+        <Original>Horse power:</Original>
+        <English>Horse power:</English>
+        <Chinesesimp>马力: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_InfoPanel_Mass">
+        <Original>Mass:</Original>
+        <English>Mass:</English>
+        <Chinesesimp>质量: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_openGarage_Action">
+        <Original>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Open Garage</Original>
+        <English>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Open Garage</English>
+        <Chinesesimp>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; 打开车库</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_addVehicle_Action">
+        <!--%1 is display name of vehicle-->
+        <Original>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</Original>
+        <English>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; Garage %1</English>
+        <Chinesesimp>&lt;img image='\A3\ui_f\data\GUI\Rsc\RscDisplayArsenal\spaceGarage_ca.paa'&gt;&lt;/img&gt; 车库 %1</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_Null">
+        <Original>You are not looking at a vehicle</Original>
+        <English>You are not looking at a vehicle</English>
+        <Chinesesimp>你眼前的不是载具</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_confirm_NullSelection">
+        <Original>No vehicle selected</Original>
+        <English>No vehicle selected</English>
+        <Chinesesimp>未选择任何车辆</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_SATow">
+        <Original>You can't garage a Vehicle with your Tow Rope out or a Vehicle attached</Original>
+        <English>You can't garage a Vehicle with your Tow Rope out or a Vehicle attached</English>
+        <Chinesesimp>您不能在牵引绳伸出或车辆连接的情况下将车辆停放在车库中</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_LTC">
+        <Original>Loot crate stored</Original>
+        <English>Loot crate stored</English>
+        <Chinesesimp>存放战利品的箱子</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_LightSource_Stored">
+        <Original>Light stored</Original>
+        <English>Light stored</English>
+        <Chinesesimp>轻型储存</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_Distance">
+        <Original>You can't garage vehicles that are more than 25m away from you</Original>
+        <English>You can't garage vehicles that are more than 25m away from you</English>
+        <Chinesesimp>你不能储存距离你25米以上的车辆</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_Destroyed">
+        <Original>You can't garage a destroyed vehicle</Original>
+        <English>You can't garage a destroyed vehicle</English>
+        <Chinesesimp>你不能把一辆被毁的车停在车库里</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_Locked">
+        <Original>You can't garage a locked vehicle</Original>
+        <English>You can't garage a locked vehicle</English>
+        <Chinesesimp>你不能把锁着的车停在车库里</Chinesesimp>
+      </Key>
+      <!--%1 is faction name-->
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_badLocation">
+        <Original>You and the vehicle need to be in a %1 garrison surrounding in order to garage a it</Original>
+        <English>You and the vehicle need to be in a %1 garrison surrounding in order to garage a it</English>
+        <Chinesesimp>您和车辆需要在%1守备区周围才能存车</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesEngaging">
+        <Original>You can't garage vehicles while enemies are engaging you</Original>
+        <English>You can't garage vehicles while enemies are engaging you</English>
+        <Chinesesimp>当敌人与你交战时, 你不能存储汽车</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_enemiesNear">
+        <Original>You can't garage vehicles while enemies are near you</Original>
+        <English>You can't garage vehicles while enemies are near you</English>
+        <Chinesesimp>当敌人在你附近时, 你不能存储汽车</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_GenericFail">
+        <Original>You can't garage this</Original>
+        <English>You can't garage this</English>
+        <Chinesesimp>你不能停放这个</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_inVehicle">
+        <Original>You can't garage a vehicle while in another vehicle</Original>
+        <English>You can't garage a vehicle while in another vehicle</English>
+        <Chinesesimp>你不能在另一辆车上存车</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_Crewed">
+        <Original>You can't garage a vehicle with crew inside</Original>
+        <English>You can't garage a vehicle with crew inside</English>
+        <Chinesesimp>你不能在车内有乘员的情况下停车</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_Capacity">
+        <Original>Theres not enough room to garage this vehicle</Original>
+        <English>Theres not enough room to garage this vehicle</English>
+        <Chinesesimp>没有足够的空间停放这辆车</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_addVehicle_Success">
+        <!--%1 is display name of vehicle-->
+        <Original>%1 Garaged</Original>
+        <English>%1 Garaged</English>
+        <Chinesesimp>%1 停放</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_requestMount_Denied">
+        <Original>Cant mount static</Original>
+        <English>Cant mount static</English>
+        <Chinesesimp>不能安装静固定武器</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_checkedOutToolTip">
+        <!-- name is appended on at the start with a spcae in between-->
+        <Original>is looking at this vehicle.</Original>
+        <English>is looking at this vehicle.</English>
+        <Chinesesimp>正在看这辆车。</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_LockedToolTip">
+        <!-- name is appended on at the end with a spcae in between-->
+        <Original>Vehicle is locked by</Original>
+        <English>Vehicle is locked by</English>
+        <Chinesesimp>锁定载具的是</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_CP_Rotation">
+        <!--Keybinds are hardcoded to key DIK codes: DIK_E, DIK_Q, DIK_ESCAPE, DIK_RETURN, and DIK_SPACE-->
+        <Original>&lt;t size='0.6'&gt;Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;br/&gt;Place: Space&lt;/t&gt;</Original>
+        <English>&lt;t size='0.6'&gt;Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;br/&gt;Place: Space&lt;/t&gt;</English>
+        <Chinesesimp>&lt;t size='0.6'&gt;向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/退出 &lt;br/&gt;放置: 空格&lt;/t&gt;</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_CP_TooFar">
+        <Original>&lt;t size='0.6'&gt;Cant place vehicle that far away &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
+        <English>&lt;t size='0.6'&gt;Cant place vehicle that far away &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</English>
+        <Chinesesimp>&lt;t size='0.6'&gt;不能把车放那么远 &lt;br/&gt;取消: 回车/退出 &lt;/t&gt;</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_CP_Blocked">
+        <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
+        <English>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</English>
+        <Chinesesimp>&lt;t size='0.6'&gt;有东西挡住了位置 &lt;br/&gt; 向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_CallbackFailed">
+        <Original>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</Original>
+        <English>&lt;t size='0.6'&gt;Something is blocking placement &lt;br/&gt; Rotate Left: Q &lt;br/&gt;Rotate Right: E &lt;br/&gt;Cancel: Enter/ESC &lt;/t&gt;</English>
+        <Chinesesimp>&lt;t size='0.6'&gt;有东西挡住了位置 &lt;br/&gt; 向左旋转: Q &lt;br/&gt;向右旋转: E &lt;br/&gt;取消: 回车/ESC &lt;/t&gt;</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_Cam_Controls">
+        <Original>Camera controls</Original>
+        <English>Camera controls</English>
+        <Chinesesimp>摄像机控制</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_Cam_Rotate">
+        <Original>Rotate: Right Mouse Button + Move mouse</Original>
+        <English>Rotate: Right Mouse Button + Move mouse</English>
+        <Chinesesimp>旋转: 鼠标右键+移动鼠标</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Feedback_Cam_Zoom">
+        <Original>Zoom: Right Mouse Button + Mouse wheel</Original>
+        <English>Zoom: Right Mouse Button + Mouse wheel</English>
+        <Chinesesimp>缩放: 鼠标右键+鼠标滚轮</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Pylons_Mirror">
+        <Original>Mirror</Original>
+        <English>Mirror</English>
+        <Chinesesimp>镜子</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Pylons_CustomPreset">
+        <Original>[Custom preset]</Original>
+        <English>[Custom preset]</English>
+        <Chinesesimp>[自定义预设]</Chinesesimp>
+      </Key>
+      <!--%1 is pylon number-->
+      <Key ID="STR_HR_GRG_Pylons_PylonText">
+        <Original>Pylon %1</Original>
+        <English>Pylon %1</English>
+        <Chinesesimp>挂架 %1</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Pylons_Empty">
+        <Original>[Empty]</Original>
+        <English>[Empty]</English>
+        <Chinesesimp>[空]</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Pylons_noPylons">
+        <Original>No pylon customizations for:</Original>
+        <English>No pylon customizations for:</English>
+        <Chinesesimp>没有针对以下对象的自定义挂架: </Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Pylons_Gunner">
+        <Original>Gunner</Original>
+        <English>Gunner</English>
+        <Chinesesimp>炮手</Chinesesimp>
+      </Key>
+      <Key ID="STR_HR_GRG_Pylons_Driver">
+        <Original>Driver</Original>
+        <English>Driver</English>
+        <Chinesesimp>驾驶员</Chinesesimp>
+      </Key>
+    </Container>
     <Container name="Utility_Items">
-        <Key ID="STR_A3A_Utility_Items_Feedback_Normal">
-            <Original>Q/E to rotate - Space/Enter to stop.</Original>
-            <English>Q/E to rotate - Space/Enter to stop.</English>
-            <Chinesesimp>Q/E旋转-空格/回车停止。</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_Utility_Items_Feedback_Far">
-            <Original>You're too far</Original>
-            <English>You're too far</English>
-            <Chinesesimp>你太远了</Chinesesimp>
-        </Key>
-        <Key ID="STR_A3A_Utility_Items_Feedback_Title">
-            <Original>Utility items</Original>
-            <English>Utility items</English>
-        </Key>
-        <Key ID="STR_A3A_Utility_Items_Feedback_Attached_Objects">
-            <Original>You are already carrying something.</Original>
-            <English>You are already carrying something.</English>
-        </Key>
+      <Key ID="STR_A3A_Utility_Items_Feedback_Normal">
+        <Original>Q/E to rotate - Space/Enter to stop.</Original>
+        <English>Q/E to rotate - Space/Enter to stop.</English>
+        <Chinesesimp>Q/E旋转-空格/回车停止。</Chinesesimp>
+      </Key>
+      <Key ID="STR_A3A_Utility_Items_Feedback_Far">
+        <Original>You're too far</Original>
+        <English>You're too far</English>
+        <Chinesesimp>你太远了</Chinesesimp>
+      </Key>
+      <Key ID="STR_A3A_Utility_Items_Feedback_Title">
+        <Original>Utility items</Original>
+        <English>Utility items</English>
+      </Key>
+      <Key ID="STR_A3A_Utility_Items_Feedback_Attached_Objects">
+        <Original>You are already carrying something.</Original>
+        <English>You are already carrying something.</English>
+      </Key>
     </Container>
     <Container name="time_units">
       <!--Note the lack of front spacing on abbreviations.-->
@@ -5116,7 +5164,7 @@
         <Original>ms</Original>
       </Key>
       <Key ID="STR_antistasi_timeSpan_microseconds_abbr">
-        <Original>µs</Original>   <!--Note: Micro sign (µ) U+00B5, is completely different from Greek Mu (μ) U+-->
+        <Original>µs</Original>        <!--Note: Micro sign (µ) U+00B5, is completely different from Greek Mu (μ) U+-->
       </Key>
       <Key ID="STR_antistasi_timeSpan_nanoseconds_abbr">
         <Original>ns</Original>
@@ -5295,15 +5343,6 @@
       </Key>
     </Container>
     <Container name="surrender_actions">
-      <Key ID="STR_interrogate_action">
-        <Original>Interrogate</Original>
-        <English>Interrogate</English>
-        <French>Interroger</French>
-        <Russian>Допросить</Russian>
-        <German>Abfragen</German>
-        <Czech>Vyslýchat</Czech>
-        <Chinesesimp>审问</Chinesesimp>
-      </Key>
       <Key ID="STR_release_action">
         <Original>Release</Original>
         <English>Release</English>
@@ -5658,5 +5697,52 @@
       <Italian></Italian>
       <Chinesesimp>还需要 %1¢。</Chinesesimp>
     </Key>
+  </Package>
+  <Package name="Common">
+    <Container name="Actions">
+      <Key ID="STR_JNC_ACT_SELECT">
+        <Original>Select</Original>
+        <German>Auswählen</German>
+      </Key>
+      <Key ID="STR_JNC_ACT_CANCEL">
+        <Original>Cancel</Original>
+        <German>Abbrechen</German>
+      </Key>
+      <Key ID="STR_JNC_ACT_SELECT_HINT">
+        <Original>Select an object</Original>
+        <German>Objekt auswählen</German>
+      </Key>
+      <Key ID="STR_JNC_ACT_SELECT_NO_OBJECT">
+        <Original>Not looking at anything</Original>
+        <German>Nichts ausgewählt</German>
+      </Key>
+    </Container>
+  </Package>
+  <Package name="Arsenal">
+    <Container name="Actions">
+      <Key ID="STR_JNA_ACT_OPEN">
+        <Original>Arsenal</Original>
+        <German>Arsenal</German>
+      </Key>
+      <Key ID="STR_JNA_ACT_CONTAINER_OPEN">
+        <Original>Select vehicle to open arsenal for it</Original>
+        <Russian>Выбрать технику и открыть арсенал для неё</Russian>
+      </Key>
+      <Key ID="STR_JNA_ACT_UNLOAD">
+        <Original>Unload from vehicle</Original>
+        <German>Fahrzeug entladen</German>
+      </Key>
+      <Key ID="STR_JNA_ACT_CONTAINER_SELECTERROR1">
+        <Original>Not looking at an object</Original>
+      </Key>
+      <Key ID="STR_JNA_ACT_CONTAINER_SELECTERROR2">
+        <Original>Object too far away</Original>
+        <German>Objekt zu weit entfernt</German>
+      </Key>
+      <Key ID="STR_JNA_ACT_CONTAINER_SELECTERROR3">
+        <Original>Object does not have any inventory</Original>
+        <German>Objekt hat kein Inventar</German>
+      </Key>
+    </Container>
   </Package>
 </Project>

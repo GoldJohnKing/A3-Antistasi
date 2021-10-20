@@ -27,5 +27,5 @@ _money = round _money;
 _unit setVariable ["moneyX", _money, true];
 _sign = if(_funds > 0) then {"+"} else {""};
 
-_textX = format ["<br/><br/><br/><br/><br/><br/><t color='#00FF00'>%1 %2 €</t>",_sign,_funds];
+_textX = format ["<br/><br/><br/><br/><br/><br/><t color='#00FF00'>%1 %2 %3</t>", _sign, _funds, currencySymbol];
 [petros,"income",_textX] remoteExec ["A3A_fnc_commsMP",_unit];

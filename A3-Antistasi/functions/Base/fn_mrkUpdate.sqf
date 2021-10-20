@@ -25,7 +25,7 @@ if (sidesX getVariable [_markerX,sideUnknown] == teamPlayer) then {
 			_textX = format ["Factory%1",_textX];
 		};
 		case(_markerX in seaports): {
-			if (toLower worldName isEqualTo "enoch") then {
+			if (toLower worldName in ["enoch", "vn_khe_sanh"]) then {
 				_textX = format ["River Port%1",_textX];
 			} else {
 				_textX = format ["Sea Port%1",_textX];
@@ -40,6 +40,14 @@ if (sidesX getVariable [_markerX,sideUnknown] == teamPlayer) then {
 	[_mrkD,_textX] remoteExec ["setMarkerTextLocal",[teamPlayer,civilian],true];
 }
 else {
+	if (_markerX in citiesX) exitWith {
+		_mrkD setMarkerText "";
+		if (gameMode != 4) then {
+		    _mrkD setMarkerColor ([colorOccupants, "ColorBlack"] select (_markerX in destroyedSites));
+		} else {
+		    _mrkD setMarkerColor ([colorInvaders, "ColorBlack"] select (_markerX in destroyedSites));
+		};
+	};
 	if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then {
 		switch(true) do {
 			case(_markerX in airportsX): {
@@ -89,7 +97,7 @@ else {
 			_mrkD setMarkerText "Factory";
 		};
 		case(_markerX in seaports): {
-			if (toLower worldName isEqualTo "enoch") then {
+			if (toLower worldName in ["enoch", "vn_khe_sanh"]) then {
 				_mrkD setMarkerText "River Port";
 			} else {
 				_mrkD setMarkerText "Sea Port";

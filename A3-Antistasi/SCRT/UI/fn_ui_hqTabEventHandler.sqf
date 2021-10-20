@@ -33,7 +33,7 @@ if(_mode == "ADD") then {
                 [
                     "FAIL",
                     "Rebuild Assets",  
-                    parseText "Not enough money to rebuild assets there.</br>Costs: 5000€", 
+                    parseText format ["Not enough money to rebuild assets there.</br>Costs: 5000%1", currencySymbol], 
                     30
                 ] spawn SCRT_fnc_ui_showMessage;
             };

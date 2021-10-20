@@ -19,13 +19,13 @@ switch (supportType) do {
         _costTextBox ctrlSetText "Costs 1 Support";
     };
     case ("VEH_AIRDROP"): {
-        _costTextBox ctrlSetText "Costs 1 Support and 200€";
+        _costTextBox ctrlSetText format ["Costs 1 Support and 200%1", currencySymbol];
     };
     case ("LOOTCRATE_AIRDROP"): {
-        _costTextBox ctrlSetText "Costs 1 Support and 200€";
+        _costTextBox ctrlSetText format ["Costs 1 Support and 200%1", currencySymbol];
     };
     case ("STATIC_MG_AIRDROP"): {
-        _costTextBox ctrlSetText "Costs 1 Support and 1000€";
+        _costTextBox ctrlSetText format ["Costs 1 Support and 1000%1", currencySymbol];
     };
     case ("NAPALM");
     case ("HE");
@@ -34,10 +34,10 @@ switch (supportType) do {
         _costTextBox ctrlSetText "Costs 1 Airstrike";
     };
     case ("PARADROP"): {
-        _costTextBox ctrlSetText "Costs 1 Support and 500€";
+        _costTextBox ctrlSetText format ["Costs 1 Support and 500%1", currencySymbol];
     };
     case ("LOOTHELI"): {
-        _costTextBox ctrlSetText "Costs 1 Support and 2000€";
+        _costTextBox ctrlSetText format ["Costs 1 Support and 2000%1", currencySymbol];
     };
     default {
         _costTextBox ctrlSetText "Costs 1 Support";

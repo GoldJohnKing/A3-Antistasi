@@ -15,11 +15,11 @@ Public: Yes
 Dependencies:
     <ARRAY> allMachineGuns
     <BOOL> haveNV
-    <BOOL> hasIFA
     <ARRAY> squadLeaders
 
 Example:
 [_group, _killer] spawn A3A_fnc_AIreactOnKill;
+//(_x getVariable "unitType") in squadLeaders
 */
 
 params ["_group", "_killer"];
@@ -92,7 +92,7 @@ if(_group getVariable ["canCallSupportAt", -1] < dateToNumber date) then
                     }
                     else
                     {
-                        if ((random 100) < 40) then {
+                        if ((random 100) < 35) then {
                             [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke
                         };
                     };
@@ -118,7 +118,7 @@ if(_group getVariable ["canCallSupportAt", -1] < dateToNumber date) then
                 else {
                     //ordinary soldier will throw smoke
                     if (sunOrMoon == 1) then {
-                        if ((random 100) < 40) then {
+                        if ((random 100) < 35) then {
                             [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke;
                         };
                     } else {
@@ -126,7 +126,8 @@ if(_group getVariable ["canCallSupportAt", -1] < dateToNumber date) then
                         if (_noNvgIndex != -1 && count (getArray (configfile >> "CfgWeapons" >> primaryWeapon _x >> "muzzles")) == 2) then {
                             [_x,_enemy] spawn A3A_fnc_useFlares;
                         } else {
-                            if ((random 100) < 40) then {
+                            if ((random 100) < 35) then {
+                                
                                 [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke;
                             };
                         };

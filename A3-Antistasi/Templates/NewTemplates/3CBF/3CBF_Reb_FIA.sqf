@@ -27,6 +27,7 @@
 ["vehicleCivTruck", "RHS_Ural_Open_Civ_03"] call _fnc_saveToTemplate;
 ["vehicleCivHeli", "RHS_Mi8t_civilian"] call _fnc_saveToTemplate;
 ["vehicleCivBoat", "UK3CB_CHC_C_Fishing_Boat"] call _fnc_saveToTemplate;
+["vehicleCivSupply", "C_Van_01_box_F"] call _fnc_saveToTemplate;
 
 ["staticMG", "I_G_HMG_02_high_F"] call _fnc_saveToTemplate;
 ["staticAT", "rhsgref_nat_SPG9"] call _fnc_saveToTemplate;

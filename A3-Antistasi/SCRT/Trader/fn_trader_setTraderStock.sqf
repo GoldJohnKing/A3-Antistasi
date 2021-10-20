@@ -14,8 +14,16 @@ diag_log format ["%1: [Antistasi] | INFO | fn_trader_setTraderStock | Choosing t
 diag_log format ["%1: [Antistasi] | INFO | fn_trader_setTraderStock | Trader: %2", servertime, str _traderX];
 
 switch (true) do {
+    case (A3A_hasVN && {A3A_hasUR}): {
+        diag_log format ["%1: [Antistasi] | INFO | fn_trader_setTraderStock | Using VN UR trader stock.", servertime];
+        [_traderX, "vnur"] call HALs_store_fnc_addTrader;
+    };
+    case (A3A_hasVN): {
+        diag_log format ["%1: [Antistasi] | INFO | fn_trader_setTraderStock | Using VN trader stock.", servertime];
+        [_traderX, "vn"] call HALs_store_fnc_addTrader;
+    };
     case (A3A_coldWarMode): {
-        diag_log format ["%1: [Antistasi] | INFO | fn_trader_setTraderStock | Using 3CBF trader stock.", servertime];
+        diag_log format ["%1: [Antistasi] | INFO | fn_trader_setTraderStock | Using 3CBF CW trader stock.", servertime];
         [_traderX, "3cbfcw"] call HALs_store_fnc_addTrader;
     };
     case (A3A_hasGlobMobAaf): {

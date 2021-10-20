@@ -29,7 +29,7 @@ private _radarType = if (_sideX == Occupants) then {NATOAARadar} else {CSATAARad
 private _samType = if (_sideX == Occupants) then {NATOAASam} else {CSATAASam};
 private _aaElements = [_radarType, _samType];
 
-private _heavyVehicles = if (_sideX == Occupants) then { vehNATOAPC + vehNATOTanks + vehNATOAA } else { vehCSATAPC + vehCSATTanks + vehCSATAA };
+private _heavyVehicles = if (_sideX == Occupants) then { vehNATOAPC + vehNATOTanks + vehNATOAA + vehFIATanks } else { vehCSATAPC + vehCSATTanks + vehCSATAA + vehWAMTanks };
 
 
 /////////////////////////////
@@ -178,9 +178,6 @@ private _ang = markerDir _markerX;
 _mrk setMarkerDirLocal _ang;
 if (!debug) then {_mrk setMarkerAlphaLocal 0};
 private _garrison = garrison getVariable [_markerX,[]];
-if (count _garrison > 120) then {
-	_garrison resize 120;
-};
 
 private _additionalGarrison = [_sideX, _markerX] call SCRT_fnc_garrison_rollOversizeGarrison;
 if (count _additionalGarrison > 0) then {
@@ -242,11 +239,7 @@ private _typeUnit = if (_sideX == Occupants) then {
 } else {
 	staticCrewInvaders call SCRT_fnc_unit_selectInfantryTier
 };
-private _typeVehX = if (_sideX == Occupants) then {
- 	if (NATOHowitzer != "") then {NATOHowitzer} else {NATOMortar}
-} else {
-	if (CSATHowitzer != "") then {CSATHowitzer} else {CSATMortar}
-};
+private _typeVehX = if (_sideX == Occupants) then {NATOMortar} else {CSATMortar};
 
 _spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
 while {_spawnParameter isEqualType []} do

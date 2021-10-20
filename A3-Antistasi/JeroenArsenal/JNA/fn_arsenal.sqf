@@ -1174,7 +1174,7 @@ switch _mode do {
 		};
 
 		private _indexList = _index;
-		if(UINamespace getVariable ["jn_type","arsenal"] isEqualTo "vehicleArsenal")then{
+		if(UINamespace getVariable ["jn_type","arsenal"] isEqualTo "containerArsenal")then{
 			_indexList = [IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL] select (_index in [IDCS_LEFT]);
 		};
 
@@ -1235,7 +1235,7 @@ switch _mode do {
 
 		//when used by vehicleArsenal;
 		_indexList = _index;
-		if(UINamespace getVariable ["jn_type","arsenal"] isEqualTo "vehicleArsenal")then{
+		if(UINamespace getVariable ["jn_type","arsenal"] isEqualTo "containerArsenal")then{
 			_indexList = [IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG,IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL] select (_index in [IDCS_LEFT]);
 		};
 

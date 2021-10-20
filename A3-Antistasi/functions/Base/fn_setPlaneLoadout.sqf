@@ -102,6 +102,35 @@ if (_type == "CAS") then
             _plane setVariable ["rocketLauncher", ["Rocket_04_AP_Plane_CAS_01_F", "missiles_DAR"]];
             _plane setVariable ["missileLauncher", ["missiles_SCALPEL"]];
         };
+        case "uns_Mig21_HBMB";
+        case "uns_Mig21_HCAS";
+        case "uns_Mig21_CAS":
+        {
+            _loadout = ["uns_pylonRack_16Rnd_Rocket_57_HE","uns_pylonRack_16Rnd_Rocket_57_HE","uns_pylonRack_16Rnd_Rocket_57_HE","uns_pylonRack_16Rnd_Rocket_57_HE","uns_pylonRack_16Rnd_Rocket_57_HE"];
+            _plane setVariable ["mainGun", "uns_NR30"];
+            _plane setVariable ["rocketLauncher", ["uns_57mmLauncher_dl"]];
+            _plane setVariable ["missileLauncher", []];
+        };
+        case "uns_A4E_skyhawk_CAS":
+        {
+            _loadout = ["uns_pylonRack_4Rnd_Rocket_Zuni_HE","uns_pylonRack_4Rnd_Rocket_Zuni_HE","uns_pylonRack_1Rnd_AGM12","uns_pylonRack_1Rnd_AGM12","uns_pylonRack_21Rnd_Rocket_FFAR"];
+            _plane setVariable ["mainGun", "uns_20mm_Cannon_mk12"];
+            _plane setVariable ["rocketLauncher", ["uns_ffar_launcher_dl", "Uns_ZuniLauncher_dl"]];
+            _plane setVariable ["missileLauncher", ["uns_AGM12_Launcher_dl"]];
+        };
+        case "uns_A6_Intruder_CAS":
+        {
+            _loadout = ["uns_pylonRack_4Rnd_Rocket_Zuni_HE","uns_pylonRack_12Rnd_Rocket_Zuni_FRAG","uns_pylonRack_21Rnd_Rocket_FFAR_WP","uns_pylonRack_21Rnd_Rocket_FFAR_WP","uns_pylonRack_1Rnd_AGM12"];
+            _plane setVariable ["rocketLauncher", ["Uns_ZuniLauncher_dl", "Uns_FFAR_WP_Launcher_dl"]];
+            _plane setVariable ["missileLauncher", ["uns_AGM12_Launcher_dl"]];
+        };
+        case "uns_A7N_CAS":
+        {
+            _loadout = ["uns_pylonRack_1Rnd_AGM12","uns_pylonRack_1Rnd_AGM12","uns_pylonRack_7Rnd_Rocket_FFAR","uns_pylonRack_4Rnd_Rocket_Zuni_AT","uns_pylonRack_4Rnd_Rocket_Zuni_FRAG"];
+            _plane setVariable ["mainGun", "uns_M61A1"];
+            _plane setVariable ["rocketLauncher", ["uns_ffar_launcher_dl", "Uns_ZuniLauncher_dl"]];
+            _plane setVariable ["missileLauncher", ["uns_AGM12_Launcher_dl"]];
+        };
         default
         {
             [1, format ["Plane type %1 currently not supported for CAS, please add the case!", typeOf _plane], _fileName] call A3A_fnc_log;
@@ -165,6 +194,23 @@ if (_type == "AA") then
         case "UK3CB_MDF_B_Mystere_AA1":
         {
             _loadout = ["PylonRack_1Rnd_Missile_AA_04_F","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_AAA_missiles","PylonRack_1Rnd_Missile_AA_04_F"];
+        };
+        case "uns_Mig21_CAP":
+        {
+            _loadout = ["uns_pylonRack_1Rnd_K13", "uns_pylonRack_1Rnd_K13"];
+        };
+        case "uns_A4E_skyhawk_CAP":
+        {
+            _loadout = ["uns_pylonRack_1Rnd_AIM9D", "uns_pylonRack_1Rnd_AIM9D"];
+        };
+        case "uns_A7N_CAP";
+        case "uns_f100b_CAP": 
+        {
+            _loadout = ["uns_pylonRack_1Rnd_AIM9D", "uns_pylonRack_1Rnd_AIM9D", "uns_pylonRack_1Rnd_AIM9D", "uns_pylonRack_1Rnd_AIM9D"];
+        };
+        case "uns_f105D_CAP": 
+        {
+            _loadout = ["uns_pylonRack_2Rnd_AIM9D", "uns_pylonRack_2Rnd_AIM9D"];
         };
         default
         {

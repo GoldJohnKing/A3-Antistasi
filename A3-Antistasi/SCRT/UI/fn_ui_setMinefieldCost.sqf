@@ -40,6 +40,6 @@ if (count _availableMinesPool < 1) then {
 
 _costs = (2*(server getVariable SDKExp)) + ([vehSDKTruck] call A3A_fnc_vehiclePrice);
 _hr = 2;
-_costTextBox ctrlSetText format ["Cost: 5 %1s, %2 HR and %3€", minefieldType, _hr, _costs];
+_costTextBox ctrlSetText format ["Cost: 5 %1s, %2 HR and %3%4", minefieldType, _hr, _costs, currencySymbol];
 
 minefieldCost = [_costs, _hr, _quantity, _mine];

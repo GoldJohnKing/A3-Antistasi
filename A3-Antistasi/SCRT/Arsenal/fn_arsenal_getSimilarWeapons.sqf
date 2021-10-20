@@ -14,7 +14,35 @@ params ["_weapons"];
 if(_weapons isEqualTo [] || {count _weapons < 1}) exitWith {};
 
 private _weaponConfigs = "getNumber(_x >> 'scope') isEqualTo 2 && {getNumber(_x >> 'type') in [1,2,4,4096]}" configClasses(configFile >> "CfgWeapons") apply { configName _x };
-private _blacklistedClasses = ["Rifle_Base_F", "Rifle_Long_Base_F", "Rifle_Short_Base_F", "Pistol_Base_F", "Launcher_Base_F"];
+private _blacklistedClasses = [
+	"Rifle_Base_F", 
+	"Rifle_Long_Base_F",
+	"Rifle_Short_Base_F", 
+	"Pistol_Base_F", 
+	"Launcher_Base_F",
+	"gm_rifle_base", 
+	"gm_machineGun_base", 
+	"gm_launcher_base", 
+	"vn_rifle", 
+	"vn_rifle762", 
+	"vn_lmg", 
+	"vn_pistol",
+	"vn_rifle_boltaction_base",
+	"vn_rifle_boltaction_clip_base",
+	"vn_shotgun",
+	"vn_smg",
+	"vn_sa7",
+	"vn_Launcher_Base_F",
+	"vn_rpg2",
+	"Uns_Rifle",
+	"Uns_Rifle762",
+	"Uns_LMG",
+	"Uns_HMG",
+	"uns_Shotgun",
+	"uns_Rifle_boltaction_base",
+	"uns_Rifle_boltaction_clip_base",
+	"Uns_Pistol"
+];
 
 private _possibleClassesMap = createHashMap;
 private _baseInputClassesMap = createHashMap;

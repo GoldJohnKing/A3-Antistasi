@@ -45,7 +45,7 @@ _veh flyInHeight 15;
 waitUntil {sleep 1; (not alive _veh) or ((speed _veh < 1) and (speed _veh > -1)) or !(canMove _veh)};
 
 if (alive _veh) then
-	{
+{
 	[_veh] call A3A_fnc_smokeCoverAuto;
 
 	{
@@ -60,6 +60,7 @@ if (alive _veh) then
 		_d = -1;
 		unassignVehicle _unit;
 		moveOut _unit;
+		if (!(alive _veh) or (getPos _veh)#2 < 5) exitWith {};			// Avoid placing dead units underground after vehicle crashes
 		[_unit,"gunner_standup01"] remoteExec ["switchmove"];
 		_unit attachTo [_veh, [_xRef,_yRef,_d]];
 		while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (speed _veh < 10) and (speed _veh > -10)} do
@@ -74,7 +75,7 @@ if (alive _veh) then
 		};
 	sleep 5 + random 2;
 	} forEach units _groupX;
-	};
+};
 
 waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 

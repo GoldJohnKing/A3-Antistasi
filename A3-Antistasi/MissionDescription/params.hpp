@@ -25,6 +25,13 @@ class Params
         texts[] = {""};
         default = "";
     };
+    class howTo3
+    {
+        title = "Note that this page does NOT know the saved values";
+        values[] = {""};
+        texts[] = {""};
+        default = "";
+    };
     class howToSpacer
     {
         title = "";
@@ -139,7 +146,7 @@ class Params
     };
     class napalmEnabled
     {
-        title = "Enable Napalm Bombing for AI";
+        title = "Enable Napalm Bombing";
         values[] = {9999,0,1};
         texts[] = {"Load From Save (Default - No)","No","Yes"};
         default = 1;
@@ -341,27 +348,19 @@ class Params
           texts[] =  {"Load From Save (Default - 30%)", "15%", "30%", "50%", "75%", "100%"};
           default = 9999;
      };
-
-     class Spacer359
+     class saveZeusBuildings
      {
-          title = "";
-          values[] = {""};
-          texts[] = {""};
-          default = "";
+          title = "Persistent Save for Zeus-placed Constructions";
+          values[] = {9999, 1, 0};
+          texts[] =  {"Load From Save (Default - Yes)", "Yes", "No"};
+          default = 9999;
      };
-     class VN
+     class aiAccuracyCeiling
      {
-        title = "Allow S.O.G. PRAIRIE FIRE DLC?";
-        values[] = {9999,1,0};
-        texts[] =  {"Default (No)","Yes","No"};
-        default = 9999;
-     };
-     class GlobMob
-     {
-        title = "Allow Items and Vehicles from Global Mobilization DLC?";
-        values[] = {9999,1,0};
-        texts[] = {"Default (No)","Yes","No"};
-        default = 9999;
+          title = "Enemy AI Maximum Accuracy";
+          values[] = {9999, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1};
+          texts[] =  {"Load From Save (Default - 0.5)", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1"};
+          default = 9999;
      };
 
     class Spacer0
@@ -384,13 +383,6 @@ class Params
         values[] = {9999,1,2,3};
         texts[] = {"Load From Save (Default - Info)", "Error", "Info", "Debug"};
         default = 1;
-     };
-     class SystemChatLogMessages
-     {
-          title = "Post Log Messages to systemChat (Debug)";
-          values[] = {9999, 1, 0};
-          texts[] = {"Load From Save (Default - No)", "Yes", "No"};
-          default = 9999;
      };
      class SupportOptions
      {

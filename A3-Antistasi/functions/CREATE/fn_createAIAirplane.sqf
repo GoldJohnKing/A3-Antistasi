@@ -178,9 +178,6 @@ _ang = markerDir _markerX;
 _mrk setMarkerDirLocal _ang;
 if (!debug) then {_mrk setMarkerAlphaLocal 0};
 _garrison = garrison getVariable [_markerX,[]];
-if (count _garrison > 120) then {
-	_garrison resize 120;
-};
 
 private _additionalGarrison = [_sideX, _markerX] call SCRT_fnc_garrison_rollOversizeGarrison;
 if (count _additionalGarrison > 0) then {
@@ -248,11 +245,7 @@ _typeUnit = if (_sideX == Occupants) then {
 } else {
 	staticCrewInvaders call SCRT_fnc_unit_selectInfantryTier
 };
-private _typeVehX = if (_sideX == Occupants) then {
- 	if (NATOHowitzer != "") then {NATOHowitzer} else {NATOMortar}
-} else {
-	if (CSATHowitzer != "") then {CSATHowitzer} else {CSATMortar}
-};
+private _typeVehX = if (_sideX == Occupants) then {NATOMortar} else {CSATMortar};
 
 _spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
 while {_spawnParameter isEqualType []} do
@@ -374,7 +367,7 @@ private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
 		sleep 1;    //make sure fillLootCrate finished clearing the crate
 		{
 			_this#0 addItemCargoGlobal [_x, round random [5,15,15]];
-		} forEach flyGear;
+		} forEach (A3A_faction_reb getVariable "flyGear");
 	};
 	_ammoBox;
 };

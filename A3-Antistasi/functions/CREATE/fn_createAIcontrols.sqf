@@ -70,7 +70,7 @@ if (_isControl) then {
 		_vehiclesX pushBack _bunker;
 		_bunker setDir _dirveh;
 		_pos = getPosATL _bunker;
-		_typeVehX = if (_sideX == Occupants) then {NATOMG} else {CSATMG};
+		_typeVehX = if (_sideX == Occupants) then {selectRandom NATOMG} else {selectRandom CSATMG};
 		_veh = _typeVehX createVehicle _positionX;
 		_vehiclesX pushBack _veh;
 		_veh setPosATL _pos;

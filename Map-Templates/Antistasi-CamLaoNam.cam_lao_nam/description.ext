@@ -4,13 +4,15 @@ OnLoadName = $STR_antistasi_mission_info_camlaonam_mapname_short_text;
 OnLoadMission = $STR_antistasi_mission_info_camlaonam_blurb_text;
 briefingName = $STR_antistasi_mission_info_camlaonam_mapname_text;
 overviewText = $STR_antistasi_mission_info_altis_description_text;
+loadScreen = "Pictures\Mission\pic.jpg";
+overviewPicture = "Pictures\Mission\pic.jpg";
 
 class CfgDiscordRichPresence 
 {
     applicationID="819852407265034260";
     defaultDetails="";
     defaultState="";
-    defaultLargeImageKey="camlaonam";
+    defaultLargeImageKey="cam_lao_nam";
     defaultLargeImageText="Antistasi Plus - Agent Orange";
     defaultSmallImageKey="arma_3_logo";
     defaultSmallImageText="Arma 3 Custom Scenario";

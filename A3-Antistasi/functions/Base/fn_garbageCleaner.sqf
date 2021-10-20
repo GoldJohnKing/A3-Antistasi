@@ -25,7 +25,7 @@ private _fnc_distCheck = {
 { deleteVehicle _x } forEach (allMissionObjects "Box_Syndicate_WpsLaunch_F");
 { deleteVehicle _x } forEach (allMissionObjects "Bo_Mk82_MI08");
 
-private _rebelPlayers = (call BIS_fnc_listPlayers) select { side _x == teamPlayer || side _x == civilian};
+private _rebelPlayers = (call BIS_fnc_listPlayers) select { side _x == teamPlayer || {side _x == civilian}};
 private _lootCrates = (allMissionObjects lootCrate) select {
 	private _crate = _x;
 	private _isOnHq = (getMarkerPos "Synd_HQ") distance2D _crate < 50;
@@ -37,6 +37,18 @@ if (!isNil "_lootCrates" && {count _lootCrates > 0}) then {
 	{
 		deleteVehicle _x;
 	} forEach _lootCrates;
+};
+
+private _surrenderedUnits = allUnits select {
+	private _unit = _x;
+	private _isPlayersNear = _rebelPlayers findIf {_unit distance2D _x < 100} != -1;
+	(_unit getVariable ["surrendered", false]) == true
+};
+
+if (!isNil "_surrenderedUnits" && {count _surrenderedUnits > 0}) then {
+	{
+		deleteVehicle _x;
+	} forEach _surrenderedUnits;
 };
 
 {

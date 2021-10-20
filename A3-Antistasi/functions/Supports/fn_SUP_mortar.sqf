@@ -108,7 +108,7 @@ if(_spawnPos isEqualTo []) exitWith
 };
 
 if (_isMortar && {(airportsX + milbases) findIf {_spawnPos inArea _x} != -1 }) then {
-    if ((_side == Occupants && NATOHowitzer == "") || {(_side == Invaders && CSATHowitzer == "")}) exitWith {};
+    if ((_side == Occupants && NATOHowitzer == "not_supported") || {(_side == Invaders && CSATHowitzer == "not_supported")}) exitWith {};
     if (_spawnPos distance2D _supportPos < 2000) exitWith {}; //too short for howitzers
 
     if (_side == Occupants) then {

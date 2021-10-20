@@ -26,6 +26,17 @@ private _posOrigin = [];
 private _posDestination = getMarkerPos _markerDestination;
 private _isFIA = if (random 10 > (tierWar + difficultyCoef)) then {true} else {false};
 
+//Don't attempt unless we have enough units spare on this machine to make a worthwhile attack
+if ([_side] call A3A_fnc_remUnitCount < 16) exitWith
+{
+    [2, format ["SingleAttack to %1 cancelled because maximum unit count reached", _markerDestination], _fileName] call A3A_fnc_log;
+};
+
+if ([_posDestination,false] call A3A_fnc_fogCheck < 0.3) exitWith
+{
+    [2, format ["SingleAttack to %1 cancelled due to heavy fog", _markerDestination], _fileName] call A3A_fnc_log;
+};
+
 //Parameter is the starting base
 if(_side isEqualType "") then
 {
@@ -63,28 +74,16 @@ if (_markerOrigin == "") exitWith
 private _vehicles = [];
 private _groups = [];
 private _landPosBlacklist = [];
+
 private _aggression = if (_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
-if (sidesX getVariable [_markerDestination, sideUnknown] != teamPlayer) then {_aggression = 100 - _aggression};
-
-private _divisor = [64, 48, 32] select (skillMult - 1);
-
-private _vehicleCount = if(_side == Occupants) then {
-    1
-    + (_aggression/_divisor)
-    + ([0, 2] select _super)
-    + ([-0.5, 0, 0.5] select (skillMult - 1))
-}
-else {
-    1
-    + (_aggression/_divisor)
-    + ([0, 2] select _super)
-    + ([0, 0.5, 1.5] select (skillMult - 1))
-};
+private _playerScale = call A3A_fnc_getPlayerScale;
+if (sidesX getVariable [_markerDestination, sideUnknown] != teamPlayer) then { _aggression = 100 - _aggression; _playerScale = 1; };
+private _vehicleCount = random 1 + 2*_playerScale + _aggression/33 + ([0, 2] select _super);
 _vehicleCount = (round (_vehicleCount)) max 1;
 
 [
     3,
-    format ["Due to %1 aggression, sending %2 vehicles", (if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders}), _vehicleCount],
+    format ["Due to %1 aggression and %2 player scale, sending %3 vehicles", _aggression, _playerScale, _vehicleCount],
     _fileName
 ] call A3A_fnc_log;
 

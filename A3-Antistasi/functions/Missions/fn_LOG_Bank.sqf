@@ -27,9 +27,9 @@ _mrkFinal = createMarker [format ["LOG%1", random 100], _positionX];
 _nameDest = [_city] call A3A_fnc_localizar;
 _mrkFinal setMarkerShape "ICON";
 
-_pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1,50,"C_Van_01_box_F"];
+_pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1,50,civSupplyVehicle];
 
-_truckX = "C_Van_01_box_F" createVehicle _pos;
+_truckX = civSupplyVehicle createVehicle _pos;
 {_x reveal _truckX} forEach (allPlayers - (entities "HeadlessClient_F"));
 [_truckX, teamPlayer] call A3A_fnc_AIVEHinit;
 _truckX setVariable ["destinationX",_nameDest,true];

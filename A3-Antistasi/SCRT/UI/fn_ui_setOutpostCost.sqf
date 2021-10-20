@@ -21,7 +21,7 @@ switch (outpostType) do {
             _costs = _costs + (server getVariable [_x,0]);
             _hr = _hr + 1; 
         } forEach groupsSDKSniper;
-        _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+        _costTextBox ctrlSetText format ["Costs %1 HR and %2%3", _hr, _costs, currencySymbol];
     };
     case ("ROADBLOCK"): {
         _costs = [vehSDKLightArmed] call A3A_fnc_vehiclePrice; //MG car
@@ -30,7 +30,7 @@ switch (outpostType) do {
             _costs = _costs + (server getVariable [_x,0]);
             _hr = _hr + 1;
         } forEach groupsSDKSquad;
-        _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+        _costTextBox ctrlSetText format ["Costs %1 HR and %2%3", _hr, _costs, currencySymbol];
     };
     case ("AA"): {
         _costs = [staticAAteamPlayer] call A3A_fnc_vehiclePrice;
@@ -39,7 +39,7 @@ switch (outpostType) do {
             _costs = _costs + (server getVariable [_x,0]); 
             _hr = _hr +1;
         } forEach [SDKSL,SDKMG,SDKGL,SDKMil,SDKMil];
-       _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+       _costTextBox ctrlSetText format ["Costs %1 HR and %2%3", _hr, _costs, currencySymbol];
     };
     case ("AT"): {
         _costs = [staticATteamPlayer] call A3A_fnc_vehiclePrice; //AT
@@ -48,7 +48,7 @@ switch (outpostType) do {
             _costs = _costs + (server getVariable [_x,0]); 
             _hr = _hr +1;
         } forEach groupsSDKAT;
-       _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+       _costTextBox ctrlSetText format ["Costs %1 HR and %2%3", _hr, _costs, currencySymbol];
     };
     case ("MORTAR"): {
         _costs = [SDKMortar] call A3A_fnc_vehiclePrice; //Mortar
@@ -57,7 +57,7 @@ switch (outpostType) do {
             _costs = _costs + (server getVariable [_x,0]); 
             _hr = _hr +1;
         } forEach [SDKSL,SDKMG,SDKMil,SDKMil,SDKMedic];
-       _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+       _costTextBox ctrlSetText format ["Costs %1 HR and %2%3", _hr, _costs, currencySymbol];
     };
     case ("HMG"): {
         _costs = [SDKMGStatic] call A3A_fnc_vehiclePrice;
@@ -66,7 +66,7 @@ switch (outpostType) do {
             _costs = _costs + (server getVariable [_x,0]); 
             _hr = _hr +1;
         } forEach [SDKSL,SDKMG,SDKMil,SDKMil,SDKATman,SDKMedic];
-       _costTextBox ctrlSetText format ["Costs %1 HR and %2€", _hr, _costs];
+       _costTextBox ctrlSetText format ["Costs %1 HR and %2%3", _hr, _costs, currencySymbol];
     };
     default {
 		[1, "Bad outpost type.", "fn_setOutpostCost"] call A3A_fnc_log;

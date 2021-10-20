@@ -15,6 +15,7 @@ private _filename = "detector.sqf";
 A3A_hasRHS = false;
 A3A_has3CBFactions = false;
 A3A_hasVN = false;
+A3A_hasUR = false;
 A3A_hasIvory = false;
 A3A_hasTCGM = false;
 A3A_hasADV = false;
@@ -51,9 +52,14 @@ if (isClass (configFile >> "CfgPatches" >> "LIB_Core")) then {
     ["modUnautorized",false,1,false,false] call BIS_fnc_endMission;
 };
 
-if (allowDLCVN && {isClass (configFile >> "CfgPatches" >> "vn_weapons")}) then {
+if (isClass (configFile >> "CfgPatches" >> "vn_weapons")) then {
   A3A_hasVN = true;
   [2,"SOG PF Detected.",_fileName] call A3A_fnc_log;
+};
+
+if (A3A_hasVN && {isClass (configFile >> "CfgPatches" >> "uns_main")}) then {
+  A3A_hasUR = true;
+  [2,"Unsung Redux Detected.",_fileName] call A3A_fnc_log;
 };
 
 //3CB Factions Detection

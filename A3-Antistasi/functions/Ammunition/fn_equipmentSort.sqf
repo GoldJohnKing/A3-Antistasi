@@ -53,6 +53,7 @@ allCivilianVests = allVests - allArmoredVests;
 allCivilianVests deleteAt (allCivilianVests find "V_RebreatherB");
 allCivilianVests deleteAt (allCivilianVests find "V_RebreatherIR");
 allCivilianVests deleteAt (allCivilianVests find "V_RebreatherIA");
+allCivilianVests deleteAt (allCivilianVests find "vn_b_vest_seal_01");
 
 ////////////////////////////////////
 //   ARMORED HELMETS LIST        ///
@@ -64,6 +65,14 @@ allCosmeticHeadgear = allHeadgear - allArmoredHeadgear;
 allCosmeticHeadgear deleteAt (allCosmeticHeadgear find "H_Beret_Colonel");
 allCosmeticHeadgear deleteAt (allCosmeticHeadgear find "H_Beret_02");
 allCosmeticHeadgear deleteAt (allCosmeticHeadgear find "H_Beret_CSAT_01_F");
+
+if (A3A_hasVN) then {
+	{
+		allCosmeticHeadgear deleteAt (allCosmeticHeadgear find _x);
+	} forEach [
+		"vn_o_cap_navy_01", "vn_o_helmet_shl61_01", "vn_o_helmet_shl61_02"
+	];
+};
 
 if (A3A_hasGlobMob) then {
 	{
@@ -125,6 +134,15 @@ allCosmeticGlasses deleteAt (allCosmeticGlasses find "G_Tactical_Clear");
 allCosmeticGlasses deleteAt (allCosmeticGlasses find "G_Tactical_Black");
 allCosmeticGlasses deleteAt (allCosmeticGlasses find "G_Balaclava_combat");
 allCosmeticGlasses deleteAt (allCosmeticGlasses find "G_Combat");
+
+if (A3A_hasVN) then {
+	{
+		allCosmeticGlasses deleteAt (allCosmeticGlasses find _x);
+	} forEach [
+		"vn_b_acc_seal_01", "vn_o_acc_goggles_02", "vn_o_acc_goggles_03",
+		"vn_o_acc_km32_01", "vn_b_acc_ms22001_01", "vn_b_acc_ms22001_02"
+	];
+};
 
 ////////////////
 //   Radios   //

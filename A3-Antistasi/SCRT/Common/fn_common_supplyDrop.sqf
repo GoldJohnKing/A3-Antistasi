@@ -34,6 +34,7 @@ if (alive _planeVehicle) then {
             clearWeaponCargoGlobal _supplyDrop;
             clearBackpackCargoGlobal _supplyDrop;
             [_supplyDrop] call SCRT_fnc_loot_addLootCrateActions;
+            _supplyDrop allowDamage false;
             _paraPos = [0, 0, -0.2];
         };
         default {

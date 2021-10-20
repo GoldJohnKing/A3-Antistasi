@@ -6,6 +6,6 @@
 [
     "INFO",
     "Rebuild Assets",  
-    parseText format ["Click on any friendly marker to rebuild radio towers and military buildings there.<br/>Cost: %1 €.", str COST], 
+    parseText format ["Click on any friendly marker to rebuild radio towers and military buildings there.<br/>Cost: %1 %2.", str COST, currencySymbol], 
     60
 ] spawn SCRT_fnc_ui_showMessage;

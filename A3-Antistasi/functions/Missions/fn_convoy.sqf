@@ -113,14 +113,14 @@ switch (_convoyType) do
         _textX = format ["A truck with plenty of money is being moved from %1 to %3, and it's about to depart at %2. Steal that truck and bring it to HQ. Those funds will be very welcome.",_nameOrigin,_displayTime,_nameDest];
         _taskTitle = "Money Convoy";
         _taskIcon = "move";
-        _typeVehObj = "C_Van_01_box_F";
+        _typeVehObj = civSupplyVehicle;
     };
     case "Supplies":
     {
         _textX = format ["A truck with medical supplies destination %3 it's about to depart at %2 from %1. Steal that truck bring it to %3 and let people in there know it is %4 who's giving those supplies.",_nameOrigin,_displayTime,_nameDest,nameTeamPlayer];
         _taskTitle = "Supply Convoy";
         _taskIcon = "heal";
-        _typeVehObj = "C_Van_01_box_F";
+        _typeVehObj = civSupplyVehicle;
     };
 };
 
@@ -185,14 +185,13 @@ private _fnc_spawnConvoyVehicle = {
     _veh allowDamage false;
 
     private _group = [_sideX, _veh] call A3A_fnc_createVehicleCrew;
-    // might need to clear waypoints here?
     { [_x] call A3A_fnc_NATOinit; _x allowDamage false; } forEach (units _group);
     _soldiers append (units _group);
     (driver _veh) stop true;
     deleteWaypoint [_group, 0];													// groups often start with a bogus waypoint
 
     [_veh, _sideX] call A3A_fnc_AIVEHinit;
-    if (_veh in vehArmor) then { _vehObj allowCrewInImmobile true };			// move this to AIVEHinit at some point?
+    if (_vehType in vehArmor) then { _veh allowCrewInImmobile true };			// move this to AIVEHinit at some point?
     _vehiclesX pushBack _veh;
     _markNames pushBack _markName;
     _veh;

@@ -56,45 +56,52 @@ _fnc_initMarker =
 _fnc_initGarrison =
 {
 	params ["_markerArray", "_type"];
-	private ["_side", "_groupsRandom", "_garrNum", "_garrisonOld", "_marker"];
+	private ["_side", "_groupsRandom", "_garrNum", "_garrison", "_marker"];
 	{
 	    _marker = _x;
-			_garrNum = ([_marker] call A3A_fnc_garrisonSize) / 8;
-			_side = sidesX getVariable [_marker, sideUnknown];
-			if(_side != Occupants) then
-			{
-				if(_type != "Airport" && {_type != "Outpost"} && {_type != "MilitaryBase"}) then
-				{
-					private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
-					private _fiaSquads = groupsWAMSquad;
-					_groupsRandom = [_squads, _fiaSquads] select ((_marker in outposts) && (gameMode == 4));
-				}
-				else
-				{
-					private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
-	 				_groupsRandom = _squads;
-				};
-			}
-			else
-			{
-				if(_type != "Airport" && {_type != "Outpost"} && {_type != "MilitaryBase"}) then
-				{
-					_groupsRandom = groupsFIASquad;
-				}
-				else
-				{
-					private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
-	 				_groupsRandom = _squads;
-				};
-			};
-			//Old system, keeping it intact for the moment
-			_garrisonOld = [];
-			for "_i" from 1 to _garrNum do
-			{
-				_garrisonOld append (selectRandom _groupsRandom);
-			};
-			//Old system, keeping it runing for now
-			garrison setVariable [_marker, _garrisonOld, true];
+		_garrNum = [_marker] call A3A_fnc_garrisonSize;
+		_side = sidesX getVariable [_marker, sideUnknown];
+
+		switch (true) do {
+		    case (gameMode == 4 && {_side == Invaders}): {
+                if !(_type in ["Airport", "Outpost", "MilitaryBase"]) then {
+                    private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+                    private _fiaSquads = groupsWAMSquad;
+                    _groupsRandom = _squads + _fiaSquads;
+                }
+                else {
+                    private _squads = [Invaders, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+                    private _mids = [Invaders, "MID"] call SCRT_fnc_unit_getGroupSet;
+                    _groupsRandom = _squads + _mids;
+                };
+		    };
+		    case (_side != Occupants): {
+                private _squads = [_side, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+                private _mids = [_side, "MID"] call SCRT_fnc_unit_getGroupSet;
+                _groupsRandom = _squads + _mids;
+            };
+            default {
+                if !(_type in ["Airport", "Outpost", "MilitaryBase"]) then {
+                    private _squads = [Occupants, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+                    private _fiaSquads = groupsFIASquad;
+                    _groupsRandom = _squads + _fiaSquads;
+                }
+                else {
+                    private _squads = [Occupants, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
+                    private _mids = [Occupants, "MID"] call SCRT_fnc_unit_getGroupSet;
+                    _groupsRandom = _squads + _mids;
+                };
+            };
+		};
+
+
+		_garrison = [];
+		while {count _garrison < _garrNum} do
+		{
+			_garrison append (selectRandom _groupsRandom);
+		};
+		_garrison resize _garrNum;
+		garrison setVariable [_marker, _garrison, true];
 
 	} forEach _markerArray;
 };
@@ -169,8 +176,16 @@ if (gameMode == 1) then
             _controlsCSAT = ["control_83", "control_76", "control_84", "control_82", "control_93", "control_89", "control_88", "control_85", "control_96", "control_5", "control_86", "control_87", "control_80", "control_81", "control_29", "control_79", "control_49", "control_50", "control_4", "control_70", "control_91", "control_90", "control_95", "control_98", "control_66", "control_65", "control_64", "control_22", "control_67", "control_92", "control_20", "control_75", "control_74", "control_73", "control_78", "control_77", "control_69", "control_19", "control_52", "control_51", "control_63"];
 		};
 		case "cam_lao_nam": {
-            _mrkCSAT = ["airport_5", "outpost_33", "outpost_34", "resource_4", "seaport_3", "outpost_15", "outpost_22", "outpost_8", "outpost_4", "resource_9", "outpost_21", "resource_14", "outpost_3", "outpost_2", "factory_3", "outpost_1", "outpost_7", "seaport_2", "outpost_32", "airport_1", "outpost_23", "outpost_10", "outpost_5", "outpost_16", "outpost_6", "outpost_11", "resource_6", "resource_20", "outpost_9", "outpost_38"];
-            _controlsCSAT = ["control_1", "control_2", "control_3", "control_4", "control_5", "control_6", "control_7", "control_8", "control_9", "control_10", "control_11", "control_12", "control_13", "control_14", "control_15", "control_16", "control_17", "control_18", "control_19", "control_20", "control_21", "control_22", "control_23", "control_24", "control_25", "control_26", "control_27", "control_28", "control_29"];
+            _mrkCSAT = ["control_55", "control_125", "control_54", "control_53", "factory_2", "outpost_41", "outpost_31", "factory_1", "resource_3", "resource_2", "outpost_15", "milbase_4", "airport_2", "resource_8", "outpost_12", "outpost_37", "resource_16", "outpost_13", "milbase_6", "control_118", "control_63", "control_120", "control_48", "control_62", "control_49", "control_61", "control_60", "resource_17", "outpost_18", "outpost_19", "control_67", "outpost_14", "control_119", "control_121", "resource_7", "control_114", "control_115", "control_116", "control_110", "control_111", "outpost_29", "resource_18", "control_64", "control_113", "control_47", "control_117", "resource_1", "control_46", "control_44", "control_45", "control_122", "control_81", "control_112", "control_80", "control_79", "control_78","outpost_42", "outpost_43", "outpost_39", "outpost_26", "outpost_25", "outpost_40", "resource_13", "outpost_28"];
+            _controlsCSAT = ["control_55", "control_125", "control_54", "control_53","control_118", "control_63", "control_120", "control_48", "control_62", "control_49", "control_61", "control_60", "control_67", "control_119", "control_121", "control_114", "control_115", "control_116", "control_110", "control_111", "control_64", "control_113", "control_47", "control_117", "control_46", "control_44", "control_45", "control_122", "control_81", "control_112", "control_80", "control_79", "control_78"];
+        };
+		case "vn_khe_sanh": {
+            _mrkCSAT = ["outpost_14","airport_1","control_45","outpost_10","outpost_9","outpost_3", "control_7", "outpost_1", "outpost_4", "seaport_2", "factory_1","milbase_4", "outpost_7", "control_2", "control_14", "control_30", "outpost_8"];
+            _controlsCSAT = ["control_45","control_7", "control_2", "control_14", "control_30"];
+        };
+		case "rhspkl": {
+            _mrkCSAT = ["outpost_1", "resource_2", "control_3", "control_5", "control_6", "control_9", "control_12", "control_14", "outpost_6", "resource_3", "outpost_8", "control_30", "airport_2", "control_31", "control_32", "control_33", "control_34", "control_35", "control_38", "control_39", "control_40", "airport_3", "control_42", "control_43", "control_44", "control_45", "control_46", "control_47", "control_51", "control_57"];
+            _controlsCSAT = ["control_3", "control_5", "control_6", "control_9", "control_12", "control_14", "control_30", "control_31", "control_32", "control_33", "control_34", "control_35", "control_38", "control_39", "control_40", "control_42", "control_43", "control_44", "control_45", "control_46", "control_47", "control_51", "control_57"];
         };
 	};
     _controlsNATO = _controlsNATO - _controlsCSAT;
@@ -202,7 +217,7 @@ else
 [_mrkCSAT, resourcesX, "loc_rock", "Resources"] call _fnc_initMarker;
 [_mrkCSAT, factories, "u_installation", "Factory"] call _fnc_initMarker;
 [_mrkCSAT, outposts, "loc_bunker", "%1 Outpost", true] call _fnc_initMarker;
-if (toLower worldName isEqualTo "enoch") then {
+if (toLower worldName in ["enoch", "vn_khe_sanh"]) then {
 	[_mrkCSAT, seaports, "b_naval", "River Port"] call _fnc_initMarker;
 } else {
 	[_mrkCSAT, seaports, "b_naval", "Sea Port"] call _fnc_initMarker;

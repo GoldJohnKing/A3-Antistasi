@@ -27,6 +27,7 @@
 ["vehicleCivTruck", "UK3CB_CHC_C_Kamaz_Open"] call _fnc_saveToTemplate;
 ["vehicleCivHeli", "UK3CB_C_Mi8AMT_ADC"] call _fnc_saveToTemplate;
 ["vehicleCivBoat", "UK3CB_CHC_C_Fishing_Boat"] call _fnc_saveToTemplate;
+["vehicleCivSupply", "C_Van_01_box_F"] call _fnc_saveToTemplate;
 
 ["staticMG", "UK3CB_AAF_I_M2_TriPod"] call _fnc_saveToTemplate; 					
 ["staticAT", "rhsgref_nat_SPG9"] call _fnc_saveToTemplate; 					

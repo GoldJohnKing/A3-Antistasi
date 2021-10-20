@@ -78,7 +78,7 @@ if (_expectedCargo > 0) then
 };
 
 _landPosBlacklist = [_vehicle, _crewGroup, _cargoGroup, _posDestination, _markerOrigin, _landPosBlacklist, _isAirdrop] call A3A_fnc_createVehicleQRFBehaviour;
-[3, format ["Spawn Preformed: Created vehicle %1 with %2 soldiers", typeof _vehicle, count crew _vehicle], _filename] call A3A_fnc_log;
+[3, format ["Spawn Performed: Created vehicle %1 with %2 soldiers", typeof _vehicle, count crew _vehicle], _filename] call A3A_fnc_log;
 
 private _vehicleData = [_vehicle, _crewGroup, _cargoGroup, _landPosBlacklist];
 _vehicleData;

@@ -3,7 +3,7 @@ if (!isServer) exitWith {
     [1, "Miscalled server-only function", _filename] call A3A_fnc_log;
 };
 
-if (savingServer) exitWith {["Save Game", "Server data save is still in progress"] remoteExecCall ["A3A_fnc_customHint",theBoss]};
+if (savingServer) exitWith {["Save Game", "Server data save is still in progress..."] remoteExecCall ["A3A_fnc_customHint",theBoss]};
 savingServer = true;
 [2, "Starting persistent save", _filename] call A3A_fnc_log;
 ["Persistent Save","Starting persistent save..."] remoteExec ["A3A_fnc_customHint",0,false];
@@ -63,7 +63,7 @@ private _antennasDeadPositions = [];
 ["maxUnits", maxUnits] call A3A_fnc_setStatVariable;
 ["maxConstructions", maxConstructions] call A3A_fnc_setStatVariable;
 ["nextTick", nextTick - time] call A3A_fnc_setStatVariable;
-["weather",[fogParams,rain]] call A3A_fnc_setStatVariable;
+["weather",[fogParams,overcast]] call A3A_fnc_setStatVariable;
 private _destroyedPositions = destroyedBuildings apply { getPosATL _x };
 ["destroyedBuildings",_destroyedPositions] call A3A_fnc_setStatVariable;
 ["isTraderQuestCompleted", isTraderQuestCompleted] call A3A_fnc_setStatVariable;
@@ -135,11 +135,12 @@ _arrayEst = [];
 	_veh = _x;
 	_typeVehX = typeOf _veh;
 	if ((_veh distance getMarkerPos respawnTeamPlayer < 50) and !(_veh in staticsToSave) and !(_typeVehX in ["ACE_SandbagObject","Land_FoodSacks_01_cargo_brown_F","Land_Pallet_F", "Land_DeskChair_01_black_F", "Land_PortableDesk_01_black_F","Land_Laptop_02_unfolded_F","Land_Ammobox_rounds_F","Land_Cargo20_military_green_F"])) then {
-		if (((not (_veh isKindOf "StaticWeapon")) and (not (_veh isKindOf "ReammoBox")) and (not (_veh isKindOf "ReammoBox_F")) and (not(_veh isKindOf "Building"))) and (not (_typeVehX == "C_Van_01_box_F")) and (count attachedObjects _veh == 0) and (alive _veh) and ({(alive _x) and (!isPlayer _x)} count crew _veh == 0) and (not(_typeVehX == "WeaponHolderSimulated"))) then {
+		if (((not (_veh isKindOf "StaticWeapon")) and (not (_veh isKindOf "ReammoBox")) and (not (_veh isKindOf "ReammoBox_F")) and (not(_veh isKindOf "Building"))) and (not (_typeVehX == civSupplyVehicle)) and (count attachedObjects _veh == 0) and (alive _veh) and ({(alive _x) and (!isPlayer _x)} count crew _veh == 0) and (not(_typeVehX == "WeaponHolderSimulated"))) then {
 			_posVeh = getPosWorld _veh;
 			_xVectorUp = vectorUp _veh;
 			_xVectorDir = vectorDir _veh;
-			_arrayEst pushBack [_typeVehX,_posVeh,_xVectorUp,_xVectorDir];
+            private _state = [_veh] call HR_GRG_fnc_getState;
+			_arrayEst pushBack [_typeVehX,_posVeh,_xVectorUp,_xVectorDir, _state];
 		};
 	};
 } forEach vehicles - [boxX,flagX,vehicleBox,mapX];
@@ -182,8 +183,19 @@ _prestigeBLUFOR = [];
 {
 	_city = _x;
 	_dataX = server getVariable _city;
-	_prestigeOPFOR = _prestigeOPFOR + [_dataX select 2];
-	_prestigeBLUFOR = _prestigeBLUFOR + [_dataX select 3];
+	_opfor = _dataX select 2;
+	_blufor = _dataX select 3;
+
+	if (isNil "_opfor") then {
+		_opfor = 50;
+	};
+
+	if (isNil "_blufor") then {
+		_blufor = 0;
+	};
+
+	_prestigeOPFOR pushBack _opfor;
+	_prestigeBLUFOR pushBack _blufor;
 } forEach citiesX;
 
 ["prestigeOPFOR", _prestigeOPFOR] call A3A_fnc_setStatVariable;
@@ -208,7 +220,10 @@ _wurzelGarrison = [];
 ["usesWurzelGarrison", true] call A3A_fnc_setStatVariable;
 
 _arrayMines = [];
+private _mineChance = 500 / (500 max count allMines);
 {
+	// randomly discard mines down to ~500 to avoid ballooning saves
+	if (random 1 > _mineChance) then { continue };
 	_typeMine = typeOf _x;
 	_posMine = getPos _x;
 	_dirMine = getDir _x;
@@ -222,7 +237,7 @@ _arrayMines = [];
 	if (_x mineDetectedBy Invaders) then {
 		_detected pushBack Invaders
 	};
-	_arrayMines = _arrayMines + [[_typeMine,_posMine,_detected,_dirMine]];
+	_arrayMines pushBack [_typeMine,_posMine,_detected,_dirMine];
 } forEach allMines;
 
 ["minesX", _arrayMines] call A3A_fnc_setStatVariable;
@@ -304,7 +319,7 @@ if (!isDedicated) then {
 		private _index = A3A_tasksData findIf { (_x#1) isEqualTo _type and (_x#2) isEqualTo "CREATED" };
 		if (_index != -1) then { _typesX pushBackUnique _type };
 
-	} forEach ["AS","CON","DES","LOG","RES","ENC","CONVOY","DEF_HQ","rebelAttack"];
+	} forEach ["AS","CON","DES","LOG","RES","ENC","CONVOY","DEF_HQ","rebelAttack","invaderPunish"];
 
 	["tasks",_typesX] call A3A_fnc_setStatVariable;
 };
@@ -319,7 +334,7 @@ _dataX = [];
 _dataX = [];
 {
 	_dataX pushBack [_x,timer getVariable _x];
-} forEach (vehAttack + vehNATOAttackHelis + vehPlanes + vehCSATAttackHelis);
+} forEach (vehAttack + vehMRLS + vehAA + vehHelis + vehFixedWing + staticAAOccupants + staticAAInvaders + [vehNATOBoat, vehCSATBoat, staticATOccupants, staticATInvaders]);
 
 ["idleassets",_dataX] call A3A_fnc_setStatVariable;
 

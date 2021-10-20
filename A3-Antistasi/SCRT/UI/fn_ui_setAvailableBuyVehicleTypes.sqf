@@ -11,7 +11,8 @@ private _shopLookupArray = [];
 
 switch(_vehicleType) do {
     case("CIV"): {
-        _shopLookupArray = [civCar, civTruck, civHeli, civBoat];
+        private _avaialbleVehs = [civCar, civTruck, civHeli, civBoat] select {_x != "not_supported"};
+        _shopLookupArray = _avaialbleVehs;
     };
     case("MIL"): {
         _shopLookupArray = [vehSDKBike, vehSDKTruck, vehSDKLightUnarmed];
@@ -20,10 +21,8 @@ switch(_vehicleType) do {
         };
 
         if (tierWar > 3) then {
-            _shopLookupArray append [vehSDKAT, staticATteamPlayer, staticAAteamPlayer];
-            if (A3A_hasCup || A3A_hasRhs || A3A_has3CBFactions) then {
-                _shopLookupArray pushBack vehSDKAA;
-            };
+            private _avaialbleVehs = [vehSDKAT, vehSDKAA, staticATteamPlayer, staticAAteamPlayer] select {_x != "not_supported"};
+            _shopLookupArray append _avaialbleVehs;
         };
 
         if (tierWar > 4) then {

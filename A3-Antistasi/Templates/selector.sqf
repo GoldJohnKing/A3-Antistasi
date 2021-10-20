@@ -14,7 +14,7 @@ private _filename = "selector.sqf";
 //Map checker
 private _aridMaps = ["altis", "takistan"];
 
-tropicalMaps = ["tanoa", "cam_lao_nam", "rhspkl"]; //global because used by QRF code
+tropicalMaps = ["tanoa", "cam_lao_nam", "vn_khe_sanh", "rhspkl"]; //global because used by QRF code
 
 private _temperateMaps = ["panthera3", "enoch", "vt7", "cup_chernarus_a3", "napf", "abramia", "taviana", "gm_weferlingen_summer", "blud_vidda"];
 //Mod selector
@@ -89,6 +89,11 @@ A3A_Reb_template = switch(true) do {
             ["Templates\NewTemplates\Aegis\Aegis_Reb_CHDKZ.sqf", independent] call A3A_fnc_compatibilityLoadFaction;
             [2, "Using Temperate CHDKZ Template", _filename] call A3A_fnc_log;
         };
+    };
+    case (A3A_hasVN && {A3A_hasUR}): {
+        ["Templates\NewTemplates\VN_UR\VN_UR_Reb_KPNLF.sqf", independent] call A3A_fnc_compatibilityLoadFaction;
+        [2, "Using Unsung KPNLF Template", _filename] call A3A_fnc_log;
+        "VN"
     };
     case (A3A_hasVN): {
         ["Templates\NewTemplates\VN\VN_Reb_KPNLF.sqf", independent] call A3A_fnc_compatibilityLoadFaction;
@@ -237,6 +242,11 @@ A3A_Occ_template = switch(true) do {
         [2, "Using Aegis EUROFOR Template", _filename] call A3A_fnc_log;
         "Vanilla" //intentionally, as aegis expands vanilla
     };
+    case (A3A_hasVN && {A3A_hasUR}): {
+        ["Templates\NewTemplates\VN_UR\VN_UR_MACV.sqf", west] call A3A_fnc_compatibilityLoadFaction;
+        [2, "Using Unsung VN MACV Template", _filename] call A3A_fnc_log;
+        "VN"
+    };
     case (A3A_hasVN): {
         ["Templates\NewTemplates\VN\VN_MACV.sqf", west] call A3A_fnc_compatibilityLoadFaction;
         [2, "Using VN MACV Template", _filename] call A3A_fnc_log;
@@ -320,6 +330,11 @@ A3A_Inv_template = switch(true) do{
         [2, "Using Aegis Russia Template", _filename] call A3A_fnc_log;
         "Vanilla" //intentionally, as aegis expands vanilla
     };
+    case (A3A_hasVN && {A3A_hasUR}): {
+        ["Templates\NewTemplates\VN_UR\VN_UR_PAVN.sqf", east] call A3A_fnc_compatibilityLoadFaction;
+        [2, "Using Unsung VN PAVN Template", _filename] call A3A_fnc_log;
+        "VN"
+    };
     case (A3A_hasVN): {
         ["Templates\NewTemplates\VN\VN_PAVN.sqf", east] call A3A_fnc_compatibilityLoadFaction;
         [2, "Using VN PAVN Template", _filename] call A3A_fnc_log;
@@ -361,8 +376,13 @@ A3A_Civ_template = switch(true) do {
     case (A3A_has3CBFactions): {
         switch(threecbfOccupantFaction) do {
             case(4): {
-                ["Templates\NewTemplates\3CBF\3CBF_CivCW.sqf", civilian] call A3A_fnc_compatibilityLoadFaction;
-                [2, "Using 3CB Civ template", _filename] call A3A_fnc_log;
+                if(_terrainName == "takistan") then {
+                    ["Templates\NewTemplates\3CBF\3CBF_Civ_Arid.sqf", civilian] call A3A_fnc_compatibilityLoadFaction;
+                    [2, "Using 3CB Civ Temperate template", _filename] call A3A_fnc_log;
+                } else {
+                    ["Templates\NewTemplates\3CBF\3CBF_CivCW.sqf", civilian] call A3A_fnc_compatibilityLoadFaction;
+                    [2, "Using 3CBF CW Civ template", _filename] call A3A_fnc_log;
+                };
             };
             default {
                 switch (true) do {
@@ -452,3 +472,4 @@ if (A3A_hasCup) then {call compileScript ["Templates\NewTemplates\CUP\Cup_Logist
 if (A3A_hasAegis) then {call compileScript ["Templates\NewTemplates\Aegis\Aegis_Logistics_Nodes.sqf"];};
 if (A3A_hasGlobMob) then {call compileScript ["Templates\NewTemplates\GM\GM_Logistics_Nodes.sqf"];};
 if (A3A_hasVN) then {call compile preProcessFileLineNumbers "Templates\NewTemplates\VN\VN_Logistics_Nodes.sqf"};
+if (A3A_hasUR) then {call compile preProcessFileLineNumbers "Templates\NewTemplates\VN_UR\VN_UR_Logistics_Nodes.sqf"};

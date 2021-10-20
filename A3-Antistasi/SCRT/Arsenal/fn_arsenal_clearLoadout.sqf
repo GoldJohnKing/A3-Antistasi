@@ -51,6 +51,10 @@ if (str (_display) != "no display") then {
     if !("loadouts_reb_militia_SquadLeader" in rebelLoadouts) then {
         (_display displayCtrl 120009) ctrlSetText localize "STR_antistasi_dialogs_squad_leader_title";
     };
+
+    if !("loadouts_reb_militia_ExplosivesExpert" in rebelLoadouts) then {
+        (_display displayCtrl 120010) ctrlSetText localize "STR_antistasi_dialogs_demolitionist_title";
+    };
 };
 
 [_title, localize  "STR_antistasi_dialogs_hq_button_custom_loadout_clear", "SUCCESS"] call SCRT_fnc_ui_showDynamicTextMessage;

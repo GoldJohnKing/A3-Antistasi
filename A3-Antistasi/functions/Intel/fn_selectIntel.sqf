@@ -55,7 +55,7 @@ else
 
 if(_intelType == "Small") then
 {
-    _intelContent = selectRandomWeighted [TIME_LEFT, 0.25, DECRYPTION_KEY, 0.25, CONVOY, 0.2, TASK, 0.25, DISCOUNT, 0.05];
+    _intelContent = selectRandomWeighted [TIME_LEFT, 0.25, DECRYPTION_KEY, 0.25, CONVOY, 0.2, TASK, 0.3];
 
     switch (_intelContent) do
     {

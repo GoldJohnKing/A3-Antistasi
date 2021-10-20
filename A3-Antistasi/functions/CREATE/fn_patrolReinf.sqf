@@ -192,7 +192,6 @@ if (count _units == 0 || time > _timeout || _sideX != (sidesX getVariable _mrkDe
 	[2, format ["Reinf on %1 failed, returning with %2 units", _mrkDestination, count units _groupX], _filename] call A3A_fnc_log;
 };
 
-
 [2, format ["Reinf on %1 successful, adding %2 units", _mrkDestination, count units _groupX], _filename] call A3A_fnc_log;
 
 // Arrived successfully, add units to garrison and despawn with it

@@ -86,13 +86,14 @@ sleep 5;
 
 {_x allowDamage true} forEach _POWS;
 
-_mrk = createMarkerLocal [format ["%1patrolarea", floor random 100], getPos _houseX];
+_mrk = createMarkerLocal [format ["%1patrolarea", floor random 100], (position _houseX)];
 _mrk setMarkerShapeLocal "RECTANGLE";
 _mrk setMarkerSizeLocal [50,50];
 _mrk setMarkerTypeLocal "hd_warning";
 _mrk setMarkerColorLocal "ColorRed";
 _mrk setMarkerBrushLocal "DiagGrid";
 _mrk setMarkerAlphaLocal 0;
+
 
 private _squad = if (_side == Invaders) then {CSATSquad} else {NATOSquad};
 _typeGroup = if (random 10 < tierWar) then {

@@ -58,6 +58,6 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 
     vehiclePurchase_cost = _finalCost;
 
-    private _extraMessage = format  ["Select rally point position.<br/>Price: %1€<br/>", vehiclePurchase_cost];
+    private _extraMessage = format  ["Select rally point position.<br/>Price: %1%2<br/>", vehiclePurchase_cost, currencySymbol];
     [rallyPoint, "CREATERALLYPOINT", _extraMessage, "Rally Point"] call A3A_fnc_vehPlacementBegin;
 };

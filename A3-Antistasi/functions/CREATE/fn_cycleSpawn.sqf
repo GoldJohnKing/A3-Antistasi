@@ -13,8 +13,6 @@ _garrison = [_marker] call A3A_fnc_getGarrison;
 _garCount = [_garrison, false] call A3A_fnc_countGarrison;
 _patrolSize = [_patrolMarker] call A3A_fnc_calculateMarkerArea;
 
-[_garrison, "Garrison"] call A3A_fnc_logArray;
-
 _allSoldiers = [];
 _allVehicles = [];
 _allGroups = [];

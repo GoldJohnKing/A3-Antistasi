@@ -24,11 +24,16 @@ switch (_bombType) do {
         _ammo = "BombCluster_03_Ammo_F";
         _bombOffset = 10;
 	};
-	case ("NAPALM"):
+    case ("NAPALM"): 
     {
-		_ammo = "ammo_Bomb_SDB";
-        _bombOffset = 170;
-	};
+        if (A3A_hasVN) then {
+            _ammo = "vn_bomb_500_blu1b_fb_ammo";
+            _bombOffset = 50;
+        } else {
+            _ammo = "ammo_Bomb_SDB";
+            _bombOffset = 170;
+        };
+    };
 	case ("CHEMICAL"): {
         _ammo = "Bo_Mk82_MI08";
         _bombOffset = 25;
@@ -48,8 +53,8 @@ private _timeBetweenBombs = (_metersPerBomb / _speedInMeters) - 0.05;
 
 sleep ((_timeBetweenBombs/2) + (_bombOffset/_speedInMeters));
 
-switch (_bombType) do {
-    case "CHEMICAL": {
+switch (true) do {
+    case (_bombType == "CHEMICAL"): {
         for "_i" from 1 to _bombCount do {
             sleep _timeBetweenBombs;
             if (alive _pilot) then {
@@ -77,7 +82,7 @@ switch (_bombType) do {
             };
         };
     };
-    case "NAPALM": {
+    case (_bombType == "CHEMICAL" && {!A3A_hasVN}): {
         for "_i" from 1 to _bombCount do {
             sleep _timeBetweenBombs;
             if (alive _pilot) then

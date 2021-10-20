@@ -65,30 +65,14 @@ garrison setVariable [format ["%1_requested", _markerX], [], true];
 if (_winner == teamPlayer) then
 {
 	_super = if (_markerX in airportsX or {_markerX in milbases}) then {true} else {false};
-    if(_positionX distance2D posHQ > distanceMission) then
-    {
-        [_markerX, _looser, _super] spawn
-        {
-            params ["_marker", "_loser", "_super"];
-            waitUntil
-            {
-                sleep 10;
-                spawner getVariable _marker == 2
-            };
-            if(sidesX getVariable [_marker, sideUnknown] == _loser) exitWith {};
-            [[_marker, _loser, _super], "A3A_fnc_singleAttack"] call A3A_fnc_scheduler;
-        };
-    }
-    else
-    {
-        [_markerX, _looser, _super] spawn
-        {
-            params ["_marker", "_loser", "_super"];
-            sleep (random ((15 - tierWar) * 60));
-            if(sidesX getVariable [_marker, sideUnknown] == _loser) exitWith {};
-            [[_marker, _loser, _super], "A3A_fnc_singleAttack"] call A3A_fnc_scheduler;
-        };
-    };
+	[_markerX, _looser, _super] spawn
+	{
+		params ["_marker", "_loser", "_super"];
+		private _waitTime = (6 - tierWar/2) * (0.5 + random 0.5);
+		sleep (_waitTime * 60);
+		if(sidesX getVariable [_marker, sideUnknown] == _loser) exitWith {};
+		[[_marker, _loser, _super], "A3A_fnc_singleAttack"] call A3A_fnc_scheduler;
+	};
 }
 else
 {
@@ -106,11 +90,21 @@ else
 		case (_markerX in citiesX): {_type = "City"};
 	};
 	private _preference = garrison getVariable (format ["%1_preference", _type]);
+	// pre-fill most of the garrison, because otherwise we're spamming a lot of fake reinf
+	private _indexToReinf = floor (random count _preference);
+	private _garrison = [];
 	private _request = [];
-	for "_i" from 0 to ((count _preference) - 1) do
 	{
-		_request pushBack ([_preference select _i, _winner] call A3A_fnc_createGarrisonLine);
-	};
+		private _line = [_x, _winner] call A3A_fnc_createGarrisonLine;
+		if (_forEachIndex == _indexToReinf) then {
+			_garrison pushBack ["", [], []];		// empty garrison line
+			_request pushBack _line;
+		} else {
+			_garrison pushBack _line;
+			_request pushBack ["", [], []];
+		};
+	} forEach _preference;
+	garrison setVariable [format ["%1_garrison", _markerX], _garrison, true];
 	garrison setVariable [format ["%1_requested", _markerX], _request, true];
 	//End ========================================================================
 };
@@ -448,6 +442,7 @@ else {
 		"NATO_carrier" setMarkerAlpha 1;
 	};
 };
+/*
 if ((_winner != teamPlayer) and (_looser != teamPlayer)) then {
 	switch(true) do {
 		case (_markerX in outposts): {
@@ -474,6 +469,7 @@ if ((_winner != teamPlayer) and (_looser != teamPlayer)) then {
 		default {};
 	};
 };
+*/
 markersChanging = markersChanging - [_markerX];
 
 if (_winner == teamPlayer) then {

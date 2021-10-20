@@ -1,10 +1,13 @@
+params ["_markerX"];
+ 
 //Mission: Logistic supplies
 if (!isServer and hasInterface) exitWith{};
-private ["_markerX","_difficultX","_leave","_contactX","_groupContact","_tsk","_posHQ","_citiesX","_city","_radiusX","_positionX","_posHouse","_nameDest","_timeLimit","_dateLimit","_dateLimitNum","_pos","_truckX","_countX", "_holdTime"];
-
-_markerX = _this select 0;
+private ["_difficultX","_leave","_contactX","_groupContact","_tsk","_posHQ","_citiesX","_city","_radiusX","_positionX","_posHouse","_nameDest","_timeLimit","_dateLimit","_dateLimitNum","_pos","_truckX","_countX", "_holdTime"];
 
 private _side = if (gameMode == 4) then {Invaders} else {Occupants};
+private _isEnemyMarker = (sidesX getVariable [_markerX,sideUnknown] != teamPlayer);
+
+private _groups = [];
 
 _difficultX = if (random 10 < tierWar) then {true} else {false};
 _leave = false;
@@ -28,7 +31,7 @@ private _taskId = "SUPP" + str A3A_taskCount;
 [_taskId, "SUPP", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
 //Creating the box
-_pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1,50,"C_Van_01_box_F"];
+_pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1,50,civSupplyVehicle];
 _truckX = "Land_FoodSacks_01_cargo_brown_F" createVehicle _pos;
 _truckX enableRopeAttach true;
 _truckX allowDamage false;
@@ -60,14 +63,20 @@ _mrk setMarkerBrushLocal "DiagGrid";
 _mrk setMarkerAlphaLocal 0;
 
 private _squad = if (_side == Invaders) then {CSATSquad} else {NATOSquad};
-_typeGroup = if (random 10 < tierWar) then {
+private _typeGroup = if (random 10 < tierWar) then {
 	_squad call SCRT_fnc_unit_selectInfantryTier
 } else {
-	[policeOfficer,policeGrunt,policeGrunt,policeGrunt,policeGrunt,policeGrunt,policeGrunt,policeGrunt]
+	[policeOfficer,policeGrunt,policeGrunt,policeGrunt]
 };
-_groupX = [_positionX,_side, _typeGroup] call A3A_fnc_spawnGroup;
-_nul = [leader _groupX, _mrk, "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
-{[_x,""] call A3A_fnc_NATOinit} forEach units _groupX;
+
+//preventing spawned units from killing garrison on friendly city
+if (_isEnemyMarker) then {
+	private _groupX = [_positionX,_side, _typeGroup] call A3A_fnc_spawnGroup;
+	_nul = [leader _groupX, _mrk, "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] execVM "scripts\UPSMON.sqf";
+	{[_x,""] call A3A_fnc_NATOinit} forEach units _groupX;
+
+	_groups pushBack _groupX;
+};
 
 waitUntil {
     sleep 1;
@@ -78,6 +87,7 @@ waitUntil {
 [2, "Rebels in area, spawning additional group.", "LOG_Supplies", true] call A3A_fnc_log; 
 private _group2Position = [_positionX, 650, 1000, 0, 0] call BIS_fnc_findSafePos;
 _groupX2 = [_group2Position, _side, _typeGroup] call A3A_fnc_spawnGroup;
+_groups pushBack _groupX2;
 
 private _groupX2WP = _groupX2 addWaypoint [(position _truckX), 5];
 _groupX2WP setWaypointType "MOVE";
@@ -91,7 +101,8 @@ if ((dateToNumber date > _dateLimitNum) or (isNull _truckX)) then {
 	[5*_bonus,-5*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	[-10*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 } else {
-	_countX = 120*_bonus;
+	private _countX = 120*_bonus;
+
 	{
 		_friendX = _x;
 		if (captive _friendX) then {
@@ -124,8 +135,8 @@ if ((dateToNumber date > _dateLimitNum) or (isNull _truckX)) then {
 			sleep 1;
 			_countX = _countX - 1;
 		};
+
 		if (_countX > 0) then {
-			_countX = 120*_bonus;//120
 			if (((_truckX distance _positionX > 40) 
 				or (not([80,1,_truckX,teamPlayer] call A3A_fnc_distanceUnits)) 
 				or ({(side _x == _side) and (_x distance _truckX < 50)} count allUnits != 0)) and (alive _truckX)) 
@@ -142,6 +153,7 @@ if ((dateToNumber date > _dateLimitNum) or (isNull _truckX)) then {
 				and (_x distance _truckX < 50)} count allUnits == 0)) or (dateToNumber date > _dateLimitNum) or (isNull _truckX)
 			};
 		};
+		
 		if (_countX < 1) exitWith {};
 	};
 
@@ -171,8 +183,9 @@ deleteVehicle _truckX;
 _emptybox = "Land_Pallet_F" createVehicle _ecpos;
 [_emptybox] spawn A3A_fnc_postmortem;
 
-[_groupX] spawn A3A_fnc_groupDespawner;
-[_groupX2] spawn A3A_fnc_groupDespawner;
+{
+    [_x] spawn A3A_fnc_groupDespawner
+} forEach _groups;
 
 deleteMarkerLocal _mrk;
 

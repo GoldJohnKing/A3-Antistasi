@@ -31,38 +31,39 @@ while {true} do
 		_cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
 
 		_popTotal = _popTotal + _numCiv;
+		if (_city in destroyedSites) then { _popKilled = _popKilled + _numCiv; continue };
+
 		_popReb = _popReb + (_numCiv * (_supportReb / 100));
 		_popGov = _popGov + (_numCiv * (_supportGov / 100));
 
 		private _radioTowerSide = [_city] call A3A_fnc_getSideRadioTowerInfluence;
-		_multiplyRes = if (_radioTowerSide != teamPlayer) then {0.5} else {1};
 
-		if (_city in destroyedSites) then {
-			_popKilled = _popKilled + _numCIV;
-		}
-		else {
-			_resAddCity = _numciv * _multiplyRes * (_supportReb / 100) / 3;
-			_hrAddCity = _numciv * (_supportReb / 10000);
-			switch (_radioTowerSide) do
-			{
-				case teamPlayer: {[-1,_suppBoost,_city,false,true] spawn A3A_fnc_citySupportChange};
-				case Occupants: {[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
-				case Invaders: {
-					if (gameMode == 4) then {
-						[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange;
-					} else {
-						[-1,-1,_city,false,true] spawn A3A_fnc_citySupportChange;
-					};
+		switch (_radioTowerSide) do
+		{
+			case teamPlayer: {[-1,_suppBoost,_city,false,true] spawn A3A_fnc_citySupportChange};
+			case Occupants: {[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange};
+			case Invaders: {
+				if (gameMode == 4) then {
+					[1,-1,_city,false,true] spawn A3A_fnc_citySupportChange;
+				} else {
+					[-1,-1,_city,false,true] spawn A3A_fnc_citySupportChange;
 				};
 			};
-			if (sidesX getVariable [_city,sideUnknown] == _governmentCitySide) then
-			{
-				_resAddCity = _resAddCity / 2;
-				_hrAddCity = _hrAddCity / 2;
-			};
 		};
+		
+		_resAddCity = _numCiv * (_supportReb / 100) / 3;
+		_hrAddCity = _numCiv * (_supportReb / 10000);
+
+		if (sidesX getVariable [_city,sideUnknown] == _governmentCitySide) then
+		{
+			_resAddCity = _resAddCity / 2;
+			_hrAddCity = _hrAddCity / 2;
+		};
+		if (_radioTowerSide != teamPlayer) then { _resAddCity = _resAddCity / 2 };
+
 		_resAdd = _resAdd + _resAddCity;
 		_hrAdd = _hrAdd + _hrAddCity;
+
 
 		// revuelta civil!!
 		if ((_supportGov < _supportReb) and (sidesX getVariable [_city,sideUnknown] == _governmentCitySide)) then
@@ -122,9 +123,10 @@ while {true} do
 			private _owner = owner _x;
             _x setVariable ["moneyX", _playerMoney, _owner];
             private _paycheckText = format [
-                "<t size='0.6'>%1 got paid <t color='#00FF00'>%2 €</t> for fighting for the freedom!</t>",
+                "<t size='0.6'>%1 got paid <t color='#00FF00'>%2%3</t> for fighting for the freedom!</t>",
                 name _x,
-                _incomePerPlayer
+                _incomePerPlayer, 
+				currencySymbol
             ];
 
             [petros, "income", _paycheckText] remoteExec ["A3A_fnc_commsMP", _x];
@@ -158,7 +160,7 @@ while {true} do
 
 	publicVariable "supportPoints";
 
-	private _textX = format ["<t size='0.6' color='#C1C0BB'>Taxes Income.<br/> <t size='0.5' color='#C1C0BB'><br/>Manpower: +%1<br/>Money: +%2 €", _hrAdd, _resAdd];
+	private _textX = format ["<t size='0.6' color='#C1C0BB'>Taxes Income.<br/> <t size='0.5' color='#C1C0BB'><br/>Manpower: +%1<br/>Money: +%2%3", _hrAdd, _resAdd, currencySymbol];
 	private _textArsenal = [] call A3A_fnc_arsenalManage;
 	if (_textArsenal != "") then {_textX = format ["%1<br/>Arsenal Updated<br/><br/>%2", _textX, _textArsenal]};
 	[petros, "taxRep", _textX] remoteExec ["A3A_fnc_commsMP", [teamPlayer, civilian]];
@@ -198,7 +200,7 @@ while {true} do
 		_potentials = [];
 		{
 		_markerX = [markersX, _x] call BIS_fnc_nearestPosition;
-		if ((sidesX getVariable [_markerX,sideUnknown] == Occupants) and (spawner getVariable _markerX == 2)) exitWith
+		if ((sidesX getVariable [_markerX,sideUnknown] == _governmentCitySide) and (spawner getVariable _markerX == 2)) exitWith
 			{
 			_potentials pushBack [_markerX,_x];
 			};

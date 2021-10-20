@@ -131,7 +131,7 @@
 
 ["vehiclesPolice", ["UK3CB_ADP_B_Hilux_Open"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["UK3CB_B_Static_M240_High_HIDF"]] call _fnc_saveToTemplate; 					
+["staticMGs", ["UK3CB_B_Static_M240_High_HIDF", "rhsgref_hidf_m2_static"]] call _fnc_saveToTemplate; 					
 ["staticAT", ["RHS_TOW_TriPod_D"]] call _fnc_saveToTemplate; 					
 ["staticAA", ["UK3CB_MDF_B_RBS70"]] call _fnc_saveToTemplate; 					
 ["staticMortars", ["RHS_M252_D"]] call _fnc_saveToTemplate;

@@ -27,10 +27,11 @@ if(_playersCount > 0) then {
     { 
         [_sharePerPlayer] remoteExec ["A3A_fnc_resourcesPlayer", _x];
         private _paycheckText = format [
-            "<t size='0.6'>Commander %1 shares rebel money equally among all members. %2 recieves his share - <t color='#00FF00'>%3 €</t>.</t>",
+            "<t size='0.6'>Commander %1 shares rebel money equally among all members. %2 recieves his share - <t color='#00FF00'>%3%4</t>.</t>",
             name theBoss,
             name _x,  
-            _sharePerPlayer
+            _sharePerPlayer,
+            currencySymbol
     	];
 
 		[petros, "income", _paycheckText] remoteExec ["A3A_fnc_commsMP", _x];

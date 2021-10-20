@@ -28,7 +28,11 @@ publicVariable "traderMarker";
 } forEach nearestTerrainObjects [_position, [], 60, false, true];
 
 //trader prop objects
-_traderTent = createVehicle ["Land_MedicalTent_01_wdl_generic_open_F", _position];
+_traderTent = if (A3A_hasVN) then { 
+	createVehicle ["Land_MedicalTent_01_wdl_generic_inner_F", _position]; 
+} else {
+	createVehicle ["Land_MedicalTent_01_wdl_generic_open_F", _position];
+};
 _traderTent allowDamage false;
 _buildingPositions = _traderTent buildingPos -1;
 
@@ -40,13 +44,19 @@ _table = ["Land_PortableDesk_01_black_F", getPosWorld _traderTent] call BIS_fnc_
 _table setPos (_buildingPositions select 0);
 _table setPos [getPos _table select 0, getPos _table select 1, (getPos _table select 2) + 0.7]; 
 
-_laptopArray = [[_table, "TOP"],"Land_Laptop_02_unfolded_F",1,[0,0,0],180] call BIS_fnc_spawnObjects;
-_laptop = _laptopArray select 0;
 
-_satellite = ["SatelliteAntenna_01_Black_F", getPosWorld _traderTent] call BIS_fnc_createSimpleObject;
-_satellite setPos (_buildingPositions select 0);
-_satellite setPos [(getPos _laptop select 0) + 5.5, getPos _laptop select 1, (getPos _laptop select 2) + 1.75];
-_satellite setDir 45; 
+if (!A3A_hasVN) then {
+	_laptopArray = [[_table, "TOP"],"Land_Laptop_02_unfolded_F",1,[0,0,0],180] call BIS_fnc_spawnObjects;
+	_laptop = _laptopArray select 0;
+	traderObjects pushBack _laptop;
+
+	_satellite = ["SatelliteAntenna_01_Black_F", getPosWorld _traderTent] call BIS_fnc_createSimpleObject;
+	_satellite setPos (_buildingPositions select 0);
+	_satellite setPos [(getPos _laptop select 0) + 5.5, getPos _laptop select 1, (getPos _laptop select 2) + 1.75];
+	_satellite setDir 45; 
+	traderObjects pushBack _satellite;
+};
+
 
 _tableBoxArray = [[_table, "TOP"],"Land_Ammobox_rounds_F",1,[-0.4,(random 0.2),(random 20)-10],(random 180)] call BIS_fnc_spawnObjects;
 _tableBox = _tableBoxArray select 0;
@@ -62,7 +72,7 @@ _container setPos (_buildingPositions select 0);
 _container setPos [(getPos _container select 0) - 8, (getPos _container select 1) + 3, (getPos _container select 2) + 2.4];
 _container setDir 90;
 
-traderObjects append [_traderTent, _chair, _table, _laptop, _satellite, _tableBox, _ammoBox1, _ammoBox2, _container];
+traderObjects append [_traderTent, _chair, _table, _tableBox, _ammoBox1, _ammoBox2, _container];
 publicVariable "traderObjects";
 
 [_traderTent, [0, 0, 1]] remoteExec ["SCRT_fnc_common_attachLightSource", 0, _traderTent];

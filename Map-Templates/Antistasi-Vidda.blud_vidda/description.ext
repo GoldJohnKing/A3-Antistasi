@@ -40,8 +40,8 @@ class CfgDebriefing
 	class End1
 	{
 		title = "V I C T O R Y";
-		subtitle = "Chernarus is Ours!";
-		description = "The population of Chernarus loves you!<br/>The brave Borshevik soldiers have proven their valour, and Petros, Chernarus's new General Secretary, could at last to have a nice holiday. A well deserved rest for everyone involved.";
+		subtitle = "Vidda is Ours!";
+		description = "The population of Vidda loves you!<br/>Our brave soldiers have proven their valour, and Petros, Vidda's new Prime Minister, could at last to have a nice holiday. A well deserved rest for everyone involved.";
 		picture = "n_inf";
 		pictureColor[] = {0.0,0.5,0.0,1};
 	};
@@ -49,15 +49,15 @@ class CfgDebriefing
     {
         title = "Petros is Dead";
         subtitle = "Petros is Dead";
-        description = "Congratulations!: Petros is Dead. Now with Syndikat without a leader, you may think about joining them, and free Chernarus";
+        description = "Congratulations!: Petros is Dead. Now with Syndikat without a leader, you may think about joining them, and free Vidda";
         picture = "b_unknown";
         pictureColor[] = {0.5,0.0,0.0,1};
     };
     class destroyedSites
     {
-        title = "Chernarus is Destroyed";
-        subtitle = "Chernarus got Destroyed by CSAT";
-        description = "One third of the population in Chernarus has been murdered by CSAT.<br/>Chernarus no longer exists, nobody wants to live here.";
+        title = "Vidda is Destroyed";
+        subtitle = "Vidda got Destroyed by CSAT";
+        description = "One third of the population in Vidda has been murdered by invaders.<br/>Vidda no longer exists, nobody wants to live here.";
         picture = "b_unknown";
         pictureColor[] = {0.5,0.0,0.0,1};
     };

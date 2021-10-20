@@ -122,6 +122,7 @@ if (isServer) then {
 
 	{
 		if (_x in destroyedSites) then {
+			sidesX setVariable [_x, Invaders, true];
 			[_x] call A3A_fnc_destroyCity
 		};
 	} forEach citiesX;
@@ -227,7 +228,7 @@ if (isServer) then {
 			_dmrk = createMarker [format ["Dum%1",_x], _pos];
 			_dmrk setMarkerShape "ICON";
 			_dmrk setMarkerType "b_naval";
-			if (toLower worldName isEqualTo "enoch") then {
+			if (toLower worldName in ["enoch", "vn_khe_sanh"]) then {
 				_dmrk setMarkerText "River Port";
 			} else {
 				_dmrk setMarkerText "Sea Port";
@@ -251,7 +252,6 @@ if (isServer) then {
 		} forEach milbases;
 	};
 
-	statsLoaded = 0; publicVariable "statsLoaded";
 	placementDone = true; publicVariable "placementDone";
 	petros allowdamage true;
 };

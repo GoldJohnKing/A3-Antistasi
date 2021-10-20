@@ -12,7 +12,7 @@ if (!_isPlayer) then
 else
 {
 	construction_buildTime = construction_buildTime / 2;
-	["Build Info", "Walk to the selected position to start building"] call A3A_fnc_customHint;
+	["Build Info", "Walk to the selected position to start building."] call A3A_fnc_customHint;
 };
 
 build_targetLocation = _positionX;
@@ -28,7 +28,7 @@ addMissionEventHandler ["Draw3D", {
 
 waitUntil {sleep 1;(time > _timeOut) or (construction_selectedEngineer distance _positionX < 3)};
 
-if (time > _timeOut) exitWith 
+if (time > _timeOut) exitWith
 {
 	build_cancelBuild = true;
 	["Build Info", "You didn't move to the position, construction has timed out."] call A3A_fnc_customHint;
@@ -76,24 +76,10 @@ waitUntil  {sleep 5; !([construction_selectedEngineer] call A3A_fnc_canFight) or
 construction_selectedEngineer setVariable ["constructing",false];
 if (!_isPlayer) then {{construction_selectedEngineer enableAI _x} forEach ["ANIM","AUTOTARGET","FSM","MOVE","TARGET"]};
 
-if (time <= _timeOut) exitWith {["Build Info", "Construction cancelled"] call A3A_fnc_customHint;};
+if (time <= _timeOut) exitWith {["Build Info", "Construction cancelled."] call A3A_fnc_customHint;};
 if (!_isPlayer) then {construction_selectedEngineer doFollow (leader construction_selectedEngineer)};
 
-private _veh = createVehicle [_structureType, _positionX, [], 0, "CAN_COLLIDE"];
-_veh setDir _dir;
-
-constructionsToSave pushBackUnique _veh;
-publicVariable "constructionsToSave";
-
-//removing previous
-private _excessiveConstructions = maxConstructions - (count constructionsToSave);
-if(_excessiveConstructions < 0) then {
-	private _top = abs _excessiveConstructions;
-	for "_i" from 0 to _top do {
-		deleteVehicle (constructionsToSave select _i);
-		constructionsToSave deleteAt _i;
-	};
-};
+[_structureType, _positionX, _dir] remoteExecCall ["SCRT_fnc_build_addConstruction", 2];
 
 construction_nearestFriendlyMarker = nil;
 construction_selectedEngineer = nil;

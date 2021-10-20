@@ -1,5 +1,5 @@
 if (!isServer and hasInterface) exitWith{};
-private ["_markerX","_vehiclesX","_groups","_soldiers","_positionX","_pos","_size","_frontierX","_sideX","_cfg","_isFIA","_garrison","_antenna","_radiusX","_buildings","_mrk","_countX","_typeGroup","_groupX","_typeUnit","_typeVehX","_veh","_unit","_flagX","_boxX","_roads","_mrkMar","_vehicle","_vehCrew","_groupVeh","_dist","_road","_roadCon","_dirVeh","_bunker","_dir","_posF"];
+private ["_typeVehX","_markerX","_vehiclesX","_groups","_soldiers","_positionX","_pos","_size","_frontierX","_sideX","_cfg","_isFIA","_garrison","_antenna","_radiusX","_buildings","_mrk","_countX","_typeGroup","_groupX","_typeUnit","_veh","_unit","_flagX","_boxX","_roads","_mrkMar","_vehicle","_vehCrew","_groupVeh","_dist","_road","_roadCon","_dirVeh","_bunker","_dir","_posF"];
 _markerX = _this select 0;
 
 //Not sure if that ever happens, but it reduces redundance
@@ -90,9 +90,6 @@ if (count _additionalGarrison > 0) then {
 };
 
 _garrison = garrison getVariable [_markerX,[]];
-if (count _garrison > 60) then {
-	_garrison resize 60;
-};
 _garrison = _garrison call A3A_fnc_garrisonReorg;
 
 _radiusX = count _garrison;
@@ -213,7 +210,7 @@ private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
 			sleep 1;    //make sure fillLootCrate finished clearing the crate
 			{
 				_this#0 addItemCargoGlobal [_x, round random [2,6,8]];
-			} forEach diveGear;
+			} forEach (A3A_faction_reb getVariable "diveGear");
 		};
 	};
 	_ammoBox;
@@ -301,31 +298,49 @@ else
 
 _spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
 if (_spawnParameter isEqualType []) then {
-	_typeVehX = if !(_isFIA) then {
-		if (_sideX == Occupants) then {
+	private _truckTypes = switch (true) do {
+		case (!_isFIA && {_sideX == Occupants}): {
 			private _types = vehNATOTrucks + vehNATOCargoTrucks;
-			if (_frontierX) then {_types = _types + vehNATOArmed};
-			_types;
-		} else {
-			private _types = vehCSATTrucks + vehCSATCargoTrucks;
-			if (_frontierX) then {_types = _types + vehCSATLightArmed};
+			_types = _types select { _x in vehCargoTrucks };
+			if (_frontierX) then {_types append vehNATOLightArmed};
+			if (_types isEqualTo []) then {_types = vehNATOTrucks + vehNATOCargoTrucks};
 			_types;
 		};
-	} else {
-		if (_sideX == Occupants) then {
+		case (_isFIA && {_sideX == Occupants}): {
 			private _types = vehFIATrucks;
 			_types = _types select { _x in vehCargoTrucks };
-			if (_frontierX) then {_types = _types + vehFIAArmedCars};
+			if (_frontierX) then {_types append vehFIAArmedCars};
+			if (_types isEqualTo []) then {_types = vehFIATrucks};
 			_types;
-		} else {
+		};
+		case (!_isFIA && {_sideX == Invaders}): {
+			private _types = vehCSATTrucks + vehCSATCargoTrucks;
+			_types = _types select { _x in vehCargoTrucks };
+			if (_frontierX) then {_types append vehCSATLightArmed};
+			if (_types isEqualTo []) then {_types = vehCSATTrucks + vehCSATCargoTrucks};
+			_types;
+		};
+		case (_isFIA && {_sideX == Invaders}): {
 			private _types = vehWAMTrucks;
 			_types = _types select { _x in vehCargoTrucks };
-			if (_frontierX) then {_types = _types + vehWAMArmedCars};
+			if (_frontierX) then {_types append vehWAMArmedCars};
+			if (_types isEqualTo []) then {_types = vehWAMTrucks};
 			_types;
+		};
+		default {
+			[];
 		};
 	};
 
-	_veh = createVehicle [selectRandom _typeVehX, (_spawnParameter select 0), [], 0, "NONE"];
+	if (_truckTypes isEqualTo []) then {
+		if (_sideX == Occupants) then {
+			_truckTypes = vehNATOTrucks + vehNATOCargoTrucks + vehFIATrucks + vehFIAArmedCars;
+		} else {
+			_truckTypes = vehCSATTrucks + vehCSATCargoTrucks + vehWAMTrucks + vehWAMArmedCars;
+		};
+	};
+ 
+	_veh = createVehicle [selectRandom _truckTypes, (_spawnParameter select 0), [], 0, "NONE"];
 	_veh setDir (_spawnParameter select 1);
 	_vehiclesX pushBack _veh;
 	_nul = [_veh, _sideX] call A3A_fnc_AIVEHinit;

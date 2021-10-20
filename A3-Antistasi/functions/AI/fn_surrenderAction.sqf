@@ -100,5 +100,5 @@ _unit addEventHandler ["HandleDamage", {
 	nil;
 }];
 
-// Add release/recruit/interrogate options
+// Add release/recruit/reveal options
 [_unit,"captureX"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_unit];

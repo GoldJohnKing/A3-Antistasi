@@ -50,8 +50,10 @@ try {
 		};
 	};
 
+	["buttonInvToJNA"] call jn_fnc_arsenal;
+
 	//unlocked items are already cut from sell list, but let's make additional check if players will find some exploit to sell unlocked guns 
-	private _unlockedItems = (
+	private _unlockedItems = ((
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON) + 
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_HANDGUN) + 
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_SECONDARYWEAPON) + 
@@ -74,7 +76,7 @@ try {
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_NVGS) + 
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_HEADGEAR) + 
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_VEST)
-	) select {(_x select 1) == -1 || {(_x select 1) >= minWeaps}};
+	) select {(_x select 1) == -1 || {(_x select 1) >= minWeaps}}) apply {_x select 0};
 
 	if (_classname in _unlockedItems) then {
 		throw ["The trader is not interested in this item, no deal."]

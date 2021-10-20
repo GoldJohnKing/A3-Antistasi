@@ -8,7 +8,7 @@ private _veh = objNull;
 private _sideX = side _groupX;
 private _typeVehX = 	if !(_isMortar) then
 						{
-						if (_sideX == Occupants) then {NATOMG} else {if (_sideX == Invaders) then {CSATMG} else {SDKMGStatic}};
+						if (_sideX == Occupants) then {selectRandom NATOMG} else {if (_sideX == Invaders) then {selectRandom CSATMG} else {SDKMGStatic}};
 						}
 					else
 						{

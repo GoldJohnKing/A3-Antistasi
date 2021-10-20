@@ -245,7 +245,7 @@ class commanderMenu
 				class garrisonDescriptionText: TextBaseMT
 				{
 					idc = 2701;			
-					text = "Select outpost type, press Establish button and click on desired position on the map. Various outposts requires different amount of HR and €.";
+					text = "Select outpost type, press Establish button and click on desired position on the map. Various outposts requires different amount of HR and money.";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	

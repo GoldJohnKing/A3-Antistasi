@@ -51,7 +51,19 @@ switch (supportType) do {
     case ("CHEMICAL"): {
 		_text = format ["<t size='0.6'>Rebel aircraft is about to drop some <t size='0.6' color='#e60000'>%1 bombs</t> near your position, take cover.</t>", toLower supportType];
 
-		private _bombCount = if (supportType == "CHEMICAL") then {1} else {4};
+		private _bombCount = switch (supportType) do {
+			case "CHEMICAL": {
+				1;
+			};
+			case "NAPALM";
+			case "CLUSTER": {
+				2;
+			};
+			default {
+				4;
+			};
+		};
+
 		private _distance = _positionOrigin distance2D _positionDestination;
 		private _bombParams = [_plane, supportType, _bombCount, _distance];
 

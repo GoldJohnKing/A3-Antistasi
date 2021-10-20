@@ -140,8 +140,8 @@ DECLARE_SERVER_VAR(A3A_lastGarbageCleanTime, serverTime);
 prestigeOPFOR = [75, 50] select cadetMode;												//Initial % support for NATO on each city
 prestigeBLUFOR = 0;																	//Initial % FIA support on each city
 // Indicates time in seconds before next counter attack.
-attackCountdownOccupants = 1200;
-attackCountdownInvaders = 1200;
+attackCountdownOccupants = 2400;
+attackCountdownInvaders = 2400;
 
 cityIsSupportChanging = false;
 resourcesIsChanging = false;
@@ -199,9 +199,7 @@ private _otherEquipmentArrayNames = [
 	"invaderBackpackDevice",
 	"occupantBackpackDevice",
 	"rebelBackpackDevice",
-	"civilianBackpackDevice",
-	"diveGear",
-	"flyGear"
+	"civilianBackpackDevice"
 ];
 
 DECLARE_SERVER_VAR(otherEquipmentArrayNames, _otherEquipmentArrayNames);
@@ -246,10 +244,18 @@ if (A3A_hasTFAR) then
 [2,"Creating civilians",_fileName] call A3A_fnc_log;
 
 //No real reason we initialise this on the server right now...
-private _arrayCivs = ["C_man_polo_1_F","C_man_polo_1_F_asia","C_man_polo_1_F_euro"];
-if (toLower worldName isEqualTo "tanoa") then {
-	_arrayCivs pushBack "C_man_sport_1_F_tanoan";
+private _arrayCivs = [];
+
+switch (true) do {
+	case (toLower worldName in ["tanoa", "rhspkl", "cam_lao_nam", "vn_khe_sanh"]): {
+		_arrayCivs append ["C_man_sport_1_F_tanoan","C_man_polo_1_F_asia"];
+	};
+	default {
+		_arrayCivs append ["C_man_polo_1_F","C_man_polo_1_F_asia","C_man_polo_1_F_euro"];
+	};
+	//TODO: Africans when some Africa terrain will be supported
 };
+
 DECLARE_SERVER_VAR(arrayCivs, _arrayCivs);
 
 //money magazines
@@ -516,7 +522,8 @@ private _templateVariables = [
 	"smallBunker",
 	"sandbag",
 	"lootCrate",
-	"rallyPoint"
+	"rallyPoint",
+	"civSupplyVehicle"
 ];
 
 //CUP-only technical variables
@@ -633,8 +640,7 @@ for "_i" from 0 to (count _civVehiclesWeighted - 2) step 2 do {
 	_civVehicles pushBack (_civVehiclesWeighted select _i);
 };
 
-_civVehicles append [civCar, civTruck];			// Civ car/truck from rebel template, in case they're different
-_civVehicles pushBackUnique "C_Van_01_box_F";		// Box van from bank mission. TODO: Define in rebel template
+_civVehicles append [civCar, civTruck, civSupplyVehicle];			// Civ car/truck from rebel template, in case they're different
 
 DECLARE_SERVER_VAR(arrayCivVeh, _civVehicles);
 DECLARE_SERVER_VAR(civVehiclesWeighted, _civVehiclesWeighted);
@@ -793,7 +799,7 @@ DECLARE_SERVER_VAR(vehAA, _vehAA);
 private _vehMRLS = [vehCSATMRLS, vehNATOMRLS];
 DECLARE_SERVER_VAR(vehMRLS, _vehMRLS);
 
-private _vehArmor = [vehTanks,vehAA,vehMRLS] + vehAPCs;
+private _vehArmor = vehTanks + vehAA + vehMRLS + vehAPCs;
 DECLARE_SERVER_VAR(vehArmor, _vehArmor);
 
 private _vehTransportAir = vehNATOTransportHelis + vehCSATTransportHelis + vehNATOTransportPlanes + vehCSATTransportPlanes;
@@ -802,10 +808,11 @@ DECLARE_SERVER_VAR(vehTransportAir, _vehTransportAir);
 private _vehFastRope = ["O_Heli_Light_02_unarmed_F","B_Heli_Transport_01_camo_F","RHS_UH60M_d","UK3CB_BAF_Merlin_HC3_18_GPMG_DDPM_RM","UK3CB_BAF_Merlin_HC3_18_GPMG_Tropical_RM","RHS_Mi8mt_vdv","RHS_Mi8mt_vv","RHS_Mi8mt_Cargo_vv"];
 DECLARE_SERVER_VAR(vehFastRope, _vehFastRope);
 
-private _vehUnlimited = vehNATONormal + vehCSATNormal + [vehNATORBoat,vehNATOPatrolHeli,vehCSATRBoat,vehCSATPatrolHeli,vehNATOUAV,vehNATOUAVSmall,NATOMG,NATOMortar,NATOHowitzer,NATOAARadar,NATOAASam,vehCSATUAV,vehCSATUAVSmall,CSATMG, CSATMortar, CSATHowitzer, CSATAARadar, CSATAASam];
+private _vehUnlimited = vehNATONormal + vehCSATNormal + [vehNATORBoat,vehNATOPatrolHeli,vehCSATRBoat,vehCSATPatrolHeli,vehNATOUAV,vehNATOUAVSmall,NATOMortar,NATOHowitzer,NATOAARadar,NATOAASam,vehCSATUAV,vehCSATUAVSmall, CSATMortar, CSATHowitzer, CSATAARadar, CSATAASam] + CSATMG + NATOMG;
 DECLARE_SERVER_VAR(vehUnlimited, _vehUnlimited);
 
 private _vehFIA = [vehSDKBike,vehSDKAT,vehSDKLightArmed,SDKMGStatic,vehSDKLightUnarmed,vehSDKTruck,vehSDKBoat,SDKMortar,staticATteamPlayer,staticAAteamPlayer,vehSDKRepair,vehSDKFuel,vehSDKPlane,vehSDKPayloadPlane];
+if (vehSDKAA != "not_supported") then { _vehFIA pushBack vehSDKAA };
 DECLARE_SERVER_VAR(vehFIA, _vehFIA);
 
 private _vehCargoTrucks = (vehTrucks + vehNATOCargoTrucks + vehCSATCargoTrucks) select { [_x] call A3A_fnc_logistics_getVehCapacity > 1 };
@@ -901,9 +908,20 @@ server setVariable [SDKMortar, 2000, true];
 {server setVariable [_x,35000,true]} forEach shop_plane;
 
 if (!(shop_tank isEqualTo [])) then {
-	server setVariable [(shop_tank select 0), 10500, true];
-	server setVariable [(shop_tank select 1), 15000, true];
-	server setVariable [(shop_tank select 2), 17500, true];
+	private _firstTank = shop_tank select 0;
+	if (!isNil "_firstTank") then {
+		server setVariable [_firstTank, 10500, true];
+	};
+
+	private _secondTank = shop_tank select 1;
+	if (!isNil "_secondTank") then {
+		server setVariable [_secondTank, 15000, true];
+	};
+
+	private _thirdTank = shop_tank select 2;
+	if (!isNil "_thirdTank") then {
+		server setVariable [_thirdTank, 17500, true];
+	};
 };
 
 if (!(additionalShopArtillery isEqualTo [])) then {

@@ -35,6 +35,6 @@ _initialFlarePosition set [2,150];
 _flareModel = selectRandom flaresPool;
 
 _flare = _flareModel createVehicle _initialFlarePosition;
-_flare setVelocity [-10+random 20, -10+random 20, -5];
+_flare setVelocity [-10+random 10, -10+random 10, -5];
 
 playSound3D [(selectRandom flareSounds), _unit, false,  getPosASL _unit, 1.5, 1, 450, 0];

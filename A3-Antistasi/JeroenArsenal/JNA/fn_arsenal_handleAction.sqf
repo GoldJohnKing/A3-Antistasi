@@ -38,14 +38,6 @@ private _ids = missionnamespace getvariable ["BIS_fnc_startLoadingScreen_ids",[]
 	_display closedisplay 2;
 	["jn_fnc_arsenal"] call BIS_fnc_endLoadingScreen;
   };
-
-  //TODO this is a temp fix for rhs because it freezes the loading screen if no primaryWeapon was equiped. This will be fix in rhs 0.4.9
-if("bis_fnc_arsenal" in _ids)then{
-	private _display =  uiNamespace getVariable ["arsenalDisplay","No display"];
-	titleText["Non Fatal Error, RHS?", "PLAIN"];
-	diag_log "JNA: Non Fatal Error, RHS?";
-	["bis_fnc_arsenal"] call BIS_fnc_endLoadingScreen;
-};
 };
 
 //save proper ammo because BIS arsenal rearms it, and I will over write it back again

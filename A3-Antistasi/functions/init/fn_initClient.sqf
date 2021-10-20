@@ -5,7 +5,6 @@ private _fileName = "initClient.sqf";
 //Make sure logLevel is always initialised.
 //This should be overridden by the server, as appropriate. Hence the nil check.
 if (isNil "logLevel") then { logLevel = 2 };
-if (isNil "isSystemChatPostingAllowed") then {isSystemChatPostingAllowed = false};
 scriptName "initClient.sqf";
 
 
@@ -51,8 +50,8 @@ if (!isServer) then {
 	waitUntil {!isNil "initParamsDone"};
 	call A3A_fnc_initFuncs;
 	call A3A_fnc_initVar;
-	[2,format ["MP client version: %1",localize "STR_antistasi_credits_generic_version_text"],_fileName] call A3A_fnc_log;
-	[2,format ["MP client version: %1",localize "STR_antistasi_plus_credits_generic_version_text"],_fileName] call A3A_fnc_log;
+	[2,format ["MP client Antistasi version: %1",localize "STR_antistasi_credits_generic_version_text"],_fileName] call A3A_fnc_log;
+	[2,format ["MP client Antistasi Plus version: %1",localize "STR_antistasi_plus_credits_generic_version_text"],_fileName] call A3A_fnc_log;
 }
 else {
 	// SP or hosted, initFuncs/var run in serverInit
@@ -270,7 +269,7 @@ player addEventHandler ["WeaponAssembled", {
 		_markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
 		_pos = position _veh;
 		[_veh] call A3A_fnc_logistics_addLoadAction;
-		if (_markersX findIf {_pos inArea _x} != -1) then {["Static Deployed", "Static weapon has been deployed for use in a nearby zone, and will be used by garrison militia if you leave it here the next time the zone spawns"] call A3A_fnc_customHint;};
+		if (_markersX findIf {_pos inArea _x} != -1) then {["Static Deployed", "Static weapon has been deployed for use in a nearby zone, and will be used by garrison militia if you leave it here the next time the zone spawns."] call A3A_fnc_customHint;};
 	};
 }];
 
@@ -291,7 +290,7 @@ player addEventHandler ["GetInMan", {
 		if (!isNil "_owner") then {
 			if (_owner isEqualType "") then {
 				if ({getPlayerUID _x == _owner} count (units group player) == 0) then {
-					["Warning", "You cannot board other player vehicle if you are not in the same group"] call A3A_fnc_customHint;
+					["Warning", "You cannot board other player vehicle if you are not in the same group."] call A3A_fnc_customHint;
 					moveOut _unit;
 					_exit = true;
 				};
@@ -393,6 +392,13 @@ if(isDiscordRichPresenceActive) then {
 	}];
 };
 
+if (A3A_hasACE) then {
+    ["ace_explosives_place", {
+        params ["_explosive","_dir","_pitch","_unit"];
+		if (_unit == player) then { player setCaptive false };
+    }] call CBA_fnc_addEventHandler;
+};
+
 call A3A_fnc_initUndercover;
 
 ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;//Exec on client
@@ -411,7 +417,7 @@ if (membershipEnabled) then {
 			membersX pushBack (getPlayerUID player);
 			publicVariable "membersX";
 		} else {
-			["General Info", "Welcome Guest<br/><br/>You have joined this server as guest"] call A3A_fnc_customHint;
+			["General Info", "Welcome Guest<br/><br/>You have joined this server as guest."] call A3A_fnc_customHint;
 		};
 	};
 };
@@ -468,7 +474,7 @@ gameMenu = (findDisplay 46) displayAddEventHandler ["KeyDown",A3A_fnc_keys];
 if (A3A_hasACE) then
 {
 	if (isNil "ace_interact_menu_fnc_compileMenu" || isNil "ace_interact_menu_fnc_compileMenuSelfAction") exitWith {
-		[1, "ACE non-public functions have changed, rebel group join/leave actions will not be removed", _filename] call A3A_fnc_log;
+		[1, "ACE non-public functions have changed, rebel group join/leave actions will not be removed.", _filename] call A3A_fnc_log;
 	};
 	// Remove group join action from all rebel unit types
 	// Need to compile the menus first, because ACE delays creating menus until a unit of that class is created
@@ -486,7 +492,7 @@ boxX addAction ["Transfer Vehicle cargo to Ammobox", {[] spawn A3A_fnc_empty;}, 
 boxX addAction ["Move this asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 if (A3A_hasACE) then { [boxX, boxX] call ace_common_fnc_claim;};	//Disables ALL Ace Interactions
 flagX allowDamage false;
-flagX addAction ["Unit Recruitment", {if ([player,300] call A3A_fnc_enemyNearCheck) then {["Recruit Unit", "You cannot recruit units while there are enemies near you"] call A3A_fnc_customHint;} else { [] spawn A3A_fnc_unit_recruit; }},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)"];
+flagX addAction ["Unit Recruitment", {if ([player,300] call A3A_fnc_enemyNearCheck) then {["Recruit Unit", "You cannot recruit units while there are enemies near you."] call A3A_fnc_customHint;} else { [] spawn A3A_fnc_unit_recruit; }},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)"];
 flagX addAction ["Travel to rally point", {[] spawn SCRT_fnc_rally_travelToRallyPoint},nil,0,false,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && (side (group _this) == teamPlayer) && (!isNil 'isRallyPointPlaced' && {isRallyPointPlaced})",4];
 flagX addAction ["Move this asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
@@ -501,10 +507,9 @@ _flagLight setLightAttenuation [7, 0, 0.5, 0.5];
 
 vehicleBox allowDamage false;
 vehicleBox addAction ["Heal nearby units", A3A_fnc_vehicleBoxHeal,nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
-vehicleBox addAction ["Vehicle Arsenal", JN_fnc_arsenal_handleAction, [], 0, true, false, "", "alive _target && vehicle _this != _this", 10];
 [vehicleBox] call HR_GRG_fnc_initGarage;
 if (A3A_hasACE) then { [vehicleBox, VehicleBox] call ace_common_fnc_claim;};	//Disables ALL Ace Interactions
-vehicleBox addAction ["Buy Vehicle", {if ([player,300] call A3A_fnc_enemyNearCheck) then {["Purchase Vehicle", "You cannot buy vehicles while there are enemies near you"] call A3A_fnc_customHint;} else {[] call SCRT_fnc_ui_createBuyVehicleMenu}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
+vehicleBox addAction ["Buy Vehicle", {if ([player,300] call A3A_fnc_enemyNearCheck) then {["Purchase Vehicle", "You cannot buy vehicles while there are enemies near you."] call A3A_fnc_customHint;} else {[] call SCRT_fnc_ui_createBuyVehicleMenu}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
 vehicleBox addAction ["Buy Loot Crate", {[] call SCRT_fnc_loot_createLootCrate},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)",4];
 vehicleBox addAction ["Move this asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
@@ -602,6 +607,26 @@ if (magRepack) then {
 	private _uid = getPlayerUID player;
 	_paradropAttendants pushBackUnique _uid;
 	[missionNamespace, "paradropAttendants", _paradropAttendants] call BIS_fnc_setServerVariable;
+};
+
+if (saveZeusBuildings) then {
+	[2,"Initializing Curator Persistent Save.",_fileName, true] call A3A_fnc_log;
+	private _curator = allCurators select 0;
+	_curator addEventHandler ["CuratorObjectPlaced", {
+		params ["_curator", "_entity"];
+		if !(_entity isKindOf "Building") exitWith {};
+		[_entity] remoteExecCall ["SCRT_fnc_build_saveConstruction", 2];
+	}];
+	_curator addEventHandler ["CuratorObjectEdited", {
+		params ["_curator", "_entity"];
+		if !(_entity isKindOf "Building") exitWith {};
+		[_entity] remoteExecCall ["SCRT_fnc_build_updateConstruction", 2];
+	}];
+	_curator addEventHandler ["CuratorObjectDeleted", {
+		params ["_curator", "_entity"];
+		if !(_entity isKindOf "Building") exitWith {};
+		[_entity] remoteExecCall ["SCRT_fnc_build_removeConstruction", 2];
+	}];
 };
 
 [2,"initClient completed",_fileName] call A3A_fnc_log;

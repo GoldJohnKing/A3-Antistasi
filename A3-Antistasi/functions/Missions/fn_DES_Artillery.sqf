@@ -31,7 +31,7 @@ private _squads = [_sideX, "SQUAD"] call SCRT_fnc_unit_getGroupSet;
 private _infantrySquadArray = selectRandom _squads;
 
 if(_sideX == Occupants) then { 
-    if (NATOHowitzer != "") then {
+    if (NATOHowitzer != "not_supported") then {
         _artilleryClass = NATOHowitzer;
         _artilleryShellClass = NATOHowitzerMagazineHE;
     } else {
@@ -39,11 +39,11 @@ if(_sideX == Occupants) then {
         _artilleryShellClass = vehNATOMRLSMags;
     };
 
-    _mgClass = NATOMG;
+    _mgClass = selectRandom NATOMG;
     _mgCrewClass = staticCrewOccupants call SCRT_fnc_unit_selectInfantryTier;
 } 
 else { 
-    if (CSATHowitzer != "") then {
+    if (CSATHowitzer != "not_supported") then {
         _artilleryClass = CSATHowitzer;
         _artilleryShellClass = CSATHowitzerMagazineHE;
     } else {
@@ -51,13 +51,13 @@ else {
         _artilleryShellClass = vehCSATMRLSMags;
     };
 
-    _mgClass = CSATMG;
+    _mgClass = selectRandom CSATMG;
     _mgCrewClass = staticCrewInvaders call SCRT_fnc_unit_selectInfantryTier;
 };
 
 if (isNil "_artilleryClass" || {isNil "_artilleryShellClass"} || {isNil "_mgClass"} || {isNil "_infantrySquadArray"} || {isNil "_mgCrewClass"}) 
 exitWith {
-	["DES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+	["DES"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, format ["Problems with unit templates, rerequesting new destroy mission."], _filename] call A3A_fnc_log;
 };
 

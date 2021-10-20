@@ -17,7 +17,6 @@ if (_part == "" && _damage > 0.1) then
 	// this will not work the same with ACE, as damage isn't accumulated
 	if (!isPlayer (leader group _unit) && dam < 1.0) then
 	{
-		//if (_damage > 0.6) then {[_unit,_unit,_injurer] spawn A3A_fnc_chargeWithSmoke};
 		if (_damage > 0.6) then {[_unit,_injurer] spawn A3A_fnc_unitGetToCover};
 	};
 

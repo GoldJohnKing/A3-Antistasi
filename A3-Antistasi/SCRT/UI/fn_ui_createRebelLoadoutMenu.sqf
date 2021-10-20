@@ -44,4 +44,8 @@ if (str (_display) != "no display") then {
     if ("loadouts_reb_militia_SquadLeader" in rebelLoadouts) then {
         [(_display displayCtrl 120009)] call _addLoadoutMark;
     };
+
+    if ("loadouts_reb_militia_ExplosivesExpert" in rebelLoadouts) then {
+        [(_display displayCtrl 120010)] call _addLoadoutMark;
+    };
 };

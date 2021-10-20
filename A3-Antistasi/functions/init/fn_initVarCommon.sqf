@@ -165,6 +165,7 @@ listMilBld = [
 	"Land_HelipadCivil_F",
 	"Land_HelipadCircle_F",
 	"Land_BludpadCircle",
+	"Land_vn_b_helipad_01",
 	"Land_Posed",
 	"Land_Hlaska",
 	"Land_fortified_nest_small_EP1",
@@ -211,7 +212,11 @@ listMilBld = [
 	"Land_BagBunker_Large_F",
 	"Land_fortified_nest_big_EP1",
 	"Land_fortified_nest_big",
-	"Land_BagBunker_01_large_green_F"
+	"Land_BagBunker_01_large_green_F",
+	"Land_GuardTower_01_F", 
+	"Land_vn_guardtower_01_f",
+	"Land_vn_bunker_small_01",
+	"Land_vn_bunker_big_01"
 ];
 
 UPSMON_Bld_remove = ["Bridge_PathLod_base_F","Land_Slum_House03_F","Land_Bridge_01_PathLod_F","Land_Bridge_Asphalt_PathLod_F","Land_Bridge_Concrete_PathLod_F","Land_Bridge_HighWay_PathLod_F","Land_Bridge_01_F","Land_Bridge_Asphalt_F","Land_Bridge_Concrete_F","Land_Bridge_HighWay_F","Land_Canal_Wall_Stairs_F","warehouse_02_f","cliff_wall_tall_f","cliff_wall_round_f","containerline_02_f","containerline_01_f","warehouse_01_f","quayconcrete_01_20m_f","airstripplatform_01_f","airport_02_terminal_f","cliff_wall_long_f","shop_town_05_f","Land_ContainerLine_01_F","Land_MilOffices_V1_F","Land_vn_b_trench_bunker_01_01","Land_vn_mil_barracks_i_ep1","Land_vn_barracks_03_f","Land_vn_barracks_01","Land_vn_b_trench_bunker_02_01","Land_vn_b_trench_bunker_02_02","Land_vn_hootch_01_12","Land_vn_hootch_01_11","Land_vn_barracks_02_f","Land_vn_hootch_01_01","Land_vn_barracks_05_f","Land_vn_barracks_04_f","Land_vn_barracks_03_01","Land_vn_barracks_03","Land_vn_barracks_03_02","Land_vn_b_trench_bunker_02_04","Land_vn_b_trench_bunker_02_03","Land_vn_b_trench_bunker_01_02","Land_vn_hootch_01_02","Land_vn_hootch_02_11","Land_vn_hootch_02_01","Land_vn_hootch_02_02","Land_vn_hootch_01_03","Land_vn_hootch_02_03","Land_vn_hootch_01_13","Land_vn_barracks_03_04","Land_vn_barracks_03_03","Land_vn_b_trench_bunker_03_02","Land_vn_b_trench_bunker_03_01","Land_vn_quonset_02_01","Land_vn_quonset_02","Land_vn_quonset_01","Land_vn_hootch_01","Land_vn_hootch_02","Land_vn_barracks_02","Land_vn_barracks_02_01","Land_vn_barracks_04","Land_vn_b_trench_bunker_03_03","Land_vn_tent_mash_01_01","Land_vn_tent_mash_01_02","Land_vn_tent_01_03","Land_vn_tent_01_01","Land_vn_tent_01_02","Land_vn_tent_01_04","Land_vn_barracks_04_01","Land_vn_barracks_04_02","Land_vn_b_trench_bunker_01_03","Land_vn_b_trench_bunker_03_04","Land_vn_tent_mash_01_04","Land_vn_tent_02_01","Land_vn_tent_02_02","Land_vn_tent_mash_01","Land_vn_tent_mash_02_03","Land_vn_tent_mash_02_04","Land_vn_hut_old02","Land_vn_tent_02_04","Land_vn_tent_02_03","Land_vn_tent_mash_02_02","Land_vn_tent_mash_02_01","Land_vn_tent_mash_01_03","Land_vn_army_hut_storrage","Land_vn_army_hut_int","Land_vn_wf_field_hospital_east","Land_vn_army_hut2_int","Land_vn_army_hut3_long_int", "Land_vn_o_prop_cong_cage_01", "Land_vn_o_prop_cong_cage_02", "Land_vn_o_prop_cong_cage_03"];
@@ -311,15 +316,22 @@ if (A3A_hasCup) then {
 	];
 };
 
-flaresPool = if (A3A_hasCup) then {
-	["CUP_F_40mm_Star_White", "CUP_F_40mm_Star_Red"]
-} else {
-	if (A3A_hasRhs) then {
-		["rhsusf_40mm_white", "rhsusf_40mm_green", "rhs_mag_m662_red"]
-	} else {
+flaresPool = switch (true) do {
+	case (A3A_hasVN): {
+		["vn_40mm_m583_flare_w_ammo", "vn_40mm_m661_flare_g_ammo", "vn_40mm_m662_flare_r_ammo", "vn_40mm_m695_flare_y_ammo"];
+	};
+	case (A3A_hasCup): {
+		["CUP_F_40mm_Star_White", "CUP_F_40mm_Star_Red"];
+	};
+	case (A3A_hasRhs): {
+		["rhsusf_40mm_white", "rhsusf_40mm_green", "rhs_mag_m662_red"];
+	};
+	default {
 		["F_40mm_white", "F_40mm_Red", "F_40mm_Yellow"]
 	};
 };
+
+currencySymbol = if (A3A_hasVN) then {"đ"} else {"€"};
 
 flareSounds = ["A3\Sounds_F\weapons\Flare_Gun\flaregun_1.wss", "A3\Sounds_F\weapons\Flare_Gun\flaregun_2.wss"];
 

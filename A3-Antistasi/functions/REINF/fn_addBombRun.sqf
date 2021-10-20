@@ -9,7 +9,7 @@ if (_units findIf{player distance _x < 100} != -1) exitWith {["Airstrike", "You 
 private _near = (["Synd_HQ"] + airportsX) select {sidesX getVariable [_x,sideUnknown] isEqualTo teamplayer};
 _near = _near select {(player inArea _x) && (_veh inArea _x)};
 
-if (_near isEqualTo []) exitWith {["Airstrike", format ["You and the Air vehicle need to be in the Area of an %1 Airport or HQ in order to convert it to Airstrikes",nameTeamPlayer]] call SCRT_fnc_misc_showDeniedActionHint;};
+if (_near isEqualTo []) exitWith {["Airstrike", format ["You and the Air vehicle need to be in the Area of an %1 Airport or HQ in order to convert it to Airstrikes.",nameTeamPlayer]] call SCRT_fnc_misc_showDeniedActionHint;};
 
 if ((typeOf _veh) in [vehSDKPlane,vehSDKPayloadPlane]) exitWith {
 	["Airstrike", format ["%1 have plenty of these planes, they cannot be used to increase Airstrike points.",nameTeamPlayer]] call SCRT_fnc_misc_showDeniedActionHint;
@@ -49,7 +49,7 @@ if (isClass (configfile >> "CfgVehicles" >> _typeX >> "assembleInfo")) then {
 	};
 };
 if (_exit) exitWith {
-    ["Airstrike", "Backpack drones can't be used to increase Airstrike points"] call SCRT_fnc_misc_showDeniedActionHint;
+    ["Airstrike", "Backpack drones can't be used to increase Airstrike points."] call SCRT_fnc_misc_showDeniedActionHint;
 };
 
 private _pointsX = 1;

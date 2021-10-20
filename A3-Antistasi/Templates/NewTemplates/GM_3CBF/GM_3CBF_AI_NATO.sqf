@@ -131,7 +131,7 @@
 
 ["vehiclesPolice", ["UK3CB_CW_US_B_EARLY_M151_Jeep_Closed", "UK3CB_CW_US_B_EARLY_M151_Jeep_Open"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["RHS_M2StaticMG_D"]] call _fnc_saveToTemplate; 					
+["staticMGs", ["RHS_M2StaticMG_D", "gm_ge_army_mg3_aatripod", "UK3CB_CW_US_B_LATE_M240_High"]] call _fnc_saveToTemplate; 					
 ["staticAT", ["RHS_TOW_TriPod_D"]] call _fnc_saveToTemplate; 					
 ["staticAA", ["RHS_Stinger_AA_pod_D"]] call _fnc_saveToTemplate; 					
 ["staticMortars", ["RHS_M252_D"]] call _fnc_saveToTemplate;
@@ -392,10 +392,7 @@ _militiaLoadoutData setVariable ["rifles", [
 ]];
 _militiaLoadoutData setVariable ["carbines", [
 ["UK3CB_HK33KA3", "", "", "", ["UK3CB_HK33_30rnd_556x45", "UK3CB_HK33_30rnd_556x45", "UK3CB_HK33_30rnd_556x45_RT"], [], ""]
-]]; 			
-_militiaLoadoutData setVariable ["grenadeLaunchers", [
-["gm_hk69a1_blk", "", "", "", ["rhs_mag_M441_HE", "rhs_mag_M441_HE", "rhs_mag_M441_HE", "rhs_mag_M583A1_white", "rhs_mag_m714_White"], ["rhs_mag_M441_HE", "rhs_mag_M441_HE", "rhs_mag_M441_HE", "rhs_mag_M583A1_white", "rhs_mag_m714_White"], ""]
-]]; 			
+]];
 _militiaLoadoutData setVariable ["SMGs", [
 ["UK3CB_MP5A2", "", "", "", ["UK3CB_MP5_30Rnd_9x19_Magazine", "UK3CB_MP5_30Rnd_9x19_Magazine", "UK3CB_MP5_30Rnd_9x19_Magazine_RT"], [], ""],
 ["UK3CB_MP5A3", "", "", "", ["UK3CB_MP5_30Rnd_9x19_Magazine", "UK3CB_MP5_30Rnd_9x19_Magazine", "UK3CB_MP5_30Rnd_9x19_Magazine_RT"], [], ""]
@@ -612,7 +609,7 @@ private _grenadierTemplate = {
 	[["GLvests", "vests"] call _fnc_fallback] call _fnc_setVest;
 	["uniforms"] call _fnc_setUniform;
 
-	["grenadeLaunchers"] call _fnc_setPrimary;
+	[["grenadeLaunchers", "carbines"] call _fnc_fallback] call _fnc_setPrimary;
 	["primary", 6] call _fnc_addMagazines;
 	["primary", 10] call _fnc_addAdditionalMuzzleMagazines;
 

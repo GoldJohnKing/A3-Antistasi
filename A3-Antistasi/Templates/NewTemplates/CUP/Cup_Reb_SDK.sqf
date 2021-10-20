@@ -27,6 +27,7 @@
 ["vehicleCivTruck", "CUP_C_Ural_Open_Civ_03"] call _fnc_saveToTemplate;
 ["vehicleCivHeli", "CUP_C_Mi17_Civilian_RU"] call _fnc_saveToTemplate;
 ["vehicleCivBoat", "CUP_C_Fishing_Boat_Chernarus"] call _fnc_saveToTemplate;
+["vehicleCivSupply", "C_Van_01_box_F"] call _fnc_saveToTemplate;
 
 ["staticMG", "CUP_I_DSHKM_TK_GUE"] call _fnc_saveToTemplate; 					
 ["staticAT", "CUP_I_SPG9_NAPA"] call _fnc_saveToTemplate; 					
@@ -122,7 +123,8 @@
 private _initialRebelEquipment = [
 	"CUP_hgun_TT", "CUP_hgun_Colt1911", "CUP_hgun_Makarov",
 	"CUP_srifle_Remington700", "CUP_smg_saiga9", "CUP_srifle_CZ550_rail",
-	"CUP_10Rnd_9x19_Saiga9", "CUP_sgun_CZ584", 
+	"CUP_sgun_slamfire",
+	"CUP_10Rnd_9x19_Saiga9", 
 	"CUP_1Rnd_12Gauge_Pellets_No00_Buck", "CUP_1Rnd_12Gauge_Pellets_No0_Buck", "CUP_1Rnd_12Gauge_Pellets_No1_Buck", 
 	"CUP_1Rnd_12Gauge_Pellets_No2_Buck", "CUP_1Rnd_12Gauge_Pellets_No3_Buck", "CUP_1Rnd_12Gauge_Pellets_No4_Buck",
 	"CUP_1Rnd_12Gauge_Pellets_No4_Bird", "CUP_1Rnd_12Gauge_Slug", "CUP_1Rnd_762x51_CZ584", "CUP_5x_22_LR_17_HMR_M",
@@ -172,7 +174,7 @@ shop_AA = ["CUP_B_ZSU23_Afghan_CDF", "CUP_B_M163_USA", "CUP_O_2S6_RU"];
 shop_MRAP = ["CUP_I_BRDM2_HQ_NAPA", "CUP_I_BRDM2_NAPA", "CUP_B_RG31_M2_OD_USA"];
 shop_wheel_apc = ["CUP_B_BTR60_FIA", "CUP_B_BTR80_FIA", "CUP_I_LAV25M240_RACS"];
 shop_track_apc = ["CUP_B_MTLB_pk_FIA", "CUP_I_BMP1_TK_GUE", "CUP_I_BMP2_NAPA"];
-shop_heli = ["CUP_I_Ka60_GL_Blk_ION", "CUP_B_AW159_HIL", "I_Heli_light_03_dynamicLoadout_F"];
+shop_heli = ["CUP_I_Ka60_Blk_ION", "CUP_I_412_Military_Armed_PMC", "CUP_B_AW159_HIL"];
 shop_tank = ["CUP_I_T34_NAPA", "CUP_I_T55_NAPA", "CUP_B_M60A3_USMC"];
 shop_plane = ["CUP_I_L39_AAF", "I_Plane_Fighter_03_dynamicLoadout_F", "CUP_I_AV8B_DYN_AAF"];
 

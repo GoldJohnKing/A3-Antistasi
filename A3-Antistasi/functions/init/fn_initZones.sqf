@@ -129,13 +129,40 @@ switch (toLower worldName) do {
     case "cam_lao_nam": {
         {server setVariable [_x select 0,_x select 1]} forEach
         [["haiphong",500],["hanoi",1000],["hue",2000],["saigon",700],["sihanoukville",200],["nodallho",100],["bru",100],["attapeu",100],
-        ["dakrong",100],["lumphat",100],["cuchi",100],["baria",100],["danang",600],["kenglat",100],["laichau",100],["paknoi",100],
+        ["dakrong",100],["tandi",100],["lumphat",100],["cuchi",100],["baria",100],["danang",600],["kenglat",100],["laichau",100],["paknoi",100],
         ["phuan",100],["xomram",120],["xomgia",100],["tongmoo",100],["donlac",100],["cangon",100],["nalai",100],["baichai",100],
         ["bachdang",100],["ketthuc",100],["vongxo",100],["banbon",100],["nongkhiaw",100],["horhog",100],["langmau",100],
         ["baria2",100],["anhoa",100],["binhminh",100],["buoisang",100],["hoalien",100],["lacmy",100],["cacan",100],["tanhop",100],
         ["hanoi2",300],["gansong",100],["zokcarbora",100],["banhtrung",100],["yentinh",100],["thunglungcao",100],["baibiendep",100],
         ["phoduc",100],["baove",100],["ngatu",100],["binhyen",100],["bosong",100],["marble",180],["niemtin",100],
-        ["krosang",100],["banlen",100],["comngon",100],["saigonport",100],["cauhai",100]];
+        ["krosang",100],["banlen",100],["comngon",100],["cauhai",100],["daotrai", 100], 
+		["nhenden", 50],["longhai", 50]
+		];
+    };
+	case "vn_khe_sanh": {
+        {server setVariable [_x select 0,_x select 1]} forEach
+        [["Khesanhvil",800],["Tanloan",100],["Axau",50],["Xiso",40],["XiMi",38],["Xino",60],["PalienKhun",74],
+        ["Koso",60],["KoWe",38],["BanNeme",50],["Avau",35],["ToRout",80],["RoRo",100],["ABung",45],
+        ["Tavouac",15],["Palo",125],["Thanh",80],["AHo",20],["XingEa",75],["Xingwe",175],["ACoi",25],["Dan",100],
+        ["Bahy",100],["HaiPhuc",50],["HaiTan",30],["Donque",125],["Hamy",78],["BichNam",40],["Raoha",70],
+        ["NhiHa",17],["GioHai",86],["AnMy",100],["Kok",60],["HopTac",50],["CoSo",12],["Cola",90],["Seina",130],
+        ["Viski",21],["LiemCong",79],["NamHung",130],["ThaiLai",222],["Lako",90],["pagnouy",76],["Sadoun",64],
+        ["Salen",71],["Lousalia",19],["Paxiou",12],["Khoyamep",50],["Gnavay",60],["Gnavet",114],["Napang",100],
+        ["Xok",8],["Soy",100],["AnDinh",30],["Nabo",150],["Tuan",40],["Naxok",52],["Koanphan",113],
+		["Phonsang",32],["Louang",100],["Phonsi",101],["Pomkhoun",100],["Doy",15],["Nase",30],["Nadou",100],
+		["Cukty",30],["HoaThanh",100],["CuYang",100],["Ploy",100],["Thongxa",60],["Kang",43],["Lapoung",100],["Lukdong",70],
+		["Pakpong",20],["Donxat",35],["Vangkoy",100],["Xeku",20],["Nalao",14],["Kengkep",100],
+		["Nasano",43],["Naxuak",47],["Dantete",60],["Donvay",56],["Nonghano",10],["Nongno",40],["Tansoum",65],["Hindam",50],
+		["Phailom",30],["Saoven",100],["Prao",140],["Talu",60]
+		];
+    };
+	case "rhspkl": {
+        {server setVariable [_x select 0,_x select 1]} forEach
+        [["DefaultKeyPoint1",40],["DefaultKeyPoint4",200],["DefaultKeyPoint32",50],["DefaultKeyPoint34",100],
+        ["DefaultKeyPoint35",110],["DefaultKeyPoint36",105],["DefaultKeyPoint37",10],["DefaultKeyPoint38",50],
+        ["DefaultKeyPoint39",250],["DefaultKeyPoint40",300],["DefaultKeyPoint43",350],["DefaultKeyPoint49",180],
+        ["DefaultKeyPoint53",160],["DefaultKeyPoint5",250],["DefaultKeyPoint6",550],["DefaultKeyPoint7",80],["DefaultKeyPoint8",200],
+        ["DefaultKeyPoint9",180]];
     };
 	//TODO: NAPF, cherno 2020, Abramia, Panthera
 	default { _hardcodedPop = false };
@@ -155,10 +182,19 @@ switch (toLower worldName) do {
            ""pleimei"", ""fob6"", ""berchtesgaden"", ""fob3"", ""khegio"", ""fob5"", ""thudridge"", ""halongnavybase"", ""plainofjars"", ""pleikuboatbase"",
            ""banhoang"", ""vinhau"", ""kechau"", ""quanbo"", ""huecitadel"", ""bimat"", ""danthemthem"", ""daophai"", ""phuquoc"", ""dharmadocks"",
             ""dharma"", ""patmep"", ""phokham"", ""rungcung"", ""tiengtai"", ""vacang"", ""hanoi3"", ""saigonport"", ""ansungsong"", ""vanchu"",
-            ""sangha"", ""hoxanx"", ""congtroi"", ""boave"", ""longhai"", ""honba"", ""kiemtra"", ""baibiendiep"", ""nuocbun"", ""cantho"",
-            ""nhenden"", ""soctrang"", ""mekongdelta"", ""tampep"", ""segbegat"", ""che"", ""tandi"", ""lahot"", ""alieng"", ""thiengling"",
+            ""sangha"", ""hoxanx"", ""congtroi"", ""boave"", ""honba"", ""kiemtra"", ""baibiendiep"", ""nuocbun"", ""cantho"", ""tampep"", ""segbegat"", ""che"", ""lahot"", ""alieng"", ""thiengling"",
+			""soctrang"", ""mekongdelta"",
             ""phaonoi"", ""timho"", ""quyen"", ""caloi"", ""thuphac"", ""diemdang"", ""bandao"", ""mantau"",""dongxa"", ""tauphabang"", ""horgoat"",
-            ""samsong"", ""muylai"", ""caymo"", ""docon"", ""paradiseisland"", ""mien"", ""giuaho"", ""daotrai""])"
+            ""samsong"", ""muylai"", ""caymo"", ""docon"", ""paradiseisland"", ""mien"", ""giuaho""])"
+           configClasses (configfile >> "CfgWorlds" >> worldName >> "Names");
+    };
+
+	case "vn_khe_sanh": {
+        _cityConfigs = "(getText (_x >> ""type"") in [""NameCityCapital"", ""NameCity"", ""NameVillage"", ""CityCenter""]) &&
+           !(getText (_x >> ""Name"") isEqualTo """") &&
+           !((configName _x) in [""KoNo"", ""Paca"", ""MuTa"", ""Kouthi"", ""Kate"", ""Hinlap"", 
+		   ""Avian"", ""That"", ""XomBau"",""Paxia"", ""Chanulangchanh"", ""Xomcon"", ""Xombatu"", ""Xombolou"", 
+		   ""Bolieu"", ""VinhTu"", ""SonGiang"", ""SonXuan""])"
            configClasses (configfile >> "CfgWorlds" >> worldName >> "Names");
     };
 
@@ -296,7 +332,7 @@ switch (toLower worldName) do {
 		[9496.2,19318.5,0.601898], [9222.87,19249.1,0.0348206], [20944.9,19280.9,0.201118], [20642.7,20107.7,0.236603],
 		[18709.3,10222.5,0.716034], [6840.97,16163.4,0.0137177], [19319,9716.22,0.442627], [19351.9,9693.04,0.639175],
 		[10317.3,8704.65,0.117233], [8268.76,10051.6,0.0100708], [4583.61,15401.1,0.262543],[4555.65,15383.2,0.0271606],
-		[4263.82,20664.1,-0.0102234], [26274.6,22188.1,0.0139847], [26455.4,22166.3,0.0223694]];
+		[4263.82,20664.1,-0.0102234], [26274.6,22188.1,0.0139847], [26455.4,22166.3,0.0223694],[7885.09,14628.1,0]];
 		_blacklistPos = [4, 10, 12, 15, 17];
 		_posBank = [[16586.6,12834.5,-0.638584], [16545.8,12784.5,-0.485485], [16633.3,12807,-0.635017], [3717.34,13391.2,-0.164862], [3692.49,13158.3,-0.0462074], [3664.31,12826.5,-0.379545], [3536.99,13006.6,-0.508585], [3266.42,12969.9,-0.549738]];
 		antennas = [];
@@ -320,6 +356,12 @@ switch (toLower worldName) do {
 		_posAntennas =
 		[[10106.4,10343.8,0],[616.562,4520.12,0],[4014.64,3089.66,0.150604], [5249.37,3709.48,-0.353882], [3126.7,8223.88,-0.649429], [8547.92,3897.03,-0.56073], [5578.24,9072.21,-0.842239], [2239.98,12630.7,-0.575844]];
 		_blacklistPos = [];
+		antennas = [];
+	};
+	case "vn_khe_sanh": {
+		_posAntennas = 
+		[[2603.31,10086,-0.0195313],[13435.9,11139.5,0],[5107.86,11336.4,0],[11235.7,14857.9,0],[13216.8,13966.6,0.118774],[11127.5,9870.3,0.118835],[5026.98,5361.25,0.719513],[9634.73,351.082,0],[9051.56,6547.55,0]];
+		_blackListPos = [];
 		antennas = [];
 	};
 	case "cam_lao_nam": {
@@ -394,6 +436,12 @@ switch (toLower worldName) do {
 	    _posBank = [[5467.52,1521.78,0],[2697.54,2362.11,0],[663.936,6409.57,0],[8583.59,6901.04,0],[10552.7,6586.09,0]];
 		_blackListPos = [];
 	    antennas = [];
+	};
+	case "rhspkl": {
+		_posAntennas = [[5418.42,2559.52,0],[3674.47,2705.45,0],[2287.05,6480.78,0],[4552.77,5420.52,0]];
+		_posBank = [];
+		_blackListPos = [11, 15, 17, 21, 24, 27];
+		antennas = [];
 	};
 	default {
 		antennas = nearestObjects [[worldSize /2, worldSize/2], _antennatypes, worldSize];

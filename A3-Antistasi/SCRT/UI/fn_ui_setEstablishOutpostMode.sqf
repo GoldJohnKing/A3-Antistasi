@@ -8,7 +8,7 @@ if ((_resourcesFIA < _moneyCost) or (_hrFIA < _hrCost)) exitWith {
 	[
         "FAIL",
         "Establish Outpost",  
-        parseText format ["You have not enough resources to establish new outpost.<br/> %1 HR and %2 € needed.", _hrCost, _moneyCost], 
+        parseText format ["You have not enough resources to establish new outpost.<br/> %1 HR and %2%3 needed.", _hrCost, _moneyCost, currencySymbol], 
         15
     ] spawn SCRT_fnc_ui_showMessage;
 };

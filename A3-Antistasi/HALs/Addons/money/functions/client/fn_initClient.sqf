@@ -14,9 +14,6 @@
 __________________________________________________________________*/
 if (!hasInterface) exitWith {};
 
-// Add starting money to player
-//[player, HALs_money_startingFunds] call HALs_money_fnc_addFunds;
-
 // Add money when player picks up money
 player addEventHandler ["Take", {
 	params ["_unit", "_container", "_item"];
@@ -65,3 +62,9 @@ player addEventHandler ["InventoryOpened", {
 		};
 	};
 }];
+
+//this is really dirty, but who cares
+player addEventHandler ["InventoryOpened", {
+	HALs_store_currencySymbol = currencySymbol;
+	player removeEventHandler ["InventoryOpened",_thisEventHandler];
+}];	

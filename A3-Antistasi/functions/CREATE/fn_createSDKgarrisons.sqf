@@ -95,15 +95,21 @@ if (staticCrewTeamPlayer in _garrison) then
 	private _index = _garrison findIf {_x == SDKMil};
 	if (_index == -1) exitWith {};
 	private _unit = objNull;
-	if (typeOf _x == SDKMortar) then
-	{
+	private _vehMortars = [SDKMortar, NATOMortar, CSATMortar];
+	if (CSATHowitzer != "not_supported") then {
+		_vehMortars pushBack CSATHowitzer;
+	};
+	if (NATOHowitzer != "not_supported") then {
+		_vehMortars pushBack NATOHowitzer;
+	};
+
+	if (typeOf _x in _vehMortars) then {
 		if (isNull _groupMortars) then { _groupMortars = createGroup teamPlayer };
 		_unit = [_groupMortars, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 		_unit moveInGunner _x;
 		_nul=[_x] execVM "scripts\UPSMON\MON_artillery_add.sqf";//TODO need delete UPSMON link
 	}
-	else
-	{
+	else {
 		if (isNull _groupStatics) then { _groupStatics = createGroup teamPlayer };
 		_unit = [_groupStatics, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 		_unit moveInGunner _x;

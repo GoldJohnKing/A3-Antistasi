@@ -152,7 +152,7 @@ deleteMarkerLocal _marker1;
 deleteMarkerLocal _marker2;
 
 if (_earlyEscape) exitWith {
-    ["RES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, "Problems with road positions, rerequesting new rescue mission.", _filename] call A3A_fnc_log;
 };
 
@@ -164,14 +164,14 @@ if (_earlyEscape) exitWith {
 private _buildings = _positionX nearobjects ["house",_size];
 
 if (isNil "_buildings" || {count _buildings < 0}) exitWith {
-    ["RES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, "Problems with city buildings, rerequesting new rescue mission.", _filename] call A3A_fnc_log;
 };
 
 private _capableBuildings = _buildings select {!(([_x] call BIS_fnc_buildingPositions) isEqualTo [])};
 
 if (isNil "_capableBuildings" || {count _capableBuildings < 0}) exitWith {
-    ["RES"] remoteExecCall ["A3A_fnc_missionRequest",2];
+    ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 	[1, "Problems with city buildings, rerequesting new rescue mission.", _filename] call A3A_fnc_log;
 };
 

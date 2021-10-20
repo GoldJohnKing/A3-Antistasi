@@ -4,8 +4,8 @@ _resourcesFIA = server getVariable "resourcesFIA";
 if (_resourcesFIA < MONEY_AMOUNT) exitWith {
     [
         "FAIL",
-        "Money Grab",  
-        parseText format ["%1 has not enough money to transfer.", nameTeamPlayer], 
+        "Money Grab",
+        parseText format ["%1 has not enough money to transfer.", nameTeamPlayer],
         30
     ] spawn SCRT_fnc_ui_showMessage;
 };
@@ -16,7 +16,7 @@ server setvariable ["resourcesFIA", _resourcesFIA - MONEY_AMOUNT, true];
 
 [
     "SUCCESS",
-    "Money Grab",  
-    parseText format ["You grabbed %1 € from the %2 Money Pool.<br/><br/>This will affect your prestige and status among %2 forces.", str MONEY_AMOUNT, nameTeamPlayer], 
+    "Money Grab",
+    parseText format ["You grabbed %1%3 from the %2 Money Pool.<br/><br/>This will affect your prestige and status among %2 forces.", str MONEY_AMOUNT, nameTeamPlayer, currencySymbol],
     15
 ] spawn SCRT_fnc_ui_showMessage;

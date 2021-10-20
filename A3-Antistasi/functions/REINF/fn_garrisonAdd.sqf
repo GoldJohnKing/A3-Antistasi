@@ -13,7 +13,7 @@ _typeX = _this select 0;
 private _costs = server getVariable _typeX;
 
 if (_costs > _resourcesFIA) exitWith {
-	["Garrison",  format ["You do not have enough money for this kind of unit (%1 € needed).", _costs], "FAIL"] call SCRT_fnc_ui_showDynamicTextMessage;
+	["Garrison",  format ["You do not have enough money for this kind of unit (%1%2 needed).", _costs, currencySymbol], "FAIL"] call SCRT_fnc_ui_showDynamicTextMessage;
 };
 
 _markerX = positionXGarr;
