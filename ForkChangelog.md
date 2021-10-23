@@ -1,5 +1,8 @@
 # Changelog
 
+### 1.8.2.2 
+- Fixed incorrect work of military base creation function if there are no roads in proximity
+
 ### 1.8.2.1 
 - (Cam Lao Nam) save corruption fix
 

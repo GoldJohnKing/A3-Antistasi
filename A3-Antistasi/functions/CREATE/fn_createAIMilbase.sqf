@@ -107,23 +107,29 @@ if (!isNil "_selectedVehicle") then {
 	private _position = nil;
 	if (!isNil "_road") then {
 		private _roadcon = roadsConnectedto (_road select 0);
-		private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
+		private _dirveh = if (!isNil "_roadcon" && {count _roadcon > 0}) then {
+			[_road select 0, _roadcon select 0] call BIS_fnc_dirTo
+		} else {
+			random 360
+		};
 		_position = getPos (_road select 0);
 	} else {
 		_position = [_positionX, 10, _size, 5, 0, 0.7, 0, [], [_positionX, _positionX]] call BIS_fnc_findSafePos;
 	};
 
-	private _patrolVehicleData = [_position, 0, _selectedVehicle, _sideX] call A3A_fnc_spawnVehicle;
-	private _patrolVeh = _patrolVehicleData select 0;
-	private _patrolVehCrew = crew _patrolVeh;
-	private _patrolVehicleGroup = _patrolVehicleData select 2;
-	{[_x] call A3A_fnc_NATOinit} forEach _patrolVehCrew;
-	[_patrolVeh, _sideX] call A3A_fnc_AIVEHinit;
-	_soldiers = _soldiers + _patrolVehCrew;
-	_groups pushBack _patrolVehicleGroup;
-	_vehiclesX pushBack _patrolVeh;
+	if (!isNil "_position") then {		
+		private _patrolVehicleData = [_position, 0, _selectedVehicle, _sideX] call A3A_fnc_spawnVehicle;
+		private _patrolVeh = _patrolVehicleData select 0;
+		private _patrolVehCrew = crew _patrolVeh;
+		private _patrolVehicleGroup = _patrolVehicleData select 2;
+		{[_x] call A3A_fnc_NATOinit} forEach _patrolVehCrew;
+		[_patrolVeh, _sideX] call A3A_fnc_AIVEHinit;
+		_soldiers = _soldiers + _patrolVehCrew;
+		_groups pushBack _patrolVehicleGroup;
+		_vehiclesX pushBack _patrolVeh;
 
-	[_patrolVehicleGroup, _positionX, 450] call bis_fnc_taskPatrol;
+		[_patrolVehicleGroup, _positionX, 450] call bis_fnc_taskPatrol;
+	};
 };
 
 
