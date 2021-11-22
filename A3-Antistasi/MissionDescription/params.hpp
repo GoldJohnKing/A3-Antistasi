@@ -72,7 +72,7 @@ class Params
         title = "Enable Server Membership";
         values[] = {9999,1,0};
         texts[] = {"Load From Save (Default - Yes)","Yes","No"};
-        default = 1;
+        default = 0;
     };
     class tkPunish
     {
