@@ -142,7 +142,7 @@ class Params
         title = "Fast Travel Targets Allowed";
         values[] = {9999,0,1};
         texts[] = {"Load From Save (Default - Any friendly position)","Any friendly position","Only Airports, Milbases and HQ"};
-        default = 9999;
+        default = 0;
     };
     class napalmEnabled
     {
@@ -311,7 +311,7 @@ class Params
           title = "Fast Travel Enemies Check";
           values[] = {9999, 1, 0};
           texts[] =  {"Load From Save (Default - Check for player only)", "Check for player only", "Check for player squad (Vanilla Antistasi Style)"};
-          default = 9999;
+          default = 1;
      };
      class playerStartingMoney
      {
