@@ -476,12 +476,12 @@ force force ace_respawn_removeDeadBodiesDisconnected = true;
 force force ace_respawn_savePreDeathGear = true;
 
 // ACE 音量
-force force acex_volume_enabled = true;
-force force acex_volume_fadeDelay = 3;
-force force acex_volume_lowerInVehicles = true;
+force force acex_volume_enabled = false;
+force force acex_volume_fadeDelay = 1;
+force force acex_volume_lowerInVehicles = false;
 force force acex_volume_reduction = 5;
 force force acex_volume_remindIfLowered = false;
-force force acex_volume_showNotification = false;
+force force acex_volume_showNotification = true;
 
 // ACE 风偏
 force force ace_winddeflection_enabled = true;
@@ -577,7 +577,7 @@ force force MIRA_Vehicle_Medical_WarnViewingDead = true;
 // Advanced Garbage Collector
 force force AGC_bodyType = "body";
 force force AGC_checkTimes = 50;
-force force AGC_GCenabled = true;
+force force AGC_GCenabled = false;
 force force AGC_GCmaxBodyTime = 180;
 force force AGC_GCmaxDistance = 300;
 force force AGC_GCmaxTime = 300;
@@ -607,6 +607,15 @@ force force ABS_enableMod = true;
 force force ABS_minAngle = 60;
 force force ABS_NoAutoUnflipPlayer = false;
 force force ABS_perFrameKey = true;
+
+// Antistasi
+force force HR_GRG_dLock = false;
+force force HR_GRG_PoolBase = 15;
+force force HR_GRG_PoolIncr = 5;
+force force HR_GRG_Pylons_Enabled = true;
+force force HR_GRG_ServiceDisabled_Rearm = false;
+force force HR_GRG_ServiceDisabled_Refuel = false;
+force force HR_GRG_ServiceDisabled_Repair = false;
 
 // Arma Maps
 force force JD_Map_ColorPreset = "Default";
