@@ -495,9 +495,9 @@ force force ace_vehicle_damage_removeAmmoDuringCookoff = true;
 
 // ACE Crew Served Weapons
 force force ace_csw_ammoHandling = 2;
-force force ace_csw_defaultAssemblyMode = true;
+force force ace_csw_defaultAssemblyMode = false;
 force force ace_csw_dragAfterDeploy = false;
-force force ace_csw_handleExtraMagazines = true;
+force force ace_csw_handleExtraMagazines = false;
 force force ace_csw_progressBarTimeCoefficent = 1;
 
 // ACE Dragging
@@ -859,19 +859,6 @@ force force NMAB_setting_classExclusionsStr = "";
 force force NMAB_setting_pfxHelicopters = true;
 force force NMAB_setting_pfxPlanes = true;
 
-// Recoil coefficient changer
-force force RECOIL_AI_on = true;
-force force RECOIL_force_on = 100;
-force force RECOIL_handgun_on = true;
-force force RECOIL_incrase_on = 0;
-force force RECOIL_loop_on = true;
-force force RECOIL_random_on = false;
-force force RECOIL_randomMax_on = 0.5;
-force force RECOIL_randomMid_on = 0;
-force force RECOIL_randomMin_on = -0.5;
-force force RECOIL_Smooth_on = true;
-force force SWAY_incrase_on = 0.1;
-
 // Turret Enhanced
 force force Fat_Lurch_Grid = false;
 force force Fat_Lurch_GridNum = 6;
@@ -979,33 +966,3 @@ force force zen_vision_enableRedGreenThermal = false;
 force force zen_vision_enableRedHotCold = false;
 force force zen_vision_enableWhiteHot = true;
 force force zen_vision_enableWhiteHotRedCold = false;
-
-// ZHC Caching
-force force zhc_dynsim_CycleDelay = 30;
-force force zhc_dynsim_EmptyDist = 250;
-force force zhc_dynsim_Enabled = false;
-force force zhc_dynsim_GroupDist = 500;
-force force zhc_dynsim_MoveMult = 1;
-force force zhc_dynsim_Override = false;
-force force zhc_dynsim_PropDist = 50;
-force force zhc_dynsim_VehDist = 350;
-
-// ZHC Settings
-force force zhc_offload_badNames = "'ignore'";
-force force zhc_offload_badTypes = "";
-force force zhc_offload_CheckDelay = 5;
-force force zhc_offload_CycleDelay = 20;
-force force zhc_offload_debugGuids = "";
-force force zhc_offload_DebugMode = 2;
-force force zhc_offload_EmergencyOffloadDelay = 5;
-force force zhc_offload_Enabled = true;
-force force zhc_offload_EnableZeusHolding = true;
-force force zhc_offload_OffloadDelay = 15;
-force force zhc_offload_RebalanceDelay = 30;
-force force zhc_offload_StartDelay = 5;
-force force zhc_offload_TransferLoadout = 1;
-force force zhc_offload_Verbosity = 0;
-force force zhc_stat_DebugRPT = false;
-force force zhc_stat_DebugRPTForm = 0;
-force force zhc_stat_EnableFPSCounter = true;
-force force zhc_stat_RPTFreq = 15;
