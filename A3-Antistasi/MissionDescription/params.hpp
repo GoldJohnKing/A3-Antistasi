@@ -72,7 +72,7 @@ class Params
         title = "Enable Server Membership";
         values[] = {9999,1,0};
         texts[] = {"Load from save (Default: Yes)","Yes","No"};
-        default = 9999;
+        default = 0;
     };
     class switchComm
     {
@@ -100,14 +100,14 @@ class Params
         title = "Allow Friendly Player Markers";
         values[] = {9999,1,0};
         texts[] = {"Load from save (Default: Yes)","Yes","No"};
-        default = 9999;
+        default = 0;
     };
     class AISkill
     {
         title = "Mission Difficulty";
         values[] = {9999,1,2,3};
         texts[] = {"Load from save (Default: Normal)","Easy","Normal","Hard"};
-        default = 9999;
+        default = 3;
     };
     class unlockItem
     {
@@ -121,63 +121,63 @@ class Params
         title = "Number of magazines needed for guests to be able to use them";
         values[] = {9999,10,20,30,40,50,60};
         texts[] = {"Load from save (Default: 40)","10","20","30","40","50","60"};
-        default = 9999;
+        default = 30;
     };
     class civTraffic
     {
         title = "Rate of Civ Traffic";
         values[] = {9999,0,1,2,4,};
         texts[] = {"Load from save (Default: Medium)","None","Low","Medium","High"};
-        default = 9999;
+        default = 4;
     };
     class memberSlots
     {
         title = "Percentage of Reserved Slots for Members";
         values[] = {9999,0,20,40,60,80,100};
         texts[] = {"Load from save (Default: 20%)","None","20%","40%","60%","80%","All"};
-        default = 9999;
+        default = 0;
     };
     class memberDistance
     {
         title = "Max distance non members can be from the closest member or HQ (they will be teleported to HQ after some timeout)";
         values[] = {9999,4000,5000,6000,7000,8000,10000,16000,-1};  // 16000 is left as backwards compatibility
         texts[] = {"Load from save (Default: 5 km)","4 km","5 km","6 km","7 km","8 km","10 km","16 km","Unlimited"};
-        default = 9999;
+        default = -1;
     };
     class allowFT
     {
         title = "Fast Travel Targets Allowed";
         values[] = {9999,0,1};
         texts[] = {"Load from save (Default: Airports & HQ)","Any friendly position","Only Airports & HQ"};
-        default = 9999;
+        default = 1;
     };
     class napalmEnabled
     {
         title = "Enable Napalm Bombing for AI";
         values[] = {9999,0,1};
         texts[] = {"Load from save (Default: No)","No","Yes"};
-        default = 9999;
+        default = 1;
     };
     class unlockedUnlimitedAmmo
     {
         title = "Do Unlocked Weapons Automatically Unlock Their Standard Magazine?";
         values[] = {9999,1,0};
         texts[] = {"Load from save (Default: No)","Yes","No"};
-        default = 9999;
+        default = 1;
     };
     class allowGuidedLaunchers
     {
         title = "Should Guided Launchers become unlocked?";
         values[] = {9999,1,0};
         texts[] = {"Load from save (Default: No)","Yes","No"};
-        default = 9999;
+        default = 1;
     };
     class allowUnlockedExplosives
     {
         title = "Should Explosives become unlocked?";
         values[] = {9999,1,0};
         texts[] = {"Load from save (Default: No)","Yes","No"};
-        default = 9999;
+        default = 1;
     };
     class startWithLongRangeRadio
     {
@@ -317,7 +317,7 @@ class Params
         title = "Logging Level (Amount of detail in .rpt file)";
         values[] = {9999,1,2,3};
         texts[] = {"Load from save (Default: Debug)", "Error", "Info", "Debug"};
-        default = 9999;
+        default = 1;
     };
     class SupportOptions
     {
@@ -331,14 +331,14 @@ class Params
         title = "[Experimental - Use at own risk] Allow unfair supports to be used by the enemy";
         values[] = {9999, 0, 1};
         texts[] = {"Load from save (Default: Not Allowed)", "Not allowed", "Allowed"};
-        default = 9999;
+        default = 1;
     }
     class allowFuturisticSupports
     {
         title = "[Experimental - Use at own risk](Requires unfair supports) Allow futuristic supports to be used by the enemy";
         values[] = {9999, 0, 1};
         texts[] = {"Load from save (Default: Not Allowed)", "Not allowed", "Allowed"};
-        default = 9999;
+        default = 1;
     }
     class CrateOptions
     {
