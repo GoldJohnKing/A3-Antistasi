@@ -149,7 +149,7 @@ class Params
         title = "Fast Travel Targets Allowed";
         values[] = {9999,0,1};
         texts[] = {"Load from save (Default: Airports & HQ)","Any friendly position","Only Airports & HQ"};
-        default = 1;
+        default = 0;
     };
     class napalmEnabled
     {
