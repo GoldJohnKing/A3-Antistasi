@@ -205,14 +205,14 @@ class Params
         title = "Enable Loot to crate";
         values[] = {9999, 0, 1};
         texts[] = {"Load from save (Default: Enabled)","Disabled", "Enabled"};
-        default = 9999;
+        default = 1;
     };
     class LTCLootUnlocked
     {
         title = "Loot to crate: transfers unlocked items";
         values[] = {9999, 0, 1};
         texts[] = {"Load from save (Default: Disabled)", "Disabled", "Enabled"};
-        default = 9999;
+        default = 0;
     };
     class Spacer11
     {
